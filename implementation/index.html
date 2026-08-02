@@ -733,6 +733,15 @@
         <div class="icon-label">슈퍼플래닝 소개</div>
       </div>
 
+      <!-- 1-2. 슈퍼플래닝 소개영상 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('intro-video'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#e74c3c" rx="4"/>
+          <polygon points="13,10 27,18 13,26" fill="#ffffff"/>
+        </svg>
+        <div class="icon-label">소개영상</div>
+      </div>
+
       <!-- 2. UX서비스 -->
       <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
@@ -823,6 +832,7 @@
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
       <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 슈퍼플래닝 소개</div>
+      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">🎬 슈퍼플래닝 소개영상</div>
       <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX 서비스</div>
       <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX 강의</div>
       <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
@@ -868,6 +878,7 @@
         'w.blog': 'UX블로그',
         'w.contact': '찾아오시는 길 & 문의',
         'w.about': '회사소개',
+        'w.intro-video': '슈퍼플래닝 소개영상',
         'w.np': '지금 듣는 곡',
         'w.links': '바로가기',
         'w.tweaks': '환경 설정',
@@ -887,6 +898,7 @@
         'w.blog': 'Blog',
         'w.contact': 'Location & Contact',
         'w.about': 'About',
+        'w.intro-video': 'Promo Video',
         'w.np': 'Now Playing',
         'w.links': 'Links',
         'w.tweaks': 'Settings',
@@ -931,6 +943,7 @@
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 560, h: 420, title: '찾아오시는 길 & 문의' },
       'about': { w: 490, h: 510, title: '회사 소개' },
+      'intro-video': { w: 440, h: 300, title: '슈퍼플래닝 소개영상' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
@@ -1172,6 +1185,20 @@
             </div>
           </div>
         `;
+      } else if (key === 'intro-video') {
+        return `
+          <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000;">
+            <iframe 
+              src="https://www.youtube.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&enablejsapi=1" 
+              title="슈퍼플래닝 소개영상" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen 
+              style="width:100%; height:100%; border:1px solid var(--bevel-shadow); flex:1; min-height:220px;">
+            </iframe>
+          </div>
+        `;
       }
       return `<p>${STRINGS[currentLang]['w.' + key] || key} 본문 콘텐츠입니다.</p>`;
     }
@@ -1259,9 +1286,11 @@
       if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 24, top: minTop + 30 });
+        openWindow('intro-video', { left: 14, top: minTop + 525 });
       } else {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 518, top: minTop });
+        openWindow('intro-video', { left: 14, top: minTop + 525 });
       }
     }
 
