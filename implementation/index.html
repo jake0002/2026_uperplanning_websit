@@ -995,7 +995,7 @@
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 560, h: 420, title: '찾아오시는 길 & 문의' },
       'about': { w: 580, h: 440, title: '회사 소개' },
-      'clients': { w: 580, h: 420, title: '주요 고객사' },
+      'clients': { w: 580, h: 260, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
@@ -1134,26 +1134,21 @@
         `;
       } else if (key === 'clients') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px; color:#000080;">🏛️ 슈퍼플래닝 주요 수행 고객사 (Key Clients)</h3>
-          <p style="font-size:11.5px; color:#333; margin-bottom:10px;">국내 주요 대기업, 금융기관, 공공기관의 핵심 UX 리서치, 라이팅, 기획, 개발 프로젝트를 수행했습니다.</p>
-          
-          <div class="w95-box-sunken" style="background:#ffffff; padding:10px; border:2px solid #000; text-align:center; margin-bottom:10px;">
-            <img src="images/clients-logo.png" alt="슈퍼플래닝 주요 고객사 로고 모음" style="max-width:100%; height:auto; display:block; margin:0 auto; max-height:220px; object-fit:contain;">
-          </div>
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 금융기관, 공공기관의 핵심 UX 리서치, 라이팅, 기획, 개발 프로젝트를 수행했습니다.</p>
 
-          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:6px; font-size:11px; font-weight:bold; text-align:center;">
-            <div class="info-card" style="padding:4px 2px;">SK텔레콤</div>
-            <div class="info-card" style="padding:4px 2px;">현대자동차</div>
-            <div class="info-card" style="padding:4px 2px;">롯데그룹</div>
-            <div class="info-card" style="padding:4px 2px;">LG유플러스</div>
-            <div class="info-card" style="padding:4px 2px;">비씨카드</div>
-            <div class="info-card" style="padding:4px 2px;">CJ올리브네트웍스</div>
-            <div class="info-card" style="padding:4px 2px;">KB국민은행</div>
-            <div class="info-card" style="padding:4px 2px;">신한은행</div>
-            <div class="info-card" style="padding:4px 2px;">NH농협은행</div>
-            <div class="info-card" style="padding:4px 2px;">제일기획</div>
-            <div class="info-card" style="padding:4px 2px;">오스템임플란트</div>
-            <div class="info-card" style="padding:4px 2px;">경기도일자리재단</div>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
+            <div class="info-card" style="padding:10px 4px;">SK텔레콤</div>
+            <div class="info-card" style="padding:10px 4px;">현대자동차</div>
+            <div class="info-card" style="padding:10px 4px;">롯데그룹</div>
+            <div class="info-card" style="padding:10px 4px;">LG유플러스</div>
+            <div class="info-card" style="padding:10px 4px;">비씨카드</div>
+            <div class="info-card" style="padding:10px 4px;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:10px 4px;">KB국민은행</div>
+            <div class="info-card" style="padding:10px 4px;">신한은행</div>
+            <div class="info-card" style="padding:10px 4px;">NH농협은행</div>
+            <div class="info-card" style="padding:10px 4px;">제일기획</div>
+            <div class="info-card" style="padding:10px 4px;">오스템임플란트</div>
+            <div class="info-card" style="padding:10px 4px;">경기도일자리재단</div>
           </div>
         `;
       } else if (key === 'contact') {
