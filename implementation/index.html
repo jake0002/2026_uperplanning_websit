@@ -165,6 +165,20 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
     html, body { width: 100%; height: 100%; overflow: hidden; background-color: var(--bg); color: var(--win-fg); user-select: none; }
     
+    /* ALLOW FULL TEXT SELECTION & DRAG-COPY ON ALL POPUP WINDOW CONTENTS & TEXTUAL ELEMENTS */
+    .win, .w-body, .w-body *, #skyscraper, #skyscraper *, .info-card, .info-card *, .cmd-prompt, .cmd-prompt *, p, h1, h2, h3, h4, li, a, span {
+      user-select: text !important;
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+    }
+
+    /* Keep UI control buttons non-selectable for crisp OS feel */
+    .w95-btn, .w-title, .desktop-icon, .start-item, .gnb-link, #taskbar {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+    }
+
     /* Themes */
     body[data-theme="dark"] {
       --bg: var(--bg-dark);
