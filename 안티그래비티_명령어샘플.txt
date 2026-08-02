@@ -1,0 +1,86 @@
+이제부터 깃으로 버전관리해줘
+그리고 커밋 메시지를 한글로 모두 변경해줘 앞으로 커밋은 모두 한글로 알아보기 쉽게 작성해서 저장해라.
+항상 올리기 전에 버전관리를 해라.
+
+.gitignore 파일에 .pem 파일과 .env 파일 및 api키 등 보안사항은 반드시 포함해 줘
+
+========
+★이게 핵심이네!! 버셀, 수파베이스가 필요없는 이유
+
+PDF 파일 판매 페이지 만들어줘
+- 서버 접속 AWS.txt
+- 배포 위치 https://superplanning.blog/STORE/ <- 내 도메인 뒤에 /슬레쉬 영문텍스트 아무거나
+
+=============
+
+라이트/다크모드 테마를 기본으로 사용해라
+아이콘은 루시드아이콘을 사용해라
+이 규칙을 기억해라
+=====
+[SOLAPI KEY]
+- API키: NCSGXRX3REFBCRUH
+
+- API SECRET: FVOOABKXTF2D1HUCOFBNFMBTVZFXAMLO
+
+- AWS.txt 파일 참고해서 SMS 발송 도구 만들기
+- 발송기록은 MySQL에 저장, 개발은 PHP
+- https://superplanning.blog/SMS/ 에 배포
+- 발신 번호: 010-7220-3288 등록 완료
+- 발송 테스트: 수신번호 010-7220-3288
+
+===========
+MySQL DB, 테이블, 스키마, 데이터 등을
+확인 할 수 있는 MySQL 뷰어 앱을 만들어줘
+개발언어: PHP
+서버 정보: @AWS.txt
+배포 URL: superplanning.blog/DB/
+
+========
+
+오늘 작업내용을 마크다운으로 작성해줘
+
+----------
+
+웹사이트에 방문한 사람의 피드백을 받을 수 있는
+설문조사 페이지와 관리도구 만들어줘
+- 기술 스택: PHP + MySQL
+- 설문 문항: @설문.md
+- DB 이름: POLL
+- 서버 정보: @AWS.txt 참고해서 배포해
+- 배포 URL: superplanning.blog/POLL/
+
+--------------
+다크모드, 라이트 모드 테마 기능
+가상의 독서동호회 DB 만들자
+DB 이름: BOOKCLUB
+테이블: 회원 정보, 회원별 베스트도서
+회원정보 20명, 베스트도서 5권씩 입력해줘.
+
+======================
+
+2개의 도메인에 certbot 으로 인증서 설치해줘
+- 로그인: AWS.txt 참고
+- 인스턴스: AWS Lightsail LAMP
+- OS: Debian GNU/Linux 12
+- 도메인: www.superplanning.blog, superplanning.blog
+- 관리자 이메일: planfive@naver.com
+- HTTP 는 HTTPS 강제 리다이렉트
+- www.superplanning.blog 는 superplanning.blog 강제 리다이렉트
+
+https://superplanning.blog 에서
+현재 index.html 을 info.html 로 변경하고
+3D 파티클을 이용한 멋진 index.html 을
+새로 만들어서 info.html 을 연결해줘.
+
+gh 이용해서 jake0002/superplanning.blog 에 올려줘
+
+수정내역은 
+이제부터 깃으로 버전관리해줘
+그리고 커밋 메시지를 한글로 모두 변경해줘 앞으로 커밋은 모두 한글로 알아보기 쉽게 작성해서 저장해라.
+
+AWS.txt 참고해서
+- 웹서버의 웹폴더에 존재하는 파일을 볼 수 있는 파일 브라우저를 만들어줘
+- 수정, 삭제는 필요 없고 읽기 전용으로
+- 관리자 비번은 1234
+- 배포는 https://superplanning.blog/FILE/
+

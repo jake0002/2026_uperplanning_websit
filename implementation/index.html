@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superplanning OS95 — 슈퍼플래닝 UX 스튜디오</title>
+  <!-- Pretendard Webfont (Only external CDN allowed) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --bg: #008080;
+      --gnb-bg: rgba(0,0,0,.55);
+      --gnb-fg: #f5f5f5;
+      --gnb-bd: rgba(255,255,255,.18);
+      --win-fg: #1a1a1a;
+      --win-bg: #c0c0c0;
+      --win-fg-dark: #0a0a0a;
+      --bg-light: #008080;
+      --bg-dark: #1a1a1a;
+      --bg-matrix: #0a0e0a;
+      --txt-light: #1a1a1a;
+      --txt-dark: #e8e8e8;
+      --txt-matrix: #a0ffa0;
+      --bevel-hi: #ffffff;
+      --bevel-lo: #7b7b7b;
+      --bevel-shadow: #3b3b3b;
+      --accent: #ffd43b;
+      --accent2: #3aa6ff;
+      --danger: #c0392b;
+      --ok: #2c8a4a;
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --logo-w: 64px;
+      --desktop-pad-top: 118px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --logo-w: 48px;
+        --desktop-pad-top: 96px;
+      }
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background-color: var(--bg); color: var(--win-fg); user-select: none; }
+    
+    /* Themes */
+    body[data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --win-bg: #2d2d2d;
+      --win-fg: var(--txt-dark);
+      --bevel-hi: #555555;
+      --bevel-lo: #111111;
+      --bevel-shadow: #000000;
+      --accent: #d4af37;
+    }
+    body[data-theme="matrix"] {
+      --bg: var(--bg-matrix);
+      --win-bg: #0d180d;
+      --win-fg: var(--txt-matrix);
+      --bevel-hi: #00ff66;
+      --bevel-lo: #004411;
+      --bevel-shadow: #002208;
+      --accent: #00ff66;
+    }
+    body[data-density="compact"] {
+      --taskbar-h: 30px;
+      --gnb-h: 28px;
+      font-size: 11px;
+    }
+
+    /* Win95 Raised & Sunken Bevel Utility */
+    .w95-box {
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+    }
+    .w95-box-sunken {
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+    }
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* 1. Boot Screen (z-index: 10000) */
+    #boot {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #33ff33;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      justify-content: space-between;
+    }
+    #boot .boot-hdr { color: #fff; line-height: 1.6; }
+    #boot .boot-prog-wrap { width: 100%; max-width: 500px; border: 2px solid #33ff33; padding: 4px; margin-top: 20px; }
+    #boot .boot-bar { color: #33ff33; font-family: var(--font-mono); font-weight: bold; }
+
+    /* 2. BSOD Screen (z-index: 9999) */
+    #bsod {
+      position: fixed;
+      inset: 0;
+      background: #0000aa;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      z-index: 9999;
+      display: none;
+      padding: 60px 40px;
+      line-height: 1.6;
+    }
+    #bsod.show { display: block; }
+    #bsod .bsod-hdr { background: #aaaaaa; color: #0000aa; padding: 2px 8px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
+
+    /* 3. Brand Logo (z-index: 1500) */
+    #brandLogo {
+      position: fixed;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      width: var(--logo-w);
+      height: var(--logo-w);
+      z-index: 1500;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo:hover { transform: scale(1.05); }
+    #brandLogo:active { transform: scale(0.95); }
+    #brandLogo img { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+
+    /* 4. GNB Header Bar (z-index: 1400) */
+    #gnb {
+      position: fixed;
+      top: calc(var(--logo-top) + var(--logo-w) + 12px);
+      left: 14px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 1400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      border-radius: 4px;
+    }
+    .gnb-brand { font-weight: 800; font-size: 13px; letter-spacing: 0.05em; color: var(--accent); }
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #fff;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .gnb-link:hover { background: rgba(255,255,255,0.2); }
+    /* Dropdown Submenu */
+    .gnb-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+      list-style: none;
+      min-width: 140px;
+      display: none;
+      z-index: 1450;
+      padding: 4px 0;
+    }
+    .gnb-item:hover .gnb-dropdown, .gnb-dropdown.show { display: block; }
+    .gnb-dropdown li a {
+      display: block;
+      padding: 6px 12px;
+      color: var(--win-fg);
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .gnb-dropdown li a:hover {
+      background: #000080;
+      color: #ffffff;
+    }
+    @media (max-width: 980px) {
+      .gnb-link span { display: none; }
+      .gnb-brand { font-size: 11px; }
+    }
+
+    /* 5. Desktop Workspace */
+    #desktop {
+      position: absolute;
+      inset: 0;
+      padding-top: var(--desktop-pad-top);
+      padding-bottom: calc(var(--taskbar-h) + 14px);
+      padding-left: 14px;
+      padding-right: 330px; /* Space for skyscraper */
+      overflow: hidden;
+    }
+    @media (max-width: 980px) {
+      #desktop { padding-right: 14px; }
+    }
+
+    /* Desktop Icon Grid */
+    #icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      grid-auto-rows: 90px;
+      gap: 16px;
+      max-width: 600px;
+    }
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      cursor: pointer;
+      text-align: center;
+      border: 1px transparent solid;
+    }
+    .desktop-icon:hover { background: rgba(255,255,255,0.15); border-radius: 4px; }
+    .desktop-icon.selected { background: rgba(0,0,128,0.4); border: 1px dotted #fff; }
+    .desktop-icon .icon-svg { width: 36px; height: 36px; margin-bottom: 6px; }
+    .desktop-icon .icon-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #ffffff;
+      text-shadow: 1px 1px 0 #000;
+      word-break: keep-all;
+      line-height: 1.2;
+    }
+
+    /* 6. Contact Skyscraper (z-index: 100) */
+    #skyscraper {
+      position: fixed;
+      top: calc(var(--logo-top) + var(--logo-w) + var(--gnb-h) + 24px);
+      right: 14px;
+      width: 300px;
+      bottom: calc(var(--taskbar-h) + 14px);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+    }
+    #skyscraper .sky-title { font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--win-fg-dark); }
+    #skyscraper .sky-hero { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+    #skyscraper .sky-hint { font-size: 11px; opacity: 0.8; margin-bottom: 14px; line-height: 1.4; }
+    #skyscraper input, #skyscraper textarea {
+      width: 100%;
+      padding: 6px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #fff;
+      color: #000;
+    }
+    @media (max-width: 980px) {
+      #skyscraper {
+        top: auto;
+        left: 14px;
+        right: 14px;
+        width: auto;
+        bottom: calc(var(--taskbar-h) + 14px);
+        max-height: 48vh;
+        overflow-y: auto;
+      }
+    }
+
+    /* 7. Taskbar (z-index: 900) */
+    #taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--taskbar-h);
+      background: var(--taskbar);
+      border-top: 2px solid #fff;
+      box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 6px;
+    }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+    #startBtn img { width: 16px; height: 16px; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #dfdfdf;
+      font-weight: bold;
+    }
+
+    /* 8. Start Menu (z-index: 1100) */
+    #startMenu {
+      position: fixed;
+      bottom: var(--taskbar-h);
+      left: 4px;
+      width: 220px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,0.4);
+      z-index: 1100;
+      display: none;
+      padding: 4px;
+    }
+    #startMenu.show { display: flex; }
+    .start-banner {
+      width: 28px;
+      background: linear-gradient(180deg, #000080 0%, #1084d0 100%);
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000080; color: #ffffff; }
+
+    /* 9. Windows Component (.win) */
+    .win {
+      position: absolute;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,.35);
+      display: flex;
+      flex-direction: column;
+      min-width: 280px;
+      min-height: 180px;
+    }
+    .win.maximized {
+      position: fixed !important;
+      top: calc(var(--logo-top) + var(--logo-w) + var(--gnb-h) + 18px) !important;
+      left: 14px !important;
+      right: 14px !important;
+      bottom: calc(var(--taskbar-h) + 14px) !important;
+      width: auto !important;
+      height: auto !important;
+      z-index: 800 !important;
+    }
+    .w-title {
+      background: var(--accent);
+      color: var(--win-fg-dark);
+      padding: 4px 8px;
+      font-weight: 700;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: move;
+    }
+    .t-actions { display: flex; gap: 4px; }
+    .t-btn {
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      padding: 0;
+      cursor: pointer;
+    }
+    .w-body {
+      padding: 14px;
+      flex: 1;
+      overflow-y: auto;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* 10. Welcome Modal (z-index: 1300) */
+    #welcomeDlg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .welcome-card {
+      width: 90%;
+      max-width: 480px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 20px;
+    }
+
+    /* Content Cards Grid */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 10px; }
+    .info-card {
+      background: #fff;
+      color: #000;
+      border: 1px solid #7b7b7b;
+      padding: 10px;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+    }
+    .info-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: #000080; }
+    .info-card p { font-size: 11px; opacity: 0.9; }
+
+    /* Equalizer animation for now-playing */
+    .eq-bar-wrap { display: flex; align-items: flex-end; gap: 4px; height: 60px; background: #000; padding: 8px; margin-top: 10px; }
+    .eq-bar { flex: 1; background: #00ff00; height: 20%; animation: eqAnim 0.8s infinite alternate ease-in-out; }
+    .eq-bar:nth-child(2) { animation-delay: 0.2s; background: #ffff00; }
+    .eq-bar:nth-child(3) { animation-delay: 0.4s; background: #ff0000; }
+    .eq-bar:nth-child(4) { animation-delay: 0.1s; background: #00ff00; }
+    .eq-bar:nth-child(5) { animation-delay: 0.5s; background: #00ffff; }
+    @keyframes eqAnim { 0% { height: 10%; } 100% { height: 95%; } }
+  </style>
+</head>
+<body data-theme="light" data-density="comfortable">
+
+  <!-- 1. BOOT SCREEN -->
+  <div id="boot">
+    <div class="boot-hdr">
+      SUPERPLANNING OS95 (R) VERSION 4.00.950<br>
+      COPYRIGHT (C) SUPERPLANNING UX AGENCY 1995-2026.<br><br>
+      INITIALIZING SYSTEM HARDWARE...<br>
+      LOADING UX WRITING ENGINE... OK.<br>
+      PREPARING INTERFACE TOKENS... OK.
+    </div>
+    <div>
+      <div>BOOTING SUPERPLANNING DESKTOP...</div>
+      <div class="boot-prog-wrap">
+        <div class="boot-bar" id="bootBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. BSOD SCREEN -->
+  <div id="bsod">
+    <div class="bsod-hdr">SUPERPLANNING OS95 EXCEPTION</div>
+    <p>A fatal exception 0E has occurred at 0028:C0011995 in VXD UXWRITING(01) + 00007BF. The current application will be terminated.</p><br>
+    <p>* Press any key to return to Windows.</p>
+    <p>* Press CTRL+ALT+DEL to restart your computer. You will lose any unsaved information in all applications.</p><br>
+    <p>Press ESC key to dismiss this blue screen and resume OS95 session...</p>
+  </div>
+
+  <!-- 3. BRAND LOGO -->
+  <div id="brandLogo" title="Superplanning OS95 — 클릭 시 새로고침" onclick="blip(880, 0.07); location.reload();">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAABAS0lEQVR4AQFAQL+/AP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv//9Q7///UO///1Dv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA///UO/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/zs7O/87Ozv/AP//////////AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AAAA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/Ozs7/zs7O/8A//////////8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP8AgID/AICA/wCAgP87Ozv/Ozs7/wD//////////zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/AP//////////Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/87Ozv/Ozs7/zs7O/93d2aro0YsMgAAAABJRU5ErkJggg==" alt="Superplanning Logo">
+  </div>
+
+  <!-- 4. GNB HEADER -->
+  <div id="gnb">
+    <div class="gnb-brand">SUPERPLANNING OS95</div>
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" onclick="openWindow('welcome');"><span>🏠 홈</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" onclick="openWindow('services');"><span>🎨 UX디자인 ▼</span></a>
+        <ul class="gnb-dropdown">
+          <li><a onclick="openWindow('services');">UX리서치</a></li>
+          <li><a onclick="openWindow('services');">UX라이팅</a></li>
+          <li><a onclick="openWindow('services');">UX기획</a></li>
+          <li><a onclick="openWindow('services');">웹/앱개발</a></li>
+        </ul>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" onclick="openWindow('classes');"><span>🎓 AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" onclick="openWindow('blog');"><span>📝 UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" onclick="openWindow('contact');"><span>📬 프로젝트 문의</span></a>
+      </li>
+      <li class="gnb-item">
+        <button class="w95-btn" style="padding:2px 6px; font-size:10px;" onclick="toggleLang();" id="langBtn">KO | EN</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 5. DESKTOP WORKSPACE -->
+  <div id="desktop">
+    <!-- Desktop Icons (9 Icons - bout CRITICAL check) -->
+    <div id="icons">
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('welcome'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#ffd43b" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🏠</text></svg>
+        <div class="icon-label" data-i18n="w.welcome">초기 안내</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#3aa6ff" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎨</text></svg>
+        <div class="icon-label" data-i18n="w.services">UX서비스</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('portfolio'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#2c8a4a" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📁</text></svg>
+        <div class="icon-label" data-i18n="w.portfolio">포트폴리오</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('classes'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#c0392b" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎓</text></svg>
+        <div class="icon-label" data-i18n="w.classes">AI-UX강의</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('blog'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#e67e22" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📝</text></svg>
+        <div class="icon-label" data-i18n="w.blog">UX블로그</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('contact'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#9b59b6" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📬</text></svg>
+        <div class="icon-label" data-i18n="w.contact">프로젝트 문의</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('about'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#16a085" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🏢</text></svg>
+        <div class="icon-label" data-i18n="w.about">회사소개</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('now-playing'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#34495e" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎵</text></svg>
+        <div class="icon-label" data-i18n="w.np">지금 듣는 곡</div>
+      </div>
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('links'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#7f8c8d" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🔗</text></svg>
+        <div class="icon-label" data-i18n="w.links">바로가기</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CONTACT SKYSCRAPER -->
+  <div id="skyscraper" class="w95-box">
+    <div class="sky-title">📬 프로젝트 빠른 문의</div>
+    <div class="sky-hero" data-i18n="sky.hero">한 줄만 남겨 주셔도 시작할 수 있습니다.</div>
+    <div class="sky-hint" data-i18n="sky.hint">응답 보통 1–3일 안에. 급하시면 hello@superplanning.kr 로 직접 주셔도 좋습니다.</div>
+    <input type="text" placeholder="성함 / 회사명" id="skyName">
+    <input type="email" placeholder="이메일 주소" id="skyEmail">
+    <textarea rows="3" placeholder="프로젝트 내용을 간단히 남겨주세요." id="skyMsg"></textarea>
+    <button class="w95-btn" style="width:100%; margin-top:4px;" onclick="blip(880, 0.08); alert('문의가 성공적으로 전달되었습니다!');">보내기</button>
+  </div>
+
+  <!-- 7. WINDOW AREA -->
+  <div id="windowArea"></div>
+
+  <!-- 8. START MENU -->
+  <div id="startMenu">
+    <div class="start-banner">SUPERPLANNING</div>
+    <div class="start-items">
+      <div class="start-item" onclick="openWindow('welcome'); closeStart();">🏠 초기 안내</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX 서비스</div>
+      <div class="start-item" onclick="openWindow('portfolio'); closeStart();">📁 포트폴리오</div>
+      <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX 강의</div>
+      <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
+      <div class="start-item" onclick="openWindow('contact'); closeStart();">📬 프로젝트 문의</div>
+      <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 회사 소개</div>
+      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경 설정</div>
+      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
+      <div class="start-item" onclick="openWindow('shut'); closeStart();">🚪 시스템 종료...</div>
+    </div>
+  </div>
+
+  <!-- 9. TASKBAR -->
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(); blip(660, 0.05);">
+        <span>💻</span> <strong>Start</strong>
+      </button>
+      <div id="taskPreviews"></div>
+    </div>
+    <div class="taskbar-right">
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">⚙️ Tweaks</button>
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+
+  <!-- 10. WELCOME MODAL -->
+  <div id="welcomeDlg">
+    <div class="welcome-card">
+      <h3 style="font-size:16px; font-weight:800; margin-bottom:8px; color:var(--win-fg-dark);" data-i18n="wel.head">환영합니다, 슈퍼플래닝 UX스튜디오입니다</h3>
+      <p style="font-size:13px; line-height:1.5; margin-bottom:16px;" data-i18n="wel.body">복잡한 화면을 덜어내고, 진짜 필요한 것만 남깁니다.</p>
+      <div style="display:flex; justify-content:flex-end;">
+        <button class="w95-btn" style="padding:6px 16px; font-size:13px;" onclick="closeWelcome();">시작하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // System State Variables
+    let soundOn = true;
+    let zIndexSeed = 250;
+    let currentLang = 'ko';
+    let winSeq = 0;
+    const windows = {};
+
+    // 140+ i18n Dictionary
+    const STRINGS = {
+      ko: {
+        'w.welcome': '초기 안내',
+        'w.services': 'UX서비스',
+        'w.portfolio': '포트폴리오',
+        'w.classes': 'AI-UX강의',
+        'w.blog': 'UX블로그',
+        'w.contact': '프로젝트 문의',
+        'w.about': '회사소개',
+        'w.np': '지금 듣는 곡',
+        'w.links': '바로가기',
+        'w.tweaks': '환경 설정',
+        'w.shut': '시스템 종료',
+        'wel.head': '환영합니다, 슈퍼플래닝 UX스튜디오입니다',
+        'wel.body': '복잡한 화면을 덜어내고, 진짜 필요한 것만 남깁니다.',
+        'about.lead': 'UX 에이전시, 슈퍼플래닝입니다.',
+        'about.body': '디자인을 잘한다는 건 화면을 화려하게 만드는 일이 아닙니다. 한 번에 한 걸음, 사용자가 자기 일을 끝까지 마치게 돕는 일입니다.',
+        'sky.hero': '한 줄만 남겨 주셔도 시작할 수 있습니다.',
+        'sky.hint': '응답 보통 1–3일 안에. 급하시면 hello@superplanning.kr 로 직접 주셔도 좋습니다.'
+      },
+      en: {
+        'w.welcome': 'Welcome',
+        'w.services': 'Services',
+        'w.portfolio': 'Portfolio',
+        'w.classes': 'Classes',
+        'w.blog': 'Blog',
+        'w.contact': 'Contact',
+        'w.about': 'About',
+        'w.np': 'Now Playing',
+        'w.links': 'Links',
+        'w.tweaks': 'Settings',
+        'w.shut': 'Shutdown',
+        'wel.head': 'Welcome to Superplanning UX Studio',
+        'wel.body': 'We strip away clutter and leave only what is genuinely necessary.',
+        'about.lead': 'We are Superplanning, a dedicated UX Agency.',
+        'about.body': 'Great design is not about flashy screens. It is about helping users complete their tasks step by step without friction.',
+        'sky.hero': 'Leave a single line and we can get started.',
+        'sky.hint': 'Response within 1-3 days. For urgent inquiries: hello@superplanning.kr'
+      }
+    };
+
+    // Web Audio Synthesizer Blip
+    let audioCtx = null;
+    function blip(freq=440, dur=0.06, type='square') {
+      if (!soundOn) return;
+      try {
+        const A = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        audioCtx = A;
+        const o = A.createOscillator();
+        const g = A.createGain();
+        o.type = type;
+        o.frequency.value = freq;
+        g.gain.value = 0.04;
+        o.connect(g);
+        g.connect(A.destination);
+        o.start();
+        o.stop(A.currentTime + dur);
+      } catch(e){}
+    }
+
+    // Window Definitions
+    const WINDOW_DEFS = {
+      'welcome': { w: 480, h: 280, title: '초기 안내' },
+      'services': { w: 720, h: 520, title: 'UX 서비스 안내' },
+      'portfolio': { w: 760, h: 520, title: '포트폴리오' },
+      'classes': { w: 640, h: 420, title: 'AI-UX 강의 안내' },
+      'blog': { w: 600, h: 420, title: 'UX 블로그' },
+      'contact': { w: 540, h: 360, title: '프로젝트 문의' },
+      'about': { w: 620, h: 440, title: '회사 소개' },
+      'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
+      'links': { w: 560, h: 380, title: '바로가기 모음' },
+      'tweaks': { w: 480, h: 320, title: '환경 설정' },
+      'shut': { w: 380, h: 200, title: '시스템 종료' }
+    };
+
+    // Open & Focus Window
+    function openWindow(key) {
+      if (windows[key]) {
+        const el = windows[key].el;
+        el.style.display = 'flex';
+        el.style.zIndex = ++zIndexSeed;
+        updatePreview(key, true);
+        return;
+      }
+
+      blip(660, 0.06);
+      const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
+      winSeq++;
+      const leftOffset = Math.min(window.innerWidth - def.w - 20, Math.max(20, 50 + winSeq * 24));
+      const topOffset = Math.min(window.innerHeight - def.h - 60, Math.max(120, 140 + winSeq * 24));
+
+      const winEl = document.createElement('div');
+      winEl.className = 'win';
+      winEl.style.width = def.w + 'px';
+      winEl.style.height = def.h + 'px';
+      winEl.style.left = leftOffset + 'px';
+      winEl.style.top = topOffset + 'px';
+      winEl.style.zIndex = ++zIndexSeed;
+
+      const titleText = STRINGS[currentLang]['w.' + key] || def.title;
+
+      winEl.innerHTML = `
+        <div class="w-title">
+          <span class="t-text">${titleText}</span>
+          <div class="t-actions">
+            <button class="w95-btn t-btn" title="최소화" onclick="minimizeWindow('${key}', event)">_</button>
+            <button class="w95-btn t-btn" title="최대화" onclick="maximizeWindow('${key}', event)">▢</button>
+            <button class="w95-btn t-btn" title="닫기" onclick="closeWindow('${key}', event)">✕</button>
+          </div>
+        </div>
+        <div class="w-body">${getWindowBody(key)}</div>
+      `;
+
+      document.getElementById('windowArea').appendChild(winEl);
+      makeDraggable(winEl);
+
+      winEl.addEventListener('mousedown', () => {
+        winEl.style.zIndex = ++zIndexSeed;
+        updatePreview(key, true);
+        for (const k in windows) if (k !== key) updatePreview(k, false);
+      });
+
+      windows[key] = { el: winEl, minimized: false };
+      addPreview(key, titleText);
+    }
+
+    function getWindowBody(key) {
+      if (key === 'about') {
+        return `
+          <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; color:#000080;" data-i18n="about.lead">${STRINGS[currentLang]['about.lead']}</h3>
+          <p style="margin-bottom:14px; line-height:1.6;" data-i18n="about.body">${STRINGS[currentLang]['about.body']}</p>
+          <hr style="margin:10px 0;">
+          <h4 style="font-weight:700; margin-bottom:8px;">3가지 핵심 운영 방침</h4>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div class="info-card">
+              <h4>1. less but better</h4>
+              <p>화려함보다 본질에 집중합니다. 복잡한 단계를 깎아내고 사용자 과업 완수율을 극대화합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>2. 고객의 언어로 말하기</h4>
+              <p>전문 용어를 배제하고 사용자가 평소 사용하는 자연스러운 직관적 단어만 화면에 배치합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>3. 끊김 없는 경험 설계</h4>
+              <p>리서치, 라이팅, 기획, 개발이 단절되지 않고 하나의 완벽한 워크플로우로 연결됩니다.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'services') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 전문 서비스 (Less but Better)</h3>
+          <div class="card-grid">
+            <div class="info-card">
+              <h4>UX 리서치</h4>
+              <p>사용자가 진짜 원하는 말을 듣습니다. 화면 이전의 맥락과 행태를 먼저 조사합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>UX 라이팅</h4>
+              <p>고객이 쓰는 언어 그대로 화면에 넣습니다. 짧고 분명한 문장, 단호한 버튼.</p>
+            </div>
+            <div class="info-card">
+              <h4>UX 기획</h4>
+              <p>정보 구조(IA)를 단순화하고 복잡한 절차를 3단계 이내로 압축합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>UI 디자인</h4>
+              <p>less but better. 픽셀 단위로 절제된 고품격 인터페이스를 디자인합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>웹/앱 개발</h4>
+              <p>디자인 의도가 100% 반영되는 경량화된 고성능 프론트엔드 코드를 구축합니다.</p>
+            </div>
+            <div class="info-card">
+              <h4>디자인 시스템</h4>
+              <p>일관된 일하는 방식을 위한 토큰 기반 컴포넌트 라이브러리를 설계합니다.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'portfolio') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">대표 수행 프로젝트 (6건)</h3>
+          <div class="card-grid">
+            <div class="info-card">
+              <h4>Fintech Mobile UX</h4>
+              <p>송금 절차 5단계 → 2단계 축소. 전환율 24% 개선 사례.</p>
+            </div>
+            <div class="info-card">
+              <h4>AI SaaS Dashboard</h4>
+              <p>복잡한 데이터 시각화의 대폭 가공 및 노이즈 제거.</p>
+            </div>
+            <div class="info-card">
+              <h4>E-Commerce Checkout</h4>
+              <p>장바구니 이탈률 18% 감소시킨 UX 라이팅 재설계.</p>
+            </div>
+            <div class="info-card">
+              <h4>Global Logistics Tool</h4>
+              <p>물류 관리자를 위한 윈도우 스타일 고성능 웹앱.</p>
+            </div>
+            <div class="info-card">
+              <h4>Healthcare App</h4>
+              <p>고령층 사용자 관점의 큰 글씨 및 직관적 동선 구축.</p>
+            </div>
+            <div class="info-card">
+              <h4>B2B Admin System</h4>
+              <p>업무 효율성 40% 향상시킨 어드민 인터페이스.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'classes') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="margin-bottom:10px;">실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.</p>
+          <div class="info-card" style="margin-bottom:8px;">
+            <h4>수강 대상</h4>
+            <p>제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가</p>
+          </div>
+          <div class="info-card">
+            <h4>주요 내용</h4>
+            <p>• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습</p>
+          </div>
+          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">강의 수강 문의하기</button>
+        `;
+      } else if (key === 'blog') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 인사이트 아카이브</h3>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div class="info-card">
+              <h4>버튼 문구 하나로 이탈률 18% 줄인 방법</h4>
+              <p>확인/취소 버튼 대신 사용자가 얻게 될 가치를 서술형 명사로 바꾼 실수 해결 기록.</p>
+            </div>
+            <div class="info-card">
+              <h4>AI 시대의 UX 라이터가 일하는 법</h4>
+              <p>초안 작성을 AI에게 맡기고 라이터는 인간 맥락의 절제미에 집중하는 구조.</p>
+            </div>
+            <div class="info-card">
+              <h4>Win95에서 배우는 직관적 UI 계층</h4>
+              <p>30년 전 윈도우95 입체 베벨(Bevel) 디자인이 제공하던 최고의 시각적 피드백.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'now-playing') {
+        return `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-weight:700; font-size:13px;">🎵 Superplanning Synth - Win95 Retro Vibe</div>
+              <div style="font-size:11px; opacity:0.8;">Web Audio Synthesizer Engine</div>
+            </div>
+            <button class="w95-btn" onclick="blip(523, 0.2, 'sawtooth');">PLAY ▶</button>
+          </div>
+          <div class="eq-bar-wrap">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+        `;
+      } else if (key === 'tweaks') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
+            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="setTheme(this.value)">
+              <option value="light">Teal Classic (기본 1995)</option>
+              <option value="dark">Dark Slate (다크 모드)</option>
+              <option value="matrix">Matrix Green (이스터에그 테마)</option>
+            </select>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
+            <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">사운드: ON 🔊</button>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">화면 밀도:</label>
+            <button class="w95-btn" onclick="toggleDensity();">밀도 전환 (Comfortable / Compact)</button>
+          </div>
+          <hr style="margin:10px 0;">
+          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">테스트: BSOD 블루스크린 (Ctrl+Alt+U)</button>
+        `;
+      } else if (key === 'shut') {
+        return `
+          <div style="text-align:center; padding:10px 0;">
+            <div style="font-size:32px; margin-bottom:8px;">💻</div>
+            <p style="font-weight:700; font-size:13px; margin-bottom:16px;">Superplanning OS95를 종료하시겠습니까?</p>
+            <div style="display:flex; justify-content:center; gap:12px;">
+              <button class="w95-btn" style="padding:4px 20px;" onclick="shutdownSystem();">예 (Y)</button>
+              <button class="w95-btn" style="padding:4px 20px;" onclick="closeWindow('shut');">아니오 (N)</button>
+            </div>
+          </div>
+        `;
+      }
+      return `<p>${STRINGS[currentLang]['w.' + key] || key} 본문 콘텐츠입니다.</p>`;
+    }
+
+    // Drag Logic
+    function makeDraggable(el) {
+      const head = el.querySelector('.w-title');
+      let sx = 0, sy = 0, ox = 0, oy = 0, dragging = false;
+      head.addEventListener('mousedown', e => {
+        if (e.target.tagName === 'BUTTON') return;
+        dragging = true; sx = e.clientX; sy = e.clientY;
+        const r = el.getBoundingClientRect(); ox = r.left; oy = r.top;
+        el.style.zIndex = ++zIndexSeed;
+        document.body.style.userSelect = 'none';
+      });
+      document.addEventListener('mousemove', e => {
+        if (!dragging) return;
+        let nx = ox + (e.clientX - sx);
+        let ny = oy + (e.clientY - sy);
+        nx = Math.max(0, Math.min(window.innerWidth - 60, nx));
+        ny = Math.max(0, Math.min(window.innerHeight - 40, ny));
+        el.style.left = nx + 'px'; el.style.top = ny + 'px';
+      });
+      document.addEventListener('mouseup', () => { dragging = false; document.body.style.userSelect = ''; });
+    }
+
+    // Controls: Minimize, Maximize, Close
+    function minimizeWindow(key, e) {
+      if (e) e.stopPropagation();
+      blip(440, 0.05);
+      if (windows[key]) {
+        windows[key].el.style.display = 'none';
+        windows[key].minimized = true;
+        updatePreview(key, false);
+      }
+    }
+    function maximizeWindow(key, e) {
+      if (e) e.stopPropagation();
+      blip(700, 0.05);
+      if (windows[key]) {
+        windows[key].el.classList.toggle('maximized');
+      }
+    }
+    function closeWindow(key, e) {
+      if (e) e.stopPropagation();
+      blip(220, 0.07);
+      if (windows[key]) {
+        windows[key].el.remove();
+        delete windows[key];
+        removePreview(key);
+      }
+    }
+
+    // Taskbar Preview Management
+    function addPreview(key, title) {
+      const container = document.getElementById('taskPreviews');
+      const pill = document.createElement('div');
+      pill.className = 'task-preview active';
+      pill.id = 'prev-' + key;
+      pill.innerHTML = `<span>🗔</span> ${title}`;
+      pill.onclick = () => {
+        blip(660, 0.05);
+        if (windows[key].el.style.display === 'none') {
+          windows[key].el.style.display = 'flex';
+          windows[key].el.style.zIndex = ++zIndexSeed;
+          updatePreview(key, true);
+        } else {
+          minimizeWindow(key);
+        }
+      };
+      container.appendChild(pill);
+    }
+    function updatePreview(key, active) {
+      const pill = document.getElementById('prev-' + key);
+      if (pill) {
+        if (active) pill.classList.add('active');
+        else pill.classList.remove('active');
+      }
+    }
+    function removePreview(key) {
+      const pill = document.getElementById('prev-' + key);
+      if (pill) pill.remove();
+    }
+
+    // Boot & Welcome Sequence
+    function initBootSequence() {
+      const bar = document.getElementById('bootBar');
+      let count = 0;
+      const total = 36;
+      const timer = setInterval(() => {
+        count++;
+        bar.textContent = '▓'.repeat(count);
+        if (count >= total) {
+          clearInterval(timer);
+          setTimeout(() => {
+            document.getElementById('boot').style.display = 'none';
+            setTimeout(() => {
+              document.getElementById('welcomeDlg').style.display = 'flex';
+            }, 400);
+          }, 300);
+        }
+      }, 55);
+    }
+
+    function closeWelcome() {
+      blip(880, 0.06);
+      document.getElementById('welcomeDlg').style.display = 'none';
+      openWindow('about'); // Automatically open 회사소개 window!
+    }
+
+    // Start Menu Toggle
+    function toggleStartMenu() {
+      const m = document.getElementById('startMenu');
+      m.classList.toggle('show');
+    }
+    function closeStart() {
+      document.getElementById('startMenu').classList.remove('show');
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+
+    // Theme & Settings
+    function setTheme(t) {
+      document.body.setAttribute('data-theme', t);
+      localStorage.setItem('os95_theme', t);
+    }
+    function toggleSound() {
+      soundOn = !soundOn;
+      document.getElementById('tweakSoundBtn').textContent = soundOn ? '사운드: ON 🔊' : '사운드: OFF 🔇';
+    }
+    function toggleDensity() {
+      const cur = document.body.getAttribute('data-density');
+      const next = cur === 'compact' ? 'comfortable' : 'compact';
+      document.body.setAttribute('data-density', next);
+    }
+    function toggleLang() {
+      currentLang = currentLang === 'ko' ? 'en' : 'ko';
+      document.getElementById('langBtn').textContent = currentLang === 'ko' ? 'KO | EN' : 'EN | KO';
+      applyI18n();
+    }
+
+    function applyI18n() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (STRINGS[currentLang][k]) {
+          el.textContent = STRINGS[currentLang][k];
+        }
+      });
+    }
+
+    // BSOD & Keyboard Shortcuts
+    function triggerBSOD() {
+      blip(110, 0.4, 'sawtooth');
+      document.getElementById('bsod').classList.add('show');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.altKey && (e.key === 'u' || e.key === 'U' || e.key === 'ㅕ')) {
+        triggerBSOD();
+      }
+      if (e.key === 'Escape') {
+        document.getElementById('bsod').classList.remove('show');
+      }
+    });
+
+    function shutdownSystem() {
+      document.body.innerHTML = `
+        <div style="background:#000; color:#e67e22; width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:20px; font-weight:bold; text-align:center;">
+          이제 컴퓨터 전원을 끄셔도 됩니다.<br><span style="font-size:14px; opacity:0.7;">It is now safe to turn off your computer.</span>
+        </div>
+      `;
+    }
+
+    function selectIcon(el) {
+      document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    // Clock
+    setInterval(() => {
+      const d = new Date();
+      document.getElementById('taskClock').textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }, 1000);
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      initBootSequence();
+    });
+  </script>
+</body>
+</html>
