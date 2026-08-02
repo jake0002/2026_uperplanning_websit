@@ -669,6 +669,14 @@
         <p>정보 구조를 단순화하고 경량화된 고성능 프론트엔드 웹/앱을 개발합니다.</p>
       </article>
       <article>
+        <h3>UX 컨설팅</h3>
+        <p>서비스의 문제점을 정밀 진단하고 실질적인 UX 개선 전략과 로드맵을 수립합니다.</p>
+      </article>
+      <article>
+        <h3>AI-UX 강의</h3>
+        <p>생성형 AI와 UX를 결합하여 실무 생산성을 획기적으로 올리는 맞춤형 기업 강의를 제공합니다.</p>
+      </article>
+      <article>
         <h3>AI-UX 커리큘럼</h3>
         <p>LLM 기반 UX 라이팅 자동화 프롬프팅 및 AI 프로토타이핑 실전 강의를 진행합니다.</p>
       </article>
@@ -1007,7 +1015,7 @@
 
     const WINDOW_DEFS = {
       'welcome': { w: 480, h: 280, title: '초기 안내' },
-      'services': { w: 580, h: 380, title: 'UX 서비스' },
+      'services': { w: 580, h: 420, title: 'UX 서비스' },
       'portfolio': { w: 760, h: 480, title: '포트폴리오' },
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
@@ -1140,22 +1148,30 @@
       } else if (key === 'services') {
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">이런 서비스를 제공합니다.</h3>
-          <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
-            <div class="info-card">
+          <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:8px;">
+            <div class="info-card" style="padding:8px 10px;">
               <h4>UX 리서치</h4>
               <p>사용자가 진짜 원하는 말을 듣습니다. 화면 이전의 맥락과 행태를 먼저 조사합니다.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" style="padding:8px 10px;">
               <h4>UX 라이팅</h4>
               <p>고객이 쓰는 언어 그대로 화면에 넣습니다. 짧고 분명한 문장, 단호한 버튼.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" style="padding:8px 10px;">
               <h4>UX 기획 / 디자인</h4>
               <p>정보 구조(IA)를 단순화하고 픽셀 단위로 절제된 고품격 인터페이스를 디자인합니다.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" style="padding:8px 10px;">
               <h4>웹 / 앱 개발</h4>
               <p>디자인 의도가 100% 반영되는 경량화된 고성능 프론트엔드 코드를 구축합니다.</p>
+            </div>
+            <div class="info-card" style="padding:8px 10px;">
+              <h4>UX 컨설팅</h4>
+              <p>서비스의 문제점을 정밀 진단하고 실질적인 UX 개선 전략과 로드맵을 수립합니다.</p>
+            </div>
+            <div class="info-card" style="padding:8px 10px;">
+              <h4>AI-UX 강의</h4>
+              <p>생성형 AI와 UX를 결합하여 실무 생산성을 획기적으로 올리는 맞춤형 기업 강의를 제공합니다.</p>
             </div>
           </div>
         `;
