@@ -816,14 +816,14 @@
         <div class="icon-label">쓰레드</div>
       </div>
 
-      <!-- 7. 유튜브 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="window.open('https://youtube.com', '_blank'); blip(880, 0.05);">
+      <!-- 7. 소개영상 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('intro-video'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#ff0000" rx="4"/>
           <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="3"/>
           <path d="M15 13l9 5-9 5z" fill="#ff0000"/>
         </svg>
-        <div class="icon-label">유튜브</div>
+        <div class="icon-label">소개영상</div>
       </div>
     </div>
   </div>
@@ -871,7 +871,7 @@
       <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
       <div class="start-item" onclick="window.open('https://instagram.com','_blank'); closeStart();">📷 인스타그램</div>
       <div class="start-item" onclick="window.open('https://threads.net','_blank'); closeStart();">🧵 쓰레드</div>
-      <div class="start-item" onclick="window.open('https://youtube.com','_blank'); closeStart();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">🎬 슈퍼플래닝 소개영상</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📬 프로젝트 문의 &amp; 오시는길</div>
       <div class="start-item" onclick="downloadCompanyBrochure(); closeStart();">📄 회사소개서 받기</div>
       <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경 설정</div>
