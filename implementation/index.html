@@ -812,7 +812,7 @@
       </div>
 
       <!-- 6. 쓰레드 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="window.open('https://threads.net', '_blank'); blip(880, 0.05);">
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('threads'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
@@ -876,7 +876,7 @@
       <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX 강의</div>
       <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
       <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
-      <div class="start-item" onclick="window.open('https://threads.net','_blank'); closeStart();">🧵 쓰레드</div>
+      <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); closeStart();">🎬 슈퍼플래닝 소개영상</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📬 프로젝트 문의 &amp; 오시는길</div>
       <div class="start-item" onclick="downloadCompanyBrochure(); closeStart();">📄 회사소개서 받기</div>
@@ -926,6 +926,7 @@
         'w.clients': '주요 고객사',
         'w.intro-video': '슈퍼플래닝 소개영상',
         'w.instagram': '인스타그램',
+        'w.threads': '쓰레드',
         'w.np': '지금 듣는 곡',
         'w.links': '바로가기',
         'w.tweaks': '환경 설정',
@@ -1016,6 +1017,7 @@
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
       'instagram': { w: 580, h: 480, title: '인스타그램' },
+      'threads': { w: 580, h: 480, title: '쓰레드' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
@@ -1344,6 +1346,31 @@
             <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
               <span style="font-weight:bold; color:#d6249f;">📸 @ux_superplanning</span>
               <span>슈퍼플래닝 공식 인스타그램</span>
+            </div>
+          </div>
+        `;
+      } else if (key === 'threads') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold;">Address:</span>
+              <input type="text" readonly value="https://www.threads.net/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000;">
+              <a href="https://www.threads.net/@ux_superplanning" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+            </div>
+
+            <div style="flex:1; min-height:350px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#fafafa; position:relative; overflow:hidden;">
+              <iframe 
+                src="https://www.threads.net/@ux_superplanning" 
+                style="width:100%; height:100%; border:0; background:#fff;" 
+                allowtransparency="true"
+                frameborder="0"
+                title="Superplanning Threads">
+              </iframe>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000;">🧵 @ux_superplanning</span>
+              <span>슈퍼플래닝 공식 쓰레드</span>
             </div>
           </div>
         `;
