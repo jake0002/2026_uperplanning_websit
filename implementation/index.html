@@ -163,7 +163,8 @@
 
     /* Reset & Base */
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
-    html, body { width: 100%; min-height: 100vh; height: auto; overflow-x: hidden; overflow-y: auto; background-color: var(--bg); color: var(--win-fg); user-select: none; }
+    html { height: auto !important; min-height: 100vh; overflow-x: hidden; overflow-y: auto !important; }
+    body { width: 100%; height: auto !important; min-height: 100vh; overflow-x: hidden; overflow-y: visible !important; background-color: var(--bg); color: var(--win-fg); user-select: none; }
     
     /* ALLOW FULL TEXT SELECTION & DRAG-COPY ON ALL POPUP WINDOW CONTENTS & TEXTUAL ELEMENTS */
     .win, .w-body, .w-body *, #skyscraper, #skyscraper *, .info-card, .info-card *, .cmd-prompt, .cmd-prompt *, p, h1, h2, h3, h4, li, a, span {
@@ -317,7 +318,7 @@
       left: var(--logo-left);
       height: var(--gnb-h);
       padding: 4px 14px;
-      z-index: 1500;
+      z-index: 3300;
       cursor: pointer;
       background: var(--accent);
       color: #000;
@@ -344,7 +345,7 @@
       color: var(--gnb-fg);
       border: 1px solid var(--gnb-bd);
       backdrop-filter: blur(8px);
-      z-index: 1400;
+      z-index: 3200;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -380,9 +381,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      min-height: 100vh;
-      padding-bottom: 120px;
-      overflow: visible;
+      min-height: 120vh;
+      padding-bottom: 240px;
+      overflow: visible !important;
     }
     #iconsArea {
       position: fixed;
@@ -465,7 +466,7 @@
       }
     }
 
-    /* 7. Taskbar (z-index: 900) */
+    /* 7. Taskbar (z-index: 3000) */
     #taskbar {
       position: fixed;
       bottom: 0;
@@ -475,7 +476,7 @@
       background: var(--taskbar);
       border-top: 2px solid #fff;
       box-shadow: inset 0 1px 0 #7b7b7b;
-      z-index: 900;
+      z-index: 3000;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -508,7 +509,7 @@
       font-weight: bold;
     }
 
-    /* 8. Start Menu (z-index: 1100) */
+    /* 8. Start Menu (z-index: 3100) */
     #startMenu {
       position: fixed;
       bottom: var(--taskbar-h);
@@ -517,7 +518,7 @@
       background: var(--win-bg);
       border: 2px solid #000;
       box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,0.4);
-      z-index: 1100;
+      z-index: 3100;
       display: none;
       padding: 4px;
     }
@@ -548,10 +549,10 @@
     }
     .start-item:hover { background: #000080; color: #ffffff; }
 
-    /* 9. Windows Component (.win) - ALWAYS RESTRICTED BELOW ICON BAR */
+    /* 9. Windows Component (.win) - RESTRICTED BELOW GNB & TASKBAR */
     #windowArea {
       position: relative;
-      z-index: 2000;
+      z-index: 1000;
       width: 100%;
     }
     .win {
@@ -995,7 +996,7 @@
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 580, h: 440, title: '찾아오시는 길 & 문의' },
       'about': { w: 580, h: 460, title: '회사 소개' },
-      'clients': { w: 580, h: 320, title: '주요 고객사' },
+      'clients': { w: 580, h: 280, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
@@ -1013,6 +1014,7 @@
         el.style.display = 'flex';
         el.style.zIndex = ++zIndexSeed;
         updatePreview(key, true);
+        updateScrollHeight();
         return;
       }
 
@@ -1059,6 +1061,7 @@
 
       windows[key] = { el: winEl, minimized: false };
       addPreview(key, titleText);
+      updateScrollHeight();
     }
 
     function getWindowBody(key) {
@@ -1298,6 +1301,26 @@
       return `<p>${STRINGS[currentLang]['w.' + key] || key} 본문 콘텐츠입니다.</p>`;
     }
 
+    function updateScrollHeight() {
+      let maxBottom = window.innerHeight;
+      for (const k in windows) {
+        const win = windows[k];
+        if (win && win.el && win.el.style.display !== 'none' && !win.el.classList.contains('maximized')) {
+          const top = parseInt(win.el.style.top, 10) || 0;
+          const height = win.el.offsetHeight || 300;
+          const bottom = top + height;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
+      }
+      const targetHeight = maxBottom + 160;
+      const desktop = document.getElementById('desktop');
+      if (desktop) {
+        desktop.style.minHeight = targetHeight + 'px';
+      }
+    }
+
     function makeDraggable(el) {
       const head = el.querySelector('.w-title');
       let sx = 0, sy = 0, ox = 0, oy = 0, dragging = false;
@@ -1314,10 +1337,17 @@
         let nx = ox + (e.clientX - sx);
         let ny = oy + (e.clientY - sy);
         nx = Math.max(0, Math.min(window.innerWidth - 60, nx));
-        ny = Math.max(minTop, Math.min(window.innerHeight - 40, ny));
+        ny = Math.max(minTop, ny);
         el.style.left = nx + 'px'; el.style.top = ny + 'px';
+        updateScrollHeight();
       });
-      document.addEventListener('mouseup', () => { dragging = false; document.body.style.userSelect = ''; });
+      document.addEventListener('mouseup', () => {
+        if (dragging) {
+          dragging = false;
+          document.body.style.userSelect = '';
+          updateScrollHeight();
+        }
+      });
     }
 
     function minimizeWindow(key, e) {
@@ -1327,6 +1357,7 @@
         windows[key].el.style.display = 'none';
         windows[key].minimized = true;
         updatePreview(key, false);
+        updateScrollHeight();
       }
     }
     function maximizeWindow(key, e) {
@@ -1334,6 +1365,7 @@
       blip(700, 0.05);
       if (windows[key]) {
         windows[key].el.classList.toggle('maximized');
+        updateScrollHeight();
       }
     }
     function closeWindow(key, e) {
@@ -1343,6 +1375,7 @@
         windows[key].el.remove();
         delete windows[key];
         removePreview(key);
+        updateScrollHeight();
       }
     }
 
@@ -1361,6 +1394,7 @@
         } else {
           minimizeWindow(key);
         }
+        updateScrollHeight();
       };
       container.appendChild(pill);
     }
@@ -1385,9 +1419,11 @@
       } else {
         openWindow('about', { left: 20, top: minTop });
         openWindow('services', { left: 630, top: minTop });
-        openWindow('clients', { left: 20, top: minTop + 484 });
+        openWindow('clients', { left: 630, top: minTop + 400 });
       }
+      updateScrollHeight();
     }
+    window.addEventListener('resize', updateScrollHeight);
 
     function toggleStartMenu() {
       const m = document.getElementById('startMenu');
