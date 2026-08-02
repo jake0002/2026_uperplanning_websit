@@ -896,6 +896,11 @@
   <script>
     let soundOn = true;
     let zIndexSeed = 250;
+    function getNextZIndex() {
+      zIndexSeed++;
+      if (zIndexSeed > 800) zIndexSeed = 250;
+      return zIndexSeed;
+    }
     let currentLang = 'ko';
     let winSeq = 0;
     const windows = {};
@@ -1012,9 +1017,11 @@
       if (windows[key]) {
         const el = windows[key].el;
         el.style.display = 'flex';
-        el.style.zIndex = ++zIndexSeed;
+        el.style.zIndex = getNextZIndex();
         updatePreview(key, true);
+        for (const k in windows) if (k !== key) updatePreview(k, false);
         updateScrollHeight();
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
       }
 
@@ -1023,10 +1030,12 @@
       winSeq++;
       const minTop = getMinWindowTop();
       
-      let leftOffset = customPos && customPos.left !== undefined ? customPos.left : Math.min(window.innerWidth - def.w - 20, Math.max(20, 40 + (winSeq % 6) * 20));
+      let leftOffset = customPos && customPos.left !== undefined 
+        ? customPos.left 
+        : Math.min(window.innerWidth - def.w - 20, Math.max(20, 20 + ((winSeq - 1) % 4) * 30));
       let topOffset = customPos && customPos.top !== undefined 
         ? customPos.top 
-        : Math.min(window.innerHeight - def.h - 50, Math.max(minTop, minTop + 10 + (winSeq % 6) * 16));
+        : minTop + Math.floor((winSeq - 1) / 2) * 220 + ((winSeq - 1) % 2) * 40;
 
       const winEl = document.createElement('div');
       winEl.className = 'win';
@@ -1034,7 +1043,7 @@
       winEl.style.height = def.h + 'px';
       winEl.style.left = leftOffset + 'px';
       winEl.style.top = topOffset + 'px';
-      winEl.style.zIndex = ++zIndexSeed;
+      winEl.style.zIndex = getNextZIndex();
 
       const titleText = STRINGS[currentLang]['w.' + key] || def.title;
 
@@ -1054,7 +1063,7 @@
       makeDraggable(winEl);
 
       winEl.addEventListener('mousedown', () => {
-        winEl.style.zIndex = ++zIndexSeed;
+        winEl.style.zIndex = getNextZIndex();
         updatePreview(key, true);
         for (const k in windows) if (k !== key) updatePreview(k, false);
       });
@@ -1307,18 +1316,20 @@
         const win = windows[k];
         if (win && win.el && win.el.style.display !== 'none' && !win.el.classList.contains('maximized')) {
           const top = parseInt(win.el.style.top, 10) || 0;
-          const height = win.el.offsetHeight || 300;
+          const height = win.el.offsetHeight || win.el.getBoundingClientRect().height || 300;
           const bottom = top + height;
           if (bottom > maxBottom) {
             maxBottom = bottom;
           }
         }
       }
-      const targetHeight = maxBottom + 160;
+      const targetHeight = maxBottom + 200;
       const desktop = document.getElementById('desktop');
-      if (desktop) {
-        desktop.style.minHeight = targetHeight + 'px';
-      }
+      const winArea = document.getElementById('windowArea');
+      if (desktop) desktop.style.minHeight = targetHeight + 'px';
+      if (winArea) winArea.style.minHeight = targetHeight + 'px';
+      document.body.style.minHeight = targetHeight + 'px';
+      document.documentElement.style.minHeight = targetHeight + 'px';
     }
 
     function makeDraggable(el) {
@@ -1328,7 +1339,7 @@
         if (e.target.tagName === 'BUTTON') return;
         dragging = true; sx = e.clientX; sy = e.clientY;
         const r = el.getBoundingClientRect(); ox = r.left; oy = r.top;
-        el.style.zIndex = ++zIndexSeed;
+        el.style.zIndex = getNextZIndex();
         document.body.style.userSelect = 'none';
       });
       document.addEventListener('mousemove', e => {
@@ -1389,8 +1400,9 @@
         blip(660, 0.05);
         if (windows[key].el.style.display === 'none') {
           windows[key].el.style.display = 'flex';
-          windows[key].el.style.zIndex = ++zIndexSeed;
+          windows[key].el.style.zIndex = getNextZIndex();
           updatePreview(key, true);
+          windows[key].el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
           minimizeWindow(key);
         }
@@ -1414,8 +1426,8 @@
       const minTop = getMinWindowTop();
       if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
-        openWindow('services', { left: 24, top: minTop + 200 });
-        openWindow('clients', { left: 14, top: minTop + 400 });
+        openWindow('services', { left: 14, top: minTop + 480 });
+        openWindow('clients', { left: 14, top: minTop + 900 });
       } else {
         openWindow('about', { left: 20, top: minTop });
         openWindow('services', { left: 630, top: minTop });
