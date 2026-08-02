@@ -163,7 +163,7 @@
 
     /* Reset & Base */
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
-    html, body { width: 100%; height: 100%; overflow: hidden; background-color: var(--bg); color: var(--win-fg); user-select: none; }
+    html, body { width: 100%; min-height: 100vh; height: auto; overflow-x: hidden; overflow-y: auto; background-color: var(--bg); color: var(--win-fg); user-select: none; }
     
     /* ALLOW FULL TEXT SELECTION & DRAG-COPY ON ALL POPUP WINDOW CONTENTS & TEXTUAL ELEMENTS */
     .win, .w-body, .w-body *, #skyscraper, #skyscraper *, .info-card, .info-card *, .cmd-prompt, .cmd-prompt *, p, h1, h2, h3, h4, li, a, span {
@@ -377,8 +377,12 @@
     /* 5. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
     #desktop {
       position: absolute;
-      inset: 0;
-      overflow: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      padding-bottom: 120px;
+      overflow: visible;
     }
     #iconsArea {
       position: fixed;
@@ -970,7 +974,7 @@
       
       let leftOffset = customPos && customPos.left !== undefined ? customPos.left : Math.min(window.innerWidth - def.w - 20, Math.max(20, 40 + (winSeq % 6) * 20));
       let topOffset = customPos && customPos.top !== undefined 
-        ? Math.min(Math.max(minTop, customPos.top), Math.max(minTop, window.innerHeight - def.h - 40)) 
+        ? customPos.top 
         : Math.min(window.innerHeight - def.h - 50, Math.max(minTop, minTop + 10 + (winSeq % 6) * 16));
 
       const winEl = document.createElement('div');
@@ -1288,12 +1292,12 @@
       const minTop = getMinWindowTop();
       if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
-        openWindow('intro-video', { left: 20, top: minTop + 120 });
-        openWindow('services', { left: 24, top: minTop + 240 });
+        openWindow('services', { left: 24, top: minTop + 180 });
+        openWindow('intro-video', { left: 14, top: minTop + 360 });
       } else {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 518, top: minTop });
-        openWindow('intro-video', { left: 40, top: minTop + 160 });
+        openWindow('intro-video', { left: 24, top: minTop + 240 });
       }
     }
 
