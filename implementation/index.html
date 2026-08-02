@@ -484,6 +484,9 @@
     }
     .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
     .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    @media (max-width: 640px) {
+      #taskWeather { display: none !important; }
+    }
     #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
     #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
     .task-preview {
@@ -889,8 +892,9 @@
       <div id="taskPreviews"></div>
     </div>
     <div class="taskbar-right">
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">⚙️ Tweaks</button>
+      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">⚙️ 환경설정</button>
     </div>
   </div>
 
@@ -1549,8 +1553,44 @@
       document.getElementById('taskClock').textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     }, 1000);
 
+    function initWeatherAndLocation() {
+      const el = document.getElementById('taskWeather');
+      if (!el) return;
+      el.textContent = '📍 서울 ☀️ 24°C';
+
+      fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+          const city = data.city || '서울';
+          const lat = data.latitude || 37.5665;
+          const lon = data.longitude || 126.9780;
+          const apiKey = '4e916054f4b0e6b00e1a5de268b7fc25';
+          return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=kr&appid=${apiKey}`)
+            .then(res => res.json())
+            .then(wData => {
+              if (wData && wData.main && wData.weather && wData.weather[0]) {
+                const temp = Math.round(wData.main.temp);
+                const iconCode = wData.weather[0].icon;
+                let iconEmoji = '☀️';
+                if (iconCode.includes('02') || iconCode.includes('03') || iconCode.includes('04')) iconEmoji = '⛅';
+                else if (iconCode.includes('09') || iconCode.includes('10')) iconEmoji = '🌧️';
+                else if (iconCode.includes('11')) iconEmoji = '⚡';
+                else if (iconCode.includes('13')) iconEmoji = '❄️';
+                else if (iconCode.includes('50')) iconEmoji = '🌫️';
+
+                const cityNameKo = (city === 'Seoul') ? '서울' : (city === 'Hanam' || city === 'Hanam-si' ? '하남' : city);
+                el.textContent = `📍 ${cityNameKo} ${iconEmoji} ${temp}°C`;
+              }
+            });
+        })
+        .catch(() => {
+          el.textContent = '📍 서울 ☀️ 24°C';
+        });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       initDirectAccess();
+      initWeatherAndLocation();
     });
   </script>
 </body>
