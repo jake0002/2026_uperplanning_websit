@@ -274,23 +274,10 @@
       border: 0;
     }
 
-    /* 1. Boot Screen (z-index: 10000) */
+    /* 1. Boot Screen (Disabled for direct access) */
     #boot {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      color: #33ff33;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      padding: 40px;
-      justify-content: space-between;
+      display: none !important;
     }
-    #boot .boot-hdr { color: #fff; line-height: 1.6; }
-    #boot .boot-prog-wrap { width: 100%; max-width: 500px; border: 2px solid #33ff33; padding: 4px; margin-top: 20px; }
-    #boot .boot-bar { color: #33ff33; font-family: var(--font-mono); font-weight: bold; }
 
     /* 2. BSOD Screen (z-index: 9999) */
     #bsod {
@@ -603,23 +590,9 @@
       line-height: 1.55;
     }
 
-    /* 10. Welcome Modal (z-index: 1300) */
+    /* 10. Welcome Modal (Disabled for direct access) */
     #welcomeDlg {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1300;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .welcome-card {
-      width: 90%;
-      max-width: 480px;
-      background: var(--win-bg);
-      border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
-      padding: 20px;
+      display: none !important;
     }
 
     /* Content Cards Grid */
@@ -697,24 +670,10 @@
     </div>
   </noscript>
 
-  <!-- 1. BOOT SCREEN -->
-  <div id="boot">
-    <div class="boot-hdr">
-      SUPERPLANNING OS95 (R) VERSION 4.00.950<br>
-      COPYRIGHT (C) SUPERPLANNING UX AGENCY 1995-2026.<br><br>
-      INITIALIZING SYSTEM HARDWARE...<br>
-      LOADING UX WRITING ENGINE... OK.<br>
-      PREPARING INTERFACE TOKENS... OK.
-    </div>
-    <div>
-      <div>BOOTING SUPERPLANNING DESKTOP...</div>
-      <div class="boot-prog-wrap">
-        <div class="boot-bar" id="bootBar"></div>
-      </div>
-    </div>
-  </div>
+  <!-- 1. BOOT SCREEN (Hidden) -->
+  <div id="boot"></div>
 
-  <!-- 2. BSOD SCREEN -->
+  <!-- 2. BSOD SCREEN (z-index: 9999) -->
   <div id="bsod">
     <div class="bsod-hdr">SUPERPLANNING OS95 EXCEPTION</div>
     <p>A fatal exception 0E has occurred at 0028:C0011995 in VXD UXWRITING(01) + 00007BF. The current application will be terminated.</p><br>
@@ -846,16 +805,8 @@
     </div>
   </div>
 
-  <!-- 10. WELCOME MODAL -->
-  <div id="welcomeDlg">
-    <div class="welcome-card">
-      <h3 style="font-size:16px; font-weight:800; margin-bottom:8px; color:var(--win-fg-dark);" data-i18n="wel.head">환영합니다, 슈퍼플래닝 UX스튜디오입니다</h3>
-      <p style="font-size:13px; line-height:1.5; margin-bottom:16px;" data-i18n="wel.body">복잡한 화면을 덜어내고, 진짜 필요한 것만 남깁니다.</p>
-      <div style="display:flex; justify-content:flex-end;">
-        <button class="w95-btn" style="padding:6px 16px; font-size:13px;" onclick="closeWelcome();">시작하기</button>
-      </div>
-    </div>
-  </div>
+  <!-- 10. WELCOME MODAL (Hidden) -->
+  <div id="welcomeDlg" style="display:none !important;"></div>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
@@ -1028,7 +979,7 @@
             </div>
           </div>
 
-          <!-- Bottom Retro Button Bar (Matching Reference Screenshot) -->
+          <!-- Bottom Retro Button Bar -->
           <div style="display:flex; gap:10px; margin-top: auto; padding-top: 10px;">
             <button class="w95-btn" style="min-width:70px; border:1px dashed #000; font-weight:800;" onclick="closeWindow('about');">OK</button>
             <button class="w95-btn" style="padding:6px 14px;" onclick="openWindow('services');">UX서비스 안내 →</button>
@@ -1258,28 +1209,8 @@
       if (pill) pill.remove();
     }
 
-    function initBootSequence() {
-      const bar = document.getElementById('bootBar');
-      let count = 0;
-      const total = 36;
-      const timer = setInterval(() => {
-        count++;
-        bar.textContent = '▓'.repeat(count);
-        if (count >= total) {
-          clearInterval(timer);
-          setTimeout(() => {
-            document.getElementById('boot').style.display = 'none';
-            setTimeout(() => {
-              document.getElementById('welcomeDlg').style.display = 'flex';
-            }, 400);
-          }, 300);
-        }
-      }, 55);
-    }
-
-    function closeWelcome() {
-      blip(880, 0.06);
-      document.getElementById('welcomeDlg').style.display = 'none';
+    // Direct Access (Loading/Welcome screen completely bypassed)
+    function initDirectAccess() {
       openWindow('about');
     }
 
@@ -1356,7 +1287,7 @@
     }, 1000);
 
     window.addEventListener('DOMContentLoaded', () => {
-      initBootSequence();
+      initDirectAccess();
     });
   </script>
 </body>
