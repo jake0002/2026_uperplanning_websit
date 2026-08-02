@@ -227,7 +227,7 @@
       border-bottom: 1px solid var(--bevel-shadow);
       font-size: 11px;
       background: var(--win-bg);
-      margin: -14px -14px 12px -14px;
+      margin: -12px -12px 10px -12px;
     }
     .win-menu-item {
       cursor: pointer;
@@ -238,10 +238,10 @@
     /* Blinking Cursor Motion */
     .cmd-prompt {
       font-family: var(--font-mono);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       color: #000080;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -249,8 +249,8 @@
     }
     .blink-cursor {
       display: inline-block;
-      width: 9px;
-      height: 16px;
+      width: 8px;
+      height: 15px;
       background-color: #000080;
       animation: cursorBlink 1s infinite;
       vertical-align: middle;
@@ -583,11 +583,11 @@
       cursor: pointer;
     }
     .w-body {
-      padding: 14px;
+      padding: 12px;
       flex: 1;
       overflow-y: auto;
       font-size: 12px;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     /* 10. Welcome Modal (Disabled for direct access) */
@@ -601,11 +601,11 @@
       background: #fff;
       color: #000;
       border: 1px solid #7b7b7b;
-      padding: 10px;
+      padding: 8px 10px;
       box-shadow: inset 1px 1px 0 var(--bevel-shadow);
     }
-    .info-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: #000080; }
-    .info-card p { font-size: 11px; opacity: 0.9; }
+    .info-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 3px; color: #000080; }
+    .info-card p { font-size: 11px; opacity: 0.9; line-height: 1.45; }
 
     /* Equalizer animation for now-playing */
     .eq-bar-wrap { display: flex; align-items: flex-end; gap: 4px; height: 60px; background: #000; padding: 8px; margin-top: 10px; }
@@ -875,6 +875,7 @@
       } catch(e){}
     }
 
+    // WINDOW DEFINITIONS (Height optimized to prevent scrollbars)
     const WINDOW_DEFS = {
       'welcome': { w: 480, h: 280, title: '초기 안내' },
       'services': { w: 720, h: 520, title: 'UX 서비스 안내' },
@@ -882,7 +883,7 @@
       'classes': { w: 640, h: 420, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 420, title: 'UX 블로그' },
       'contact': { w: 540, h: 360, title: '프로젝트 문의' },
-      'about': { w: 660, h: 480, title: '회사 소개' },
+      'about': { w: 660, h: 560, title: '회사 소개' }, // Increased height to 560px for zero scrollbar
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
@@ -953,37 +954,37 @@
             <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
-          <h2 style="font-size:26px; font-weight:900; margin:14px 0 16px 0; line-height:1.25; color:#000;">
+          <h2 style="font-size:24px; font-weight:900; margin:10px 0 12px 0; line-height:1.2; color:#000;">
             UX 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
           </h2>
 
-          <p style="font-size:13px; line-height:1.6; margin-bottom:16px; color:#1a1a1a;" data-i18n="about.body">
+          <p style="font-size:12.5px; line-height:1.55; margin-bottom:12px; color:#1a1a1a;" data-i18n="about.body">
             ${STRINGS[currentLang]['about.body']}
           </p>
 
-          <hr style="margin:14px 0; border:0; border-top:1px solid var(--bevel-shadow);">
+          <hr style="margin:10px 0; border:0; border-top:1px solid var(--bevel-shadow);">
 
-          <h4 style="font-weight:800; font-size:13px; margin-bottom:10px; color:#000080;">3가지 핵심 운영 방침</h4>
-          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
-            <div class="info-card">
+          <h4 style="font-weight:800; font-size:12.5px; margin-bottom:8px; color:#000080;">3가지 핵심 운영 방침</h4>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
+            <div class="info-card" style="padding:6px 10px;">
               <h4>1. less but better</h4>
               <p>화려함보다 본질에 집중합니다. 복잡한 단계를 깎아내고 사용자 과업 완수율을 극대화합니다.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" style="padding:6px 10px;">
               <h4>2. 고객의 언어로 말하기</h4>
               <p>전문 용어를 배제하고 사용자가 평소 사용하는 자연스러운 직관적 단어만 화면에 배치합니다.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" style="padding:6px 10px;">
               <h4>3. 끊김 없는 경험 설계</h4>
               <p>리서치, 라이팅, 기획, 개발이 단절되지 않고 하나의 완벽한 워크플로우로 연결됩니다.</p>
             </div>
           </div>
 
           <!-- Bottom Retro Button Bar -->
-          <div style="display:flex; gap:10px; margin-top: auto; padding-top: 10px;">
+          <div style="display:flex; gap:10px; margin-top: auto; padding-top: 4px;">
             <button class="w95-btn" style="min-width:70px; border:1px dashed #000; font-weight:800;" onclick="closeWindow('about');">OK</button>
-            <button class="w95-btn" style="padding:6px 14px;" onclick="openWindow('services');">UX서비스 안내 →</button>
-            <button class="w95-btn" style="padding:6px 14px;" onclick="openWindow('contact');">프로젝트 문의...</button>
+            <button class="w95-btn" style="padding:4px 12px;" onclick="openWindow('services');">UX서비스 안내 →</button>
+            <button class="w95-btn" style="padding:4px 12px;" onclick="openWindow('contact');">프로젝트 문의...</button>
           </div>
         `;
       } else if (key === 'services') {
@@ -1209,7 +1210,6 @@
       if (pill) pill.remove();
     }
 
-    // Direct Access (Loading/Welcome screen completely bypassed)
     function initDirectAccess() {
       openWindow('about');
     }
