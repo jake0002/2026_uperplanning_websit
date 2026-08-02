@@ -831,6 +831,12 @@
     <input type="email" placeholder="이메일 주소" id="skyEmail">
     <textarea rows="3" placeholder="프로젝트 내용을 간단히 남겨주세요." id="skyMsg"></textarea>
     <button class="w95-btn" style="width:100%; margin-top:4px;" onclick="blip(880, 0.08); alert('문의가 성공적으로 전달되었습니다!');">보내기</button>
+    <hr style="margin:12px 0 8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
+    <div style="font-size:10.5px; line-height:1.45; color:var(--win-fg); opacity:0.9;">
+      <p style="font-weight:700; color:#000080; margin-bottom:2px;">슈퍼플래닝 | 경기 하남시 미사강변동로72 SB비즈타워 1116호</p>
+      <p>T: 031-699-3298 | E: <a href="mailto:jake@superplanning.co.kr" style="color:inherit; text-decoration:underline;">jake@superplanning.co.kr</a></p>
+      <p style="margin-top:4px; font-size:9.5px; opacity:0.75;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
+    </div>
   </div>
 
   <!-- 7. WINDOW AREA -->
@@ -1092,15 +1098,17 @@
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">📍 찾아오시는 길 &amp; 연락처</h3>
           <div class="info-card" style="margin-bottom:10px;">
-            <h4 style="color:#000080; font-size:13px; margin-bottom:4px;">슈퍼플래닝 스튜디오 위치</h4>
+            <h4 style="color:#000080; font-size:13px; margin-bottom:6px;">슈퍼플래닝 스튜디오 위치</h4>
+            <p style="font-weight:bold; margin-bottom:4px;">슈퍼플래닝 | 경기 하남시 미사강변동로72 SB비즈타워 1116호</p>
+            <p><strong>전화번호 (T):</strong> 031-699-3298</p>
+            <p><strong>대표 이메일 (E):</strong> <a href="mailto:jake@superplanning.co.kr" style="color:#000080; font-weight:bold;">jake@superplanning.co.kr</a></p>
             <p><strong>공식 웹사이트:</strong> <a href="https://superplanning.blog" target="_blank" style="color:#000080;">https://superplanning.blog</a></p>
-            <p><strong>대표 이메일:</strong> hello@superplanning.kr</p>
-            <p><strong>응답 시간:</strong> 평일 기준 1~3일 이내 빠른 회신</p>
           </div>
-          <div class="info-card">
+          <div class="info-card" style="margin-bottom:10px;">
             <h4 style="color:#000080; font-size:13px; margin-bottom:4px;">프로젝트 빠른 의뢰 방법</h4>
-            <p>화면 우측 '프로젝트 빠른 문의' 창을 통해 성함, 이메일, 요청사항을 남겨 주시면 담당 UX 라이터/기획자가 빠르게 답변 드립니다.</p>
+            <p>화면 우측 '프로젝트 빠른 문의' 창을 통해 성함, 이메일, 요청사항을 남겨 주시면 빠른 시간 내 담당 UX 전문가가 답변 드립니다.</p>
           </div>
+          <p style="font-size:10px; opacity:0.75; text-align:center; margin-top:8px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
         `;
       } else if (key === 'portfolio') {
         return `
