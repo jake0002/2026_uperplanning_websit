@@ -1,0 +1,32 @@
+# Allow all Search Engine and AI Model Crawlers (Google, Naver, Bing, ChatGPT, Claude, Perplexity)
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+Sitemap: https://superplanning.blog/sitemap.xml
