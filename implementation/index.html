@@ -1026,6 +1026,7 @@
         for (const k in windows) if (k !== key) updatePreview(k, false);
         updateScrollHeight();
         el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (key === 'about') setTimeout(typeWriterHero, 60);
         return;
       }
 
@@ -1075,6 +1076,7 @@
       windows[key] = { el: winEl, minimized: false };
       addPreview(key, titleText);
       updateScrollHeight();
+      if (key === 'about') setTimeout(typeWriterHero, 60);
     }
 
     function getWindowBody(key) {
@@ -1092,7 +1094,7 @@
             <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
-          <h2 style="font-size:30px; font-weight:900; margin:6px 0 10px 0; line-height:1.2; color:#000; letter-spacing:-0.02em;">
+          <h2 id="heroTypingText" style="font-size:30px; font-weight:900; margin:6px 0 10px 0; line-height:1.2; color:#000; letter-spacing:-0.02em; min-height:72px;">
             UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
           </h2>
 
@@ -1315,6 +1317,35 @@
         `;
       }
       return `<p>${STRINGS[currentLang]['w.' + key] || key} 본문 콘텐츠입니다.</p>`;
+    }
+
+    function typeWriterHero() {
+      const container = document.getElementById('heroTypingText');
+      if (!container) return;
+
+      const p1Text = currentLang === 'ko' ? 'UX디자인 에이전시, ' : 'UX Design Agency, ';
+      const p2Text = currentLang === 'ko' ? '슈퍼플래닝입니다.' : 'Superplanning.';
+
+      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#000080; font-style:italic;"></span><span class="blink-cursor" style="height:24px; width:6px; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
+      const elP1 = document.getElementById('twP1');
+      const elP2 = document.getElementById('twP2');
+
+      let i = 0, j = 0;
+      function step() {
+        if (!document.getElementById('heroTypingText')) return;
+        if (i < p1Text.length) {
+          elP1.textContent += p1Text[i];
+          i++;
+          blip(700 + i * 15, 0.02, 'sine');
+          setTimeout(step, 35);
+        } else if (j < p2Text.length) {
+          elP2.textContent += p2Text[j];
+          j++;
+          blip(850 + j * 20, 0.02, 'sine');
+          setTimeout(step, 35);
+        }
+      }
+      step();
     }
 
     function updateScrollHeight() {
