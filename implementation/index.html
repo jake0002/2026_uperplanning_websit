@@ -250,13 +250,13 @@
     }
     .win-menu-item span { text-decoration: underline; }
 
-    /* Blinking Cursor Motion */
+    /* Enlarged Hero Cmd Prompt & Blinking Cursor Motion */
     .cmd-prompt {
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 800;
       color: #000080;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -264,8 +264,8 @@
     }
     .blink-cursor {
       display: inline-block;
-      width: 8px;
-      height: 15px;
+      width: 10px;
+      height: 19px;
       background-color: #000080;
       animation: cursorBlink 1s infinite;
       vertical-align: middle;
@@ -622,15 +622,15 @@
 
   <!-- SEMANTIC HIDDEN HEADER FOR SEARCH ENGINES & AI CRAWLERS (SEO/GEO) -->
   <header class="sr-only">
-    <h1>슈퍼플래닝 (Superplanning) — UX 라이팅 &amp; UI/UX 기획 전문 에이전시</h1>
-    <p>슈퍼플래닝은 복잡한 화면을 덜어내고 사용자가 과업을 완성하도록 돕는 UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌 전문 에이전시입니다.</p>
+    <h1>슈퍼플래닝 (Superplanning) — UX디자인 에이전시 &amp; UI/UX 기획 전문</h1>
+    <p>슈퍼플래닝은 복잡한 화면을 덜어내고 사용자가 과업을 완성하도록 돕는 UX디자인 에이전시입니다. UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌 전문 에이전시입니다.</p>
   </header>
 
   <!-- SEMANTIC KNOWLEDGE STRUCTURE FOR GPTBOT, CLAUDEBOT, CRAWLERS -->
   <main class="sr-only" aria-hidden="false">
     <section id="about-us">
       <h2>슈퍼플래닝 소개 (About Superplanning)</h2>
-      <p>디자인을 잘한다는 건 화면을 화려하게 만드는 일이 아닙니다. 사용자가 자기 일을 끝까지 마치게 돕는 일입니다. 슈퍼플래닝은 'less but better' 철학으로 일합니다.</p>
+      <p>UX디자인 에이전시, 슈퍼플래닝입니다. 디자인을 잘한다는 건 화면을 화려하게 만드는 일이 아닙니다. 사용자가 자기 일을 끝까지 마치게 돕는 일입니다. 슈퍼플래닝은 'less but better' 철학으로 일합니다.</p>
       <ul>
         <li>1. less but better: 화려함보다 본질에 집중합니다.</li>
         <li>2. 고객의 언어로 말하기: 전문 용어를 배제하고 직관적인 언어를 씁니다.</li>
@@ -874,7 +874,7 @@
         'w.shut': '시스템 종료',
         'wel.head': '환영합니다, 슈퍼플래닝 UX스튜디오입니다',
         'wel.body': '복잡한 화면을 덜어내고, 진짜 필요한 것만 남깁니다.',
-        'about.lead': 'UX 에이전시, 슈퍼플래닝입니다.',
+        'about.lead': 'UX디자인 에이전시, 슈퍼플래닝입니다.',
         'about.body': '디자인을 잘한다는 건 화면을 화려하게 만드는 일이 아닙니다. 한 번에 한 걸음, 사용자가 자기 일을 끝까지 마치게 돕는 일입니다.',
         'sky.hero': '한 줄만 남겨 주셔도 시작할 수 있습니다.',
         'sky.hint': '응답 보통 1–3일 안에. 급하시면 hello@superplanning.kr 로 직접 주셔도 좋습니다.'
@@ -893,7 +893,7 @@
         'w.shut': 'Shutdown',
         'wel.head': 'Welcome to Superplanning UX Studio',
         'wel.body': 'We strip away clutter and leave only what is genuinely necessary.',
-        'about.lead': 'We are Superplanning, a dedicated UX Agency.',
+        'about.lead': 'We are Superplanning, a dedicated UX Design Agency.',
         'about.body': 'Great design is not about flashy screens. It is about helping users complete their tasks step by step without friction.',
         'sky.hero': 'Leave a single line and we can get started.',
         'sky.hint': 'Response within 1-3 days. For urgent inquiries: hello@superplanning.kr'
@@ -930,7 +930,7 @@
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 560, h: 420, title: '찾아오시는 길 & 문의' },
-      'about': { w: 660, h: 500, title: '회사 소개' },
+      'about': { w: 660, h: 510, title: '회사 소개' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
@@ -1002,12 +1002,13 @@
             <div class="win-menu-item"><span>H</span>elp</div>
           </div>
           
+          <!-- ENLARGED HERO AREA -->
           <div class="cmd-prompt">
             <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
-          <h2 style="font-size:22px; font-weight:900; margin:8px 0 10px 0; line-height:1.2; color:#000;">
-            UX 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
+          <h2 style="font-size:30px; font-weight:900; margin:6px 0 10px 0; line-height:1.2; color:#000; letter-spacing:-0.02em;">
+            UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
           </h2>
 
           <p style="font-size:12px; line-height:1.5; margin-bottom:10px; color:#1a1a1a;" data-i18n="about.body">
