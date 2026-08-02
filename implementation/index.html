@@ -296,7 +296,7 @@
     #bsod.show { display: block; }
     #bsod .bsod-hdr { background: #aaaaaa; color: #0000aa; padding: 2px 8px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
 
-    /* 3. HOME BUTTON (RESTORED AT FAR LEFT) */
+    /* 3. RESTORED HOME BUTTON AT FAR LEFT */
     #brandLogo {
       position: fixed;
       top: var(--logo-top);
@@ -353,7 +353,7 @@
       transition: background 0.15s ease;
     }
     .gnb-link:hover { background: rgba(255,255,255,0.25); color: var(--accent); }
-    .gnb-right { display: flex; align-items: center; }
+    .gnb-right { display: flex; align-items: center; gap: 6px; }
 
     @media (max-width: 980px) {
       #gnb { left: 75px; }
@@ -674,7 +674,7 @@
     <span>🏠</span> <span>홈</span>
   </div>
 
-  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + KO|EN TOGGLE AT FAR RIGHT) -->
+  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + BROCHURE BTN & KO|EN TOGGLE AT FAR RIGHT) -->
   <div id="gnb">
     <ul class="gnb-menu">
       <li class="gnb-item">
@@ -698,6 +698,9 @@
     </ul>
 
     <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="downloadCompanyBrochure();">
+        <span>📄</span> <span>회사소개서 받기</span>
+      </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="toggleLang();" id="langBtn">KO | EN</button>
     </div>
   </div>
@@ -813,6 +816,7 @@
       <div class="start-item" onclick="window.open('https://threads.net','_blank'); closeStart();">🧵 쓰레드</div>
       <div class="start-item" onclick="window.open('https://youtube.com','_blank'); closeStart();">▶️ 유튜브</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📬 프로젝트 문의 &amp; 오시는길</div>
+      <div class="start-item" onclick="downloadCompanyBrochure(); closeStart();">📄 회사소개서 받기</div>
       <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경 설정</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="openWindow('shut'); closeStart();">🚪 시스템 종료...</div>
@@ -898,6 +902,11 @@
         o.start();
         o.stop(A.currentTime + dur);
       } catch(e){}
+    }
+
+    function downloadCompanyBrochure() {
+      blip(880, 0.08);
+      alert('📄 슈퍼플래닝(Superplanning) UX 스튜디오 회사소개서(PDF) 안내\n\n이메일(hello@superplanning.kr)로 문의주시면 최신 버전 회사소개서 및 상세 포트폴리오 덱을 빠르게 전달해 드립니다.');
     }
 
     const WINDOW_DEFS = {
@@ -1013,7 +1022,7 @@
           <div style="display:flex; gap:10px; margin-top: auto; padding-top: 4px;">
             <button class="w95-btn" style="min-width:70px; border:1px dashed #000; font-weight:800;" onclick="closeWindow('about');">OK</button>
             <button class="w95-btn" style="padding:4px 12px;" onclick="openWindow('services');">UX서비스 안내 →</button>
-            <button class="w95-btn" style="padding:4px 12px;" onclick="openWindow('contact');">찾아오시는 길...</button>
+            <button class="w95-btn" style="padding:4px 12px;" onclick="downloadCompanyBrochure();">📄 회사소개서 받기</button>
           </div>
         `;
       } else if (key === 'services') {
