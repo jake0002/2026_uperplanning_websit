@@ -313,12 +313,12 @@
 
     /* 3. RESTORED HOME BUTTON AT FAR LEFT */
     #brandLogo {
-      position: fixed;
+      position: fixed !important;
       top: var(--logo-top);
       left: var(--logo-left);
       height: var(--gnb-h);
       padding: 4px 14px;
-      z-index: 3300;
+      z-index: 999999 !important;
       cursor: pointer;
       background: var(--accent);
       color: #000;
@@ -336,7 +336,7 @@
 
     /* 4. GNB Header Bar (Starts next to Home button at left: 95px, right: 14px) */
     #gnb {
-      position: fixed;
+      position: fixed !important;
       top: var(--logo-top);
       left: 95px;
       right: 14px;
@@ -345,7 +345,7 @@
       color: var(--gnb-fg);
       border: 1px solid var(--gnb-bd);
       backdrop-filter: blur(8px);
-      z-index: 3200;
+      z-index: 99999 !important;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -466,17 +466,17 @@
       }
     }
 
-    /* 7. Taskbar (z-index: 3000) */
+    /* 7. Taskbar (z-index: 99999 !important) */
     #taskbar {
-      position: fixed;
-      bottom: 0;
+      position: fixed !important;
+      bottom: 0 !important;
       left: 0;
       right: 0;
       height: var(--taskbar-h);
       background: var(--taskbar);
       border-top: 2px solid #fff;
       box-shadow: inset 0 1px 0 #7b7b7b;
-      z-index: 3000;
+      z-index: 99999 !important;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -509,16 +509,16 @@
       font-weight: bold;
     }
 
-    /* 8. Start Menu (z-index: 3100) */
+    /* 8. Start Menu (z-index: 999999 !important) */
     #startMenu {
-      position: fixed;
+      position: fixed !important;
       bottom: var(--taskbar-h);
       left: 4px;
       width: 220px;
       background: var(--win-bg);
       border: 2px solid #000;
       box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,0.4);
-      z-index: 3100;
+      z-index: 999999 !important;
       display: none;
       padding: 4px;
     }
@@ -549,10 +549,11 @@
     }
     .start-item:hover { background: #000080; color: #ffffff; }
 
-    /* 9. Windows Component (.win) - RESTRICTED BELOW GNB & TASKBAR */
+    /* 9. Windows Component (.win) - ISOLATED STACKING CONTEXT BELOW GNB & TASKBAR */
     #windowArea {
-      position: relative;
-      z-index: 1000;
+      position: relative !important;
+      z-index: 100 !important;
+      isolation: isolate !important;
       width: 100%;
     }
     .win {
@@ -1427,11 +1428,11 @@
       if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 14, top: minTop + 480 });
-        openWindow('clients', { left: 14, top: minTop + 900 });
+        openWindow('clients', { left: 14, top: minTop + 880 });
       } else {
         openWindow('about', { left: 20, top: minTop });
         openWindow('services', { left: 630, top: minTop });
-        openWindow('clients', { left: 630, top: minTop + 400 });
+        openWindow('clients', { left: 630, top: minTop + 180 });
       }
       updateScrollHeight();
     }
