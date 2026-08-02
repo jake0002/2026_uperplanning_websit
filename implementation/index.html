@@ -393,8 +393,8 @@
     /* Desktop Icon Grid */
     #icons {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-      grid-auto-rows: 90px;
+      grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+      grid-auto-rows: 95px;
       gap: 16px;
       max-width: 600px;
     }
@@ -410,7 +410,7 @@
     }
     .desktop-icon:hover { background: rgba(255,255,255,0.15); border-radius: 4px; }
     .desktop-icon.selected { background: rgba(0,0,128,0.4); border: 1px dotted #fff; }
-    .desktop-icon .icon-svg { width: 36px; height: 36px; margin-bottom: 6px; }
+    .desktop-icon .icon-svg { width: 38px; height: 38px; margin-bottom: 6px; image-rendering: pixelated; }
     .desktop-icon .icon-label {
       font-size: 11px;
       font-weight: 600;
@@ -692,7 +692,7 @@
     <div class="gnb-brand">SUPERPLANNING OS95</div>
     <ul class="gnb-menu">
       <li class="gnb-item">
-        <a class="gnb-link" onclick="openWindow('welcome');"><span>🏠 홈</span></a>
+        <a class="gnb-link" onclick="openWindow('about');"><span>🏠 홈</span></a>
       </li>
       <li class="gnb-item">
         <a class="gnb-link" onclick="openWindow('services');"><span>🎨 UX디자인 ▼</span></a>
@@ -718,44 +718,87 @@
     </ul>
   </div>
 
-  <!-- 5. DESKTOP WORKSPACE -->
+  <!-- 5. DESKTOP WORKSPACE (EXACT 7 ICONS ONLY) -->
   <div id="desktop">
     <div id="icons">
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('welcome'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#ffd43b" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🏠</text></svg>
-        <div class="icon-label" data-i18n="w.welcome">초기 안내</div>
-      </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#3aa6ff" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎨</text></svg>
-        <div class="icon-label" data-i18n="w.services">UX서비스</div>
-      </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('portfolio'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#2c8a4a" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📁</text></svg>
-        <div class="icon-label" data-i18n="w.portfolio">포트폴리오</div>
-      </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('classes'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#c0392b" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎓</text></svg>
-        <div class="icon-label" data-i18n="w.classes">AI-UX강의</div>
-      </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('blog'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#e67e22" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📝</text></svg>
-        <div class="icon-label" data-i18n="w.blog">UX블로그</div>
-      </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('contact'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#9b59b6" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">📬</text></svg>
-        <div class="icon-label" data-i18n="w.contact">프로젝트 문의</div>
-      </div>
+      <!-- 1. 슈퍼플래닝 소개 -->
       <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('about'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#16a085" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🏢</text></svg>
-        <div class="icon-label" data-i18n="w.about">회사소개</div>
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#16a085" rx="4"/>
+          <path d="M6 30h24V14H6v16z" fill="#ffffff" />
+          <path d="M10 18h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zm-12 6h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4z" fill="#16a085"/>
+          <path d="M14 8h8v6h-8z" fill="#ffd43b"/>
+        </svg>
+        <div class="icon-label">슈퍼플래닝 소개</div>
       </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('now-playing'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#34495e" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🎵</text></svg>
-        <div class="icon-label" data-i18n="w.np">지금 듣는 곡</div>
+
+      <!-- 2. UX서비스 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#3aa6ff" rx="4"/>
+          <rect x="6" y="6" width="24" height="24" fill="#ffffff"/>
+          <rect x="9" y="9" width="8" height="8" fill="#ffd43b"/>
+          <rect x="19" y="9" width="8" height="8" fill="#c0392b"/>
+          <rect x="9" y="19" width="18" height="8" fill="#000080"/>
+        </svg>
+        <div class="icon-label">UX서비스</div>
       </div>
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('links'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="#7f8c8d" rx="4"/><text x="18" y="24" font-size="18" text-anchor="middle">🔗</text></svg>
-        <div class="icon-label" data-i18n="w.links">바로가기</div>
+
+      <!-- 3. AI-UX강의 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('classes'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#c0392b" rx="4"/>
+          <path d="M18 6L4 13l14 7 14-7L18 6z" fill="#ffd43b"/>
+          <path d="M8 17v8c0 3 4.5 5 10 5s10-2 10-5v-8" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <rect x="28" y="13" width="3" height="12" fill="#ffd43b"/>
+        </svg>
+        <div class="icon-label">AI-UX강의</div>
+      </div>
+
+      <!-- 4. UX블로그 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('blog'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#e67e22" rx="4"/>
+          <rect x="7" y="5" width="18" height="26" fill="#ffffff"/>
+          <rect x="10" y="9" width="12" height="3" fill="#333"/>
+          <rect x="10" y="15" width="12" height="3" fill="#333"/>
+          <rect x="10" y="21" width="8" height="3" fill="#333"/>
+          <path d="M22 17l7-7 3 3-7 7z" fill="#ffd43b"/>
+        </svg>
+        <div class="icon-label">UX블로그</div>
+      </div>
+
+      <!-- 5. 인스타그램 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="window.open('https://instagram.com', '_blank'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#d6249f" rx="4"/>
+          <rect x="6" y="8" width="24" height="20" fill="#ffffff"/>
+          <rect x="12" y="12" width="12" height="12" fill="#d6249f"/>
+          <rect x="16" y="16" width="4" height="4" fill="#ffffff"/>
+          <rect x="23" y="11" width="4" height="4" fill="#ffd43b"/>
+        </svg>
+        <div class="icon-label">인스타그램</div>
+      </div>
+
+      <!-- 6. 쓰레드 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="window.open('https://threads.net', '_blank'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000000" rx="4"/>
+          <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
+          <rect x="12" y="12" width="12" height="12" fill="#000000"/>
+          <rect x="16" y="16" width="4" height="4" fill="#ffffff"/>
+        </svg>
+        <div class="icon-label">쓰레드</div>
+      </div>
+
+      <!-- 7. 유튜브 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="window.open('https://youtube.com', '_blank'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#ff0000" rx="4"/>
+          <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="3"/>
+          <path d="M15 13l9 5-9 5z" fill="#ff0000"/>
+        </svg>
+        <div class="icon-label">유튜브</div>
       </div>
     </div>
   </div>
@@ -778,13 +821,14 @@
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
-      <div class="start-item" onclick="openWindow('welcome'); closeStart();">🏠 초기 안내</div>
+      <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 슈퍼플래닝 소개</div>
       <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX 서비스</div>
-      <div class="start-item" onclick="openWindow('portfolio'); closeStart();">📁 포트폴리오</div>
       <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX 강의</div>
       <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
+      <div class="start-item" onclick="window.open('https://instagram.com','_blank'); closeStart();">📷 인스타그램</div>
+      <div class="start-item" onclick="window.open('https://threads.net','_blank'); closeStart();">🧵 쓰레드</div>
+      <div class="start-item" onclick="window.open('https://youtube.com','_blank'); closeStart();">▶️ 유튜브</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📬 프로젝트 문의</div>
-      <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 회사 소개</div>
       <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경 설정</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="openWindow('shut'); closeStart();">🚪 시스템 종료...</div>
