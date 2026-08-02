@@ -744,6 +744,16 @@
         <div class="icon-label">슈퍼플래닝 소개</div>
       </div>
 
+      <!-- 1-2. 주요 고객사 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('clients'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000080" rx="4"/>
+          <path d="M6 28h24V12H6v16z" fill="#ffffff"/>
+          <path d="M10 16h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zm-12 6h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4z" fill="#ffd43b"/>
+        </svg>
+        <div class="icon-label">주요 고객사</div>
+      </div>
+
       <!-- 2. UX서비스 -->
       <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
@@ -852,7 +862,7 @@
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
       <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 슈퍼플래닝 소개</div>
-      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">🎬 슈퍼플래닝 소개영상</div>
+      <div class="start-item" onclick="openWindow('clients'); closeStart();">🏛️ 주요 고객사</div>
       <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX 서비스</div>
       <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX 강의</div>
       <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX 블로그</div>
@@ -898,6 +908,7 @@
         'w.blog': 'UX블로그',
         'w.contact': '찾아오시는 길 & 문의',
         'w.about': '회사소개',
+        'w.clients': '주요 고객사',
         'w.intro-video': '슈퍼플래닝 소개영상',
         'w.np': '지금 듣는 곡',
         'w.links': '바로가기',
@@ -984,6 +995,7 @@
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 560, h: 420, title: '찾아오시는 길 & 문의' },
       'about': { w: 580, h: 440, title: '회사 소개' },
+      'clients': { w: 580, h: 420, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
@@ -1093,6 +1105,7 @@
           <!-- Bottom Retro Button Bar -->
           <div style="display:flex; gap:8px; margin-top: auto; padding-top: 4px; flex-wrap:wrap;">
             <button class="w95-btn" style="padding:4px 10px;" onclick="downloadCompanyBrochure();">📄 회사소개서 받기</button>
+            <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('clients');">🏛️ 주요 고객사 보기 →</button>
             <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('intro-video');">🎬 소개영상 보기</button>
             <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('contact');">📍 찾아오시는 길</button>
           </div>
@@ -1117,6 +1130,30 @@
               <h4>웹 / 앱 개발</h4>
               <p>디자인 의도가 100% 반영되는 경량화된 고성능 프론트엔드 코드를 구축합니다.</p>
             </div>
+          </div>
+        `;
+      } else if (key === 'clients') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px; color:#000080;">🏛️ 슈퍼플래닝 주요 수행 고객사 (Key Clients)</h3>
+          <p style="font-size:11.5px; color:#333; margin-bottom:10px;">국내 주요 대기업, 금융기관, 공공기관의 핵심 UX 리서치, 라이팅, 기획, 개발 프로젝트를 수행했습니다.</p>
+          
+          <div class="w95-box-sunken" style="background:#ffffff; padding:10px; border:2px solid #000; text-align:center; margin-bottom:10px;">
+            <img src="images/clients-logo.png" alt="슈퍼플래닝 주요 고객사 로고 모음" style="max-width:100%; height:auto; display:block; margin:0 auto; max-height:220px; object-fit:contain;">
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:6px; font-size:11px; font-weight:bold; text-align:center;">
+            <div class="info-card" style="padding:4px 2px;">SK텔레콤</div>
+            <div class="info-card" style="padding:4px 2px;">현대자동차</div>
+            <div class="info-card" style="padding:4px 2px;">롯데그룹</div>
+            <div class="info-card" style="padding:4px 2px;">LG유플러스</div>
+            <div class="info-card" style="padding:4px 2px;">비씨카드</div>
+            <div class="info-card" style="padding:4px 2px;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:4px 2px;">KB국민은행</div>
+            <div class="info-card" style="padding:4px 2px;">신한은행</div>
+            <div class="info-card" style="padding:4px 2px;">NH농협은행</div>
+            <div class="info-card" style="padding:4px 2px;">제일기획</div>
+            <div class="info-card" style="padding:4px 2px;">오스템임플란트</div>
+            <div class="info-card" style="padding:4px 2px;">경기도일자리재단</div>
           </div>
         `;
       } else if (key === 'contact') {
@@ -1349,9 +1386,11 @@
       if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 24, top: minTop + 200 });
+        openWindow('clients', { left: 14, top: minTop + 400 });
       } else {
         openWindow('about', { left: 20, top: minTop });
         openWindow('services', { left: 630, top: minTop });
+        openWindow('clients', { left: 20, top: minTop + 464 });
       }
     }
 
