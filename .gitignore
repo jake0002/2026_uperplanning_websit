@@ -1,0 +1,54 @@
+# Security & Sensitive Data
+*.pem
+*.key
+*.crt
+shkey.pem
+.env
+.env.*
+!.env.example
+AWS.txt
+aws.json
+credentials.json
+*.secret
+*.pfx
+*.p12
+
+# Dependencies
+/node_modules
+/.pnpm-store
+
+# Next.js build output
+/.next/
+/out/
+
+# Production / Build outputs
+/build
+/dist
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Agent / Tool cache
+.gemini/
