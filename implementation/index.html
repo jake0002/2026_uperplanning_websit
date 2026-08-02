@@ -925,12 +925,12 @@
 
     const WINDOW_DEFS = {
       'welcome': { w: 480, h: 280, title: '초기 안내' },
-      'services': { w: 720, h: 480, title: 'UX 서비스 및 기획/개발' },
+      'services': { w: 490, h: 510, title: 'UX 서비스 및 기획/개발' },
       'portfolio': { w: 760, h: 480, title: '포트폴리오' },
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 560, h: 420, title: '찾아오시는 길 & 문의' },
-      'about': { w: 660, h: 510, title: '회사 소개' },
+      'about': { w: 490, h: 510, title: '회사 소개' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
@@ -941,7 +941,7 @@
       return window.innerWidth <= 980 ? 188 : 200;
     }
 
-    function openWindow(key) {
+    function openWindow(key, customPos) {
       if (windows[key]) {
         const el = windows[key].el;
         el.style.display = 'flex';
@@ -954,8 +954,9 @@
       const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
       winSeq++;
       const minTop = getMinWindowTop();
-      const leftOffset = Math.min(window.innerWidth - def.w - 20, Math.max(20, 40 + (winSeq % 6) * 20));
-      const topOffset = Math.min(window.innerHeight - def.h - 50, Math.max(minTop, minTop + 10 + (winSeq % 6) * 16));
+      
+      let leftOffset = customPos && customPos.left !== undefined ? customPos.left : Math.min(window.innerWidth - def.w - 20, Math.max(20, 40 + (winSeq % 6) * 20));
+      let topOffset = customPos && customPos.top !== undefined ? customPos.top : Math.min(window.innerHeight - def.h - 50, Math.max(minTop, minTop + 10 + (winSeq % 6) * 16));
 
       const winEl = document.createElement('div');
       winEl.className = 'win';
@@ -1043,7 +1044,7 @@
       } else if (key === 'services') {
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 전문 서비스 (Less but Better)</h3>
-          <div class="card-grid">
+          <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
             <div class="info-card">
               <h4>UX 리서치</h4>
               <p>사용자가 진짜 원하는 말을 듣습니다. 화면 이전의 맥락과 행태를 먼저 조사합니다.</p>
@@ -1254,7 +1255,14 @@
     }
 
     function initDirectAccess() {
-      openWindow('about');
+      const minTop = getMinWindowTop();
+      if (window.innerWidth <= 980) {
+        openWindow('about', { left: 14, top: minTop });
+        openWindow('services', { left: 24, top: minTop + 30 });
+      } else {
+        openWindow('about', { left: 14, top: minTop });
+        openWindow('services', { left: 518, top: minTop });
+      }
     }
 
     function toggleStartMenu() {
