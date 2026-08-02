@@ -1019,7 +1019,7 @@
       'portfolio': { w: 760, h: 480, title: '포트폴리오' },
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
-      'contact': { w: 580, h: 440, title: '찾아오시는 길 & 문의' },
+      'contact': { w: 580, h: 470, title: '찾아오시는 길 & 문의' },
       'about': { w: 580, h: 400, title: '회사 소개' },
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
@@ -1242,11 +1242,26 @@
               <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
             </div>
           </div>
-          <div class="info-card" style="margin-bottom:10px;">
+          <div class="info-card" style="margin-bottom:8px;">
             <h4 style="color:#000080; font-size:13px; margin-bottom:4px;">프로젝트 의뢰 안내</h4>
             <p>화면 우측 '프로젝트 문의' 창을 통해 성함, 이메일, 요청사항을 남겨 주시면 빠른 시간 내 담당 UX 전문가가 답변 드립니다.</p>
           </div>
-          <p style="font-size:10px; opacity:0.75; text-align:center; margin-top:8px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
+
+          <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD -->
+          <div class="info-card" style="margin-bottom:8px; background:#fee500; border:2px solid #3c1e1e; cursor:pointer;" onclick="window.open('http://pf.kakao.com/_efpVxb/chat', '_blank'); blip(880, 0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:20px;">💬</span>
+                <div>
+                  <h4 style="color:#3c1e1e; font-size:13px; margin:0; font-weight:800;">카카오채널 실시간 채팅문의</h4>
+                  <p style="color:#3c1e1e; font-size:11px; margin:2px 0 0 0; opacity:0.9;">카카오톡으로 빠른 UX 상담 및 질문하기</p>
+                </div>
+              </div>
+              <button class="w95-btn" style="padding:4px 10px; background:#3c1e1e; color:#fee500; font-weight:bold; font-size:11px; border:1px solid #000; flex-shrink:0;">채팅 시작 ↗</button>
+            </div>
+          </div>
+
+          <p style="font-size:10px; opacity:0.75; text-align:center; margin-top:6px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
         `;
       } else if (key === 'portfolio') {
         return `
