@@ -427,7 +427,7 @@
       white-space: nowrap;
     }
 
-    /* 6. Contact Skyscraper (z-index: 100) */
+    /* 6. Contact Skyscraper (z-index: 2500) */
     #skyscraper {
       position: fixed;
       top: calc(var(--logo-top) + var(--gnb-h) + 16px);
@@ -436,7 +436,7 @@
       height: auto;
       max-height: calc(100vh - var(--gnb-h) - var(--taskbar-h) - 40px);
       overflow-y: auto;
-      z-index: 100;
+      z-index: 2500;
       display: flex;
       flex-direction: column;
       padding: 14px;
@@ -1712,6 +1712,13 @@
     window.addEventListener('DOMContentLoaded', () => {
       initDirectAccess();
       initWeatherAndLocation();
+
+      const skyEl = document.getElementById('skyscraper');
+      if (skyEl) {
+        skyEl.addEventListener('mousedown', () => {
+          skyEl.style.zIndex = Math.max(getNextZIndex(), 2500);
+        });
+      }
     });
   </script>
 </body>
