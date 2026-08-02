@@ -148,7 +148,9 @@
       --logo-top: 14px;
       --logo-left: 14px;
       --logo-w: 64px;
-      --desktop-pad-top: 118px;
+      --icon-row-top: 132px;
+      --icon-row-h: 88px;
+      --window-min-top: 228px; /* Strict top boundary so windows NEVER overlap icons */
       --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
       --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
     }
@@ -156,7 +158,8 @@
     @media (max-width: 980px) {
       :root {
         --logo-w: 48px;
-        --desktop-pad-top: 96px;
+        --icon-row-top: 114px;
+        --window-min-top: 210px;
       }
     }
 
@@ -376,48 +379,52 @@
       .gnb-brand { font-size: 11px; }
     }
 
-    /* 5. Desktop Workspace */
+    /* 5. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
     #desktop {
       position: absolute;
       inset: 0;
-      padding-top: var(--desktop-pad-top);
-      padding-bottom: calc(var(--taskbar-h) + 14px);
-      padding-left: 14px;
-      padding-right: 330px;
       overflow: hidden;
     }
+    #iconsArea {
+      position: fixed;
+      top: var(--icon-row-top);
+      left: 14px;
+      right: 330px;
+      height: var(--icon-row-h);
+      z-index: 1300;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
     @media (max-width: 980px) {
-      #desktop { padding-right: 14px; }
+      #iconsArea { right: 14px; }
     }
 
-    /* Desktop Icon Grid */
-    #icons {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-      grid-auto-rows: 95px;
-      gap: 16px;
-      max-width: 600px;
-    }
     .desktop-icon {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+      padding: 6px 10px;
       cursor: pointer;
       text-align: center;
       border: 1px transparent solid;
+      flex-shrink: 0;
+      min-width: 82px;
     }
-    .desktop-icon:hover { background: rgba(255,255,255,0.15); border-radius: 4px; }
-    .desktop-icon.selected { background: rgba(0,0,128,0.4); border: 1px dotted #fff; }
-    .desktop-icon .icon-svg { width: 38px; height: 38px; margin-bottom: 6px; image-rendering: pixelated; }
+    .desktop-icon:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    .desktop-icon.selected { background: rgba(0,0,128,0.5); border: 1px dotted #fff; }
+    .desktop-icon .icon-svg { width: 36px; height: 36px; margin-bottom: 4px; image-rendering: pixelated; }
     .desktop-icon .icon-label {
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       color: #ffffff;
-      text-shadow: 1px 1px 0 #000;
+      text-shadow: 1px 1px 1px #000;
       word-break: keep-all;
       line-height: 1.2;
+      white-space: nowrap;
     }
 
     /* 6. Contact Skyscraper (z-index: 100) */
@@ -540,7 +547,7 @@
     }
     .start-item:hover { background: #000080; color: #ffffff; }
 
-    /* 9. Windows Component (.win) */
+    /* 9. Windows Component (.win) - ALWAYS RESTRICTED BELOW ICON BAR */
     .win {
       position: absolute;
       background: var(--win-bg);
@@ -553,14 +560,18 @@
     }
     .win.maximized {
       position: fixed !important;
-      top: calc(var(--logo-top) + var(--logo-w) + var(--gnb-h) + 18px) !important;
+      top: var(--window-min-top) !important;
       left: 14px !important;
-      right: 14px !important;
+      right: 330px !important;
       bottom: calc(var(--taskbar-h) + 14px) !important;
       width: auto !important;
       height: auto !important;
       z-index: 800 !important;
     }
+    @media (max-width: 980px) {
+      .win.maximized { right: 14px !important; }
+    }
+
     .w-title {
       background: var(--accent);
       color: var(--win-fg-dark);
@@ -718,9 +729,9 @@
     </ul>
   </div>
 
-  <!-- 5. DESKTOP WORKSPACE (EXACT 7 ICONS ONLY) -->
+  <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
   <div id="desktop">
-    <div id="icons">
+    <div id="iconsArea">
       <!-- 1. 슈퍼플래닝 소개 -->
       <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('about'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
@@ -921,17 +932,21 @@
 
     const WINDOW_DEFS = {
       'welcome': { w: 480, h: 280, title: '초기 안내' },
-      'services': { w: 720, h: 520, title: 'UX 서비스 안내' },
-      'portfolio': { w: 760, h: 520, title: '포트폴리오' },
-      'classes': { w: 640, h: 420, title: 'AI-UX 강의 안내' },
-      'blog': { w: 600, h: 420, title: 'UX 블로그' },
+      'services': { w: 720, h: 480, title: 'UX 서비스 안내' },
+      'portfolio': { w: 760, h: 480, title: '포트폴리오' },
+      'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
+      'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 540, h: 360, title: '프로젝트 문의' },
-      'about': { w: 660, h: 560, title: '회사 소개' },
+      'about': { w: 660, h: 500, title: '회사 소개' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
       'shut': { w: 380, h: 200, title: '시스템 종료' }
     };
+
+    function getMinWindowTop() {
+      return window.innerWidth <= 980 ? 210 : 228;
+    }
 
     function openWindow(key) {
       if (windows[key]) {
@@ -945,8 +960,9 @@
       blip(660, 0.06);
       const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
       winSeq++;
-      const leftOffset = Math.min(window.innerWidth - def.w - 20, Math.max(20, 50 + winSeq * 24));
-      const topOffset = Math.min(window.innerHeight - def.h - 60, Math.max(120, 140 + winSeq * 24));
+      const minTop = getMinWindowTop();
+      const leftOffset = Math.min(window.innerWidth - def.w - 20, Math.max(20, 40 + (winSeq % 6) * 20));
+      const topOffset = Math.min(window.innerHeight - def.h - 50, Math.max(minTop, minTop + 10 + (winSeq % 6) * 16));
 
       const winEl = document.createElement('div');
       winEl.className = 'win';
@@ -997,27 +1013,27 @@
             <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
-          <h2 style="font-size:24px; font-weight:900; margin:10px 0 12px 0; line-height:1.2; color:#000;">
+          <h2 style="font-size:22px; font-weight:900; margin:8px 0 10px 0; line-height:1.2; color:#000;">
             UX 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
           </h2>
 
-          <p style="font-size:12.5px; line-height:1.55; margin-bottom:12px; color:#1a1a1a;" data-i18n="about.body">
+          <p style="font-size:12px; line-height:1.5; margin-bottom:10px; color:#1a1a1a;" data-i18n="about.body">
             ${STRINGS[currentLang]['about.body']}
           </p>
 
-          <hr style="margin:10px 0; border:0; border-top:1px solid var(--bevel-shadow);">
+          <hr style="margin:8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
 
-          <h4 style="font-weight:800; font-size:12.5px; margin-bottom:8px; color:#000080;">3가지 핵심 운영 방침</h4>
-          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
-            <div class="info-card" style="padding:6px 10px;">
+          <h4 style="font-weight:800; font-size:12px; margin-bottom:6px; color:#000080;">3가지 핵심 운영 방침</h4>
+          <div style="display:flex; flex-direction:column; gap:5px; margin-bottom:10px;">
+            <div class="info-card" style="padding:5px 8px;">
               <h4>1. less but better</h4>
               <p>화려함보다 본질에 집중합니다. 복잡한 단계를 깎아내고 사용자 과업 완수율을 극대화합니다.</p>
             </div>
-            <div class="info-card" style="padding:6px 10px;">
+            <div class="info-card" style="padding:5px 8px;">
               <h4>2. 고객의 언어로 말하기</h4>
               <p>전문 용어를 배제하고 사용자가 평소 사용하는 자연스러운 직관적 단어만 화면에 배치합니다.</p>
             </div>
-            <div class="info-card" style="padding:6px 10px;">
+            <div class="info-card" style="padding:5px 8px;">
               <h4>3. 끊김 없는 경험 설계</h4>
               <p>리서치, 라이팅, 기획, 개발이 단절되지 않고 하나의 완벽한 워크플로우로 연결됩니다.</p>
             </div>
@@ -1188,10 +1204,11 @@
       });
       document.addEventListener('mousemove', e => {
         if (!dragging) return;
+        const minTop = getMinWindowTop();
         let nx = ox + (e.clientX - sx);
         let ny = oy + (e.clientY - sy);
         nx = Math.max(0, Math.min(window.innerWidth - 60, nx));
-        ny = Math.max(0, Math.min(window.innerHeight - 40, ny));
+        ny = Math.max(minTop, Math.min(window.innerHeight - 40, ny)); // STRICTLY CANNOT DRAG ABOVE ICON ROW
         el.style.left = nx + 'px'; el.style.top = ny + 'px';
       });
       document.addEventListener('mouseup', () => { dragging = false; document.body.style.userSelect = ''; });
