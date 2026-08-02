@@ -1004,7 +1004,7 @@
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 580, h: 440, title: '찾아오시는 길 & 문의' },
-      'about': { w: 580, h: 460, title: '회사 소개' },
+      'about': { w: 580, h: 470, title: '회사 소개' },
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
@@ -1082,7 +1082,7 @@
     function getWindowBody(key) {
       if (key === 'about') {
         return `
-          <div class="win-menu-bar">
+          <div class="win-menu-bar" style="margin: -12px -12px 6px -12px;">
             <div class="win-menu-item"><span>F</span>ile</div>
             <div class="win-menu-item"><span>E</span>dit</div>
             <div class="win-menu-item"><span>V</span>iew</div>
@@ -1090,43 +1090,42 @@
           </div>
           
           <!-- ENLARGED HERO AREA -->
-          <div class="cmd-prompt">
+          <div class="cmd-prompt" style="margin-bottom:4px;">
             <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
-          <h2 id="heroTypingText" style="font-size:30px; font-weight:900; margin:6px 0 10px 0; line-height:1.2; color:#000; letter-spacing:-0.02em; min-height:72px;">
+          <h2 id="heroTypingText" style="font-size:26px; font-weight:900; margin:4px 0 6px 0; line-height:1.2; color:#000; letter-spacing:-0.02em; min-height:36px;">
             UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
           </h2>
 
-          <p style="font-size:12px; line-height:1.5; margin-bottom:4px; color:#1a1a1a;" data-i18n="about.body1">
+          <p style="font-size:12px; line-height:1.45; margin-bottom:2px; color:#1a1a1a;" data-i18n="about.body1">
             ${STRINGS[currentLang]['about.body1']}
           </p>
-          <p style="font-size:12px; line-height:1.5; margin-bottom:10px; color:#1a1a1a;" data-i18n="about.body2">
+          <p style="font-size:12px; line-height:1.45; margin-bottom:6px; color:#1a1a1a;" data-i18n="about.body2">
             ${STRINGS[currentLang]['about.body2']}
           </p>
 
-          <hr style="margin:8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
+          <hr style="margin:6px 0; border:0; border-top:1px solid var(--bevel-shadow);">
 
-          <h4 style="font-weight:800; font-size:12px; margin-bottom:6px; color:#000080;">3가지 핵심 운영 방침</h4>
-          <div style="display:flex; flex-direction:column; gap:5px; margin-bottom:10px;">
-            <div class="info-card" style="padding:5px 8px;">
+          <h4 style="font-weight:800; font-size:12px; margin-bottom:4px; color:#000080;">3가지 핵심 운영 방침</h4>
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:6px;">
+            <div class="info-card" style="padding:4px 8px;">
               <h4>1. less but better</h4>
               <p>화려함보다 본질에 집중합니다. 복잡한 단계를 깎아내고 사용자 과업 완수율을 극대화합니다.</p>
             </div>
-            <div class="info-card" style="padding:5px 8px;">
+            <div class="info-card" style="padding:4px 8px;">
               <h4>2. 고객의 언어로 말하기</h4>
               <p>전문 용어를 배제하고 사용자가 평소 사용하는 자연스러운 직관적 단어만 화면에 배치합니다.</p>
             </div>
-            <div class="info-card" style="padding:5px 8px;">
+            <div class="info-card" style="padding:4px 8px;">
               <h4>3. 끊김 없는 경험 설계</h4>
               <p>리서치, 라이팅, 기획, 개발이 단절되지 않고 하나의 완벽한 워크플로우로 연결됩니다.</p>
             </div>
           </div>
 
           <!-- Bottom Retro Button Bar -->
-          <div style="display:flex; gap:8px; margin-top: auto; padding-top: 4px; flex-wrap:wrap;">
+          <div style="display:flex; gap:6px; margin-top: auto; padding-top: 2px; flex-wrap:wrap;">
             <button class="w95-btn" style="padding:4px 10px;" onclick="downloadCompanyBrochure();">📄 회사소개서 받기</button>
-            <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('clients');">🏛️ 주요 고객사 보기 →</button>
             <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('intro-video');">🎬 소개영상 보기</button>
             <button class="w95-btn" style="padding:4px 10px;" onclick="openWindow('contact');">📍 찾아오시는 길</button>
           </div>
@@ -1326,7 +1325,7 @@
       const p1Text = currentLang === 'ko' ? 'UX디자인 에이전시, ' : 'UX Design Agency, ';
       const p2Text = currentLang === 'ko' ? '슈퍼플래닝입니다.' : 'Superplanning.';
 
-      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#000080; font-style:italic;"></span><span class="blink-cursor" style="height:24px; width:6px; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
+      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#000080; font-style:italic;"></span><span class="blink-cursor" style="height:22px; width:5px; margin-left:2px; display:inline-block; vertical-align:middle;"></span>';
       const elP1 = document.getElementById('twP1');
       const elP2 = document.getElementById('twP2');
 
@@ -1343,6 +1342,9 @@
           j++;
           blip(850 + j * 20, 0.02, 'sine');
           setTimeout(step, 35);
+        } else {
+          const cursor = container.querySelector('.blink-cursor');
+          if (cursor) cursor.remove();
         }
       }
       step();
