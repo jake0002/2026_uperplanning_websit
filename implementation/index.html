@@ -795,7 +795,7 @@
   <div id="taskbar">
     <div class="taskbar-left">
       <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(); blip(660, 0.05);">
-        <span>💻</span> <strong>Start</strong>
+        <span>💻</span> <strong>전체 메뉴보기</strong>
       </button>
       <div id="taskPreviews"></div>
     </div>
@@ -875,7 +875,6 @@
       } catch(e){}
     }
 
-    // WINDOW DEFINITIONS (Height optimized to prevent scrollbars)
     const WINDOW_DEFS = {
       'welcome': { w: 480, h: 280, title: '초기 안내' },
       'services': { w: 720, h: 520, title: 'UX 서비스 안내' },
@@ -883,7 +882,7 @@
       'classes': { w: 640, h: 420, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 420, title: 'UX 블로그' },
       'contact': { w: 540, h: 360, title: '프로젝트 문의' },
-      'about': { w: 660, h: 560, title: '회사 소개' }, // Increased height to 560px for zero scrollbar
+      'about': { w: 660, h: 560, title: '회사 소개' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
       'tweaks': { w: 480, h: 320, title: '환경 설정' },
