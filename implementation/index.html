@@ -145,17 +145,19 @@
       --taskbar: #c0c0c0;
       --taskbar-h: 36px;
       --gnb-h: 34px;
-      --icon-row-top: 58px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --icon-row-top: 104px;
       --icon-row-h: 88px;
-      --window-min-top: 154px;
+      --window-min-top: 200px;
       --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
       --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
     }
 
     @media (max-width: 980px) {
       :root {
-        --icon-row-top: 54px;
-        --window-min-top: 148px;
+        --icon-row-top: 92px;
+        --window-min-top: 188px;
       }
     }
 
@@ -294,11 +296,34 @@
     #bsod.show { display: block; }
     #bsod .bsod-hdr { background: #aaaaaa; color: #0000aa; padding: 2px 8px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
 
-    /* 3. GNB Header Bar (Starts from left: 14px, right: 14px) */
+    /* 3. HOME BUTTON (RESTORED AT FAR LEFT) */
+    #brandLogo {
+      position: fixed;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 14px;
+      z-index: 1500;
+      cursor: pointer;
+      background: var(--accent);
+      color: #000;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #7b7b7b; }
+
+    /* 4. GNB Header Bar (Starts next to Home button at left: 95px, right: 14px) */
     #gnb {
       position: fixed;
-      top: 12px;
-      left: 14px;
+      top: var(--logo-top);
+      left: 95px;
       right: 14px;
       height: var(--gnb-h);
       background: var(--gnb-bg);
@@ -330,7 +355,12 @@
     .gnb-link:hover { background: rgba(255,255,255,0.25); color: var(--accent); }
     .gnb-right { display: flex; align-items: center; }
 
-    /* 4. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
+    @media (max-width: 980px) {
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+    }
+
+    /* 5. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
     #desktop {
       position: absolute;
       inset: 0;
@@ -378,10 +408,10 @@
       white-space: nowrap;
     }
 
-    /* 5. Contact Skyscraper (z-index: 100) */
+    /* 6. Contact Skyscraper (z-index: 100) */
     #skyscraper {
       position: fixed;
-      top: calc(12px + var(--gnb-h) + 12px);
+      top: calc(var(--logo-top) + var(--gnb-h) + 16px);
       right: 14px;
       width: 300px;
       bottom: calc(var(--taskbar-h) + 14px);
@@ -415,7 +445,7 @@
       }
     }
 
-    /* 6. Taskbar (z-index: 900) */
+    /* 7. Taskbar (z-index: 900) */
     #taskbar {
       position: fixed;
       bottom: 0;
@@ -458,7 +488,7 @@
       font-weight: bold;
     }
 
-    /* 7. Start Menu (z-index: 1100) */
+    /* 8. Start Menu (z-index: 1100) */
     #startMenu {
       position: fixed;
       bottom: var(--taskbar-h);
@@ -498,7 +528,7 @@
     }
     .start-item:hover { background: #000080; color: #ffffff; }
 
-    /* 8. Windows Component (.win) - ALWAYS RESTRICTED BELOW ICON BAR */
+    /* 9. Windows Component (.win) - ALWAYS RESTRICTED BELOW ICON BAR */
     .win {
       position: absolute;
       background: var(--win-bg);
@@ -639,7 +669,12 @@
     <p>Press ESC key to dismiss this blue screen and resume OS95 session...</p>
   </div>
 
-  <!-- 3. GNB HEADER (6 EXACT BUTTONS ALIGNED FROM LEFT, LANG TOGGLE AT FAR RIGHT) -->
+  <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동 / 새로고침" onclick="blip(880, 0.07); location.reload();">
+    <span>🏠</span> <span>홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + KO|EN TOGGLE AT FAR RIGHT) -->
   <div id="gnb">
     <ul class="gnb-menu">
       <li class="gnb-item">
@@ -667,7 +702,7 @@
     </div>
   </div>
 
-  <!-- 4. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
+  <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
   <div id="desktop">
     <div id="iconsArea">
       <!-- 1. 슈퍼플래닝 소개 -->
@@ -752,7 +787,7 @@
     </div>
   </div>
 
-  <!-- 5. CONTACT SKYSCRAPER -->
+  <!-- 6. CONTACT SKYSCRAPER -->
   <div id="skyscraper" class="w95-box">
     <div class="sky-title">📬 프로젝트 빠른 문의</div>
     <div class="sky-hero" data-i18n="sky.hero">한 줄만 남겨 주셔도 시작할 수 있습니다.</div>
@@ -763,10 +798,10 @@
     <button class="w95-btn" style="width:100%; margin-top:4px;" onclick="blip(880, 0.08); alert('문의가 성공적으로 전달되었습니다!');">보내기</button>
   </div>
 
-  <!-- 6. WINDOW AREA -->
+  <!-- 7. WINDOW AREA -->
   <div id="windowArea"></div>
 
-  <!-- 7. START MENU -->
+  <!-- 8. START MENU -->
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
@@ -784,7 +819,7 @@
     </div>
   </div>
 
-  <!-- 8. TASKBAR -->
+  <!-- 9. TASKBAR -->
   <div id="taskbar">
     <div class="taskbar-left">
       <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(); blip(660, 0.05);">
@@ -880,7 +915,7 @@
     };
 
     function getMinWindowTop() {
-      return window.innerWidth <= 980 ? 148 : 154;
+      return window.innerWidth <= 980 ? 188 : 200;
     }
 
     function openWindow(key) {
