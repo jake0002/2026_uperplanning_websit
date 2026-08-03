@@ -405,19 +405,26 @@
     @media (max-width: 768px) {
       #brandLogo {
         left: 8px;
-        padding: 2px 6px;
+        padding: 2px 8px;
         font-size: 11px;
       }
       #gnb {
         left: 72px;
         right: 8px;
-        padding: 0 4px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
       }
       .gnb-menu, .gnb-right {
         display: none !important;
       }
       #mobileMenuBtn {
         display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      #iconsArea {
+        display: none !important;
       }
       .win {
         position: absolute !important;
@@ -435,7 +442,7 @@
         bottom: calc(var(--taskbar-h) + 6px) !important;
       }
       .w-body {
-        max-height: 60vh;
+        max-height: 65vh;
         overflow-y: auto;
         padding: 8px;
       }
@@ -1162,7 +1169,7 @@
     };
 
     function getMinWindowTop() {
-      if (window.innerWidth <= 768) return 150;
+      if (window.innerWidth <= 768) return 60;
       if (window.innerWidth <= 980) return 188;
       return 200;
     }
@@ -1174,15 +1181,40 @@
       }
     }
 
+    function getSequentialTopOnMobile() {
+      let baseTop = 60;
+      let maxBottom = baseTop;
+      const winEls = Array.from(document.querySelectorAll('.win')).filter(el => el.style.display !== 'none' && !el.classList.contains('maximized'));
+      for (const el of winEls) {
+        const t = parseInt(el.style.top, 10) || 0;
+        const h = el.offsetHeight || el.getBoundingClientRect().height || 280;
+        const b = t + h;
+        if (b > maxBottom) {
+          maxBottom = b;
+        }
+      }
+      return maxBottom === baseTop ? baseTop : maxBottom + 14;
+    }
+
     function openWindow(key, customPos) {
+      const isMobile = window.innerWidth <= 768;
+
       if (windows[key]) {
         const el = windows[key].el;
-        el.style.display = 'flex';
+        if (el.style.display === 'none') {
+          if (isMobile && !el.classList.contains('maximized')) {
+            el.style.top = getSequentialTopOnMobile() + 'px';
+            el.style.left = '10px';
+          }
+          el.style.display = 'flex';
+        }
         el.style.zIndex = getNextZIndex();
         updatePreview(key, true);
         for (const k in windows) if (k !== key) updatePreview(k, false);
         updateScrollHeight();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (isMobile) {
+          setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        }
         if (key === 'about') setTimeout(typeWriterHero, 60);
         return;
       }
@@ -1191,20 +1223,11 @@
       const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
       winSeq++;
       const minTop = getMinWindowTop();
-      const isMobile = window.innerWidth <= 768;
       
       let leftOffset, topOffset;
       if (isMobile) {
         leftOffset = 10;
-        let highestBottom = minTop;
-        for (const k in windows) {
-          const w = windows[k];
-          if (w && w.el && w.el.style.display !== 'none') {
-            const b = (parseInt(w.el.style.top, 10) || 0) + (w.el.offsetHeight || 280);
-            if (b > highestBottom) highestBottom = b;
-          }
-        }
-        topOffset = highestBottom === minTop ? minTop : highestBottom + 12;
+        topOffset = getSequentialTopOnMobile();
       } else {
         leftOffset = customPos && customPos.left !== undefined 
           ? customPos.left 
@@ -1787,7 +1810,11 @@
 
     function initDirectAccess() {
       const minTop = getMinWindowTop();
-      if (window.innerWidth <= 980) {
+      if (window.innerWidth <= 768) {
+        openWindow('about');
+        openWindow('services');
+        openWindow('clients');
+      } else if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 14, top: minTop + 480 });
         openWindow('clients', { left: 14, top: minTop + 880 });
