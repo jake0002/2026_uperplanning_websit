@@ -1036,17 +1036,21 @@
         <div class="icon-label">AI-UX강의</div>
       </div>
 
-      <!-- 4. UX블로그 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('blog'); blip(880, 0.05);">
+      <!-- 4. 웹/앱개발 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
         <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#e67e22" rx="4"/>
-          <rect x="7" y="5" width="18" height="26" fill="#ffffff"/>
-          <rect x="10" y="9" width="12" height="3" fill="#333"/>
-          <rect x="10" y="15" width="12" height="3" fill="#333"/>
-          <rect x="10" y="21" width="8" height="3" fill="#333"/>
-          <path d="M22 17l7-7 3 3-7 7z" fill="#ffd43b"/>
+          <rect width="36" height="36" fill="#8e44ad" rx="4"/>
+          <rect x="5" y="7" width="26" height="22" fill="#1e1e1e" rx="2" stroke="#ffffff" stroke-width="1.5"/>
+          <path d="M5 7h26v5H5z" fill="#333333"/>
+          <circle cx="8" cy="9.5" r="1.2" fill="#ff5f56"/>
+          <circle cx="12" cy="9.5" r="1.2" fill="#ffbd2e"/>
+          <circle cx="16" cy="9.5" r="1.2" fill="#27c93f"/>
+          <!-- Code symbol < / > -->
+          <path d="M11 16l-3.5 3 3.5 3" fill="none" stroke="#ffd43b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 23l4-8" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 16l3.5 3-3.5 3" fill="none" stroke="#ffd43b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="icon-label">UX블로그</div>
+        <div class="icon-label">웹/앱개발</div>
       </div>
 
       <!-- 5. 인스타그램 -->
@@ -2043,8 +2047,8 @@
 
       // 3. Desktop Icons
       const icons = document.querySelectorAll('.desktop-icon .icon-label');
-      const iconKo = ['회사소개', '주요 고객사', 'UX서비스', 'AI-UX강의', 'UX블로그', '인스타그램', '쓰레드', '유튜브'];
-      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'AI-UX Classes', 'UX Blog', 'Instagram', 'Threads', 'YouTube'];
+      const iconKo = ['회사소개', '주요 고객사', 'UX서비스', 'AI-UX강의', '웹/앱개발', '인스타그램', '쓰레드', '유튜브'];
+      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'AI-UX Classes', 'Web & App Dev', 'Instagram', 'Threads', 'YouTube'];
       icons.forEach((el, idx) => {
         if (iconKo[idx]) el.textContent = isKo ? iconKo[idx] : iconEn[idx];
       });
