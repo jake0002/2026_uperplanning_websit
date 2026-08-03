@@ -181,23 +181,116 @@
     }
 
     /* Themes */
+    /* Themes & Dark Mode High Contrast Text Fix */
     body[data-theme="dark"] {
       --bg: var(--bg-dark);
-      --win-bg: #2d2d2d;
-      --win-fg: var(--txt-dark);
-      --bevel-hi: #555555;
-      --bevel-lo: #111111;
+      --win-bg: #1e1e24;
+      --win-fg: #ffffff;
+      --win-fg-dark: #ffffff;
+      --bevel-hi: #444450;
+      --bevel-lo: #111115;
       --bevel-shadow: #000000;
-      --accent: #d4af37;
+      --accent: #2563eb;
+      color: #ffffff !important;
     }
+    body[data-theme="dark"] .win,
+    body[data-theme="dark"] .w95-box,
+    body[data-theme="dark"] #skyscraper,
+    body[data-theme="dark"] #mobileNavDrawer,
+    body[data-theme="dark"] #startMenu {
+      background: #1e1e24 !important;
+      color: #ffffff !important;
+    }
+    body[data-theme="dark"] .info-card {
+      background: #2a2a38 !important;
+      color: #ffffff !important;
+      border-color: #555566 !important;
+    }
+    body[data-theme="dark"] h1,
+    body[data-theme="dark"] h2,
+    body[data-theme="dark"] h3,
+    body[data-theme="dark"] h4,
+    body[data-theme="dark"] h5,
+    body[data-theme="dark"] h6,
+    body[data-theme="dark"] p,
+    body[data-theme="dark"] span,
+    body[data-theme="dark"] div,
+    body[data-theme="dark"] strong,
+    body[data-theme="dark"] label,
+    body[data-theme="dark"] .icon-label,
+    body[data-theme="dark"] .sky-title,
+    body[data-theme="dark"] .sky-hero,
+    body[data-theme="dark"] .w-body,
+    body[data-theme="dark"] .info-card h4,
+    body[data-theme="dark"] [style*="color:#000"],
+    body[data-theme="dark"] [style*="color: #000"],
+    body[data-theme="dark"] [style*="color:#000080"],
+    body[data-theme="dark"] [style*="color: #000080"],
+    body[data-theme="dark"] [style*="color:#000000"],
+    body[data-theme="dark"] [style*="color: #000000"],
+    body[data-theme="dark"] [style*="color:#333"],
+    body[data-theme="dark"] [style*="color: #333"],
+    body[data-theme="dark"] [style*="color:#444"],
+    body[data-theme="dark"] [style*="color: #444"],
+    body[data-theme="dark"] [style*="color:#555"],
+    body[data-theme="dark"] [style*="color: #555"] {
+      color: #ffffff !important;
+    }
+    body[data-theme="dark"] input,
+    body[data-theme="dark"] textarea,
+    body[data-theme="dark"] select {
+      background: #121216 !important;
+      color: #ffffff !important;
+      border-color: #555566 !important;
+    }
+    body[data-theme="dark"] input::placeholder,
+    body[data-theme="dark"] textarea::placeholder {
+      color: #aaaaaa !important;
+    }
+    body[data-theme="dark"] .w95-btn {
+      background: #2d2d3a !important;
+      color: #ffffff !important;
+      border-color: #555566 !important;
+    }
+    body[data-theme="dark"] .w-title {
+      background: #2563eb !important;
+      color: #ffffff !important;
+    }
+    body[data-theme="dark"] a:not([style*="background:#fee500"]) {
+      color: #60a5fa !important;
+    }
+    body[data-theme="dark"] a[href*="kakao"] h4,
+    body[data-theme="dark"] a[href*="kakao"] p {
+      color: #3c1e1e !important;
+    }
+
     body[data-theme="matrix"] {
       --bg: var(--bg-matrix);
       --win-bg: #0d180d;
       --win-fg: var(--txt-matrix);
+      --win-fg-dark: #00ff66;
       --bevel-hi: #00ff66;
       --bevel-lo: #004411;
       --bevel-shadow: #002208;
       --accent: #00ff66;
+    }
+    body[data-theme="matrix"] .info-card {
+      background: #081208 !important;
+      color: #00ff66 !important;
+      border-color: #008833 !important;
+    }
+    body[data-theme="matrix"] h1,
+    body[data-theme="matrix"] h2,
+    body[data-theme="matrix"] h3,
+    body[data-theme="matrix"] h4,
+    body[data-theme="matrix"] p,
+    body[data-theme="matrix"] span,
+    body[data-theme="matrix"] div,
+    body[data-theme="matrix"] strong,
+    body[data-theme="matrix"] .info-card h4,
+    body[data-theme="matrix"] [style*="color:#000080"],
+    body[data-theme="matrix"] [style*="color:#000"] {
+      color: #00ff66 !important;
     }
     body[data-density="compact"] {
       --taskbar-h: 30px;
