@@ -1179,7 +1179,19 @@
       if (zIndexSeed > 800) zIndexSeed = 250;
       return zIndexSeed;
     }
-    let currentLang = localStorage.getItem('os95_lang') || 'ko';
+    function getStorage(key, fallback) {
+      try {
+        return localStorage.getItem(key) || fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+    function setStorage(key, val) {
+      try {
+        localStorage.setItem(key, val);
+      } catch (e) {}
+    }
+    let currentLang = getStorage('os95_lang', 'ko');
     let winSeq = 0;
     const windows = {};
 
@@ -2005,7 +2017,7 @@
 
     function setTheme(t) {
       document.body.setAttribute('data-theme', t);
-      localStorage.setItem('os95_theme', t);
+      setStorage('os95_theme', t);
     }
     function toggleSound() {
       soundOn = !soundOn;
@@ -2018,7 +2030,7 @@
     }
     function toggleLang() {
       currentLang = currentLang === 'ko' ? 'en' : 'ko';
-      localStorage.setItem('os95_lang', currentLang);
+      setStorage('os95_lang', currentLang);
       applyI18n();
       blip(750, 0.05);
     }
@@ -2027,13 +2039,15 @@
       const isKo = currentLang === 'ko';
 
       // 0. Brand Logo / Home Button
-      const brandLogoSpan = document.getElementById('brandLogoText') || document.querySelector('#brandLogo span:last-child');
-      if (brandLogoSpan) {
-        brandLogoSpan.textContent = isKo ? '홈' : 'Home';
-      }
       const brandLogo = document.getElementById('brandLogo');
       if (brandLogo) {
         brandLogo.title = isKo ? 'Superplanning OS95 — 홈으로 이동 / 새로고침' : 'Superplanning OS95 — Home / Refresh';
+        const brandLogoSpan = document.getElementById('brandLogoText') || brandLogo.querySelector('span:last-child');
+        if (brandLogoSpan) {
+          brandLogoSpan.textContent = isKo ? '홈' : 'Home';
+        } else {
+          brandLogo.innerHTML = `<span>🏠</span> <span id="brandLogoText">${isKo ? '홈' : 'Home'}</span>`;
+        }
       }
 
       // 1. Language Toggle Button
