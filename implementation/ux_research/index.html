@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX리서치 | 슈퍼플래닝 UX스튜디오</title>
+  <meta name="description" content="FGI 조사, 1:1 인뎁스 인터뷰, UT 사용성 테스트 전문. 사용자의 행동 맥락과 가설을 검증하여 서비스 이탈률을 낮추는 슈퍼플래닝 UX리서치.">
+  <meta name="keywords" content="UX리서치, FGI조사, 인뎁스인터뷰, UT테스트, 사용성테스트, 가설검증, 슈퍼플래닝, UX스튜디오">
+  <meta name="author" content="슈퍼플래닝 (Superplanning)">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://superplanning.blog/ux_research">
+  <link rel="alternate" hreflang="ko" href="https://superplanning.blog/ux_research">
+  <link rel="alternate" hreflang="en" href="https://superplanning.blog/ux_research?lang=en">
+  <!-- <link rel="alternate" type="text/markdown" href="/research.md"> -->
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning UX Studio)">
+  <meta property="og:url" content="https://superplanning.blog/ux_research">
+  <meta property="og:title" content="UX리서치 | 슈퍼플래닝 UX스튜디오">
+  <meta property="og:description" content="FGI 조사, 1:1 인뎁스 인터뷰, UT 사용성 테스트 전문. 사용자의 행동 맥락과 가설을 검증하여 서비스 이탈률을 낮추는 슈퍼플래닝 UX리서치.">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UX리서치 | 슈퍼플래닝 UX스튜디오">
+  <meta name="twitter:description" content="FGI 조사, 1:1 인뎁스 인터뷰, UT 사용성 테스트 전문. 사용자의 행동 맥락과 가설을 검증하여 서비스 이탈률을 낮추는 슈퍼플래닝 UX리서치.">
+
+  <!-- JSON-LD Structured Data (@graph) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://superplanning.blog/#organization",
+        "name": "슈퍼플래닝 (Superplanning)",
+        "url": "https://superplanning.blog",
+        "email": "hello@superplanning.kr",
+        "founder": {
+          "@type": "Person",
+          "name": "제이크"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://superplanning.blog/#website",
+        "url": "https://superplanning.blog",
+        "name": "슈퍼플래닝 UX스튜디오",
+        "inLanguage": "ko-KR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://superplanning.blog/ux_research#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://superplanning.blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Programs",
+            "item": "https://superplanning.blog/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "UX리서치",
+            "item": "https://superplanning.blog/ux_research"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://superplanning.blog/ux_research#article",
+        "headline": "UX리서치",
+        "datePublished": "2026-08-03",
+        "dateModified": "2026-08-03",
+        "author": {
+          "@type": "Person",
+          "name": "제이크",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "슈퍼플래닝"
+          }
+        },
+        "about": [
+          "UX리서치",
+          "FGI 조사",
+          "인뎁스 인터뷰",
+          "사용성 테스트",
+          "가설 검증"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://superplanning.blog/ux_research#service",
+        "name": "UX리서치",
+        "serviceType": "UX리서치",
+        "provider": {
+          "@type": "Organization",
+          "name": "슈퍼플래닝"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "UX리서치 서비스 목록",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "FGI 조사",
+                "description": "4~6명 그룹 조사를 통해 공통 인식과 사용자 니즈를 발견합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "1:1 인뎁스 인터뷰",
+                "description": "심층 1:1 인터뷰로 심리적 이탈 원인과 인디비주얼 인사이트를 도출합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UT 사용성 테스트",
+                "description": "실제 유저의 태스크 수행 관찰을 통해 사용성 장애 요소를 발굴합니다."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://superplanning.blog/ux_research#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "UX리서치란 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UX리서치는 사용자가 웹·앱 서비스를 이용할 때 겪는 행동 패턴, 언어, 숨겨진 요구사항을 관찰하고 분석하여 가설을 검증하는 조사 과정입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "FGI(Focus Group Interview) 조사는 어떤 경우에 효과적인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "FGI는 4~6명의 정형화된 사용자를 모아 그룹 토론 방식으로 서비스에 대한 공통된 인식, 브랜드 태도, 신규 서비스 기획 아이디어를 도출할 때 가장 효과적입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "1:1 인뎁스 인터뷰(In-depth Interview)의 장점은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "타인의 시선에 영향을 받지 않고 개인의 깊은 이용 경험, 이탈 이유, 결제 심리 등 솔직하고 구체적인 인디비주얼 인사이트를 파악할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "UT(Usability Test, 사용성 테스트)는 어떻게 진행되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "실제 사용자에게 미션을 부여하고 화면을 조작하는 과정을 관찰하며, 사용자가 어디서 머뭇거리고 오인하는지 태스크 성공률과 오류 지점을 측정합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "리서치 인원은 몇 명이 적정한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "야콥 니엘슨의 법칙에 따르면 5명의 유저 테스트만으로도 핵심 사용성 문제의 85% 이상을 발굴할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "리서치 준비부터 결과 보고서 산출까지 소요 기간은 얼마나 걸리나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "일반적인 FGI 및 1:1 인뎁스 인터뷰 기준, 가설 설계부터 패널 리크루팅, 인터뷰 수행, 결과 분석 및 개선안 보고서 전달까지 약 2주~3주가 소요됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "타겟 사용자 리크루팅(Recruiting)은 어떻게 진행되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "서비스의 핵심 페르소나를 스크리너 설문지로 정밀 선별하여 적합도 높은 참소비자 패널만을 선정합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "UX리서치 산출물에는 어떤 내용이 포함되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "종합 리서치 보고서(PDF/PPT), 인터뷰 녹취/영상 파일, 어피니티 다이어그램, 페르소나, 유저 저니 맵, 화면 단위 UX 개선안이 포함됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "이미 출시된 서비스도 UX리서치가 필요한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네. 기존 서비스의 지표 원인을 정량 데이터만으로는 알 수 없을 때, 정성 리서치를 통해 유저의 실제 머뭇거림과 불만 원인을 정확히 진단할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "UX기획 및 UI디자인 단계와 어떻게 연계되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "도출된 인사이트는 와이어프레임 수정 및 UX 라이팅, 화면 설계서 변경안으로 즉시 반영되어 기획 실패 위험을 극적으로 줄여줍니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "프로젝트 견적 및 진행 신청은 어떻게 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "찾아오시는 길 및 문의 페이지를 통해 서비스 현황과 목표를 남겨주시면 10분 이내로 전문 UX컨설턴트가 상세 상담과 견적안을 안내해 드립니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Reset & Base Fonts (Win95 Aesthetic, Zero External Dependencies) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #008080;
+      color: #000000;
+      font-family: 'Courier New', Consolas, '맑은 고딕', 'Malgun Gothic', monospace, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 20px 10px;
+    }
+    a {
+      color: #0000aa;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #ff0000;
+    }
+
+    /* Windows 95 Container Window */
+    .notepad-window {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    /* 1. Yellow Titlebar (#ffd43b) */
+    .titlebar {
+      background: #ffd43b;
+      color: #000000;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+      user-select: none;
+    }
+    .titlebar-text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .titlebar-controls {
+      display: flex;
+      gap: 3px;
+    }
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+
+    /* 2. Gray Menu Bar (#dcdcdc) */
+    .menubar {
+      background: #dcdcdc;
+      padding: 3px 8px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 16px;
+      user-select: none;
+    }
+    .menubar span {
+      cursor: default;
+    }
+    .menubar u {
+      text-decoration: underline;
+    }
+
+    /* 3. Paper Document Content Area (#ffffff) */
+    .content-paper {
+      background: #ffffff;
+      padding: 28px 36px;
+      border-top: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 6px;
+    }
+
+    /* Table of Contents List */
+    .toc {
+      list-style-type: none;
+      background: #f4f4f4;
+      border: 1px solid #808080;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+    }
+    .toc li {
+      margin-bottom: 6px;
+    }
+    .toc li::before {
+      content: "▶ ";
+      font-size: 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      background: #e4e4e4;
+      padding: 4px 8px;
+      border-left: 4px solid #008080;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #000080;
+    }
+
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    /* Quotes */
+    blockquote {
+      background: #ffffdf;
+      border-left: 4px solid #ffd43b;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 16px 0;
+    }
+    .sub-quote {
+      font-size: 12px;
+      color: #444444;
+      margin-top: -8px;
+      margin-bottom: 16px;
+    }
+
+    /* List items */
+    ul.section-list {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    ul.section-list li {
+      margin-bottom: 6px;
+    }
+
+    /* Image Placeholder Container for future image insertion */
+    .img-container {
+      border: 2px dashed #808080;
+      padding: 18px;
+      background: #fafafa;
+      margin: 20px 0;
+      text-align: center;
+      color: #555555;
+      font-size: 13px;
+    }
+
+    /* Comparison Table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+    .compare-table caption {
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid #808080;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .compare-table thead th {
+      background: #dcdcdc;
+      font-weight: bold;
+      text-align: center;
+    }
+    .compare-table tbody th {
+      background: #f0f0f0;
+      font-weight: bold;
+      width: 20%;
+    }
+
+    /* FAQ Description List */
+    .faq {
+      margin-top: 16px;
+    }
+    .faq dt {
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 14px;
+      color: #000080;
+    }
+    .faq dt::before {
+      content: "Q. ";
+      color: #d9534f;
+      font-weight: bold;
+    }
+    .faq dd {
+      margin-left: 0;
+      margin-top: 4px;
+      padding-left: 24px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .faq dd::before {
+      content: "A. ";
+      position: absolute;
+      left: 0;
+      color: #008080;
+      font-weight: bold;
+    }
+
+    /* Bottom Inline Navigation Footer */
+    .bottom-nav {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #c0c0c0;
+      font-size: 13px;
+    }
+    .bottom-nav p {
+      margin-bottom: 6px;
+    }
+
+    /* 4. Gray Status Bar (#dcdcdc) */
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 10px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      color: #333333;
+      user-select: none;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      body {
+        padding: 5px;
+      }
+      .content-paper {
+        padding: 16px 14px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 5px 6px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Windows 95 Notepad Window Container -->
+  <div class="notepad-window">
+
+    <!-- Title Bar (Decoration, aria-hidden="true") -->
+    <div class="titlebar" aria-hidden="true">
+      <div class="titlebar-text">
+        <span>📄</span>
+        <span>UX리서치.txt - 메모장</span>
+      </div>
+      <div class="titlebar-controls">
+        <div class="win-btn">−</div>
+        <div class="win-btn">▢</div>
+        <div class="win-btn">✕</div>
+      </div>
+    </div>
+
+    <!-- Menu Bar (Decoration, aria-hidden="true") -->
+    <div class="menubar" aria-hidden="true">
+      <span><u>파일(F)</u></span>
+      <span><u>편집(E)</u></span>
+      <span><u>서식(O)</u></span>
+      <span><u>보기(V)</u></span>
+      <span><u>도움말(H)</u></span>
+    </div>
+
+    <!-- Paper Content Area (Semantic HTML DOM) -->
+    <div class="content-paper">
+
+      <h1>UX리서치</h1>
+
+      <!-- Anchor Links Table of Contents (ul.toc) -->
+      <ul class="toc">
+        <li><a href="#why">왜 가설 검증이 필요한가</a></li>
+        <li><a href="#fgi">웹·앱 FGI 조사</a></li>
+        <li><a href="#idi">1:1 인뎁스 인터뷰 및 UT</a></li>
+        <li><a href="#effects">기대효과</a></li>
+        <li><a href="#tasks">수행업무</a></li>
+        <li><a href="#outputs">산출물</a></li>
+        <li><a href="#process">UX리서치 프로세스</a></li>
+        <li><a href="#compare">리서치 방식 비교</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ul>
+
+      <!-- 1. 왜 가설 검증이 필요한가 -->
+      <h2 id="why">왜 가설 검증이 필요한가</h2>
+      <p>앱 사업의 생존 수단은 끊임 없는 “가설 검증“ 입니다.</p>
+      <p>가설이란, 어떤 문제에 대해 우리가 가진 추측입니다.</p>
+      <p>UX기획자는 가설을 사실로 받아들이기 위해서는, 가설을 입증하는 근거가 모여야 합니다.</p>
+      
+      <blockquote>"1명이 불편함을 느끼면 10,000명이 느끼는 것과 같습니다."</blockquote>
+      <p class="sub-quote"><small>"전체 유저 중 극소수에게 질문하기 때문에 대변한다고 볼 수는 없지만, 적어도 다른 사람이 동일하게 느끼고 있을 수 있어요."</small></p>
+
+      <p>정량적 데이터만으로는 알 수 없는 사용자 행동 이면의 '이유(Why)'를 밝혀내는 정성적 UX리서치는 기획 실패 위험을 극적으로 줄여줍니다.</p>
+
+      <!-- Image Container Placeholder for Future Image Insertion -->
+      <div class="img-container">
+        [🖼️ 리서치 사진 및 그래픽 추가 위치 — 추후 이미지 삽입 예정 구역]
+      </div>
+
+      <!-- 2. 웹·앱 FGI 조사 -->
+      <h2 id="fgi">웹·앱 FGI 조사</h2>
+      <p>표적집단 면접조사(FGI, Focus Group Interview)는 공통의 특성을 가진 4~6명의 표적 사용자를 모아 전문 모더레이터의 진행 하에 그룹 토론을 수행하는 정성 조사 방식입니다.</p>
+      
+      <h3>FGI 제공 범위</h3>
+      <ul class="section-list">
+        <li>타겟 사용자 군별 스크리너 설문 제작 및 패널 리크루팅</li>
+        <li>가설 기반 모더레이팅 가이드 라인(Questionnaire) 수립</li>
+        <li>FGI 세션 진행 (그룹별 90분~120분 토론 및 음성/영상 녹화)</li>
+        <li>사용자 발화 분석 및 인사이트 도출 보고서 작성</li>
+      </ul>
+
+      <!-- 3. 1:1 인뎁스 인터뷰 및 UT -->
+      <h2 id="idi">1:1 인뎁스 인터뷰 및 UT</h2>
+      <p>사용자의 깊은 심리적 요인과 개별적인 서비스 경험 태도를 파악하기 위해 1:1 심층 인터뷰와 실제 화면 작동 관찰을 결합하여 진행합니다.</p>
+
+      <h3>인뎁스 인터뷰 (In-depth Interview)</h3>
+      <p>타인의 시선에 영향을 받지 않고 개인의 라이프스타일, 서비스 이용 맥락, 결제 망설임 및 이탈 원인을 1:1 대화 방식으로 정밀 탐색합니다.</p>
+
+      <h3>UT 사용성 테스트 (Usability Test)</h3>
+      <p>프로토타입 또는 기존 웹·앱 서비스에서 사용자에게 구체적인 시나리오 미션을 부여하고, 화면 조작 과정에서의 머뭇거림, 탐색 오류, 사용성 장애 요소를 실시간 관찰 분석합니다.</p>
+
+      <!-- 4. 기대효과 -->
+      <h2 id="effects">기대효과</h2>
+      <ul class="section-list">
+        <li><strong>개발 리스크 절감:</strong> 불확실한 추측 기반 개발을 방지하여 기획 수정 재작업 비용을 최소화합니다.</li>
+        <li><strong>전환율(CVR) 상승:</strong> 사용자 관찰을 통해 회원가입, 결제, 서식 입력 과정의 병목 이탈 지점을 발굴하고 해결합니다.</li>
+        <li><strong>제품-시장 적합성(PMF) 입증:</strong> 실제 타겟 고객 언어를 반영하여 서비스 가치 제안을 정밀화합니다.</li>
+      </ul>
+
+      <!-- 5. 수행업무 -->
+      <h2 id="tasks">수행업무</h2>
+      <ul class="section-list">
+        <li>리서치 목표 설정 및 핵심 조사 가설 구조화</li>
+        <li>타겟 페르소나 정의 및 패널 조건 스크리닝</li>
+        <li>인터뷰 &amp; UT 가이드라인 및 실전 시나리오 설계</li>
+        <li>현장 모더레이팅 수행 및 비대면/대면 세션 운영</li>
+        <li>정성 데이터 코딩, 어피니티 다이어그램 체계화 및 개선 가이드라인 작성</li>
+      </ul>
+
+      <!-- 6. 산출물 -->
+      <h2 id="outputs">산출물</h2>
+      <ul class="section-list">
+        <li>UX리서치 종합 분석 보고서 (PDF / PPT)</li>
+        <li>사용자 페르소나 (Persona) 카드 및 유저 저니 맵 (User Journey Map)</li>
+        <li>인터뷰 풀 녹취록 및 핵심 발화 음성/동영상 파일</li>
+        <li>화면 단위 UX/UI 개선 권고사항 및 와이어프레임 개선안</li>
+      </ul>
+
+      <!-- 7. UX리서치 프로세스 -->
+      <h2 id="process">UX리서치 프로세스</h2>
+      <ol class="section-list" style="margin-left:20px;">
+        <li><strong>1단계 — 가설 정의 (Scope):</strong> 클라이언트 미팅 및 리서치 핵심 가설 수립</li>
+        <li><strong>2단계 — 설계 &amp; 리크루팅 (Setup):</strong> 질문지 작성 및 타겟 패널 선별 모집</li>
+        <li><strong>3단계 — 조사 수행 (Execute):</strong> FGI / 1:1 인뎁스 인터뷰 &amp; UT 진행</li>
+        <li><strong>4단계 — 데이터 분석 (Analyze):</strong> 정성 데이터 체계화 및 인사이트 도출</li>
+        <li><strong>5단계 — 결과 보고 (Deliver):</strong> 최종 결과 발표 및 UX 개선 가이드 전달</li>
+      </ol>
+
+      <!-- 8. 리서치 방식 비교 -->
+      <h2 id="compare">리서치 방식 비교</h2>
+      <table class="compare-table">
+        <caption>표 1. 리서치 방식 비교 — FGI, 1:1 인뎁스, UT, 서베이 비교 분석</caption>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>FGI 조사</th>
+            <th>1:1 인뎁스 &amp; UT</th>
+            <th>정량 서베이</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">조사 목적</th>
+            <td>집단 아이디어 발굴 및 공통 인식 탐색</td>
+            <td>개인 심층 동기 분석 및 화면 사용성 검증</td>
+            <td>가설의 통계적 검증 및 비율 측정</td>
+          </tr>
+          <tr>
+            <th scope="row">주요 타겟</th>
+            <td>4~6명 타겟 그룹 패널</td>
+            <td>5~10명 1:1 사용자 패널</td>
+            <td>100명~1,000명 이상 무작위 유저</td>
+          </tr>
+          <tr>
+            <th scope="row">분석 깊이</th>
+            <td>중간 (그룹 상호작용 중심)</td>
+            <td>매우 높음 (개인 세부 동기 및 행동)</td>
+            <td>보통 (수치 중심)</td>
+          </tr>
+          <tr>
+            <th scope="row">권장 소요기간</th>
+            <td>2주~3주</td>
+            <td>2주~3주</td>
+            <td>1주~2주</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 9. 자주 묻는 질문 -->
+      <h2 id="faq">자주 묻는 질문</h2>
+      <dl class="faq">
+        <dt>UX리서치란 무엇인가요?</dt>
+        <dd>UX리서치는 사용자가 웹·앱 서비스를 이용할 때 겪는 행동 패턴, 언어, 숨겨진 요구사항을 관찰하고 분석하여 가설을 검증하는 조사 과정입니다.</dd>
+
+        <dt>FGI(Focus Group Interview) 조사는 어떤 경우에 효과적인가요?</dt>
+        <dd>FGI는 4~6명의 정형화된 사용자를 모아 그룹 토론 방식으로 서비스에 대한 공통된 인식, 브랜드 태도, 신규 서비스 기획 아이디어를 도출할 때 가장 효과적입니다.</dd>
+
+        <dt>1:1 인뎁스 인터뷰(In-depth Interview)의 장점은 무엇인가요?</dt>
+        <dd>타인의 시선에 영향을 받지 않고 개인의 깊은 이용 경험, 이탈 이유, 결제 심리 등 솔직하고 구체적인 인디비주얼 인사이트를 파악할 수 있습니다.</dd>
+
+        <dt>UT(Usability Test, 사용성 테스트)는 어떻게 진행되나요?</dt>
+        <dd>실제 사용자에게 미션을 부여하고 화면을 조작하는 과정을 관찰하며, 사용자가 어디서 머뭇거리고 오인하는지 태스크 성공률과 오류 지점을 측정합니다.</dd>
+
+        <dt>리서치 인원은 몇 명이 적정한가요?</dt>
+        <dd>야콥 니엘슨의 법칙에 따르면 5명의 유저 테스트만으로도 핵심 사용성 문제의 85% 이상을 발굴할 수 있습니다.</dd>
+
+        <dt>리서치 준비부터 결과 보고서 산출까지 소요 기간은 얼마나 걸리나요?</dt>
+        <dd>일반적인 FGI 및 1:1 인뎁스 인터뷰 기준, 가설 설계부터 패널 리크루팅, 인터뷰 수행, 결과 분석 및 개선안 보고서 전달까지 약 2주~3주가 소요됩니다.</dd>
+
+        <dt>타겟 사용자 리크루팅(Recruiting)은 어떻게 진행되나요?</dt>
+        <dd>서비스의 핵심 페르소나를 스크리너 설문지로 정밀 선별하여 적합도 높은 참소비자 패널만을 선정합니다.</dd>
+
+        <dt>UX리서치 산출물에는 어떤 내용이 포함되나요?</dt>
+        <dd>종합 리서치 보고서(PDF/PPT), 인터뷰 녹취/영상 파일, 어피니티 다이어그램, 페르소나, 유저 저니 맵, 화면 단위 UX 개선안이 포함됩니다.</dd>
+
+        <dt>이미 출시된 서비스도 UX리서치가 필요한가요?</dt>
+        <dd>네. 기존 서비스의 지표 원인을 정량 데이터만으로는 알 수 없을 때, 정성 리서치를 통해 유저의 실제 머뭇거림과 불만 원인을 정확히 진단할 수 있습니다.</dd>
+
+        <dt>UX기획 및 UI디자인 단계와 어떻게 연계되나요?</dt>
+        <dd>도출된 인사이트는 와이어프레임 수정 및 UX 라이팅, 화면 설계서 변경안으로 즉시 반영되어 기획 실패 위험을 극적으로 줄여줍니다.</dd>
+
+        <dt>프로젝트 견적 및 진행 신청은 어떻게 하나요?</dt>
+        <dd>찾아오시는 길 및 문의 페이지를 통해 서비스 현황과 목표를 남겨주시면 10분 이내로 전문 UX컨설턴트가 상세 상담과 견적안을 안내해 드립니다.</dd>
+      </dl>
+
+      <!-- Context Navigation & Footers -->
+      <div class="bottom-nav">
+        <p>다음 단계: <a href="https://superplanning.blog/#services">UX기획·디자인</a> · 견적·일정 안내: <a href="https://superplanning.blog/#contact">찾아오시는 길</a></p>
+        <p>마크다운 미러: <a href="/research.md">/research.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></p>
+      </div>
+
+    </div>
+
+    <!-- Status Bar (Decoration, aria-hidden="true") -->
+    <div class="statusbar" aria-hidden="true">
+      <div>UTF-8</div>
+      <div>Ln 1, Col 1</div>
+      <div>한국어 (대한민국)</div>
+      <div>© Superplanning UX Studio</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
