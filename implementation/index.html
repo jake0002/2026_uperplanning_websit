@@ -1711,12 +1711,8 @@
             <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '사운드 효과:' : 'Sound Effects:'}</label>
             <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">${isKo ? '사운드: ON 🔊' : 'Sound: ON 🔊'}</button>
           </div>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '화면 밀도:' : 'Screen Density:'}</label>
-            <button class="w95-btn" onclick="toggleDensity();">${isKo ? '밀도 전환 (Comfortable / Compact)' : 'Toggle Density (Comfortable / Compact)'}</button>
-          </div>
           <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">${isKo ? '테스트: BSOD 블루스크린 (Ctrl+Alt+U)' : 'Test: BSOD Blue Screen (Ctrl+Alt+U)'}</button>
+          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">${isKo ? '갑자기 PC가 이상해요 (블루스크린 호출)' : 'My PC acts weird (Trigger BSOD)'}</button>
         `;
       } else if (key === 'shut') {
         return `
