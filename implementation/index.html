@@ -2025,6 +2025,16 @@
     function applyI18n() {
       const isKo = currentLang === 'ko';
 
+      // 0. Brand Logo / Home Button
+      const brandLogoSpan = document.querySelector('#brandLogo span:last-child');
+      if (brandLogoSpan) {
+        brandLogoSpan.textContent = isKo ? '홈' : 'Home';
+      }
+      const brandLogo = document.getElementById('brandLogo');
+      if (brandLogo) {
+        brandLogo.title = isKo ? 'Superplanning OS95 — 홈으로 이동 / 새로고침' : 'Superplanning OS95 — Home / Refresh';
+      }
+
       // 1. Language Toggle Button
       const langBtn = document.getElementById('langBtn');
       if (langBtn) {
