@@ -925,7 +925,7 @@
 
   <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동 / 새로고침" onclick="blip(880, 0.07); location.reload();">
-    <span>🏠</span> <span>홈</span>
+    <span>🏠</span> <span id="brandLogoText">홈</span>
   </div>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + BROCHURE BTN & KO|EN TOGGLE AT FAR RIGHT) -->
@@ -1179,7 +1179,7 @@
       if (zIndexSeed > 800) zIndexSeed = 250;
       return zIndexSeed;
     }
-    let currentLang = 'ko';
+    let currentLang = localStorage.getItem('os95_lang') || 'ko';
     let winSeq = 0;
     const windows = {};
 
@@ -2018,6 +2018,7 @@
     }
     function toggleLang() {
       currentLang = currentLang === 'ko' ? 'en' : 'ko';
+      localStorage.setItem('os95_lang', currentLang);
       applyI18n();
       blip(750, 0.05);
     }
@@ -2026,7 +2027,7 @@
       const isKo = currentLang === 'ko';
 
       // 0. Brand Logo / Home Button
-      const brandLogoSpan = document.querySelector('#brandLogo span:last-child');
+      const brandLogoSpan = document.getElementById('brandLogoText') || document.querySelector('#brandLogo span:last-child');
       if (brandLogoSpan) {
         brandLogoSpan.textContent = isKo ? '홈' : 'Home';
       }
