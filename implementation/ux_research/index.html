@@ -653,90 +653,87 @@
       overflow-y: auto;
     }
 
-    /* Header H1 (Exact Clean Style from Image) */
+    /* Header H1 (Pure, Unadorned Notepad Document Title) */
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: #000000;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
       margin-bottom: 12px;
-      border-bottom: 1px solid #d0d0d0;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
     }
 
     .hero-intro {
       font-size: 14.5px;
-      line-height: 1.65;
-      color: #444444;
-      margin-bottom: 28px;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 32px;
+      font-weight: 500;
     }
 
+    /* Header H2 (Raw, Clean Notepad Heading - No Background Box, No Left Colored Bar) */
     h2 {
-      font-size: 19px;
-      font-weight: bold;
-      margin-top: 36px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 38px;
       margin-bottom: 14px;
-      background: #f4f6f8;
-      padding: 8px 14px;
-      border-left: 5px solid #000080;
-      border-top: 1px solid #e0e0e0;
-      border-right: 1px solid #e0e0e0;
-      border-bottom: 1px solid #e0e0e0;
-      color: #111111;
+      padding: 0;
+      background: transparent;
+      border: none;
+      color: #000000;
       scroll-margin-top: 70px;
+      letter-spacing: -0.01em;
     }
 
+    /* Header H3 (Raw, Clean Subheading - No Artificial Icons) */
     h3 {
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 22px;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-top: 24px;
       margin-bottom: 10px;
       color: #000080;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
     h3::before {
-      content: "■";
-      font-size: 10px;
-      color: #008080;
+      content: "";
+      display: none;
     }
 
+    /* Raw Body Paragraphs (Clean Notepad Readability) */
     p {
       margin-bottom: 14px;
       font-size: 13.5px;
-      line-height: 1.7;
-      text-align: justify;
-      color: #222222;
+      line-height: 1.75;
+      color: #111111;
     }
 
-    /* Quotes */
+    /* Raw Quote Styling (Pure Notepad Text Quotation - No Box, No Yellow Bar) */
     blockquote {
-      background: #fffbea;
-      border: 2px solid #000;
-      border-left: 6px solid #ffd43b;
-      box-shadow: inset 1px 1px 0 #fff, 2px 2px 0 rgba(0,0,0,0.1);
-      padding: 14px 18px;
+      background: transparent;
+      border: none;
+      border-left: 3px solid #000080;
+      box-shadow: none;
+      padding: 6px 0 6px 16px;
       font-size: 15px;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
+      font-weight: 700;
+      margin: 20px 0 8px 0;
       color: #000000;
     }
     .sub-quote {
       font-size: 12.5px;
-      color: #444444;
+      color: #555555;
       margin-top: 0;
       margin-bottom: 20px;
-      padding-left: 12px;
-      border-left: 2px solid #ccc;
+      padding-left: 16px;
+      border-left: none;
     }
 
-    /* Real Research Photo Frames (Works for /images/ paths) */
+    /* Photo Frame & Captions (Clean Raw Document Look) */
     .photo-frame {
-      background: #f8f9fa;
-      border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.2);
-      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #808080;
+      box-shadow: none;
+      padding: 8px;
       margin: 24px 0;
       max-width: 640px;
     }
@@ -747,17 +744,17 @@
       object-fit: contain;
       display: block;
       margin: 0 auto;
-      border: 1px solid #7b7b7b;
+      border: none;
     }
     .photo-caption {
       margin-top: 8px;
       font-size: 12px;
       font-weight: bold;
-      color: #000080;
+      color: #333333;
       text-align: center;
-      background: #e9ecef;
-      padding: 6px 10px;
-      border: 1px solid #7b7b7b;
+      background: transparent;
+      padding: 4px 0;
+      border: none;
     }
 
     /* List items */
