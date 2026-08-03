@@ -1086,7 +1086,7 @@
         'w.portfolio': '포트폴리오',
         'w.classes': 'AI-UX강의',
         'w.blog': 'UX블로그',
-        'w.contact': '찾아오시는 길 & 문의',
+        'w.contact': '찾아오시는 길',
         'w.about': '회사소개',
         'w.clients': '주요 고객사',
         'w.intro-video': '슈퍼플래닝 소개영상',
@@ -1110,7 +1110,7 @@
         'w.portfolio': 'Portfolio',
         'w.classes': 'Classes',
         'w.blog': 'Blog',
-        'w.contact': 'Location & Contact',
+        'w.contact': 'Location',
         'w.about': 'About',
         'w.intro-video': 'Promo Video',
         'w.np': 'Now Playing',
@@ -1183,7 +1183,7 @@
       'portfolio': { w: 760, h: 480, title: '포트폴리오' },
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
-      'contact': { w: 580, h: 470, title: '찾아오시는 길 & 문의' },
+      'contact': { w: 580, h: 525, title: '찾아오시는 길' },
       'about': { w: 580, h: 410, title: '회사 소개' },
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'careers': { w: 580, h: 400, title: '인재 채용' },
@@ -1430,60 +1430,59 @@
         `;
       } else if (key === 'contact') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">📍 찾아오시는 길 &amp; 연락처</h3>
-          <div class="info-card" style="margin-bottom:10px; display:flex; flex-direction:column; gap:8px;">
-            <h4 style="color:#000080; font-size:13px; margin-bottom:1px; line-height:1.3;">UX/UI기획부터 앱 개발까지, 슈퍼플래닝과 함께하세요.</h4>
-            <p style="font-size:11.5px; color:#444; margin-bottom:4px; font-weight:600;">서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</p>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
+          <div class="info-card" style="margin-bottom:8px; display:flex; flex-direction:column; gap:6px;">
+            <h4 style="color:#000080; font-size:12.5px; margin-bottom:2px; line-height:1.3;">UX/UI기획부터 앱 개발까지, 슈퍼플래닝과 함께하세요.</h4>
             
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
               <div style="font-size:11.5px;"><strong>회사명:</strong> <span style="font-weight:700;">슈퍼플래닝</span></div>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
               <div style="font-size:11.5px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
-              <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('경기 하남시 미사강변동로72 SB비즈타워 1116호', '주소')">복사</button>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('경기 하남시 미사강변동로72 SB비즈타워 1116호', '주소')">복사</button>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
               <div style="font-size:11.5px;"><strong>전화번호 (T):</strong> 031-699-3298</div>
-              <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호')">복사</button>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호')">복사</button>
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
               <div style="font-size:11.5px;"><strong>대표 이메일 (E):</strong> jake@superplanning.co.kr</div>
-              <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
             </div>
           </div>
           <div class="info-card" style="margin-bottom:8px;">
-            <h4 style="color:#000080; font-size:13px; margin-bottom:6px;">이렇게 찾아오세요.</h4>
-            <p style="font-size:11.5px; line-height:1.5; margin-bottom:6px;">
+            <h4 style="color:#000080; font-size:12.5px; margin-bottom:4px;">이렇게 찾아오세요.</h4>
+            <p style="font-size:11px; line-height:1.45; margin-bottom:4px;">
               <strong>▶ 지하철로 오실 경우:</strong><br>
               5호선 미사역 1분 거리 위치, 8번 출구 서브웨이 옆 건물 11층
             </p>
-            <p style="font-size:11.5px; line-height:1.5; margin-bottom:8px;">
+            <p style="font-size:11px; line-height:1.45; margin-bottom:6px;">
               <strong>▶ 차량으로 오실 경우:</strong><br>
               지하주차장에 무료주차 가능 (건물 후면 진입)
             </p>
-            <a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:inline-block; padding:4px 10px; font-size:11px; text-decoration:none; margin-top:2px;">
+            <a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:inline-block; padding:3px 8px; font-size:10.5px; text-decoration:none;">
               🗺️ 네이버지도 길찾기 ↗ (https://naver.me/GmF8esjK)
             </a>
           </div>
 
           <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD -->
-          <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" class="info-card" style="display:block; text-decoration:none; margin-bottom:8px; background:#fee500; border:2px solid #3c1e1e; cursor:pointer;" onclick="blip(880, 0.05);">
+          <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" class="info-card" style="display:block; text-decoration:none; margin-bottom:6px; background:#fee500; border:2px solid #3c1e1e; cursor:pointer;" onclick="blip(880, 0.05);">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <div style="display:flex; align-items:center; gap:8px;">
-                <span style="font-size:20px;">💬</span>
+                <span style="font-size:18px;">💬</span>
                 <div>
-                  <h4 style="color:#3c1e1e; font-size:13px; margin:0; font-weight:800;">카카오채널 실시간 채팅문의</h4>
-                  <p style="color:#3c1e1e; font-size:11px; margin:2px 0 0 0; opacity:0.9;">카카오톡으로 빠른 UX상담 (24시간)</p>
+                  <h4 style="color:#3c1e1e; font-size:12px; margin:0; font-weight:800;">카카오채널 실시간 채팅문의</h4>
+                  <p style="color:#3c1e1e; font-size:10px; margin:1px 0 0 0; opacity:0.9;">카카오톡으로 빠른 UX상담 (24시간)</p>
                 </div>
               </div>
-              <span class="w95-btn" style="padding:4px 10px; background:#3c1e1e; color:#fee500; font-weight:bold; font-size:11px; border:1px solid #000; flex-shrink:0; display:inline-block; pointer-events:none;">채팅 시작 ↗</span>
+              <span class="w95-btn" style="padding:2px 6px; background:#3c1e1e; color:#fee500; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-block; pointer-events:none;">채팅 시작 ↗</span>
             </div>
           </a>
 
-          <p style="font-size:10px; opacity:0.75; text-align:center; margin-top:6px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
+          <p style="font-size:9.5px; opacity:0.75; text-align:center; margin-top:4px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
         `;
       } else if (key === 'portfolio') {
         return `
