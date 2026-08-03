@@ -1435,6 +1435,12 @@
           el.style.height = 'auto';
         }
         el.style.zIndex = getNextZIndex();
+
+        const winArea = document.getElementById('windowArea');
+        if (winArea && winArea.firstChild !== el) {
+          winArea.prepend(el);
+        }
+
         updatePreview(key, true);
         for (const k in windows) if (k !== key) updatePreview(k, false);
         updateScrollHeight();
@@ -1490,11 +1496,19 @@
         <div class="w-body">${getWindowBody(key)}</div>
       `;
 
-      document.getElementById('windowArea').appendChild(winEl);
+      const winArea = document.getElementById('windowArea');
+      if (winArea) {
+        winArea.prepend(winEl);
+      } else {
+        document.body.appendChild(winEl);
+      }
       makeDraggable(winEl);
 
       winEl.addEventListener('mousedown', () => {
         winEl.style.zIndex = getNextZIndex();
+        if (isMobile && winArea && winArea.firstChild !== winEl) {
+          winArea.prepend(winEl);
+        }
         updatePreview(key, true);
         for (const k in windows) if (k !== key) updatePreview(k, false);
       });
@@ -1502,6 +1516,9 @@
       windows[key] = { el: winEl, minimized: false };
       addPreview(key, titleText);
       updateScrollHeight();
+      if (isMobile) {
+        setTimeout(() => winEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
       if (key === 'about') setTimeout(typeWriterHero, 60);
     }
 
@@ -2058,9 +2075,9 @@
     function initDirectAccess() {
       const minTop = getMinWindowTop();
       if (window.innerWidth <= 768) {
-        openWindow('about');
-        openWindow('services');
         openWindow('clients');
+        openWindow('services');
+        openWindow('about');
       } else if (window.innerWidth <= 980) {
         openWindow('about', { left: 14, top: minTop });
         openWindow('services', { left: 14, top: minTop + 480 });
