@@ -25,9 +25,10 @@ Write-Host "2. Deploying updated files to AWS EC2 (superplanning.blog)..." -Fore
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/index.html admin@13.125.12.112:/tmp/index.html
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_research.html admin@13.125.12.112:/tmp/ux_research.html
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux-research.html admin@13.125.12.112:/tmp/ux-research.html
+scp -i "shkey.pem" -r -o StrictHostKeyChecking=no implementation/images admin@13.125.12.112:/tmp/images
 scp -i "shkey.pem" -r -o StrictHostKeyChecking=no implementation/ux_research admin@13.125.12.112:/tmp/ux_research
 
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp /tmp/index.html /var/www/html/index.html && sudo cp /tmp/ux_research.html /var/www/html/ux_research.html && sudo cp /tmp/ux-research.html /var/www/html/ux-research.html && sudo cp -r /tmp/ux_research /var/www/html/ && sudo chown -R admin:www-data /var/www/html/"
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp /tmp/index.html /var/www/html/index.html && sudo cp /tmp/ux_research.html /var/www/html/ux_research.html && sudo cp /tmp/ux-research.html /var/www/html/ux-research.html && sudo cp -r /tmp/ux_research /var/www/html/ && sudo cp -r /tmp/images /var/www/html/ && sudo chmod -R 755 /var/www/html/ux_research /var/www/html/images && sudo chown -R admin:www-data /var/www/html/"
 
 Write-Host "3. Reloading Apache Web Server..." -ForegroundColor Cyan
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo systemctl reload apache2"
