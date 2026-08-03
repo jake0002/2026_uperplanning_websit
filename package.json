@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "deploy": "powershell -ExecutionPolicy Bypass -File ./deploy.ps1"
+  },
   "dependencies": {
     "playwright": "^1.62.1"
   }
