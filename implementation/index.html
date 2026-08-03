@@ -925,7 +925,7 @@
 
   <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="goHome();">
-    <span>🏠</span> <span id="brandLogoText">홈</span>
+    <span>🏠</span> <span id="brandLogoText" data-i18n="home">홈</span>
   </div>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + BROCHURE BTN & KO|EN TOGGLE AT FAR RIGHT) -->
@@ -2069,19 +2069,22 @@
     }
 
     function applyI18n() {
-      const isKo = currentLang === 'ko';
+      try {
+        const isKo = currentLang === 'ko';
 
-      // 0. Brand Logo / Home Button
-      const brandLogo = document.getElementById('brandLogo');
-      if (brandLogo) {
-        brandLogo.title = isKo ? 'Superplanning OS95 — 홈으로 이동' : 'Superplanning OS95 — Go to Home';
-        const brandLogoSpan = document.getElementById('brandLogoText') || brandLogo.querySelector('span:last-child');
-        if (brandLogoSpan) {
-          brandLogoSpan.textContent = isKo ? '홈' : 'Home';
-        } else {
-          brandLogo.innerHTML = `<span>🏠</span> <span id="brandLogoText">${isKo ? '홈' : 'Home'}</span>`;
+        // 0. Brand Logo / Home Button
+        const brandLogo = document.getElementById('brandLogo');
+        if (brandLogo) {
+          brandLogo.title = isKo ? 'Superplanning OS95 — 홈으로 이동' : 'Superplanning OS95 — Go to Home';
         }
-      }
+        const homeSpans = document.querySelectorAll('#brandLogoText, [data-i18n="home"], #brandLogo span:last-child');
+        if (homeSpans && homeSpans.length > 0) {
+          homeSpans.forEach(span => {
+            span.textContent = isKo ? '홈' : 'Home';
+          });
+        } else if (brandLogo) {
+          brandLogo.innerHTML = `<span>🏠</span> <span id="brandLogoText" data-i18n="home">${isKo ? '홈' : 'Home'}</span>`;
+        }
 
       // 1. Language Toggle Button
       const langBtn = document.getElementById('langBtn');
@@ -2203,7 +2206,11 @@
           }
         }
       }
+    } catch (err) {
+      console.error('applyI18n error:', err);
     }
+  }
+  applyI18n();
 
     function triggerBSOD() {
       blip(110, 0.4, 'sawtooth');
