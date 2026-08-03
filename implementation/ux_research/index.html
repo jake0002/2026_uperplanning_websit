@@ -738,12 +738,15 @@
       box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.2);
       padding: 10px;
       margin: 24px 0;
+      max-width: 640px;
     }
     .photo-frame img {
       width: 100%;
       max-width: 100%;
-      height: auto;
+      max-height: 380px;
+      object-fit: contain;
       display: block;
+      margin: 0 auto;
       border: 1px solid #7b7b7b;
     }
     .photo-caption {
@@ -1066,7 +1069,7 @@
           <div class="tree-root">
             <span class="tree-toggle">日</span>
             <span class="folder-icon">📂</span>
-            <span>UX 서비스</span>
+            <span>UX서비스 &gt; UX리서치</span>
           </div>
 
           <!-- Tree List TOC (ul.toc) -->
