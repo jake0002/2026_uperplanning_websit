@@ -2192,33 +2192,10 @@
       setInterval(fetchWeatherSeoul, 600000);
     }
 
-    function toggleLang() {
-      currentLang = (currentLang === 'ko') ? 'en' : 'ko';
-      updateLangUI();
-      blip(750, 0.05);
-    }
-
-    function updateLangUI() {
-      const btn = document.getElementById('langBtn');
-      if (btn) {
-        if (currentLang === 'ko') {
-          btn.innerHTML = '<span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span>';
-        } else {
-          btn.innerHTML = '<span style="opacity:0.5;">KOR</span> | <span style="font-weight:bold; color:#000080;">ENG</span>';
-        }
-      }
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (STRINGS[currentLang] && STRINGS[currentLang][key]) {
-          el.textContent = STRINGS[currentLang][key];
-        }
-      });
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       initDirectAccess();
       initWeatherAndLocation();
-      updateLangUI();
+      applyI18n();
 
       const skyEl = document.getElementById('skyscraper');
       if (skyEl) {
