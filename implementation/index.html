@@ -2228,7 +2228,7 @@
       setInterval(fetchWeatherSeoul, 600000);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    function initApp() {
       initDirectAccess();
       initWeatherAndLocation();
       applyI18n();
@@ -2239,7 +2239,13 @@
           skyEl.style.zIndex = Math.max(getNextZIndex(), 2500);
         });
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
   </script>
 </body>
 </html>
