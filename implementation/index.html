@@ -1519,18 +1519,18 @@
           <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">${isKo ? '국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.' : 'Executed UX research, UX writing, app planning, and IT development projects for top enterprises and public agencies.'}</p>
 
           <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
-            <div class="info-card" style="padding:10px 4px;">SK Telecom</div>
-            <div class="info-card" style="padding:10px 4px;">Hyundai Motor</div>
-            <div class="info-card" style="padding:10px 4px;">LOTTE Group</div>
-            <div class="info-card" style="padding:10px 4px;">LG U+</div>
-            <div class="info-card" style="padding:10px 4px;">BC Card</div>
-            <div class="info-card" style="padding:10px 4px;">CJ OliveNetworks</div>
-            <div class="info-card" style="padding:10px 4px;">KB Kookmin Bank</div>
-            <div class="info-card" style="padding:10px 4px;">NH NongHyup Bank</div>
-            <div class="info-card" style="padding:10px 4px;">Kinfa</div>
-            <div class="info-card" style="padding:10px 4px;">Cheil Worldwide</div>
-            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">KISCO</div>
-            <div class="info-card" style="padding:10px 4px;">Gyeonggi Job Foundation</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? 'SK텔레콤' : 'SK Telecom'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '현대자동차' : 'Hyundai Motor'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '롯데그룹' : 'LOTTE Group'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? 'LG유플러스' : 'LG U+'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '비씨카드' : 'BC Card'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? 'CJ올리브네트웍스' : 'CJ OliveNetworks'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? 'KB국민은행' : 'KB Kookmin Bank'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? 'NH농협은행' : 'NH NongHyup Bank'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '서민금융진흥원' : 'Kinfa'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '제일기획' : 'Cheil Worldwide'}</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">${isKo ? '한국식품안전관리인증원' : 'KISCO'}</div>
+            <div class="info-card" style="padding:10px 4px;">${isKo ? '경기도일자리재단' : 'Gyeonggi Job Foundation'}</div>
           </div>
         `;
       } else if (key === 'contact') {
@@ -1590,87 +1590,87 @@
         `;
       } else if (key === 'portfolio') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">대표 수행 프로젝트 (6건)</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? '대표 수행 프로젝트 (6건)' : 'Key Projects (6 Projects)'}</h3>
           <div class="card-grid">
             <div class="info-card">
               <h4>Fintech Mobile UX</h4>
-              <p>송금 절차 5단계 → 2단계 축소. 전환율 24% 개선 사례.</p>
+              <p>${isKo ? '송금 절차 5단계 → 2단계 축소. 전환율 24% 개선 사례.' : 'Reduced money transfer steps 5 → 2. Increased conversion rate by 24%.'}</p>
             </div>
             <div class="info-card">
               <h4>AI SaaS Dashboard</h4>
-              <p>복잡한 데이터 시각화의 대폭 가공 및 노이즈 제거.</p>
+              <p>${isKo ? '복잡한 데이터 시각화의 대폭 가공 및 노이즈 제거.' : 'Streamlined complex data visualization and removed interface noise.'}</p>
             </div>
             <div class="info-card">
               <h4>E-Commerce Checkout</h4>
-              <p>장바구니 이탈률 18% 감소시킨 UX 라이팅 재설계.</p>
+              <p>${isKo ? '장바구니 이탈률 18% 감소시킨 UX 라이팅 재설계.' : 'Redesigned UX writing reducing cart abandonment rate by 18%.'}</p>
             </div>
             <div class="info-card">
               <h4>Global Logistics Tool</h4>
-              <p>물류 관리자를 위한 윈도우 스타일 고성능 웹앱.</p>
+              <p>${isKo ? '물류 관리자를 위한 윈도우 스타일 고성능 웹앱.' : 'High-performance desktop-grade web app for logistics managers.'}</p>
             </div>
             <div class="info-card">
               <h4>Healthcare App</h4>
-              <p>고령층 사용자 관점의 큰 글씨 및 직관적 동선 구축.</p>
+              <p>${isKo ? '고령층 사용자 관점의 큰 글씨 및 직관적 동선 구축.' : 'Built large fonts & intuitive flows designed for elderly users.'}</p>
             </div>
             <div class="info-card">
               <h4>B2B Admin System</h4>
-              <p>업무 효율성 40% 향상시킨 어드민 인터페이스.</p>
+              <p>${isKo ? '업무 효율성 40% 향상시킨 어드민 인터페이스.' : 'B2B admin interface improving work efficiency by 40%.'}</p>
             </div>
           </div>
         `;
       } else if (key === 'classes') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
-          <p style="margin-bottom:10px;">실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.</p>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">${isKo ? '실전 AI-UX 기획 & 라이팅 커리큘럼' : 'Practical AI-UX Planning & Writing Curriculum'}</h3>
+          <p style="margin-bottom:10px;">${isKo ? '실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.' : 'Actionable UX design course leveraging latest AI tools for immediate work application.'}</p>
           <div class="info-card" style="margin-bottom:8px;">
-            <h4>수강 대상</h4>
-            <p>제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가</p>
+            <h4>${isKo ? '수강 대상' : 'Target Audience'}</h4>
+            <p>${isKo ? '제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가' : 'Product Managers, UX Designers, Frontend Devs, Solo Founders'}</p>
           </div>
           <div class="info-card">
-            <h4>주요 내용</h4>
-            <p>• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습</p>
+            <h4>${isKo ? '주요 내용' : 'Key Topics'}</h4>
+            <p>${isKo ? '• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습' : '• LLM-based automated UX writing prompts<br>• Fast user journey map generation techniques<br>• Figma & AI prototyping hands-on lab'}</p>
           </div>
-          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">강의 수강 문의하기</button>
+          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">${isKo ? '강의 수강 문의하기' : 'Inquire About Classes'}</button>
         `;
       } else if (key === 'blog') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 인사이트 아카이브</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? 'UX 인사이트 아카이브' : 'UX Insight Archive'}</h3>
           <div style="display:flex; flex-direction:column; gap:8px;">
             <div class="info-card">
-              <h4>버튼 문구 하나로 이탈률 18% 줄인 방법</h4>
-              <p>확인/취소 버튼 대신 사용자가 얻게 될 가치를 서술형 명사로 바꾼 실수 해결 기록.</p>
+              <h4>${isKo ? '버튼 문구 하나로 이탈률 18% 줄인 방법' : 'How Changing One Button Label Cut Bounce Rate by 18%'}</h4>
+              <p>${isKo ? '확인/취소 버튼 대신 사용자가 얻게 될 가치를 서술형 명사로 바꾼 실수 해결 기록.' : 'Replacing OK/Cancel buttons with value-oriented action verbs.'}</p>
             </div>
             <div class="info-card">
-              <h4>AI 시대의 UX 라이터가 일하는 법</h4>
-              <p>초안 작성을 AI에게 맡기고 라이터는 인간 맥락의 절제미에 집중하는 구조.</p>
+              <h4>${isKo ? 'AI 시대의 UX 라이터가 일하는 법' : 'How UX Writers Work in the Age of AI'}</h4>
+              <p>${isKo ? '초안 작성을 AI에게 맡기고 라이터는 인간 맥락의 절제미에 집중하는 구조.' : 'Outsourcing drafts to AI while writers focus on human context and clarity.'}</p>
             </div>
             <div class="info-card">
-              <h4>Win95에서 배우는 직관적 UI 계층</h4>
-              <p>30년 전 윈도우95 입체 베벨(Bevel) 디자인이 제공하던 최고의 시각적 피드백.</p>
+              <h4>${isKo ? 'Win95에서 배우는 직관적 UI 계층' : 'Intuitive UI Hierarchy Learned from Win95'}</h4>
+              <p>${isKo ? '30년 전 윈도우95 입체 베벨(Bevel) 디자인이 제공하던 최고의 시각적 피드백.' : 'Tactile visual feedback provided by 3D bevels in 1990s desktop operating systems.'}</p>
             </div>
           </div>
         `;
       } else if (key === 'tweaks') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? '시스템 환경 설정 (Tweaks)' : 'System Preferences (Tweaks)'}</h3>
           <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
+            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '데스크톱 테마 선택:' : 'Select Desktop Theme:'}</label>
             <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="setTheme(this.value)">
-              <option value="light">Teal Classic (기본 1995)</option>
-              <option value="dark">Dark Slate (다크 모드)</option>
-              <option value="matrix">Matrix Green (이스터에그 테마)</option>
+              <option value="light">Teal Classic (${isKo ? '기본 1995' : 'Classic 1995'})</option>
+              <option value="dark">Dark Slate (${isKo ? '다크 모드' : 'Dark Mode'})</option>
+              <option value="matrix">Matrix Green (${isKo ? '이스터에그 테마' : 'Matrix Theme'})</option>
             </select>
           </div>
           <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">사운드: ON 🔊</button>
+            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '사운드 효과:' : 'Sound Effects:'}</label>
+            <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">${isKo ? '사운드: ON 🔊' : 'Sound: ON 🔊'}</button>
           </div>
           <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">화면 밀도:</label>
-            <button class="w95-btn" onclick="toggleDensity();">밀도 전환 (Comfortable / Compact)</button>
+            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '화면 밀도:' : 'Screen Density:'}</label>
+            <button class="w95-btn" onclick="toggleDensity();">${isKo ? '밀도 전환 (Comfortable / Compact)' : 'Toggle Density (Comfortable / Compact)'}</button>
           </div>
           <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">테스트: BSOD 블루스크린 (Ctrl+Alt+U)</button>
+          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">${isKo ? '테스트: BSOD 블루스크린 (Ctrl+Alt+U)' : 'Test: BSOD Blue Screen (Ctrl+Alt+U)'}</button>
         `;
       } else if (key === 'shut') {
         return `
