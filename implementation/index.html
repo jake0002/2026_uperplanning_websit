@@ -370,9 +370,90 @@
     .gnb-link:hover { background: rgba(255,255,255,0.25); color: var(--accent); }
     .gnb-right { display: flex; align-items: center; gap: 6px; }
 
+    /* Mobile Hamburger & Navigation Drawer */
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 10px;
+    }
+    #mobileNavDrawer.show {
+      display: block !important;
+    }
+
     @media (max-width: 980px) {
       #gnb { left: 75px; }
       .gnb-link span { font-size: 11px; padding: 2px 4px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 6px;
+        font-size: 11px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 4px;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+      }
+      .win {
+        position: absolute !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: calc(100vw - 20px) !important;
+        max-width: calc(100vw - 20px) !important;
+        min-width: unset !important;
+      }
+      .win.maximized {
+        left: 6px !important;
+        right: 6px !important;
+        width: calc(100vw - 12px) !important;
+        top: calc(var(--logo-top) + var(--gnb-h) + 6px) !important;
+        bottom: calc(var(--taskbar-h) + 6px) !important;
+      }
+      .w-body {
+        max-height: 60vh;
+        overflow-y: auto;
+        padding: 8px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr !important;
+      }
+      #skyscraper {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: calc(100vw - 20px) !important;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        max-height: none !important;
+        z-index: 100 !important;
+      }
     }
 
     /* 5. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
@@ -747,6 +828,30 @@
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="toggleLang();" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu(); blip(660, 0.04);">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+  </div>
+
+  <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000080;">📂 GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="openWindow('about'); toggleMobileMenu();">🏢 회사소개</div>
+      <div class="start-item" onclick="openWindow('clients'); toggleMobileMenu();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">🎨 UX 서비스</div>
+      <div class="start-item" onclick="openWindow('classes'); toggleMobileMenu();">🎓 AI-UX 강의</div>
+      <div class="start-item" onclick="openWindow('blog'); toggleMobileMenu();">📝 UX 블로그</div>
+      <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는 길 &amp; 문의</div>
+      <div class="start-item" onclick="downloadCompanyBrochure(); toggleMobileMenu();">📄 회사소개서 받기</div>
+      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">🤝 인재채용</div>
+      <div class="start-item" onclick="toggleLang(); toggleMobileMenu();">🌐 언어 변경 (KOR / ENG)</div>
+    </div>
   </div>
 
   <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
@@ -1057,7 +1162,16 @@
     };
 
     function getMinWindowTop() {
-      return window.innerWidth <= 980 ? 188 : 200;
+      if (window.innerWidth <= 768) return 150;
+      if (window.innerWidth <= 980) return 188;
+      return 200;
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
     }
 
     function openWindow(key, customPos) {
@@ -1068,7 +1182,7 @@
         updatePreview(key, true);
         for (const k in windows) if (k !== key) updatePreview(k, false);
         updateScrollHeight();
-        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         if (key === 'about') setTimeout(typeWriterHero, 60);
         return;
       }
@@ -1077,18 +1191,33 @@
       const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
       winSeq++;
       const minTop = getMinWindowTop();
+      const isMobile = window.innerWidth <= 768;
       
-      let leftOffset = customPos && customPos.left !== undefined 
-        ? customPos.left 
-        : Math.min(window.innerWidth - def.w - 20, Math.max(20, 20 + ((winSeq - 1) % 4) * 30));
-      let topOffset = customPos && customPos.top !== undefined 
-        ? customPos.top 
-        : minTop + Math.floor((winSeq - 1) / 2) * 220 + ((winSeq - 1) % 2) * 40;
+      let leftOffset, topOffset;
+      if (isMobile) {
+        leftOffset = 10;
+        let highestBottom = minTop;
+        for (const k in windows) {
+          const w = windows[k];
+          if (w && w.el && w.el.style.display !== 'none') {
+            const b = (parseInt(w.el.style.top, 10) || 0) + (w.el.offsetHeight || 280);
+            if (b > highestBottom) highestBottom = b;
+          }
+        }
+        topOffset = highestBottom === minTop ? minTop : highestBottom + 12;
+      } else {
+        leftOffset = customPos && customPos.left !== undefined 
+          ? customPos.left 
+          : Math.min(window.innerWidth - def.w - 20, Math.max(20, 20 + ((winSeq - 1) % 4) * 30));
+        topOffset = customPos && customPos.top !== undefined 
+          ? customPos.top 
+          : minTop + Math.floor((winSeq - 1) / 2) * 220 + ((winSeq - 1) % 2) * 40;
+      }
 
       const winEl = document.createElement('div');
       winEl.className = 'win';
-      winEl.style.width = def.w + 'px';
-      winEl.style.height = def.h + 'px';
+      winEl.style.width = isMobile ? 'calc(100vw - 20px)' : def.w + 'px';
+      winEl.style.height = isMobile ? 'auto' : def.h + 'px';
       winEl.style.left = leftOffset + 'px';
       winEl.style.top = topOffset + 'px';
       winEl.style.zIndex = getNextZIndex();
