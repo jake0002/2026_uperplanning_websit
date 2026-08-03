@@ -924,9 +924,22 @@
   </div>
 
   <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
-  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="goHome();">
-    <span>🏠</span> <span id="brandLogoText" data-i18n="home">홈</span>
+  <div id="brandLogo" title="Superplanning OS95 — Home" onclick="goHome();">
+    <span>🏠</span> <span id="brandLogoText" data-i18n="home">Home</span>
   </div>
+  <script>
+    (function(){
+      try {
+        var lang = localStorage.getItem('os95_lang');
+        if (!lang) {
+          var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          lang = navLang.startsWith('en') ? 'en' : 'ko';
+        }
+        var el = document.getElementById('brandLogoText');
+        if (el) el.textContent = (lang === 'ko') ? '홈' : 'Home';
+      } catch(e) {}
+    })();
+  </script>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + BROCHURE BTN & KO|EN TOGGLE AT FAR RIGHT) -->
   <div id="gnb">
