@@ -274,30 +274,72 @@
     body[data-theme="matrix"] {
       --bg: var(--bg-matrix);
       --win-bg: #0d180d;
-      --win-fg: var(--txt-matrix);
-      --win-fg-dark: #00ff66;
+      --win-fg: #ffffff;
+      --win-fg-dark: #ffffff;
       --bevel-hi: #00ff66;
       --bevel-lo: #004411;
       --bevel-shadow: #002208;
       --accent: #00ff66;
+      color: #ffffff !important;
     }
     body[data-theme="matrix"] .info-card {
       background: #081208 !important;
-      color: #00ff66 !important;
+      color: #ffffff !important;
       border-color: #008833 !important;
     }
     body[data-theme="matrix"] h1,
     body[data-theme="matrix"] h2,
     body[data-theme="matrix"] h3,
     body[data-theme="matrix"] h4,
+    body[data-theme="matrix"] h5,
+    body[data-theme="matrix"] h6,
     body[data-theme="matrix"] p,
     body[data-theme="matrix"] span,
     body[data-theme="matrix"] div,
+    body[data-theme="matrix"] label,
     body[data-theme="matrix"] strong,
+    body[data-theme="matrix"] b,
+    body[data-theme="matrix"] a,
+    body[data-theme="matrix"] button,
+    body[data-theme="matrix"] select,
+    body[data-theme="matrix"] option,
+    body[data-theme="matrix"] input,
+    body[data-theme="matrix"] textarea,
+    body[data-theme="matrix"] .icon-label,
+    body[data-theme="matrix"] .w-title,
+    body[data-theme="matrix"] .w-title span,
     body[data-theme="matrix"] .info-card h4,
     body[data-theme="matrix"] [style*="color:#000080"],
-    body[data-theme="matrix"] [style*="color:#000"] {
-      color: #00ff66 !important;
+    body[data-theme="matrix"] [style*="color:#000"],
+    body[data-theme="matrix"] [style*="color: #000"],
+    body[data-theme="matrix"] [style*="color: #000080"] {
+      color: #ffffff !important;
+    }
+    body[data-theme="matrix"] select,
+    body[data-theme="matrix"] option,
+    body[data-theme="matrix"] input,
+    body[data-theme="matrix"] textarea {
+      background-color: #0d180d !important;
+      color: #ffffff !important;
+      border-color: #00ff66 !important;
+    }
+    body[data-theme="matrix"] a[href*="kakao"],
+    body[data-theme="matrix"] a[href*="kakao"] *,
+    body[data-theme="matrix"] a[href*="kakao"] h4,
+    body[data-theme="matrix"] a[href*="kakao"] p,
+    body[data-theme="matrix"] a[href*="kakao"] span,
+    body[data-theme="matrix"] a[href*="kakao"] div,
+    body[data-theme="matrix"] a[href*="kakao"] strong {
+      color: #3c1e1e !important;
+    }
+    body[data-theme="matrix"] .blink-cursor {
+      background-color: #ffffff !important;
+    }
+    body[data-theme="matrix"] .taskbar-right,
+    body[data-theme="matrix"] .taskbar-right span,
+    body[data-theme="matrix"] #taskWeather,
+    body[data-theme="matrix"] #taskClock {
+      color: #000000 !important;
     }
     body[data-density="compact"] {
       --taskbar-h: 30px;
@@ -916,11 +958,11 @@
 
   <!-- 2. BSOD SCREEN (z-index: 9999) -->
   <div id="bsod">
-    <div class="bsod-hdr">SUPERPLANNING OS95 EXCEPTION</div>
+    <div class="bsod-hdr">SUPERPLANNING WARNING!</div>
     <p>A fatal exception 0E has occurred at 0028:C0011995 in VXD UXWRITING(01) + 00007BF. The current application will be terminated.</p><br>
-    <p>* Press any key to return to Windows.</p>
+    <p>* Press any key or Home button to return to Windows.</p>
     <p>* Press CTRL+ALT+DEL to restart your computer. You will lose any unsaved information in all applications.</p><br>
-    <p>Press ESC key to dismiss this blue screen and resume OS95 session...</p>
+    <p>Press ESC key or click Home button to dismiss this blue screen and resume OS95 session...</p>
   </div>
 
   <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
@@ -1341,7 +1383,7 @@
       'threads': { w: 580, h: 400, title: '쓰레드' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
       'links': { w: 560, h: 380, title: '바로가기 모음' },
-      'tweaks': { w: 480, h: 320, title: '환경 설정' },
+      'tweaks': { w: 480, h: 265, title: '환경 설정' },
       'shut': { w: 380, h: 200, title: '시스템 종료' }
     };
 
@@ -1488,7 +1530,7 @@
           <h4 style="font-weight:800; font-size:12px; margin-bottom:4px; color:#000080;">${isKo ? 'UX프로젝트 수행원칙' : 'UX Execution Principles'}</h4>
           <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:6px;">
             <div class="info-card" style="padding:4px 8px;">
-              <h4>${isKo ? '1. 최근 사용자들의 3초 룰' : '1. The 3-Second Rule'}</h4>
+              <h4>${isKo ? '1. 최근 사용자들의 3초 법칙' : '1. The 3-Second Rule'}</h4>
               <p>${isKo ? '사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.' : 'Capture user attention within 3 seconds. First impressions that convey core value are paramount.'}</p>
             </div>
             <div class="info-card" style="padding:4px 8px;">
@@ -2063,6 +2105,9 @@
 
     function goHome() {
       blip(880, 0.07);
+      const bsodEl = document.getElementById('bsod');
+      if (bsodEl) bsodEl.classList.remove('show');
+
       for (const k in windows) {
         if (windows[k] && windows[k].el) {
           windows[k].el.remove();
