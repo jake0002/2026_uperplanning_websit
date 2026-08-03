@@ -233,40 +233,43 @@
   </script>
 
   <style>
-    /* CSS Variables & Main Page Font Typography (Exact Match with Main Page) */
+    /* CSS Variables & Typography (EXACT COPY FROM MAIN PAGE) */
     :root {
+      --bg: #008080;
       --win-bg: #c0c0c0;
-      --win-teal: #008080;
-      --win-blue: #000080;
       --win-fg: #000000;
+      --win-fg-dark: #0a0a0a;
       --bevel-hi: #ffffff;
       --bevel-lo: #7b7b7b;
       --bevel-shadow: #3b3b3b;
       --accent: #ffd43b;
       --gnb-bg: rgba(0, 0, 0, 0.45);
       --gnb-fg: #ffffff;
-      --gnb-bd: rgba(255, 255, 255, 0.25);
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
       --taskbar-h: 36px;
       --gnb-h: 34px;
-      --logo-top: 14px; /* Floating top margin gap for GNB */
+      --logo-top: 14px; /* Floating top margin gap for GNB header */
       --logo-left: 14px;
-      --font-main: 'MS Sans Serif', 'Tahoma', -apple-system, BlinkMacSystemFont, '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, sans-serif;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: var(--font);
+      letter-spacing: -0.01em;
     }
 
     body {
-      background-color: var(--win-teal);
-      color: var(--win-fg);
-      font-family: var(--font-main);
-      font-size: 13px;
-      line-height: 1.6;
-      padding-bottom: calc(var(--taskbar-h) + 16px);
+      width: 100%;
       min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
     }
 
     a {
@@ -277,7 +280,28 @@
       color: #ff0000;
     }
 
-    /* Top Brand Home Logo (Identical to Main Screen with top gap) */
+    /* Win95 Button Utility (EXACT MATCH FROM MAIN PAGE) */
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* 3. RESTORED HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) */
     #brandLogo {
       position: fixed !important;
       top: var(--logo-top);
@@ -295,13 +319,13 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      user-select: none;
+      user-select: none !important;
       transition: transform 0.1s ease;
     }
     #brandLogo:hover { transform: scale(1.04); }
     #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #7b7b7b; }
 
-    /* Top GNB Header (Floating at top: 14px with top margin gap, identical to Main Screen) */
+    /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE - Floating at top: 14px) */
     #gnb {
       position: fixed !important;
       top: var(--logo-top);
@@ -318,6 +342,7 @@
       justify-content: space-between;
       padding: 0 8px;
       border-radius: 4px;
+      user-select: none !important;
     }
     .gnb-menu {
       display: flex;
@@ -342,9 +367,10 @@
       gap: 4px;
       text-decoration: none;
       transition: background 0.15s ease;
+      user-select: none !important;
     }
     .gnb-link:hover, .gnb-link.active {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255,255,255,0.25);
       color: var(--accent);
     }
     .gnb-right {
@@ -352,27 +378,8 @@
       align-items: center;
       gap: 6px;
     }
-    .w95-btn {
-      background: var(--win-bg);
-      color: var(--win-fg);
-      border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
-      padding: 3px 8px;
-      font-family: var(--font-main);
-      font-size: 11px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      user-select: none;
-    }
-    .w95-btn:active {
-      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
-      transform: translate(1px, 1px);
-    }
 
-    /* Mobile Hamburger & Navigation Drawer */
+    /* Mobile Hamburger & Drawer (EXACT COPY FROM MAIN PAGE) */
     #mobileMenuBtn {
       display: none;
       align-items: center;
@@ -396,24 +403,26 @@
       box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
       padding: 10px;
     }
-    #mobileNavDrawer.active {
-      display: block;
+    #mobileNavDrawer.show {
+      display: block !important;
     }
     .start-item {
       padding: 6px 10px;
       font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       cursor: pointer;
-      font-weight: bold;
-      border: 1px solid transparent;
     }
     .start-item:hover {
       background: #000080;
-      color: #fff;
+      color: #ffffff;
     }
 
-    /* Outer Wrapper for LEFT-ALIGNED Layout with Top Margin Gap for Floating GNB Header */
+    /* Outer Wrapper for LEFT-ALIGNED Layout */
     .page-wrapper {
-      padding: calc(var(--logo-top) + var(--gnb-h) + 16px) 24px 24px 24px;
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
@@ -432,7 +441,7 @@
       overflow: hidden;
     }
 
-    /* 1. Yellow Titlebar (#ffd43b) */
+    /* Yellow Titlebar (#ffd43b) */
     .titlebar {
       background: #ffd43b;
       color: #000000;
@@ -468,7 +477,7 @@
       cursor: default;
     }
 
-    /* 2. Gray Menu Bar (#dcdcdc) */
+    /* Gray Menu Bar (#dcdcdc) */
     .menubar {
       background: #dcdcdc;
       padding: 4px 10px;
@@ -485,14 +494,13 @@
       text-decoration: underline;
     }
 
-    /* 3. Paper Document Content Area (#ffffff) */
+    /* Paper Document Content Area (#ffffff) */
     .content-paper {
       background: #ffffff;
       padding: 32px 40px;
       border-top: 1px solid #808080;
       border-bottom: 1px solid #808080;
       color: #000000;
-      font-family: var(--font-main);
     }
 
     h1 {
@@ -584,7 +592,7 @@
       border-left: 2px solid #ccc;
     }
 
-    /* Real Research Photo Frames */
+    /* Real Research Photo Frames (Works for both /images/ and images/ paths) */
     .photo-frame {
       background: #f0f0f0;
       border: 2px solid #000;
@@ -594,6 +602,7 @@
     }
     .photo-frame img {
       width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
       border: 1px solid #7b7b7b;
@@ -693,7 +702,7 @@
       margin-bottom: 8px;
     }
 
-    /* 4. Gray Status Bar (#dcdcdc) */
+    /* Gray Status Bar (#dcdcdc) */
     .statusbar {
       background: #dcdcdc;
       border-top: 2px solid #ffffff;
@@ -705,65 +714,51 @@
       user-select: none;
     }
 
-    /* Bottom Taskbar (Identical to Main Screen) */
+    /* 9. TASKBAR (EXACT COPY FROM MAIN PAGE) */
     #taskbar {
-      position: fixed;
+      position: fixed !important;
       bottom: 0;
       left: 0;
       right: 0;
       height: var(--taskbar-h);
-      background: var(--win-bg);
+      background: var(--taskbar);
       border-top: 2px solid #fff;
       box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 99999 !important;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 2px 6px;
-      z-index: 99999;
+      user-select: none !important;
     }
-    .start-btn {
-      font-weight: 800;
-      padding: 3px 10px;
-      background: var(--accent);
-      color: #000;
-    }
-    .taskbar-items {
-      display: flex;
-      gap: 4px;
-      flex: 1;
-      margin: 0 8px;
-      overflow-x: auto;
-    }
-    .taskbar-item {
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
       background: var(--win-bg);
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b;
-      padding: 3px 10px;
-      font-size: 11.5px;
-      font-weight: bold;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
       display: flex;
       align-items: center;
       gap: 4px;
       cursor: pointer;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .taskbar-item.active {
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
       background: #dfdfdf;
-      box-shadow: inset 1px 1px 0 #7b7b7b, inset -1px -1px 0 #fff;
-    }
-    .system-tray {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--win-bg);
-      border: 2px solid #000;
-      box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #7b7b7b;
-      padding: 3px 10px;
-      font-size: 11px;
-      color: #000;
       font-weight: bold;
     }
 
-    /* Responsive Adjustments */
+    /* Responsive Adjustments (EXACT COPY FROM MAIN PAGE) */
     @media (max-width: 980px) {
       #gnb { left: 75px; }
       .gnb-link span { font-size: 11px; padding: 2px 4px; }
@@ -790,7 +785,7 @@
         margin-left: auto !important;
       }
       .page-wrapper {
-        padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 10px 20px 10px;
+        padding: calc(var(--logo-top) + var(--gnb-h) + 12px) 10px 20px 10px;
       }
       .notepad-window {
         max-width: 100%;
@@ -813,49 +808,68 @@
 </head>
 <body>
 
-  <!-- Top Brand Home Button (Identical to Main Screen with top gap) -->
+  <!-- 3. RESTORED HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
     <span>🏠</span> <span id="brandLogoText">홈</span>
   </div>
 
-  <!-- Top GNB Navigation Header (Identical Floating GNB with 14px top gap) -->
+  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
   <div id="gnb">
     <ul class="gnb-menu">
-      <li class="gnb-item"><a class="gnb-link active" href="/ux_research"><span>UX리서치</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>UX라이팅</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>UX기획/디자인</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>웹/앱개발</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#classes"><span>AI-UX강의</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#blog"><span>UX블로그</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#contact"><span>찾아오시는 길</span></a></li>
+      <li class="gnb-item">
+        <a class="gnb-link active" href="/ux_research"><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#services"><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#services"><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#services"><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#classes"><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#blog"><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="https://superplanning.blog/#contact"><span>찾아오시는 길</span></a>
+      </li>
     </ul>
 
     <div class="gnb-right">
-      <button class="w95-btn" onclick="location.href='https://superplanning.blog/';">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
         <span>📄</span> <span>회사소개서 보기</span>
       </button>
-      <button class="w95-btn" onclick="location.href='https://superplanning.blog/';">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
         <span>🤝</span> <span>인재채용</span>
       </button>
-      <button class="w95-btn" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
 
-    <!-- Mobile Hamburger Button -->
+    <!-- MOBILE HAMBURGER BUTTON -->
     <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
       <span>☰</span> <span>메뉴</span>
     </button>
   </div>
 
-  <!-- Mobile Drawer Menu -->
+  <!-- MOBILE GNB NAVIGATION DRAWER (EXACT COPY FROM MAIN PAGE) -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
       <strong style="font-size:13px; color:#000080;">📂 GNB 전체 메뉴</strong>
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
-      <div class="start-item" onclick="location.href='https://superplanning.blog/';">🏢 슈퍼플래닝 홈</div>
-      <div class="start-item" onclick="location.href='/ux_research';">🎨 UX리서치 상세보기</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/';">🏢 회사소개</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#clients';">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="location.href='/ux_research';">🎨 UX 리서치</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes';">🎓 AI-UX 강의</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog';">📝 UX 블로그</div>
       <div class="start-item" onclick="location.href='https://superplanning.blog/#contact';">📍 찾아오시는 길 &amp; 문의</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/';">📄 회사소개서 보기</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/';">🤝 인재채용</div>
     </div>
   </div>
 
@@ -918,7 +932,7 @@
 
         <!-- Real Research Photo 3: FGI Mobile Wireframe Session -->
         <div class="photo-frame">
-          <img src="images/fgi_session_3.png" alt="슈퍼플래닝 UX 가설 검증 및 모바일 화면 분석 세션 현장">
+          <img src="/images/fgi_session_3.png" alt="슈퍼플래닝 UX 가설 검증 및 모바일 화면 분석 세션 현장">
           <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 UX 가설 검증 세션 — 모바일 화면 프로토타입 및 와이어프레임 가설 검증 수행 현장</div>
         </div>
 
@@ -928,7 +942,7 @@
         
         <!-- Real Research Photo 1: FGI Group Interview Session -->
         <div class="photo-frame">
-          <img src="images/fgi_session_1.png" alt="슈퍼플래닝 FGI 표적집단 면접조사 현장">
+          <img src="/images/fgi_session_1.png" alt="슈퍼플래닝 FGI 표적집단 면접조사 현장">
           <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 FGI(표적집단 면접조사) 현장 — 4~6명 타겟 사용자 패널 그룹 토론 및 요구사항 심층 파악</div>
         </div>
 
@@ -946,7 +960,7 @@
 
         <!-- Real Research Photo 2: Observation Room with Mirror & Monitors -->
         <div class="photo-frame">
-          <img src="images/ut_observation_2.png" alt="슈퍼플래닝 UT/인뎁스 인터뷰 미러 관찰실 현장">
+          <img src="/images/ut_observation_2.png" alt="슈퍼플래닝 UT/인뎁스 인터뷰 미러 관찰실 현장">
           <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 UT/인뎁스 전용 관찰실 — 원웨이 미러와 실시간 멀티 모니터링 시스템을 통한 1:1 유저 행동 심층 분석</div>
         </div>
 
@@ -980,7 +994,7 @@
           <li>UX리서치 종합 분석 보고서 (PDF / PPT)</li>
           <li>사용자 페르소나 (Persona) 카드 및 유저 저니 맵 (User Journey Map)</li>
           <li>인터뷰 풀 녹취록 및 핵심 발화 음성/동영상 파일</li>
-          <li>화면 단위 UX/UI 개선 권고사항 및 와이어프레임 개선안</li>
+          <li>화면 단위 UX 개선 권고사항 및 와이어프레임 개선안</li>
         </ul>
 
         <!-- 7. UX리서치 프로세스 -->
@@ -1090,20 +1104,22 @@
 
   </div>
 
-  <!-- Bottom Win95 Taskbar Header (Identical to Main Screen) -->
-  <div id="taskbar" aria-hidden="true">
-    <button class="w95-btn start-btn" onclick="location.href='https://superplanning.blog/';">
-      <span>🚀</span> <span>시작</span>
-    </button>
-    <div class="taskbar-items">
-      <div class="taskbar-item active">
-        <span>📄</span> <span>UX리서치.txt</span>
+  <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="location.href='https://superplanning.blog/';">
+        <span>💻</span> <strong>전체 메뉴보기</strong>
+      </button>
+      <div id="taskPreviews">
+        <div class="task-preview active">
+          <span>📄</span> <span>UX리서치.txt</span>
+        </div>
       </div>
     </div>
-    <div class="system-tray">
-      <span>🔊</span>
-      <span>SEOUL (16°C ☀️)</span>
-      <span>22:54</span>
+    <div class="taskbar-right">
+      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
+      <span id="taskClock">12:00:00 PM</span>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://superplanning.blog/';">⚙️ 환경설정</button>
     </div>
   </div>
 
@@ -1111,9 +1127,16 @@
     function toggleMobileMenu() {
       var drawer = document.getElementById('mobileNavDrawer');
       if (drawer) {
-        drawer.classList.toggle('active');
+        drawer.classList.toggle('show');
       }
     }
+    setInterval(() => {
+      const d = new Date();
+      const clockEl = document.getElementById('taskClock');
+      if (clockEl) {
+        clockEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+    }, 1000);
   </script>
 </body>
 </html>
