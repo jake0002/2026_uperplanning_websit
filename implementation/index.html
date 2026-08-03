@@ -1282,6 +1282,7 @@
         'w.about': '회사소개',
         'w.clients': '주요 고객사',
         'w.intro-video': '슈퍼플래닝 소개영상',
+        'w.brochure': '회사소개서 뷰어',
         'w.careers': '인재 채용',
         'w.instagram': '인스타그램',
         'w.threads': '쓰레드',
@@ -1306,6 +1307,7 @@
         'w.about': 'About Us',
         'w.clients': 'Key Clients',
         'w.intro-video': 'Promo Video',
+        'w.brochure': 'Company Brochure Viewer',
         'w.careers': 'Careers',
         'w.instagram': 'Instagram',
         'w.threads': 'Threads',
@@ -1342,12 +1344,7 @@
 
     function downloadCompanyBrochure() {
       blip(880, 0.08);
-      const link = document.createElement('a');
-      link.href = 'Superplanning_Company_Brochure.pdf';
-      link.download = 'Superplanning_Company_Brochure.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      openWindow('brochure');
     }
 
     function copyToClipboard(text, label) {
@@ -1383,6 +1380,7 @@
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'careers': { w: 580, h: 400, title: '인재 채용' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
+      'brochure': { w: 780, h: 560, title: '회사소개서 뷰어' },
       'instagram': { w: 580, h: 400, title: '인스타그램' },
       'threads': { w: 580, h: 400, title: '쓰레드' },
       'now-playing': { w: 460, h: 220, title: '지금 듣는 곡' },
@@ -1565,7 +1563,7 @@
           </div>
 
           <div style="display:flex; gap:8px; margin-top: 12px; padding-top: 2px; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:5px 12px;" onclick="downloadCompanyBrochure();">${isKo ? '📄 회사소개서 받기' : '📄 Company Brochure'}</button>
+            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('brochure');">${isKo ? '📄 회사소개서 보기' : '📄 Company Brochure'}</button>
             <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
             <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
           </div>
@@ -1801,6 +1799,25 @@
             </iframe>
             <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:2px;">
               <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:var(--win-fg);">${isKo ? '유튜브에서 크게 보기 ↗' : 'Watch Larger on YouTube ↗'}</a>
+            </div>
+          </div>
+        `;
+      } else if (key === 'brochure') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+              <span style="font-weight:bold; color:#000;">📄 ${isKo ? '슈퍼플래닝_회사소개서.pdf' : 'Superplanning_Company_Brochure.pdf'}</span>
+              <div style="display:flex; gap:6px;">
+                <a href="Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '새 창에서 열기 ↗' : 'Open in New Tab ↗'}</a>
+                <a href="Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '💾 파일 다운로드' : '💾 Download PDF'}</a>
+              </div>
+            </div>
+            <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+              <iframe 
+                src="Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                style="width:100%; height:100%; border:0; display:block;" 
+                title="${isKo ? '슈퍼플래닝 회사소개서 뷰어' : 'Superplanning Company Brochure Viewer'}">
+              </iframe>
             </div>
           </div>
         `;
@@ -2178,7 +2195,7 @@
       });
 
       const gnbBtns = document.querySelectorAll('.gnb-right .w95-btn span:last-child');
-      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '회사소개서 받기' : 'Company Brochure';
+      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '회사소개서 보기' : 'Company Brochure';
       if (gnbBtns[1]) gnbBtns[1].textContent = isKo ? '인재채용' : 'Careers';
 
       // 3. Desktop Icons
@@ -2239,7 +2256,7 @@
       const drawerItems = document.querySelectorAll('#mobileNavDrawer .start-item');
       const drawerKo = [
         '🏢 회사소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
-        '📝 UX 블로그', '📍 찾아오시는 길 & 문의', '📄 회사소개서 받기', 
+        '📝 UX 블로그', '📍 찾아오시는 길 & 문의', '📄 회사소개서 보기', 
         '🤝 인재채용', '🌐 언어 변경 (KOR / ENG)'
       ];
       const drawerEn = [
@@ -2256,12 +2273,12 @@
       const startKo = [
         '🏢 슈퍼플래닝 소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
         '📝 UX 블로그', '📷 인스타그램', '🧵 쓰레드', '🎬 슈퍼플래닝 소개영상', 
-        '📄 회사소개서 받기 (PDF)', '🤝 인재 채용', '⚙️ 환경 설정', '🚪 시스템 종료...'
+        '📄 회사소개서 보기 (PDF)', '🤝 인재 채용', '⚙️ 환경 설정', '🚪 시스템 종료...'
       ];
       const startEn = [
         '🏢 About Superplanning', '🏛️ Key Clients', '🎨 UX Services', '🎓 AI-UX Classes', 
         '📝 UX Blog', '📷 Instagram', '🧵 Threads', '🎬 Promo Video', 
-        '📄 Download Brochure (PDF)', '🤝 Careers', '⚙️ Settings', '🚪 Shutdown...'
+        '📄 View Brochure (PDF)', '🤝 Careers', '⚙️ Settings', '🚪 Shutdown...'
       ];
       startItems.forEach((el, idx) => {
         if (startKo[idx]) el.textContent = isKo ? startKo[idx] : startEn[idx];
