@@ -1206,24 +1206,27 @@
       },
       en: {
         'w.welcome': 'Welcome',
-        'w.services': 'UX Services & Development',
+        'w.services': 'UX Services & Dev',
         'w.portfolio': 'Portfolio',
-        'w.classes': 'Classes',
-        'w.blog': 'Blog',
+        'w.classes': 'AI-UX Classes',
+        'w.blog': 'UX Blog',
         'w.contact': 'Location',
-        'w.about': 'About',
+        'w.about': 'About Us',
+        'w.clients': 'Key Clients',
         'w.intro-video': 'Promo Video',
+        'w.careers': 'Careers',
+        'w.instagram': 'Instagram',
+        'w.threads': 'Threads',
         'w.np': 'Now Playing',
         'w.links': 'Links',
         'w.tweaks': 'Settings',
         'w.shut': 'Shutdown',
         'wel.head': 'Welcome to Superplanning UX Studio',
         'wel.body': 'We strip away clutter and leave only what is genuinely necessary.',
-        'about.lead': 'We are Superplanning, a dedicated UX Design Agency.',
+        'about.lead': 'Dedicated UX Agency, Superplanning.',
         'about.body1': 'Great design is not about flashy screens.',
         'about.body2': 'Sometimes, for a better user experience, flashy design must be boldly discarded.',
-        'sky.hero': 'Leave a single line and we can get started.',
-        'sky.hint': 'Response within 1-3 days. For urgent inquiries: hello@superplanning.kr'
+        'sky.hero': 'We reply quickly (Usually within 10 mins)'
       }
     };
 
@@ -1411,6 +1414,8 @@
     }
 
     function getWindowBody(key) {
+      const isKo = currentLang === 'ko';
+
       if (key === 'about') {
         return `
           <div class="win-menu-bar" style="margin: -12px -12px 6px -12px;">
@@ -1420,165 +1425,164 @@
             <div class="win-menu-item"><span>H</span>elp</div>
           </div>
           
-          <!-- ENLARGED HERO AREA -->
           <div class="cmd-prompt" style="margin-bottom:4px;">
-            <span>C:\SUPERPLANNING\&gt; HELLO</span><span class="blink-cursor"></span>
+            <span>C:\\SUPERPLANNING&gt; HELLO</span><span class="blink-cursor"></span>
           </div>
 
           <h2 id="heroTypingText" style="font-size:26px; font-weight:900; margin:4px 0 6px 0; line-height:1.2; color:#000; letter-spacing:-0.02em; min-height:36px;">
-            UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>
+            ${isKo ? 'UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>' : 'Dedicated UX Agency, <span style="color:#000080; font-style:italic;">Superplanning.</span>'}
           </h2>
 
-          <p id="heroBody2Text" style="font-size:14px; font-weight:700; line-height:1.5; margin-bottom:8px; color:#1a1a1a; min-height:21px;" data-i18n="about.body2"></p>
+          <p id="heroBody2Text" style="font-size:14px; font-weight:700; line-height:1.5; margin-bottom:8px; color:#1a1a1a; min-height:21px;">
+            ${isKo ? '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.' : 'Sometimes, for a better user experience, flashy design must be boldly discarded.'}
+          </p>
 
           <hr style="margin:6px 0; border:0; border-top:1px solid var(--bevel-shadow);">
 
-          <h4 style="font-weight:800; font-size:12px; margin-bottom:4px; color:#000080;">UX프로젝트 수행원칙</h4>
+          <h4 style="font-weight:800; font-size:12px; margin-bottom:4px; color:#000080;">${isKo ? 'UX프로젝트 수행원칙' : 'UX Execution Principles'}</h4>
           <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:6px;">
             <div class="info-card" style="padding:4px 8px;">
-              <h4>1. 최근 사용자들의 3초 룰</h4>
-              <p>사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.</p>
+              <h4>${isKo ? '1. 최근 사용자들의 3초 룰' : '1. The 3-Second Rule'}</h4>
+              <p>${isKo ? '사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.' : 'Capture user attention within 3 seconds. First impressions that convey core value are paramount.'}</p>
             </div>
             <div class="info-card" style="padding:4px 8px;">
-              <h4>2. 그렇게 쓰면 아무도 안읽습니다.</h4>
-              <p>사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+              <h4>${isKo ? '2. 그렇게 쓰면 아무도 안읽습니다.' : '2. People Don\'t Read Large Text Blocks'}</h4>
+              <p>${isKo ? '사용자는 화면을 읽지 않고 \'스캔\'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.' : 'Users scan rather than read. Remove fluff and guide action through concise UX writing.'}</p>
             </div>
             <div class="info-card" style="padding:4px 8px;">
-              <h4>3. 더 적게 하지만 더 좋게</h4>
-              <p>디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. 'Less but better'</p>
+              <h4>${isKo ? '3. 더 적게 하지만 더 좋게' : '3. Less But Better'}</h4>
+              <p>${isKo ? '디자인에서는 \'무엇을 추가할까\'가 아닌 \'무엇을 덜어낼까\' 고민해야 합니다. \'Less but better\'' : 'Focus on what to eliminate rather than what to add. Less but better.'}</p>
             </div>
           </div>
 
-          <!-- Bottom Retro Button Bar -->
           <div style="display:flex; gap:8px; margin-top: 12px; padding-top: 2px; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:5px 12px;" onclick="downloadCompanyBrochure();">📄 회사소개서 받기</button>
-            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('intro-video');">🎬 소개영상 보기</button>
-            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('contact');">📍 찾아오시는 길</button>
+            <button class="w95-btn" style="padding:5px 12px;" onclick="downloadCompanyBrochure();">${isKo ? '📄 회사소개서 받기' : '📄 Company Brochure'}</button>
+            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
+            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
           </div>
         `;
       } else if (key === 'services') {
         return `
-          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">${isKo ? '이런 서비스를 제공합니다.' : 'Services We Provide'}</h3>
           <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">UX 리서치</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? 'UX 리서치' : 'UX Research'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.</p>
+              <p style="margin:0;">${isKo ? 'FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.' : 'FGI, in-depth interviews, and UT research to validate hypotheses and eliminate failure risks.'}</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">UX 라이팅</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? 'UX 라이팅' : 'UX Writing'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.</p>
+              <p style="margin:0;">${isKo ? '보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.' : 'Voice & tone definition and UX writing guidelines for a unified brand experience.'}</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">UX 기획 / 디자인</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? 'UX 기획 / 디자인' : 'UX/UI Design'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.</p>
+              <p style="margin:0;">${isKo ? '사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.' : 'Problem solving based on user interviews, building UI storyboards and design systems.'}</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">웹 / 앱 개발</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? '웹 / 앱 개발' : 'Web & App Dev'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
+              <p style="margin:0;">${isKo ? 'React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.' : 'Building high-performance hybrid and iOS/Android native apps with React and Vue.'}</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">UX 컨설팅</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? 'UX 컨설팅' : 'UX Consulting'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.</p>
+              <p style="margin:0;">${isKo ? '비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.' : 'App renewal strategies aligned with business goals and data-driven UX roadmaps.'}</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('classes'); blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">AI-UX 강의</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+                <h4 style="margin:0;">${isKo ? 'AI-UX 강의' : 'AI-UX Classes'}</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
               </div>
-              <p style="margin:0;">최신 AI 프로그램을 활용한 앱기획부터 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 교육을 진행합니다.</p>
+              <p style="margin:0;">${isKo ? '최신 AI 프로그램을 활용한 앱기획부터 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 교육을 진행합니다.' : 'Practical training using latest AI tools for app planning and vibe coding.'}</p>
             </div>
           </div>
         `;
       } else if (key === 'clients') {
         return `
-          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">${isKo ? '국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.' : 'Executed UX research, UX writing, app planning, and IT development projects for top enterprises and public agencies.'}</p>
 
           <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
-            <div class="info-card" style="padding:10px 4px;">SK텔레콤</div>
-            <div class="info-card" style="padding:10px 4px;">현대자동차</div>
-            <div class="info-card" style="padding:10px 4px;">롯데그룹</div>
-            <div class="info-card" style="padding:10px 4px;">LG유플러스</div>
-            <div class="info-card" style="padding:10px 4px;">비씨카드</div>
-            <div class="info-card" style="padding:10px 4px;">CJ올리브네트웍스</div>
-            <div class="info-card" style="padding:10px 4px;">KB국민은행</div>
-            <div class="info-card" style="padding:10px 4px;">NH농협은행</div>
-            <div class="info-card" style="padding:10px 4px;">서민금융진흥원</div>
-            <div class="info-card" style="padding:10px 4px;">제일기획</div>
-            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">한국식품안전관리인증원</div>
-            <div class="info-card" style="padding:10px 4px;">경기도일자리재단</div>
+            <div class="info-card" style="padding:10px 4px;">SK Telecom</div>
+            <div class="info-card" style="padding:10px 4px;">Hyundai Motor</div>
+            <div class="info-card" style="padding:10px 4px;">LOTTE Group</div>
+            <div class="info-card" style="padding:10px 4px;">LG U+</div>
+            <div class="info-card" style="padding:10px 4px;">BC Card</div>
+            <div class="info-card" style="padding:10px 4px;">CJ OliveNetworks</div>
+            <div class="info-card" style="padding:10px 4px;">KB Kookmin Bank</div>
+            <div class="info-card" style="padding:10px 4px;">NH NongHyup Bank</div>
+            <div class="info-card" style="padding:10px 4px;">Kinfa</div>
+            <div class="info-card" style="padding:10px 4px;">Cheil Worldwide</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">KISCO</div>
+            <div class="info-card" style="padding:10px 4px;">Gyeonggi Job Foundation</div>
           </div>
         `;
       } else if (key === 'contact') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:8px;">📍 ${isKo ? '서비스 이해도가 높은 실무진이 직접 상담해 드립니다.' : 'Consult directly with experienced UX specialists.'}</h3>
           <div class="info-card" style="margin-bottom:8px; display:flex; flex-direction:column; gap:6px;">
-            <h4 style="color:#000080; font-size:12.5px; margin-bottom:2px; line-height:1.3;">UX/UI기획부터 앱 개발까지, 슈퍼플래닝과 함께하세요.</h4>
+            <h4 style="color:#000080; font-size:12.5px; margin-bottom:2px; line-height:1.3;">${isKo ? 'UX/UI기획부터 앱 개발까지, 슈퍼플래닝과 함께하세요.' : 'From UX/UI planning to app dev, partner with Superplanning.'}</h4>
             
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
-              <div style="font-size:11.5px;"><strong>회사명:</strong> <span style="font-weight:700;">슈퍼플래닝</span></div>
+              <div style="font-size:11.5px;"><strong>${isKo ? '회사명:' : 'Company:'}</strong> <span style="font-weight:700;">Superplanning</span></div>
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
-              <div style="font-size:11.5px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
-              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('경기 하남시 미사강변동로72 SB비즈타워 1116호', '주소')">복사</button>
+              <div style="font-size:11.5px;"><strong>${isKo ? '주소:' : 'Address:'}</strong> ${isKo ? '경기 하남시 미사강변동로72 SB비즈타워 1116호' : 'Suite 1116, SB Biz Tower, 72 Misagangbyeondong-ro, Hanam-si, Gyeonggi-do'}</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('${isKo ? '경기 하남시 미사강변동로72 SB비즈타워 1116호' : 'Suite 1116, SB Biz Tower, 72 Misagangbyeondong-ro, Hanam-si, Gyeonggi-do'}', '${isKo ? '주소' : 'Address'}')">${isKo ? '복사' : 'Copy'}</button>
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
-              <div style="font-size:11.5px;"><strong>전화번호 (T):</strong> 031-699-3298</div>
-              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호')">복사</button>
+              <div style="font-size:11.5px;"><strong>${isKo ? '전화번호 (T):' : 'Tel (T):'}</strong> 031-699-3298</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '${isKo ? '전화번호' : 'Tel'}')">${isKo ? '복사' : 'Copy'}</button>
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
-              <div style="font-size:11.5px;"><strong>대표 이메일 (E):</strong> jake@superplanning.co.kr</div>
-              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
+              <div style="font-size:11.5px;"><strong>${isKo ? '대표 이메일 (E):' : 'Email (E):'}</strong> jake@superplanning.co.kr</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '${isKo ? '이메일 주소' : 'Email'}')">${isKo ? '복사' : 'Copy'}</button>
             </div>
           </div>
           <div class="info-card" style="margin-bottom:8px;">
-            <h4 style="color:#000080; font-size:12.5px; margin-bottom:4px;">이렇게 찾아오세요.</h4>
+            <h4 style="color:#000080; font-size:12.5px; margin-bottom:4px;">${isKo ? '이렇게 찾아오세요.' : 'How to Find Us'}</h4>
             <p style="font-size:11px; line-height:1.45; margin-bottom:4px;">
-              <strong>▶ 지하철로 오실 경우:</strong><br>
-              5호선 미사역 1분 거리 위치, 8번 출구 서브웨이 옆 건물 11층
+              <strong>${isKo ? '▶ 지하철로 오실 경우:' : '▶ By Subway:'}</strong><br>
+              ${isKo ? '5호선 미사역 1분 거리 위치, 8번 출구 서브웨이 옆 건물 11층' : 'Line 5 Misa Station Exit 8 (1 min walk), 11th Floor next to Subway.'}
             </p>
             <p style="font-size:11px; line-height:1.45; margin-bottom:6px;">
-              <strong>▶ 차량으로 오실 경우:</strong><br>
-              지하주차장에 무료주차 가능 (건물 후면 진입)
+              <strong>${isKo ? '▶ 차량으로 오실 경우:' : '▶ By Car:'}</strong><br>
+              ${isKo ? '지하주차장에 무료주차 가능 (건물 후면 진입)' : 'Free parking in basement (Enter from rear of building).'}
             </p>
             <a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:inline-block; padding:3px 8px; font-size:10.5px; text-decoration:none;">
-              🗺️ 네이버지도 길찾기 ↗ (https://naver.me/GmF8esjK)
+              🗺️ Naver Map ↗ (https://naver.me/GmF8esjK)
             </a>
           </div>
 
-          <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD -->
           <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" class="info-card" style="display:block; text-decoration:none; margin-bottom:6px; background:#fee500; border:2px solid #3c1e1e; cursor:pointer;" onclick="blip(880, 0.05);">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <span style="font-size:18px;">💬</span>
                 <div>
-                  <h4 style="color:#3c1e1e; font-size:12px; margin:0; font-weight:800;">카카오채널 실시간 채팅문의</h4>
-                  <p style="color:#3c1e1e; font-size:10px; margin:1px 0 0 0; opacity:0.9;">카카오톡으로 빠른 UX상담 (24시간)</p>
+                  <h4 style="color:#3c1e1e; font-size:12px; margin:0; font-weight:800;">${isKo ? '카카오채널 실시간 채팅문의' : 'Kakao Realtime Chat'}</h4>
+                  <p style="color:#3c1e1e; font-size:10px; margin:1px 0 0 0; opacity:0.9;">${isKo ? '카카오톡으로 빠른 UX상담 (24시간)' : 'Quick UX consultation via KakaoTalk (24/7)'}</p>
                 </div>
               </div>
-              <span class="w95-btn" style="padding:2px 6px; background:#3c1e1e; color:#fee500; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-block; pointer-events:none;">채팅 시작 ↗</span>
+              <span class="w95-btn" style="padding:2px 6px; background:#3c1e1e; color:#fee500; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-block; pointer-events:none;">${isKo ? '채팅 시작 ↗' : 'Start Chat ↗'}</span>
             </div>
           </a>
 
@@ -2010,17 +2014,112 @@
     }
     function toggleLang() {
       currentLang = currentLang === 'ko' ? 'en' : 'ko';
-      document.getElementById('langBtn').textContent = currentLang === 'ko' ? 'KO | EN' : 'EN | KO';
       applyI18n();
+      blip(750, 0.05);
     }
 
     function applyI18n() {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const k = el.getAttribute('data-i18n');
-        if (STRINGS[currentLang][k]) {
-          el.textContent = STRINGS[currentLang][k];
-        }
+      const isKo = currentLang === 'ko';
+
+      // 1. Language Toggle Button
+      const langBtn = document.getElementById('langBtn');
+      if (langBtn) {
+        langBtn.innerHTML = isKo 
+          ? '<span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span>'
+          : '<span style="opacity:0.5;">KOR</span> | <span style="font-weight:bold; color:#000080;">ENG</span>';
+      }
+
+      // 2. GNB links & buttons
+      const gnbLinks = document.querySelectorAll('.gnb-link span');
+      const gnbKo = ['UX리서치', 'UX라이팅', 'UX기획/디자인', '웹/앱개발', 'AI-UX강의', 'UX블로그', '찾아오시는 길'];
+      const gnbEn = ['UX Research', 'UX Writing', 'UX/UI Design', 'Web/App Dev', 'AI-UX Class', 'UX Blog', 'Location'];
+      gnbLinks.forEach((el, idx) => {
+        if (gnbKo[idx]) el.textContent = isKo ? gnbKo[idx] : gnbEn[idx];
       });
+
+      const gnbBtns = document.querySelectorAll('.gnb-right .w95-btn span:last-child');
+      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '회사소개서 받기' : 'Company Brochure';
+      if (gnbBtns[1]) gnbBtns[1].textContent = isKo ? '인재채용' : 'Careers';
+
+      // 3. Desktop Icons
+      const icons = document.querySelectorAll('.desktop-icon .icon-label');
+      const iconKo = ['회사소개', '주요 고객사', 'UX서비스', 'AI-UX강의', 'UX블로그', '인스타그램', '쓰레드', '유튜브'];
+      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'AI-UX Classes', 'UX Blog', 'Instagram', 'Threads', 'YouTube'];
+      icons.forEach((el, idx) => {
+        if (iconKo[idx]) el.textContent = isKo ? iconKo[idx] : iconEn[idx];
+      });
+
+      // 4. Skyscraper Inquiry Form
+      const skyTitle = document.querySelector('#skyscraper .sky-title');
+      if (skyTitle) skyTitle.textContent = isKo ? '📬 UX프로젝트 문의' : '📬 UX Project Inquiry';
+
+      const skyHero = document.querySelector('#skyscraper .sky-hero');
+      if (skyHero) skyHero.textContent = isKo ? '빠르게 회신 드리겠습니다 (보통 10분 이내 응답)' : 'We reply quickly (Usually within 10 mins)';
+
+      const nameInp = document.getElementById('skyName');
+      if (nameInp) nameInp.placeholder = isKo ? '이름 *' : 'Name *';
+
+      const compInp = document.getElementById('skyCompany');
+      if (compInp) compInp.placeholder = isKo ? '회사명 (선택)' : 'Company (Optional)';
+
+      const emailInp = document.getElementById('skyEmail');
+      if (emailInp) emailInp.placeholder = isKo ? '이메일 (선택)' : 'Email (Optional)';
+
+      const phoneInp = document.getElementById('skyPhone');
+      if (phoneInp) phoneInp.placeholder = isKo ? '연락처 *' : 'Phone *';
+
+      const msgInp = document.getElementById('skyMsg');
+      if (msgInp) msgInp.placeholder = isKo ? '문의내용 *' : 'Inquiry details *';
+
+      const skySubmit = document.querySelector('#skyscraper button.w95-btn');
+      if (skySubmit) skySubmit.textContent = isKo ? '보내기' : 'Send';
+
+      // 5. Mobile Drawer Menu Items
+      const drawerItems = document.querySelectorAll('#mobileNavDrawer .start-item');
+      const drawerKo = [
+        '🏢 회사소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
+        '📝 UX 블로그', '📍 찾아오시는 길 & 문의', '📄 회사소개서 받기', 
+        '🤝 인재채용', '🌐 언어 변경 (KOR / ENG)'
+      ];
+      const drawerEn = [
+        '🏢 About Us', '🏛️ Key Clients', '🎨 UX Services', '🎓 AI-UX Classes', 
+        '📝 UX Blog', '📍 Location & Inquiry', '📄 Company Brochure', 
+        '🤝 Careers', '🌐 Language (KOR / ENG)'
+      ];
+      drawerItems.forEach((el, idx) => {
+        if (drawerKo[idx]) el.textContent = isKo ? drawerKo[idx] : drawerEn[idx];
+      });
+
+      // 6. Start Menu Items
+      const startItems = document.querySelectorAll('#startMenu .start-item');
+      const startKo = [
+        '🏢 슈퍼플래닝 소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
+        '📝 UX 블로그', '📷 인스타그램', '🧵 쓰레드', '🎬 슈퍼플래닝 소개영상', 
+        '📄 회사소개서 받기 (PDF)', '🤝 인재 채용', '⚙️ 환경 설정', '🚪 시스템 종료...'
+      ];
+      const startEn = [
+        '🏢 About Superplanning', '🏛️ Key Clients', '🎨 UX Services', '🎓 AI-UX Classes', 
+        '📝 UX Blog', '📷 Instagram', '🧵 Threads', '🎬 Promo Video', 
+        '📄 Download Brochure (PDF)', '🤝 Careers', '⚙️ Settings', '🚪 Shutdown...'
+      ];
+      startItems.forEach((el, idx) => {
+        if (startKo[idx]) el.textContent = isKo ? startKo[idx] : startEn[idx];
+      });
+
+      // 7. Update all open window titles and window bodies
+      for (const k in windows) {
+        if (windows[k] && windows[k].el) {
+          const winEl = windows[k].el;
+          const titleSpan = winEl.querySelector('.w-title span');
+          if (titleSpan) {
+            titleSpan.textContent = STRINGS[currentLang]['w.' + k] || (WINDOW_DEFS[k] ? WINDOW_DEFS[k].title : k);
+          }
+          const bodyEl = winEl.querySelector('.w-body');
+          if (bodyEl) {
+            bodyEl.innerHTML = getWindowBody(k);
+          }
+        }
+      }
     }
 
     function triggerBSOD() {
