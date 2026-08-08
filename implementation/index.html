@@ -1362,7 +1362,7 @@
       'classes': { w: 640, h: 400, title: 'AI-UX 강의 안내' },
       'blog': { w: 600, h: 400, title: 'UX 블로그' },
       'contact': { w: 580, h: 475, title: '찾아오시는 길' },
-      'about': { w: 580, h: 405, title: '회사 소개' },
+      'about': { w: 640, h: 720, title: '회사 소개' },
       'clients': { w: 580, h: 280, title: '주요 고객사' },
       'careers': { w: 580, h: 400, title: '인재 채용' },
       'intro-video': { w: 460, h: 340, title: '슈퍼플래닝 소개영상' },
@@ -1511,47 +1511,53 @@
 
       if (key === 'about') {
         return `
-          <div class="win-menu-bar" style="margin: -12px -12px 6px -12px;">
+          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px;">
             <div class="win-menu-item"><span>F</span>ile</div>
             <div class="win-menu-item"><span>E</span>dit</div>
             <div class="win-menu-item"><span>V</span>iew</div>
             <div class="win-menu-item"><span>H</span>elp</div>
           </div>
           
-          <div class="cmd-prompt" style="margin-bottom:4px;">
-            <span>C:\\SUPERPLANNING&gt; HELLO</span><span class="blink-cursor"></span>
+          <!-- RETRO IMPACTFUL HERO CONTAINER -->
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:20px 22px; margin-bottom:24px; border-radius:3px;">
+            <div class="cmd-prompt" style="font-family:var(--font-mono); font-size:14px; color:#ffd43b; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:6px;">
+              <span>C:\\SUPERPLANNING&gt; HELLO</span><span class="blink-cursor" style="height:15px; width:8px; background:#ffd43b; display:inline-block;"></span>
+            </div>
+
+            <h2 id="heroTypingText" style="font-size:28px; font-weight:900; margin:0 0 12px 0; line-height:1.3; color:#ffffff; letter-spacing:-0.02em; min-height:40px; word-break:keep-all;">
+              ${isKo ? 'UX디자인 에이전시, <span style="color:#3aa6ff; font-weight:900;">슈퍼플래닝입니다.</span>' : 'Dedicated UX Agency, <span style="color:#3aa6ff; font-weight:900;">Superplanning.</span>'}
+            </h2>
+
+            <p id="heroBody2Text" style="font-size:15.5px; font-weight:600; line-height:1.65; margin:0; color:#d8d8d8; min-height:26px; word-break:keep-all;">
+              ${isKo ? '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.' : 'Sometimes, for a better user experience, flashy design must be boldly discarded.'}
+            </p>
           </div>
 
-          <h2 id="heroTypingText" style="font-size:26px; font-weight:900; margin:4px 0 6px 0; line-height:1.2; color:#000; letter-spacing:-0.02em; min-height:36px;">
-            ${isKo ? 'UX디자인 에이전시, <span style="color:#000080; font-style:italic;">슈퍼플래닝입니다.</span>' : 'Dedicated UX Agency, <span style="color:#000080; font-style:italic;">Superplanning.</span>'}
-          </h2>
+          <!-- SPACING & SECTION HEADER -->
+          <div style="margin-top:8px; margin-bottom:12px; display:flex; align-items:center; gap:6px; border-bottom:2px solid #000080; padding-bottom:6px;">
+            <span style="font-size:16px;">📌</span>
+            <h4 style="font-weight:900; font-size:14px; margin:0; color:#000080; letter-spacing:-0.01em;">${isKo ? 'UX프로젝트 수행원칙' : 'UX Execution Principles'}</h4>
+          </div>
 
-          <p id="heroBody2Text" style="font-size:14px; font-weight:700; line-height:1.5; margin-bottom:8px; color:#1a1a1a; min-height:21px;">
-            ${isKo ? '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.' : 'Sometimes, for a better user experience, flashy design must be boldly discarded.'}
-          </p>
-
-          <hr style="margin:6px 0; border:0; border-top:1px solid var(--bevel-shadow);">
-
-          <h4 style="font-weight:800; font-size:12px; margin-bottom:4px; color:#000080;">${isKo ? 'UX프로젝트 수행원칙' : 'UX Execution Principles'}</h4>
-          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:6px;">
-            <div class="info-card" style="padding:4px 8px;">
-              <h4>${isKo ? '1. 최근 사용자들의 3초 법칙' : '1. The 3-Second Rule'}</h4>
-              <p>${isKo ? '사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.' : 'Capture user attention within 3 seconds. First impressions that convey core value are paramount.'}</p>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;">
+            <div class="info-card" style="padding:10px 12px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:13px; font-weight:800; color:#000080; margin-bottom:4px;">${isKo ? '1. 최근 사용자들의 3초 법칙' : '1. The 3-Second Rule'}</h4>
+              <p style="font-size:12.5px; line-height:1.5; color:#222; margin:0;">${isKo ? '사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.' : 'Capture user attention within 3 seconds. First impressions that convey core value are paramount.'}</p>
             </div>
-            <div class="info-card" style="padding:4px 8px;">
-              <h4>${isKo ? '2. 그렇게 쓰면 아무도 안읽습니다.' : '2. People Don\'t Read Large Text Blocks'}</h4>
-              <p>${isKo ? '사용자는 화면을 읽지 않고 \'스캔\'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.' : 'Users scan rather than read. Remove fluff and guide action through concise UX writing.'}</p>
+            <div class="info-card" style="padding:10px 12px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:13px; font-weight:800; color:#000080; margin-bottom:4px;">${isKo ? '2. 그렇게 쓰면 아무도 안읽습니다.' : '2. People Don\'t Read Large Text Blocks'}</h4>
+              <p style="font-size:12.5px; line-height:1.5; color:#222; margin:0;">${isKo ? '사용자는 화면을 읽지 않고 \'스캔\'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.' : 'Users scan rather than read. Remove fluff and guide action through concise UX writing.'}</p>
             </div>
-            <div class="info-card" style="padding:4px 8px;">
-              <h4>${isKo ? '3. 더 적게 하지만 더 좋게' : '3. Less But Better'}</h4>
-              <p>${isKo ? '디자인에서는 \'무엇을 추가할까\'가 아닌 \'무엇을 덜어낼까\' 고민해야 합니다. \'Less but better\'' : 'Focus on what to eliminate rather than what to add. Less but better.'}</p>
+            <div class="info-card" style="padding:10px 12px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:13px; font-weight:800; color:#000080; margin-bottom:4px;">${isKo ? '3. 더 적게 하지만 더 좋게' : '3. Less But Better'}</h4>
+              <p style="font-size:12.5px; line-height:1.5; color:#222; margin:0;">${isKo ? '디자인에서는 \'무엇을 추가할까\'가 아닌 \'무엇을 덜어낼까\' 고민해야 합니다. \'Less but better\'' : 'Focus on what to eliminate rather than what to add. Less but better.'}</p>
             </div>
           </div>
 
-          <div style="display:flex; gap:8px; margin-top: 12px; padding-top: 2px; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('brochure');">${isKo ? '📄 회사소개서 보기' : '📄 Company Brochure'}</button>
-            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
-            <button class="w95-btn" style="padding:5px 12px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
+          <div style="display:flex; gap:10px; margin-top:16px; padding-top:4px; flex-wrap:wrap;">
+            <button class="w95-btn" style="padding:6px 14px; font-size:12px;" onclick="openWindow('brochure');">${isKo ? '📄 회사소개서 보기' : '📄 Company Brochure'}</button>
+            <button class="w95-btn" style="padding:6px 14px; font-size:12px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
+            <button class="w95-btn" style="padding:6px 14px; font-size:12px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
           </div>
         `;
       } else if (key === 'services') {
@@ -1909,7 +1915,7 @@
       const p2Text = currentLang === 'ko' ? '슈퍼플래닝입니다.' : 'Superplanning.';
       const bodyText = (STRINGS[currentLang] && STRINGS[currentLang]['about.body2']) || '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.';
 
-      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#000080; font-style:italic;"></span><span id="twCursor1" class="blink-cursor" style="height:22px; width:5px; margin-left:2px; display:inline-block; vertical-align:middle;"></span>';
+      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#3aa6ff; font-weight:900;"></span><span id="twCursor1" class="blink-cursor" style="height:24px; width:6px; background:#3aa6ff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
       if (bodyContainer) {
         bodyContainer.innerHTML = '<span id="twBody"></span>';
       }
@@ -1936,7 +1942,7 @@
 
           if (bodyContainer) {
             if (!document.getElementById('twCursor2')) {
-              bodyContainer.innerHTML = '<span id="twBody"></span><span id="twCursor2" class="blink-cursor" style="height:14px; width:4px; margin-left:2px; display:inline-block; vertical-align:middle;"></span>';
+              bodyContainer.innerHTML = '<span id="twBody"></span><span id="twCursor2" class="blink-cursor" style="height:16px; width:5px; background:#ffd43b; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
             }
             const elBody = document.getElementById('twBody');
             if (elBody && k < bodyText.length) {
