@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개 | 슈퍼플래닝 (Superplanning UX Studio)</title>
+  <meta name="description" content="복잡한 화면을 덜어내고 필요한 것만 남기는 UX 전문 스튜디오 슈퍼플래닝 회사소개. UX 리서치, UX 라이팅, UI/UX 기획, AI-UX 교육 커리큘럼 소개.">
+  <meta name="keywords" content="회사소개, 슈퍼플래닝, Superplanning, UX에이전시, UX스튜디오, UX라이팅, UX리서치, UI디자인">
+  <meta name="author" content="슈퍼플래닝 (Superplanning)">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://superplanning.blog/company">
+  <link rel="alternate" hreflang="ko" href="https://superplanning.blog/company">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning UX Studio)">
+  <meta property="og:url" content="https://superplanning.blog/company">
+  <meta property="og:title" content="회사소개 | 슈퍼플래닝">
+  <meta property="og:description" content="복잡한 화면을 덜어내고 진짜 필요한 것만 남깁니다. 슈퍼플래닝 브랜드 스토리 및 서비스 안내.">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Pretendard Webfont -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+  <style>
+    :root {
+      --bg: #008080;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --win-fg-dark: #0a0a0a;
+      --bevel-hi: #ffffff;
+      --bevel-lo: #7b7b7b;
+      --bevel-shadow: #3b3b3b;
+      --accent: #ffd43b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', -apple-system, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a { color: #111111; text-decoration: underline; }
+    a:hover { color: #555555; }
+
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 14px;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: var(--accent);
+      color: #000;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+    }
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .gnb-link:hover, .gnb-link.active { background: rgba(255,255,255,0.25); color: var(--accent); }
+    .gnb-right { display: flex; align-items: center; gap: 6px; }
+
+    #mobileMenuBtn { display: none; padding: 3px 10px; font-weight: 800; font-size: 12px; background: var(--win-bg); border: 2px solid #000; cursor: pointer; }
+    #mobileNavDrawer { display: none; position: fixed; top: calc(var(--logo-top) + var(--gnb-h) + 4px); left: 10px; right: 10px; z-index: 999999 !important; background: var(--win-bg); border: 2px solid #000; padding: 10px; }
+    #mobileNavDrawer.show { display: block !important; }
+    .start-item { padding: 6px 10px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .start-item:hover { background: #000080; color: #ffffff; }
+
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titlebar { background: #000080; color: #ffffff; padding: 4px 8px; display: flex; align-items: center; justify-content: space-between; font-weight: bold; font-size: 13px; border-bottom: 2px solid #000000; user-select: none; }
+    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .win-btn { width: 18px; height: 18px; background: #c0c0c0; color: #000000; border: 1px solid #000000; font-size: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: default; }
+
+    .menubar { background: #c0c0c0; padding: 3px 10px; font-size: 12px; border-bottom: 1px solid #808080; display: flex; gap: 18px; user-select: none; }
+    .toolbar-area { background: #c0c0c0; padding: 4px 8px; border-bottom: 1px solid #808080; display: flex; flex-direction: column; gap: 4px; }
+    .tool-btn { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; background: #c0c0c0; border: 2px solid #000; font-size: 11px; font-weight: bold; cursor: pointer; }
+    .address-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .addr-label { font-weight: bold; }
+    .addr-input { flex: 1; background: #ffffff; border: 2px solid #000000; padding: 2px 8px; font-size: 12px; font-family: var(--font-mono); }
+
+    .explorer-split { display: grid; grid-template-columns: 240px 1fr; background: #ffffff; min-height: 700px; }
+    .tree-sidebar { border-right: 2px solid #808080; background: #f0f0f0; padding: 12px 8px; }
+    .tree-root { font-weight: bold; font-size: 12px; margin-bottom: 10px; display: flex; align-items: center; gap: 4px; }
+    ul.tree-list { list-style: none; }
+    .tree-item a { display: block; padding: 5px 8px; font-size: 12px; text-decoration: none; color: #000; }
+    .tree-item a:hover, .tree-item a.active { background: #000080; color: #fff; }
+
+    .main-content-pane { padding: 28px 36px; background: #ffffff; line-height: 1.65; }
+    .main-content-pane h1 { font-size: 24px; font-weight: 900; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 8px; }
+    .main-content-pane h2 { font-size: 16px; font-weight: 800; margin: 24px 0 10px; color: #000080; }
+    .main-content-pane p { font-size: 13.5px; margin-bottom: 14px; color: #1a1a1a; }
+    .hero-intro { font-size: 15px; font-weight: 700; color: #222; margin-bottom: 20px; background: #f8f9fa; padding: 12px 14px; border-left: 4px solid #000080; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12.5px; }
+    .compare-table th, .compare-table td { border: 1px solid #7b7b7b; padding: 8px 10px; text-align: left; }
+    .compare-table th { background: #ececec; font-weight: bold; }
+
+    .statusbar { display: flex; justify-content: space-between; padding: 4px 10px; background: #c0c0c0; font-size: 11px; border-top: 2px solid #000000; color: #333; }
+
+    #taskbar { position: fixed !important; bottom: 0; left: 0; right: 0; height: var(--taskbar-h); background: var(--taskbar); border-top: 2px solid #fff; z-index: 99999 !important; display: flex; align-items: center; justify-content: space-between; padding: 2px 6px; }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+    }
+    #scrollTopBtn:hover { background: #dfdfdf !important; }
+    #scrollTopBtn:active { transform: translate(1px, 1px) !important; }
+
+    @media (max-width: 900px) {
+      #scrollTopBtn, #taskbar { display: none !important; }
+      body { padding-bottom: 0 !important; }
+      .explorer-split { grid-template-columns: 1fr; }
+      .tree-sidebar { border-right: none; border-bottom: 2px solid #808080; }
+      .main-content-pane { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HOME BUTTON -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
+    <span>🏠</span> <span>홈</span>
+  </div>
+
+  <!-- GNB HEADER -->
+  <div id="gnb">
+    <ul class="gnb-menu">
+      <li class="gnb-item"><a class="gnb-link" href="/ux_research"><span>UX리서치</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>UX라이팅</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>UX기획/디자인</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>웹/앱개발</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#classes"><span>AI-UX강의</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#blog"><span>UX블로그</span></a></li>
+      <li class="gnb-item"><a class="gnb-link active" href="/company"><span>회사소개</span></a></li>
+    </ul>
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+        <span>📄</span> <span>회사소개서 보기</span>
+      </button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+        <span>🤝</span> <span>인재채용</span>
+      </button>
+    </div>
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();"><span>☰ 메뉴</span></button>
+  </div>
+
+  <!-- MOBILE GNB DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000080;">📂 GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/company';">🏢 회사소개</div>
+      <div class="start-item" onclick="location.href='/ux_research';">🎨 UX 리서치</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes';">🎓 AI-UX 강의</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog';">📝 UX 블로그</div>
+    </div>
+  </div>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <article class="explorer-window">
+      <!-- Titlebar -->
+      <header class="titlebar">
+        <div class="titlebar-text">
+          <span>📂</span> <span>슈퍼플래닝 탐색기 — 회사소개</span>
+        </div>
+        <div style="display:flex; gap:3px;">
+          <span class="win-btn">－</span>
+          <span class="win-btn">□</span>
+          <span class="win-btn">×</span>
+        </div>
+      </header>
+
+      <!-- Menubar & Toolbar -->
+      <div class="menubar"><span><u>File</u></span><span><u>Edit</u></span><span><u>View</u></span><span><u>Help</u></span></div>
+      <div class="toolbar-area">
+        <div style="display:flex; gap:6px;">
+          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:SUPERPLANNING회사소개</div>
+        </div>
+      </div>
+
+      <!-- Explorer Split Pane -->
+      <div class="explorer-split">
+        <aside class="tree-sidebar">
+          <div class="tree-root"><span>📂</span> <span>회사소개</span></div>
+          <ul class="tree-list">
+            <li class="tree-item"><a href="#about" class="active tree-link"><span>📄</span> <span>1. 브랜드 스토리</span></a></li>
+            <li class="tree-item"><a href="#philosophy" class="tree-link"><span>📄</span> <span>2. 철학 및 가치</span></a></li>
+            <li class="tree-item"><a href="#services" class="tree-link"><span>📄</span> <span>3. 핵심 서비스</span></a></li>
+            <li class="tree-item"><a href="#contact-info" class="tree-link"><span>📄</span> <span>4. 위치 및 문의</span></a></li>
+          </ul>
+        </aside>
+
+        <main class="main-content-pane">
+          <h1>회사소개 (About Superplanning)</h1>
+          <p class="hero-intro">복잡한 화면을 덜어내고 사용자가 과업을 직관적으로 완수하도록 돕는 대한민국 대표 UX 전문 스튜디오 슈퍼플래닝입니다.</p>
+
+          <h2 id="about">1. 브랜드 스토리</h2>
+          <p>슈퍼플래닝(Superplanning)은 보기 좋은 화면보다 <strong>사용하기 쉬운 서비스</strong>가 사업의 성패를 가른다고 믿습니다.</p>
+          <p>정량 데이터만으로는 알 수 없는 사용자 행동의 이유(Why)를 정성 UX리서치로 진단하고, 명확하고 단호한 UX 라이팅과 절제된 UI/UX 기획으로 가설을 현실화합니다.</p>
+
+          <h2 id="philosophy">2. 철학 및 가치 (Less but Better)</h2>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width:30%;">핵심 가치</th>
+                <th>상세 내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>사용자 중심 (User-Centered)</strong></td>
+                <td>실제 유저의 맥락과 발화를 기반으로 가설을 입증하고 실패 리스크를 극적으로 줄입니다.</td>
+              </tr>
+              <tr>
+                <td><strong>절제된 구조 (Simplicity)</strong></td>
+                <td>불필요한 과업 절차를 덜어내고 3단계 이내의 직관적 동선을 설계합니다.</td>
+              </tr>
+              <tr>
+                <td><strong>실행형 산출물 (Executable)</strong></td>
+                <td>단순 감상이나 이론이 아닌 화면 단위 UI/UX개선안과 실무 즉시 반영 가능한 가이드라인을 제공합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="services">3. 핵심 서비스</h2>
+          <p>· <strong>UX 리서치:</strong> FGI, IDI(인뎁스 인터뷰), UT(사용성 테스트) 기반의 정성 리서치 및 UX개선안 도출.</p>
+          <p>· <strong>UX 라이팅:</strong> 이탈률을 낮추는 버튼 카피, 서비스 안내 서술문 및 에러 커뮤니케이션 설계.</p>
+          <p>· <strong>UI/UX 기획 &amp; 디자인:</strong> 와이어프레임, 디자인 시스템, 모바일웹/앱 인터페이스 설계.</p>
+          <p>· <strong>AI-UX 교육:</strong> LLM 활용 UX라이팅 자동화 및 AI 프로토타이핑 워크숍.</p>
+
+          <h2 id="contact-info">4. 위치 및 문의</h2>
+          <p>· <strong>대표 이메일:</strong> hello@superplanning.kr</p>
+          <p>· <strong>공식 웹사이트:</strong> <a href="https://superplanning.blog">https://superplanning.blog</a> / <a href="https://www.superplanning.co.kr">https://www.superplanning.co.kr</a></p>
+          <p>· <strong>마크다운 미러:</strong> <a href="/services/ux-research.md">/services/ux-research.md</a> · <strong>AI 색인:</strong> <a href="/llms.txt">/llms.txt</a></p>
+        </main>
+      </div>
+
+      <footer class="statusbar">
+        <span>완료</span>
+        <span>C:SUPERPLANNING회사소개</span>
+        <span>KR · UTF-8</span>
+      </footer>
+    </article>
+  </div>
+
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" onclick="toggleMobileMenu();">💻 <strong>전체 메뉴보기</strong></button>
+      <div class="task-preview active">📁 <span>회사소개 탐색기</span></div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) drawer.classList.toggle('show');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('scrollTopBtn');
+      if (btn) {
+        window.addEventListener('scroll', () => {
+          btn.style.display = (window.innerWidth > 900 && window.scrollY > 80) ? 'inline-flex' : 'none';
+        });
+      }
+    });
+    setInterval(() => {
+      const d = new Date();
+      const el = document.getElementById('taskClock');
+      if (el) el.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }, 1000);
+  </script>
+</body>
+</html>

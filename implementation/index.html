@@ -1009,7 +1009,7 @@
         <a class="gnb-link" onclick="openWindow('blog'); blip(660, 0.04);"><span>UX블로그</span></a>
       </li>
       <li class="gnb-item">
-        <a class="gnb-link" onclick="openWindow('contact'); blip(660, 0.04);"><span>찾아오시는 길</span></a>
+        <a class="gnb-link" href="/company" onclick="blip(660, 0.04);"><span>회사소개</span></a>
       </li>
     </ul>
 
@@ -1084,33 +1084,9 @@
         <div class="icon-label">UX서비스</div>
       </div>
 
-      <!-- 3. AI-UX강의 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('classes'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#c0392b" rx="4"/>
-          <path d="M18 6L4 13l14 7 14-7L18 6z" fill="#ffd43b"/>
-          <path d="M8 17v8c0 3 4.5 5 10 5s10-2 10-5v-8" fill="none" stroke="#ffffff" stroke-width="3"/>
-          <rect x="28" y="13" width="3" height="12" fill="#ffd43b"/>
-        </svg>
-        <div class="icon-label">AI-UX강의</div>
-      </div>
+      
 
-      <!-- 4. 웹/앱개발 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#8e44ad" rx="4"/>
-          <rect x="5" y="7" width="26" height="22" fill="#1e1e1e" rx="2" stroke="#ffffff" stroke-width="1.5"/>
-          <path d="M5 7h26v5H5z" fill="#333333"/>
-          <circle cx="8" cy="9.5" r="1.2" fill="#ff5f56"/>
-          <circle cx="12" cy="9.5" r="1.2" fill="#ffbd2e"/>
-          <circle cx="16" cy="9.5" r="1.2" fill="#27c93f"/>
-          <!-- Code symbol < / > -->
-          <path d="M11 16l-3.5 3 3.5 3" fill="none" stroke="#ffd43b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 23l4-8" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-          <path d="M22 16l3.5 3-3.5 3" fill="none" stroke="#ffd43b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="icon-label">웹/앱개발</div>
-      </div>
+      
 
       <!-- 5. 인스타그램 -->
       <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('instagram'); blip(880, 0.05);">
@@ -1144,6 +1120,16 @@
         </svg>
         <div class="icon-label">유튜브</div>
       </div>
+
+      <!-- 8. 찾아오시는 길 -->
+      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('contact'); blip(880, 0.05);">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#e74c3c" rx="4"/>
+          <path d="M18 6c-5.52 0-10 4.48-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#ffffff"/>
+        </svg>
+        <div class="icon-label">찾아오시는 길</div>
+      </div>
+
     </div>
   </div>
 
@@ -2188,8 +2174,8 @@
 
       // 2. GNB links & buttons
       const gnbLinks = document.querySelectorAll('.gnb-link span');
-      const gnbKo = ['UX리서치', 'UX라이팅', 'UX기획/디자인', '웹/앱개발', 'AI-UX강의', 'UX블로그', '찾아오시는 길'];
-      const gnbEn = ['UX Research', 'UX Writing', 'UX/UI Design', 'Web/App Dev', 'AI-UX Class', 'UX Blog', 'Location'];
+      const gnbKo = ['UX리서치', 'UX라이팅', 'UX기획/디자인', '웹/앱개발', 'AI-UX강의', 'UX블로그', '회사소개'];
+      const gnbEn = ['UX Research', 'UX Writing', 'UX/UI Design', 'Web/App Dev', 'AI-UX Class', 'UX Blog', 'About Us'];
       gnbLinks.forEach((el, idx) => {
         if (gnbKo[idx]) el.textContent = isKo ? gnbKo[idx] : gnbEn[idx];
       });
@@ -2200,8 +2186,8 @@
 
       // 3. Desktop Icons
       const icons = document.querySelectorAll('.desktop-icon .icon-label');
-      const iconKo = ['회사소개', '주요 고객사', 'UX서비스', 'AI-UX강의', '웹/앱개발', '인스타그램', '쓰레드', '유튜브'];
-      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'AI-UX Classes', 'Web & App Dev', 'Instagram', 'Threads', 'YouTube'];
+      const iconKo = ['회사소개', '주요 고객사', 'UX서비스', '인스타그램', '쓰레드', '유튜브', '찾아오시는 길'];
+      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'Instagram', 'Threads', 'YouTube', 'Location'];
       icons.forEach((el, idx) => {
         if (iconKo[idx]) el.textContent = isKo ? iconKo[idx] : iconEn[idx];
       });
