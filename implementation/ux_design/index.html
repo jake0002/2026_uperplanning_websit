@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -1170,168 +1170,206 @@
           </ul>
         </aside>
 
-        <!-- Right Main Content View Pane -->
-        PART 1/4]
-아래는 UX기획/디자인 master HTML 원문의 PART 1이다.
-이 내용은 실제 HTML 소스 원문이다.
-요약하거나 재작성하지 말고 그대로 읽어라.
+        <!-- Right Main Content View Pane (UX기획/디자인 콘텐츠) -->
+        <main class="main-content-pane">
 
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UX기획 | 슈퍼플래닝 서비스 탐색기</title>
-<meta name="description" content="웹·앱 UX기획 및 UX디자인, IA설계, 와이어프레임, 화면설계서, UX 특허와 개발 연계, 진행 프로세스, 프로젝트 사례, FAQ를 한 페이지에 정리한 슈퍼플래닝 서브페이지입니다."/>
-<meta name="keywords" content="UX기획, UX디자인, 웹 UX기획, 앱 UX기획, IA설계, 와이어프레임, 화면설계서, UX 특허, 모바일앱 기획, 스타트업 UX컨설팅, 슈퍼플래닝"/>
-<meta name="author" content="슈퍼플래닝"/>
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
-<link rel="canonical" href="https://superplanning.co.kr/services/ux-planning-design"/>
-<link rel="alternate" hreflang="ko" href="https://superplanning.co.kr/services/ux-planning-design"/>
-<link rel="alternate" hreflang="ko" type="text/markdown" title="마크다운 버전 (AI 로봇용)" href="https://superplanning.co.kr/services/ux-planning-design.md"/>
-<link rel="alternate" title="AI 색인 (llms.txt)" href="https://superplanning.co.kr/llms.txt"/>
-<meta property="og:type" content="article"/>
-<meta property="og:title" content="UX기획 | 슈퍼플래닝"/>
-<meta property="og:description" content="리서치 기반 UX기획, IA설계, 와이어프레임, 화면설계서, UX 특허, 개발 연계, 프로젝트 사례까지 정리한 슈퍼플래닝 UX기획 서브페이지입니다."/>
-<meta property="og:url" content="https://superplanning.co.kr/services/ux-planning-design"/>
-<meta property="og:site_name" content="Superplanning UX Studio"/>
-<meta property="og:locale" content="ko_KR"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="UX기획 | 슈퍼플래닝"/>
-<meta name="twitter:description" content="웹·앱 UX기획과 UX디자인, IA설계, 와이어프레임, 화면설계서, 개발 연계까지 실제 실무 기준으로 소개합니다."/>
-<style>
-:root{--desktop:#008080;--chrome:#c0c0c0;--chrome-dark:#808080;--chrome-light:#ffffff;--title:#000080;--paper:#ffffff;--ink:#111111;--line:#9a9a9a;--tree:#5d5d5d;--link:#0b57d0;--font:'Tahoma','MS Sans Serif','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--desktop);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:none;font-smooth:never;line-height:1.62}
-body{padding:0 0 28px}
-a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} .skip:focus{position:static;width:auto;height:auto;background:#000;color:#fff;padding:6px 10px;display:inline-block}
-.explorer{width:min(1020px,100%);margin:0 auto;background:var(--chrome);border:2px solid #000;box-shadow:inset 1px 1px 0 var(--chrome-light), inset -1px -1px 0 var(--chrome-dark)}
-.titlebar{background:var(--title);color:#fff;height:22px;display:flex;align-items:center;justify-content:space-between;padding:0 4px 0 6px;font-size:12px;font-weight:700}
-.titlebar .left{display:flex;align-items:center;gap:6px;min-width:0}
-.titlebar .folder{width:14px;height:11px;display:inline-block;position:relative;background:#f0c33c;border:1px solid #8d6a00}
-.titlebar .folder:before{content:'';position:absolute;left:1px;top:-3px;width:7px;height:4px;background:#f0c33c;border:1px solid #8d6a00;border-bottom:none}
-.titlebar .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.titlebar .win-btns{display:flex;gap:2px}
-.titlebar .win-btns span{width:16px;height:14px;display:inline-flex;align-items:center;justify-content:center;background:var(--chrome);color:#000;border:1px solid #000;box-shadow:inset 1px 1px 0 var(--chrome-light), inset -1px -1px 0 var(--chrome-dark);font-size:10px;line-height:1}
-.menubar{background:var(--chrome);border-top:1px solid var(--chrome-light);border-bottom:1px solid var(--chrome-dark);padding:2px 8px 3px;font-size:12px}
-.menubar a{color:#000;margin-right:18px;text-decoration:underline}
-.navrow{padding:5px 6px 4px;border-top:1px solid var(--chrome-light);border-bottom:1px solid var(--chrome-dark);background:var(--chrome)}
-.backbtn{display:inline-flex;align-items:center;gap:5px;min-width:62px;height:24px;padding:0 10px;background:var(--chrome);color:#000;border:1px solid #000;box-shadow:inset 1px 1px 0 var(--chrome-light), inset -1px -1px 0 var(--chrome-dark);font-size:12px;font-weight:700}
-.backbtn:before{content:'←';font-size:12px}
-.address{display:flex;align-items:center;gap:6px;padding:4px 6px 5px;border-top:1px solid var(--chrome-light);border-bottom:1px solid var(--chrome-dark);background:var(--chrome);font-size:12px}
-.address label{color:#000;font-weight:700;white-space:nowrap}
-.addressbox{flex:1;min-width:0;height:22px;display:flex;align-items:center;padding:0 8px;background:#fff;border:1px solid #000;box-shadow:inset 1px 1px 0 #7a7a7a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.layout{display:grid;grid-template-columns:240px 1fr;background:#fff;min-height:860px}
-.sidebar{border-right:2px solid #b7b7b7;background:#fcfcfc;padding:8px 0 18px}
-.tree-root{padding:0 10px 10px 12px;border-bottom:1px solid #ececec;margin-bottom:6px;font-size:14px;font-weight:700}
-.tree-root .homeicon{margin-right:6px;font-size:13px}
-.tree{list-style:none;margin:0;padding:0 8px 0 12px;font-size:13px}
-.tree li{position:relative;padding:0;margin:0}
-.tree a{display:block;color:#111;padding:7px 6px 7px 24px;line-height:1.35}
-.tree a.active{font-weight:700}
-.tree li:before{content:'···';position:absolute;left:0;top:7px;color:#8f8f8f;font-size:11px;letter-spacing:1px}
-.tree li.file > a:before{content:'📄';position:absolute;left:11px;top:7px;font-size:11px}
-.content{padding:26px 44px 36px;background:#fff}
-.breadcrumb{font-size:12px;color:#333;margin:0 0 14px} .breadcrumb a{color:#333}
-h1{margin:0;font-size:24px;line-height:1.2;font-weight:800;letter-spacing:-0.02em}
-.title-rule{height:2px;background:#111;margin:10px 0 18px;width:100%}
-.lead{font-size:14px;margin:0 0 12px;color:#222}
-.lead-points{margin:0 0 24px 18px;padding:0;color:#1a1a1a}
-.lead-points li{margin:0 0 8px;font-size:13px;line-height:1.65}
-.section{margin:0 0 28px}
-.section h2{margin:0 0 10px;font-size:16px;line-height:1.35;font-weight:800}
-.section h3{margin:16px 0 6px;font-size:13px;line-height:1.4;font-weight:800}
-.section p{margin:0 0 12px;font-size:13px;color:#1a1a1a}
-.section ul{margin:0 0 12px 18px;padding:0}
-.section li{margin:0 0 5px;font-size:13px}
-.grid-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px;margin:10px 0 14px}
-.grid-boxes.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.box{border:1px solid #a9a9a9;background:#fcfcfc;padding:10px 11px}
-.box h3{margin:0 0 5px;font-size:13px}
-.box p{margin:0;font-size:12px;line-height:1.55}
-.patent{border:1px solid #9f9f9f;background:#f6f6f6;padding:10px 12px;margin:12px 0 14px}
-.patent ul{margin:8px 0 0 18px}
-.process-table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0 14px}
-.process-table th,.process-table td{border:1px solid #9d9d9d;padding:7px 8px;vertical-align:top}
-.process-table td{text-align:left}
-.process-table th{background:#ececec;text-align:center}
-.faq{margin:0} .faq div{padding:9px 0;border-top:1px solid #d7d7d7} .faq div:first-child{border-top:none}
-.faq dt{margin:0 0 4px;font-size:13px;font-weight:700} .faq dt:before{content:'Q. ';color:#000}
-.faq dd{margin:0;font-size:13px;color:#1c1c1c} .faq dd:before{content:'A. ';font-weight:700;color:#000}
-.statusbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:3px 8px;background:var(--chrome);font-size:11px;border-top:1px solid var(--chrome-dark)}
-.small{font-size:11px;color:#4a4a4a}
-.photo{width:min(100%,560px);margin:0 0 14px;border:1px solid #9d9d9d;background:#fbfbfb;padding:8px} .photo-wide{width:min(100%,820px)}
-.photo-wireframe{width:min(100%,300px)}
-.photo img{display:block;width:100%;height:auto;border:1px solid #b3b3b3;background:#fff}
-.photo figcaption{margin-top:7px;font-size:11px;line-height:1.5;color:#2a2a2a}
-.photo-note{width:min(100%,560px);margin:0 0 14px;font-size:13px;line-height:1.65;color:#202020}
-.paper-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;width:min(100%,560px);margin:0 0 14px}
-.paper-gallery .paper-span{grid-column:1 / -1}
-.paper-gallery .photo{width:100%;margin:0}
-.cases-stack{display:grid;grid-template-columns:1fr;gap:10px;margin:10px 0 14px}
-@media (max-width:900px){.layout{grid-template-columns:1fr}.sidebar{border-right:none;border-bottom:2px solid #b7b7b7}.content{padding:18px 18px 26px}.grid-boxes,.grid-boxes.two{grid-template-columns:1fr}}
+          <h1>UX기획</h1>
+          <p class="hero-intro">슈퍼플래닝은 사용자경험과 행동을 비즈니스의 목적에 맞도록 UI/UX를 설계합니다.</p>
+          <ul class="section-list" style="margin-bottom:28px;">
+            <li><strong>사용자에 집중한 UX:</strong> 화려함보다는 사용자가 헤매지 않고 목적지에 도달하는 실용적인 UI를 만듭니다.</li>
+            <li><strong>올인원 UX:</strong> 리서치 기반의 구조 설계부터 정교한 UX라이팅, IA, 사용자플로우, 와이어프레임, 스토리보드, AI활용 프로토타입까지 통합적인 관점으로 접근합니다.</li>
+            <li><strong>개발 밀착형 산출물:</strong> 기획자와 개발자 간의 간극을 없애는 실무 UI화면설계서로 프로젝트의 성공률을 높입니다.</li>
+          </ul>
 
-.consulting-panels{display:grid;gap:14px;margin:12px 0 16px}
-.consulting-panel{display:grid;grid-template-columns:190px 1fr;gap:18px;align-items:start;border:1px solid #d7dbe3;border-radius:14px;background:#fdfdfd;padding:18px 22px}
-.consulting-label{font-size:15px;line-height:1.4;font-weight:800;color:#17345a}
-.consulting-panel ul{list-style:none;margin:0;padding:0}
-.consulting-panel li{position:relative;margin:0 0 12px;padding-left:28px;line-height:1.6}
-.consulting-panel li:last-child{margin-bottom:0}
-.consulting-panel li::before{content:"✓";position:absolute;left:0;top:0;color:#9aa1ad;font-weight:800}
-@media (max-width:760px){.consulting-panel{grid-template-columns:1fr;gap:10px;padding:14px 16px}.consulting-label{font-size:14px}}
+          <!-- 1. UX기획 및 UX디자인 -->
+          <h2 id="meaning">1. UX기획 및 UX디자인</h2>
+          <p>UX기획은 서비스 구조, 사용자 흐름, 기능 우선순위를 설계하는 일에 가깝고 UX디자인은 그 구조를 실제 화면 경험으로 구현하는 단계에 가깝습니다. 실무에서는 두 영역이 분리되기보다 함께 움직일 때 완성도가 높아집니다.</p>
+          <p>슈퍼플래닝의 UX기획/디자인은 단순 화면 제작이 아닌 사용자 리서치 기반의 IA 설계 → 와이어프레임 → 화면설계서 → 개발 연계까지 전 과정을 통합 관리합니다.</p>
 
-.consulting-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 16px;align-items:start}
-.consulting-gallery .photo{width:100%;margin:0}
-.consulting-gallery .photo img{aspect-ratio:4/3;object-fit:cover}
-@media (max-width:760px){.consulting-gallery{grid-template-columns:1fr}}
-</style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"Organization","@id":"https://superplanning.co.kr/#org","name":"슈퍼플래닝","alternateName":"Superplanning UX Studio","url":"https://superplanning.co.kr/","founder":{"@type":"Person","name":"김휘수"}},
-    {"@type":"WebSite","@id":"https://superplanning.co.kr/#site","url":"https://superplanning.co.kr/","name":"슈퍼플래닝","inLanguage":"ko-KR","publisher":{"@id":"https://superplanning.co.kr/#org"}},
-    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://superplanning.co.kr/"},{"@type":"ListItem","position":2,"name":"UX서비스","item":"https://superplanning.co.kr/services/"},{"@type":"ListItem","position":3,"name":"UX기획 및 UX디자인","item":"https://superplanning.co.kr/services/ux-planning-design"}]},
-    {"@type":"Article","headline":"UX기획 및 UX디자인","description":"웹·앱 UX기획 및 UX디자인, IA설계, 와이어프레임, 화면설계서, UX 특허와 개발 연계, UX디자인 진행 프로세스, 프로젝트 사례, FAQ를 정리한 서브페이지.","author":{"@type":"Organization","name":"슈퍼플래닝"},"publisher":{"@id":"https://superplanning.co.kr/#org"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://superplanning.co.kr/services/ux-planning-design"},"about":[{"@type":"Thing","name":"UX기획"},{"@type":"Thing","name":"UX디자인"},{"@type":"Thing","name":"IA설계"},{"@type":"Thing","name":"와이어프레임"},{"@type":"Thing","name":"화면설계서"},{"@type":"Thing","name":"모바일앱 UX기획"},{"@type":"Thing","name":"웹 UX디자인"},{"@type":"Thing","name":"스타트업 앱기획"}],"inLanguage":"ko-KR"},
-    {"@type":"Service","serviceType":"UX기획 및 UX디자인","name":"슈퍼플래닝 UX기획","provider":{"@id":"https://superplanning.co.kr/#org"},"areaServed":{"@type":"Country","name":"KR"},"description":"리서치 기반으로 IA설계, 와이어프레임, 화면설계서, UX라이팅, 개발 연계까지 연결하는 웹·앱 UX기획 및 UX디자인 서비스입니다.","hasOfferCatalog":{"@type":"OfferCatalog","name":"UX기획 제공 범위","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"IA 설계"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"와이어프레임 설계"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"화면설계서 작성"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"앱 서비스 UX 기획 컨설팅"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"개발 연계형 UX 디자인"}}]}},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"UX기획과 UX디자인은 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"UX기획은 서비스 구조, 사용자 흐름, 기능 우선순위를 설계하는 일에 가깝고 UX디자인은 그 구조를 실제 화면 경험으로 구현하는 단계에 가깝습니다. 실무에서는 두 영역이 분리되기보다 함께 움직일 때 완성도가 높아집니다."}},
-      {"@type":"Question","name":"IA설계와 와이어프레임은 왜 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"IA설계는 서비스 정보를 어떻게 묶고 찾게 할지 정리하는 작업이고 와이어프레임은 사용자의 동선과 화면 구조를 빠르게 검증하는 작업입니다. 두 단계가 있어야 기능만 많은 서비스가 아니라 이해하기 쉬운 서비스가 됩니다."}},
-      {"@type":"Question","name":"화면설계서에는 어떤 내용이 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"화면설계서에는 화면 목적, 구성 요소, 버튼과 입력 규칙, 상태 변화, 예외 처리, 전환 흐름, 개발 메모가 포함됩니다. 그래서 기획 의도를 디자이너와 개발자가 같은 기준으로 이해할 수 있습니다."}},
-      {"@type":"Question","name":"앱 개발 전에 UX기획을 먼저 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"가능하면 먼저 하는 편이 좋습니다. 기능 개발부터 시작하면 수정 비용이 커지기 쉽기 때문에 서비스 구조와 핵심 사용자 흐름을 먼저 정리하면 시행착오를 줄일 수 있습니다."}},
-      {"@type":"Question","name":"스타트업도 UX기획이 꼭 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"네. 오히려 초기 스타트업일수록 예산과 시간이 제한되어 있기 때문에 어떤 기능을 먼저 만들고 어떤 흐름을 단순화할지 정하는 UX기획이 중요합니다."}},
-      {"@type":"Question","name":"슈퍼플래닝의 UX 특허는 어떤 의미가 있나요?","acceptedAnswer":{"@type":"Answer","text":"슈퍼플래닝은 애플리케이션 UI 작성툴과 모바일앱 UI·UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치 관련 특허를 보유하고 있습니다. 이는 화면 설계를 감으로 하지 않고 구조와 도구 관점으로 연구해 왔다는 의미입니다."}},
-      {"@type":"Question","name":"개발사와 협업 중인데 화면설계서만 보완할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 이미 개발사가 있는 경우에도 IA 정리, 와이어프레임 수정, 화면설계서 보완, UX라이팅 정리처럼 필요한 구간만 부분적으로 지원할 수 있습니다."}},
-      {"@type":"Question","name":"UX기획 강의나 앱 컨설팅도 함께 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 슈퍼플래닝은 스타트업, 예비창업자, IT 비전공자, 기업 실무자를 대상으로 UX기획 강의와 앱 컨설팅을 진행하며 실제 화면 설계 기준과 프로젝트 적용 방법을 함께 설명합니다."}}
-    ]}
-  ]
-}
-</script>
-</head>
-<body>
-<a class="skip" href="#main">본문 바로가기</a>
-<article class="explorer" itemscope itemtype="https://schema.org/Article">
-<header class="titlebar" aria-hidden="true"><div class="left"><span class="folder"></span><span class="name">슈퍼플래닝 서비스 탐색기</span></div><div class="win-btns"><span>－</span><span>□</span><span>×</span></div></header>
-<div class="menubar" aria-hidden="true"><a href="#">File</a><a href="#">Edit</a><a href="#">View</a><a href="#">Help</a></div>
-<div class="navrow" aria-hidden="true"><span class="backbtn">뒤로</span></div>
-<div class="address" aria-hidden="true"><label>주소(D):</label><div class="addressbox">C:\SUPERPLANNING\UX_서비스\UX_기획_및_UX_디자인</div></div>
-<div class="layout">
-<aside class="sidebar">
-<div class="tree-root"><span class="homeicon">🏠</span> UX서비스 &gt; UX기획</div>
-<ul class="tree">
-<li class="file"><a class="active" href="#meaning">1. UX기획 및 UX디자인</a></li>
-<li class="file"><a href="#deliverables">2. 핵심산출물: UI스토리보드</a></li>
-<li class="file"><a href="#consulting">3. UX컨설팅</a></li>
-<li class="file"><a href="#diff">4. 슈퍼플래닝만의 차별점</a></li>
-<li class="file"><a href="#process">5. UX디자인 진행 프로세스</a></li>
-<li class="file"><a href="#cases">6. UI/UX 프로젝트 성공사례</a></li>
-<li class="file"><a href="#faq">7. 자주 묻는 질문(FAQ)</a></li>
-</ul>
-</aside>
+          <div class="grid-boxes two">
+            <article class="box">
+              <h3>UX기획</h3>
+              <p>IA 설계, 사용자 흐름 정의, 기능 우선순위 결정, 화면 구조 설계. 서비스가 어떻게 작동해야 하는지를 문서로 명확히 정리합니다.</p>
+            </article>
+            <article class="box">
+              <h3>UX디자인</h3>
+              <p>와이어프레임, 화면설계서, 실제 화면 경험 구현. 기획 의도를 시각적으로 풀어내고 개발팀이 바로 활용할 수 있는 산출물로 연결합니다.</p>
+            </article>
+          </div>
 
+          <!-- 2. 핵심산출물: UI스토리보드 -->
+          <h2 id="deliverables">2. 핵심산출물: UI스토리보드</h2>
+          <p>UX기획의 핵심산출물은 화면설계서(UI스토리보드)입니다. 화면 목적, 구성 요소, 버튼과 입력 규칙, 상태 변화, 예외 처리, 전환 흐름, 개발 메모가 포함됩니다. 기획 의도를 디자이너와 개발자가 같은 기준으로 이해할 수 있습니다.</p>
 
+          <div style="width:100%; overflow-x:auto; margin:14px 0 16px;">
+            <table class="compare-table">
+              <caption>표 1. UX기획 핵심 산출물 제공 범위</caption>
+              <thead>
+                <tr>
+                  <th scope="col" style="width:28%;">산출물 구분</th>
+                  <th scope="col">주요 내용 및 제공 범위</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IA 설계서</strong></td>
+                  <td>서비스 정보 구조, 메뉴 체계, 콘텐츠 계층 정리. 사용자가 어떻게 정보를 찾고 탐색할지 구조화</td>
+                </tr>
+                <tr>
+                  <td><strong>사용자 플로우</strong></td>
+                  <td>핵심 과업 기준 사용자 이동 경로, 분기 조건, 예외 흐름까지 포함한 플로우 다이어그램</td>
+                </tr>
+                <tr>
+                  <td><strong>와이어프레임</strong></td>
+                  <td>화면 레이아웃, 컴포넌트 배치, 정보 위계를 빠르게 검증하는 저충실도~고충실도 설계</td>
+                </tr>
+                <tr>
+                  <td><strong>화면설계서(스토리보드)</strong></td>
+                  <td>화면 목적, 구성 요소, 상태 변화, 예외 처리, 개발 메모가 포함된 실무형 문서</td>
+                </tr>
+                <tr>
+                  <td><strong>UX라이팅</strong></td>
+                  <td>버튼 카피, 안내 메시지, 오류 문구, 플레이스홀더 등 화면 내 모든 텍스트 설계</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3. UX컨설팅 -->
+          <h2 id="consulting">3. UX컨설팅</h2>
+          <p>슈퍼플래닝의 UX컨설팅은 신규 서비스 기획부터 기존 서비스 개선까지 다양한 상황에 맞게 부분 지원이 가능합니다. 이미 개발사가 있는 경우에도 IA 정리, 와이어프레임 수정, 화면설계서 보완, UX라이팅 정리처럼 필요한 구간만 부분적으로 지원할 수 있습니다.</p>
+
+          <div class="grid-boxes">
+            <article class="box">
+              <h3>신규 서비스 기획</h3>
+              <p>아이디어에서 출발해 IA, 플로우, 와이어프레임, 화면설계서까지 전 과정 기획을 지원합니다.</p>
+            </article>
+            <article class="box">
+              <h3>기존 서비스 개선</h3>
+              <p>리서치 기반으로 이탈 원인을 파악하고 화면 흐름, 구조, 카피를 개선하는 부분 컨설팅을 제공합니다.</p>
+            </article>
+            <article class="box">
+              <h3>개발 연계 지원</h3>
+              <p>개발사와 협업 중인 경우 화면설계서 보완 및 UX라이팅 정리 등 필요한 구간만 지원합니다.</p>
+            </article>
+          </div>
+
+          <!-- 4. 슈퍼플래닝만의 차별점 -->
+          <h2 id="diff">4. 슈퍼플래닝만의 차별점</h2>
+          <p>슈퍼플래닝은 애플리케이션 UI 작성툴과 모바일앱 UI·UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치 관련 특허를 보유하고 있습니다. 화면 설계를 감이 아닌 구조와 도구 관점으로 연구해 왔다는 의미입니다.</p>
+
+          <div class="grid-boxes two">
+            <article class="box">
+              <h3>특허 기반 UX 방법론</h3>
+              <p>감이 아닌 검증된 구조 기반의 UX 설계. UI 작성툴 및 와이어프레임 설계 도구 관련 특허 보유.</p>
+            </article>
+            <article class="box">
+              <h3>개발 밀착형 산출물</h3>
+              <p>기획자-디자이너-개발자 간 해석 오류를 없애는 정밀 화면설계서. 실무에서 바로 쓸 수 있는 문서 체계.</p>
+            </article>
+            <article class="box">
+              <h3>리서치 연계 기획</h3>
+              <p>UX리서치 결과와 기획을 바로 연결. 데이터 기반 의사결정으로 수정 비용과 시행착오 최소화.</p>
+            </article>
+            <article class="box">
+              <h3>UX라이팅 통합</h3>
+              <p>화면 구조 설계와 동시에 버튼 카피, 안내문구, 오류 메시지까지 설계. 별도 작업 없이 통합 진행.</p>
+            </article>
+          </div>
+
+          <!-- 5. UX디자인 진행 프로세스 -->
+          <h2 id="process">5. UX디자인 진행 프로세스</h2>
+          <p>슈퍼플래닝의 UX기획/디자인은 리서치 기반 문제 정의부터 개발 연계 산출물까지 이어지는 단계별 구조로 진행됩니다. 기능 개발부터 시작하면 수정 비용이 커지기 쉽기 때문에 서비스 구조와 핵심 사용자 흐름을 먼저 정리하면 시행착오를 줄일 수 있습니다.</p>
+
+          <div style="width:100%; overflow-x:auto;">
+            <table class="compare-table">
+              <caption>표 2. UX기획/디자인 진행 프로세스 — 문제 정의부터 개발 연계까지</caption>
+              <thead>
+                <tr>
+                  <th scope="col" style="width:22%;">단계</th>
+                  <th scope="col">핵심 업무내용</th>
+                  <th scope="col">주요 산출물</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. 현황 파악</strong></td>
+                  <td>서비스 목표, 사용자 유형, 경쟁 서비스 분석. 내부 이해관계자 인터뷰를 통해 기획 방향을 정리합니다.</td>
+                  <td>현황 분석 리포트, 기획 방향 정의서</td>
+                </tr>
+                <tr>
+                  <td><strong>2. IA 설계</strong></td>
+                  <td>서비스 정보 구조, 메뉴 체계, 콘텐츠 계층을 정리하고 사용자 탐색 경로를 설계합니다.</td>
+                  <td>IA 다이어그램, 메뉴 구조도</td>
+                </tr>
+                <tr>
+                  <td><strong>3. 와이어프레임</strong></td>
+                  <td>화면 레이아웃과 컴포넌트 배치를 빠르게 검증하며 팀 내 피드백을 통해 구조를 확정합니다.</td>
+                  <td>저충실도~고충실도 와이어프레임</td>
+                </tr>
+                <tr>
+                  <td><strong>4. 화면설계서</strong></td>
+                  <td>각 화면의 목적, 구성 요소, 상태 변화, 예외 처리, 개발 메모를 포함한 실무형 문서를 작성합니다.</td>
+                  <td>UI스토리보드(화면설계서), UX라이팅</td>
+                </tr>
+                <tr>
+                  <td><strong>5. 개발 연계</strong></td>
+                  <td>개발팀이 바로 활용할 수 있도록 산출물을 정리하고 협업 기준과 QA 체크리스트를 함께 제공합니다.</td>
+                  <td>개발 연계 문서, QA 체크리스트</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 6. UI/UX 프로젝트 성공사례 -->
+          <h2 id="cases">6. UI/UX 프로젝트 성공사례</h2>
+          <p>슈퍼플래닝은 스타트업, 중소기업, 공공기관, 금융·헬스케어 분야 등 다양한 산업에서 UX기획/디자인 프로젝트를 수행해 왔습니다.</p>
+
+          <div class="grid-boxes">
+            <article class="box">
+              <h3>모바일앱 UX 전면 개편</h3>
+              <p>회원가입 전환율 저하 원인을 리서치로 파악, IA 재설계와 화면설계서 전면 개편을 통해 전환율을 크게 개선한 사례.</p>
+            </article>
+            <article class="box">
+              <h3>금융 서비스 UX 기획</h3>
+              <p>복잡한 금융 상품 가입 프로세스를 사용자 플로우 기반으로 단순화. 주요 이탈 지점을 제거한 사례.</p>
+            </article>
+            <article class="box">
+              <h3>헬스케어 앱 기획 컨설팅</h3>
+              <p>스타트업 초기 단계 앱 기획. IA 설계부터 MVP 화면설계서까지 단기 완성. 투자 유치 IR 자료와 연계.</p>
+            </article>
+          </div>
+
+          <p>오히려 초기 스타트업일수록 예산과 시간이 제한되어 있기 때문에 어떤 기능을 먼저 만들고 어떤 흐름을 단순화할지 정하는 UX기획이 중요합니다. 슈퍼플래닝은 스타트업, 예비창업자, IT 비전공자, 기업 실무자를 대상으로 UX기획 강의와 앱 컨설팅도 함께 진행합니다.</p>
+
+          <!-- 7. 자주 묻는 질문 -->
+          <h2 id="faq">7. 자주 묻는 질문 (FAQ)</h2>
+          <dl class="faq">
+            <dt>UX기획과 UX디자인은 무엇이 다른가요?</dt>
+            <dd>UX기획은 서비스 구조, 사용자 흐름, 기능 우선순위를 설계하는 일에 가깝고 UX디자인은 그 구조를 실제 화면 경험으로 구현하는 단계에 가깝습니다. 실무에서는 두 영역이 분리되기보다 함께 움직일 때 완성도가 높아집니다.</dd>
+            <dt>IA설계와 와이어프레임은 왜 필요한가요?</dt>
+            <dd>IA설계는 서비스 정보를 어떻게 묶고 찾게 할지 정리하는 작업이고 와이어프레임은 사용자의 동선과 화면 구조를 빠르게 검증하는 작업입니다. 두 단계가 있어야 기능만 많은 서비스가 아니라 이해하기 쉬운 서비스가 됩니다.</dd>
+            <dt>화면설계서에는 어떤 내용이 포함되나요?</dt>
+            <dd>화면설계서에는 화면 목적, 구성 요소, 버튼과 입력 규칙, 상태 변화, 예외 처리, 전환 흐름, 개발 메모가 포함됩니다. 기획 의도를 디자이너와 개발자가 같은 기준으로 이해할 수 있습니다.</dd>
+            <dt>앱 개발 전에 UX기획을 먼저 해야 하나요?</dt>
+            <dd>가능하면 먼저 하는 편이 좋습니다. 기능 개발부터 시작하면 수정 비용이 커지기 쉽기 때문에 서비스 구조와 핵심 사용자 흐름을 먼저 정리하면 시행착오를 줄일 수 있습니다.</dd>
+            <dt>스타트업도 UX기획이 꼭 필요한가요?</dt>
+            <dd>네. 오히려 초기 스타트업일수록 예산과 시간이 제한되어 있기 때문에 어떤 기능을 먼저 만들고 어떤 흐름을 단순화할지 정하는 UX기획이 중요합니다.</dd>
+            <dt>슈퍼플래닝의 UX 특허는 어떤 의미가 있나요?</dt>
+            <dd>슈퍼플래닝은 애플리케이션 UI 작성툴과 모바일앱 UI·UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치 관련 특허를 보유하고 있습니다. 화면 설계를 감이 아닌 구조와 도구 관점으로 연구해 왔다는 의미입니다.</dd>
+            <dt>개발사와 협업 중인데 화면설계서만 보완할 수 있나요?</dt>
+            <dd>가능합니다. 이미 개발사가 있는 경우에도 IA 정리, 와이어프레임 수정, 화면설계서 보완, UX라이팅 정리처럼 필요한 구간만 부분적으로 지원할 수 있습니다.</dd>
+            <dt>UX기획 강의나 앱 컨설팅도 함께 가능한가요?</dt>
+            <dd>가능합니다. 슈퍼플래닝은 스타트업, 예비창업자, IT 비전공자, 기업 실무자를 대상으로 UX기획 강의와 앱 컨설팅을 진행하며 실제 화면 설계 기준과 프로젝트 적용 방법을 함께 설명합니다.</dd>
+            <dt>프로젝트 견적 및 진행 신청은 어떻게 하나요?</dt>
+            <dd>찾아오시는 길 및 문의 페이지를 통해 서비스 현황과 목표를 남겨주시면 전문 UX컨설턴트가 상세 상담과 견적안을 안내해 드립니다.</dd>
+          </dl>
+
+          <div class="bottom-nav">
+            <p>이전 단계: <a href="/ux_research/">UX리서치</a></p>
+            <p>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></p>
+          </div>
+        </main>
       </div>
 
       <!-- 5. Gray Status Bar -->
@@ -1340,17 +1378,10 @@ h1{margin:0;font-size:24px;line-height:1.2;font-weight:800;letter-spacing:-0.02e
         <div>C:\SUPERPLANNING\UX_서비스\UX_기획_및_UX_디자인</div>
         <div>내 컴퓨터</div>
       </div>
-      <style>
-        .tree-item a:hover, .tree-item a.active {
-          background: #222222 !important;
-          color: #ffffff !important;
-        }
-      </style>
 
     </div>
 
   </div>
-
   <!-- TASKBAR -->
   <div id="taskbar">
     <div class="taskbar-left">
