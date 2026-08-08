@@ -22,6 +22,7 @@ if ($hasChanges) {
 git push origin master
 
 Write-Host "2. Deploying updated files to AWS EC2 (superplanning.blog)..." -ForegroundColor Cyan
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "rm -rf /tmp/index.html /tmp/ux_research.html /tmp/ux-research.html /tmp/ux_research_index.html /tmp/images"
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/index.html admin@13.125.12.112:/tmp/index.html
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_research.html admin@13.125.12.112:/tmp/ux_research.html
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux-research.html admin@13.125.12.112:/tmp/ux-research.html
