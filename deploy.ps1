@@ -28,7 +28,7 @@ scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux-research.html a
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_research/index.html admin@13.125.12.112:/tmp/ux_research_index.html
 scp -i "shkey.pem" -r -o StrictHostKeyChecking=no implementation/images admin@13.125.12.112:/tmp/images
 
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp /tmp/index.html /var/www/html/index.html && sudo cp /tmp/ux_research.html /var/www/html/ux_research.html && sudo cp /tmp/ux-research.html /var/www/html/ux-research.html && sudo mkdir -p /var/www/html/ux_research && sudo cp /tmp/ux_research_index.html /var/www/html/ux_research/index.html && sudo cp -r /tmp/images /var/www/html/ && sudo cp -r /tmp/images /var/www/html/ux_research/ && sudo chmod -R 755 /var/www/html/ux_research /var/www/html/images && sudo chown -R admin:www-data /var/www/html/"
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -f /tmp/index.html /var/www/html/index.html && sudo cp -f /tmp/ux_research.html /var/www/html/ux_research.html && sudo cp -f /tmp/ux-research.html /var/www/html/ux-research.html && sudo mkdir -p /var/www/html/ux_research && sudo cp -f /tmp/ux_research_index.html /var/www/html/ux_research/index.html && sudo cp -rf /tmp/images /var/www/html/ && sudo cp -rf /tmp/images /var/www/html/ux_research/ && sudo chmod -R 755 /var/www/html/ux_research /var/www/html/images && sudo chown -R admin:www-data /var/www/html/"
 
 Write-Host "3. Reloading Apache Web Server..." -ForegroundColor Cyan
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo systemctl reload apache2"
