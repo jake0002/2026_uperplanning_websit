@@ -1680,39 +1680,45 @@
     }
 
     // Subpage Win95 Retro Popup Window Engine
+    const WINDOW_DEFS = {
+      'about': { w: 640, h: 560, title: '🏢 슈퍼플래닝 소개' },
+      'clients': { w: 600, h: 380, title: '🏛️ 주요 고객사' },
+      'services': { w: 620, h: 500, title: '🎨 UX 서비스' },
+      'classes': { w: 640, h: 420, title: '🎓 AI-UX 강의' },
+      'blog': { w: 600, h: 420, title: '📝 UX 블로그' },
+      'contact': { w: 620, h: 520, title: '📍 프로젝트 문의 & 오시는길' },
+      'instagram': { w: 600, h: 460, title: '📷 슈퍼플래닝 인스타그램' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'intro-video': { w: 580, h: 400, title: '🎬 슈퍼플래닝 소개영상' },
+      'brochure': { w: 780, h: 560, title: '📄 회사소개서 뷰어' }
+    };
+
     function openWindow(key) {
       closeStart();
-      var titles = {
-        'about': '🏢 슈퍼플래닝 소개',
-        'clients': '🏛️ 주요 고객사',
-        'services': '🎨 UX 서비스',
-        'classes': '🎓 AI-UX 강의',
-        'blog': '📝 UX 블로그',
-        'contact': '📍 프로젝트 문의 & 오시는길',
-        'instagram': '📷 슈퍼플래닝 인스타그램',
-        'threads': '🧵 슈퍼플래닝 쓰레드',
-        'intro-video': '🎬 슈퍼플래닝 소개영상',
-        'brochure': '📄 회사소개서 뷰어'
-      };
-
-      var titleText = titles[key] || '📁 슈퍼플래닝 탐색기';
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 탐색기' };
+      var titleText = def.title;
 
       var existing = document.getElementById('subpageModalOverlay');
       if (existing) existing.remove();
+
+      var isMobile = window.innerWidth <= 768;
 
       var overlay = document.createElement('div');
       overlay.id = 'subpageModalOverlay';
       overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
 
       var win = document.createElement('div');
-      win.style.cssText = 'width:min(680px, 94vw); max-height:88vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+      var winW = isMobile ? '94vw' : def.w + 'px';
+      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
+
+      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
 
       win.innerHTML = `
-        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
           <span>${titleText}</span>
           <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
         </div>
-        <div style="padding:14px; overflow-y:auto; flex:1; max-height:calc(88vh - 30px); background:#c0c0c0; font-size:12px; line-height:1.5;">
+        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
           ${getSubpageWindowBody(key)}
         </div>
       `;
