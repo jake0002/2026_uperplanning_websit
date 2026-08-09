@@ -1135,9 +1135,74 @@
       box-shadow: inset 1px 1px 0 #7b7b7b !important;
       transform: translate(1px, 1px) !important;
     }
-    @media (max-width: 900px) {
-      #scrollTopBtn {
-        display: none !important;
+    /* UX Consulting Image-matched Card Layout */
+    .consulting-card-wrap {
+      margin-top: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .consulting-card-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      transition: all 0.2s ease;
+    }
+    .consulting-card-item:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .consulting-card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      min-width: 140px;
+      flex-shrink: 0;
+      padding-top: 2px;
+      letter-spacing: -0.3px;
+    }
+    .consulting-card-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .consulting-card-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14.5px;
+      color: #334155;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .consulting-card-list li .chk-icon {
+      color: #64748b;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .consulting-card-item {
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px 20px;
+      }
+      .consulting-card-title {
+        min-width: auto;
+        font-size: 15px;
+      }
+      .consulting-card-list li {
+        font-size: 13.5px;
       }
     }
 
@@ -1368,6 +1433,30 @@
           <!-- 3. UX컨설팅 -->
           <h2 id="consulting">3. UX컨설팅</h2>
           <p>슈퍼플래닝의 UX컨설팅은 막연한 조언을 전달하는 상담이 아니라, 실제 서비스 구조와 사용성 문제를 냉정하게 진단하고 바로 실행 가능한 개선 방향을 잡아주는 실무형 컨설팅입니다. 웹/앱 창업을 준비하는 예비창업자부터 이미 개발을 진행했지만 결과물이 기대에 미치지 못한 대표, 기능은 많지만 UI/UX 완성도가 부족하다고 느끼는 담당자까지 폭넓게 대응합니다.</p>
+
+          <div class="consulting-card-wrap">
+            <!-- Card 1: 대상자 -->
+            <div class="consulting-card-item">
+              <div class="consulting-card-title">대상자</div>
+              <ul class="consulting-card-list">
+                <li><span class="chk-icon">✓</span> <span>웹/앱 창업을 준비 중인 스타트업 예비창업자님</span></li>
+                <li><span class="chk-icon">✓</span> <span>IT개발업체 맡겼는데 결과물이 엉망이라 난감한 대표님</span></li>
+                <li><span class="chk-icon">✓</span> <span>진짜 냉정하고 구체적인 IT전문가의 진단이 필요한 대표님</span></li>
+                <li><span class="chk-icon">✓</span> <span>IT기능에만 집중해서 UI/UX는 부족하다고 생각하는 담당자님</span></li>
+              </ul>
+            </div>
+
+            <!-- Card 2: 컨설팅 서비스 -->
+            <div class="consulting-card-item">
+              <div class="consulting-card-title">컨설팅 서비스</div>
+              <ul class="consulting-card-list">
+                <li><span class="chk-icon">✓</span> <span>컨설팅 전 유선 또는 온라인 사전 상담</span></li>
+                <li><span class="chk-icon">✓</span> <span>오프라인 대면 1:1 컨설팅</span></li>
+                <li><span class="chk-icon">✓</span> <span>맞춤 제작 UX컨설팅 자료 제공</span></li>
+                <li><span class="chk-icon">✓</span> <span>UX컨설팅 이후 후속 대응 (평생 멤버십)</span></li>
+              </ul>
+            </div>
+          </div>
 
           <!-- 4. 슈퍼플래닝만의 차별점 -->
           <h2 id="diff">4. 슈퍼플래닝만의 차별점</h2>
