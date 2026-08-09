@@ -23,7 +23,7 @@ git push origin master
 
 Write-Host "2. Deploying updated files to AWS EC2 (superplanning.blog)..." -ForegroundColor Cyan
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "rm -rf /tmp/deploy_stage && mkdir -p /tmp/deploy_stage"
-scp -r -i "shkey.pem" -o StrictHostKeyChecking=no implementation/* admin@13.125.12.112:/tmp/deploy_stage/
+scp -r -i "shkey.pem" -o StrictHostKeyChecking=no implementation/. admin@13.125.12.112:/tmp/deploy_stage/
 
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -a /tmp/deploy_stage/. /var/www/html/ && sudo cp -f /tmp/deploy_stage/ux_design_cleanroom.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_research/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
 
