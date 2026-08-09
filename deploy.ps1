@@ -41,7 +41,7 @@ scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/services/ux-resear
 scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/services/ux-planning-design.md admin@13.125.12.112:/tmp/deploy_stage/services/ux-planning-design.md
 scp -i "shkey.pem" -r -o StrictHostKeyChecking=no implementation/images/* admin@13.125.12.112:/tmp/deploy_stage/images/
 
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -rf /tmp/deploy_stage/* /var/www/html/ && sudo cp -f /tmp/deploy_stage/ux_design_cleanroom.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_research/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -a /tmp/deploy_stage/. /var/www/html/ && sudo cp -f /tmp/deploy_stage/ux_design_cleanroom.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_research/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
 
 Write-Host "3. Reloading Apache Web Server..." -ForegroundColor Cyan
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo systemctl reload apache2"
