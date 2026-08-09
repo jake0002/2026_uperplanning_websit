@@ -920,6 +920,48 @@
     .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
     .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
     #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+
+    /* Start Menu (z-index: 999999 !important) */
+    #startMenu {
+      position: fixed !important;
+      bottom: var(--taskbar-h, 36px);
+      left: 4px;
+      width: 220px;
+      background: var(--win-bg, #c0c0c0);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi, #fff), inset -1px -1px 0 var(--bevel-shadow, #808080), 3px 3px 0 rgba(0,0,0,0.4);
+      z-index: 999999 !important;
+      display: none;
+      padding: 4px;
+    }
+    #startMenu.show { display: flex !important; }
+    .start-banner {
+      width: 28px;
+      background: linear-gradient(180deg, #000080 0%, #1084d0 100%);
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+    }
+    .start-item:hover { background: #000080; color: #ffffff; }
     #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
     .task-preview {
       height: 28px;
@@ -1567,10 +1609,28 @@
     </div>
 
   </div>
+  <!-- START MENU -->
+  <div id="startMenu">
+    <div class="start-banner">SUPERPLANNING</div>
+    <div class="start-items">
+      <div class="start-item" onclick="location.href='/company/'; closeStart();">🏢 회사소개</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#clients'; closeStart();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🎨 UX 리서치</div>
+      <div class="start-item" onclick="location.href='/ux_design/'; closeStart();">✏️ UX 기획 및 디자인</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes'; closeStart();">🎓 AI-UX 강의</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog'; closeStart();">📝 UX 블로그</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/#contact'; closeStart();">📍 찾아오시는 길 &amp; 문의</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">📄 회사소개서 보기</div>
+      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🤝 인재채용</div>
+      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
+      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🏠 메인 화면으로...</div>
+    </div>
+  </div>
+
   <!-- TASKBAR -->
   <div id="taskbar">
     <div class="taskbar-left">
-      <button class="w95-btn" id="startBtn" onclick="toggleMobileMenu();">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu();">
         <span>💻</span> <strong>전체 메뉴보기</strong>
       </button>
       <div id="taskPreviews">
@@ -1587,11 +1647,26 @@
   </div>
 
   <script>
+    function toggleStartMenu() {
+      var m = document.getElementById('startMenu');
+      if (m) m.classList.toggle('show');
+    }
+    function closeStart() {
+      var m = document.getElementById('startMenu');
+      if (m) m.classList.remove('show');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+
     function toggleMobileMenu() {
       var drawer = document.getElementById('mobileNavDrawer');
       if (drawer) {
         drawer.classList.toggle('show');
       }
+      closeStart();
     }
 
     // Highlight active tree item on scroll
