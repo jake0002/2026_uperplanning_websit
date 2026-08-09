@@ -22,10 +22,10 @@ if ($hasChanges) {
 git push origin master
 
 Write-Host "2. Deploying updated files to AWS EC2 (superplanning.blog)..." -ForegroundColor Cyan
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "rm -rf /tmp/deploy_stage && mkdir -p /tmp/deploy_stage"
-scp -r -i "shkey.pem" -o StrictHostKeyChecking=no implementation/* admin@13.125.12.112:/tmp/deploy_stage/
-
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -a /tmp/deploy_stage/. /var/www/html/ && sudo cp -f /tmp/deploy_stage/ux_design_cleanroom.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images /var/www/html/ux_design/images /var/www/html/ux_plan/images && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_research/images/ && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_design/images/ && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_plan/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
+tar -czf deploy.tar.gz -C implementation .
+scp -i "shkey.pem" -o StrictHostKeyChecking=no deploy.tar.gz admin@13.125.12.112:/tmp/
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux_design.html && sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux-design.html && sudo cp -f /var/www/html/ux_design_cleanroom/index.html /var/www/html/ux_design_cleanroom.html && sudo cp -f /var/www/html/ux_design_cleanroom/index.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images /var/www/html/ux_design/images /var/www/html/ux_plan/images && sudo cp -rf /var/www/html/images/* /var/www/html/ux_research/images/ && sudo cp -rf /var/www/html/images/* /var/www/html/ux_design/images/ && sudo cp -rf /var/www/html/images/* /var/www/html/ux_plan/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
+if (Test-Path deploy.tar.gz) { Remove-Item deploy.tar.gz -Force }
 
 Write-Host "3. Reloading Apache Web Server..." -ForegroundColor Cyan
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo systemctl reload apache2"
