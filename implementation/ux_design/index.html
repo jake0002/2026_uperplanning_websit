@@ -1212,6 +1212,9 @@
       <div class="start-item" onclick="openWindow('instagram'); toggleMobileMenu();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); toggleMobileMenu();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); toggleMobileMenu();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); toggleMobileMenu();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); toggleMobileMenu();">⚙️ 환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; toggleMobileMenu();">🔍 UX리서치</div>
@@ -1625,6 +1628,9 @@
       <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); closeStart();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); closeStart();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); closeStart();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🔍 UX리서치</div>
@@ -1652,7 +1658,7 @@
     <div class="taskbar-right">
       <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://superplanning.blog/';">⚙️ 환경설정</button>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">⚙️ 환경설정</button>
     </div>
   </div>
 
@@ -1690,7 +1696,9 @@
       'instagram': { w: 600, h: 460, title: '📷 슈퍼플래닝 인스타그램' },
       'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
       'intro-video': { w: 580, h: 400, title: '🎬 슈퍼플래닝 소개영상' },
-      'brochure': { w: 780, h: 560, title: '📄 회사소개서 뷰어' }
+      'brochure': { w: 780, h: 560, title: '📄 회사소개서 뷰어' },
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
+      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
     };
 
     function openWindow(key) {
@@ -1896,6 +1904,49 @@
           <div style="display:flex; flex-direction:column; gap:6px;">
             <iframe src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" title="슈퍼플래닝 소개영상" frameborder="0" allowfullscreen style="width:100%; height:260px; border:2px solid #000; background:#000;"></iframe>
             <div style="text-align:right;"><a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a></div>
+          </div>
+        `;
+      } else if (key === 'careers') {
+        return `
+          <h3 style="font-size:15px; font-weight:800; margin-bottom:4px; color:#000080;">🤝 인재를 채용합니다 (상시 모집)</h3>
+          <p style="font-size:12px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
+
+          <div class="info-card" style="padding:10px 12px; margin-bottom:10px; font-size:11.5px; line-height:1.6; color:#1a1a1a; display:flex; flex-direction:column; gap:4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <div>· 신입, 경력 / 연령 / 학력 / 국적 무관</div>
+            <div>· 이력서 자유양식</div>
+            <div>
+              <strong>· 모집분야 :</strong>
+              <div style="padding-left:12px; margin-top:2px; font-weight:600; color:#000080; display:grid; grid-template-columns: 1fr 1fr; gap:2px 8px;">
+                <span>① 서비스 기획자</span>
+                <span>② 프로덕트 디자이너</span>
+                <span>③ AI-UX강사</span>
+                <span>④ UI디자이너</span>
+                <span>⑤ 프론트/백엔드 개발자</span>
+              </div>
+            </div>
+            <div style="margin-top:4px;">· <strong>우대조건 :</strong> 자신의 실무에 대해 원데이클래스 강의 가능하신 분!</div>
+            <div style="font-size:10.5px; opacity:0.85; margin-top:2px;">· 서류전형 합격자에 한해 개별통보를 드리며, 지원서 허위 작성시 합격이 취소 될 수 있습니다.</div>
+          </div>
+
+          <div style="background:#dfdfdf; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b; padding:8px 12px; font-size:11.5px; display:flex; justify-content:space-between; align-items:center;">
+            <span>📧 <strong>이메일 접수 :</strong> <span style="font-weight:bold; color:#000080;">jake@superplanning.co.kr</span></span>
+            <button class="w95-btn" style="padding:3px 10px; font-size:11px; font-weight:bold;" onclick="navigator.clipboard.writeText('jake@superplanning.co.kr'); alert('📋 이메일 주소가 클립보드에 복사되었습니다!');">복사</button>
+          </div>
+        `;
+      } else if (key === 'tweaks') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">⚙️ 시스템 환경 설정 (Tweaks)</h3>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
+            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(window.setTheme) setTheme(this.value);">
+              <option value="light">Teal Classic (기본 1995)</option>
+              <option value="dark">Dark Slate (다크 모드)</option>
+              <option value="matrix">Matrix Green (이스터에그 테마)</option>
+            </select>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
+            <button class="w95-btn" onclick="alert('🔊 사운드 설정이 완료되었습니다.');">사운드: ON 🔊</button>
           </div>
         `;
       }

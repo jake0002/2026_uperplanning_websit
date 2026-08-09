@@ -1109,6 +1109,9 @@
       <div class="start-item" onclick="openWindow('instagram'); toggleMobileMenu();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); toggleMobileMenu();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); toggleMobileMenu();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); toggleMobileMenu();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); toggleMobileMenu();">⚙️ 환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; toggleMobileMenu();">🔍 UX리서치</div>
@@ -1263,6 +1266,9 @@
       <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); closeStart();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); closeStart();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); closeStart();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🔍 UX리서치</div>
@@ -2338,14 +2344,14 @@
       // 6. Start Menu Items
       const startItems = document.querySelectorAll('#startMenu .start-item');
       const startKo = [
-        '🏢 슈퍼플래닝 소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
-        '📝 UX 블로그', '📷 인스타그램', '🧵 쓰레드', '🎬 슈퍼플래닝 소개영상', 
-        '📄 회사소개서 보기 (PDF)', '🤝 인재 채용', '⚙️ 환경 설정', '🚪 시스템 종료...'
+        '🏢 슈퍼플래닝', '🏛️ 주요 고객사', '🎨 UX서비스', '📷 인스타그램', '🧵 쓰레드', '▶️ 유튜브', 
+        '📁 포트폴리오 보기', '🤝 인재채용', '⚙️ 환경설정', '📍 찾아오시는길',
+        '🔍 UX리서치', '✏️ UX라이팅', '📐 UX기획/디자인', '💻 웹/앱개발', '🎓 AI-UX강의', '📝 UX블로그', '🏢 회사소개'
       ];
       const startEn = [
-        '🏢 About Superplanning', '🏛️ Key Clients', '🎨 UX Services', '🎓 AI-UX Classes', 
-        '📝 UX Blog', '📷 Instagram', '🧵 Threads', '🎬 Promo Video', 
-        '📄 View Brochure (PDF)', '🤝 Careers', '⚙️ Settings', '🚪 Shutdown...'
+        '🏢 About Us', '🏛️ Key Clients', '🎨 UX Services', '📷 Instagram', '🧵 Threads', '▶️ YouTube', 
+        '📁 View Portfolio', '🤝 Careers', '⚙️ Tweaks', '📍 Location',
+        '🔍 UX Research', '✏️ UX Writing', '📐 UX Design', '💻 Web/App Dev', '🎓 AI-UX Classes', '📝 UX Blog', '🏢 About Company'
       ];
       startItems.forEach((el, idx) => {
         if (startKo[idx]) el.textContent = isKo ? startKo[idx] : startEn[idx];
