@@ -1575,7 +1575,7 @@
 
     // Subpage Win95 Retro Popup Window Engine
     const WINDOW_DEFS = {
-      'about': { w: 640, h: 560, title: '🏢 슈퍼플래닝 소개' },
+      'about': { w: 640, h: 480, title: '🏢 슈퍼플래닝 소개' },
       'clients': { w: 600, h: 380, title: '🏛️ 주요 고객사' },
       'services': { w: 620, h: 500, title: '🎨 UX 서비스' },
       'classes': { w: 640, h: 420, title: '🎓 AI-UX 강의' },
@@ -1637,29 +1637,57 @@
     function getSubpageWindowBody(key) {
       if (key === 'about') {
         return `
-          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:20px 18px; margin-bottom:16px; border-radius:3px;">
-            <div style="font-family:monospace; font-size:13px; color:#ffd43b; font-weight:700; margin-bottom:10px;">C:\\SUPERPLANNING&gt; HELLO</div>
-            <h2 style="font-size:22px; font-weight:900; margin:0 0 8px 0; color:#ffffff; line-height:1.3;">UX디자인 에이전시, 슈퍼플래닝입니다.</h2>
-            <p style="font-size:13px; font-weight:600; margin:0; color:#d8d8d8;">때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.</p>
+          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px; display:flex; gap:12px; background:#c0c0c0; padding:2px 6px; border-bottom:1px solid #808080; font-size:11px;">
+            <div><span style="text-decoration:underline;">F</span>ile</div>
+            <div><span style="text-decoration:underline;">E</span>dit</div>
+            <div><span style="text-decoration:underline;">V</span>iew</div>
+            <div><span style="text-decoration:underline;">H</span>elp</div>
+          </div>
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:18px 20px; margin-bottom:14px; border-radius:3px;">
+            <div style="font-family:monospace; font-size:13px; color:#ffd43b; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>C:\\SUPERPLANNING&gt; HELLO</span><span style="height:14px; width:7px; background:#ffd43b; display:inline-block;"></span>
+            </div>
+            <h2 style="font-size:22px; font-weight:900; margin:0 0 8px 0; color:#ffffff; line-height:1.3; letter-spacing:-0.02em;">UX디자인 에이전시, 슈퍼플래닝입니다.</h2>
+            <p style="font-size:13px; font-weight:600; margin:0; color:#d8d8d8; line-height:1.5;">때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.</p>
           </div>
           <div style="margin-bottom:8px;"><h4 style="font-weight:900; font-size:13px; margin:0; color:#000;">UX프로젝트 수행원칙</h4></div>
-          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
+          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:12px;">
             <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">1. 최근 사용자들의 3초 법칙</h4>
-              <p style="font-size:11.5px; margin:0;">사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.</p>
+              <p style="font-size:11.5px; margin:0; line-height:1.45;">사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.</p>
             </div>
             <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
-              <p style="font-size:11.5px; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+              <p style="font-size:11.5px; margin:0; line-height:1.45;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
             </div>
             <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">3. 더 적게 하지만 더 좋게 (Less but better)</h4>
-              <p style="font-size:11.5px; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다.</p>
+              <p style="font-size:11.5px; margin:0; line-height:1.45;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다.</p>
             </div>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact')">📍 찾아오시는 길</button>
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video')">🎬 소개영상 보기</button>
+            <button class="w95-btn" style="padding:5px 12px; font-size:11.5px;" onclick="openWindow('brochure')">📄 회사소개서 보기</button>
+            <button class="w95-btn" style="padding:5px 12px; font-size:11.5px;" onclick="openWindow('intro-video')">🎬 소개영상 보기</button>
+            <button class="w95-btn" style="padding:5px 12px; font-size:11.5px;" onclick="openWindow('contact')">📍 찾아오시는 길</button>
+          </div>
+        `;
+      } else if (key === 'brochure') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+              <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
+              <div style="display:flex; gap:6px;">
+                <a href="/Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+                <a href="/Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">💾 파일 다운로드</a>
+              </div>
+            </div>
+            <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+              <iframe 
+                src="/Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                style="width:100%; height:100%; border:0; display:block;" 
+                title="슈퍼플래닝 회사소개서 뷰어">
+              </iframe>
+            </div>
           </div>
         `;
       } else if (key === 'clients') {
