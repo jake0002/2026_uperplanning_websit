@@ -369,10 +369,21 @@
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
-      <div class="start-item" onclick="location.href='/company';">🏢 회사소개</div>
-      <div class="start-item" onclick="location.href='/ux_research';">🎨 UX 리서치</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes';">🎓 AI-UX 강의</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog';">📝 UX 블로그</div>
+      <div class="start-item" onclick="openWindow('about'); toggleMobileMenu();">🏢 슈퍼플래닝</div>
+      <div class="start-item" onclick="openWindow('clients'); toggleMobileMenu();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">🎨 UX서비스</div>
+      <div class="start-item" onclick="openWindow('instagram'); toggleMobileMenu();">📷 인스타그램</div>
+      <div class="start-item" onclick="openWindow('threads'); toggleMobileMenu();">🧵 쓰레드</div>
+      <div class="start-item" onclick="openWindow('intro-video'); toggleMobileMenu();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는길</div>
+      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
+      <div class="start-item" onclick="location.href='/ux_research/'; toggleMobileMenu();">🔍 UX리서치</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">✏️ UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux_design/'; toggleMobileMenu();">📐 UX기획/디자인</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">💻 웹/앱개발</div>
+      <div class="start-item" onclick="openWindow('classes'); toggleMobileMenu();">🎓 AI-UX강의</div>
+      <div class="start-item" onclick="openWindow('blog'); toggleMobileMenu();">📝 UX블로그</div>
+      <div class="start-item" onclick="location.href='/company/'; toggleMobileMenu();">🏢 회사소개</div>
     </div>
   </div>
 
@@ -476,17 +487,21 @@
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
-      <div class="start-item" onclick="location.href='/company/'; closeStart();">🏢 회사소개</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#clients'; closeStart();">🏛️ 주요 고객사</div>
-      <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🎨 UX 리서치</div>
-      <div class="start-item" onclick="location.href='/ux_design/'; closeStart();">✏️ UX 기획 및 디자인</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes'; closeStart();">🎓 AI-UX 강의</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog'; closeStart();">📝 UX 블로그</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#contact'; closeStart();">📍 찾아오시는 길 &amp; 문의</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">📄 회사소개서 보기</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 슈퍼플래닝</div>
+      <div class="start-item" onclick="openWindow('clients'); closeStart();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX서비스</div>
+      <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
+      <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
+      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('contact'); closeStart();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🏠 메인 화면으로...</div>
+      <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🔍 UX리서치</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">✏️ UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux_design/'; closeStart();">📐 UX기획/디자인</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">💻 웹/앱개발</div>
+      <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX강의</div>
+      <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX블로그</div>
+      <div class="start-item" onclick="location.href='/company/'; closeStart();">🏢 회사소개</div>
     </div>
   </div>
 
@@ -519,6 +534,195 @@
       var drawer = document.getElementById('mobileNavDrawer');
       if (drawer) drawer.classList.toggle('show');
       closeStart();
+    }
+
+    // Subpage Win95 Retro Popup Window Engine
+    function openWindow(key) {
+      closeStart();
+      var titles = {
+        'about': '🏢 슈퍼플래닝 소개',
+        'clients': '🏛️ 주요 고객사',
+        'services': '🎨 UX 서비스',
+        'classes': '🎓 AI-UX 강의',
+        'blog': '📝 UX 블로그',
+        'contact': '📍 프로젝트 문의 & 오시는길',
+        'instagram': '📷 슈퍼플래닝 인스타그램',
+        'threads': '🧵 슈퍼플래닝 쓰레드',
+        'intro-video': '🎬 슈퍼플래닝 소개영상',
+        'brochure': '📄 회사소개서 뷰어'
+      };
+
+      var titleText = titles[key] || '📁 슈퍼플래닝 탐색기';
+
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+
+      var overlay = document.createElement('div');
+      overlay.id = 'subpageModalOverlay';
+      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
+
+      var win = document.createElement('div');
+      win.style.cssText = 'width:min(680px, 94vw); max-height:88vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+
+      win.innerHTML = `
+        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+          <span>${titleText}</span>
+          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:14px; overflow-y:auto; flex:1; max-height:calc(88vh - 30px); background:#c0c0c0; font-size:12px; line-height:1.5;">
+          ${getSubpageWindowBody(key)}
+        </div>
+      `;
+
+      overlay.appendChild(win);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSubpageWindow();
+      });
+    }
+
+    function closeSubpageWindow() {
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSubpageWindow();
+    });
+
+    function getSubpageWindowBody(key) {
+      if (key === 'about') {
+        return `
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:20px 18px; margin-bottom:16px; border-radius:3px;">
+            <div style="font-family:monospace; font-size:13px; color:#ffd43b; font-weight:700; margin-bottom:10px;">C:\\SUPERPLANNING&gt; HELLO</div>
+            <h2 style="font-size:22px; font-weight:900; margin:0 0 8px 0; color:#ffffff; line-height:1.3;">UX디자인 에이전시, 슈퍼플래닝입니다.</h2>
+            <p style="font-size:13px; font-weight:600; margin:0; color:#d8d8d8;">때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.</p>
+          </div>
+          <div style="margin-bottom:8px;"><h4 style="font-weight:900; font-size:13px; margin:0; color:#000;">UX프로젝트 수행원칙</h4></div>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">1. 최근 사용자들의 3초 법칙</h4>
+              <p style="font-size:11.5px; margin:0;">사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.</p>
+            </div>
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
+              <p style="font-size:11.5px; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+            </div>
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:12px; font-weight:800; color:#000; margin:0 0 3px 0;">3. 더 적게 하지만 더 좋게 (Less but better)</h4>
+              <p style="font-size:11.5px; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact')">📍 찾아오시는 길</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video')">🎬 소개영상 보기</button>
+          </div>
+        `;
+      } else if (key === 'clients') {
+        return `
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">SK텔레콤</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">현대자동차</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">롯데그룹</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">LG유플러스</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">비씨카드</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">CJ올리브네트웍스</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">KB국민은행</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">NH농협은행</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">서민금융진흥원</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">제일기획</div>
+            <div style="padding:10px 2px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; font-size:11px;">한국식품안전관리인증원</div>
+            <div style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">경기도일자리재단</div>
+          </div>
+        `;
+      } else if (key === 'services') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
+          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; cursor:pointer;" onclick="location.href='/ux_research/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;"><h4 style="margin:0; font-size:12px;">UX 리서치</h4><span class="w95-btn" style="padding:1px 6px; font-size:10px;">상세보기 →</span></div>
+              <p style="margin:0; font-size:11px;">FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄입니다.</p>
+            </div>
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; cursor:pointer;" onclick="location.href='/ux_design/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;"><h4 style="margin:0; font-size:12px;">UX 기획 / 디자인</h4><span class="w95-btn" style="padding:1px 6px; font-size:10px;">상세보기 →</span></div>
+              <p style="margin:0; font-size:11px;">IA설계, 와이어프레임, UI스토리보드 구축 및 개발 밀착형 화면설계서 작성.</p>
+            </div>
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; cursor:pointer;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;"><h4 style="margin:0; font-size:12px;">UX 라이팅</h4><span class="w95-btn" style="padding:1px 6px; font-size:10px;">문의하기 →</span></div>
+              <p style="margin:0; font-size:11px;">보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.</p>
+            </div>
+            <div style="padding:8px 10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; cursor:pointer;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;"><h4 style="margin:0; font-size:12px;">웹 / 앱 개발</h4><span class="w95-btn" style="padding:1px 6px; font-size:10px;">문의하기 →</span></div>
+              <p style="margin:0; font-size:11px;">React, Vue를 활용한 하이브리드 웹앱 및 iOS/안드로이드 네이티브 개발.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'contact') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
+          <div style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:8px;">
+            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>회사명:</strong> Superplanning</div>
+            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
+            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>전화번호:</strong> 031-699-3298</div>
+            <div style="font-size:11.5px;"><strong>이메일:</strong> jake@superplanning.co.kr</div>
+          </div>
+          <div style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:8px;">
+            <h4 style="color:#000080; font-size:12px; margin:0 0 4px 0;">오시는 길 (미사역 1분 거리)</h4>
+            <p style="font-size:11px; margin:0 0 6px 0;">5호선 미사역 8번 출구 서브웨이 옆 건물 11층 / 지하주차장 무료주차 지원</p>
+            <a href="https://naver.me/GmF8esjK" target="_blank" class="w95-btn" style="display:inline-block; padding:3px 8px; font-size:10.5px; text-decoration:none;">🗺️ 네이버 지도 ↗</a>
+          </div>
+          <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" style="display:block; text-decoration:none; background:#fee500; border:2px solid #3c1e1e; padding:8px 10px; color:#3c1e1e; font-weight:bold;">💬 카카오톡 24시간 실시간 상담 ↗</a>
+        `;
+      } else if (key === 'classes') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:6px;">🎓 실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="font-size:11.5px; margin-bottom:10px;">최신 AI 도구를 활용한 UX기획, 와이어프레임 설계, 바이브코딩 실무 교육을 제공합니다.</p>
+          <div style="padding:8px 10px; background:#fff; border:2px solid #000; margin-bottom:8px;">
+            <h4 style="font-size:12px; margin:0 0 3px 0;">수강 대상</h4>
+            <p style="font-size:11px; margin:0;">기획자, UX디자이너, 프론트엔드 개발자, 스타트업 대표</p>
+          </div>
+          <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact')">강의 수강 문의하기</button>
+        `;
+      } else if (key === 'blog') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📝 UX 인사이트 아카이브</h3>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">버튼 문구 하나로 이탈률 18% 줄인 방법</h4><p style="margin:0; font-size:11px;">명확한 UX라이팅과 사용자 심리 설계 접근법</p></div>
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
+          </div>
+        `;
+      } else if (key === 'instagram') {
+        return `
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; padding:6px 10px; border:2px solid #000;">
+              <span style="font-weight:bold; font-size:12px;">📸 Instagram @ux_superplanning</span>
+              <a href="https://www.instagram.com/ux_superplanning/" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+            </div>
+            <div style="min-height:300px; background:#fafafa; border:2px solid #000; overflow:hidden;">
+              <iframe src="https://www.instagram.com/ux_superplanning/embed" style="width:100%; height:320px; border:0;"></iframe>
+            </div>
+          </div>
+        `;
+      } else if (key === 'threads') {
+        return `
+          <div style="display:flex; flex-direction:column; gap:8px; text-align:center; padding:12px; background:#101010; color:#fff; border:2px solid #000;">
+            <div style="font-size:32px;">🧵</div>
+            <h3 style="font-size:16px; margin:0; color:#fff;">@ux_superplanning</h3>
+            <p style="font-size:11.5px; color:#aaa; margin:0;">슈퍼플래닝 UX 스튜디오 공식 쓰레드</p>
+            <a href="https://www.threads.net/@ux_superplanning" target="_blank" class="w95-btn" style="padding:6px 14px; background:#fff; color:#000; font-weight:bold; font-size:11.5px; text-decoration:none; display:inline-block; margin:8px auto 0 auto;">Threads 프로필 방문하기 (@ux_superplanning) ↗</a>
+          </div>
+        `;
+      } else if (key === 'intro-video') {
+        return `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <iframe src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" title="슈퍼플래닝 소개영상" frameborder="0" allowfullscreen style="width:100%; height:260px; border:2px solid #000; background:#000;"></iframe>
+            <div style="text-align:right;"><a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a></div>
+          </div>
+        `;
+      }
+      return '<div>내용을 불러올 수 없습니다.</div>';
     }
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.getElementById('scrollTopBtn');
