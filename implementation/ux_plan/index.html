@@ -330,6 +330,66 @@
       padding: 0 8px;
       border-radius: 4px;
       user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (YELLOW ACCENT LINE) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent, #ffd43b) 0%, #fff066 50%, var(--accent, #ffd43b) 100%);
+      box-shadow: 0 0 8px rgba(255, 212, 59, 0.85), 0 0 2px rgba(255, 255, 255, 0.9);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px var(--accent, #ffd43b), 0 0 12px var(--accent, #ffd43b);
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: rgba(0, 0, 128, 0.92);
+      color: var(--accent, #ffd43b);
+      border: 1px solid var(--accent, #ffd43b);
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1;
     }
     .gnb-menu {
       display: flex;
@@ -1088,6 +1148,13 @@
     <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
       <span>☰</span> <span>메뉴</span>
     </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
   </div>
 
   <!-- MOBILE GNB NAVIGATION DRAWER -->
@@ -1446,6 +1513,48 @@
           }
         });
       });
+
+      // GNB Scroll Progress Gauge Handler
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      let scrollTimer = null;
+
+      function updateGnbScrollProgress() {
+        if (!progressBar) return;
+        const winScroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const docHeight = Math.max(
+          document.documentElement.scrollHeight,
+          document.body.scrollHeight
+        );
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const totalScrollable = docHeight - winHeight;
+
+        let scrolled = 0;
+        if (totalScrollable > 0) {
+          scrolled = Math.min(100, Math.max(0, (winScroll / totalScrollable) * 100));
+        } else {
+          scrolled = 100;
+        }
+
+        progressBar.style.width = scrolled + '%';
+        if (progressBadge) {
+          progressBadge.textContent = Math.round(scrolled) + '%';
+        }
+
+        if (winScroll > 10) {
+          document.body.classList.add('is-scrolling');
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(() => {
+            document.body.classList.remove('is-scrolling');
+          }, 1200);
+        } else {
+          document.body.classList.remove('is-scrolling');
+        }
+      }
+
+      window.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+      window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+      updateGnbScrollProgress();
     });
 
     setInterval(() => {
