@@ -1075,7 +1075,7 @@
 
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="downloadCompanyBrochure();">
-        <span>📄</span> <span>회사소개서 받기</span>
+        <span>📁</span> <span>포트폴리오 보기</span>
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers'); blip(660, 0.04);">
         <span>🤝</span> <span>인재채용</span>
@@ -1635,7 +1635,7 @@
           </div>
 
           <div style="display:flex; gap:8px; margin-top:6px; margin-bottom:0; padding-top:0; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">${isKo ? '📄 회사소개서 보기' : '📄 Company Brochure'}</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">${isKo ? '📁 포트폴리오 보기' : '📁 View Portfolio'}</button>
             <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
             <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
           </div>
@@ -2267,7 +2267,7 @@
       });
 
       const gnbBtns = document.querySelectorAll('.gnb-right .w95-btn span:last-child');
-      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '회사소개서 보기' : 'Company Brochure';
+      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '포트폴리오 보기' : 'View Portfolio';
       if (gnbBtns[1]) gnbBtns[1].textContent = isKo ? '인재채용' : 'Careers';
 
       // 3. Desktop Icons
