@@ -22,24 +22,8 @@ if ($hasChanges) {
 git push origin master
 
 Write-Host "2. Deploying updated files to AWS EC2 (superplanning.blog)..." -ForegroundColor Cyan
-ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "rm -rf /tmp/deploy_stage && mkdir -p /tmp/deploy_stage/images /tmp/deploy_stage/services /tmp/deploy_stage/company /tmp/deploy_stage/ux_design /tmp/deploy_stage/ux_plan /tmp/deploy_stage/ux_research /tmp/deploy_stage/ux_design_cleanroom /tmp/deploy_stage/ux_design_cleanroom_v2"
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/index.html admin@13.125.12.112:/tmp/deploy_stage/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_research.html admin@13.125.12.112:/tmp/deploy_stage/ux_research.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux-research.html admin@13.125.12.112:/tmp/deploy_stage/ux-research.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_research/index.html admin@13.125.12.112:/tmp/deploy_stage/ux_research/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_design.html admin@13.125.12.112:/tmp/deploy_stage/ux_design.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux-design.html admin@13.125.12.112:/tmp/deploy_stage/ux-design.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_design/index.html admin@13.125.12.112:/tmp/deploy_stage/ux_design/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_plan/index.html admin@13.125.12.112:/tmp/deploy_stage/ux_plan/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_design_cleanroom/index.html admin@13.125.12.112:/tmp/deploy_stage/ux_design_cleanroom/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_design_cleanroom_v2/index.html admin@13.125.12.112:/tmp/deploy_stage/ux_design_cleanroom_v2/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/ux_design_cleanroom.html admin@13.125.12.112:/tmp/deploy_stage/ux_design_cleanroom.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/company.html admin@13.125.12.112:/tmp/deploy_stage/company.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/company/index.html admin@13.125.12.112:/tmp/deploy_stage/company/index.html
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/llms.txt admin@13.125.12.112:/tmp/deploy_stage/llms.txt
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/services/ux-research.md admin@13.125.12.112:/tmp/deploy_stage/services/ux-research.md
-scp -i "shkey.pem" -o StrictHostKeyChecking=no implementation/services/ux-planning-design.md admin@13.125.12.112:/tmp/deploy_stage/services/ux-planning-design.md
-scp -i "shkey.pem" -r -o StrictHostKeyChecking=no implementation/images/* admin@13.125.12.112:/tmp/deploy_stage/images/
+ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "rm -rf /tmp/deploy_stage && mkdir -p /tmp/deploy_stage"
+scp -r -i "shkey.pem" -o StrictHostKeyChecking=no implementation/* admin@13.125.12.112:/tmp/deploy_stage/
 
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 "sudo cp -a /tmp/deploy_stage/. /var/www/html/ && sudo cp -f /tmp/deploy_stage/ux_design_cleanroom.html /var/www/html/ux-design-cleanroom.html && sudo mkdir -p /var/www/html/ux_research/images && sudo cp -rf /tmp/deploy_stage/images/* /var/www/html/ux_research/images/ && sudo chmod -R 755 /var/www/html && sudo chown -R admin:www-data /var/www/html"
 
