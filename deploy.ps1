@@ -28,7 +28,8 @@ scp -i "shkey.pem" -o StrictHostKeyChecking=no deploy.tar.gz admin@13.125.12.112
 
 # Extract archive, sync all URL route aliases, fix permissions, and reload Apache
 $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
-              "sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux_plan && " +
+              "sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux_plan /var/www/html/contact && " +
+              "sudo cp -f /var/www/html/contact/index.html /var/www/html/contact.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux_design.html && " +
               "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux-design.html && " +
               "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux-design/index.html && " +
