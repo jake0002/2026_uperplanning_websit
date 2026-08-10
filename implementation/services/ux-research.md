@@ -1,6 +1,6 @@
 ---
-title: "UX리서치 | 슈퍼플래닝 - FGI/UT/IDI 사용자 조사, 리크루팅, MVP 검증, UX리서치 강의 전문회사"
-description: "슈퍼플래닝은 FGI(표적집단 면접), UT(사용성 테스트), IDI(심층 인터뷰) 등 전문 UX리서치부터 타겟 사용자 모집(리크루팅), MVP 검증, UX리서치 기업출강 강의까지 제공하는 대한민국 대표 UX리서치 전문회사입니다."
+title: "UX리서치 전문 에이전시 슈퍼플래닝 | FGI·UT·사용자 인터뷰"
+description: "슈퍼플래닝은 FGI, UT, IDI 등 정성·정량 조사를 수행하는 UX리서치 전문 회사입니다. 인터뷰 참석자 리크루팅부터 MVP검증, 사용자 행동 데이터 분석을 통해 서비스 문제 원인을 찾고 UI/UX 개선안을 도출해 드립니다."
 keywords: "UX리서치 전문회사, UX리서치 외주업체, FGI조사 회사, UT조사 회사, IDI조사 에이전시, 사용자 인터뷰 회사, MVP 검증 업체, 사용자 리크루팅 대행, UX리서치 강의, 기업출강 UX리서치, 슈퍼플래닝, Superplanning"
 canonical: "https://superplanning.blog/services/ux-research.md"
 updated: "2026-08-10"
