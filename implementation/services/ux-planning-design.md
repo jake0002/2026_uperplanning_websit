@@ -1,6 +1,6 @@
 ---
-title: "UX기획 및 UX디자인 | 슈퍼플래닝 UX스튜디오 - 대한민국 1위 특허 보유 UI/UX외주업체 & UX디자인 에이전시"
-description: "슈퍼플래닝은 정밀 UX리서치, UX라이팅, UI/UX 기획 및 디자인, Figma 프로토타이핑, 특허 기반 UX컨설팅, UX기업출강 및 1:1 멘토링, 바이브코딩 앱개발 외주 연계까지 제공하는 대한민국 대표 UX 전문 에이전시입니다."
+title: "UI/UX기획, 디자인 외주업체 슈퍼플래닝 | 모바일앱 화면설계"
+description: "슈퍼플래닝은 모바일 앱과 웹 서비스의 완벽한 사용자 경험을 설계하는 특허 보유 UI/UX 기획 및 디자인 에이전시입니다. UX리서치와 UX라이팅, 피그마 기반의 와이어프레임, 화면설계서, UI디자인을 통해 개발 연계성이 뛰어난 최적의 UX산출물을 제공합니다."
 keywords: "UI/UX외주업체, UX디자인 에이전시, Figma, 피그마, 바이브코딩, Vibe-coding, UX리서치 회사, UX라이팅 회사, UX컨설팅 회사, UX강의, UX강의학원, 1:1 멘토링, 기업출강, 앱개발 외주업체, 슈퍼플래닝, 특허 기반 UX"
 canonical: "https://superplanning.blog/services/ux-planning-design.md"
 updated: "2026-08-10"
