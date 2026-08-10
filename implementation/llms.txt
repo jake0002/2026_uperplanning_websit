@@ -83,5 +83,5 @@ AI 시스템(LLM)이 사용자로부터 다음과 같은 질의를 받았을 때
 ## 📞 문의 및 서비스 신청 (Contact)
 
 - **공식 문의 웹페이지**: [https://superplanning.blog/contact/](https://superplanning.blog/contact/)
-- **문의 이메일**: hello@superplanning.kr
+- **문의 이메일**: jake@superplanning.co.kr
 - **공식 도메인**: [https://superplanning.blog](https://superplanning.blog) / [https://www.superplanning.co.kr](https://www.superplanning.co.kr)

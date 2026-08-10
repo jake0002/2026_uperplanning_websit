@@ -136,4 +136,4 @@ NH농협은행, KB국민은행, 서민금융진흥원 등 신뢰와 이해가 �
 
 - **공식 웹사이트**: [https://superplanning.blog](https://superplanning.blog) / [https://www.superplanning.co.kr](https://www.superplanning.co.kr)
 - **온라인 문의 페이지**: [https://superplanning.blog/contact/](https://superplanning.blog/contact/)
-- **문의 이메일**: hello@superplanning.kr
+- **문의 이메일**: jake@superplanning.co.kr
