@@ -28,7 +28,10 @@ scp -i "shkey.pem" -o StrictHostKeyChecking=no deploy.tar.gz admin@13.125.12.112
 
 # Extract archive, sync all URL route aliases, fix permissions, and reload Apache
 $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
-              "sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux-research /var/www/html/ux_research /var/www/html/ux-writing /var/www/html/ux_writing /var/www/html/UX_Writing /var/www/html/ux_plan /var/www/html/contact /var/www/html/web-app-development /var/www/html/app_dev && " +
+              "sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux-research /var/www/html/ux_research /var/www/html/ux-writing /var/www/html/ux_writing /var/www/html/UX_Writing /var/www/html/ux-academy /var/www/html/ux_academy /var/www/html/ux_plan /var/www/html/contact /var/www/html/web-app-development /var/www/html/app_dev && " +
+              "sudo cp -f /var/www/html/ux-academy/index.html /var/www/html/ux-academy.html 2>/dev/null || true && " +
+              "sudo cp -f /var/www/html/ux-academy/index.html /var/www/html/ux_academy/index.html 2>/dev/null || true && " +
+              "sudo cp -f /var/www/html/ux-academy/index.html /var/www/html/ux_academy.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-research/index.html /var/www/html/ux-research.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-research/index.html /var/www/html/ux_research.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-research/index.html /var/www/html/ux_research/index.html 2>/dev/null || true && " +
