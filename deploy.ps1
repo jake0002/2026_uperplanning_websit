@@ -26,10 +26,12 @@ tar -czf deploy.tar.gz -C implementation .
 # SCP deploy archive to AWS EC2
 scp -i "shkey.pem" -o StrictHostKeyChecking=no deploy.tar.gz admin@13.125.12.112:/tmp/
 
-# Extract archive, copy routes, fix permissions, and reload Apache
+# Extract archive, sync all URL route aliases, fix permissions, and reload Apache
 $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
+              "sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux_plan && " +
               "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux_design.html && " +
               "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux-design.html && " +
+              "sudo cp -f /var/www/html/ux_design/index.html /var/www/html/ux-design/index.html && " +
               "sudo cp -f /var/www/html/ux_design_cleanroom/index.html /var/www/html/ux_design_cleanroom.html && " +
               "sudo cp -f /var/www/html/ux_design_cleanroom/index.html /var/www/html/ux-design-cleanroom.html && " +
               "sudo mkdir -p /var/www/html/ux_research/images /var/www/html/ux_design/images /var/www/html/ux_plan/images && " +
