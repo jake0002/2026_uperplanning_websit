@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>문의하기 | 슈퍼플래닝 (Superplanning UX Studio)</title>
-  <meta name="description" content="슈퍼플래닝 프로젝트 문의하기. UX 기획, UX 디자인, UX 리서치, UX 라이팅, 앱 개발, 기업출강 및 UX 강의 견적 문의.">
-  <meta name="keywords" content="문의하기, 프로젝트문의, 슈퍼플래닝, Superplanning, UX견적, UX컨설팅문의, UX기획문의, UX리서치문의">
+  <title>문의하기 | 슈퍼플래닝 UX스튜디오</title>
+  <meta name="description" content="슈퍼플래닝 문의하기 및 찾아오시는 길 안내 페이지입니다. UX리서치, UX라이팅, UI/UX기획/디자인, 웹/앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 안내해 드립니다.">
+  <meta name="keywords" content="문의하기, 프로젝트문의, 찾아오시는길, 슈퍼플래닝, Superplanning, UX견적, UX컨설팅문의, UX기획문의, UX리서치문의">
   <meta name="author" content="슈퍼플래닝 (Superplanning)">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://superplanning.blog/contact">
   <link rel="alternate" hreflang="ko" href="https://superplanning.blog/contact">
+  <link rel="alternate" title="AI 색인 (llms.txt)" href="https://superplanning.blog/llms.txt">
+  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)" href="https://superplanning.blog/services/ux-planning-design.md">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="슈퍼플래닝 (Superplanning UX Studio)">
   <meta property="og:url" content="https://superplanning.blog/contact">
-  <meta property="og:title" content="문의하기 | 슈퍼플래닝">
+  <meta property="og:title" content="문의하기 | 슈퍼플래닝 UX스튜디오">
   <meta property="og:description" content="문의하기 페이지에서 UX기획/디자인, UX리서치, UX라이팅, 앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 안내해 드립니다.">
   <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="문의하기 | 슈퍼플래닝 UX스튜디오">
+  <meta name="twitter:description" content="문의하기 페이지에서 UX기획/디자인, UX리서치, UX라이팅, 앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 안내해 드립니다.">
 
   <!-- Pretendard Webfont -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 
   <style>
+    /* CSS Variables & Core Styling (Exact Match with UX Research Page) */
     :root {
       --bg: #008080;
       --win-bg: #c0c0c0;
@@ -47,66 +55,38 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
 
     body {
-      width: 100%;
-      min-height: 100vh;
-      background-color: var(--bg);
-      color: var(--win-fg);
-      padding-bottom: calc(var(--taskbar-h) + 16px);
-      user-select: text;
+      width: 100%; min-height: 100vh; background-color: var(--bg); color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px); user-select: text;
     }
 
     a { color: #111111; text-decoration: underline; }
     a:hover { color: #555555; }
 
-    /* LOGO & GNB */
+    /* LOGO & GNB HEADER */
     #topLogo {
-      position: fixed;
-      top: var(--logo-top);
-      left: var(--logo-left);
-      z-index: 100001;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
-      background: var(--win-bg);
-      border-top: 2px solid var(--bevel-hi);
-      border-left: 2px solid var(--bevel-hi);
-      border-right: 2px solid var(--bevel-lo);
-      border-bottom: 2px solid var(--bevel-lo);
-      box-shadow: inset -1px -1px var(--bevel-shadow);
-      cursor: pointer;
-      text-decoration: none;
-      color: #000;
+      position: fixed; top: var(--logo-top); left: var(--logo-left); z-index: 100001;
+      display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px;
+      background: var(--win-bg); border-top: 2px solid var(--bevel-hi);
+      border-left: 2px solid var(--bevel-hi); border-right: 2px solid var(--bevel-lo);
+      border-bottom: 2px solid var(--bevel-lo); box-shadow: inset -1px -1px var(--bevel-shadow);
+      cursor: pointer; text-decoration: none; color: #000;
     }
-    #topLogo .logo-tag {
-      font-size: 10px; font-weight: 900; background: #000080; color: #fff;
-      padding: 1px 4px; border-radius: 2px;
-    }
+    #topLogo .logo-tag { font-size: 10px; font-weight: 900; background: #000080; color: #fff; padding: 1px 4px; border-radius: 2px; }
     #topLogo .logo-text { font-size: 12px; font-weight: 800; font-family: var(--font-mono); }
 
     #gnbHeader {
-      position: fixed;
-      top: var(--logo-top);
-      left: calc(var(--logo-left) + 175px);
-      right: 14px;
-      height: var(--gnb-h);
-      z-index: 100000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px;
-      background: var(--gnb-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--gnb-bd);
-      border-radius: 4px;
+      position: fixed; top: var(--logo-top); left: calc(var(--logo-left) + 175px); right: 14px;
+      height: var(--gnb-h); z-index: 100000; display: flex; align-items: center;
+      justify-content: space-between; padding: 0 10px; background: var(--gnb-bg);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--gnb-bd); border-radius: 4px;
     }
 
     .gnb-left { display: flex; align-items: center; gap: 4px; list-style: none; }
     .gnb-link {
-      display: inline-flex; align-items: center; padding: 2px 8px;
-      font-size: 11px; font-weight: 600; color: var(--gnb-fg);
-      text-decoration: none; border-radius: 3px; transition: background 0.15s;
+      display: inline-flex; align-items: center; padding: 2px 8px; font-size: 11px;
+      font-weight: 600; color: var(--gnb-fg); text-decoration: none; border-radius: 3px;
+      transition: background 0.15s;
     }
     .gnb-link:hover { background: rgba(255, 255, 255, 0.2); }
     .gnb-link.active { background: rgba(255, 255, 255, 0.3); font-weight: 700; color: var(--accent); }
@@ -119,13 +99,13 @@
       padding: 3px 8px; background: var(--win-bg); color: #000;
       border-top: 2px solid var(--bevel-hi); border-left: 2px solid var(--bevel-hi);
       border-right: 2px solid var(--bevel-lo); border-bottom: 2px solid var(--bevel-lo);
-      box-shadow: inset -1px -1px var(--bevel-shadow);
-      font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: none;
+      box-shadow: inset -1px -1px var(--bevel-shadow); font-size: 11px; font-weight: 700;
+      cursor: pointer; text-decoration: none;
     }
     .w95-btn:active {
       border-top: 2px solid var(--bevel-lo); border-left: 2px solid var(--bevel-lo);
       border-right: 2px solid var(--bevel-hi); border-bottom: 2px solid var(--bevel-hi);
-      padding: 4px 7px 2px 9px;
+      padding: 4px 7px 2px 99px;
     }
 
     #mobileMenuBtn { display: none; }
@@ -151,96 +131,83 @@
 
     /* PAGE WRAPPER & EXPLORER WINDOW */
     .page-wrapper {
-      max-width: 900px;
-      margin: calc(var(--logo-top) + var(--gnb-h) + 20px) auto 20px auto;
-      padding: 0 12px;
+      width: 100%; max-width: 1180px; margin: 0 auto;
+      padding: calc(var(--logo-top) + var(--gnb-h) + 12px) 14px 20px 14px;
     }
 
     .explorer-window {
-      background: var(--win-bg);
-      border-top: 2px solid var(--bevel-hi);
-      border-left: 2px solid var(--bevel-hi);
-      border-right: 2px solid var(--bevel-lo);
-      border-bottom: 2px solid var(--bevel-lo);
-      box-shadow: inset -1px -1px var(--bevel-shadow), 4px 4px 12px rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
+      background: var(--win-bg); border-top: 2px solid var(--bevel-hi);
+      border-left: 2px solid var(--bevel-hi); border-right: 2px solid var(--bevel-lo);
+      border-bottom: 2px solid var(--bevel-lo); box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+      margin-bottom: 12px; font-size: 12px;
     }
 
     .titlebar {
-      background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
-      color: #ffffff;
-      padding: 3px 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 700;
+      background: #000080; color: #ffffff; height: 22px; padding: 0 4px 0 6px;
+      display: flex; align-items: center; justify-content: space-between; font-weight: bold;
     }
-    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .titlebar-text { display: flex; align-items: center; gap: 4px; font-size: 11px; }
+    .titlebar-controls { display: flex; gap: 2px; }
     .win-btn {
-      display: inline-flex; align-items: center; justify-content: center;
       width: 16px; height: 14px; background: var(--win-bg); color: #000;
-      font-size: 10px; font-weight: bold; border-top: 1px solid var(--bevel-hi);
-      border-left: 1px solid var(--bevel-hi); border-right: 1px solid var(--bevel-lo);
-      border-bottom: 1px solid var(--bevel-lo); cursor: pointer;
+      border-top: 1px solid var(--bevel-hi); border-left: 1px solid var(--bevel-hi);
+      border-right: 1px solid var(--bevel-lo); border-bottom: 1px solid var(--bevel-lo);
+      font-size: 9px; display: flex; align-items: center; justify-content: center; cursor: pointer;
     }
 
     .menubar {
-      display: flex; gap: 12px; padding: 3px 8px; background: var(--win-bg);
-      font-size: 11px; border-bottom: 1px solid var(--bevel-lo);
+      height: 20px; background: var(--win-bg); border-bottom: 1px solid var(--bevel-lo);
+      display: flex; align-items: center; gap: 12px; padding: 0 8px; font-size: 11px;
     }
+
     .toolbar-area {
-      display: flex; align-items: center; gap: 10px; padding: 4px 8px;
-      background: var(--win-bg); border-bottom: 2px solid var(--bevel-hi);
+      height: 28px; background: var(--win-bg); border-bottom: 2px solid var(--bevel-hi);
+      display: flex; align-items: center; gap: 8px; padding: 0 6px;
     }
     .tool-btn {
-      padding: 2px 6px; font-size: 11px; background: var(--win-bg);
+      padding: 1px 6px; font-size: 11px; background: var(--win-bg);
       border-top: 1px solid var(--bevel-hi); border-left: 1px solid var(--bevel-hi);
       border-right: 1px solid var(--bevel-lo); border-bottom: 1px solid var(--bevel-lo);
       cursor: pointer;
     }
-    .address-bar { display: flex; align-items: center; gap: 6px; flex: 1; font-size: 11px; }
+    .address-bar { display: flex; align-items: center; gap: 4px; flex: 1; font-size: 11px; }
     .addr-label { font-weight: bold; }
     .addr-input {
-      flex: 1; background: #ffffff; border: 2px solid #7b7b7b;
-      padding: 2px 6px; font-family: var(--font-mono); font-size: 11px; color: #000;
+      flex: 1; height: 20px; background: #ffffff; border-top: 1px solid var(--bevel-lo);
+      border-left: 1px solid var(--bevel-lo); border-right: 1px solid var(--bevel-hi);
+      border-bottom: 1px solid var(--bevel-hi); padding: 0 6px; display: flex;
+      align-items: center; font-family: var(--font-mono); font-size: 11px; color: #000;
     }
 
-    .explorer-split { display: flex; min-height: 520px; background: #ffffff; border: 2px solid #7b7b7b; margin: 4px; }
+    .explorer-split { display: flex; min-height: 580px; background: #ffffff; }
+
+    /* LEFT SIDEBAR TREE */
     .tree-sidebar {
-      width: 220px; background: #f0f0f0; border-right: 2px solid #7b7b7b;
-      padding: 10px; font-size: 12px; flex-shrink: 0;
+      width: 250px; background: #f0f0f0; border-right: 2px solid var(--bevel-lo);
+      padding: 10px 8px; flex-shrink: 0; font-size: 11px;
     }
     .tree-root { font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
-    .tree-list { list-style: none; padding-left: 12px; }
-    .tree-item { margin-bottom: 6px; }
+    .tree-toggle { font-size: 10px; font-family: var(--font-mono); }
+    .folder-icon { font-size: 13px; }
+    .doc-icon { font-size: 12px; }
+    .tree-list { list-style: none; padding-left: 14px; }
+    .tree-item { margin-bottom: 4px; }
     .tree-link { text-decoration: none; color: #000; display: inline-flex; align-items: center; gap: 4px; padding: 2px 4px; border-radius: 2px; }
     .tree-link:hover { background: #e0e0e0; }
-    .tree-link.active { background: #000080; color: #ffffff; font-weight: bold; }
 
-    .main-content-pane { flex: 1; padding: 24px; overflow-y: auto; color: #111; line-height: 1.6; }
-    .main-content-pane h1 { font-size: 22px; font-weight: 800; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 8px; }
-    .hero-intro { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 24px; }
-    .main-content-pane h2 { font-size: 16px; font-weight: 700; margin-top: 24px; margin-bottom: 12px; color: #000080; border-left: 4px solid #000080; padding-left: 8px; }
+    /* RIGHT MAIN CONTENT PANE */
+    .main-content-pane { flex: 1; padding: 28px 32px; background: #ffffff; color: #111111; min-height: 580px; }
+    .main-content-pane h1 { font-size: 22px; font-weight: 800; color: #000080; margin-bottom: 8px; border-bottom: 2px solid #000080; padding-bottom: 6px; }
+    .main-content-pane h2 { font-size: 16px; font-weight: 700; color: #000080; margin-top: 28px; margin-bottom: 12px; border-left: 4px solid #000080; padding-left: 8px; }
 
-    .contact-box {
-      background: #f8f9fa; border: 2px solid #c0c0c0; border-radius: 4px; padding: 16px; margin-bottom: 16px;
-      box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+    /* STATUSBAR */
+    .statusbar {
+      height: 22px; background: var(--win-bg); border-top: 1px solid var(--bevel-lo);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 8px; font-size: 11px; color: #333;
     }
-    .contact-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #111; }
-    .contact-box p { font-size: 13px; color: #444; margin-bottom: 6px; }
 
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 4px; color: #222; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 8px; font-size: 13px; border: 2px solid #7b7b7b; background: #fff; border-radius: 2px;
-    }
-    .form-group textarea { height: 110px; resize: vertical; }
-
-    .bottom-nav {
-      margin-top: 30px; padding-top: 14px; border-top: 1px solid #ddd; font-size: 12px; color: #666;
-    }
+    .bottom-nav { margin-top: 36px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 12px; color: #555; }
 
     /* TASKBAR */
     #taskbar {
@@ -276,7 +243,8 @@
       #mobileMenuBtn { display: inline-flex; }
       #gnbHeader { left: calc(var(--logo-left) + 140px); }
       .explorer-split { flex-direction: column; }
-      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #7b7b7b; }
+      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid var(--bevel-lo); }
+      .main-content-pane { padding: 18px 16px; }
     }
   </style>
 </head>
@@ -297,11 +265,10 @@
       <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#services"><span>웹/앱개발</span></a></li>
       <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#classes"><span>AI-UX강의</span></a></li>
       <li class="gnb-item"><a class="gnb-link" href="https://superplanning.blog/#blog"><span>UX블로그</span></a></li>
-      <li class="gnb-item"><a class="gnb-link" href="/company/"><span>회사소개</span></a></li>
-      <li class="gnb-item">
-        <a class="gnb-link active" href="/contact/"><span>문의하기</span></a>
-      </li>
+      <li class="gnb-item"><a class="gnb-link" href="/company"><span>회사소개</span></a></li>
+      <li class="gnb-item"><a class="gnb-link active" href="/contact/"><span>문의하기</span></a></li>
     </ul>
+
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
         <span>📄</span> <span>회사소개서 보기</span>
@@ -311,7 +278,11 @@
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
-    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();"><span>☰ 메뉴</span></button>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
 
     <!-- SCROLL PROGRESS GAUGE BAR -->
     <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
@@ -321,54 +292,65 @@
     </div>
   </div>
 
-  <!-- MOBILE GNB DRAWER -->
+  <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
       <strong style="font-size:13px; color:#000080;">📂 GNB 전체 메뉴</strong>
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">🏢 슈퍼플래닝</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">🏛️ 주요 고객사</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">🎨 UX서비스</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">📷 인스타그램</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">🧵 쓰레드</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">▶️ 유튜브</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">📁 포트폴리오 보기</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">🤝 인재채용</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; toggleMobileMenu();">⚙️ 환경설정</div>
-      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">📍 찾아오시는길</div>
+      <div class="start-item" onclick="openWindow('about'); toggleMobileMenu();">🏢 슈퍼플래닝</div>
+      <div class="start-item" onclick="openWindow('clients'); toggleMobileMenu();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">🎨 UX서비스</div>
+      <div class="start-item" onclick="openWindow('instagram'); toggleMobileMenu();">📷 인스타그램</div>
+      <div class="start-item" onclick="openWindow('threads'); toggleMobileMenu();">🧵 쓰레드</div>
+      <div class="start-item" onclick="openWindow('intro-video'); toggleMobileMenu();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); toggleMobileMenu();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); toggleMobileMenu();">⚙️ 환경설정</div>
+      <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; toggleMobileMenu();">🔍 UX리서치</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#services'; toggleMobileMenu();">✏️ UX라이팅</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">✏️ UX라이팅</div>
       <div class="start-item" onclick="location.href='/ux_design/'; toggleMobileMenu();">📐 UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#services'; toggleMobileMenu();">💻 웹/앱개발</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes'; toggleMobileMenu();">🎓 AI-UX강의</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog'; toggleMobileMenu();">📝 UX블로그</div>
+      <div class="start-item" onclick="openWindow('services'); toggleMobileMenu();">💻 웹/앱개발</div>
+      <div class="start-item" onclick="openWindow('classes'); toggleMobileMenu();">🎓 AI-UX강의</div>
+      <div class="start-item" onclick="openWindow('blog'); toggleMobileMenu();">📝 UX블로그</div>
       <div class="start-item" onclick="location.href='/company/'; toggleMobileMenu();">🏢 회사소개</div>
       <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">✉️ 문의하기</div>
     </div>
   </div>
 
-  <!-- PAGE WRAPPER -->
+  <!-- Main Left-Aligned Page Wrapper -->
   <div class="page-wrapper">
-    <article class="explorer-window">
-      <!-- Titlebar -->
-      <header class="titlebar">
-        <div class="titlebar-text">
-          <span>📂</span> <span>슈퍼플래닝 탐색기 — 문의하기</span>
-        </div>
-        <div style="display:flex; gap:3px;">
-          <span class="win-btn">－</span>
-          <span class="win-btn">□</span>
-          <span class="win-btn">×</span>
-        </div>
-      </header>
 
-      <!-- Menubar & Toolbar -->
-      <div class="menubar"><span><u>File</u></span><span><u>Edit</u></span><span><u>View</u></span><span><u>Help</u></span></div>
+    <!-- WINDOWS 95 EXPLORER WINDOW CONTAINER -->
+    <div class="explorer-window">
+
+      <!-- 1. Dark Blue Title Bar -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — 문의하기</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn">✕</div>
+        </div>
+      </div>
+
+      <!-- 2. Menu Bar -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- 3. Toolbar & Address Bar -->
       <div class="toolbar-area">
-        <div style="display:flex; gap:6px;">
+        <div class="nav-buttons">
           <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
         </div>
         <div class="address-bar">
@@ -377,37 +359,32 @@
         </div>
       </div>
 
-      <!-- Explorer Split Pane -->
+      <!-- 4. Explorer Split Pane (Left Sidebar + Right Main Content) -->
       <div class="explorer-split">
-        <aside class="tree-sidebar">
-          <div class="tree-root"><span>📂</span> <span>문의하기</span></div>
-          <ul class="tree-list">
-            <li class="tree-item"><a href="#inquiry-info" class="active tree-link"><span>📄</span> <span>1. 프로젝트 문의</span></a></li>
-            <li class="tree-item"><a href="#contact-info" class="tree-link"><span>📄</span> <span>2. 대표 연락처</span></a></li>
+
+        <!-- Left Explorer Tree Sidebar -->
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>슈퍼플래닝 &gt; 문의하기</span>
+          </div>
+
+          <!-- Tree List TOC -->
+          <ul class="tree-list toc">
+            <li class="tree-item"><a href="#contact" class="tree-link"><span class="doc-icon">📄</span> <span>1. 문의하기</span></a></li>
+            <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는 길</span></a></li>
           </ul>
         </aside>
 
+        <!-- Right Main Content View Pane -->
         <main class="main-content-pane">
-          <h1>문의하기 (Contact Us)</h1>
-          <p class="hero-intro">문의하기 페이지에서 UX기획/디자인, UX리서치, UX라이팅, 앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 전문 UX컨설턴트가 일정과 견적안을 안내해 드립니다.</p>
 
-          <h2 id="inquiry-info">1. 프로젝트 문의</h2>
-          <div class="contact-box">
-            <h3>✉️ 문의 안내</h3>
-            <p>서비스 현황과 목표, 필요한 작업 범위(UX리서치, UX라이팅, UX기획/디자인, 앱개발, 기업출강 등)를 이메일 또는 온라인 문의로 남겨주시면 담당 컨설턴트가 신속하게 검토 후 연락드립니다.</p>
-          </div>
+          <h1>문의하기</h1>
 
-          <h2 id="contact-info">2. 대표 연락처</h2>
-          <div class="contact-box">
-            <p>· <strong>대표 이메일:</strong> <a href="mailto:jake@superplanning.co.kr">jake@superplanning.co.kr</a></p>
-            <p>· <strong>공식 웹사이트:</strong> <a href="https://superplanning.blog">https://superplanning.blog</a> / <a href="https://www.superplanning.co.kr">https://www.superplanning.co.kr</a></p>
-          </div>
+          <h2 id="contact">1. 문의하기</h2>
 
-          <div style="margin-top: 24px;">
-            <a href="mailto:jake@superplanning.co.kr" class="w95-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 18px; font-size: 13px;">
-              <span>✉️</span> <span>이메일 문의 보내기 (jake@superplanning.co.kr)</span>
-            </a>
-          </div>
+          <h2 id="location">2. 찾아오시는 길</h2>
 
           <div class="bottom-nav">
             <p>이전 단계: <a href="/company/">회사소개</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux_research/">UX리서치</a></p>
@@ -415,30 +392,37 @@
           </div>
         </main>
       </div>
-    </article>
+
+      <!-- 5. Gray Status Bar -->
+      <div class="statusbar">
+        <div>2개 개체</div>
+        <div>컴퓨터</div>
+      </div>
+    </div>
   </div>
 
   <!-- TASKBAR -->
+  <!-- START MENU (전체메뉴보기 팝업) -->
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🏢 슈퍼플래닝</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🏛️ 주요 고객사</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🎨 UX서비스</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">📷 인스타그램</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🧵 쓰레드</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">▶️ 유튜브</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">📁 포트폴리오 보기</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">🤝 인재채용</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/'; closeStart();">⚙️ 환경설정</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">📍 찾아오시는길</div>
+      <div class="start-item" onclick="openWindow('about'); closeStart();">🏢 슈퍼플래닝</div>
+      <div class="start-item" onclick="openWindow('clients'); closeStart();">🏛️ 주요 고객사</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">🎨 UX서비스</div>
+      <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
+      <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
+      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">▶️ 유튜브</div>
+      <div class="start-item" onclick="openWindow('brochure'); closeStart();">📁 포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); closeStart();">🤝 인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경설정</div>
+      <div class="start-item" onclick="openWindow('contact'); closeStart();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux_research/'; closeStart();">🔍 UX리서치</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#services'; closeStart();">✏️ UX라이팅</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">✏️ UX라이팅</div>
       <div class="start-item" onclick="location.href='/ux_design/'; closeStart();">📐 UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#services'; closeStart();">💻 웹/앱개발</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#classes'; closeStart();">🎓 AI-UX강의</div>
-      <div class="start-item" onclick="location.href='https://superplanning.blog/#blog'; closeStart();">📝 UX블로그</div>
+      <div class="start-item" onclick="openWindow('services'); closeStart();">💻 웹/앱개발</div>
+      <div class="start-item" onclick="openWindow('classes'); closeStart();">🎓 AI-UX강의</div>
+      <div class="start-item" onclick="openWindow('blog'); closeStart();">📝 UX블로그</div>
       <div class="start-item" onclick="location.href='/company/'; closeStart();">🏢 회사소개</div>
       <div class="start-item" onclick="location.href='/contact/'; closeStart();">✉️ 문의하기</div>
     </div>
@@ -484,6 +468,5 @@
       if (bar) { bar.style.width = scrolled + '%'; }
     });
   </script>
-
 </body>
 </html>
