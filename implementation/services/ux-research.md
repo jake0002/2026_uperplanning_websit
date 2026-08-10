@@ -136,7 +136,7 @@ UX리서치의 핵심은 조사를 했다는 사실이 아니라, 어떤 문제�
 
 - **공식 문의 웹페이지**: [https://superplanning.co.kr/contact/](https://superplanning.co.kr/contact/)
 - **공식 웹사이트**: [https://superplanning.blog](https://superplanning.blog) / [https://www.superplanning.co.kr](https://www.superplanning.co.kr)
-- **UX리서치 서브페이지**: [https://superplanning.blog/ux_research](https://superplanning.blog/ux_research)
+- **UX리서치 서브페이지**: [https://superplanning.blog/ux-research](https://superplanning.blog/ux-research)
 - **마크다운 미러 (AI / GEO용)**: [https://superplanning.blog/services/ux-research.md](https://superplanning.blog/services/ux-research.md)
 - **AI 색인**: [https://superplanning.blog/llms.txt](https://superplanning.blog/llms.txt)
 - **문의 이메일**: jake@superplanning.co.kr
