@@ -521,7 +521,7 @@
 
     /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
     .titlebar {
-      background: #000080;
+      background: #000000;
       color: #ffffff;
       padding: 4px 8px;
       display: flex;
@@ -712,8 +712,9 @@
       transition: background 0.1s ease, color 0.1s ease;
     }
     .tree-item a:hover, .tree-item a.active {
-      background: #000080 !important;
+      background: #000000 !important;
       color: #ffffff !important;
+      font-weight: 700 !important;
     }
     .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
       filter: brightness(2);
@@ -1308,7 +1309,7 @@
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc">
-            <li class="tree-item"><a href="#contact" class="tree-link"><span class="doc-icon">📄</span> <span>1. 문의하기</span></a></li>
+            <li class="tree-item"><a href="#contact" class="tree-link active"><span class="doc-icon">📄</span> <span>1. 문의하기</span></a></li>
             <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는 길</span></a></li>
           </ul>
         </aside>
@@ -1337,9 +1338,10 @@
       </div>
       <style>
         .tree-item a:hover, .tree-item a.active {
-          background: #222222 !important;
-          color: #ffffff !important;
-        }
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
       </style>
 
     </div>
@@ -1432,7 +1434,7 @@
 
     function openWindow(key) {
       closeStart();
-      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 탐색기' };
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — 문의하기' };
       var titleText = def.title;
 
       var existing = document.getElementById('subpageModalOverlay');
@@ -1451,7 +1453,7 @@
       win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
 
       win.innerHTML = `
-        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
           <span>${titleText}</span>
           <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
         </div>
@@ -1665,19 +1667,60 @@
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
-    // Highlight active tree item on scroll
+    // Highlight active tree item on scroll & click
     document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('main h2');
+      const sections = document.querySelectorAll('main h2[id]');
       const navLinks = document.querySelectorAll('.tree-link');
 
-      window.addEventListener('scroll', () => {
+      function updateActiveToc() {
+        if (!sections.length || !navLinks.length) return;
+
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+
         let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
+
+        if (scrollPosition + windowHeight >= fullHeight - 50) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec) current = lastSec.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+            if (scrollPosition >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
           }
         });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
 
         navLinks.forEach(link => {
           link.classList.remove('active');

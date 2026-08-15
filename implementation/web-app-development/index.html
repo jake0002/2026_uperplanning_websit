@@ -533,7 +533,7 @@
 
     /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
     .titlebar {
-      background: #000080;
+      background: #000000;
       color: #ffffff;
       padding: 4px 8px;
       display: flex;
@@ -1970,7 +1970,7 @@ table.process-table tbody td strong {
 
     function openWindow(key) {
       closeStart();
-      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 탐색기' };
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — 웹/앱 개발' };
       var titleText = def.title;
 
       var existing = document.getElementById('subpageModalOverlay');
@@ -1989,7 +1989,7 @@ table.process-table tbody td strong {
       win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
 
       win.innerHTML = `
-        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
           <span>${titleText}</span>
           <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
         </div>
@@ -2230,6 +2230,33 @@ table.process-table tbody td strong {
               current = section.getAttribute('id');
             }
           });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
         }
 
         if (!current && sections.length > 0) {

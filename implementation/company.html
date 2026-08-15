@@ -309,15 +309,13 @@
       top: var(--logo-top);
       left: var(--logo-left);
       height: var(--gnb-h);
-      padding: 4px 18px;
-      min-width: 68px;
-      justify-content: center;
+      padding: 4px 14px;
       z-index: 999999 !important;
       cursor: pointer;
-      background: #000000 !important;
-      color: #ffffff !important;
+      background: var(--accent);
+      color: #000;
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,.35);
       font-weight: 900;
       font-size: 13px;
       display: flex;
@@ -326,11 +324,8 @@
       user-select: none !important;
       transition: transform 0.1s ease;
     }
-    #brandLogo span, #brandLogoText {
-      color: #ffffff !important;
-    }
     #brandLogo:hover { transform: scale(1.04); }
-    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #7b7b7b; }
 
     /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE) */
     #gnb {
@@ -370,8 +365,8 @@
     .gnb-progress-bar {
       height: 100%;
       width: 0%;
-      background: #000000;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(90deg, var(--accent, #ffd43b) 0%, #fff066 50%, var(--accent, #ffd43b) 100%);
+      box-shadow: 0 0 8px rgba(255, 212, 59, 0.85), 0 0 2px rgba(255, 255, 255, 0.9);
       border-radius: 0 2px 2px 0;
       position: relative;
       transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
@@ -385,7 +380,7 @@
       height: 7.5px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 0 6px #000000;
+      box-shadow: 0 0 6px var(--accent, #ffd43b), 0 0 12px var(--accent, #ffd43b);
       opacity: 0.95;
     }
     .gnb-progress-badge {
@@ -393,9 +388,9 @@
       right: -14px;
       top: 10px;
       transform: translateX(50%);
-      background: #000000;
-      color: #ffffff;
-      border: 1px solid #ffffff;
+      background: rgba(0, 0, 128, 0.92);
+      color: var(--accent, #ffd43b);
+      border: 1px solid var(--accent, #ffd43b);
       border-radius: 3px;
       font-size: 10px;
       font-weight: 800;
@@ -436,16 +431,9 @@
       transition: background 0.15s ease;
       user-select: none !important;
     }
-        .gnb-link:hover,
-    .gnb-link:active,
-    .gnb-link.active {
-      background: #000000 !important;
-      color: #ffffff !important;
-    }
-    .gnb-link:hover span,
-    .gnb-link:active span,
-    .gnb-link.active span {
-      color: #ffffff !important;
+    .gnb-link:hover, .gnb-link.active {
+      background: rgba(255,255,255,0.25);
+      color: var(--accent);
     }
     .gnb-right {
       display: flex;
@@ -521,7 +509,7 @@
 
     /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
     .titlebar {
-      background: #000080;
+      background: #000000;
       color: #ffffff;
       padding: 4px 8px;
       display: flex;
@@ -712,8 +700,9 @@
       transition: background 0.1s ease, color 0.1s ease;
     }
     .tree-item a:hover, .tree-item a.active {
-      background: #000080 !important;
+      background: #000000 !important;
       color: #ffffff !important;
+      font-weight: 700 !important;
     }
     .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
       filter: brightness(2);
@@ -1173,7 +1162,7 @@
 
   <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
-    <span id="brandLogoText">홈</span>
+    <span>🏠</span> <span id="brandLogoText">홈</span>
   </div>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
@@ -1308,7 +1297,7 @@
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc">
-            <li class="tree-item"><a href="#vision" class="tree-link"><span class="doc-icon">📄</span> <span>1. 기업비전/미션</span></a></li>
+            <li class="tree-item"><a href="#vision" class="tree-link active"><span class="doc-icon">📄</span> <span>1. 기업미션/비전</span></a></li>
             <li class="tree-item"><a href="#story" class="tree-link"><span class="doc-icon">📄</span> <span>2. 브랜드 스토리</span></a></li>
             <li class="tree-item"><a href="#services" class="tree-link"><span class="doc-icon">📄</span> <span>3. 핵심 서비스</span></a></li>
             <li class="tree-item"><a href="#organization" class="tree-link"><span class="doc-icon">📄</span> <span>4. 회사 조직도</span></a></li>
@@ -1322,20 +1311,457 @@
 
           <h1>회사소개</h1>
 
-          <h2 id="vision">1. 기업비전/미션</h2>
+          <div style="margin: 0 0 1px 0; text-align: center;">
+            <img src="data:image/png;base64,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" alt="슈퍼플래닝 로고" style="display: inline-block; margin-top: 30px; max-width: 220px; width: 100%; height: auto;">
+          </div>
+
+          <h2 id="vision">1. 슈퍼플래닝 미션/비전</h2>
+
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:18px;">
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 8px 0; font-size:15px; font-weight:800; color:#000;">Mission (사명)</h3>
+              <p style="margin:0 0 10px 0; font-size:14px; font-weight:700; line-height:1.55; color:#000;">
+                <span class="typewriter-quote" data-text='"사용자를 깊이 이해하여, 디지털 사용자 경험을 지속적으로 진화시킨다."' style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;"></span>
+              </p>
+              <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                우리는 단순한 표면적 디자인을 넘어, 사용자에 대한 깊은 리서치와 연구를 바탕으로 인류의 디지털 경험을 끊임없이 발전시킵니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 8px 0; font-size:15px; font-weight:800; color:#000;">Vision (비전)</h3>
+              <p style="margin:0 0 10px 0; font-size:14px; font-weight:700; line-height:1.55; color:#000;">
+                <span class="typewriter-quote" data-text='"단순함과 직관성으로 디지털 성공의 기준을 정의하는 AI기반 UX전문가 그룹"' style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;"></span>
+              </p>
+              <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                아름다운 인터페이스만으로는 더 이상 충분하지 않습니다. 슈퍼플래닝은 사용성에 헌신하며, 쉽고 직관적이면서도 사용자에게 노력 없이 자연스럽게 느껴지는 경험을 디자인합니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 10px 0; font-size:15px; font-weight:800; color:#000;">Core Values (핵심 가치)</h3>
+
+              <div style="margin-bottom:12px;">
+                <p style="margin:0 0 6px 0; font-size:13px; font-weight:700; color:#000;">경험 중심의 가치 창출</p>
+                <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                  상품의 가치는 겉모습의 디자인이 아니라, 사용자가 체감하는 '경험'에서 완성됩니다. UX는 이제 선택이 아닌 비즈니스의 성공을 좌우하는 핵심입니다.
+                </p>
+              </div>
+
+              <div style="margin-bottom:12px;">
+                <p style="margin:0 0 6px 0; font-size:13px; font-weight:700; color:#000;">비주얼을 넘어선 목적 달성</p>
+                <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                  수많은 에이전시가 화려한 비주얼과 브랜딩에 집착할 때, 슈퍼플래닝은 오직 '사용성'과 '비즈니스 목적 달성'에 전념합니다.
+                </p>
+              </div>
+
+              <div>
+                <p style="margin:0 0 6px 0; font-size:13px; font-weight:700; color:#000;">AI기반의 혁신적 진화</p>
+                <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                  AI기술과 특허 기반의 방법론을 결합하여, 단순하면서도 의미 있게 작동하는 디지털 생태계를 구축합니다.
+                </p>
+              </div>
+            </section>
+
+          </div>
 
           <h2 id="story">2. 브랜드 스토리</h2>
 
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:18px;">
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <p style="margin:0; font-size:14px; font-weight:700; line-height:1.7; color:#000;">
+                <span class="typewriter-quote typewriter-on-story" data-typewriter-trigger="story" data-text='지나칠 만큼의 섬세한 디테일은 사람들을 열광하게 합니다.' style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;"></span>
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                수많은 에이전시가 화려한 비주얼과 트렌디한 브랜딩으로 눈길을 사로잡을 때, 슈퍼플래닝은 겉치레를 넘어 기업의 명확한 목적 달성에 기여하는 본질에 집중합니다. 아름다운 화면 그 자체가 목적이 될 수 없습니다. 우수한 UX는 결국 비즈니스가 가고자 하는 방향을 실현하고, 궁극적으로 기업의 목적 달성을 이뤄내는 가장 강력한 수단이기 때문입니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 10px 0; font-size:15px; font-weight:800; color:#000;">검증된 UX디렉터들의 진정성</h3>
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                슈퍼플래닝은 매력적인 인성과 현장에서 철저히 검증된 10년 차 이상 UX 디렉터들로만 구성되어 있습니다. 우리는 단순히 클라이언트가 원하는 화면을 만들어주는 외주 그룹이 아닙니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="display:flex; flex-direction:column; gap:10px;">
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; font-weight:700; line-height:1.7; color:#000;">
+                    사용자의 미세한 숨소리와 행동 패턴까지 파고드는 깊이 있는 리서치
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; font-weight:700; line-height:1.7; color:#000;">
+                    기획과 개발, 디자인과 퍼블리싱의 경계를 허물며 완벽하게 맞물리는 유기적 파이프라인
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; font-weight:700; line-height:1.7; color:#000;">
+                    지나칠 만큼의 섬세한 디테일로 사용자를 매료시키고, 결국 비즈니스의 성공적인 목적 달성을 완성하는 집념
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 10px 0; font-size:15px; font-weight:800; color:#000;">인류의 디지털 경험을 진화시키는 여정</h3>
+
+              <p style="margin:0 0 12px 0; font-size:13px; line-height:1.9; color:#222;">
+                슈퍼플래닝의 모든 프로젝트는 하나의 단단한 지향점에 도달합니다.
+              </p>
+
+              <p style="margin:0 0 12px 0; font-size:14px; font-weight:700; line-height:1.7; color:#000;">
+                <span class="typewriter-quote typewriter-on-story" data-typewriter-trigger="story" data-text='"이 서비스가 진정으로 달성해야 할 목적은 무엇인가?"' style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;"></span>
+              </p>
+
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                우리는 독보적인 실무 노하우와 철저한 목적 지향적 설계를 결합해, 단순하고 직관적이면서도 노력 없이 자연스럽게 스며드는 경험을 완성합니다. 누구나 감탄하는 인터페이스 뒤에서, 오직 성공적인 목적 달성과 사용성에 헌신하며 디지털 세상의 기준을 높여가는 것—이것이 바로 슈퍼플래닝이 존재하는 이유이자 변하지 않는 자부심입니다.
+              </p>
+            </section>
+
+          </div>
+
           <h2 id="services">3. 핵심 서비스</h2>
 
-          <h2 id="organization">4. 회사 조직도</h2>
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:18px;">
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <p style="margin:0 0 12px 0; font-size:14px; font-weight:700; line-height:1.7; color:#000;">
+                <span class="typewriter-quote" data-typewriter-trigger="services" data-text='슈퍼플래닝은 검증된 UX디렉터들과 UX특허를 보유한 전문 UX디자인 에이전시 입니다.' style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;"></span>
+              </p>
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                UX컨설팅, UX강의, UX리서치, UX라이팅, AI기반 웹/앱 개발 서비스를 제공합니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 12px 0; font-size:15px; font-weight:800; color:#000;">슈퍼플래닝 핵심 서비스</h3>
+
+              <div style="display:flex; flex-direction:column; gap:10px;">
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">UX리서치</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    철저한 데이터와 사용자 분석을 바탕으로 타겟 고객의 숨은 니즈를 도출합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">UX라이팅</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    제품의 신뢰도를 높이고 사용자를 매료시키는 직관적인 마이크로카피를 설계합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">UX컨설팅</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    비즈니스 본질을 꿰뚫는 전략적 진단을 통해 프로젝트의 성공 방향을 제시합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">UX기획/디자인</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    겉치레를 넘어 사용성과 목적 달성에 최적화된 화면 구조를 완성합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">퍼블리싱</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    기획 의도를 100% 구현하는 정교한 웹퍼블리싱과 CSS 디자인 시스템을 구축합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">웹/앱개발</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    프론트엔드부터 백엔드까지 안정적인 아키텍처로 완벽한 디지털 제품을 구현합니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">연간 유지보수</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    서비스 런칭 이후에도 지속적인 고도화와 안정적인 운영을 책임집니다.
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000;">
+                  <p style="margin:0 0 4px 0; font-size:13px; font-weight:800; color:#000;">AI-UX강의</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    에이전시 실무 노하우와 최신 AI 툴을 결합한 전문 교육 및 기업출강을 운영합니다.
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 12px 0; font-size:15px; font-weight:800; color:#000;">슈퍼플래닝 UX특허 주요 보유현황</h3>
+
+              <p style="margin:0 0 12px 0; font-size:13px; line-height:1.8; color:#222;">
+                UX프로젝트 실무 경험을 기반으로 특허와 UX방법론을 보유하고 있습니다.
+              </p>
+
+              <div style="display:flex; flex-direction:column; gap:8px;">
+
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    어플리케이션 UI/UX설계 작성 <strong>(제10-2211864호)</strong>
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    모바일앱 UX기획을 위한 와이어프레임 설계 관리장치 <strong>(제10-2560058호)</strong>
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    UX라이팅 텍스트톤 분석 및 추천자동화 시스템 <strong>(제10-2844334호)</strong>
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템 <strong>(제10-2025-0057033호)</strong>
+                  </p>
+                </div>
+
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">
+                    디자인등록 <strong>(제30-1076209호 / 출원번호 제30-2020-0042081호)</strong>
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+          <h2 id="organization">4. 슈퍼플래닝 조직도</h2>
+
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:18px;">
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <p style="margin:0 0 12px 0; font-size:14px; font-weight:700; line-height:1.7; color:#000;">
+                <span style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
+                  4. 회사 조직도 및 팀별 역할
+                </span>
+              </p>
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                슈퍼플래닝은 리서치, 기획, 디자인, 개발, 교육이 유기적으로 연결되는 구조로 운영되며, 각 팀은 목적 달성과 사용성을 중심으로 긴밀하게 협업합니다.
+              </p>
+            </section>
+
+            <section style="padding:16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+                <div style="display:inline-block; padding:12px 24px; background:#000; color:#fff; border:2px solid #000; text-align:center; font-size:15px; font-weight:800;">
+                  슈퍼플래닝 조직도
+                </div>
+                <div style="font-size:18px; line-height:1; color:#000;">↓</div>
+                <div style="width:100%; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; align-items:stretch;">
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">UX리서치팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">UX리서치, UX컨설팅</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">철저한 데이터 분석과 사용자 연구를 바탕으로 타겟 고객의 숨은 니즈를 도출하고, 비즈니스의 성공 방향을 진단하는 전략적 UX컨설팅과 리서치를 수행합니다.</p>
+                    </div>
+                  </div>
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">UX기획팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">UX기획, UX라이팅</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">제품의 신뢰도를 높이고 사용자행동을 유도하는 직관적인 마이크로카피와 정보구조(IA), 목적 달성에 최적화된 정밀한 화면설계서(Wireframe)를 설계합니다.</p>
+                    </div>
+                  </div>
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">UI/UX디자인팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">GUI디자인, 디자인 시스템 구축</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">단순한 표면적 디자인을 넘어 사용성과 목적 달성을 최우선으로 하며, 디자인 시스템 구축과 웹/앱 비주얼 인터페이스를 직관적이고 섬세하게 고도화합니다.</p>
+                    </div>
+                  </div>
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">웹/앱 개발팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">퍼블리싱, 웹/앱개발, 연간 IT유지보수(파견/상주근무 가능)</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">기획 의도를 100% 구현하는 정교한 웹퍼블리싱, CSS 구축부터 안정적인 프론트엔드/백엔드(Spring, AWS) 아키텍처 개발, 런칭 후 연간 유지보수까지 완벽한 디지털 제품을 완성합니다.</p>
+                    </div>
+                  </div>
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">아카데미 사업팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">AI-UX강의</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">현업 에이전시의 실무 노하우와 최신 AI 툴을 결합하여, B2B 기업출강 및 1:1 AI-UX 강의, 취준생/ 이직 등을 위한 실무 멘토링, UX포트폴리오 제작 교육 프로그램을 전문적으로 운영합니다.</p>
+                    </div>
+                  </div>
+
+                  <div style="padding:12px; background:#f7f7f7; border:2px solid #000; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:8px 10px; background:#fff; border:2px solid #000; font-size:14px; font-weight:800; color:#000; text-align:center;">경영지원팀</div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">주요 업무</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">경영 기획, 재무 관리, 행정 및 계약 지원</p>
+                    </div>
+                    <div>
+                      <p style="margin:0 0 5px 0; font-size:12.5px; font-weight:800; color:#000;">팀 미션</p>
+                      <p style="margin:0; font-size:12.5px; line-height:1.8; color:#222;">전사적인 자원 관리와 재무, 인사, 행정 업무를 총괄하며, 각 프로젝트의 계약 관리와 원활한 비즈니스 운영을 뒷받침합니다.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+          </div>
 
           <h2 id="careers">5. 인재채용</h2>
 
-          <h2 id="faq">6. 자주 묻는 질문 (FAQ)</h2>
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:18px;">
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <p style="margin:0 0 12px 0; font-size:14px; font-weight:700; line-height:1.7; color:#000;">
+                <span style="display:inline; padding:3px 8px 4px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
+                  슈퍼플래닝과 함께 사용자 경험의 기준을 높일 슈퍼크루를 모십니다 (상시 모집)
+                </span>
+              </p>
+              <p style="margin:0; font-size:13px; line-height:1.9; color:#222;">
+                슈퍼플래닝은 형식적인 스펙보다 사용성을 향한 집념, 그리고 기업의 목적 달성을 이뤄내는 실무 역량과 진정성을 더 중요하게 생각합니다.
+              </p>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+                <div style="padding:12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0 0 6px 0; font-size:13px; font-weight:800; color:#000;">지원 자격</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">신입 및 경력 / 연령·학력·국적 무관</p>
+                </div>
+                <div style="padding:12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0 0 6px 0; font-size:13px; font-weight:800; color:#000;">제출 서류</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">이력서 자유 양식</p>
+                </div>
+                <div style="padding:12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0 0 6px 0; font-size:13px; font-weight:800; color:#000;">우대 조건</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">자신의 실무에 대해 원데이클래스 강의가 가능하신 분</p>
+                </div>
+                <div style="padding:12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0 0 6px 0; font-size:13px; font-weight:800; color:#000;">지원 방법</p>
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">이메일 접수 (<a href="mailto:jake@superplanning.co.kr" style="color:#000; font-weight:700; text-decoration:underline;">jake@superplanning.co.kr</a>)</p>
+                </div>
+              </div>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 12px 0; font-size:15px; font-weight:800; color:#000;">모집 분야</h3>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">UX기획자</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">UX리서처</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">UX라이터</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">UX교육강사</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">UX디자이너</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">퍼블리셔</div>
+                <div style="padding:10px 12px; background:#f4f4f4; border:2px solid #000; font-size:13px; font-weight:700; color:#000;">프론트/백엔드 개발자</div>
+              </div>
+            </section>
+
+            <section style="padding:14px 16px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h3 style="margin:0 0 10px 0; font-size:15px; font-weight:800; color:#000;">안내 사항</h3>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">서류 전형 합격자에 한해 개별 통보를 드립니다.</p>
+                </div>
+                <div style="padding:10px 12px; background:#f7f7f7; border:2px solid #000;">
+                  <p style="margin:0; font-size:13px; line-height:1.8; color:#222;">지원서 내용 중 허위 사실이 발견될 경우 합격이 취소될 수 있습니다.</p>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+         
+<!-- 6. 자주 묻는 질문 (FAQ) -->
+<h2 id="faq">6. 자주 묻는 질문 (FAQ)</h2>
+<dl class="faq">
+  <dt>슈퍼플래닝은 어떤 회사인가요?</dt>
+  <dd>슈퍼플래닝은 UX리서치, UX컨설팅, UX라이팅, UX기획/디자인, 퍼블리싱, 웹/앱개발, AI-UX강의를 수행하는 전문 UX디자인 에이전시입니다. 단순히 화면을 예쁘게 만드는 수준을 넘어, 사용성과 비즈니스 목적 달성을 함께 설계하는 실무형 UX전문가 그룹입니다.</dd>
+
+  <dt>슈퍼플래닝은 어떤 서비스를 제공하나요?</dt>
+  <dd>슈퍼플래닝은 UX리서치, UX라이팅, UX컨설팅, UX기획/디자인, 퍼블리싱, 웹/앱개발, 연간 유지보수, AI-UX강의를 제공합니다. 초기 서비스 기획부터 사용자 조사, 화면설계, 디자인 시스템 구축, 개발 연계, 운영 고도화까지 한 흐름으로 연결할 수 있는 점이 강점입니다.</dd>
+
+  <dt>슈퍼플래닝의 강점은 무엇인가요?</dt>
+  <dd>슈퍼플래닝의 강점은 검증된 UX디렉터 중심의 실무 경험, UX특허 및 방법론 보유, 그리고 리서치부터 기획·디자인·개발까지 유기적으로 연결되는 협업 구조에 있습니다. 겉으로 보이는 비주얼보다 실제 사용성과 목적 달성 가능성을 더 중요하게 판단합니다.</dd>
+
+  <dt>슈퍼플래닝의 UX 특허는 어떤 의미가 있나요?</dt>
+  <dd>슈퍼플래닝은 애플리케이션 UI/UX설계, 모바일앱 와이어프레임 설계 관리, UX라이팅 텍스트톤 분석 및 추천 자동화, AI기반 멀티모달 감정분석 UX리서치 시스템 등과 관련한 UX특허 및 등록 디자인을 보유하고 있습니다. 이는 감각에 의존한 디자인이 아니라 구조적이고 검증 가능한 UX방법론을 꾸준히 연구해 왔다는 의미입니다.</dd>
+
+  <dt>어떤 기업이나 프로젝트와 잘 맞나요?</dt>
+  <dd>신규 서비스 출시를 준비하는 스타트업, 기존 서비스의 사용성을 개선하려는 기업, UX리서치와 UX컨설팅이 필요한 조직, 앱/웹 고도화가 필요한 브랜드와 잘 맞습니다. 특히 서비스 목적은 분명하지만 사용자 흐름, 정보구조, 화면설계, UX라이팅, 개발 연계가 정리되지 않은 프로젝트에 강점을 발휘합니다.</dd>
+
+  <dt>UX리서치부터 디자인, 개발까지 한 번에 진행할 수 있나요?</dt>
+  <dd>가능합니다. 슈퍼플래닝은 UX리서치, UX기획, UX라이팅, UI/UX디자인, 퍼블리싱, 웹/앱개발까지 단계별로 연계할 수 있어 프로젝트 전 과정을 통합적으로 진행할 수 있습니다. 필요에 따라 특정 단계만 부분적으로 의뢰하는 것도 가능합니다.</dd>
+
+  <dt>회사 조직은 어떻게 구성되어 있나요?</dt>
+  <dd>슈퍼플래닝은 UX리서치팀, UX기획팀, UI/UX디자인팀, 웹/앱 개발팀, 아카데미 사업팀, 경영지원팀으로 구성되어 있습니다. 각 팀은 담당 영역이 분리되어 있으면서도 하나의 프로젝트 안에서 긴밀하게 협업하도록 설계되어 있어, 조사·설계·디자인·개발·운영까지 끊김 없는 프로젝트 수행이 가능합니다.</dd>
+
+  <dt>AI-UX강의나 기업 출강도 가능한가요?</dt>
+  <dd>가능합니다. 슈퍼플래닝은 기업 실무자, 스타트업, 예비창업자, 취업 준비생 등을 대상으로 AI-UX강의, UX실무 교육, 원데이클래스, 1:1 멘토링, 포트폴리오 코칭 등을 운영합니다. 현업 에이전시 실무 경험과 최신 AI 툴 활용법을 함께 전달하는 것이 특징입니다.</dd>
+
+  <dt>프로젝트 이후 유지보수도 지원하나요?</dt>
+  <dd>네. 서비스 런칭 이후에도 연간 유지보수, 화면 개선, UX라이팅 보완, 기능 고도화, 운영 이슈 대응 등 후속 업무를 지원할 수 있습니다. 단발성 산출물 납품보다 실제 운영 단계까지 고려한 장기적 협업을 지향합니다.</dd>
+
+  <dt>슈퍼플래닝은 어떤 인재를 찾고 있나요?</dt>
+  <dd>슈퍼플래닝은 형식적인 스펙보다 사용성을 향한 집념, 실무 역량, 협업 태도, 목적 달성 중심의 사고를 더 중요하게 봅니다. UX기획자, UX리서처, UX라이터, UX디자이너, 퍼블리셔, 프론트/백엔드 개발자, UX교육강사 등 다양한 분야에서 상시 채용을 진행할 수 있습니다.</dd>
+
+  <dt>프로젝트 견적 및 진행 신청은 어떻게 하나요?</dt>
+  <dd>문의하기 페이지에서 프로젝트 목적, 현재 서비스 상황, 필요한 업무 범위, 일정, 예산 등을 정리해 문의 주시면 더 빠르게 검토할 수 있습니다. 슈퍼플래닝은 문의 내용을 바탕으로 적합한 협업 방식과 진행 범위를 함께 논의하며, 필요 시 UX리서치, UX컨설팅, UX디자인, 웹/앱개발까지 연계해 제안할 수 있습니다.
+    <div style="margin-top: 12px;">
+      <a href="/contact/" class="w95-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 16px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer;">
+        <span style="font-size: 14px;">✉️</span> <span>문의하기</span>
+      </a>
+    </div>
+  </dd>
+</dl>
 
           <div class="bottom-nav">
-            <p>이전 단계: <a href="/ux-academy/">AI-UX강의</a> &nbsp;|&nbsp; 다음 단계: <a href="/contact/">문의하기</a></p>
+            <p>이전 단계: <a href="/ux-academy/">UX블로그</a> &nbsp;|&nbsp; 다음 단계: <a href="/contact/">문의하기</a></p>
             <p>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></p>
           </div>
         </main>
@@ -1349,9 +1775,10 @@
       </div>
       <style>
         .tree-item a:hover, .tree-item a.active {
-          background: #222222 !important;
-          color: #ffffff !important;
-        }
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
       </style>
 
     </div>
@@ -1444,7 +1871,7 @@
 
     function openWindow(key) {
       closeStart();
-      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 탐색기' };
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — 회사소개' };
       var titleText = def.title;
 
       var existing = document.getElementById('subpageModalOverlay');
@@ -1463,7 +1890,7 @@
       win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
 
       win.innerHTML = `
-        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
           <span>${titleText}</span>
           <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
         </div>
@@ -1677,19 +2104,87 @@
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
-    // Highlight active tree item on scroll
+    // Highlight active tree item on scroll & click
     document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('main h2');
+      const sections = document.querySelectorAll('main h2[id]');
       const navLinks = document.querySelectorAll('.tree-link');
 
-      window.addEventListener('scroll', () => {
+      function updateActiveToc() {
+        if (!sections.length || !navLinks.length) return;
+
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+
         let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
+
+        if (scrollPosition + windowHeight >= fullHeight - 50) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec) current = lastSec.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+            if (scrollPosition >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
           }
         });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
 
         navLinks.forEach(link => {
           link.classList.remove('active');
@@ -1775,5 +2270,116 @@
     });
   </script>
 
+  <style>
+    .typewriter-quote {
+      border-right: 2px solid #fff;
+      white-space: normal;
+      word-break: keep-all;
+    }
+    .typewriter-quote.is-typing {
+      animation: spCaretBlink 0.8s step-end infinite;
+    }
+    .typewriter-quote.is-done {
+      border-right-color: transparent;
+      animation: none;
+    }
+    @keyframes spCaretBlink {
+      0%, 49% { border-right-color: #fff; }
+      50%, 100% { border-right-color: transparent; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function runTypewriter(el, startDelay) {
+        if (!el || el.dataset.typed === 'done' || el.dataset.typed === 'running') return;
+
+        const fullText = el.dataset.text || '';
+        el.dataset.typed = 'running';
+        el.textContent = '';
+        el.classList.remove('is-done');
+        el.classList.add('is-typing');
+
+        let i = 0;
+        const speed = 38;
+
+        setTimeout(function typeNext() {
+          if (i < fullText.length) {
+            el.textContent += fullText.charAt(i);
+            i += 1;
+            setTimeout(typeNext, speed);
+          } else {
+            el.classList.remove('is-typing');
+            el.classList.add('is-done');
+            el.dataset.typed = 'done';
+          }
+        }, startDelay || 0);
+      }
+
+      const immediateQuotes = document.querySelectorAll('.typewriter-quote:not([data-typewriter-trigger])');
+      immediateQuotes.forEach((el, index) => {
+        runTypewriter(el, index * 350);
+      });
+
+      function setupTriggeredTypewriter(triggerName, options) {
+        const quotes = document.querySelectorAll('.typewriter-quote[data-typewriter-trigger="' + triggerName + '"]');
+        const anchor = document.getElementById(triggerName);
+        if (!anchor || !quotes.length) return;
+
+        let triggered = false;
+        function fire() {
+          if (triggered) return;
+          triggered = true;
+          quotes.forEach((el, index) => {
+            runTypewriter(el, index * (options.stagger || 300));
+          });
+        }
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                fire();
+                observer.disconnect();
+              }
+            });
+          }, {
+            root: null,
+            threshold: options.threshold || 0.2,
+            rootMargin: options.rootMargin || '0px 0px -35% 0px'
+          });
+          observer.observe(anchor);
+        } else {
+          function onScrollTrigger() {
+            const rect = anchor.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * (options.viewportRatio || 0.65)) {
+              fire();
+              window.removeEventListener('scroll', onScrollTrigger);
+            }
+          }
+          window.addEventListener('scroll', onScrollTrigger, { passive: true });
+          onScrollTrigger();
+        }
+      }
+
+      setupTriggeredTypewriter('story', {
+        stagger: 300,
+        threshold: 0.2,
+        rootMargin: '0px 0px -35% 0px',
+        viewportRatio: 0.65
+      });
+
+      setupTriggeredTypewriter('services', {
+        stagger: 300,
+        threshold: 0.2,
+        rootMargin: '0px 0px -35% 0px',
+        viewportRatio: 0.65
+      });
+    });
+  </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
