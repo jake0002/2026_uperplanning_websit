@@ -1480,7 +1480,7 @@
   
         <section class="section" id="guide">
           <section id="deliverables">
-            <h2>2. 핵심산출물: UX라이팅 가이드</h2>
+            <h2 id="deliverables">2. 핵심산출물: UX라이팅 가이드</h2>
             <p>
               UX라이팅 가이드는 서비스 안에서 어떤 문구를 어떤 기준으로 써야 하는지 정리한 운영 문서입니다.
               한 번 읽고 끝나는 설명서가 아니라, 기획·디자인·개발·운영이 같은 언어로 일하도록 만드는 기준 시스템입니다.
@@ -2013,6 +2013,33 @@
               current = section.getAttribute('id');
             }
           });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
         }
 
         if (!current && sections.length > 0) {

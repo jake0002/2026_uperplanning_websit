@@ -1403,7 +1403,7 @@
 <section class="section" id="strengths">
 
        
-<h2>3. 슈퍼플래닝만의 차별점: 풀스택 IT개발팀 보유(파견/상주 가능)</h2>
+<h2 id="diff">3. 슈퍼플래닝만의 차별점: 풀스택 IT개발팀 보유(파견/상주 가능)</h2>
 <p>슈퍼플래닝의 강점은 기획만 하는 조직도, 개발만 하는 조직도 아니라는 점입니다. DB설계, 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지 연결 가능한 10년 차 이상 풀스택 전문팀이 상주 인력 체계로 협업하고 있어, 요구사항과 실제 구현 사이에서 발생하는 해석 오류를 줄일 수 있습니다. 많은 기업이 앱개발업체를 선정할 때 포트폴리오만 비교하지만, 실제 프로젝트에서는 누가 요구사항을 정리하고 누가 책임 있게 연결하는지가 훨씬 중요합니다.<Br> <strong>슈퍼플래닝은 공공기관, 금융 프로젝트와 같이 보안이 중요한 경우 개발팀 파견, 상주근무도 가능합니다. </strong></p>
 <article class="box">
 <h3>슈퍼플래닝 IT개발팀 핵심 기술 스택</h3> <Br>
@@ -2230,6 +2230,33 @@ table.process-table tbody td strong {
               current = section.getAttribute('id');
             }
           });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
         }
 
         if (!current && sections.length > 0) {
