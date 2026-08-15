@@ -1779,64 +1779,51 @@
         });
       });
 
-      // GNB Scroll Progress Gauge Handler
+      // GNB Scroll Progress Gauge Handler (100% Robust Universal Math)
+    function updateGnbScrollProgress() {
       const progressBar = document.getElementById('gnbProgressBar');
       const progressBadge = document.getElementById('gnbProgressBadge');
-      let scrollTimer = null;
+      if (!progressBar) return;
 
-      function updateGnbScrollProgress() {
-        if (!progressBar) return;
+      const currentScroll = Math.max(
+        0,
+        window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0
+      );
 
-        const mainPane = document.querySelector('.main-content-pane');
-        const winScroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        const paneScroll = mainPane ? mainPane.scrollTop : 0;
-        const currentScroll = Math.max(winScroll, paneScroll);
+      const docHeight = Math.max(
+        document.body.scrollHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.offsetHeight || 0
+      );
+      const winHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+      const maxScroll = Math.max(1, docHeight - winHeight);
 
-        const docHeight = Math.max(
-          document.documentElement.scrollHeight,
-          document.body.scrollHeight,
-          mainPane ? mainPane.scrollHeight : 0
-        );
-        const winHeight = window.innerHeight || document.documentElement.clientHeight;
-        const paneHeight = mainPane ? mainPane.clientHeight : winHeight;
-        const totalScrollable = Math.max(docHeight - winHeight, (mainPane ? mainPane.scrollHeight - paneHeight : 0));
+      const scrolled = Math.min(100, Math.max(0, (currentScroll / maxScroll) * 100));
 
-        let scrolled = 0;
-        if (totalScrollable > 5) {
-          scrolled = Math.min(100, Math.max(0, (currentScroll / totalScrollable) * 100));
-        } else {
-          scrolled = 0;
-        }
-
-        progressBar.style.width = scrolled + '%';
-        if (progressBadge) {
-          progressBadge.textContent = Math.round(scrolled) + '%';
-        }
-
-        if (currentScroll > 5) {
-          document.body.classList.add('is-scrolling');
-          clearTimeout(scrollTimer);
-          scrollTimer = setTimeout(() => {
-            document.body.classList.remove('is-scrolling');
-          }, 1200);
-        } else {
-          document.body.classList.remove('is-scrolling');
-        }
+      progressBar.style.width = scrolled + '%';
+      if (progressBadge) {
+        progressBadge.textContent = Math.round(scrolled) + '%';
       }
 
-      window.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
-      window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
-      document.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
-
-      const mainPaneEl = document.querySelector('.main-content-pane');
-      if (mainPaneEl) {
-        mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+      if (currentScroll > 10) {
+        document.body.classList.add('is-scrolling');
+      } else {
+        document.body.classList.remove('is-scrolling');
       }
+    }
 
-      updateGnbScrollProgress();
-      window.addEventListener('load', updateGnbScrollProgress);
-      setTimeout(updateGnbScrollProgress, 300);
-      setTimeout(updateGnbScrollProgress, 1000);
+    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+
+    updateGnbScrollProgress();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
+    }
+    window.addEventListener('load', updateGnbScrollProgress);
+    setTimeout(updateGnbScrollProgress, 200);
+    setTimeout(updateGnbScrollProgress, 800);
     });
 
     setInterval(() => {
