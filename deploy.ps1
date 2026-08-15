@@ -44,6 +44,7 @@ $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
               "sudo cp -f /var/www/html/ux-writing/index.html /var/www/html/ux_writing.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-writing/index.html /var/www/html/ux_writing/index.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-writing/index.html /var/www/html/UX_Writing/index.html 2>/dev/null || true && " +
+              "sudo cp -f /var/www/html/ux-writing/index.html /var/www/html/ux-writing/Superplanning-UX-Writing-Explorer-v14-patent-caption-edited-v3.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-design/index.html /var/www/html/ux-design.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-design/index.html /var/www/html/ux_design.html 2>/dev/null || true && " +
               "sudo cp -f /var/www/html/ux-design/index.html /var/www/html/ux_design/index.html 2>/dev/null || true && " +
