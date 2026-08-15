@@ -712,8 +712,9 @@
       transition: background 0.1s ease, color 0.1s ease;
     }
     .tree-item a:hover, .tree-item a.active {
-      background: #000080 !important;
+      background: #000000 !important;
       color: #ffffff !important;
+      font-weight: 700 !important;
     }
     .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
       filter: brightness(2);
@@ -1310,7 +1311,7 @@
           
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc">
-            <li class="tree-item"><a href="#meaning" class="tree-link"><span class="doc-icon">📄</span> <span>1. UX리서치 뜻: FGI, IDI, UT</span></a></li>
+            <li class="tree-item"><a href="#meaning" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX리서치 뜻: FGI, IDI, UT</span></a></li>
             <li class="tree-item"><a href="#deliverables" class="tree-link"><span class="doc-icon">📄</span> <span>2. 핵심산출물: 문제발견 및 UX개선안</span></a></li>
             <li class="tree-item"><a href="#diff" class="tree-link"><span class="doc-icon">📄</span> <span>3. 슈퍼플래닝만의 차별점: 특허기술</span></a></li>
             <li class="tree-item"><a href="#process" class="tree-link"><span class="doc-icon">📄</span> <span>4. 리서치 진행 프로세스</span></a></li>
@@ -1524,9 +1525,10 @@
       </div>
       <style>
         .tree-item a:hover, .tree-item a.active {
-          background: #222222 !important;
-          color: #ffffff !important;
-        }
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
       </style>
 
     </div>
@@ -1852,19 +1854,60 @@
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
-    // Highlight active tree item on scroll
+    // Highlight active tree item on scroll & click
     document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('main h2');
+      const sections = document.querySelectorAll('main h2[id]');
       const navLinks = document.querySelectorAll('.tree-link');
 
-      window.addEventListener('scroll', () => {
+      function updateActiveToc() {
+        if (!sections.length || !navLinks.length) return;
+
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+
         let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
+
+        if (scrollPosition + windowHeight >= fullHeight - 50) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec) current = lastSec.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+            if (scrollPosition >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
           }
         });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
 
         navLinks.forEach(link => {
           link.classList.remove('active');
