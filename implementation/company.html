@@ -312,8 +312,8 @@
       padding: 4px 14px;
       z-index: 999999 !important;
       cursor: pointer;
-      background: var(--accent);
-      color: #000;
+      background: #000000 !important;
+      color: #ffffff !important;
       border: 2px solid #000;
       box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,.35);
       font-weight: 900;
@@ -323,6 +323,9 @@
       gap: 5px;
       user-select: none !important;
       transition: transform 0.1s ease;
+    }
+    #brandLogo span, #brandLogoText {
+      color: #ffffff !important;
     }
     #brandLogo:hover { transform: scale(1.04); }
     #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #7b7b7b; }
@@ -1161,7 +1164,7 @@
 
   <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
-    <span>🏠</span> <span id="brandLogoText">홈</span>
+    <span id="brandLogoText">홈</span>
   </div>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
