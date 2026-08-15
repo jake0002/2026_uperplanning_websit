@@ -582,7 +582,17 @@
       text-decoration: none;
       transition: background 0.15s ease;
     }
-    .gnb-link:hover { background: rgba(255,255,255,0.25); color: var(--accent); }
+    .gnb-link:hover,
+    .gnb-link:active,
+    .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span,
+    .gnb-link:active span,
+    .gnb-link.active span {
+      color: #ffffff !important;
+    }
     .gnb-right { display: flex; align-items: center; gap: 6px; }
 
     /* Mobile Hamburger & Navigation Drawer */

@@ -438,9 +438,16 @@
       transition: background 0.15s ease;
       user-select: none !important;
     }
-    .gnb-link:hover, .gnb-link.active {
-      background: rgba(255,255,255,0.25);
-      color: var(--accent);
+        .gnb-link:hover,
+    .gnb-link:active,
+    .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span,
+    .gnb-link:active span,
+    .gnb-link.active span {
+      color: #ffffff !important;
     }
     .gnb-right {
       display: flex;
