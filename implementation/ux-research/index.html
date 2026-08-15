@@ -519,9 +519,9 @@
       flex-direction: column;
     }
 
-    /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
+    /* 1. Black Titlebar (#000000 - Main Screen Match) */
     .titlebar {
-      background: #000080;
+      background: #000000;
       color: #ffffff;
       padding: 4px 8px;
       display: flex;
@@ -1263,11 +1263,11 @@
     <!-- WINDOWS 95 EXPLORER WINDOW CONTAINER -->
     <div class="explorer-window">
 
-      <!-- 1. Dark Blue Title Bar (#000080 - Exact Match) -->
+      <!-- 1. Black Title Bar (#000000 - Main Screen Match) -->
       <div class="titlebar">
         <div class="titlebar-text">
           <span>📁</span>
-          <span>슈퍼플래닝 서비스 탐색기</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 리서치</span>
         </div>
         <div class="titlebar-controls">
           <div class="win-btn">−</div>
@@ -1619,7 +1619,7 @@
 
     function openWindow(key) {
       closeStart();
-      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 탐색기' };
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — UX 리서치' };
       var titleText = def.title;
 
       var existing = document.getElementById('subpageModalOverlay');
@@ -1638,7 +1638,7 @@
       win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
 
       win.innerHTML = `
-        <div style="background:#000080; color:#fff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
           <span>${titleText}</span>
           <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
         </div>
