@@ -1896,25 +1896,61 @@
             </div>
           </div>
         `;
-      } else if (key === 'contact') {
+            } else if (key === 'contact') {
         return `
-                    <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
-          <div style="padding:6px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:8px; text-align:center;">
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
+          <div class="info-card" style="margin-bottom:8px; padding:6px; text-align:center; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b;">
             <img src="/images/superplanning-office.png" alt="슈퍼플래닝 미사 UX 스튜디오 전경" style="width:100%; height:auto; max-height:160px; object-fit:cover; border:1px solid #000; display:block;">
           </div>
-          <div style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:8px;">
-            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>회사명:</strong> Superplanning</div>
-            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
-            <div style="font-size:11.5px; border-bottom:1px solid #ddd; padding-bottom:4px; margin-bottom:4px;"><strong>전화번호:</strong> 031-699-3298</div>
-            <div style="font-size:11.5px;"><strong>이메일:</strong> jake@superplanning.co.kr</div>
+          <div class="info-card" style="margin-bottom:8px; display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
+              <div style="font-size:11.5px;"><strong>회사명:</strong> <span style="font-weight:700;">슈퍼플래닝</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
+              <div style="font-size:11.5px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="if(typeof copyToClipboard==='function') copyToClipboard('경기 하남시 미사강변동로72 SB비즈타워 1116호', '주소')">복사</button>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #ddd; padding-bottom:4px;">
+              <div style="font-size:11.5px;"><strong>전화번호 (T):</strong> 031-699-3298</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="if(typeof copyToClipboard==='function') copyToClipboard('031-699-3298', '전화번호')">복사</button>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <div style="font-size:11.5px;"><strong>대표 이메일 (E):</strong> jake@superplanning.co.kr</div>
+              <button class="w95-btn" style="padding:1px 6px; font-size:10.5px; flex-shrink:0;" onclick="if(typeof copyToClipboard==='function') copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
+            </div>
           </div>
-          <div style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:8px;">
-                        <p style="font-size:11px; margin:0 0 6px 0;">5호선 미사역 8번 출구 서브웨이 옆 건물 11층 / 지하주차장 무료주차 지원</p>
-            <a href="https://naver.me/GmF8esjK" target="_blank" class="w95-btn" style="display:inline-block; padding:3px 8px; font-size:10.5px; text-decoration:none;">네이버 지도 ↗</a>
+          <div class="info-card" style="margin-bottom:8px;">
+            <p style="font-size:11px; line-height:1.45; margin-bottom:4px;">
+              <strong>▶ 지하철로 오실 경우:</strong><br>
+              5호선 미사역 1분 거리 위치, 8번 출구 서브웨이 옆 건물 11층
+            </p>
+            <p style="font-size:11px; line-height:1.45; margin-bottom:6px;">
+              <strong>▶ 차량으로 오실 경우:</strong><br>
+              지하주차장에 무료주차 가능 (건물 후면 진입)
+            </p>
+            <a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:inline-block; padding:3px 8px; font-size:10.5px; text-decoration:none;">
+              🗺️ Naver Map ↗ (https://naver.me/GmF8esjK)
+            </a>
           </div>
-          <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" style="display:block; text-decoration:none; background:#ffffff; border:2px solid #000000; padding:8px 10px; color:#000000; font-weight:bold;">💬 카카오톡 24시간 실시간 상담 ↗</a>
-        `;
-      } else if (key === 'classes') {
+
+          <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" class="info-card" style="display:block; text-decoration:none; margin-bottom:6px; background:#ffffff; border:2px solid #000000; cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:18px;">💬</span>
+                <div>
+                  <h4 style="color:#000000; font-size:12px; margin:0; font-weight:800;">카카오채널 실시간 채팅문의</h4>
+                  <p style="color:#333333; font-size:10px; margin:1px 0 0 0; opacity:0.9;">카카오톡으로 빠른 UX상담 (24시간)</p>
+                </div>
+              </div>
+              <span class="w95-btn" style="padding:2px 6px; background:#000000; color:#ffffff; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-block; pointer-events:none;">채팅 시작 ↗</span>
+            </div>
+          </a>
+
+          <p style="font-size:9.5px; opacity:0.75; text-align:center; margin-top:4px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
+        `;} else if (key === 'classes') {
         return `
           <h3 style="font-size:13px; font-weight:700; margin-bottom:6px;">🎓 실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
           <p style="font-size:11.5px; margin-bottom:10px;">최신 AI 도구를 활용한 UX기획, 와이어프레임 설계, 바이브코딩 실무 교육을 제공합니다.</p>
@@ -1932,39 +1968,82 @@
             <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
           </div>
         `;
-      } else if (key === 'instagram') {
+            } else if (key === 'instagram') {
         return `
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; padding:6px 10px; border:2px solid #000;">
-              <span style="font-weight:bold; font-size:12px;">Instagram @ux_superplanning</span>
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold;">Address:</span>
+              <input type="text" readonly value="https://www.instagram.com/ux_superplanning/" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000;">
               <a href="https://www.instagram.com/ux_superplanning/" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
             </div>
-            <div style="min-height:300px; background:#fafafa; border:2px solid #000; overflow:hidden;">
-              <iframe src="https://www.instagram.com/ux_superplanning/embed" style="width:100%; height:320px; border:0;"></iframe>
+
+            <div style="flex:1; min-height:400px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#fafafa; position:relative; overflow:hidden;">
+              <iframe 
+                src="https://www.instagram.com/ux_superplanning/embed" 
+                style="width:100%; height:100%; border:0; background:#fff;" 
+                allowtransparency="true"
+                frameborder="0"
+                title="Superplanning Instagram">
+              </iframe>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000000;">@ux_superplanning</span>
+              <span>슈퍼플래닝 공식 인스타그램</span>
             </div>
           </div>
-        `;
-            } else if (key === 'threads') {
+        `;      } else if (key === 'threads') {
         return `
-          <div style="display:flex; flex-direction:column; gap:8px; text-align:center; padding:16px; background:#101010; color:#fff; border:2px solid #000; align-items:center;">
-            <div style="width:56px; height:56px; border-radius:50%; background:#000; border:2px solid #444; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.5);">
-              <img src="/images/threads-logo.jpg" alt="Threads Logo" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold; color:#000;">Address:</span>
+              <input type="text" readonly value="https://www.threads.net/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000; color:#000;">
+              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000; font-weight:bold;">새 창에서 열기 ↗</a>
             </div>
-            <h3 style="font-size:16px; margin:0; color:#fff;">@ux_superplanning</h3>
-            <p style="font-size:11.5px; color:#aaa; margin:0;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
-            <a href="https://www.threads.net/@ux_superplanning" target="_blank" class="w95-btn" style="padding:6px 14px; background:#fff; color:#000; font-weight:bold; font-size:11.5px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin:8px auto 0 auto;">
-              <img src="/images/threads-logo.jpg" alt="Threads" style="width:14px; height:14px; border-radius:2px; display:inline-block; vertical-align:middle;"> <span>Threads 프로필 방문하기 (@ux_superplanning) ↗</span>
-            </a>
+
+            <div style="flex:1; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#101010; color:#fff; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:12px; position:relative; overflow:hidden;">
+              <div style="width:64px; height:64px; border-radius:50%; background:#000; border:2px solid #444; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.5);">
+                <img src="/images/threads-logo.jpg" alt="Threads Logo" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+
+              <div>
+                <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
+                  최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
+                </p>
+              </div>
+
+              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:8px 18px; background:#ffffff; color:#000000; font-weight:bold; font-size:12px; border:2px solid #ffffff; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border-radius:4px; box-shadow:2px 2px 0 #000;">
+                <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:16px; height:16px; border-radius:50%; display:block;">
+                Threads 프로필 방문하기 (@ux_superplanning) ↗
+              </a>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000; display:flex; align-items:center; gap:4px;">
+                <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
+                @ux_superplanning
+              </span>
+              <span>슈퍼플래닝 공식 쓰레드</span>
+            </div>
           </div>
-        `;
-      } else if (key === 'intro-video') {
+        `;      } else if (key === 'intro-video') {
         return `
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <iframe src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" title="슈퍼플래닝 소개영상" frameborder="0" allowfullscreen style="width:100%; flex:1; min-height:345px; height:345px; border:2px solid #000; background:#000;"></iframe>
-            <div style="text-align:right;"><a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a></div>
+          <div style="width:100%; height:100%; display:flex; flex-direction:column; gap:6px;">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" 
+              title="슈퍼플래닝 소개영상" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              style="width:100%; flex:1; min-height:345px; height:345px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#000; display:block; flex-shrink:0;">
+            </iframe>
+            <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:2px;">
+              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a>
+            </div>
           </div>
-        `;
-      } else if (key === 'careers') {
+        `;} else if (key === 'careers') {
         return `
           <h3 style="font-size:15px; font-weight:800; margin-bottom:4px; color:#000080;">🤝 인재를 채용합니다 (상시 모집)</h3>
           <p style="font-size:12px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
