@@ -758,18 +758,22 @@
           </article>
 
           <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
-          <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON ON SAME HORIZONTAL ROW -->
-          <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-              <div style="flex:1; min-width:180px; text-align:left;">
-                <a href="/ux-blog/post-16/" class="post-nav-link" title="LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴"><span>⬅ 이전글:</span> <span>LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴</span></a>
+          <!-- BOTTOM NAV WITH PREV/NEXT POST FULL TITLES & FAR-RIGHT LIST VIEW BUTTON -->
+          <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000; display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px; font-weight:700;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px dashed #e0e0e0; padding-bottom:8px;">
+                <span style="color:#444; font-size:13px; font-weight:800; white-space:nowrap;">⬅ 이전글</span>
+                <a href="/ux-blog/post-16/" style="color:#000000; text-decoration:none; text-align:right; flex:1; font-weight:600; font-size:13.5px;"><span style="text-decoration:underline;">LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴</span></a>
               </div>
-              <div style="text-align:center; padding:0 8px;">
-                <a href="/ux-blog/" class="w95-btn" style="padding:4px 16px; font-size:12px; white-space:nowrap;">목록보기</a>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:4px;">
+                <span style="color:#444; font-size:13px; font-weight:800; white-space:nowrap;">다음글 ➡</span>
+                <a href="/ux-blog/post-18/" style="color:#000000; text-decoration:none; text-align:right; flex:1; font-weight:600; font-size:13.5px;"><span style="text-decoration:underline;">디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas</span></a>
               </div>
-              <div style="flex:1; min-width:180px; text-align:right;">
-                <a href="/ux-blog/post-18/" class="post-nav-link" title="디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas" style="justify-content:flex-end;"><span>다음글:</span> <span>디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas</span> <span>➡</span></a>
-              </div>
+            </div>
+
+            <!-- FAR RIGHT LIST VIEW BUTTON -->
+            <div style="display:flex; justify-content:flex-end; border-top:1px solid #000000; padding-top:14px;">
+              <a href="/ux-blog/" class="w95-btn" style="padding:6px 20px; font-size:12.5px;">목록보기</a>
             </div>
           </section>
         </main>
