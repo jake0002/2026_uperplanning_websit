@@ -1135,33 +1135,29 @@
     }
 
     
-    /* Section 1 Summary Grid: 2-Column Compact Layout */
+    /* Section 1 Summary Grid: 1 Box Per Row Compact Layout */
     .summary-grid {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-      margin: 16px 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      margin: 10px 0 !important;
       width: 100% !important;
-    }
-    @media (max-width: 640px) {
-      .summary-grid {
-        grid-template-columns: 1fr !important;
-      }
     }
     .summary-card {
       width: 100% !important;
       margin-bottom: 0 !important;
-      padding: 12px 14px !important;
+      padding: 8px 12px !important;
       box-sizing: border-box !important;
     }
     .summary-card .summary-title {
       font-size: 13.5px !important;
-      margin-bottom: 6px !important;
-      padding-bottom: 4px !important;
+      margin-top: 0 !important;
+      margin-bottom: 4px !important;
+      padding-bottom: 3px !important;
     }
     .summary-card .summary-list li {
-      margin-bottom: 4px !important;
-      line-height: 1.4 !important;
+      margin-bottom: 2px !important;
+      line-height: 1.35 !important;
       font-size: 12.5px !important;
     }
     .summary-card .summary-list li:last-child {
