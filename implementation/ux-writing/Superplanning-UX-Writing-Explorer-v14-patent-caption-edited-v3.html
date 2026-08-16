@@ -2105,7 +2105,8 @@
             <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
-        `;      } else if (key === 'tweaks') {
+        `;
+      } else if (key === 'tweaks') {
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
           <div style="margin-bottom:12px;">
@@ -2123,6 +2124,8 @@
           <hr style="margin:10px 0;">
           <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">갑자기 PC가 이상해요 (블루스크린 호출)</button>
         `;
+      }
+      return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
     // Highlight active tree item on scroll & click
