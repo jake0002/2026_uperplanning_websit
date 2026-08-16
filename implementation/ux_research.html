@@ -808,14 +808,19 @@
       padding: 0;
       margin: 24px 0;
       max-width: 640px;
+      text-align: left !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start !important;
     }
     .photo-frame img {
       width: 100%;
       max-width: 100%;
       max-height: 380px;
       object-fit: contain;
+      object-position: left center !important;
       display: block;
-      margin: 0;
+      margin: 0 0 0 0 !important;
       border: none;
     }
     .photo-caption {
@@ -823,10 +828,8 @@
       font-size: 12.5px;
       font-weight: bold;
       color: #555555;
-      text-align: left;
-      background: transparent;
-      padding: 4px 0;
-      border: none;
+      text-align: left !important;
+      width: 100%;
     }
 
     /* List items */
@@ -1328,9 +1331,9 @@
           <h2 id="meaning">1. UX리서치 뜻: FGI, IDI, UT</h2>
           <p>UX리서치는 사용자가 서비스 안에서 무엇을 느끼고, 왜 멈추고, 어디서 헷갈리는지를 확인하는 과정입니다. 단순히 의견을 듣는 조사가 아니라, 웹사이트와 모바일앱의 사용성을 검증하고 더 나은 의사결정을 만들기 위한 실무형 분석 작업에 가깝습니다. 슈퍼플래닝은 보기 좋은 화면만으로는 충분하지 않다고 봅니다. 중요한 것은 사용자가 쉽게 이해하고 자연스럽게 행동하며 불편 없이 목표를 달성할 수 있는지입니다.</p>
           
-          <div class="photo-frame">
+          <div class="photo-frame" style="text-align:left;">
             <img src="/images/fgi_session_3.png" alt="슈퍼플래닝 UX 가설 검증 및 모바일 화면 분석 세션 현장" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/fgi_session_3.png';}">
-            <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 UX 가설 검증 세션 — 모바일 화면 프로토타입 및 와이어프레임 가설 검증 수행 현장</div>
+            <div class="photo-caption" style="text-align:left;">📷 [현장 사진] 슈퍼플래닝 UX 가설 검증 세션 — 모바일 화면 프로토타입 및 와이어프레임 가설 검증 수행 현장</div>
           </div>
 
           <!-- 2. 핵심산출물: 문제발견 및 UX개선안 -->
@@ -1386,20 +1389,20 @@
           <p>그 다음에는 발견된 문제를 화면 흐름, 정보 구조, 용어, 버튼 문구, 입력 방식, 안내 메시지, 전환 동선 관점에서 재정리합니다. 같은 문제라도 단순한 UI 수정으로 해결되는 경우가 있고, UX기획 자체를 손봐야 하는 경우가 있기 때문에 문제의 성격을 구분하는 작업이 중요합니다. 특히 실제 발화와 행동 관찰 결과를 함께 묶어야 개선 포인트의 우선순위가 선명해집니다.</p>
           <p>마지막으로 실무에 바로 반영할 수 있는 UX개선안을 제안합니다. 필요한 경우 산출물은 인터뷰 가이드라인 질문지, 인터뷰 스크립트, 조사 원본 녹화 영상, 사용자 평가 시트, 문제 요약, 사용자 인사이트, 화면별 개선 포인트, 우선순위 제안, 최종 UX리서치 결과 보고서 형태로 확장할 수 있습니다.</p>
 
-          <div class="photo-frame">
+          <div class="photo-frame" style="text-align:left;">
             <img src="/images/fgi_session_1.png" alt="슈퍼플래닝 FGI 표적집단 면접조사 현장" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/fgi_session_1.png';}">
-            <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 FGI(표적집단 면접조사) 현장 — 4~6명 타겟 사용자 패널 그룹 토론 및 요구사항 심층 파악</div>
+            <div class="photo-caption" style="text-align:left;">📷 [현장 사진] 슈퍼플래닝 FGI(표적집단 면접조사) 현장 — 4~6명 타겟 사용자 패널 그룹 토론 및 요구사항 심층 파악</div>
           </div>
 
           <!-- 3. 슈퍼플래닝만의 차별점: 특허기술 -->
           <h2 id="diff">3. 슈퍼플래닝만의 차별점: 특허기술</h2>
-          <div class="photo-frame patent-photo">
+          <div class="photo-frame patent-photo" style="text-align:left;">
             <img src="/images/patent_certificates.png" alt="슈퍼플래닝 AI기반 UX리서치 기술 특허 명세 및 특허증" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/patent_certificates.png';}">
-            <div class="photo-caption">📷 [특허 기술] 슈퍼플래닝 AI기반 UX리서치 기술 특허 세부 명세</div>
+            <div class="photo-caption" style="text-align:left;">📷 [특허 기술] 슈퍼플래닝 AI기반 UX리서치 기술 특허 세부 명세</div>
           </div>
-          <div class="photo-frame">
+          <div class="photo-frame" style="text-align:left;">
             <img src="/images/ut_observation_2.png" alt="슈퍼플래닝 UT/인뎁스 인터뷰 미러 관찰실 현장" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/ut_observation_2.png';}">
-            <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 UT/인뎁스 전용 관찰실 — 원웨이 미러와 실시간 멀티 모니터링 시스템을 통한 1:1 유저 행동 심층 분석</div>
+            <div class="photo-caption" style="text-align:left;">📷 [현장 사진] 슈퍼플래닝 UT/인뎁스 전용 관찰실 — 원웨이 미러와 실시간 멀티 모니터링 시스템을 통한 1:1 유저 행동 심층 분석</div>
           </div>
 
           <!-- 4. 리서치 진행 프로세스 -->
@@ -1448,9 +1451,9 @@
 
           <!-- 5. UX리서치 강의 -->
           <h2 id="lecture">5. UX리서치 강의</h2>
-          <div class="photo-frame">
+          <div class="photo-frame" style="text-align:left;">
             <img src="/images/ux_interview_lecture.png" alt="슈퍼플래닝 UX Interview 강의 현장 사진" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/ux_interview_lecture.png';}">
-            <div class="photo-caption">📷 [현장 사진] 슈퍼플래닝 UX Interview 강의 현장</div>
+            <div class="photo-caption" style="text-align:left;">📷 [현장 사진] 슈퍼플래닝 UX Interview 강의 현장</div>
           </div>
           <p>슈퍼플래닝은 UX리서치 실무 경험과 특허 기반 관점을 바탕으로 사내 교육, 실무 워크숍, UX리서치 강의도 함께 진행할 수 있습니다. 이론 설명보다 실제 프로젝트 적용 기준을 전달하는 데 강점이 있습니다.</p>
 
