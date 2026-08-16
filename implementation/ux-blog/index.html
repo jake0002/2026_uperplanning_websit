@@ -1292,9 +1292,9 @@
       }
 
       if (activeTagFilter && banner) {
-        const filteredCount = getFilteredPostsCount();
+        const filteredCount = document.querySelectorAll('.postit-card').length;
         banner.style.display = 'flex';
-        banner.innerHTML = `<div>🏷️ 태그 필터링: <span style="background:#ffffff; color:#000000; padding:2px 8px; border-radius:3px; font-weight:800; margin-left:4px;">${activeTagFilter}</span> (${filteredCount}개 포스팅)</div>
+        banner.innerHTML = `<div>🏷️ 태그 필터링 중: <span style="background:#ffffff; color:#000000; padding:2px 8px; border-radius:3px; font-weight:800; margin-left:4px;">${activeTagFilter}</span> (${filteredCount}개 포스팅)</div>
           <button onclick="clearTagFilter();" style="background:#ffffff; color:#000000; border:1px solid #000000; padding:3px 10px; font-size:11.5px; font-weight:800; cursor:pointer; box-shadow:1px 1px 0 #000;">전체보기 ✕</button>`;
       } else if (banner) {
         banner.style.display = 'none';
@@ -1503,8 +1503,14 @@
       if (e.target === postModal) closeModal();
     });
 
-    // INITIAL RENDER
+    // INITIAL RENDER & URL PARAM CHECK
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagParam = urlParams.get('tag');
+    if (tagParam) {
+      activeTagFilter = decodeURIComponent(tagParam);
+    }
     renderCards();
+    updateTagBanner();
 
     // Check URL Hash for deep-link
     if (window.location.hash.startsWith('#post-')) {
