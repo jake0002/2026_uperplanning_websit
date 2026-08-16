@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.">
   <meta name="twitter:image" content="https://superplanning.blog/images/superplanning_brand_logo.png">
 
-  <!-- GEO (GENERATIVE ENGINE OPTIMIZATION) STRUCTURED DATA (JSON-LD SCHEMA.ORG) -->
+  <!-- GEO STRUCTURED DATA (JSON-LD SCHEMA.ORG) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -351,7 +351,7 @@
     .main-content-pane {
       flex: 1;
       background: #ffffff;
-      padding: 36px 48px;
+      padding: 32px 36px;
     }
 
     .article-meta-bar {
@@ -428,16 +428,37 @@
       border: 1px solid #000000;
     }
 
-    .bottom-nav {
-      margin-top: 32px;
-      padding-top: 16px;
+    .post-nav-section {
+      margin-top: 36px;
+      padding-top: 20px;
       border-top: 2px solid #000000;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .post-nav-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
     }
+
+    .post-nav-link {
+      color: #000000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 48%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .post-nav-link:hover { text-decoration: underline; }
 
     .statusbar {
       background: #c0c0c0;
@@ -455,6 +476,7 @@
       .gnb-menu, .gnb-right { display: none !important; }
       #mobileMenuBtn { display: flex !important; }
       .main-content-pane { padding: 24px 20px; }
+      .post-nav-link { max-width: 100%; }
     }
     @media (max-width: 720px) {
       .explorer-split { flex-direction: column; }
@@ -520,12 +542,12 @@
       <div class="titlebar">
         <div class="titlebar-text">
           <span>📁</span>
-          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그 (아티클 #10)</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
         </div>
         <div class="titlebar-controls">
           <div class="win-btn">−</div>
           <div class="win-btn">▢</div>
-          <div class="win-btn" onclick="location.href='/ux-blog/';">✕</div>
+          <div class="win-btn" onclick="location.href='https://superplanning.blog/';">✕</div>
         </div>
       </div>
 
@@ -694,12 +716,16 @@
             </div>
           </article>
 
-          <div class="bottom-nav">
-            <a href="/ux-blog/" class="w95-btn">⬅ UX블로그 전체목록 보기</a>
-            <div>
-              <span>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></span>
+          <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
+          <section class="post-nav-section">
+            <div class="post-nav-row">
+              <a href="/ux-blog/post-9/" class="post-nav-link" title="디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유"><span>⬅ 이전글:</span> <span>디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유</span></a>
+              <a href="/ux-blog/post-11/" class="post-nav-link" title="피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기" style="justify-content:flex-end;"><span>다음글:</span> <span>피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기</span> <span>➡</span></a>
             </div>
-          </div>
+            <div style="display:flex; justify-content:center; margin-top:6px;">
+              <a href="/ux-blog/" class="w95-btn" style="padding:5px 18px; font-size:12px;">≡ 목록 보기</a>
+            </div>
+          </section>
         </main>
       </div>
 
