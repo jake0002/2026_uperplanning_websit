@@ -1163,7 +1163,7 @@
       margin-bottom: 0 !important;
     }
     
-    /* Review Image Viewer (Matching User Reference Image) */
+    /* Review Image Viewer (Fixed Container Height, No Image Clipping) */
     .review-inline-viewer {
       background: #ffffff !important;
       border: 1px solid #e2e8f0 !important;
@@ -1180,7 +1180,7 @@
       align-items: center !important;
       justify-content: center !important;
       width: 100% !important;
-      min-height: 240px !important;
+      height: 480px !important;
     }
     .review-inline-arrow {
       position: absolute !important;
@@ -1216,19 +1216,26 @@
     }
     .review-inline-viewport {
       width: 100% !important;
+      height: 100% !important;
       padding: 0 46px !important;
       box-sizing: border-box !important;
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
+      overflow: hidden !important;
     }
     .review-inline-slide {
       display: none;
       width: 100% !important;
+      height: 100% !important;
       text-align: center !important;
     }
     .review-inline-slide.is-active {
-      display: block !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
       animation: reviewFadeIn 0.25s ease-in-out !important;
     }
     @keyframes reviewFadeIn {
@@ -1237,12 +1244,18 @@
     }
     .review-inline-slide img {
       max-width: 100% !important;
-      max-height: 520px !important;
+      max-height: 100% !important;
+      width: auto !important;
       height: auto !important;
       display: block !important;
       margin: 0 auto !important;
       border-radius: 6px !important;
       object-fit: contain !important;
+    }
+    @media (max-width: 640px) {
+      .review-inline-stage {
+        height: 340px !important;
+      }
     }
     .review-inline-controls {
       display: flex !important;
@@ -1300,18 +1313,6 @@
       background: #f1f5f9 !important;
       border-color: #1e293b !important;
       color: #0f172a !important;
-    }
-
-    .review-copy-lead {
-      font-size: 13.5px !important;
-      line-height: 1.6 !important;
-      color: #222222 !important;
-      margin-top: 12px !important;
-      margin-bottom: 16px !important;
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-      box-shadow: none !important;
     }
 
     /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
@@ -2017,7 +2018,13 @@
               </div>
               <div class="review-inline-controls">
                 <div class="review-inline-pagination" id="review-inline-pagination">
-                  <button class="review-inline-page is-active" type="button" data-review-page="0" aria-label="후기 1 보기">1</button><button class="review-inline-page" type="button" data-review-page="1" aria-label="후기 2 보기">2</button><button class="review-inline-page" type="button" data-review-page="2" aria-label="후기 3 보기">3</button><button class="review-inline-page" type="button" data-review-page="3" aria-label="후기 4 보기">4</button><button class="review-inline-page" type="button" data-review-page="4" aria-label="후기 5 보기">5</button><button class="review-inline-page" type="button" data-review-page="5" aria-label="후기 6 보기">6</button>
+                  <button class="review-inline-page is-active" type="button" data-review-page="0" aria-label="후기 1 보기">1</button>
+                  <button class="review-inline-page" type="button" data-review-page="1" aria-label="후기 2 보기">2</button>
+                  <button class="review-inline-page" type="button" data-review-page="2" aria-label="후기 3 보기">3</button>
+                  <button class="review-inline-page" type="button" data-review-page="3" aria-label="후기 4 보기">4</button>
+                  <button class="review-inline-page" type="button" data-review-page="4" aria-label="후기 5 보기">5</button>
+                  <button class="review-inline-page" type="button" data-review-page="5" aria-label="후기 6 보기">6</button>
+                  <button class="review-inline-page" type="button" data-review-page="6" aria-label="후기 7 보기">7</button>
                 </div>
                 <button class="review-inline-toggle is-playing" type="button" id="review-inline-toggle" aria-pressed="false" aria-label="자동 롤링 멈춤"></button>
               </div>
