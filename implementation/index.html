@@ -1519,8 +1519,22 @@
       return maxBottom === baseTop ? baseTop : maxBottom + 14;
     }
 
+    function getCenteredWindowPos(w, h) {
+      const minTop = getMinWindowTop();
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      let left = Math.floor((window.innerWidth - w) / 2);
+      left = Math.max(20, Math.min(window.innerWidth - w - 20, left));
+      
+      let top = Math.floor(scrollY + (window.innerHeight - h) / 2);
+      top = Math.max(scrollY + minTop, top);
+      
+      return { left, top };
+    }
+
     function openWindow(key, customPos) {
       const isMobile = window.innerWidth <= 768;
+      const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
 
       if (windows[key]) {
         const el = windows[key].el;
@@ -1533,6 +1547,12 @@
           el.style.left = 'auto';
           el.style.width = '100%';
           el.style.height = 'auto';
+        } else if (!isMobile) {
+          const centerPos = getCenteredWindowPos(def.w, def.h);
+          const targetLeft = (customPos && customPos.left !== undefined) ? customPos.left : centerPos.left;
+          const targetTop = (customPos && customPos.top !== undefined) ? customPos.top : centerPos.top;
+          el.style.left = targetLeft + 'px';
+          el.style.top = targetTop + 'px';
         }
         el.style.zIndex = getNextZIndex();
 
@@ -1552,18 +1572,14 @@
       }
 
       blip(660, 0.06);
-      const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
       winSeq++;
       const minTop = getMinWindowTop();
       
       let leftOffset, topOffset;
       if (!isMobile) {
-        leftOffset = customPos && customPos.left !== undefined 
-          ? customPos.left 
-          : Math.min(window.innerWidth - def.w - 20, Math.max(20, 20 + ((winSeq - 1) % 4) * 30));
-        topOffset = customPos && customPos.top !== undefined 
-          ? customPos.top 
-          : minTop + Math.floor((winSeq - 1) / 2) * 220 + ((winSeq - 1) % 2) * 40;
+        const centerPos = getCenteredWindowPos(def.w, def.h);
+        leftOffset = customPos && customPos.left !== undefined ? customPos.left : centerPos.left;
+        topOffset = customPos && customPos.top !== undefined ? customPos.top : centerPos.top;
       }
 
       const winEl = document.createElement('div');
