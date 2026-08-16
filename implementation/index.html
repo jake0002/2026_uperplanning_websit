@@ -1104,10 +1104,10 @@
 
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="downloadCompanyBrochure();">
-        <span>📁</span> <span>포트폴리오 보기</span>
+        <span>포트폴리오 보기</span>
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers'); blip(660, 0.04);">
-        <span>🤝</span> <span>인재채용</span>
+        <span>인재채용</span>
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="toggleLang();" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
@@ -1138,9 +1138,9 @@
       <div class="start-item" onclick="openWindow('instagram'); toggleMobileMenu();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); toggleMobileMenu();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); toggleMobileMenu();">▶️ 유튜브</div>
-      <div class="start-item" onclick="openWindow('brochure'); toggleMobileMenu();">📁 포트폴리오 보기</div>
-      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">🤝 인재채용</div>
-      <div class="start-item" onclick="openWindow('tweaks'); toggleMobileMenu();">⚙️ 환경설정</div>
+      <div class="start-item" onclick="openWindow('brochure'); toggleMobileMenu();">포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); toggleMobileMenu();">인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); toggleMobileMenu();">환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); toggleMobileMenu();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">🔍 UX리서치</div>
@@ -1296,9 +1296,9 @@
       <div class="start-item" onclick="openWindow('instagram'); closeStart();">📷 인스타그램</div>
       <div class="start-item" onclick="openWindow('threads'); closeStart();">🧵 쓰레드</div>
       <div class="start-item" onclick="openWindow('intro-video'); closeStart();">▶️ 유튜브</div>
-      <div class="start-item" onclick="openWindow('brochure'); closeStart();">📁 포트폴리오 보기</div>
-      <div class="start-item" onclick="openWindow('careers'); closeStart();">🤝 인재채용</div>
-      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">⚙️ 환경설정</div>
+      <div class="start-item" onclick="openWindow('brochure'); closeStart();">포트폴리오 보기</div>
+      <div class="start-item" onclick="openWindow('careers'); closeStart();">인재채용</div>
+      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">환경설정</div>
       <div class="start-item" onclick="openWindow('contact'); closeStart();">📍 찾아오시는길</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">🔍 UX리서치</div>
@@ -1323,7 +1323,7 @@
     <div class="taskbar-right">
       <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">⚙️ 환경설정</button>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="openWindow('tweaks');">환경설정</button>
     </div>
   </div>
 
@@ -1671,9 +1671,9 @@
           </div>
 
           <div style="display:flex; gap:8px; margin-top:6px; margin-bottom:0; padding-top:0; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">${isKo ? '📁 포트폴리오 보기' : '📁 View Portfolio'}</button>
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">${isKo ? '🎬 소개영상 보기' : '🎬 Promo Video'}</button>
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">${isKo ? '📍 찾아오시는 길' : '📍 Location'}</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">${isKo ? '포트폴리오 보기' : 'View Portfolio'}</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">${isKo ? '소개영상 보기' : 'Promo Video'}</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">${isKo ? '찾아오시는 길' : 'Location'}</button>
           </div>
         `;
       } else if (key === 'services') {
@@ -1917,7 +1917,7 @@
               <span style="font-weight:bold; color:#000;">📄 ${isKo ? '슈퍼플래닝_회사소개서.pdf' : 'Superplanning_Company_Brochure.pdf'}</span>
               <div style="display:flex; gap:6px;">
                 <a href="Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '새 창에서 열기 ↗' : 'Open in New Tab ↗'}</a>
-                <a href="Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '💾 파일 다운로드' : '💾 Download PDF'}</a>
+                <a href="Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '파일 다운로드' : 'Download PDF'}</a>
               </div>
             </div>
             <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
@@ -2427,12 +2427,12 @@
       const drawerItems = document.querySelectorAll('#mobileNavDrawer .start-item');
       const drawerKo = [
         '🏢 회사소개', '🏛️ 주요 고객사', '🎨 UX 서비스', '🎓 AI-UX 강의', 
-        '📝 UX 블로그', '📍 찾아오시는 길 & 문의', '📄 회사소개서 보기', 
-        '🤝 인재채용', '🌐 언어 변경 (KOR / ENG)'
+        '📝 UX 블로그', '찾아오시는 길 & 문의', '포트폴리오 보기', 
+        '인재채용', '🌐 언어 변경 (KOR / ENG)'
       ];
       const drawerEn = [
         '🏢 About Us', '🏛️ Key Clients', '🎨 UX Services', '🎓 AI-UX Classes', 
-        '📝 UX Blog', '📍 Location & Inquiry', '📄 Company Brochure', 
+        '📝 UX Blog', 'Location & Inquiry', '📄 Company Brochure', 
         '🤝 Careers', '🌐 Language (KOR / ENG)'
       ];
       drawerItems.forEach((el, idx) => {
@@ -2443,12 +2443,12 @@
       const startItems = document.querySelectorAll('#startMenu .start-item');
       const startKo = [
         '🏢 슈퍼플래닝', '🏛️ 주요 고객사', '🎨 UX서비스', '📷 인스타그램', '🧵 쓰레드', '▶️ 유튜브', 
-        '📁 포트폴리오 보기', '🤝 인재채용', '⚙️ 환경설정', '📍 찾아오시는길',
+        '포트폴리오 보기', '인재채용', '환경설정', '📍 찾아오시는길',
         '🔍 UX리서치', '✏️ UX라이팅', '📐 UX기획/디자인', '💻 웹/앱개발', '🎓 AI-UX강의', '📝 UX블로그', '🏢 회사소개'
       ];
       const startEn = [
         '🏢 About Us', '🏛️ Key Clients', '🎨 UX Services', '📷 Instagram', '🧵 Threads', '▶️ YouTube', 
-        '📁 View Portfolio', '🤝 Careers', '⚙️ Tweaks', '📍 Location',
+        'View Portfolio', '🤝 Careers', '⚙️ Tweaks', 'Location',
         '🔍 UX Research', '✏️ UX Writing', '📐 UX Design', '💻 Web/App Dev', '🎓 AI-UX Classes', '📝 UX Blog', '🏢 About Company'
       ];
       startItems.forEach((el, idx) => {
