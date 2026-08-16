@@ -1689,7 +1689,7 @@
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
-    // Highlight active tree item on scroll & click
+        // Highlight active tree item on scroll & click
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('main h2[id]');
       const navLinks = document.querySelectorAll('.tree-link');
@@ -1743,44 +1743,9 @@
       window.addEventListener('resize', updateActiveToc, { passive: true });
       updateActiveToc();
     });
-        }
 
-        if (!current && sections.length > 0) {
-          current = sections[0].getAttribute('id');
-        }
-
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === '#' + current) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-      }
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          navLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-
-      window.addEventListener('scroll', updateActiveToc, { passive: true });
-      window.addEventListener('resize', updateActiveToc, { passive: true });
-      updateActiveToc();
-    });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-          }
-        });
-      });
-
-      // GNB Scroll Progress Gauge Handler (Dual-Ratio Foolproof Observer)
-        let scrollTimer = null;
+    // GNB Scroll Progress Gauge Handler (Exact Main Page Copy)
+    let scrollTimer = null;
     function updateGnbScrollProgress() {
       const progressBar = document.getElementById('gnbProgressBar');
       const progressBadge = document.getElementById('gnbProgressBadge');
@@ -1854,7 +1819,6 @@
     setTimeout(updateGnbScrollProgress, 200);
     setTimeout(updateGnbScrollProgress, 800);
     setInterval(updateGnbScrollProgress, 250);
-    });
 
     setInterval(() => {
       const d = new Date();
