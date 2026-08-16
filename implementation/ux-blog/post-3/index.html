@@ -287,11 +287,13 @@
       background: #c0c0c0;
       color: #000000;
       border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
       font-size: 10px;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
 
     .menubar {
@@ -301,7 +303,10 @@
       border-bottom: 1px solid #808080;
       display: flex;
       gap: 18px;
+      user-select: none;
     }
+    .menubar span { cursor: default; }
+    .menubar u { text-decoration: underline; }
 
     .toolbar-area {
       background: #c0c0c0;
@@ -311,7 +316,29 @@
       flex-direction: column;
       gap: 4px;
     }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active {
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
     .address-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .addr-label { font-weight: bold; white-space: nowrap; }
     .addr-input {
       flex: 1;
       background: #ffffff;
@@ -321,6 +348,9 @@
       font-size: 12px;
       font-family: var(--font-mono);
       color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .explorer-split { display: flex; background: #ffffff; min-height: 640px; }
@@ -331,6 +361,7 @@
       background: #ffffff;
       border-right: 2px solid #808080;
       padding: 16px 12px;
+      overflow-y: auto;
     }
     .tree-root {
       display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 13px; color: #000000;
@@ -352,6 +383,7 @@
       flex: 1;
       background: #ffffff;
       padding: 32px 36px;
+      overflow-y: auto;
     }
 
     .article-meta-bar {
@@ -539,6 +571,7 @@
   <!-- PAGE WRAPPER -->
   <div class="page-wrapper">
     <div class="explorer-window">
+      <!-- 1. Black Titlebar (Exact UX-Research Match) -->
       <div class="titlebar">
         <div class="titlebar-text">
           <span>📁</span>
@@ -551,13 +584,18 @@
         </div>
       </div>
 
+      <!-- 2. Menu Bar (Exact UX-Research Match) -->
       <div class="menubar">
-        <span><u>File</u></span> <span><u>Edit</u></span> <span><u>View</u></span> <span><u>Help</u></span>
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
       </div>
 
+      <!-- 3. Toolbar Area (Exact UX-Research Match) -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 목록으로 돌아가기</button>
+          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 뒤로</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
@@ -565,6 +603,7 @@
         </div>
       </div>
 
+      <!-- 4. Explorer Split Pane -->
       <div class="explorer-split">
         <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
           <div class="tree-root">
@@ -730,6 +769,7 @@
         </main>
       </div>
 
+      <!-- 5. Statusbar (Exact UX-Research Match) -->
       <div class="statusbar">
         <div>1개 개체 선택됨</div>
         <div>C:\SUPERPLANNING\UX_서비스\UX_블로그\post-3</div>
