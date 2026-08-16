@@ -1093,6 +1093,38 @@
       margin: 0;
       border: none;
     }
+    
+    /* Reduced size for Section 1 2nd Image (.top-hero-photo) & Exact Caption Typography */
+    .top-hero-photo {
+      width: 100%;
+      max-width: 480px;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .top-hero-photo img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 320px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-sizing: border-box;
+    }
+    .top-hero-photo figcaption,
+    .photo-caption,
+    figcaption {
+      font-family: var(--font, sans-serif) !important;
+      font-size: 13px !important;
+      color: #555555 !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      margin-top: 8px !important;
+      text-align: left !important;
+      background: transparent !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
     /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
     figure {
       margin: 20px 0;
