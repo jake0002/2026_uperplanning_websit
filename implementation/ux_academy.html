@@ -1094,20 +1094,28 @@
       border: none;
     }
     
-    /* Reduced size for Section 1 2nd Image (.top-hero-photo) & Exact Caption Typography */
+    
+    /* Section 1 2nd Image (.top-hero-photo) Left Aligned & Comfortably Sized (Matching UX-Research max-width: 640px) */
     .top-hero-photo {
       width: 100%;
-      max-width: 480px;
-      margin: 20px 0;
+      max-width: 640px;
+      margin: 20px auto 20px 0 !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
       box-sizing: border-box;
     }
     .top-hero-photo img {
       width: 100%;
       max-width: 100%;
-      max-height: 320px;
+      max-height: 380px;
       height: auto;
       object-fit: contain;
+      object-position: left center !important;
       display: block;
+      margin: 0 !important;
+      border: none;
       box-sizing: border-box;
     }
     .top-hero-photo figcaption,
@@ -1123,6 +1131,7 @@
       background: transparent !important;
       padding: 0 !important;
       border: none !important;
+      width: 100% !important;
     }
 
     /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
