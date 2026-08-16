@@ -122,14 +122,14 @@
   
   <style>
     :root {
-      --bg: #008080;
+      --bg: #ffffff;
       --gnb-bg: rgba(0,0,0,.60);
       --gnb-fg: #f5f5f5;
       --gnb-bd: rgba(255,255,255,.18);
       --win-fg: #1a1a1a;
       --win-bg: #c0c0c0;
       --win-fg-dark: #0a0a0a;
-      --bg-light: #008080;
+      --bg-light: #ffffff;
       --bg-dark: #1a1a1a;
       --bg-matrix: #0a0e0a;
       --txt-light: #1a1a1a;
@@ -757,14 +757,15 @@
       flex-shrink: 0;
       min-width: 82px;
     }
-    .desktop-icon:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
-    .desktop-icon.selected { background: rgba(0,0,128,0.5); border: 1px dotted #fff; }
+    .desktop-icon:hover { background: rgba(0, 0, 0, 0.07); border-radius: 4px; }
+    .desktop-icon.selected { background: #000000 !important; border: 1px solid #000000; border-radius: 4px; }
+    .desktop-icon.selected .icon-label { color: #ffffff !important; text-shadow: none !important; }
     .desktop-icon .icon-svg { width: 36px; height: 36px; margin-bottom: 4px; image-rendering: pixelated; }
     .desktop-icon .icon-label {
       font-size: 11px;
       font-weight: 700;
-      color: #ffffff;
-      text-shadow: 1px 1px 1px #000;
+      color: #000000;
+      text-shadow: none;
       word-break: keep-all;
       line-height: 1.2;
       white-space: nowrap;
