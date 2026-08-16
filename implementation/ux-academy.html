@@ -1700,7 +1700,7 @@
     /* Typewriter Quote Styling (Matching UX-Company) */
     .typewriter-quote {
       border-right: 2px solid #ffffff;
-      white-space: normal;
+      white-space: pre-line;
       word-break: keep-all;
     }
     .typewriter-quote.is-typing {
@@ -1980,7 +1980,10 @@
 <section class="section" id="reviews">
           <!-- 2. 수강후기 -->
           <h2 id="reviews">2. 수강후기</h2>
-          <p class="review-copy-lead">IT를 몰라도 UX기획은 누구나 할 수 있습니다.<br/>입문자들이 가장 많이 선택한 AI-UX강의 1위!<br/>UX교육 최다 후기 달성<br/>오직 강의 후기만으로 검증 합니다.</p>
+          
+          <p class="typewriter-review-wrap" style="margin: 16px 0 20px 0;">
+            <span class="typewriter-quote" data-text="IT를 몰라도 UX기획은 누구나 할 수 있습니다.&#10;입문자들이 가장 많이 선택한 AI-UX강의 1위!&#10;UX교육 최다 후기 달성&#10;오직 강의 후기만으로 검증 합니다." style="display:inline-block; padding:8px 12px; color:#ffffff; background:#000000; border:2px solid #000000; border-radius:4px; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-size:14px; line-height:1.7; font-weight:600; word-break:keep-all;"></span>
+          </p>
           <div class="review-ai-summary-wrap">
             <article class="box review-ai-summary"><h3>전체 후기요약 (300건 이상)</h3><p>수강생들은 단순 이론 설명보다 현재 본인 상황에 맞춘 실무형 피드백과 방향 정리가 큰 도움이 됐다고 평가합니다.</p><p>취준생, 예비창업자, 실무자 모두 각자 필요한 지점을 빠르게 짚어주는 맞춤형 강의라는 후기가 반복적으로 나타납니다.</p></article>
           </div>
@@ -3055,10 +3058,21 @@
         }, startDelay || 0);
       }
 
-      const immediateQuotes = document.querySelectorAll('.typewriter-quote:not([data-typewriter-trigger])');
-      immediateQuotes.forEach((el, index) => {
-        runTypewriter(el, index * 300);
-      });
+      const quotes = document.querySelectorAll('.typewriter-quote');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runTypewriter(entry.target, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        quotes.forEach(el => observer.observe(el));
+      } else {
+        quotes.forEach((el, idx) => runTypewriter(el, idx * 350));
+      }
     });
   </script>
 
