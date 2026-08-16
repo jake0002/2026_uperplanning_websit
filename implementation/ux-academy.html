@@ -1729,6 +1729,51 @@
       box-sizing: border-box !important;
     }
 
+
+    /* Curriculum Note Box Styling */
+    .curriculum-note {
+      background: #f9f9f9 !important;
+      border: 1px solid #dcdcdc !important;
+      border-radius: 6px !important;
+      padding: 16px 20px !important;
+      margin: 20px 0 16px 0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+      box-sizing: border-box !important;
+    }
+    .curriculum-note-title {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      padding-bottom: 6px !important;
+      border-bottom: 1px solid #ebebeb !important;
+    }
+    .curriculum-note-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin: 0 !important;
+    }
+    .curriculum-note-list li {
+      position: relative !important;
+      padding-left: 16px !important;
+      margin-bottom: 6px !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+      color: #333333 !important;
+    }
+    .curriculum-note-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #111111;
+      font-size: 13px;
+    }
+    .curriculum-note-list li:last-child {
+      margin-bottom: 0 !important;
+    }
+
 </style>
 <style>
 
@@ -2205,9 +2250,12 @@
 </ul>
 </div>
 </div><div class="curriculum-note">
-<p>UX실무 요약 비밀자료 제공</p>
-<p>1:1 맞춤형 과제 출제 및 과제 피드백 포함</p>
-<p>커리큘럼에 적히지 않은 세부 내용은 실제 질문과 프로젝트 상황에 따라 추가로 다룹니다.</p>
+  <h3 class="curriculum-note-title">💡 커리큘럼 추가 혜택 &amp; 안내</h3>
+  <ul class="curriculum-note-list">
+    <li><strong>UX실무 요약 비밀자료 제공</strong></li>
+    <li><strong>1:1 맞춤형 과제 출제 및 과제 피드백 포함</strong></li>
+    <li>커리큘럼에 적히지 않은 세부 내용은 실제 질문과 프로젝트 상황에 따라 추가로 다룹니다.</li>
+  </ul>
 </div>
 </div>
 <p>이 커리큘럼은 회차를 많이 나열하기 위한 구성이 아니라, 수강자의 현재 수준에 따라 어디까지 필요한지 조정할 수 있도록 만든 구조입니다. 취준생은 포트폴리오와 실무 감각을, 예비창업자는 서비스 구조화와 외주 대응력을, 기업 실무자는 협업 기준과 문서화 역량을 중심으로 가져갈 수 있습니다.</p>
