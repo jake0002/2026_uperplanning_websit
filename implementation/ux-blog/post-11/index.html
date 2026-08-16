@@ -759,21 +759,22 @@
           </article>
 
           <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
-          <!-- BOTTOM NAV WITH PREV/NEXT POST FULL TITLES & FAR-RIGHT LIST VIEW BUTTON -->
+          <!-- BOTTOM NAV WITH PREV & NEXT POST ON THE EXACT SAME HORIZONTAL ROW -->
           <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000; display:flex; flex-direction:column; gap:14px;">
-            <div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px; font-weight:700;">
-              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px dashed #e0e0e0; padding-bottom:8px;">
-                <span style="color:#444; font-size:13px; font-weight:800; white-space:nowrap;">⬅ 이전글</span>
-                <a href="/ux-blog/post-10/" style="color:#000000; text-decoration:none; text-align:right; flex:1; font-weight:600; font-size:13.5px;"><span style="text-decoration:underline;">생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드</span></a>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:13.5px; font-weight:700;">
+              <!-- Prev Post (Left) -->
+              <div style="flex:1; min-width:0; text-align:left;">
+                <a href="/ux-blog/post-10/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; gap:6px; max-width:100%;"><span style="white-space:nowrap; font-weight:800; color:#444;">⬅ 이전글:</span> <span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드</span></a>
               </div>
-              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:4px;">
-                <span style="color:#444; font-size:13px; font-weight:800; white-space:nowrap;">다음글 ➡</span>
-                <a href="/ux-blog/post-12/" style="color:#000000; text-decoration:none; text-align:right; flex:1; font-weight:600; font-size:13.5px;"><span style="text-decoration:underline;">프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기</span></a>
+
+              <!-- Next Post (Right) -->
+              <div style="flex:1; min-width:0; text-align:right;">
+                <a href="/ux-blog/post-12/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; justify-content:flex-end; gap:6px; max-width:100%;"><span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기</span> <span style="white-space:nowrap; font-weight:800; color:#444;">:다음글 ➡</span></a>
               </div>
             </div>
 
-            <!-- FAR RIGHT LIST VIEW BUTTON -->
-            <div style="display:flex; justify-content:flex-end; border-top:1px solid #000000; padding-top:14px;">
+            <!-- 목록보기 Button at Far Right -->
+            <div style="display:flex; justify-content:flex-end; border-top:1px dashed #e0e0e0; padding-top:12px;">
               <a href="/ux-blog/" class="w95-btn" style="padding:6px 20px; font-size:12.5px;">목록보기</a>
             </div>
           </section>
