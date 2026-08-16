@@ -126,6 +126,7 @@
       overflow: visible !important;
     }
 
+    /* GNB SCROLL PROGRESS GAUGE BAR (EXACT UX-RESEARCH MATCH) */
     .gnb-progress-track {
       position: absolute;
       bottom: 0;
@@ -135,7 +136,7 @@
       background: rgba(255, 255, 255, 0.15);
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
-      overflow: visible;
+      overflow: visible !important;
       pointer-events: none;
       z-index: 1000;
     }
@@ -181,7 +182,7 @@
     }
     body.is-scrolling .gnb-progress-badge,
     .gnb-progress-track:hover .gnb-progress-badge {
-      opacity: 1;
+      opacity: 1 !important;
     }
 
     .gnb-menu {
@@ -801,7 +802,7 @@
     }
     @media (max-width: 900px) {
       #gnb { left: 14px; }
-      #brandLogo { display: none !important; }
+#brandLogo { display: none !important; }
       .gnb-menu, .gnb-right { display: none !important; }
       #mobileMenuBtn { display: flex !important; }
     }
