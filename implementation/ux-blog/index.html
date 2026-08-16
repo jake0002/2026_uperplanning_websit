@@ -8,34 +8,75 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
 
   <style>
-    /* RESET & BASE STYLES */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
-      background: #c0c0c0;
-      color: #000000;
-      line-height: 1.5;
-      padding: 0;
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    
-    /* SUBPAGE STANDARD GNB HEADER STYLES */
+    /* ==================================================== */
+    /* DESIGN TOKENS & RESET (EXACT UX-RESEARCH SUBPAGE MATCH) */
+    /* ==================================================== */
     :root {
+      --bg: #008080;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --bevel-hi: #ffffff;
+      --bevel-shadow: #7b7b7b;
       --gnb-bg: rgba(0, 0, 0, 0.85);
       --gnb-fg: #ffffff;
       --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
       --gnb-h: 34px;
       --logo-top: 14px;
       --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      letter-spacing: -0.01em;
     }
 
     body {
-      background: #c0c0c0;
-      color: #000000;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
     }
 
+    a {
+      color: #111111;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #555555;
+    }
+
+    /* Win95 Button Utility */
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+      text-decoration: none;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* HOME BUTTON AT FAR LEFT */
     #brandLogo {
       position: fixed !important;
       top: var(--logo-top);
@@ -64,6 +105,7 @@
     #brandLogo:hover { transform: scale(1.04); }
     #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
 
+    /* GNB HEADER BAR */
     #gnb {
       position: fixed !important;
       top: var(--logo-top);
@@ -129,7 +171,7 @@
       border-radius: 3px;
       font-size: 10px;
       font-weight: 800;
-      font-family: monospace;
+      font-family: var(--font-mono, monospace);
       padding: 1px 6px;
       white-space: nowrap;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -141,6 +183,7 @@
     .gnb-progress-track:hover .gnb-progress-badge {
       opacity: 1;
     }
+
     .gnb-menu {
       display: flex;
       align-items: center;
@@ -177,6 +220,7 @@
       gap: 6px;
     }
 
+    /* Mobile Hamburger & Drawer */
     #mobileMenuBtn {
       display: none;
       align-items: center;
@@ -184,20 +228,20 @@
       padding: 3px 10px;
       font-weight: 800;
       font-size: 12px;
-      background: #c0c0c0;
+      background: var(--win-bg);
       border: 2px solid #000;
       cursor: pointer;
     }
     #mobileNavDrawer {
       display: none;
       position: fixed;
-      top: calc(14px + 34px + 4px);
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
       left: 10px;
       right: 10px;
       z-index: 999999 !important;
-      background: #c0c0c0;
+      background: var(--win-bg);
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 4px 4px 0 rgba(0,0,0,0.5);
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
       padding: 10px;
     }
     #mobileNavDrawer.show { display: block !important; }
@@ -212,40 +256,43 @@
     }
     .start-item:hover { background: #000000; color: #ffffff; }
 
-    @media (max-width: 900px) {
-      #gnb { left: 14px; }
-      #brandLogo { display: none !important; }
-      .gnb-menu, .gnb-right { display: none !important; }
-      #mobileMenuBtn { display: flex !important; }
-    }
-
-    /* PAGE WRAPPER */
+    /* Outer Wrapper for Left Alignment */
     .page-wrapper {
-      margin-top: calc(14px + 34px + 20px);
-      padding: 16px;
-      max-width: 1280px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
     }
 
-    /* WINDOWS 95 CONTAINER */
+    /* ==================================================== */
+    /* WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT UX-RESEARCH MATCH) */
+    /* ==================================================== */
     .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
       background: #c0c0c0;
       border: 2px solid #000000;
-      box-shadow: 4px 4px 0 #000000;
-      margin-bottom: 30px;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* TITLEBAR */
+    /* 1. Black Titlebar (#000000 - Main Screen Match) */
     .titlebar {
       background: #000000;
       color: #ffffff;
       padding: 4px 8px;
-      font-size: 13px;
-      font-weight: bold;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+      user-select: none;
     }
     .titlebar-text {
       display: flex;
@@ -254,106 +301,177 @@
     }
     .titlebar-controls {
       display: flex;
-      gap: 2px;
+      gap: 3px;
     }
     .win-btn {
-      width: 16px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       background: #c0c0c0;
-      border: 1px solid #000000;
       color: #000000;
-      font-size: 9px;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      cursor: pointer;
+      cursor: default;
     }
 
-    /* MENUBAR & TOOLBAR */
+    /* 2. Menu Bar (#c0c0c0) */
     .menubar {
       background: #c0c0c0;
-      padding: 3px 8px;
-      border-bottom: 1px solid #808080;
+      padding: 3px 10px;
       font-size: 12px;
+      border-bottom: 1px solid #808080;
       display: flex;
-      gap: 16px;
+      gap: 18px;
+      user-select: none;
     }
+    .menubar span { cursor: default; }
+    .menubar u { text-decoration: underline; }
+
+    /* 3. Toolbar & Address Bar Area */
     .toolbar-area {
       background: #c0c0c0;
-      padding: 6px 8px;
-      border-bottom: 2px solid #000000;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .address-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-    .addr-label { font-size: 12px; font-weight: bold; }
-    .addr-input {
-      flex: 1;
-      background: #ffffff;
-      border: 2px solid #000000;
-      padding: 2px 8px;
-      font-size: 12px;
-      font-family: monospace;
-      box-shadow: inset 1px 1px 0 #808080;
-    }
-
-    /* EXPLORER SPLIT PANE */
-    .explorer-split {
-      display: flex;
-      background: #ffffff;
-      min-height: 720px;
-    }
-
-    /* LEFT SIDEBAR TREE */
-    .tree-sidebar {
-      width: 240px;
-      background: #f4f4f4;
-      border-right: 2px solid #000000;
-      padding: 14px 10px;
-      flex-shrink: 0;
-    }
-    .tree-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: #000000;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #000000;
-      margin-bottom: 12px;
-    }
-    .tree-nav {
-      list-style: none;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-    .tree-nav-item {
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active { box-shadow: inset 1px 1px 0 #808080; }
+
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .addr-label { font-weight: bold; white-space: nowrap; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /* 4. Explorer Split Pane */
+    .explorer-split {
+      display: flex;
+      background: #ffffff;
+      min-height: 640px;
+    }
+
+    /* Left Explorer Tree View Sidebar (Exact UX-Research Match) */
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      box-shadow: inset -1px 0 0 #d0d0d0;
+      padding: 16px 12px;
+      user-select: none;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tree-toggle {
+      font-size: 11px;
+      font-weight: bold;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      line-height: 1;
+    }
+
+    /* Tree Navigation List (ul.tree-list.toc) */
+    ul.tree-list {
+      list-style-type: none;
+      padding-left: 8px;
+      margin: 0;
+      position: relative;
+    }
+    ul.tree-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 12px;
+      left: 18px;
+      border-left: 1px dotted #808080;
+    }
+
+    .tree-item {
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .tree-item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -10px;
+      width: 10px;
+      border-top: 1px dotted #808080;
+    }
+
+    .tree-item a {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 10px;
-      font-size: 12.5px;
-      font-weight: bold;
+      gap: 6px;
+      padding: 4px 8px;
       color: #000000;
-      cursor: pointer;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      transition: all 0.1s ease;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: background 0.1s ease, color 0.1s ease;
     }
-    .tree-nav-item:hover, .tree-nav-item.active {
+    .tree-item a:hover, .tree-item a.active {
       background: #000000 !important;
       color: #ffffff !important;
+      font-weight: 700 !important;
     }
-    .tree-nav-item.active .badge-count, .tree-nav-item:hover .badge-count {
-      background: #ffffff;
-      color: #000000;
+    .tree-item a:hover .badge-count, .tree-item a.active .badge-count {
+      background: #ffffff !important;
+      color: #000000 !important;
     }
     .badge-count {
       font-size: 11px;
@@ -365,13 +483,12 @@
       border: 1px solid #000000;
     }
 
-    /* RIGHT MAIN CONTENT PANE */
+    /* Right Main Content Pane */
     .main-content-pane {
       flex: 1;
-      padding: 24px;
       background: #ffffff;
-      display: flex;
-      flex-direction: column;
+      padding: 32px 36px;
+      overflow-y: auto;
     }
 
     /* BLOG HEADER ROW */
@@ -381,7 +498,7 @@
       align-items: center;
       padding-bottom: 14px;
       border-bottom: 2px solid #000000;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -396,10 +513,10 @@
       font-weight: 600;
     }
     .blog-header-title h1 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
       color: #000000;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
     }
 
     /* SEARCH BAR BOX */
@@ -416,6 +533,7 @@
       border: 2px solid #000000;
       outline: none;
       background: #ffffff;
+      box-shadow: inset 1px 1px 0 #808080;
     }
     .search-btn {
       padding: 5px 12px;
@@ -426,9 +544,7 @@
       border: 2px solid #000000;
       cursor: pointer;
     }
-    .search-btn:hover {
-      background: #333333;
-    }
+    .search-btn:hover { background: #333333; }
 
     /* POST-IT STICKY NOTE CARDS GRID */
     .postit-grid {
@@ -453,7 +569,6 @@
       box-shadow: 6px 6px 0 #000000;
     }
 
-    /* POST-IT CARD TOP BAND */
     .postit-top-band {
       background: #f0f0f0;
       border-bottom: 2px solid #000000;
@@ -489,15 +604,9 @@
       justify-content: center;
       transition: transform 0.1s ease;
     }
-    .icon-action-btn:hover {
-      transform: scale(1.2);
-    }
-    .icon-action-btn.bookmarked {
-      color: #000000;
-      font-weight: bold;
-    }
+    .icon-action-btn:hover { transform: scale(1.2); }
+    .icon-action-btn.bookmarked { color: #000000; font-weight: bold; }
 
-    /* POST-IT CARD BODY */
     .postit-body {
       padding: 14px 14px 10px;
       flex: 1;
@@ -524,7 +633,6 @@
       overflow: hidden;
     }
 
-    /* TAGS ROW */
     .postit-tags {
       display: flex;
       flex-wrap: wrap;
@@ -540,7 +648,6 @@
       border: 1px solid #000000;
     }
 
-    /* CARD FOOTER READ TIME BUTTON */
     .postit-footer {
       border-top: 1px dashed #000000;
       padding-top: 10px;
@@ -567,7 +674,6 @@
       box-shadow: 0 0 0 #000000;
     }
 
-    /* NO RESULTS MESSAGE */
     .no-results {
       grid-column: 1 / -1;
       padding: 60px 20px;
@@ -646,15 +752,8 @@
       line-height: 1.7;
       color: #222222;
     }
-    .modal-post-content p {
-      margin-bottom: 14px;
-    }
-    .modal-post-content h3 {
-      font-size: 16px;
-      font-weight: 800;
-      margin: 20px 0 10px;
-      color: #000000;
-    }
+    .modal-post-content p { margin-bottom: 14px; }
+    .modal-post-content h3 { font-size: 16px; font-weight: 800; margin: 20px 0 10px; color: #000000; }
     .modal-post-content blockquote {
       border-left: 4px solid #000000;
       padding: 10px 14px;
@@ -663,7 +762,6 @@
       font-weight: 600;
     }
 
-    /* TOAST NOTIFICATION */
     .toast-msg {
       position: fixed;
       bottom: 20px;
@@ -689,21 +787,27 @@
     /* STATUSBAR */
     .statusbar {
       background: #c0c0c0;
-      border-top: 2px solid #000000;
-      padding: 3px 8px;
-      font-size: 11px;
+      border-top: 2px solid #808080;
+      padding: 4px 10px;
+      font-size: 11.5px;
       display: flex;
       gap: 16px;
+      color: #000000;
     }
 
-    /* RESPONSIVE LAYOUT */
     @media (max-width: 960px) {
       .postit-grid { grid-template-columns: repeat(2, 1fr); }
-      .tree-sidebar { width: 200px; }
+      .tree-sidebar { width: 220px; }
+    }
+    @media (max-width: 900px) {
+      #gnb { left: 14px; }
+      #brandLogo { display: none !important; }
+      .gnb-menu, .gnb-right { display: none !important; }
+      #mobileMenuBtn { display: flex !important; }
     }
     @media (max-width: 720px) {
       .explorer-split { flex-direction: column; }
-      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #000000; }
+      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #808080; }
       .postit-grid { grid-template-columns: 1fr; }
       .blog-header-row { flex-direction: column; align-items: flex-start; }
       .search-box-wrap { width: 100%; }
@@ -713,14 +817,12 @@
 </head>
 <body>
 
-  <!-- TOP RETRO GNB NAV BAR -->
-  
-  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
+  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM UX-RESEARCH) -->
   <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
     <span id="brandLogoText">홈</span>
   </div>
 
-  <!-- 4. GNB HEADER (EXACT COPY FROM OTHER SUBPAGES) -->
+  <!-- 4. GNB HEADER (EXACT COPY FROM UX-RESEARCH) -->
   <div id="gnb">
     <ul class="gnb-menu">
       <li class="gnb-item">
@@ -793,24 +895,25 @@
     </div>
   </div>
 
-
   <!-- PAGE WRAPPER -->
   <div class="page-wrapper">
+    <!-- WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT UX-RESEARCH MATCH) -->
     <div class="explorer-window">
-      <!-- TITLEBAR -->
+      
+      <!-- 1. Black Titlebar (#000000 - Main Screen Match) -->
       <div class="titlebar">
         <div class="titlebar-text">
-          <span>📝</span>
+          <span>📁</span>
           <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
         </div>
         <div class="titlebar-controls">
           <div class="win-btn">−</div>
           <div class="win-btn">▢</div>
-          <div class="win-btn" onclick="location.href='/';">✕</div>
+          <div class="win-btn" onclick="location.href='https://superplanning.blog/';">✕</div>
         </div>
       </div>
 
-      <!-- MENUBAR -->
+      <!-- 2. Menu Bar (#c0c0c0) -->
       <div class="menubar">
         <span><u>File</u></span>
         <span><u>Edit</u></span>
@@ -818,58 +921,42 @@
         <span><u>Help</u></span>
       </div>
 
-      <!-- TOOLBAR & ADDRESS BAR -->
+      <!-- 3. Toolbar & Address Bar Area -->
       <div class="toolbar-area">
-        <button class="w95-btn" onclick="history.back();">⬅ 뒤로</button>
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+        </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
-          <div class="addr-input">C:SUPERPLANNINGUX_서비스UX_블로그</div>
+          <div class="addr-input">C:\SUPERPLANNING\UX_서비스\UX_블로그</div>
         </div>
       </div>
 
-      <!-- EXPLORER SPLIT PANE -->
+      <!-- 4. Explorer Split Pane (Left Sidebar + Right Main Content) -->
       <div class="explorer-split">
 
-        <!-- LEFT SIDEBAR CATEGORIES TOC -->
-        <aside class="tree-sidebar">
-          <div class="tree-title">📌 블로그 카테고리</div>
-          <ul class="tree-nav" id="categoryNav">
-            <li class="tree-nav-item active" data-category="all">
-              <span>▣ 전체글 보기</span>
-              <span class="badge-count" id="countAll">19</span>
-            </li>
-            <li class="tree-nav-item" data-category="bookmark">
-              <span>★ 즐겨찾기 보기</span>
-              <span class="badge-count" id="countFav">0</span>
-            </li>
-            <li class="tree-nav-item" data-category="UX리서치">
-              <span>└ UX리서치</span>
-              <span class="badge-count">3</span>
-            </li>
-            <li class="tree-nav-item" data-category="UX라이팅">
-              <span>└ UX라이팅</span>
-              <span class="badge-count">4</span>
-            </li>
-            <li class="tree-nav-item" data-category="UX기획/디자인">
-              <span>└ UX기획/디자인</span>
-              <span class="badge-count">3</span>
-            </li>
-            <li class="tree-nav-item" data-category="AI트랜드">
-              <span>└ AI트랜드</span>
-              <span class="badge-count">3</span>
-            </li>
-            <li class="tree-nav-item" data-category="피그마">
-              <span>└ 피그마</span>
-              <span class="badge-count">3</span>
-            </li>
-            <li class="tree-nav-item" data-category="바이브코딩">
-              <span>└ 바이브코딩</span>
-              <span class="badge-count">3</span>
-            </li>
+        <!-- Left Explorer Tree Sidebar (Exact UX-Research Match) -->
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>UX서비스 &gt; UX블로그</span>
+          </div>
+
+          <!-- Tree List TOC (ul.tree-list.toc) -->
+          <ul class="tree-list toc" id="categoryNav">
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">19</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>1. UX리서치</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX라이팅"><span class="doc-icon">📄</span> <span>2. UX라이팅</span> <span class="badge-count">4</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획/디자인"><span class="doc-icon">📄</span> <span>3. UX기획/디자인</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="AI트랜드"><span class="doc-icon">📄</span> <span>4. AI트랜드</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="피그마"><span class="doc-icon">📄</span> <span>5. 피그마</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="바이브코딩"><span class="doc-icon">📄</span> <span>6. 바이브코딩</span> <span class="badge-count">3</span></a></li>
           </ul>
         </aside>
 
-        <!-- RIGHT MAIN CONTENT PANE -->
+        <!-- Right Main Content View Pane -->
         <main class="main-content-pane">
           <!-- HEADER & SEARCH -->
           <div class="blog-header-row">
@@ -904,7 +991,7 @@
     <div class="w95-modal-window">
       <div class="modal-titlebar">
         <span id="modalTitlebarText">[포스트 읽기] 슈퍼플래닝 UX 블로그</span>
-        <button class="win-btn" onclick="closeModal();">✕</button>
+        <button class="win-btn" onclick="closeModal();" style="cursor:pointer;">✕</button>
       </div>
       <div class="modal-body" id="modalBody">
         <!-- Modal content inserted dynamically -->
@@ -1193,9 +1280,9 @@
       });
 
       // Update Counts
-      countAllEl.textContent = POSTS_DATA.length;
-      countFavEl.textContent = bookmarks.length;
-      statusCountEl.textContent = `${filtered.length}개 개체`;
+      if (countAllEl) countAllEl.textContent = POSTS_DATA.length;
+      if (countFavEl) countFavEl.textContent = bookmarks.length;
+      if (statusCountEl) statusCountEl.textContent = `${filtered.length}개 개체`;
 
       if (filtered.length === 0) {
         postitGrid.innerHTML = `
@@ -1303,6 +1390,11 @@
       postModal.classList.remove('show');
     }
 
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) drawer.classList.toggle('show');
+    }
+
     // SHOW TOAST
     function showToast(msg) {
       toast.textContent = msg;
@@ -1314,13 +1406,13 @@
 
     // EVENT LISTENERS
     categoryNav.addEventListener('click', (e) => {
-      const item = e.target.closest('.tree-nav-item');
-      if (!item) return;
+      const link = e.target.closest('.tree-link');
+      if (!link) return;
 
-      document.querySelectorAll('.tree-nav-item').forEach(el => el.classList.remove('active'));
-      item.classList.add('active');
+      document.querySelectorAll('.tree-link').forEach(el => el.classList.remove('active'));
+      link.classList.add('active');
 
-      currentCategory = item.dataset.category;
+      currentCategory = link.dataset.category;
       renderCards();
     });
 
@@ -1346,11 +1438,6 @@
     if (window.location.hash.startsWith('#post-')) {
       const pId = parseInt(window.location.hash.replace('#post-', ''));
       if (pId) openPostModal(pId);
-    }
-
-    function toggleMobileMenu() {
-      const drawer = document.getElementById('mobileNavDrawer');
-      if (drawer) drawer.classList.toggle('show');
     }
 
     // GNB SCROLL PROGRESS GAUGE BAR
