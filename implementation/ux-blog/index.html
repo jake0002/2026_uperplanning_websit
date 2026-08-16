@@ -1316,9 +1316,9 @@
                 ${post.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
               </div>
               <div class="postit-footer">
-                <button class="read-time-btn" onclick="openPostModal(${post.id});">
+                <a href="/ux-blog/post-${post.id}/" class="read-time-btn" style="text-decoration:none;">
                   ${post.readTime}초 만에 읽기 →
-                </button>
+                </a>
               </div>
             </div>
           </article>

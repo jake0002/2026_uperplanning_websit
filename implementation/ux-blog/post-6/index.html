@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- PRIMARY SEO METADATA -->
+  <title>바이브코딩으로 프로토타입 검증 속도를 높이는 방법 — 슈퍼플래닝 UX블로그</title>
+  <meta name="description" content="완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.">
+  <meta name="keywords" content="바이브코딩, 프로토타입, 검증루프, 바이브코딩, UX디자인, UX기획, 슈퍼플래닝">
+  <meta name="author" content="슈퍼플래닝 UXLab">
+  <link rel="canonical" href="https://superplanning.blog/ux-blog/post-6/">
+
+  <!-- OPEN GRAPH / FACEBOOK / NAVER SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="슈퍼플래닝 UX블로그">
+  <meta property="og:title" content="바이브코딩으로 프로토타입 검증 속도를 높이는 방법">
+  <meta property="og:description" content="완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.">
+  <meta property="og:url" content="https://superplanning.blog/ux-blog/post-6/">
+  <meta property="og:image" content="https://superplanning.blog/images/superplanning_brand_logo.png">
+
+  <!-- TWITTER CARDS SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="바이브코딩으로 프로토타입 검증 속도를 높이는 방법">
+  <meta name="twitter:description" content="완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.">
+  <meta name="twitter:image" content="https://superplanning.blog/images/superplanning_brand_logo.png">
+
+  <!-- GEO (GENERATIVE ENGINE OPTIMIZATION) STRUCTURED DATA (JSON-LD SCHEMA.ORG) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://superplanning.blog/ux-blog/post-6/"
+    },
+    "headline": "바이브코딩으로 프로토타입 검증 속도를 높이는 방법",
+    "description": "완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.",
+    "articleSection": "바이브코딩",
+    "keywords": "바이브코딩, 프로토타입, 검증루프",
+    "inLanguage": "ko-KR",
+    "author": {
+      "@type": "Organization",
+      "name": "슈퍼플래닝 (Superplanning)",
+      "url": "https://superplanning.blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "슈퍼플래닝",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://superplanning.blog/images/superplanning_brand_logo.png"
+      }
+    },
+    "datePublished": "2026-08-16",
+    "dateModified": "2026-08-16"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://superplanning.blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UX블로그",
+        "item": "https://superplanning.blog/ux-blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "바이브코딩으로 프로토타입 검증 속도를 높이는 방법",
+        "item": "https://superplanning.blog/ux-blog/post-6/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+
+  <style>
+    :root {
+      --bg: #008080;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --bevel-hi: #ffffff;
+      --bevel-shadow: #7b7b7b;
+      --gnb-bg: rgba(0, 0, 0, 0.85);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a { color: #111111; text-decoration: underline; }
+    a:hover { color: #555555; }
+
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+      text-decoration: none;
+    }
+    .w95-btn:active { box-shadow: inset 1px 1px 0 var(--bevel-shadow); transform: translate(1px, 1px); }
+
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+    }
+    #brandLogo span, #brandLogoText { color: #ffffff !important; }
+
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+    }
+
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .gnb-link:hover, .gnb-link.active { background: #000000 !important; color: #ffffff !important; }
+
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      padding: 10px;
+    }
+    #mobileNavDrawer.show { display: block !important; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+    }
+    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+    }
+
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .address-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+    }
+
+    .explorer-split { display: flex; background: #ffffff; min-height: 640px; }
+
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      padding: 16px 12px;
+    }
+    .tree-root {
+      display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 13px; color: #000000;
+      margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0;
+    }
+
+    ul.tree-list { list-style-type: none; padding-left: 8px; margin: 0; position: relative; }
+    ul.tree-list::before { content: ""; position: absolute; top: 0; bottom: 12px; left: 18px; border-left: 1px dotted #808080; }
+    .tree-item { position: relative; margin-bottom: 4px; }
+    .tree-item::before { content: ""; position: absolute; top: 12px; left: -10px; width: 10px; border-top: 1px dotted #808080; }
+
+    .tree-item a {
+      display: flex; align-items: center; justify-content: flex-start; gap: 6px;
+      padding: 4px 8px; color: #000000; text-decoration: none; font-size: 12.5px; font-weight: 500;
+    }
+    .tree-item a:hover, .tree-item a.active { background: #000000 !important; color: #ffffff !important; font-weight: 700 !important; }
+
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 36px 48px;
+    }
+
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .category-badge {
+      font-size: 12px;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .read-time-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .hero-excerpt {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #111111;
+      margin-bottom: 24px;
+      background: #f8f8f8;
+      padding: 14px 18px;
+      border-left: 4px solid #000000;
+    }
+
+    .article-body {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #222222;
+    }
+    .article-body p { margin-bottom: 16px; }
+    .article-body h3 { font-size: 17px; font-weight: 800; margin: 24px 0 12px; color: #000000; }
+    .article-body blockquote {
+      border-left: 4px solid #000000;
+      padding: 12px 16px;
+      background: #f4f4f4;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 28px 0 20px;
+      padding-top: 16px;
+      border-top: 1px dashed #000000;
+    }
+    .tag-pill {
+      font-size: 11.5px;
+      font-weight: 700;
+      background: #f4f4f4;
+      color: #000000;
+      padding: 3px 8px;
+      border: 1px solid #000000;
+    }
+
+    .bottom-nav {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 2px solid #000000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .statusbar {
+      background: #c0c0c0;
+      border-top: 2px solid #808080;
+      padding: 4px 10px;
+      font-size: 11.5px;
+      display: flex;
+      gap: 16px;
+      color: #000000;
+    }
+
+    @media (max-width: 900px) {
+      #gnb { left: 14px; }
+      #brandLogo { display: none !important; }
+      .gnb-menu, .gnb-right { display: none !important; }
+      #mobileMenuBtn { display: flex !important; }
+      .main-content-pane { padding: 24px 20px; }
+    }
+    @media (max-width: 720px) {
+      .explorer-split { flex-direction: column; }
+      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #808080; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HOME BUTTON -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- GNB HEADER -->
+  <div id="gnb">
+    <ul class="gnb-menu">
+      <li class="gnb-item"><a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/ux-writing/"><span>UX라이팅</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/ux-design/"><span>UX기획/디자인</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/web-app-development/"><span>웹/앱개발</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a></li>
+      <li class="gnb-item"><a class="gnb-link active" href="/ux-blog/"><span>UX블로그</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/ux-company/"><span>회사소개</span></a></li>
+      <li class="gnb-item"><a class="gnb-link" href="/contact/"><span>문의하기</span></a></li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';"><span>인재채용</span></button>
+    </div>
+
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <div id="gnbProgressBarTrack" class="gnb-progress-track">
+      <div id="gnbProgressBar" class="gnb-progress-bar"></div>
+    </div>
+  </div>
+
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/'; toggleMobileMenu();">• 슈퍼플래닝</div>
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+    </div>
+  </div>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <div class="explorer-window">
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그 (아티클 #6)</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn" onclick="location.href='/ux-blog/';">✕</div>
+        </div>
+      </div>
+
+      <div class="menubar">
+        <span><u>File</u></span> <span><u>Edit</u></span> <span><u>View</u></span> <span><u>Help</u></span>
+      </div>
+
+      <div class="toolbar-area">
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 목록으로 돌아가기</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_서비스\UX_블로그\post-6</div>
+        </div>
+      </div>
+
+      <div class="explorer-split">
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>UX서비스 &gt; UX블로그</span>
+          </div>
+
+          <ul class="tree-list toc">
+            <li class="tree-item"><a href="/ux-blog/" class="tree-link"><span class="doc-icon">📄</span> <span>▣ 전체글 목록</span></a></li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-1/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>1. 전환율보다 먼저 봐야 하는 버튼 문구의 명확성</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-2/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>2. 인터뷰 질문 설계에서 자주 생기는 초보 실수</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-3/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>3. 화면정의서가 예쁜데도 개발이 헷갈리는 이유</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-4/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>4. 피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-5/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>5. AI UX에서 프롬프트보다 먼저 정해야 하는 기준</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-6/" class="tree-link active">
+                  <span class="doc-icon">📄</span> <span>6. 바이브코딩으로 프로토타입 검증 속도를 높이는 방법</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-7/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>7. 에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-8/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>8. UT(사용성 테스트) 진행 시 모더레이터가 절대 하지 말아야 할 말</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-9/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>9. 디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-10/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>10. 생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-11/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>11. 피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-12/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>12. 프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-13/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>13. 온보딩 과정에서 사용자의 인지 부하를 줄이는 마이크로카피</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-14/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>14. FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-15/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>15. 모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-16/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>16. LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-17/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>17. Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-18/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>18. 디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas</span>
+                </a>
+              </li>
+            
+              <li class="tree-item">
+                <a href="/ux-blog/post-19/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>19. 금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너</span>
+                </a>
+              </li>
+            
+          </ul>
+        </aside>
+
+        <main class="main-content-pane">
+          <article>
+            <div class="article-meta-bar">
+              <span class="category-badge">바이브코딩</span>
+              <span class="read-time-pill">⏱️ 90초 읽기 모드</span>
+              <span style="font-size:12px; color:#777;">| 발행일: 2026-08-16 | 작성자: 슈퍼플래닝 UXLab</span>
+            </div>
+
+            <h1>바이브코딩으로 프로토타입 검증 속도를 높이는 방법</h1>
+            <div class="hero-excerpt">완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.</div>
+
+            <div class="article-body">
+              
+      <h3>자연어 프롬프트 기반 웹/앱 MVP 제작</h3>
+      <p>코드 한 줄 몰라도 최신 AI 바이브코딩 도구와 HTML/CSS/JS 템플릿을 연동하면 10분 만에 동작 가능한 하이브리드 프로토타입을 구축할 수 있습니다.</p>
+      <p>실제 동작하는 프로토타입으로 사용자 UT를 진행하면 static 피그마 시안 대비 3배 이상의 깊이 있는 반응 데이터를 수집할 수 있습니다.</p>
+    
+            </div>
+
+            <div class="tag-container">
+              <span class="tag-pill">#바이브코딩</span><span class="tag-pill">#프로토타입</span><span class="tag-pill">#검증루프</span>
+            </div>
+          </article>
+
+          <div class="bottom-nav">
+            <a href="/ux-blog/" class="w95-btn">⬅ UX블로그 전체목록 보기</a>
+            <div>
+              <span>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></span>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div class="statusbar">
+        <div>1개 개체 선택됨</div>
+        <div>C:\SUPERPLANNING\UX_서비스\UX_블로그\post-6</div>
+        <div>내 컴퓨터</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) drawer.classList.toggle('show');
+    }
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('gnbProgressBar');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
