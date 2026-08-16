@@ -550,8 +550,10 @@
       <span>☰</span> <span>메뉴</span>
     </button>
 
-    <div id="gnbProgressBarTrack" class="gnb-progress-track">
-      <div id="gnbProgressBar" class="gnb-progress-bar"></div>
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
     </div>
   </div>
 
@@ -797,12 +799,22 @@
       if (drawer) drawer.classList.toggle('show');
     }
 
+    // GNB SCROLL PROGRESS GAUGE BAR
+    let scrollTimeout;
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
       const bar = document.getElementById('gnbProgressBar');
+      const badge = document.getElementById('gnbProgressBadge');
       if (bar) bar.style.width = scrolled + '%';
+      if (badge) badge.textContent = Math.round(scrolled) + '%';
+
+      document.body.classList.add('is-scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('is-scrolling');
+      }, 1000);
     });
   </script>
 </body>
