@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <title>문의하기 | 슈퍼플래닝 UX스튜디오</title>
-  <meta name="description" content="슈퍼플래닝 문의하기 및 찾아오시는 길 안내 페이지입니다. UX리서치, UX라이팅, UI/UX기획/디자인, 웹/앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 안내해 드립니다.">
+  <meta name="description"
+    content="슈퍼플래닝 문의하기 및 찾아오시는 길 안내 페이지입니다. UX리서치, UX라이팅, UI/UX기획/디자인, 웹/앱개발, 기업출강 관련 문의를 남겨주시면 신속하게 안내해 드립니다.">
   <meta name="keywords" content="문의하기, 프로젝트문의, 찾아오시는길, 슈퍼플래닝, Superplanning, UX견적, UX컨설팅문의, UX기획문의, UX리서치문의">
   <meta name="author" content="슈퍼플래닝 (Superplanning)">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -18,7 +20,8 @@
   <link rel="alternate" hreflang="ko" href="https://superplanning.blog/ux-research">
   <link rel="alternate" hreflang="en" href="https://superplanning.blog/ux-research?lang=en">
   <link rel="alternate" title="AI 색인 (llms.txt) - UX리서치" href="https://superplanning.blog/ux-research/llms.txt">
-  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)" href="https://superplanning.blog/services/ux-research.md">
+  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)"
+    href="https://superplanning.blog/services/ux-research.md">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="article">
@@ -53,7 +56,7 @@
         "@type": "WebSite",
         "@id": "https://superplanning.blog/#website",
         "url": "https://superplanning.blog",
-        "name": "슈퍼플래닝 UX스튜디오",
+        "name": "슈퍼플래닝 UI/UX디자인 에이전시",
         "inLanguage": "ko-KR"
       },
       {
@@ -284,6 +287,7 @@
       color: #111111;
       text-decoration: underline;
     }
+
     a:hover {
       color: #555555;
     }
@@ -293,7 +297,7 @@
       background: var(--win-bg);
       color: var(--win-fg);
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0, 0, 0, .35);
       padding: 4px 10px;
       font-weight: 700;
       font-size: 12px;
@@ -304,6 +308,7 @@
       gap: 4px;
       user-select: none !important;
     }
+
     .w95-btn:active {
       box-shadow: inset 1px 1px 0 var(--bevel-shadow);
       transform: translate(1px, 1px);
@@ -323,7 +328,7 @@
       background: #000000 !important;
       color: #ffffff !important;
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0, 0, 0, .35);
       font-weight: 900;
       font-size: 13px;
       display: flex;
@@ -332,11 +337,20 @@
       user-select: none !important;
       transition: transform 0.1s ease;
     }
-    #brandLogo span, #brandLogoText {
+
+    #brandLogo span,
+    #brandLogoText {
       color: #ffffff !important;
     }
-    #brandLogo:hover { transform: scale(1.04); }
-    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+
+    #brandLogo:hover {
+      transform: scale(1.04);
+    }
+
+    #brandLogo:active {
+      transform: scale(0.96);
+      box-shadow: inset 1px 1px 0 #111;
+    }
 
     /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE) */
     #gnb {
@@ -360,7 +374,7 @@
     }
 
     /* GNB SCROLL PROGRESS GAUGE BAR (HIGH-CONTRAST NEON ACCENT LINE) */
-        /* GNB SCROLL PROGRESS GAUGE BAR (EXACT MAIN PAGE COPY) */
+    /* GNB SCROLL PROGRESS GAUGE BAR (EXACT MAIN PAGE COPY) */
     .gnb-progress-track {
       position: absolute;
       bottom: 0;
@@ -374,6 +388,7 @@
       pointer-events: none;
       z-index: 1000;
     }
+
     .gnb-progress-bar {
       height: 100%;
       width: 0%;
@@ -383,6 +398,7 @@
       position: relative;
       transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
     }
+
     .gnb-progress-bar::after {
       content: '';
       position: absolute;
@@ -395,6 +411,7 @@
       box-shadow: 0 0 6px #000000;
       opacity: 0.95;
     }
+
     .gnb-progress-badge {
       position: absolute;
       right: -14px;
@@ -414,10 +431,12 @@
       transition: opacity 0.25s ease;
       pointer-events: none;
     }
+
     body.is-scrolling .gnb-progress-badge,
     .gnb-progress-track:hover .gnb-progress-badge {
       opacity: 1;
     }
+
     .gnb-menu {
       display: flex;
       align-items: center;
@@ -426,9 +445,11 @@
       margin: 0;
       padding: 0;
     }
+
     .gnb-item {
       position: relative;
     }
+
     .gnb-link {
       color: #ffffff;
       padding: 4px 12px;
@@ -443,17 +464,20 @@
       transition: background 0.15s ease;
       user-select: none !important;
     }
-        .gnb-link:hover,
+
+    .gnb-link:hover,
     .gnb-link:active,
     .gnb-link.active {
       background: #000000 !important;
       color: #ffffff !important;
     }
+
     .gnb-link:hover span,
     .gnb-link:active span,
     .gnb-link.active span {
       color: #ffffff !important;
     }
+
     .gnb-right {
       display: flex;
       align-items: center;
@@ -472,6 +496,7 @@
       border: 2px solid #000;
       cursor: pointer;
     }
+
     #mobileNavDrawer {
       display: none;
       position: fixed;
@@ -481,12 +506,14 @@
       z-index: 999999 !important;
       background: var(--win-bg);
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0, 0, 0, 0.5);
       padding: 10px;
     }
+
     #mobileNavDrawer.show {
       display: block !important;
     }
+
     .start-item {
       padding: 6px 10px;
       font-size: 12px;
@@ -496,7 +523,11 @@
       gap: 8px;
       cursor: pointer;
     }
-    .start-item:hover { background: #000000; color: #ffffff; }
+
+    .start-item:hover {
+      background: #000000;
+      color: #ffffff;
+    }
 
     /* Outer Wrapper for Left Alignment */
     .page-wrapper {
@@ -513,10 +544,11 @@
     .explorer-window {
       width: 100%;
       max-width: 1100px;
-      margin: 0; /* Left Alignment */
+      margin: 0;
+      /* Left Alignment */
       background: #c0c0c0;
       border: 2px solid #000000;
-      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0, 0, 0, 0.35);
       border-radius: 0;
       overflow: hidden;
       display: flex;
@@ -536,15 +568,18 @@
       border-bottom: 2px solid #000000;
       user-select: none;
     }
+
     .titlebar-text {
       display: flex;
       align-items: center;
       gap: 6px;
     }
+
     .titlebar-controls {
       display: flex;
       gap: 3px;
     }
+
     .win-btn {
       width: 18px;
       height: 18px;
@@ -570,9 +605,11 @@
       gap: 18px;
       user-select: none;
     }
+
     .menubar span {
       cursor: default;
     }
+
     .menubar u {
       text-decoration: underline;
     }
@@ -586,11 +623,13 @@
       flex-direction: column;
       gap: 4px;
     }
+
     .nav-buttons {
       display: flex;
       gap: 6px;
       align-items: center;
     }
+
     .tool-btn {
       background: #c0c0c0;
       border: 1px solid #000;
@@ -603,6 +642,7 @@
       align-items: center;
       gap: 4px;
     }
+
     .tool-btn:active {
       box-shadow: inset 1px 1px 0 #808080;
     }
@@ -614,10 +654,12 @@
       gap: 6px;
       font-size: 12px;
     }
+
     .addr-label {
       font-weight: bold;
       white-space: nowrap;
     }
+
     .addr-input {
       flex: 1;
       background: #ffffff;
@@ -650,6 +692,7 @@
       user-select: none;
       overflow-y: auto;
     }
+
     .tree-root {
       display: flex;
       align-items: center;
@@ -661,6 +704,7 @@
       padding-bottom: 6px;
       border-bottom: 1px solid #e0e0e0;
     }
+
     .tree-toggle {
       font-size: 11px;
       font-weight: bold;
@@ -681,6 +725,7 @@
       margin: 0;
       position: relative;
     }
+
     ul.tree-list::before {
       content: "";
       position: absolute;
@@ -694,6 +739,7 @@
       position: relative;
       margin-bottom: 4px;
     }
+
     .tree-item::before {
       content: "";
       position: absolute;
@@ -715,12 +761,16 @@
       border-radius: 1px;
       transition: background 0.1s ease, color 0.1s ease;
     }
-    .tree-item a:hover, .tree-item a.active {
+
+    .tree-item a:hover,
+    .tree-item a.active {
       background: #000000 !important;
       color: #ffffff !important;
       font-weight: 700 !important;
     }
-    .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
+
+    .tree-item a:hover .doc-icon,
+    .tree-item a.active .doc-icon {
       filter: brightness(2);
     }
 
@@ -773,6 +823,7 @@
       margin-bottom: 10px;
       color: #111111;
     }
+
     h3::before {
       content: "";
       display: none;
@@ -797,6 +848,7 @@
       margin: 20px 0 6px 0;
       color: #111111;
     }
+
     .sub-quote {
       font-size: 13.5px;
       color: #444444;
@@ -815,6 +867,7 @@
       margin: 24px 0;
       max-width: 640px;
     }
+
     .photo-frame img {
       width: 100%;
       max-width: 100%;
@@ -824,6 +877,7 @@
       margin: 0;
       border: none;
     }
+
     .photo-caption {
       margin-top: 8px;
       font-size: 12.5px;
@@ -840,6 +894,7 @@
       margin-left: 22px;
       margin-bottom: 18px;
     }
+
     ul.section-list li {
       margin-bottom: 7px;
       font-size: 13.5px;
@@ -853,6 +908,7 @@
       font-size: 13px;
       border: 2px solid #000;
     }
+
     .compare-table caption {
       font-weight: bold;
       text-align: left;
@@ -860,17 +916,21 @@
       font-size: 13.5px;
       color: #111111;
     }
-    .compare-table th, .compare-table td {
+
+    .compare-table th,
+    .compare-table td {
       border: 1px solid #7b7b7b;
       padding: 10px 12px;
       text-align: left;
     }
+
     .compare-table thead th {
       background: #dcdcdc;
       font-weight: bold;
       text-align: center;
       border-bottom: 2px solid #000;
     }
+
     .compare-table tbody th {
       background: #f0f0f0;
       font-weight: bold;
@@ -881,17 +941,20 @@
     .faq {
       margin-top: 18px;
     }
+
     .faq dt {
       font-weight: bold;
       font-size: 14px;
       margin-top: 16px;
       color: #111111;
     }
+
     .faq dt::before {
       content: "Q. ";
       color: #111111;
       font-weight: bold;
     }
+
     .faq dd {
       margin-left: 0;
       margin-top: 4px;
@@ -901,6 +964,7 @@
       font-size: 13.5px;
       color: #222222;
     }
+
     .faq dd::before {
       content: "A. ";
       position: absolute;
@@ -916,6 +980,7 @@
       border-top: 2px solid #000000;
       font-size: 13px;
     }
+
     .bottom-nav p {
       margin-bottom: 8px;
     }
@@ -949,9 +1014,33 @@
       padding: 2px 6px;
       user-select: none !important;
     }
-    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
-    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
-    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+
+    .taskbar-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+    }
+
+    .taskbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 100%;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    #startBtn {
+      font-weight: 800;
+      font-size: 12px;
+      padding: 2px 10px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
     /* Start Menu (z-index: 999999 !important) */
     #startMenu {
@@ -961,12 +1050,16 @@
       width: 220px;
       background: var(--win-bg, #c0c0c0);
       border: 2px solid #000;
-      box-shadow: inset 1px 1px 0 var(--bevel-hi, #fff), inset -1px -1px 0 var(--bevel-shadow, #808080), 3px 3px 0 rgba(0,0,0,0.4);
+      box-shadow: inset 1px 1px 0 var(--bevel-hi, #fff), inset -1px -1px 0 var(--bevel-shadow, #808080), 3px 3px 0 rgba(0, 0, 0, 0.4);
       z-index: 999999 !important;
       display: none;
       padding: 4px;
     }
-    #startMenu.show { display: flex !important; }
+
+    #startMenu.show {
+      display: flex !important;
+    }
+
     .start-banner {
       width: 28px;
       background: #000000;
@@ -981,7 +1074,14 @@
       letter-spacing: 2px;
       padding: 8px 0;
     }
-    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+
+    .start-items {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
     .start-item {
       padding: 6px 10px;
       font-size: 12px;
@@ -993,8 +1093,19 @@
       color: #000;
       text-decoration: none;
     }
-    .start-item:hover { background: #000000; color: #ffffff; }
-    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+
+    .start-item:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    #taskPreviews {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+    }
+
     .task-preview {
       height: 28px;
       padding: 0 8px;
@@ -1012,6 +1123,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .task-preview.active {
       box-shadow: inset 1px 1px 0 var(--bevel-shadow);
       background: #dfdfdf;
@@ -1020,17 +1132,32 @@
 
     /* Responsive Adjustments for Mobile Explorer Split */
     @media (max-width: 980px) {
-      #gnb { left: 75px; }
-      .gnb-link span { font-size: 11px; padding: 2px 4px; }
-      .tree-sidebar { width: 220px; min-width: 200px; }
-      .main-content-pane { padding: 24px 28px; }
+      #gnb {
+        left: 75px;
+      }
+
+      .gnb-link span {
+        font-size: 11px;
+        padding: 2px 4px;
+      }
+
+      .tree-sidebar {
+        width: 220px;
+        min-width: 200px;
+      }
+
+      .main-content-pane {
+        padding: 24px 28px;
+      }
     }
+
     @media (max-width: 768px) {
       #brandLogo {
         left: 8px;
         padding: 2px 8px;
         font-size: 11px;
       }
+
       #gnb {
         left: 72px;
         right: 8px;
@@ -1039,40 +1166,51 @@
         align-items: center !important;
         justify-content: flex-end !important;
       }
-      .gnb-menu, .gnb-right {
+
+      .gnb-menu,
+      .gnb-right {
         display: none !important;
       }
+
       #mobileMenuBtn {
         display: inline-flex !important;
         margin-left: auto !important;
       }
+
       .page-wrapper {
         padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 8px 16px 8px;
       }
+
       .explorer-split {
         flex-direction: column;
       }
+
       .tree-sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 2px solid #808080;
         padding: 12px;
       }
+
       .main-content-pane {
         padding: 20px 16px;
       }
+
       h1 {
         font-size: 22px;
       }
+
       h2 {
         font-size: 16px;
       }
-      .compare-table th, .compare-table td {
+
+      .compare-table th,
+      .compare-table td {
         padding: 6px 8px;
         font-size: 11px;
       }
     }
-  
+
     /* BACK TO TOP ANCHOR BUTTON (RETRO WINDOWS STYLE) */
     #scrollTopBtn {
       position: fixed;
@@ -1082,7 +1220,7 @@
       background: var(--win-bg);
       color: #000000;
       border: 2px solid #000000;
-      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35);
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0, 0, 0, 0.35);
       padding: 5px 12px;
       font-weight: 700;
       font-size: 12px;
@@ -1092,17 +1230,28 @@
       gap: 4px;
       user-select: none !important;
     }
+
     #scrollTopBtn:active {
       box-shadow: inset 1px 1px 0 #7b7b7b;
       transform: translate(1px, 1px);
     }
+
     @media (max-width: 900px) {
-      #scrollTopBtn { display: none !important; }
-      #taskbar, .bottom-gnb { display: none !important; }
-      body { padding-bottom: 0 !important; }
+      #scrollTopBtn {
+        display: none !important;
+      }
+
+      #taskbar,
+      .bottom-gnb {
+        display: none !important;
+      }
+
+      body {
+        padding-bottom: 0 !important;
+      }
     }
-  
-  
+
+
     /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
     #scrollTopBtn {
       position: fixed !important;
@@ -1112,7 +1261,7 @@
       background: #c0c0c0 !important;
       color: #000000 !important;
       border: 2px solid #000000 !important;
-      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0, 0, 0, 0.35) !important;
       padding: 6px 14px !important;
       font-weight: bold !important;
       font-size: 12px !important;
@@ -1123,22 +1272,23 @@
       gap: 5px !important;
       user-select: none !important;
     }
+
     #scrollTopBtn:hover {
       background: #dfdfdf !important;
     }
+
     #scrollTopBtn:active {
       box-shadow: inset 1px 1px 0 #7b7b7b !important;
       transform: translate(1px, 1px) !important;
     }
+
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
       }
     }
-
-</style>
-<style>
-
+  </style>
+  <style>
     /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
     #scrollTopBtn {
       position: fixed !important;
@@ -1148,7 +1298,7 @@
       background: #c0c0c0 !important;
       color: #000000 !important;
       border: 2px solid #000000 !important;
-      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0, 0, 0, 0.35) !important;
       padding: 6px 14px !important;
       font-weight: bold !important;
       font-size: 12px !important;
@@ -1159,21 +1309,24 @@
       gap: 5px !important;
       user-select: none !important;
     }
+
     #scrollTopBtn:hover {
       background: #dfdfdf !important;
     }
+
     #scrollTopBtn:active {
       box-shadow: inset 1px 1px 0 #7b7b7b !important;
       transform: translate(1px, 1px) !important;
     }
+
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
       }
     }
-
-</style>
+  </style>
 </head>
+
 <body>
 
   <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
@@ -1211,11 +1364,14 @@
     </ul>
 
     <div class="gnb-right">
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오
+          보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;"
+        onclick="location.href='https://superplanning.blog/';">
         <span>인재채용</span>
       </button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span
+          style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1233,7 +1389,8 @@
 
   <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
-    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+    <div
+      style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
       <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
@@ -1311,8 +1468,10 @@
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc">
-            <li class="tree-item"><a href="#contact" class="tree-link active"><span class="doc-icon">📄</span> <span>1. 문의하기</span></a></li>
-            <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는 길</span></a></li>
+            <li class="tree-item"><a href="#contact" class="tree-link active"><span class="doc-icon">📄</span> <span>1.
+                  문의하기</span></a></li>
+            <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는
+                  길</span></a></li>
           </ul>
         </aside>
 
@@ -1324,31 +1483,186 @@
 
           <!-- 1. 문의하기 -->
           <h2 id="contact">1. 문의하기</h2>
-          <p>프로젝트 의뢰, 견적 문의, 서비스 관련 궁금하신 점은 아래 연락처 또는 카카오톡 24시간 실시간 상담으로 남겨주시면 빠른 시간 내에 답변해 드리겠습니다.</p>
+          <p>슈퍼플래닝은 예비 고객사의 비즈니스 성장과 성공적인 사용자 경험(UX) 창출을 위해 서비스 기획·디자인·개발 실무 리드가 직접 프로젝트 목적과 일정을 종합적으로 검토합니다. 아래 문의 등록 폼을 통해 원하시는 서비스와 세부 요청사항을 남겨주시면, 영업일 기준 <strong>10분 이내</strong>로 신속하게 안내 및 견적을 전달해 드립니다.</p>
           
-          <div style="padding:14px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:16px;">
-            <div style="font-size:13px; border-bottom:1px solid #eee; padding-bottom:6px; margin-bottom:6px;"><strong>회사명:</strong> Superplanning (슈퍼플래닝)</div>
-            <div style="font-size:13px; border-bottom:1px solid #eee; padding-bottom:6px; margin-bottom:6px;"><strong>주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
-            <div style="font-size:13px; border-bottom:1px solid #eee; padding-bottom:6px; margin-bottom:6px;"><strong>전화번호:</strong> 031-699-3298</div>
-            <div style="font-size:13px;"><strong>이메일:</strong> jake@superplanning.co.kr</div>
+          <!-- Trust & Service Highlights Box -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
+            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="font-size:13px; font-weight:800; color:#000080; margin-bottom:2px;">⚡ 초고속 실무 회신</div>
+              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333;">영업시간 내 접수 시 10분 이내 담당 PM이 직접 내용 확인 후 연락드립니다.</p>
+            </div>
+            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="font-size:13px; font-weight:800; color:#000080; margin-bottom:2px;">🔒 비밀 유지(NDA) 보장</div>
+              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333;">접수된 모든 아이디어 및 기획 자료는 철저한 비밀 유지와 NDA 체결을 지원합니다.</p>
+            </div>
+            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <div style="font-size:13px; font-weight:800; color:#000080; margin-bottom:2px;">🎯 맞춤형 로드맵 제안</div>
+              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333;">예산과 상황에 따른 합리적인 단계별 UX 기획·디자인·개발 범위를 제안해 드립니다.</p>
+            </div>
           </div>
 
-          <div style="margin-bottom:20px;">
-            <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" style="display:block; text-decoration:none; background:#fee500; border:2px solid #3c1e1e; padding:12px 16px; color:#3c1e1e; font-weight:bold; font-size:14px; text-align:center; box-shadow:2px 2px 0 #000;">💬 카카오톡 24시간 실시간 상담 ↗</a>
+          <!-- Main Interactive Project Inquiry Form -->
+          <div style="padding:20px; background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); margin-bottom:24px;">
+            <form id="projectInquiryForm" onsubmit="handleProjectInquiry(event);">
+              <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:8px; margin-bottom:16px;">
+                <h3 style="margin:0; font-size:16px; font-weight:800; color:#000000; display:flex; align-items:center; gap:6px;">
+                  <span>📋</span> <span>신규 UX 프로젝트 문의 등록</span>
+                </h3>
+                <span style="font-size:11.5px; color:#666; font-weight:600;"><span style="color:#d00000;">*</span> 표시는 필수 입력</span>
+              </div>
+
+              <!-- Service Category Selection (Checkboxes) -->
+              <div style="margin-bottom:18px;">
+                <label style="display:block; font-size:13px; font-weight:700; color:#000000; margin-bottom:8px;">
+                  1. 관심 서비스 분야 <span style="font-size:11.5px; font-weight:normal; color:#555;">(복수 선택 가능)</span>
+                </label>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:8px;">
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="UX리서치" style="accent-color:#000;"> UX 리서치 (사용자조사/UT)
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="UX라이팅" style="accent-color:#000;"> UX 라이팅 (보이스앤톤/가이드)
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="UX기획/디자인" style="accent-color:#000;"> UX 기획 / UI 디자인
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="웹/앱개발" style="accent-color:#000;"> 웹 / 모바일 앱 개발
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="UX컨설팅" style="accent-color:#000;"> UX 전략 컨설팅 & 진단
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; background:#f4f4f4; border:1px solid #7b7b7b; cursor:pointer; font-size:12.5px; font-weight:600;">
+                    <input type="checkbox" name="inquiryService" value="AI-UX강의" style="accent-color:#000;"> AI-UX 강의 및 기업 출강
+                  </label>
+                </div>
+              </div>
+
+              <!-- Contact Info Grid (2 Columns) -->
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:16px;">
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqName">
+                    이름 / 담당자명 <span style="color:#d00000;">*</span>
+                  </label>
+                  <input type="text" id="inqName" required placeholder="예: 홍길동 팀장" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqPhone">
+                    연락처 <span style="color:#d00000;">*</span>
+                  </label>
+                  <input type="tel" id="inqPhone" required placeholder="예: 010-1234-5678" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqCompany">
+                    회사명 / 소속 <span style="font-weight:normal; color:#666;">(선택)</span>
+                  </label>
+                  <input type="text" id="inqCompany" placeholder="예: (주)슈퍼플래닝" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqEmail">
+                    이메일 주소 <span style="font-weight:normal; color:#666;">(선택)</span>
+                  </label>
+                  <input type="email" id="inqEmail" placeholder="example@domain.com" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                </div>
+              </div>
+
+              <!-- Budget & Timeline Grid -->
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:16px;">
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqSchedule">
+                    예상 시작 일정 <span style="font-weight:normal; color:#666;">(선택)</span>
+                  </label>
+                  <select id="inqSchedule" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                    <option value="바로 시작 가능">ASAP (바로 시작 가능)</option>
+                    <option value="1달 이내">1달 이내 착수</option>
+                    <option value="3달 이내">1~3달 이내 착수</option>
+                    <option value="일정 협의">상담 후 일정 협의</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqBudget">
+                    예상 예산 범위 <span style="font-weight:normal; color:#666;">(선택)</span>
+                  </label>
+                  <select id="inqBudget" style="width:100%; padding:8px; font-size:13px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                    <option value="예산 협의">상담 후 예산 산정</option>
+                    <option value="500만원 이하">500만원 이하 (단기/소규모)</option>
+                    <option value="500만원 ~ 1,000만원">500만원 ~ 1,000만원</option>
+                    <option value="1,000만원 ~ 3,000만원">1,000만원 ~ 3,000만원</option>
+                    <option value="3,000만원 이상">3,000만원 이상 (중대형 프로젝트)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Details Textarea -->
+              <div style="margin-bottom:16px;">
+                <label style="display:block; font-size:12.5px; font-weight:700; color:#000; margin-bottom:4px;" for="inqMessage">
+                  프로젝트 상세 내용 및 주요 요청사항 <span style="color:#d00000;">*</span>
+                </label>
+                <textarea id="inqMessage" required rows="5" placeholder="프로젝트의 목적, 현재 진행 상태(아이디어 단계, UI기획 완료, 디자인 필요 등), 주요 핵심 요구사항을 자유롭게 서술해 주세요. 참고 문서나 벤치마킹 서비스가 있다면 함께 기재해 주시면 더욱 정밀한 견적 산출이 가능합니다." style="width:100%; padding:10px; font-size:13px; line-height:1.5; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box; resize:vertical;"></textarea>
+              </div>
+
+              <!-- Terms & Privacy Agreement -->
+              <div style="margin-bottom:18px;">
+                <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#333; cursor:pointer;">
+                  <input type="checkbox" id="inqPrivacy" required checked style="accent-color:#000;">
+                  <span><strong>개인정보 수집 및 이용 동의 (필수):</strong> 프로젝트 상담 및 견적 안내 목적 이용에 동의합니다.</span>
+                </label>
+              </div>
+
+              <!-- Submit Buttons Grid -->
+              <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <button type="submit" class="w95-btn" style="padding:10px 24px; font-size:14px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000; cursor:pointer; flex:1; min-width:200px; text-align:center; box-shadow:2px 2px 0 rgba(0,0,0,0.3);">
+                  📩 프로젝트 문의 등록하기
+                </button>
+                <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 20px; font-size:13.5px; font-weight:bold; background:#fee500; color:#3c1e1e; border:2px solid #3c1e1e; text-decoration:none; box-shadow:2px 2px 0 #000; flex:1; min-width:200px; text-align:center;">
+                  💬 카카오톡 24시간 실시간 상담 ↗
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <!-- Fast Contact Cards with Copy Buttons -->
+          <div style="padding:16px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:24px;">
+            <h4 style="margin:0 0 10px 0; font-size:13.5px; font-weight:800; color:#000080;">📞 슈퍼플래닝 직접 연락처 & 위치 정보</h4>
+            
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
+                <div style="font-size:12.5px;"><strong>회사명:</strong> <span style="font-weight:700;">Superplanning (슈퍼플래닝)</span></div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
+                <div style="font-size:12.5px;"><strong>대표 이메일:</strong> jake@superplanning.co.kr</div>
+                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소');">복사</button>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
+                <div style="font-size:12.5px;"><strong>대표 전화:</strong> 031-699-3298</div>
+                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호');">복사</button>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                <div style="font-size:12.5px;"><strong>스튜디오 주소:</strong> 경기 하남시 미사강변동로72 SB비즈타워 1116호</div>
+                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('경기 하남시 미사강변동로72 SB비즈타워 1116호', '스튜디오 주소');">복사</button>
+              </div>
+            </div>
           </div>
 
           <!-- 2. 찾아오시는 길 -->
           <h2 id="location">2. 찾아오시는 길</h2>
           <p>지하철 5호선 미사역에서 도보 1분 거리에 위치해 있습니다.</p>
-          <div style="padding:14px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:16px;">
+          <div
+            style="padding:14px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:16px;">
             <h4 style="color:#000080; font-size:13px; margin:0 0 6px 0;">📍 대중교통 및 주차 안내</h4>
-            <p style="font-size:12.5px; margin:0 0 8px 0; line-height:1.6;">· 지하철: 5호선 미사역 8번 출구 서브웨이 옆 건물 11층 (SB비즈타워 1116호)<br>· 주차: 지하주차장 무료주차 지원</p>
-            <a href="https://naver.me/GmF8esjK" target="_blank" class="w95-btn" style="display:inline-block; padding:5px 12px; font-size:12px; text-decoration:none;">네이버 지도에서 위치 보기 ↗</a>
+            <p style="font-size:12.5px; margin:0 0 8px 0; line-height:1.6;">· 지하철: 5호선 미사역 8번 출구 서브웨이 옆 건물 11층 (SB비즈타워
+              1116호)<br>· 주차: 지하주차장 무료주차 지원</p>
+            <a href="https://naver.me/GmF8esjK" target="_blank" class="w95-btn"
+              style="display:inline-block; padding:5px 12px; font-size:12px; text-decoration:none;">네이버 지도에서 위치 보기 ↗</a>
           </div>
 
           <div class="bottom-nav">
             <p>이전 단계: <a href="/company/">회사소개</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-research/">UX리서치</a></p>
-            <p>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a href="/llms.txt">/llms.txt</a></p>
+            <p>마크다운 미러: <a href="/services/ux-planning-design.md">/services/ux-planning-design.md</a> · AI 색인: <a
+                href="/llms.txt">/llms.txt</a></p>
           </div>
         </main>
       </div>
@@ -1360,11 +1674,12 @@
         <div>내 컴퓨터</div>
       </div>
       <style>
-        .tree-item a:hover, .tree-item a.active {
-      background: #000000 !important;
-      color: #ffffff !important;
-      font-weight: 700 !important;
-    }
+        .tree-item a:hover,
+        .tree-item a.active {
+          background: #000000 !important;
+          color: #ffffff !important;
+          font-weight: 700 !important;
+        }
       </style>
 
     </div>
@@ -1410,9 +1725,12 @@
       </div>
     </div>
     <div class="taskbar-right">
-      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
+      <span id="taskWeather"
+        style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍
+        서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://superplanning.blog/';">환경설정</button>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;"
+        onclick="location.href='https://superplanning.blog/';">환경설정</button>
     </div>
   </div>
 
@@ -1425,7 +1743,7 @@
       var m = document.getElementById('startMenu');
       if (m) m.classList.remove('show');
     }
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
         closeStart();
       }
@@ -1488,7 +1806,7 @@
       overlay.appendChild(win);
       document.body.appendChild(overlay);
 
-      overlay.addEventListener('click', function(e) {
+      overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeSubpageWindow();
       });
     }
@@ -1498,12 +1816,12 @@
       if (existing) existing.remove();
     }
 
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeSubpageWindow();
     });
 
     function getSubpageWindowBody(key) {
-            if (key === 'about') {
+      if (key === 'about') {
         return `
           <div class="win-menu-bar" style="margin: -12px -12px 10px -12px; display:flex; gap:12px; background:#c0c0c0; padding:2px 6px; border-bottom:1px solid #808080; font-size:11px;">
             <div><span style="text-decoration:underline;">F</span>ile</div>
@@ -1554,7 +1872,8 @@
             <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">소개영상 보기</button>
             <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">찾아오시는 길</button>
           </div>
-        `;} else if (key === 'brochure') {
+        `;
+      } else if (key === 'brochure') {
         return `
           <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
             <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
@@ -1573,7 +1892,7 @@
             </div>
           </div>
         `;
-            } else if (key === 'clients') {
+      } else if (key === 'clients') {
         return `
           <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
 
@@ -1591,7 +1910,8 @@
             <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">한국식품안전관리인증원</div>
             <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">경기도일자리재단</div>
           </div>
-        `;} else if (key === 'services') {
+        `;
+      } else if (key === 'services') {
         return `
           <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
           <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
@@ -1643,7 +1963,8 @@
               <p style="margin:0; font-size:11px;">최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
             </div>
           </div>
-        `;} else if (key === 'contact') {
+        `;
+      } else if (key === 'contact') {
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:8px;">📍 서비스 이해도가 높은 실무진이 직접 상담해 드립니다.</h3>
           <div class="info-card" style="margin-bottom:8px; padding:6px; text-align:center; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #7b7b7b;">
@@ -1697,7 +2018,8 @@
           </a>
 
           <p style="font-size:9.5px; opacity:0.75; text-align:center; margin-top:4px;">Copyright © 2019–2026 SUPERPLANNING. All rights reserved.</p>
-        `;} else if (key === 'classes') {
+        `;
+      } else if (key === 'classes') {
         return `
           <h3 style="font-size:13px; font-weight:700; margin-bottom:6px;">🎓 실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
           <p style="font-size:11.5px; margin-bottom:10px;">최신 AI 도구를 활용한 UX기획, 와이어프레임 설계, 바이브코딩 실무 교육을 제공합니다.</p>
@@ -1715,7 +2037,7 @@
             <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
           </div>
         `;
-            } else if (key === 'instagram') {
+      } else if (key === 'instagram') {
         return `
           <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
             <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
@@ -1739,7 +2061,8 @@
               <span>슈퍼플래닝 공식 인스타그램</span>
             </div>
           </div>
-        `;      } else if (key === 'threads') {
+        `;
+      } else if (key === 'threads') {
         return `
           <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
             <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
@@ -1775,7 +2098,8 @@
               <span>슈퍼플래닝 공식 쓰레드</span>
             </div>
           </div>
-        `;      } else if (key === 'intro-video') {
+        `;
+      } else if (key === 'intro-video') {
         return `
           <div style="width:100%; height:100%; display:flex; flex-direction:column; gap:6px;">
             <iframe 
@@ -1790,7 +2114,8 @@
               <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a>
             </div>
           </div>
-        `;      } else if (key === 'careers') {
+        `;
+      } else if (key === 'careers') {
         return `
           <h3 style="font-size:15px; font-weight:800; margin-bottom:4px; color:#000080;">🤝 인재를 채용합니다 (상시 모집)</h3>
           <p style="font-size:12px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
@@ -1807,7 +2132,8 @@
             <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
-        `;      } else if (key === 'tweaks') {
+        `;
+      } else if (key === 'tweaks') {
         return `
           <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
           <div style="margin-bottom:12px;">
@@ -1829,7 +2155,7 @@
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
 
-        // Highlight active tree item on scroll & click
+    // Highlight active tree item on scroll & click
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('main h2[id]');
       const navLinks = document.querySelectorAll('.tree-link');
@@ -1873,7 +2199,7 @@
       }
 
       navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
           navLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
         });
@@ -1967,12 +2293,57 @@
         clockEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       }
     }, 1000);
+
+    // Project Inquiry Form Handler & Copy Clipboard Helper
+    function handleProjectInquiry(e) {
+      if (e) e.preventDefault();
+      if (typeof blip === 'function') blip(880, 0.08);
+
+      const name = document.getElementById('inqName') ? document.getElementById('inqName').value.trim() : '';
+      const phone = document.getElementById('inqPhone') ? document.getElementById('inqPhone').value.trim() : '';
+      const company = document.getElementById('inqCompany') ? document.getElementById('inqCompany').value.trim() : '';
+      
+      const services = Array.from(document.querySelectorAll('input[name="inquiryService"]:checked')).map(cb => cb.value);
+      const serviceText = services.length > 0 ? services.join(', ') : '전반적인 UX 서비스';
+
+      alert(`[프로젝트 문의 접수 완료]\n\n${name}님(${company || '고객사'}), 신규 프로젝트 문의가 성공적으로 접수되었습니다.\n\n선택 서비스: ${serviceText}\n연락처: ${phone}\n\n담당 PM이 제출 내용을 검토한 후 영업일 기준 10분 이내로 빠르게 연락드리겠습니다. 감사합니다.`);
+      
+      const form = document.getElementById('projectInquiryForm');
+      if (form) form.reset();
+    }
+
+    function copyToClipboard(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert((label || '텍스트') + '가 클립보드에 복사되었습니다:\n' + text);
+        }).catch(function() {
+          fallbackCopyText(text, label);
+        });
+      } else {
+        fallbackCopyText(text, label);
+      }
+    }
+
+    function fallbackCopyText(text, label) {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        alert((label || '텍스트') + '가 클립보드에 복사되었습니다:\n' + text);
+      } catch (err) {
+        alert('복사하지 못했습니다. 직접 선택하여 복사해 주세요:\n' + text);
+      }
+      document.body.removeChild(textArea);
+    }
   </script>
 
-  
+
 
   <!-- RETRO BACK TO TOP ANCHOR BUTTON -->
-  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기"
+    onclick="window.scrollTo({top:0, behavior:'smooth'});">
     <span>▲</span> <span>TOP</span>
   </button>
   <script>
@@ -1994,4 +2365,5 @@
   </script>
 
 </body>
+
 </html>

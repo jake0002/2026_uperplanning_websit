@@ -1967,6 +1967,50 @@
         clockEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       }
     }, 1000);
+
+    // Project Inquiry Form Handler & Copy Clipboard Helper
+    function handleProjectInquiry(e) {
+      if (e) e.preventDefault();
+      if (typeof blip === 'function') blip(880, 0.08);
+
+      const name = document.getElementById('inqName') ? document.getElementById('inqName').value.trim() : '';
+      const phone = document.getElementById('inqPhone') ? document.getElementById('inqPhone').value.trim() : '';
+      const company = document.getElementById('inqCompany') ? document.getElementById('inqCompany').value.trim() : '';
+      
+      const services = Array.from(document.querySelectorAll('input[name="inquiryService"]:checked')).map(cb => cb.value);
+      const serviceText = services.length > 0 ? services.join(', ') : '전반적인 UX 서비스';
+
+      alert(`[프로젝트 문의 접수 완료]\n\n${name}님(${company || '고객사'}), 신규 프로젝트 문의가 성공적으로 접수되었습니다.\n\n선택 서비스: ${serviceText}\n연락처: ${phone}\n\n담당 PM이 제출 내용을 검토한 후 영업일 기준 10분 이내로 빠르게 연락드리겠습니다. 감사합니다.`);
+      
+      const form = document.getElementById('projectInquiryForm');
+      if (form) form.reset();
+    }
+
+    function copyToClipboard(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert((label || '텍스트') + '가 클립보드에 복사되었습니다:\n' + text);
+        }).catch(function() {
+          fallbackCopyText(text, label);
+        });
+      } else {
+        fallbackCopyText(text, label);
+      }
+    }
+
+    function fallbackCopyText(text, label) {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        alert((label || '텍스트') + '가 클립보드에 복사되었습니다:\n' + text);
+      } catch (err) {
+        alert('복사하지 못했습니다. 직접 선택하여 복사해 주세요:\n' + text);
+      }
+      document.body.removeChild(textArea);
+    }
   </script>
 
   
