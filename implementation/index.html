@@ -1255,7 +1255,11 @@
     <input type="email" placeholder="이메일 (선택)" id="skyEmail">
     <input type="tel" placeholder="연락처 *" id="skyPhone" required>
     <textarea rows="3" placeholder="문의내용 *" id="skyMsg" required></textarea>
-    <button class="w95-btn" style="width:100%; margin-top:4px;" onclick="blip(880, 0.08); alert('문의가 성공적으로 전달되었습니다!');">보내기</button>
+    <div style="margin:6px 0 4px 0; font-size:10.5px; color:var(--win-fg); display:flex; align-items:center; gap:4px;">
+      <input type="checkbox" id="skyPrivacy" required checked style="accent-color:#000; cursor:pointer;">
+      <label for="skyPrivacy" id="skyPrivacyLabel" style="cursor:pointer; font-size:10.5px; user-select:none;">개인정보 수집 및 이용 동의 (필수)</label>
+    </div>
+    <button class="w95-btn" style="width:100%; margin-top:4px;" onclick="submitSkyscraper();">보내기</button>
     <hr style="margin:10px 0 8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
     <div style="display:flex; flex-direction:column; gap:5px; font-size:10.5px; color:var(--win-fg);">
       <div id="skyFooterCompName" style="font-weight:700; color:#000000;">슈퍼플래닝</div>
@@ -2422,6 +2426,9 @@
       const msgInp = document.getElementById('skyMsg');
       if (msgInp) msgInp.placeholder = isKo ? '문의내용 *' : 'Inquiry details *';
 
+      const skyPrivacyLabel = document.getElementById('skyPrivacyLabel');
+      if (skyPrivacyLabel) skyPrivacyLabel.textContent = isKo ? '개인정보 수집 및 이용 동의 (필수)' : 'Privacy Policy Agreement (Required)';
+
       const skySubmit = document.querySelector('#skyscraper button.w95-btn');
       if (skySubmit) skySubmit.textContent = isKo ? '보내기' : 'Send';
 
@@ -2566,6 +2573,28 @@
 
       fetchWeatherSeoul();
       setInterval(fetchWeatherSeoul, 600000);
+    }
+
+    function submitSkyscraper() {
+      const privacyCb = document.getElementById('skyPrivacy');
+      if (privacyCb && !privacyCb.checked) {
+        alert((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Please agree to the privacy policy.' : '개인정보 수집 및 이용 동의(필수)에 체크해 주세요.');
+        return;
+      }
+      const name = document.getElementById('skyName') ? document.getElementById('skyName').value.trim() : '';
+      const phone = document.getElementById('skyPhone') ? document.getElementById('skyPhone').value.trim() : '';
+      const msg = document.getElementById('skyMsg') ? document.getElementById('skyMsg').value.trim() : '';
+      if (!name || !phone || !msg) {
+        alert((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Please fill out all required fields (*).' : '이름, 연락처, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
+        return;
+      }
+      if (typeof blip === 'function') blip(880, 0.08);
+      alert((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Your inquiry has been successfully submitted! We will contact you within 10 minutes.' : '문의가 성공적으로 전달되었습니다! 담당자가 확인 후 영업일 기준 10분 이내로 연락드리겠습니다.');
+      if (document.getElementById('skyName')) document.getElementById('skyName').value = '';
+      if (document.getElementById('skyCompany')) document.getElementById('skyCompany').value = '';
+      if (document.getElementById('skyEmail')) document.getElementById('skyEmail').value = '';
+      if (document.getElementById('skyPhone')) document.getElementById('skyPhone').value = '';
+      if (document.getElementById('skyMsg')) document.getElementById('skyMsg').value = '';
     }
 
     function initApp() {
