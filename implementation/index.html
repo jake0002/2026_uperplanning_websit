@@ -1708,10 +1708,10 @@
               <p style="margin:0;">${isKo ? 'FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.' : 'FGI, in-depth interviews, and UT research to validate hypotheses and eliminate failure risks.'}</p>
             </div>
 
-            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="openWindow('contact'); blip(660, 0.04);">
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-writing/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
                 <h4 style="margin:0;">${isKo ? 'UX 라이팅' : 'UX Writing'}</h4>
-                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">${isKo ? '상세보기 →' : 'Details →'}</button>
+                <a href="/ux-writing/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
               </div>
               <p style="margin:0;">${isKo ? '보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.' : 'Voice & tone definition and UX writing guidelines for a unified brand experience.'}</p>
             </div>

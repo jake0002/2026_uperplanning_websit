@@ -2967,31 +2967,6 @@
       <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱개발</div>
       <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
       <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
-  </div>
-
-  <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
-  <div id="taskbar">
-    <div class="taskbar-left">
-      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu();">
-        <span>💻</span> <strong>전체 메뉴보기</strong>
-      </button>
-      <div id="taskPreviews">
-        <div class="task-preview active">
-          <span>📁</span> <span>서비스 탐색기</span>
-        </div>
-      </div>
-    </div>
-    <div class="taskbar-right">
-      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
-      <span id="taskClock">12:00:00 PM</span>
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://superplanning.blog/';">환경설정</button>
-    </div>
-  </div>
-
-  <script>
     function toggleStartMenu() {
       var m = document.getElementById('startMenu');
       if (m) m.classList.toggle('show');
