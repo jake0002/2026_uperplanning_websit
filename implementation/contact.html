@@ -1668,11 +1668,78 @@
             </div>
           </div>
 
-          <!-- Studio Exterior Photo Card (Strict B&W) -->
-          <div style="padding:12px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:24px;">
-            <div style="font-size:12.5px; font-weight:700; color:#000000; margin-bottom:8px;">UX디자인 에이전시 슈퍼플래닝 본사 전경</div>
-            <img src="/images/superplanning-office.png" alt="UX디자인 에이전시 슈퍼플래닝 본사 전경" style="width:100%; height:auto; max-height:240px; object-fit:cover; border:1px solid #000; display:block;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning-office.png';}">
+          <!-- Superplanning Office Image Gallery Viewer (Strict B&W Win95 Retro Style) -->
+          <div style="padding:14px; background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000000; padding-bottom:8px; margin-bottom:12px;">
+              <div style="font-size:13.5px; font-weight:800; color:#000000;">슈퍼플래닝 이미지</div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span id="officeGalleryCounter" style="font-size:11.5px; font-weight:800; font-family:var(--font-mono, monospace); color:#333333;">1 / 5</span>
+                <div style="display:flex; gap:3px;">
+                  <button class="w95-btn" onclick="changeOfficeGallery(-1);" style="padding:2px 8px; font-size:11px; font-weight:bold; cursor:pointer;" title="이전 이미지">◀ 이전</button>
+                  <button class="w95-btn" onclick="changeOfficeGallery(1);" style="padding:2px 8px; font-size:11px; font-weight:bold; cursor:pointer;" title="다음 이미지">다음 ▶</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Square / 16:10 Ratio Scaled Image Display Frame -->
+            <div style="width:100%; height:440px; max-height:65vh; background:#111111; border:2px solid #000000; box-shadow:inset 1px 1px 0 #000000; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;">
+              <img id="officeGalleryImg" src="/images/superplanning_office_1.jpg" alt="슈퍼플래닝 이미지 1" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_office_1.jpg';}">
+            </div>
+
+            <!-- Thumbnail Indicators Bar -->
+            <div style="display:flex; justify-content:center; gap:6px; margin-top:10px;" id="officeGalleryDots">
+              <button class="w95-btn gallery-dot active" onclick="setOfficeGallery(0);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#000; color:#fff;">1</button>
+              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(1);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">2</button>
+              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(2);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">3</button>
+              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(3);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">4</button>
+              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(4);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">5</button>
+            </div>
           </div>
+
+          <script>
+            const officeImages = [
+              { src: '/images/superplanning_office_1.jpg', alt: '슈퍼플래닝 이미지 1 - 외관 간판' },
+              { src: '/images/superplanning_office_2.jpg', alt: '슈퍼플래닝 이미지 2 - 내부 스튜디오 로고' },
+              { src: '/images/superplanning_office_3.jpg', alt: '슈퍼플래닝 이미지 3 - UX디렉터' },
+              { src: '/images/superplanning_office_4.jpg', alt: '슈퍼플래닝 이미지 4 - 기획 및 리서치 회의' },
+              { src: '/images/superplanning_office_5.jpg', alt: '슈퍼플래닝 이미지 5 - 와이어프레임 설계 검토' }
+            ];
+            let currentOfficeIdx = 0;
+
+            function updateOfficeGalleryDisplay() {
+              const imgEl = document.getElementById('officeGalleryImg');
+              const counterEl = document.getElementById('officeGalleryCounter');
+              const dots = document.querySelectorAll('#officeGalleryDots .gallery-dot');
+
+              if (imgEl && officeImages[currentOfficeIdx]) {
+                imgEl.src = officeImages[currentOfficeIdx].src;
+                imgEl.alt = officeImages[currentOfficeIdx].alt;
+                imgEl.dataset.tried = '';
+              }
+              if (counterEl) {
+                counterEl.textContent = `${currentOfficeIdx + 1} / ${officeImages.length}`;
+              }
+              dots.forEach((dot, idx) => {
+                if (idx === currentOfficeIdx) {
+                  dot.style.background = '#000000';
+                  dot.style.color = '#ffffff';
+                } else {
+                  dot.style.background = '#ffffff';
+                  dot.style.color = '#000000';
+                }
+              });
+            }
+
+            function changeOfficeGallery(delta) {
+              currentOfficeIdx = (currentOfficeIdx + delta + officeImages.length) % officeImages.length;
+              updateOfficeGalleryDisplay();
+            }
+
+            function setOfficeGallery(idx) {
+              currentOfficeIdx = idx;
+              updateOfficeGalleryDisplay();
+            }
+          </script>
 
           <div class="bottom-nav">
             <p>이전 단계: <a href="/company/">회사소개</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-research/">UX리서치</a></p>
