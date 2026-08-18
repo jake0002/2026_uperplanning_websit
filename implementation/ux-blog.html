@@ -1158,7 +1158,11 @@
         
 
 
-    /* TASKBAR & START MENU FIX FOR UX BLOG */
+    
+
+
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (100% SYNCED WITH CONTACT PAGE) */
     #taskbar {
       display: flex !important;
       position: fixed !important;
@@ -1166,12 +1170,28 @@
       left: 0 !important;
       right: 0 !important;
       z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
     }
     #startMenu {
+      display: none;
       position: fixed !important;
-      bottom: 34px !important;
+      bottom: 32px !important;
       left: 2px !important;
       z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: column !important;
     }
     #startBtn * {
       pointer-events: none !important;
@@ -2023,18 +2043,8 @@
   </div>
 
   <script>
-    function toggleStartMenu(e) {
-      if (e) {
-        if (typeof e.stopPropagation === 'function') e.stopPropagation();
-        if (typeof e.preventDefault === 'function') e.preventDefault();
-      }
-      var m = document.getElementById('startMenu');
-      if (m) m.classList.toggle('show');
-    }
-    function closeStart() {
-      var m = document.getElementById('startMenu');
-      if (m) m.classList.remove('show');
-    }
+          
+    
     document.addEventListener('click', function(e) {
       if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
         closeStart();
@@ -2669,6 +2679,40 @@
       const modal = document.getElementById('inquirySuccessModal');
       if (modal) modal.style.display = 'none';
     }
+
+  </script>
+
+  
+
+  <script>
+
+    /* EXACT TASKBAR & START MENU SCRIPT (100% SYNCED WITH CONTACT PAGE) */
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
+      var menu = document.getElementById('startMenu');
+      if (menu) {
+        menu.classList.toggle('show');
+        if (typeof blip === 'function') blip(520, 0.05);
+      }
+    }
+
+    function closeStart() {
+      var menu = document.getElementById('startMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', function(e) {
+      var menu = document.getElementById('startMenu');
+      var btn = document.getElementById('startBtn');
+      if (menu && menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('show');
+        }
+      }
+    });
 
   </script>
 </body>
