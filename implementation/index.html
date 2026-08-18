@@ -988,6 +988,10 @@
     @keyframes eqAnim { 0% { height: 10%; } 100% { height: 95%; } }
   
 
+    
+
+
+
     /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
     #taskbar {
       display: flex !important;
@@ -1048,6 +1052,16 @@
     }
     #startBtn * {
       pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
     }
 
 </style>
