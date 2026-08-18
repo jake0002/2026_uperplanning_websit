@@ -1064,6 +1064,33 @@
       }
     }
 
+
+
+    /* MOBILE GNB MENU DRAWER CSS SYNCED WITH SUBPAGES */
+    @media (max-width: 768px) {
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+      }
+      #mobileNavDrawer {
+        position: fixed !important;
+        top: calc(var(--logo-top, 8px) + var(--gnb-h, 34px) + 4px) !important;
+        right: 10px !important;
+        left: 10px !important;
+        background: #c0c0c0 !important;
+        border: 2px solid #000000 !important;
+        box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 4px 4px 0 rgba(0,0,0,0.5) !important;
+        padding: 10px !important;
+        z-index: 9999999 !important;
+        display: none;
+      }
+      #mobileNavDrawer.show {
+        display: block !important;
+      }
+    }
+
 </style>
 </head>
 <body data-theme="light" data-density="comfortable">
@@ -2853,5 +2880,20 @@
     }
 
   </script>
+
+
+  <script>
+    // MOBILE GNB DRAWER TOGGLE HANDLER
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
+      if (typeof closeStart === 'function') {
+        closeStart();
+      }
+    }
+  </script>
+
 </body>
 </html>
