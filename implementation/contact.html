@@ -1433,7 +1433,6 @@
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
-      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
       <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
       <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
       <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
@@ -1783,7 +1782,7 @@
           </div>
 
           <div class="bottom-nav">
-            <p>이전 단계: <a href="/company/">회사소개</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-research/">UX리서치</a></p>
+            <p>이전 단계: <a href="/company/">회사소개</a></p>
             <p>AI 색인: <a href="/llms.txt">/llms.txt</a></p>
           </div>
         </main>
@@ -1817,7 +1816,6 @@
       <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.net/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
       <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
       <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
       <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
       <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
@@ -2033,14 +2031,6 @@
         return `
           <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
           <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
-            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-research/';">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 리서치</h4>
-                <a href="/ux-research/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
-              </div>
-              <p style="margin:0; font-size:11px;">FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.</p>
-            </div>
-
             <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-writing/';">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
                 <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 라이팅</h4>
