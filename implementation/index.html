@@ -1191,7 +1191,7 @@
     </div>
   </div>
 
-  <!-- MOBILE GNB NAVIGATION DRAWER -->
+      <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
       <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
@@ -1206,10 +1206,11 @@
       <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
       <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
       <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
     </div>
   </div>
 
-    <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
+  <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
   <div id="desktop">
     <div id="iconsArea">
       <!-- 1. 슈퍼플래닝 소개 -->
