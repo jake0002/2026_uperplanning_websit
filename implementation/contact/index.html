@@ -1294,6 +1294,27 @@
       bottom: 48px !important;
     }
         
+
+
+    /* TASKBAR & START MENU FIX FOR CONTACT PAGE */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+    }
+    #startMenu {
+      position: fixed !important;
+      bottom: 34px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
 </style>
   <style>
     /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
@@ -2633,6 +2654,43 @@
       const modal = document.getElementById('inquirySuccessModal');
       if (modal) modal.style.display = 'none';
     }
+
+  </script>
+
+  <script>
+
+    // TASKBAR & START MENU TOGGLE HANDLER FOR CONTACT PAGE
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
+      const menu = document.getElementById('startMenu');
+      if (menu) {
+        const isShow = menu.classList.contains('show');
+        if (isShow) {
+          menu.classList.remove('show');
+        } else {
+          menu.classList.add('show');
+        }
+        if (typeof blip === 'function') blip(520, 0.05);
+      }
+    }
+
+    function closeStart() {
+      const menu = document.getElementById('startMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('startMenu');
+      const btn = document.getElementById('startBtn');
+      if (menu && menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('show');
+        }
+      }
+    });
 
   </script>
 </body>
