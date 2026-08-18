@@ -1069,6 +1069,23 @@
     }
 
 
+
+    /* Start Button Pointer-Events Guard */
+    #startBtn * { pointer-events: none !important; }
+    #startMenu {
+      position: fixed !important;
+      bottom: 38px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      display: none;
+      padding: 4px !important;
+    }
+    #startMenu.show { display: flex !important; }
+      
 </style>
 </head>
 <body>
@@ -1904,7 +1921,7 @@
   <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
   <div id="taskbar">
     <div class="taskbar-left">
-      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu();">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(event);">
         <span>💻</span> <strong>전체 메뉴보기</strong>
       </button>
       <div id="taskPreviews">
@@ -1921,7 +1938,11 @@
   </div>
 
   <script>
-    function toggleStartMenu() {
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
       var m = document.getElementById('startMenu');
       if (m) m.classList.toggle('show');
     }
