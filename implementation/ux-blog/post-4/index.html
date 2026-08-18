@@ -18,18 +18,8 @@
   <link rel="canonical" href="https://superplanning.blog/ux-blog/post-4/">
 
   <!-- OPEN GRAPH / FACEBOOK / NAVER SEO -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="슈퍼플래닝 UX블로그">
-  <meta property="og:title" content="피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유">
-  <meta property="og:description" content="피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.">
-  <meta property="og:url" content="https://superplanning.blog/ux-blog/post-4/">
-  <meta property="og:image" content="https://superplanning.blog/images/superplanning_brand_logo.png">
 
   <!-- TWITTER CARDS SEO -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유">
-  <meta name="twitter:description" content="피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.">
-  <meta name="twitter:image" content="https://superplanning.blog/images/superplanning_brand_logo.png">
 
   <!-- GEO STRUCTURED DATA (JSON-LD SCHEMA.ORG) -->
   <script type="application/ld+json">
@@ -729,7 +719,6 @@
       padding: 4px !important;
     }
     #startMenu.show { display: flex !important; }
-      
 
     /* TASKBAR ALWAYS VISIBLE & HIGH Z-INDEX */
     #taskbar {
@@ -758,27 +747,12 @@
     #startMenu.show {
       display: flex !important;
     }
-  
 
     /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
     #scrollTopBtn {
       right: 20px !important; left: auto !important;
       bottom: 48px !important;
     }
-        
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
 
     /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
     #taskbar {
@@ -853,6 +827,28 @@
     }
 
 </style>
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://superplanning.blog | SECONDARY: https://superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://superplanning.blog">
+  
+  <!-- OPEN GRAPH & SOCIAL SHARE THUMBNAIL (OG TAGS) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="슈퍼플래닝 (Superplanning) — Web and App UX Lab">
+  <meta property="og:description" content="서비스 기획·디자인·개발 실무 리드가 직접 검토하는 예비 고객사 맞춤 UX 솔루션">
+  <meta property="og:url" content="https://superplanning.blog/">
+  <meta property="og:image" content="https://superplanning.blog/og-thumbnail.png">
+  <meta property="og:image:secure_url" content="https://superplanning.blog/og-thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="SUPERPLANNING Web and App UX Lab">
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="슈퍼플래닝 (Superplanning) — Web and App UX Lab">
+  <meta name="twitter:description" content="서비스 기획·디자인·개발 실무 리드가 직접 검토하는 예비 고객사 맞춤 UX 솔루션">
+  <meta name="twitter:image" content="https://superplanning.blog/og-thumbnail.png">
+  <meta name="twitter:domain" content="superplanning.blog">
 </head>
 <body>
 
@@ -1271,15 +1267,13 @@
   </script>
 
   <script>
-          
-    
+
     document.addEventListener('click', function(e) {
       if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
         closeStart();
       }
     });
   </script>
-      
 
   <script>
 
@@ -1386,8 +1380,6 @@
     }
 
   </script>
-
-  
 
   <script>
 
