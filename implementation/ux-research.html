@@ -1139,6 +1139,42 @@
       }
     }
 
+
+
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important;
+      left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+      }
+    }
+
 </style>
 <style>
 
@@ -1599,6 +1635,40 @@
       }
     }
   </style>
+
+
+  
+
+  <!-- RETRO BACK TO TOP ANCHOR BUTTON -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+  <script>
+    (function() {
+      function initScrollTopBtn() {
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+          const updateVisibility = () => {
+            if (window.innerWidth > 900) {
+              const scrollPos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+              scrollTopBtn.style.display = (scrollPos > 80) ? 'inline-flex' : 'none';
+            } else {
+              scrollTopBtn.style.display = 'none';
+            }
+          };
+          window.addEventListener('scroll', updateVisibility, { passive: true, capture: true });
+          window.addEventListener('resize', updateVisibility, { passive: true });
+          document.addEventListener('scroll', updateVisibility, { passive: true, capture: true });
+          updateVisibility();
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollTopBtn);
+      } else {
+        initScrollTopBtn();
+      }
+    })();
+  </script>
 
 
   <!-- START MENU -->
