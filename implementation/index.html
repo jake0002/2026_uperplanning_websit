@@ -1232,10 +1232,10 @@
     </div>
   </div>
 
-      <!-- MOBILE GNB NAVIGATION DRAWER -->
+          <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
-      <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
+      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
@@ -2522,20 +2522,33 @@
       const skyKakaoBtn = document.getElementById('skyKakaoBtn');
       if (skyKakaoBtn) skyKakaoBtn.textContent = isKo ? '채팅 시작 ↗' : 'Start Chat ↗';
 
-      // 5. Mobile Drawer Menu Items
+            // 5. Mobile Drawer Menu Items
       const drawerItems = document.querySelectorAll('#mobileNavDrawer .start-item');
       const drawerKo = [
-        '• 회사소개', '• 주요 고객사', '• UX 서비스', '• AI-UX 강의', 
-        '• UX 블로그', '• 찾아오시는 길 & 문의', '• 포트폴리오 보기', 
-        '• 인재채용', '• 언어 변경 (KOR / ENG)'
+        '• UX리서치', '• UX라이팅', '• UX기획/디자인', '• 웹/앱개발', 
+        '• AI-UX강의', '• UX블로그', '• 회사소개', '• 문의하기', '• 포트폴리오 보기'
       ];
       const drawerEn = [
-        '• About Us', '• Key Clients', '• UX Services', '• AI-UX Classes', 
-        '• UX Blog', '• Location & Inquiry', '• Company Brochure', 
-        '• Careers', '• Language (KOR / ENG)'
+        '• UX Research', '• UX Writing', '• UX Planning & Design', '• Web/App Dev', 
+        '• AI-UX Academy', '• UX Blog', '• About Us', '• Contact Us', '• Portfolio'
+      ];
+      const drawerActions = [
+        function() { location.href = '/ux-research/'; },
+        function() { location.href = '/ux-writing/'; },
+        function() { location.href = '/ux-design/'; },
+        function() { location.href = '/web-app-development/'; },
+        function() { location.href = '/ux-academy/'; },
+        function() { location.href = '/ux-blog/'; },
+        function() { location.href = '/ux-company/'; },
+        function() { location.href = '/contact/'; },
+        function() { if(typeof openWindow==='function'){ openWindow('brochure'); } else { location.href='/ux-company/#brochure'; } }
       ];
       drawerItems.forEach((el, idx) => {
         if (drawerKo[idx]) el.textContent = isKo ? drawerKo[idx] : drawerEn[idx];
+        el.onclick = function() {
+          if (drawerActions[idx]) drawerActions[idx]();
+          toggleMobileMenu();
+        };
       });
 
       // 6. Start Menu Items
