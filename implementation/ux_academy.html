@@ -2944,119 +2944,22 @@
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
-      <div class="start-item" onclick="openWindow('about'); closeStart();">• 슈퍼플래닝</div>
-      <div class="start-item" onclick="openWindow('clients'); closeStart();">• 주요 고객사</div>
-      <div class="start-item" onclick="openWindow('services'); closeStart();">• UX서비스</div>
-      <div class="start-item" onclick="openWindow('instagram'); closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="openWindow('threads'); closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="openWindow('intro-video'); closeStart();">• 유튜브</div>
-      <div class="start-item" onclick="openWindow('brochure'); closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="openWindow('careers'); closeStart();">• 인재채용</div>
-      <div class="start-item" onclick="openWindow('tweaks'); closeStart();">• 환경설정</div>
-      <div class="start-item" onclick="openWindow('contact'); closeStart();">• 찾아오시는길</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.net/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
       <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
       <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
       <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
       <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-    function toggleStartMenu() {
-      var m = document.getElementById('startMenu');
-      if (m) m.classList.toggle('show');
-    }
-    function closeStart() {
-      var m = document.getElementById('startMenu');
-      if (m) m.classList.remove('show');
-    }
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
-        closeStart();
-      }
-    });
-
-    function toggleMobileMenu() {
-      var drawer = document.getElementById('mobileNavDrawer');
-      if (drawer) {
-        drawer.classList.toggle('show');
-      }
-      if (typeof closeStart === 'function') {
-        closeStart();
-      }
-    }
-
-    // Subpage Win95 Retro Popup Window Engine
-    const WINDOW_DEFS = {
-      'about': { w: 640, h: 480, title: '• 슈퍼플래닝 소개' },
-      'clients': { w: 600, h: 380, title: '• 주요 고객사' },
-      'services': { w: 620, h: 500, title: '• UX 서비스' },
-      'classes': { w: 640, h: 420, title: '• AI-UX 강의' },
-      'blog': { w: 600, h: 420, title: '• UX 블로그' },
-      'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
-      'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
-      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
-      'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
-      'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
-      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
-      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
-    };
-
-    function openWindow(key) {
-      closeStart();
-      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — AI-UX 강의' };
-      var titleText = def.title;
-
-      var existing = document.getElementById('subpageModalOverlay');
-      if (existing) existing.remove();
-
-      var isMobile = window.innerWidth <= 768;
-
-      var overlay = document.createElement('div');
-      overlay.id = 'subpageModalOverlay';
-      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
-
-      var win = document.createElement('div');
-      var winW = isMobile ? '94vw' : def.w + 'px';
-      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
-
-      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
-
-      win.innerHTML = `
-        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
-          <span>${titleText}</span>
-          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
-        </div>
-        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
-          ${getSubpageWindowBody(key)}
-        </div>
-      `;
-
-      overlay.appendChild(win);
-      document.body.appendChild(overlay);
-
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closeSubpageWindow();
-      });
-    }
-
-    function closeSubpageWindow() {
-      var existing = document.getElementById('subpageModalOverlay');
-      if (existing) existing.remove();
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeSubpageWindow();
-    });
-
-    function getSubpageWindowBody(key) {
-            if (key === 'about') {
-        return `
-          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px; display:flex; gap:12px; background:#c0c0c0; padding:2px 6px; border-bottom:1px solid #808080; font-size:11px;">
-            <div><span style="text-decoration:underline;">F</span>ile</div>
-            <div><span style="text-decoration:underline;">E</span>dit</div>
-            <div><span style="text-decoration:underline;">V</span>iew</div>
-            <div><span style="text-decoration:underline;">H</span>elp</div>
-          </div>
+      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
+    </div>
+  </div>
+  </div>
           
           <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
             <img src="/images/superplanning_brand_logo.png" alt="SUPERPLANNING" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_brand_logo.png';}">
