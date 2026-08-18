@@ -1209,7 +1209,9 @@ NOTE: The output was truncated because it was too long. Use a more targeted quer
       if (drawer) {
         drawer.classList.toggle('show');
       }
-      closeStart();
+      if (typeof closeStart === 'function') {
+        closeStart();
+      }
     }
 
     // Subpage Win95 Retro Popup Window Engine
