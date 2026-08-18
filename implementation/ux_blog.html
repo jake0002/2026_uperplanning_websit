@@ -1128,7 +1128,11 @@
 
 
 
-    /* EXACT WIN95 TASKBAR & START MENU CSS (100% SYNCED WITH CONTACT PAGE) */
+    
+
+
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
     #taskbar {
       display: flex !important;
       position: fixed !important;
@@ -1154,10 +1158,37 @@
       background: #c0c0c0 !important;
       border: 2px solid #000000 !important;
       box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
     }
     #startMenu.show {
       display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
       flex-direction: column !important;
+      gap: 2px !important;
     }
     #startBtn * {
       pointer-events: none !important;
