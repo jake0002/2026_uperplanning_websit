@@ -1062,7 +1062,7 @@
     #scrollTopBtn {
       position: fixed;
       bottom: 50px;
-      right: 20px;
+      left: 20px !important; right: auto !important;
       z-index: 999999;
       background: var(--win-bg);
       color: #000000;
@@ -1082,7 +1082,7 @@
       transform: translate(1px, 1px);
     }
     @media (max-width: 900px) {
-      #scrollTopBtn { display: none !important; }
+      #scrollTopBtn { display: none !important;  left: 20px !important; right: auto !important;}
       #taskbar, .bottom-gnb { display: none !important; }
       body { padding-bottom: 0 !important; }
     }
@@ -1092,7 +1092,7 @@
     #scrollTopBtn {
       position: fixed !important;
       bottom: 48px !important;
-      right: 20px !important;
+      left: 20px !important; right: auto !important;
       z-index: 999999 !important;
       background: #c0c0c0 !important;
       color: #000000 !important;
@@ -1118,9 +1118,17 @@
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
-      }
+       left: 20px !important; right: auto !important;}
     }
 
+
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      left: 20px !important;
+      right: auto !important;
+      bottom: 48px !important;
+    }
+        
 </style>
 
 <style>
@@ -1129,7 +1137,7 @@
     #scrollTopBtn {
       position: fixed !important;
       bottom: 48px !important;
-      right: 20px !important;
+      left: 20px !important; right: auto !important;
       z-index: 999999 !important;
       background: #c0c0c0 !important;
       color: #000000 !important;

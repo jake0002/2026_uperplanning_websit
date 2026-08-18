@@ -1215,7 +1215,7 @@
     #scrollTopBtn {
       position: fixed;
       bottom: 50px;
-      right: 20px;
+      left: 20px !important; right: auto !important;
       z-index: 999999;
       background: var(--win-bg);
       color: #000000;
@@ -1239,7 +1239,7 @@
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
-      }
+       left: 20px !important; right: auto !important;}
 
       #taskbar,
       .bottom-gnb {
@@ -1256,7 +1256,7 @@
     #scrollTopBtn {
       position: fixed !important;
       bottom: 48px !important;
-      right: 20px !important;
+      left: 20px !important; right: auto !important;
       z-index: 999999 !important;
       background: #c0c0c0 !important;
       color: #000000 !important;
@@ -1285,15 +1285,23 @@
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
-      }
+       left: 20px !important; right: auto !important;}
     }
-  </style>
+  
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      left: 20px !important;
+      right: auto !important;
+      bottom: 48px !important;
+    }
+        
+</style>
   <style>
     /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
     #scrollTopBtn {
       position: fixed !important;
       bottom: 48px !important;
-      right: 20px !important;
+      left: 20px !important; right: auto !important;
       z-index: 999999 !important;
       background: #c0c0c0 !important;
       color: #000000 !important;
@@ -1322,7 +1330,7 @@
     @media (max-width: 900px) {
       #scrollTopBtn {
         display: none !important;
-      }
+       left: 20px !important; right: auto !important;}
     }
   </style>
 </head>
