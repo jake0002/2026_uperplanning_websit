@@ -2341,8 +2341,8 @@
 
 
 
-  <!-- RETRO WIN95 STICKY KAKAO CHAT BANNER (ALIGNED NEXT TO CONTENT LAYOUT) -->
-  <div id="stickyKakaoBanner" style="position:fixed; bottom:92px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
+  <!-- RETRO WIN95 STICKY KAKAO CHAT BANNER (ALIGNED WITH EXPLORER TITLEBAR TOP LINE) -->
+  <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
     <!-- Win95 Titlebar -->
     <div style="background:#000000; color:#ffffff; padding:3px 6px; font-size:11px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
       <div style="display:flex; align-items:center; gap:4px;">
@@ -2371,12 +2371,14 @@
       #stickyKakaoBanner {
         left: auto !important;
         right: 16px !important;
+        top: 68px !important;
       }
     }
     @media (max-width: 768px) {
       #stickyKakaoBanner {
         left: auto !important;
         right: 8px !important;
+        top: auto !important;
         bottom: 80px !important;
         width: 200px !important;
       }
