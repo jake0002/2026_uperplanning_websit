@@ -1,0 +1,1010 @@
+
+    /* CSS Variables & Core Styling (Main Page Compatibility) */
+    :root {
+      --bg: #ffffff;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --win-fg-dark: #0a0a0a;
+      --bevel-hi: #ffffff;
+      --bevel-lo: #7b7b7b;
+      --bevel-shadow: #3b3b3b;
+      --accent: #ffd43b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      letter-spacing: -0.01em;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a {
+      color: #111111;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #555555;
+    }
+
+    /* Win95 Button Utility */
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) */
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo span, #brandLogoText {
+      color: #ffffff !important;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+
+    /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE) */
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (HIGH-CONTRAST NEON ACCENT LINE) */
+        /* GNB SCROLL PROGRESS GAUGE BAR (EXACT MAIN PAGE COPY) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1;
+    }
+    .gnb-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .gnb-item {
+      position: relative;
+    }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      user-select: none !important;
+    }
+        .gnb-link:hover,
+    .gnb-link:active,
+    .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span,
+    .gnb-link:active span,
+    .gnb-link.active span {
+      color: #ffffff !important;
+    }
+    .gnb-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Mobile Hamburger & Drawer */
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 10px;
+    }
+    #mobileNavDrawer.show {
+      display: block !important;
+    }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    /* Outer Wrapper for Left Alignment */
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* ==================================================== */
+    /* WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT ATTACHED IMAGE MATCH) */
+    /* ==================================================== */
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0; /* Left Alignment */
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+      user-select: none;
+    }
+    .titlebar-text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .titlebar-controls {
+      display: flex;
+      gap: 3px;
+    }
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+
+    /* 2. Menu Bar (#c0c0c0) */
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+      user-select: none;
+    }
+    .menubar span {
+      cursor: default;
+    }
+    .menubar u {
+      text-decoration: underline;
+    }
+
+    /* 3. Toolbar & Address Bar Area */
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active {
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
+    /* Address Bar Input */
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .addr-label {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /* 4. Explorer Split Pane (Left Sidebar + Right Main Pane) */
+    .explorer-split {
+      display: flex;
+      background: #ffffff;
+      min-height: 600px;
+    }
+
+    /* Left Explorer Tree View Sidebar (Exact Attached Image Layout) */
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      box-shadow: inset -1px 0 0 #d0d0d0;
+      padding: 16px 12px;
+      user-select: none;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tree-toggle {
+      font-size: 11px;
+      font-weight: bold;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      line-height: 1;
+    }
+
+    /* Tree Navigation List (ul.toc) */
+    ul.tree-list {
+      list-style-type: none;
+      padding-left: 8px;
+      margin: 0;
+      position: relative;
+    }
+    ul.tree-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 12px;
+      left: 18px;
+      border-left: 1px dotted #808080;
+    }
+
+    .tree-item {
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .tree-item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -10px;
+      width: 10px;
+      border-top: 1px dotted #808080;
+    }
+
+    .tree-item a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      color: #000000;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+    .tree-item a:hover, .tree-item a.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
+      filter: brightness(2);
+    }
+
+    /* Right Main Content View Pane (Exact Attached Image Layout) */
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 36px 48px;
+      overflow-y: auto;
+    }
+
+    /* Header H1 (Pure, Unadorned Notepad Document Title) */
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .hero-intro {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    /* Header H2 (Raw, Clean Notepad Heading - No Background Box, No Left Colored Bar) */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 38px;
+      margin-bottom: 14px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      color: #000000;
+      scroll-margin-top: 70px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Header H3 (Raw, Clean Subheading) */
+    h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #111111;
+    }
+    h3::before {
+      content: "";
+      display: none;
+    }
+
+    /* Raw Body Paragraphs (Clean Notepad Readability) */
+    p {
+      margin-bottom: 14px;
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #111111;
+    }
+
+    /* Raw Quote Styling (Pure Notepad Text Quotation - No Box, No Side Line) */
+    blockquote {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      font-size: 15.5px;
+      font-weight: 700;
+      margin: 20px 0 6px 0;
+      color: #111111;
+    }
+    .sub-quote {
+      font-size: 13.5px;
+      color: #444444;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 0;
+      border-left: none;
+    }
+
+    /* Left-Aligned Clean Photo Frame & Captions (No Borders, Left Aligned) */
+    .photo-frame {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 24px 0;
+      max-width: 640px;
+    }
+    .photo-frame img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      border: none;
+    }
+    /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
+    figure {
+      margin: 20px 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure,
+    .top-hero-photo,
+    .cases-photo-figure {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .cases-logo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure img,
+    .cases-logo-stack img,
+    .top-hero-photo img,
+    .cases-photo-figure img,
+    .main-content-pane figure img,
+    .main-content-pane img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-sizing: border-box;
+    }
+    /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
+    figure {
+      margin: 20px 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure,
+    .top-hero-photo,
+    .cases-photo-figure {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .cases-logo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure img,
+    .cases-logo-stack img,
+    .top-hero-photo img,
+    .cases-photo-figure img,
+    .main-content-pane figure img,
+    .main-content-pane img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-sizing: border-box;
+    }
+    .photo-caption {
+      margin-top: 8px;
+      font-size: 12.5px;
+      font-weight: bold;
+      color: #555555;
+      text-align: left;
+      background: transparent;
+      padding: 4px 0;
+      border: none;
+    }
+
+    /* List items */
+    ul.section-list {
+      margin-left: 22px;
+      margin-bottom: 18px;
+    }
+    ul.section-list li {
+      margin-bottom: 7px;
+      font-size: 13.5px;
+    }
+
+    /* Comparison Table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 13px;
+      border: 2px solid #000;
+    }
+    .compare-table caption {
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      color: #111111;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid #7b7b7b;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .compare-table thead th {
+      background: #dcdcdc;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 2px solid #000;
+    }
+    .compare-table tbody th {
+      background: #f0f0f0;
+      font-weight: bold;
+      width: 22%;
+    }
+
+    /* FAQ Description List (Clean Monochrome Q & A) */
+    .faq {
+      margin-top: 18px;
+    }
+    .faq dt {
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 16px;
+      color: #111111;
+    }
+    .faq dt::before {
+      content: "Q. ";
+      color: #111111;
+      font-weight: bold;
+    }
+    .faq dd {
+      margin-left: 0;
+      margin-top: 4px;
+      padding-left: 26px;
+      margin-bottom: 16px;
+      position: relative;
+      font-size: 13.5px;
+      color: #222222;
+    }
+    .faq dd::before {
+      content: "A. ";
+      position: absolute;
+      left: 0;
+      color: #444444;
+      font-weight: bold;
+    }
+
+    /* Bottom Inline Navigation Footer */
+    .bottom-nav {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #000000;
+      font-size: 13px;
+    }
+    .bottom-nav p {
+      margin-bottom: 8px;
+    }
+
+    /* 5. Gray Status Bar (#dcdcdc) */
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      color: #333333;
+      user-select: none;
+    }
+
+    /* 9. TASKBAR (EXACT COPY FROM MAIN PAGE) */
+    #taskbar {
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--taskbar-h);
+      background: var(--taskbar);
+      border-top: 2px solid #fff;
+      box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 6px;
+      user-select: none !important;
+    }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+
+    /* Start Menu (z-index: 999999 !important) */
+    #startMenu {
+      position: fixed !important;
+      bottom: var(--taskbar-h, 36px);
+      left: 4px;
+      width: 220px;
+      background: var(--win-bg, #c0c0c0);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi, #fff), inset -1px -1px 0 var(--bevel-shadow, #808080), 3px 3px 0 rgba(0,0,0,0.4);
+      z-index: 999999 !important;
+      display: none;
+      padding: 4px;
+    }
+    #startMenu.show { display: flex !important; }
+    .start-banner {
+      width: 28px;
+      background: #000000;
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      max-width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #dfdfdf;
+      font-weight: bold;
+    }
+
+    /* Responsive Adjustments for Mobile Explorer Split */
+    @media (max-width: 980px) {
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+      .tree-sidebar { width: 220px; min-width: 200px; }
+      .main-content-pane { padding: 24px 28px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 8px;
+        font-size: 11px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      .page-wrapper {
+        padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 8px 16px 8px;
+      }
+      .explorer-split {
+        flex-direction: column;
+      }
+      .tree-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #808080;
+        padding: 12px;
+      }
+      .main-content-pane {
+        padding: 20px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+    }
+  
+    /* BACK TO TOP ANCHOR BUTTON (RETRO WINDOWS STYLE) */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      z-index: 999999;
+      background: var(--win-bg);
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35);
+      padding: 5px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b;
+      transform: translate(1px, 1px);
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn { display: none !important; }
+      #taskbar, .bottom-gnb { display: none !important; }
+      body { padding-bottom: 0 !important; }
+    }
+  
+  
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+      }
+    }
+
+
+
+
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: inline-flex;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+      }
+    }
+
+
+
+        .tree-item a:hover, .tree-item a.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+      

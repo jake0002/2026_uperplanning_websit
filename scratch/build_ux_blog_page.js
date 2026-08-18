@@ -1,0 +1,1218 @@
+const fs = require('fs');
+const path = require('path');
+
+const blogHtmlContent = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX블로그 — 슈퍼플래닝 UX서비스</title>
+  <meta name="description" content="슈퍼플래닝 UX블로그 — UX리서치, UX라이팅, UX기획/디자인, AI트랜드, 피그마, 바이브코딩 실무 인사이트 아티클">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+
+  <style>
+    /* RESET & BASE STYLES */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
+      background: #c0c0c0;
+      color: #000000;
+      line-height: 1.5;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP RETRO GNB NAV BAR */
+    #topGnb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 38px;
+      background: #c0c0c0;
+      border-bottom: 2px solid #000000;
+      box-shadow: 0 2px 0 #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 9999;
+    }
+    .gnb-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .gnb-brand {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      background: #000000;
+      padding: 2px 8px;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .gnb-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #000000;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .gnb-link:hover, .gnb-link.active {
+      background: #000000;
+      color: #ffffff !important;
+    }
+    .gnb-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* RETRO W95 BUTTON */
+    .w95-btn {
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: bold;
+      color: #000000;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      padding: 3px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .w95-btn:active {
+      box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+    }
+
+    /* SCROLL PROGRESS BAR */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #808080;
+      overflow: hidden;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      transition: width 0.1s ease-out;
+    }
+
+    /* PAGE WRAPPER */
+    .page-wrapper {
+      margin-top: 50px;
+      padding: 16px;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* WINDOWS 95 CONTAINER */
+    .explorer-window {
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: 4px 4px 0 #000000;
+      margin-bottom: 30px;
+    }
+
+    /* TITLEBAR */
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .titlebar-text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .titlebar-controls {
+      display: flex;
+      gap: 2px;
+    }
+    .win-btn {
+      width: 16px;
+      height: 14px;
+      background: #c0c0c0;
+      border: 1px solid #000000;
+      color: #000000;
+      font-size: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* MENUBAR & TOOLBAR */
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 8px;
+      border-bottom: 1px solid #808080;
+      font-size: 12px;
+      display: flex;
+      gap: 16px;
+    }
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 6px 8px;
+      border-bottom: 2px solid #000000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+    .addr-label { font-size: 12px; font-weight: bold; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: monospace;
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
+    /* EXPLORER SPLIT PANE */
+    .explorer-split {
+      display: flex;
+      background: #ffffff;
+      min-height: 720px;
+    }
+
+    /* LEFT SIDEBAR TREE */
+    .tree-sidebar {
+      width: 240px;
+      background: #f4f4f4;
+      border-right: 2px solid #000000;
+      padding: 14px 10px;
+      flex-shrink: 0;
+    }
+    .tree-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #000000;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
+      margin-bottom: 12px;
+    }
+    .tree-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .tree-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      font-size: 12.5px;
+      font-weight: bold;
+      color: #000000;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      transition: all 0.1s ease;
+    }
+    .tree-nav-item:hover, .tree-nav-item.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .tree-nav-item.active .badge-count, .tree-nav-item:hover .badge-count {
+      background: #ffffff;
+      color: #000000;
+    }
+    .badge-count {
+      font-size: 11px;
+      font-weight: 800;
+      background: #e0e0e0;
+      color: #000000;
+      padding: 1px 6px;
+      border-radius: 10px;
+      border: 1px solid #000000;
+    }
+
+    /* RIGHT MAIN CONTENT PANE */
+    .main-content-pane {
+      flex: 1;
+      padding: 24px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* BLOG HEADER ROW */
+    .blog-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #000000;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .blog-header-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .blog-breadcrumb {
+      font-size: 12px;
+      color: #666666;
+      font-weight: 600;
+    }
+    .blog-header-title h1 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.5px;
+    }
+
+    /* SEARCH BAR BOX */
+    .search-box-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .search-input {
+      width: 220px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #000000;
+      outline: none;
+      background: #ffffff;
+    }
+    .search-btn {
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      background: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      cursor: pointer;
+    }
+    .search-btn:hover {
+      background: #333333;
+    }
+
+    /* POST-IT STICKY NOTE CARDS GRID */
+    .postit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* POST-IT STICKY NOTE CARD (B&W High-Contrast Theme) */
+    .postit-card {
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 4px 4px 0 #000000;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .postit-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0 #000000;
+    }
+
+    /* POST-IT CARD TOP BAND */
+    .postit-top-band {
+      background: #f0f0f0;
+      border-bottom: 2px solid #000000;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .category-badge {
+      font-size: 11px;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .icon-action-btn {
+      background: transparent;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 2px 4px;
+      color: #000000;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s ease;
+    }
+    .icon-action-btn:hover {
+      transform: scale(1.2);
+    }
+    .icon-action-btn.bookmarked {
+      color: #000000;
+      font-weight: bold;
+    }
+
+    /* POST-IT CARD BODY */
+    .postit-body {
+      padding: 14px 14px 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .postit-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .postit-excerpt {
+      font-size: 12.5px;
+      color: #333333;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* TAGS ROW */
+    .postit-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+    .tag-pill {
+      font-size: 11px;
+      font-weight: 700;
+      background: #f4f4f4;
+      color: #000000;
+      padding: 2px 6px;
+      border: 1px solid #000000;
+    }
+
+    /* CARD FOOTER READ TIME BUTTON */
+    .postit-footer {
+      border-top: 1px dashed #000000;
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .read-time-btn {
+      font-size: 12px;
+      font-weight: 800;
+      background: #ffffff;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #000000;
+      transition: all 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .read-time-btn:hover {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 0 0 #000000;
+    }
+
+    /* NO RESULTS MESSAGE */
+    .no-results {
+      grid-column: 1 / -1;
+      padding: 60px 20px;
+      text-align: center;
+      border: 2px dashed #000000;
+      background: #fafafa;
+    }
+    .no-results h3 { font-size: 16px; margin-bottom: 8px; font-weight: 800; }
+    .no-results p { font-size: 13px; color: #555555; }
+
+    /* W95 POST READER MODAL */
+    .w95-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      padding: 16px;
+    }
+    .w95-modal-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .w95-modal-window {
+      background: #ffffff;
+      border: 3px solid #000000;
+      box-shadow: 8px 8px 0 #000000;
+      width: 100%;
+      max-width: 720px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .modal-titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .modal-post-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #000000;
+    }
+    .modal-post-content {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #222222;
+    }
+    .modal-post-content p {
+      margin-bottom: 14px;
+    }
+    .modal-post-content h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin: 20px 0 10px;
+      color: #000000;
+    }
+    .modal-post-content blockquote {
+      border-left: 4px solid #000000;
+      padding: 10px 14px;
+      background: #f4f4f4;
+      margin: 16px 0;
+      font-weight: 600;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #000000;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0 #000000;
+      z-index: 10001;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* STATUSBAR */
+    .statusbar {
+      background: #c0c0c0;
+      border-top: 2px solid #000000;
+      padding: 3px 8px;
+      font-size: 11px;
+      display: flex;
+      gap: 16px;
+    }
+
+    /* RESPONSIVE LAYOUT */
+    @media (max-width: 960px) {
+      .postit-grid { grid-template-columns: repeat(2, 1fr); }
+      .tree-sidebar { width: 200px; }
+    }
+    @media (max-width: 720px) {
+      .explorer-split { flex-direction: column; }
+      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #000000; }
+      .postit-grid { grid-template-columns: 1fr; }
+      .blog-header-row { flex-direction: column; align-items: flex-start; }
+      .search-box-wrap { width: 100%; }
+      .search-input { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP RETRO GNB NAV BAR -->
+  <nav id="topGnb">
+    <div class="gnb-left">
+      <a href="/" class="gnb-brand">SUPERPLANNING</a>
+      <ul class="gnb-menu">
+        <li class="gnb-item"><a class="gnb-link" href="/ux-research/">UX리서치</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/ux-writing/">UX라이팅</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/ux-design/">UX기획/디자인</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/web-app-development/">웹/앱개발</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/ux-academy/">AI-UX강의</a></li>
+        <li class="gnb-item"><a class="gnb-link active" href="/ux-blog/">UX블로그</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/ux-company/">회사소개</a></li>
+        <li class="gnb-item"><a class="gnb-link" href="/contact/">문의하기</a></li>
+      </ul>
+    </div>
+    <div class="gnb-right">
+      <button class="w95-btn" onclick="location.href='/#brochure';">포트폴리오 보기</button>
+      <button class="w95-btn" onclick="location.href='/contact/';">문의하기</button>
+    </div>
+    <div class="gnb-progress-track">
+      <div id="gnbProgressBar" class="gnb-progress-bar"></div>
+    </div>
+  </nav>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <div class="explorer-window">
+      <!-- TITLEBAR -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📝</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn" onclick="location.href='/';">✕</div>
+        </div>
+      </div>
+
+      <!-- MENUBAR -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- TOOLBAR & ADDRESS BAR -->
+      <div class="toolbar-area">
+        <button class="w95-btn" onclick="history.back();">⬅ 뒤로</button>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_서비스\UX_블로그</div>
+        </div>
+      </div>
+
+      <!-- EXPLORER SPLIT PANE -->
+      <div class="explorer-split">
+
+        <!-- LEFT SIDEBAR CATEGORIES TOC -->
+        <aside class="tree-sidebar">
+          <div class="tree-title">📌 블로그 카테고리</div>
+          <ul class="tree-nav" id="categoryNav">
+            <li class="tree-nav-item active" data-category="all">
+              <span>▣ 전체글 보기</span>
+              <span class="badge-count" id="countAll">19</span>
+            </li>
+            <li class="tree-nav-item" data-category="bookmark">
+              <span>★ 즐겨찾기 보기</span>
+              <span class="badge-count" id="countFav">0</span>
+            </li>
+            <li class="tree-nav-item" data-category="UX리서치">
+              <span>└ UX리서치</span>
+              <span class="badge-count">3</span>
+            </li>
+            <li class="tree-nav-item" data-category="UX라이팅">
+              <span>└ UX라이팅</span>
+              <span class="badge-count">4</span>
+            </li>
+            <li class="tree-nav-item" data-category="UX기획/디자인">
+              <span>└ UX기획/디자인</span>
+              <span class="badge-count">3</span>
+            </li>
+            <li class="tree-nav-item" data-category="AI트랜드">
+              <span>└ AI트랜드</span>
+              <span class="badge-count">3</span>
+            </li>
+            <li class="tree-nav-item" data-category="피그마">
+              <span>└ 피그마</span>
+              <span class="badge-count">3</span>
+            </li>
+            <li class="tree-nav-item" data-category="바이브코딩">
+              <span>└ 바이브코딩</span>
+              <span class="badge-count">3</span>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT PANE -->
+        <main class="main-content-pane">
+          <!-- HEADER & SEARCH -->
+          <div class="blog-header-row">
+            <div class="blog-header-title">
+              <div class="blog-breadcrumb">홈 &gt; UX서비스 &gt; UX블로그</div>
+              <h1>UX블로그</h1>
+            </div>
+            <div class="search-box-wrap">
+              <input type="text" id="searchInput" class="search-input" placeholder="블로그 검색어 입력...">
+              <button id="searchBtn" class="search-btn">검색하기</button>
+            </div>
+          </div>
+
+          <!-- POST-IT CARDS GRID CONTAINER -->
+          <div class="postit-grid" id="postitGrid">
+            <!-- Cards populated dynamically via JavaScript -->
+          </div>
+        </main>
+      </div>
+
+      <!-- STATUSBAR -->
+      <div class="statusbar">
+        <div id="statusCount">19개 개체</div>
+        <div>C:\SUPERPLANNING\UX_서비스\UX_블로그</div>
+        <div>내 컴퓨터</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- W95 POST READER MODAL -->
+  <div class="w95-modal-backdrop" id="postModal">
+    <div class="w95-modal-window">
+      <div class="modal-titlebar">
+        <span id="modalTitlebarText">[포스트 읽기] 슈퍼플래닝 UX 블로그</span>
+        <button class="win-btn" onclick="closeModal();">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Modal content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toast">링크가 클립보드에 복사되었습니다!</div>
+
+  <script>
+    // 19 CURATED BLOG POSTS DATA
+    const POSTS_DATA = [
+      {
+        id: 1,
+        category: "UX라이팅",
+        title: "전환율보다 먼저 봐야 하는 버튼 문구의 명확성",
+        excerpt: "좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.",
+        readTime: 60,
+        tags: ["#버튼카피", "#전환율", "#마이크로카피"],
+        content: \`
+          <h3>클릭을 주저하게 만드는 대표적인 원인</h3>
+          <p>사용자가 구매, 신청, 제출 버튼 앞에서 망설이는 이유는 결제가 두려워서라기보다 '이 버튼을 누르면 당장 돈이 빠져나가는가?' '수정이 가능한가?'라는 정보의 불확실성 때문입니다.</p>
+          <blockquote>'확인' 대신 '결제 단계로 이동', '제출' 대신 '3분 만에 신청 완료'처럼 결과의 명확성을 제공해야 전환율이 오릅니다.</blockquote>
+          <h3>실무 적용 체크리스트</h3>
+          <p>1. 버튼 텍스트가 독립된 맥락으로 읽히는가?<br>2. 행동의 결과(페이지 이동 vs 즉시 제출)가 명확한가?<br>3. 사용자가 언제든 되돌릴 수 있다는 안도감을 주는가?</p>
+        \`
+      },
+      {
+        id: 2,
+        category: "UX리서치",
+        title: "인터뷰 질문 설계에서 자주 생기는 초보 실수",
+        excerpt: "질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.",
+        readTime: 90,
+        tags: ["#인터뷰질문", "#UX리서치", "#사용자조사"],
+        content: \`
+          <h3>가상의 질문 vs 과거 경험 질문</h3>
+          <p>"만약 이런 기능이 나오면 쓰시겠어요?"라는 질문은 99% 긍정적 거짓 답변을 유도합니다. 사람들은 미래의 자신을 실제보다 관대하게 평가하기 때문입니다.</p>
+          <blockquote>"지난 일주일 동안 이 문제를 해결하기 위해 실제로 어떤 앱을 사용하셨나요?"라고 과거 행동을 물어야 진짜 인사이트가 나옵니다.</blockquote>
+          <h3>IDI 인터뷰 필수 규칙</h3>
+          <p>· 왜(Why)라는 단어를 직접 남발하여 사용자를 방어적으로 만들지 않기<br>· 침묵의 3초를 기다려 사용자의 솔직한 추가 발화 유도하기</p>
+        \`
+      },
+      {
+        id: 3,
+        category: "UX기획/디자인",
+        title: "화면정의서가 예쁜데도 개발이 헷갈리는 이유",
+        excerpt: "보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.",
+        readTime: 60,
+        tags: ["#화면정의서", "#서비스기획", "#예외흐름"],
+        content: \`
+          <h3>정상 케이스 80% vs 예외 케이스 20%</h3>
+          <p>대부분의 기획 오류는 데이터가 없거나(Empty state), 글자 수가 넘치거나, 서버 통신 오류가 날 때 발생합니다. 예쁜 Figma 시안만으로는 개발을 진행할 수 없습니다.</p>
+          <blockquote>와이어프레임 작성 시 4대 상태(Default, Hover/Active, Disabled, Error)와 빈 화면 처리 기준을 반드시 명시해야 합니다.</blockquote>
+        \`
+      },
+      {
+        id: 4,
+        category: "피그마",
+        title: "피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유",
+        excerpt: "피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.",
+        readTime: 90,
+        tags: ["#피그마", "#협업툴", "#컴포넌트"],
+        content: \`
+          <h3>디자인 파일 구조화 방법론</h3>
+          <p>Page 1: 🧹 Draft (아이디어 스케치)<br>Page 2: 🚀 Dev Ready (개발 전달용 검증 시안)<br>Page 3: ❖ Design System (공용 컴포넌트)</p>
+          <p>구조화된 피그마 파일은 개발자와 기획자가 커뮤니케이션 비용을 70% 이상 절감시켜 줍니다.</p>
+        \`
+      },
+      {
+        id: 5,
+        category: "AI트랜드",
+        title: "AI UX에서 프롬프트보다 먼저 정해야 하는 기준",
+        excerpt: "프롬프트를 잘 쓰는 것보다 먼저 필요한 건 문제정의와 검증 기준입니다. 어떤 장면에서 AI를 쓸지, 결과를 누가 어떤 기준으로 확인하는지 정리되지 않으면 도입은 금방 흐려집니다.",
+        readTime: 120,
+        tags: ["#AIUX", "#문제정의", "#검증기준"],
+        content: \`
+          <h3>AI 도구 도입 시 흔한 딜레마</h3>
+          <p>AI가 생성한 답변의 할루시네이션(환각)을 사용자가 어떻게 감지하고 수정할 수 있게 만드느냐가 AI UI/UX의 핵심 설계 지점입니다.</p>
+          <blockquote>AI 기능을 '전지전능한 유기체'가 아닌 '생산성을 5배 높이는 지능형 보조 도구'로 포지셔닝해야 기대치 불일치가 발생하지 않습니다.</blockquote>
+        \`
+      },
+      {
+        id: 6,
+        category: "바이브코딩",
+        title: "바이브코딩으로 프로토타입 검증 속도를 높이는 방법",
+        excerpt: "완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.",
+        readTime: 90,
+        tags: ["#바이브코딩", "#프로토타입", "#검증루프"],
+        content: \`
+          <h3>자연어 프롬프트 기반 웹/앱 MVP 제작</h3>
+          <p>코드 한 줄 몰라도 최신 AI 바이브코딩 도구와 HTML/CSS/JS 템플릿을 연동하면 10분 만에 동작 가능한 하이브리드 프로토타입을 구축할 수 있습니다.</p>
+          <p>실제 동작하는 프로토타입으로 사용자 UT를 진행하면 static 피그마 시안 대비 3배 이상의 깊이 있는 반응 데이터를 수집할 수 있습니다.</p>
+        \`
+      },
+      {
+        id: 7,
+        category: "UX라이팅",
+        title: "에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙",
+        excerpt: "시스템 오케스트레이션 코드 대신 사용자가 지금 무엇을 바로잡아야 하는지 친절하고 간결하게 설명할 때 탈퇴율을 극적으로 낮출 수 있습니다.",
+        readTime: 90,
+        tags: ["#에러메시지", "#UX라이팅", "#예외처리"],
+        content: \`
+          <h3>에러 메시지 3대 작성 규칙</h3>
+          <p>1. 탓하지 않기: '잘못된 입력입니다' (X) -> '비밀번호 8자 이상을 입력해 주세요' (O)<br>2. 원인 설명: 어떤 규칙이 충족되지 않았는지 명시<br>3. 다음 행동 제안: 어디로 이동해서 해결 가능한지 버튼 제공</p>
+        \`
+      },
+      {
+        id: 8,
+        category: "UX리서치",
+        title: "UT(사용성 테스트) 진행 시 모더레이터가 절대 하지 말아야 할 말",
+        excerpt: "사용자가 헤매는 순간 '오른쪽 상단 버튼을 누르시면 됩니다'라고 힌트를 주는 순간, 테스트의 모든 데이터는 왜곡됩니다.",
+        readTime: 60,
+        tags: ["#사용성테스트", "#UT", "#모더레이팅"],
+        content: \`
+          <h3>관찰자의 중립 유지 원칙</h3>
+          <p>사용자가 멈추었을 때는 "어떤 생각을 하고 계신가요?" "어디를 살펴보고 계신가요?"라고 씽크얼라우드(Think Aloud)를 유도해야 합니다.</p>
+        \`
+      },
+      {
+        id: 9,
+        category: "UX기획/디자인",
+        title: "디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유",
+        excerpt: "컬러와 타이포그래피 변수(Token)를 컴포넌트 하드코딩 값과 독립시켜야 다크모드 및 모바일/데스크톱 파급 변경 시 오류가 생기지 않습니다.",
+        readTime: 90,
+        tags: ["#디자인시스템", "#디자인토큰", "#컴포넌트"],
+        content: \`
+          <h3>Semantic Token 구조화</h3>
+          <p>color-primary-500 -> color-bg-brand -> button-bg-default 형태의 3단계 토큰 위계 설정이 필수입니다.</p>
+        \`
+      },
+      {
+        id: 10,
+        category: "AI트랜드",
+        title: "생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드",
+        excerpt: "단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.",
+        readTime: 90,
+        tags: ["#생성형AI", "#캔버스UX", "#AI인터페이스"],
+        content: \`
+          <h3>작업 맥락 유지를 위한 화면 split 패턴</h3>
+          <p>왼쪽에서 프롬프트를 입력하고 오른쪽 캔버스에서 실시간 변경 결과를 시각화할 때 사용자 피로도가 급감합니다.</p>
+        \`
+      },
+      {
+        id: 11,
+        category: "피그마",
+        title: "피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기",
+        excerpt: "오토 레이아웃의 Min/Max Width 설정과 컴포넌트 속성(Variant, Boolean, Instance Swap)을 정교하게 다루는 실무 테크닉.",
+        readTime: 60,
+        tags: ["#AutoLayout", "#피그마팁", "#생산성"],
+        content: \`
+          <h3>피그마 꿀팁 모음</h3>
+          <p>· Shift + A: Auto layout 적용<br>· Hug vs Fill container 설정을 통한 반응형 모바일 화면 즉시 대응</p>
+        \`
+      },
+      {
+        id: 12,
+        category: "바이브코딩",
+        title: "프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기",
+        excerpt: "기획안 텍스트를 LLM 개발 프롬프트로 변환하여 실시간 브라우저 실행 코드로 구축하는 실전 절차 가이드.",
+        readTime: 60,
+        tags: ["#MVP", "#바이브코딩", "#프롬프트"],
+        content: \`
+          <h3>초고속 검증 루프</h3>
+          <p>와이어프레임 텍스트 -> AI HTML/CSS 코드 생성 -> 깃허브 페이지스/Netlify 배포 -> 사용자 반응 수집까지 단 하루 만에 완료하기.</p>
+        \`
+      },
+      {
+        id: 13,
+        category: "UX라이팅",
+        title: "온보딩 과정에서 사용자의 인지 부하를 줄이는 마이크로카피",
+        excerpt: "처음 앱을 켠 사용자에게 권한 요청(알림, 위치)을 받아낼 때 명백한 이득을 제시하는 혜택 중심 서술 기법.",
+        readTime: 60,
+        tags: ["#온보딩", "#마이크로카피", "#UX카피"],
+        content: \`
+          <p>'위치 권한을 허용하시겠습니까?' 대신 '내 주변 500m 이내 맛집 쿠폰을 바로 받으려면 위치 확인이 필요해요'로 가치 전달하기.</p>
+        \`
+      },
+      {
+        id: 14,
+        category: "UX리서치",
+        title: "FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술",
+        excerpt: "목소리 큰 참석 한 명이 전체 분위기를 주도하는 현상을 막기 위해 사전 서면 작성과 독립 득표 방식을 병행하는 리서치 스킬.",
+        readTime: 120,
+        tags: ["#FGI", "#패널조사", "#리서치설계"],
+        content: \`
+          <p>토론 전 3분 간 포스트잇 개인 의견 기재 후 제출하게 하면 발언 강자의 영향을 최소화할 수 있습니다.</p>
+        \`
+      },
+      {
+        id: 15,
+        category: "UX기획/디자인",
+        title: "모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계",
+        excerpt: "주소 입력, 쿠폰 적용, 결제 수단 선택을 한 페이지 안에서 아코디언 컴포넌트로 처리하여 이탈률을 24% 감소시킨 사례.",
+        readTime: 90,
+        tags: ["#결제동선", "#1PageCheckout", "#전환개선"],
+        content: \`
+          <p>단계 이동 시 로딩 스피너를 제거하고 스무스 스크롤로 다음 입력 필드에 자동 포커스를 주는 UI 패턴.</p>
+        \`
+      },
+      {
+        id: 16,
+        category: "AI트랜드",
+        title: "LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴",
+        excerpt: "10초 이상 소요되는 복잡한 AI 추론 과정 동안 사용자에게 단계별 진행 상태(Progress Stage)를 투명하게 시각화하기.",
+        readTime: 60,
+        tags: ["#LLM", "#로딩패턴", "#대기시간UX"],
+        content: \`
+          <p>'처리 중...' 대신 '1/3단계: 문서 데이터 분석 중', '2/3단계: 주요 키워드 추출 중'으로 안내하여 이탈 방지.</p>
+        \`
+      },
+      {
+        id: 17,
+        category: "피그마",
+        title: "Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법",
+        excerpt: "피그마 배리어블 모드를 활용해 버튼 클릭 한 번으로 국문/영문 및 라이트/다크모드 전체 시안을 전환하는 시스템 설계.",
+        readTime: 120,
+        tags: ["#Variables", "#다크모드", "#피그마수업"],
+        content: \`
+          <p>String Variable과 Color Variable을 분리 등록하여 고도화된 글로벌 모바일 프로젝트 시안 구축하기.</p>
+        \`
+      },
+      {
+        id: 18,
+        category: "바이브코딩",
+        title: "디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas",
+        excerpt: "디자인 시스템 tokens.css와 LLM 바이브코딩 프롬프트 사이의 세만틱 일관성을 유지하는 주의사항.",
+        readTime: 120,
+        tags: ["#프론트엔드", "#바이브코딩", "#디자이너개발"],
+        content: \`
+          <p>CSS 클래스명을 하드코딩하지 않고 변수화된 토큰명(e.g., var(--w95-black))으로 AI에 요청하는 프롬프팅 스킬.</p>
+        \`
+      },
+      {
+        id: 19,
+        category: "UX라이팅",
+        title: "금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너",
+        excerpt: "과도한 혜택 과장이나 모호한 법적 경고 문구 대신 직관적이고 솔직한 텍스트로 사용자의 신뢰감을 극대화하는 법.",
+        readTime: 120,
+        tags: ["#신뢰디자인", "#톤앤매너", "#금융UX"],
+        content: \`
+          <p>작은 글씨의 숨겨진 유의사항 대신 중요한 가입 해지 조건과 수수료 발생 기준을 첫 화면 굵은 글씨로 노출할 때 신뢰 지수가 대폭 상승합니다.</p>
+        \`
+      }
+    ];
+
+    // STATE VARIABLES
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let bookmarks = JSON.parse(localStorage.getItem('sp_blog_bookmarks') || '[]');
+
+    // DOM ELEMENTS
+    const postitGrid = document.getElementById('postitGrid');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const categoryNav = document.getElementById('categoryNav');
+    const countAllEl = document.getElementById('countAll');
+    const countFavEl = document.getElementById('countFav');
+    const statusCountEl = document.getElementById('statusCount');
+    const postModal = document.getElementById('postModal');
+    const modalTitlebarText = document.getElementById('modalTitlebarText');
+    const modalBody = document.getElementById('modalBody');
+    const toast = document.getElementById('toast');
+
+    // RENDER CARDS
+    function renderCards() {
+      let filtered = POSTS_DATA.filter(post => {
+        // Category Filter
+        if (currentCategory === 'bookmark') {
+          if (!bookmarks.includes(post.id)) return false;
+        } else if (currentCategory !== 'all') {
+          if (post.category !== currentCategory) return false;
+        }
+
+        // Search Filter
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          const matchTitle = post.title.toLowerCase().includes(q);
+          const matchExcerpt = post.excerpt.toLowerCase().includes(q);
+          const matchCategory = post.category.toLowerCase().includes(q);
+          const matchTags = post.tags.some(t => t.toLowerCase().includes(q));
+          if (!matchTitle && !matchExcerpt && !matchCategory && !matchTags) return false;
+        }
+
+        return true;
+      });
+
+      // Update Counts
+      countAllEl.textContent = POSTS_DATA.length;
+      countFavEl.textContent = bookmarks.length;
+      statusCountEl.textContent = \`\${filtered.length}개 개체\`;
+
+      if (filtered.length === 0) {
+        postitGrid.innerHTML = \`
+          <div class="no-results">
+            <h3>검색 결과가 없습니다.</h3>
+            <p>다른 검색어를 입력하시거나 카테고리를 변경해 보세요.</p>
+          </div>
+        \`;
+        return;
+      }
+
+      postitGrid.innerHTML = filtered.map(post => {
+        const isFav = bookmarks.includes(post.id);
+        return \`
+          <article class="postit-card" data-id="\${post.id}">
+            <div class="postit-top-band">
+              <span class="category-badge">\${post.category}</span>
+              <div class="card-actions">
+                <button class="icon-action-btn \${isFav ? 'bookmarked' : ''}" onclick="toggleBookmark(event, \${post.id});" title="즐겨찾기 추가/제거">
+                  \${isFav ? '★' : '☆'}
+                </button>
+                <button class="icon-action-btn" onclick="sharePost(event, \${post.id});" title="공유하기">
+                  🔗
+                </button>
+              </div>
+            </div>
+            <div class="postit-body">
+              <h3 class="postit-title">\${post.title}</h3>
+              <p class="postit-excerpt">\${post.excerpt}</p>
+              <div class="postit-tags">
+                \${post.tags.map(t => \`<span class="tag-pill">\${t}</span>\`).join('')}
+              </div>
+              <div class="postit-footer">
+                <button class="read-time-btn" onclick="openPostModal(\${post.id});">
+                  \${post.readTime}초 만에 읽기 →
+                </button>
+              </div>
+            </div>
+          </article>
+        \`;
+      }).join('');
+    }
+
+    // BOOKMARK TOGGLE
+    function toggleBookmark(e, postId) {
+      e.stopPropagation();
+      const idx = bookmarks.indexOf(postId);
+      if (idx > -1) {
+        bookmarks.splice(idx, 1);
+        showToast('즐겨찾기에서 제거되었습니다.');
+      } else {
+        bookmarks.push(postId);
+        showToast('★ 즐겨찾기에 추가되었습니다.');
+      }
+      localStorage.setItem('sp_blog_bookmarks', JSON.stringify(bookmarks));
+      renderCards();
+    }
+
+    // SHARE POST
+    function sharePost(e, postId) {
+      e.stopPropagation();
+      const post = POSTS_DATA.find(p => p.id === postId);
+      const shareUrl = window.location.origin + window.location.pathname + '#post-' + postId;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+      }).catch(() => {
+        showToast('링크 복사 완료!');
+      });
+    }
+
+    // OPEN POST MODAL
+    function openPostModal(postId) {
+      const post = POSTS_DATA.find(p => p.id === postId);
+      if (!post) return;
+
+      const isFav = bookmarks.includes(post.id);
+      modalTitlebarText.textContent = \`[포스트 읽기] \${post.title}\`;
+      modalBody.innerHTML = \`
+        <div class="modal-meta">
+          <span class="category-badge">\${post.category}</span>
+          <span style="font-size:12px; font-weight:bold; color:#666;">⏱️ \${post.readTime}초 소요</span>
+          <button class="w95-btn" onclick="toggleBookmark(event, \${post.id});" style="font-size:11px; padding:2px 8px;">
+            \${isFav ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장'}
+          </button>
+          <button class="w95-btn" onclick="sharePost(event, \${post.id});" style="font-size:11px; padding:2px 8px;">
+            🔗 공유하기
+          </button>
+        </div>
+        <h2 class="modal-post-title">\${post.title}</h2>
+        <div class="modal-post-content">
+          <p style="font-size:14px; font-weight:bold; color:#000; margin-bottom:16px;">\${post.excerpt}</p>
+          \${post.content}
+        </div>
+        <div style="margin-top:24px; padding-top:14px; border-top:2px solid #000; display:flex; justify-content:space-between; align-items:center;">
+          <div style="display:flex; gap:4px;">
+            \${post.tags.map(t => \`<span class="tag-pill">\${t}</span>\`).join('')}
+          </div>
+          <button class="w95-btn" onclick="closeModal();">✕ 닫기</button>
+        </div>
+      \`;
+      postModal.classList.add('show');
+    }
+
+    function closeModal() {
+      postModal.classList.remove('show');
+    }
+
+    // SHOW TOAST
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+
+    // EVENT LISTENERS
+    categoryNav.addEventListener('click', (e) => {
+      const item = e.target.closest('.tree-nav-item');
+      if (!item) return;
+
+      document.querySelectorAll('.tree-nav-item').forEach(el => el.classList.remove('active'));
+      item.classList.add('active');
+
+      currentCategory = item.dataset.category;
+      renderCards();
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+
+    searchBtn.addEventListener('click', () => {
+      searchQuery = searchInput.value;
+      renderCards();
+    });
+
+    // Close modal on backdrop click
+    postModal.addEventListener('click', (e) => {
+      if (e.target === postModal) closeModal();
+    });
+
+    // INITIAL RENDER
+    renderCards();
+
+    // Check URL Hash for deep-link
+    if (window.location.hash.startsWith('#post-')) {
+      const pId = parseInt(window.location.hash.replace('#post-', ''));
+      if (pId) openPostModal(pId);
+    }
+
+    // GNB SCROLL PROGRESS GAUGE BAR
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('gnbProgressBar');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
+`;
+
+// Write to 3 locations
+const targetDir = path.join(__dirname, '..', 'implementation', 'ux-blog');
+if (!fs.existsSync(targetDir)) {
+  fs.mkdirSync(targetDir, { recursive: true });
+}
+
+fs.writeFileSync(path.join(targetDir, 'index.html'), blogHtmlContent, 'utf8');
+console.log('Created implementation/ux-blog/index.html');
+
+fs.writeFileSync(path.join(__dirname, '..', 'implementation', 'ux-blog.html'), blogHtmlContent, 'utf8');
+console.log('Created implementation/ux-blog.html');
+
+fs.writeFileSync(path.join(__dirname, '..', 'implementation', 'ux_blog.html'), blogHtmlContent, 'utf8');
+console.log('Created implementation/ux_blog.html');

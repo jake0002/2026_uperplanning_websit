@@ -1511,7 +1511,7 @@
                 <span style="font-size:11.5px; color:#555555; font-weight:600;">* 표시는 필수 입력</span>
               </div>
 
-              <!-- Contact Info Grid (2 Columns) -->
+              <!-- Contact Info Row 1: Name & Phone -->
               <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqName">
@@ -1525,6 +1525,10 @@
                   </label>
                   <input type="tel" id="inqPhone" required placeholder="예: 010-1234-5678" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
                 </div>
+              </div>
+
+              <!-- Contact Info Row 2: Company & Email (Same Horizontal Line) -->
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqCompany">
                     회사명 / 소속 <span style="font-weight:normal; color:#666666;">(선택)</span>
@@ -1536,33 +1540,6 @@
                     이메일 주소 <span style="font-weight:normal; color:#666666;">(선택)</span>
                   </label>
                   <input type="email" id="inqEmail" placeholder="example@domain.com" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                </div>
-              </div>
-
-              <!-- Budget & Timeline Grid -->
-              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqSchedule">
-                    예상 시작 일정 <span style="font-weight:normal; color:#666666;">(선택)</span>
-                  </label>
-                  <select id="inqSchedule" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                    <option value="바로 시작 가능">ASAP (바로 시작 가능)</option>
-                    <option value="1달 이내">1달 이내 착수</option>
-                    <option value="3달 이내">1~3달 이내 착수</option>
-                    <option value="일정 협의">상담 후 일정 협의</option>
-                  </select>
-                </div>
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqBudget">
-                    예상 예산 범위 <span style="font-weight:normal; color:#666666;">(선택)</span>
-                  </label>
-                  <select id="inqBudget" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                    <option value="예산 협의">상담 후 예산 산정</option>
-                    <option value="500만원 이하">500만원 이하 (단기/소규모)</option>
-                    <option value="500만원 ~ 1,000만원">500만원 ~ 1,000만원</option>
-                    <option value="1,000만원 ~ 3,000만원">1,000만원 ~ 3,000만원</option>
-                    <option value="3,000만원 이상">3,000만원 이상 (중대형 프로젝트)</option>
-                  </select>
                 </div>
               </div>
 
