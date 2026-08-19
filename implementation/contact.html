@@ -1644,9 +1644,9 @@
                 </div>
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqPhone">
-                    연락처 *
+                    연락처 <span style="font-weight:normal; color:#666666;">(선택)</span>
                   </label>
-                  <input type="tel" id="inqPhone" required placeholder="예: 010-1234-5678" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                  <input type="tel" id="inqPhone" placeholder="예: 010-1234-5678" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
                 </div>
               </div>
 
@@ -1660,9 +1660,9 @@
                 </div>
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqEmail">
-                    이메일 주소 <span style="font-weight:normal; color:#666666;">(선택)</span>
+                    이메일 주소 *
                   </label>
-                  <input type="email" id="inqEmail" placeholder="example@domain.com" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                  <input type="email" id="inqEmail" required placeholder="example@domain.com" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
                 </div>
               </div>
 
@@ -2480,8 +2480,8 @@
       const email = document.getElementById('inqEmail') ? document.getElementById('inqEmail').value.trim() : '';
       const message = document.getElementById('inqMessage') ? document.getElementById('inqMessage').value.trim() : '';
 
-      if (!name || !phone) {
-        alert('이름과 연락처를 입력해 주세요.');
+      if (!name || !email) {
+        alert('이름과 이메일 주소를 입력해 주세요.');
         return;
       }
 
