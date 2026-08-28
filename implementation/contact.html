@@ -1586,11 +1586,11 @@
           <h1>문의하기</h1>
           <p class="hero-intro" style="margin-top:10px; margin-bottom:28px; display:flex; flex-direction:column; gap:10px; align-items:flex-start;">
             <span class="typewriter-quote" data-text="친절하고 경험 많은 슈퍼플래닝의 실무진이 직접 빠르게 상담해 드립니다." style="display:inline; padding:4px 9px 5px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-weight:700; font-size:14.5px; line-height:1.6;"></span>
-            <span class="typewriter-quote" data-text="슈퍼플래닝은 평일 야간(아침8시~밤10시), 주말(아침10시~저녁7시)에도 방문상담 가능합니다." style="display:inline; padding:4px 9px 5px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-weight:700; font-size:14.5px; line-height:1.6;"></span>
+           
           </p>
 
           <!-- 1. 문의하기 -->
-          <h2 id="contact">1. 문의하기</h2>
+          <h2 id="contact">1. 빠른 문의 및 견적 상담 </h2>
           <!-- Fast Contact Cards with Copy Buttons (Strict B&W) -->
           <div style="padding:16px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:20px;">
 
@@ -1600,12 +1600,12 @@
               </div>
 
               <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
-                <div style="font-size:12.5px;"><strong>대표 이메일:</strong> jake@superplanning.co.kr</div>
+                <div style="font-size:12.5px;"><strong>이메일:</strong> jake@superplanning.co.kr</div>
                 <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소');">복사</button>
               </div>
 
               <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
-                <div style="font-size:12.5px;"><strong>대표 전화:</strong> 031-699-3298</div>
+                <div style="font-size:12.5px;"><strong>전화:</strong> 031-699-3298</div>
                 <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호');">복사</button>
               </div>
 
@@ -1637,7 +1637,7 @@
             <form id="projectInquiryForm" onsubmit="handleProjectInquiry(event);">
               <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000000; padding-bottom:8px; margin-bottom:16px;">
                 <h3 style="margin:0; font-size:16px; font-weight:800; color:#000000;">
-                  신규 UX 프로젝트 문의 등록
+                  온라인 문의 접수
                 </h3>
                 <span style="font-size:11.5px; color:#555555; font-weight:600;">* 표시는 필수 입력</span>
               </div>
@@ -1646,9 +1646,9 @@
               <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqName">
-                    이름 / 담당자명 *
+                    이름 / 직책 *
                   </label>
-                  <input type="text" id="inqName" required placeholder="예: 홍길동 팀장" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                  <input type="text" id="inqName" required placeholder="예: 김슈플 팀장" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
                 </div>
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqPhone">
@@ -1664,7 +1664,7 @@
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqCompany">
                     회사명 / 소속 <span style="font-weight:normal; color:#666666;">(선택)</span>
                   </label>
-                  <input type="text" id="inqCompany" placeholder="예: (주)슈퍼플래닝" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
+                  <input type="text" id="inqCompany" placeholder="예: 슈퍼플래닝 / UX기획팀" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
                 </div>
                 <div>
                   <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqEmail">
@@ -1677,9 +1677,12 @@
               <!-- Details Textarea -->
               <div style="margin-bottom:14px;">
                 <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqMessage">
-                  프로젝트 상세 내용 및 주요 요청사항 *
+                  간단한 문의사항 *
                 </label>
-                <textarea id="inqMessage" required rows="4" placeholder="프로젝트의 목적, 현재 진행 상태(아이디어 단계, UI기획 완료, 디자인 필요 등), 주요 핵심 요구사항을 자유롭게 서술해 주세요. 참고 문서나 벤치마킹 서비스가 있다면 함께 기재해 주시면 더욱 정밀한 견적 산출이 가능합니다." style="width:100%; padding:8px 10px; font-size:12.5px; line-height:1.5; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box; resize:vertical;"></textarea>
+                <textarea id="inqMessage" required rows="4" placeholder="상담하고 싶은 내용을 간단하게 남겨주세요.
+• 문의 유형 (예: 웹/앱 기획·개발, 1:1 UX강의·기업출강, UX컨설팅, 사업제휴 등) 
+• 주요 내용 및 희망 일정 등
+                " style="width:100%; padding:8px 10px; font-size:12.5px; line-height:1.5; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box; resize:vertical;"></textarea>
               </div>
 
               <!-- Terms & Privacy Agreement (Clean Text Only, No Box) -->
@@ -1782,7 +1785,7 @@
 
           <!-- 2. 찾아오시는 길 (Strict B&W) -->
           <h2 id="location">2. 찾아오시는 길</h2>
-          <p style="margin-bottom:12px;">UX디자인 에이전시 슈퍼플래닝 본사는 <strong>지하철 5호선 미사역 8번 출구</strong>에서 도보 1분 거리에 위치해 있습니다. 차량 방문 시 지하주차장 무료 주차가 가능하며, 사전 예약 후 편안하게 방문해 주시면 감사하겠습니다.</p>
+          <p style="margin-bottom:12px;">슈퍼플래닝 사무실은 <strong>지하철 5호선 미사역 8번 출구</strong>에서 도보 1분 거리에 위치해 있습니다. <Br> 티맵, 카카오 네비게이션에서 "슈퍼플래닝"을 검색하세요. <Br> 차량 방문 시 지하주차장 무료 주차 가능합니다. 주차공간 넉넉합니다. <br> 맛좋은 커피와 쿠키도 항상 준비되어있습니다. 언제라도 편하게 방문해 주세요.</p>
           <div style="margin-bottom:18px;">
             <span class="typewriter-quote" data-text="슈퍼플래닝은 평일 야간(아침8시~밤10시), 주말(아침10시~저녁7시)에도 방문상담 가능합니다." style="display:inline; padding:4px 9px 5px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-weight:700; font-size:14px; line-height:1.6;"></span>
           </div>
@@ -1791,9 +1794,9 @@
           <div style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); padding:12px; margin-bottom:18px;">
             <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000000; padding-bottom:8px; margin-bottom:12px;">
               <h3 style="margin:0; font-size:14.5px; font-weight:800; color:#000000;">
-                슈퍼플래닝 위치지도 (본사)
+                슈퍼플래닝은 여기에 있습니다.
               </h3>
-              <span style="font-size:11.5px; color:#555555; font-weight:600;">경기 하남시 미사강변동로 72 SB비즈타워 1116호</span>
+              <span style="font-size:11.5px; color:#555555; font-weight:600;">(12918) 경기 하남시 미사강변동로 72 SB비즈타워 1116호</span>
             </div>
 
             <!-- Google Map Interactive Iframe Embed -->
