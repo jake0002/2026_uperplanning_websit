@@ -1454,11 +1454,11 @@
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
         <span>T: 031-699-3298</span>
-        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호')">복사</button>
+        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호', this)">복사</button>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
         <span>E: jake@superplanning.co.kr</span>
-        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소')">복사</button>
+        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)">복사</button>
       </div>
 
       <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD ON DESKTOP -->
@@ -2997,6 +2997,58 @@
       }
     }
   </script>
+
+
+<script>
+window.copyToClipboard = function(text, label, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopySuccess(text, label, btn);
+    }).catch(function() {
+      fallbackCopyText(text, label, btn);
+    });
+  } else {
+    fallbackCopyText(text, label, btn);
+  }
+};
+
+function fallbackCopyText(text, label, btn) {
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    var successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    if (successful) {
+      showCopySuccess(text, label, btn);
+    } else {
+      alert('복사 실패: ' + text);
+    }
+  } catch (err) {
+    alert('복사 실패: ' + text);
+  }
+}
+
+function showCopySuccess(text, label, btn) {
+  if (btn) {
+    var origText = btn.textContent;
+    btn.textContent = '완료!';
+    btn.style.background = '#000000';
+    btn.style.color = '#ffffff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 1500);
+  }
+  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+}
+</script>
 
 </body>
 </html>
