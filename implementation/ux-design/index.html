@@ -240,6 +240,51 @@
           }
         }
       ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://superplanning.blog/ux-design/#term-ux-planning",
+      "name": "UX기획",
+      "alternateName": "UX Planning",
+      "description": "서비스 구조, 사용자 흐름, 기능 우선순위를 설계하는 일로, 정보구조(IA) 설계, 와이어프레임, 화면설계서 작성을 포함한다.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "슈퍼플래닝 UX 용어집",
+        "url": "https://superplanning.blog/#ux-glossary"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://superplanning.blog/ux-design/#howto",
+      "name": "슈퍼플래닝 UX기획/디자인 진행 프로세스",
+      "totalTime": "P6W",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "예비 문의 및 킥오프 미팅"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "서비스 IA 및 사용자 흐름 설계"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "와이어프레임 검증 및 화면설계서 작성"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "UI디자인 및 개발 전달용 가이드 작성"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "납품 및 사후 피드백 라운드"
+        }
+      ]
     }
   ]
 }
@@ -1320,8 +1365,17 @@
       }
     }
 
+    /* AI·기계 판독용 리소스 푸터 (시각 위계 분리) */
+    .ai-resources-footer { margin: 14px 0 6px 0; padding: 6px 8px; border-top: 1px dashed rgba(0,0,0,0.18); font-family: inherit; }
+    .ai-resources-title  { display:inline-block; margin-right:8px; font-weight:800; color:#333; font-size:11.5px; letter-spacing:0; }
+    .ai-resources-list   { display:inline-flex; flex-wrap:wrap; gap:6px; list-style:none; margin:4px 0 0 0; padding:0; vertical-align:middle; }
+    .ai-resources-list li{ display:inline-block; }
+    .ai-badge            { display:inline-flex; align-items:center; gap:4px; padding:2px 7px; border:1px solid rgba(0,0,0,0.25); background:#f4f4f4; color:#222; text-decoration:none; border-radius:3px; font-size:10.5px; font-weight:700; line-height:1.45; transition:background .15s,color .15s; }
+    .ai-badge:hover      { background:#222; color:#fff; }
+    .ai-badge-icon       { font-size:11px; }
+    .ai-badge-meta       { font-size:9px; opacity:0.7; margin-left:2px; }
+    .ai-answer-first     { border-left:3px solid #000080; background:#f4f6ff; padding:8px 10px; font-size:13.5px; line-height:1.6; margin:8px 0 14px 0; }
 </style>
-  
 </head>
 <body>
 
@@ -1494,6 +1548,7 @@
         <main class="main-content-pane">
 
           <h1>UX기획</h1>
+            <p class="ai-answer-first">슈퍼플래닝의 <strong>UX기획</strong>은 사용자 흐름·정보구조(IA)·와이어프레임·화면설계서를 통합 설계하는 단계이고, <strong>UX디자인</strong>은 그 결과를 실제 화면 경험으로 구현하는 단계이다. 두 단계가 함께 움직일 때 완성도가 가장 높다.</p>
           <p class="hero-intro">슈퍼플래닝은 사용자경험과 행동을 비즈니스의 목적에 맞도록 UI/UX를 설계합니다.</p>
           <ul class="section-list" style="margin-bottom:28px;">
             <li>
@@ -1835,8 +1890,28 @@
           </dl>
 
           <div class="bottom-nav">
-            <p>이전 단계: <a href="/ux-writing/">UX라이팅</a> &nbsp;|&nbsp; 다음 단계: <a href="/app_dev/">웹/앱 개발</a></p>
-  <link rel="describedby" type="text/plain" title="AI 색인 (llms.txt)" href="https://superplanning.blog/llms.txt">
+            <p>이전 단계: <a href="/ux-writing/">UX라이팅</a> &nbsp;|&nbsp; 다음 단계: <a href="/web-app-development/">웹/앱 개발</a></p>
+
+            <!-- AI·기계 판독용 리소스 뱃지 (head의 rel/describedby와 시멘틱 이중화) -->
+            <aside class="ai-resources-footer" aria-label="기계 판독용 리소스 (AI 크롤러, 검색엔진, 텍스트 브라우저)">
+              <strong class="ai-resources-title">AI·기계 판독용 자료</strong>
+              <ul class="ai-resources-list">
+                <li>
+                  <a href="/services/ux-planning-design.md" rel="alternate" type="text/markdown" title="이 페이지의 마크다운 텍스트 버전 — AI 검색엔진·스크린리더에 최적화" class="ai-badge">
+                    <span class="ai-badge-icon" aria-hidden="true">📄</span>
+                    <span class="ai-badge-label">텍스트로 보기</span>
+                    <span class="ai-badge-meta">.md</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/llms.txt" rel="describedby" type="text/plain" title="슈퍼플래닝 사이트의 AI 검색엔진용 페이지 색인 (llms.txt 표준)" class="ai-badge">
+                    <span class="ai-badge-icon" aria-hidden="true">🤖</span>
+                    <span class="ai-badge-label">AI용 사이트 색인</span>
+                    <span class="ai-badge-meta">llms.txt</span>
+                  </a>
+                </li>
+              </ul>
+            </aside>
           </div>
 
   <!-- TASKBAR -->
