@@ -192,7 +192,7 @@
   }
   </script>
 
-  <style>e>
+  <style>
     /* CSS Variables & Core Styling (Main Page Compatibility) */
     :root {
       --bg: #ffffff;
@@ -293,22 +293,25 @@
     /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE) */
     #gnb {
       position: fixed !important;
-      top: var(--logo-top);
+      top: var(--logo-top, 14px);
       left: 95px;
       right: 14px;
-      height: var(--gnb-h);
-      background: var(--gnb-bg);
-      color: var(--gnb-fg);
-      border: 1px solid var(--gnb-bd);
+      height: var(--gnb-h, 34px);
+      background: var(--gnb-bg, rgba(0, 0, 0, 0.45));
+      color: var(--gnb-fg, #ffffff);
+      border: 1px solid var(--gnb-bd, rgba(255, 255, 255, 0.2));
       backdrop-filter: blur(8px);
       z-index: 99999 !important;
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: space-between;
       padding: 0 8px;
       border-radius: 4px;
       user-select: none !important;
       overflow: visible !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
     }
 
     /* GNB SCROLL PROGRESS GAUGE BAR (HIGH-CONTRAST NEON ACCENT LINE) */
@@ -1378,7 +1381,10 @@
 
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+        <span>인재채용</span>
+      </button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1394,7 +1400,7 @@
     </div>
   </div>
 
-    <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
       <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
