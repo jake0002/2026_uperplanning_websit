@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -1852,6 +1852,65 @@
       }
     });
   </script>
+
+  <!-- RETRO WIN95 STICKY KAKAO CHAT BANNER (ALIGNED WITH EXPLORER TITLEBAR TOP LINE) -->
+  <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
+    <!-- Win95 Titlebar -->
+    <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
+      <span>💬</span>
+      <span>실시간 상담</span>
+    </div>
+    <!-- Banner Content Body -->
+    <div style="padding:8px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
+      <div>
+        <h4 style="margin:0 0 2px 0; font-size:11.5px; font-weight:800; color:#000000; letter-spacing:-0.01em;">
+          신속한 문의답변
+        </h4>
+        <p style="margin:0 0 4px 0; font-size:10.5px; color:#333333; line-height:1.35; font-weight:500; word-break:keep-all;">
+          24시간 상담 / 보통 10분 이내 응답
+        </p>
+        <div style="font-size:10.5px; color:#555555; font-weight:600; margin-bottom:3px;">
+          카카오ID: @슈퍼플래닝
+        </div>
+        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
+          <span>문의전화: 031-699-3298</span>
+          <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
+        </div>
+        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
+          <span style="letter-spacing:-0.02em;">이메일: jake@superplanning.co.kr</span>
+          <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button>
+        </div>
+      </div>
+      <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:flex; align-items:center; justify-content:center; gap:4px; padding:5px 8px; font-size:11px; font-weight:bold; background:#000000; color:#ffffff; border:1px solid #000000; text-decoration:none; text-align:center; box-shadow:2px 2px 0 rgba(0,0,0,0.3);">
+        <span>카카오 채팅시작</span> <span>↗</span>
+      </a>
+    </div>
+  </div>
+  <style>
+    #mobileInlineKakaoBanner {
+      display: none;
+    }
+    @media (max-width: 1380px) {
+      #stickyKakaoBanner {
+        left: auto !important;
+        right: 16px !important;
+        top: 68px !important;
+      }
+    }
+    @media (max-width: 900px) {
+      #stickyKakaoBanner {
+        display: none !important;
+      }
+      #mobileInlineKakaoBanner {
+        display: block !important;
+      }
+    }
+  </style>
+
+  <!-- RETRO BACK TO TOP ANCHOR BUTTON -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
 
 </body>
 </html>
