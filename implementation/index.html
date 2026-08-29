@@ -2,30 +2,34 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://superplanning.blog | SECONDARY: https://superplanning.co.kr) -->
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://superplanning.blog) -->
   <meta name="site:base-url" content="https://superplanning.blog">
 
-  <!-- OPEN GRAPH & KAKAOTALK / NAVER / FACEBOOK SHARE THUMBNAIL (CACHE BUSTING: ?v=20260818) -->
+  <!-- OPEN GRAPH METADATA -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
-  <meta property="og:title" content="슈퍼플래닝 (Superplanning) — Web and App UX Lab">
-  <meta property="og:description" content="서비스 기획·디자인·개발 실무 리드가 직접 검토하는 예비 고객사 맞춤 UX 솔루션">
+  <meta property="og:title" content="슈퍼플래닝 (Superplanning) — UX디자인 에이전시">
+  <meta property="og:description" content="슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다.">
   <meta property="og:url" content="https://superplanning.blog/">
   <meta property="og:image" content="https://superplanning.blog/og-thumbnail.png?v=20260818">
   <meta property="og:image:secure_url" content="https://superplanning.blog/og-thumbnail.png?v=20260818">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="SUPERPLANNING Web and App UX Lab">
+  <meta property="og:image:alt" content="슈퍼플래닝 메인 홈페이지 대표 이미지">
   <link rel="image_src" href="https://superplanning.blog/og-thumbnail.png?v=20260818">
 
   <!-- TWITTER CARD METADATA -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="슈퍼플래닝 (Superplanning) — Web and App UX Lab">
-  <meta name="twitter:description" content="서비스 기획·디자인·개발 실무 리드가 직접 검토하는 예비 고객사 맞춤 UX 솔루션">
+  <meta name="twitter:title" content="슈퍼플래닝 (Superplanning) — UX디자인 에이전시">
+  <meta name="twitter:description" content="슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다.">
   <meta name="twitter:image" content="https://superplanning.blog/og-thumbnail.png?v=20260818">
   <meta name="twitter:domain" content="superplanning.blog">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Machine-readable Reference Link (Head only, Hidden from Visible UI) -->
+  <link rel="alternate" type="text/plain" href="https://superplanning.blog/llms.txt" title="LLMs Text Reference">
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,9 +38,9 @@
   <link rel="shortcut icon" href="/favicon.ico">
   
   <!-- Primary SEO Meta Tags -->
-  <title>슈퍼플래닝: UX디자인 에이전시, UX강의, UX리서치, UX라이팅, 웹/앱 AI개발회사</title>
-  <meta name="description" content="슈퍼플래닝은 웹/앱 서비스 기획과 UX/UI 디자인을 중심으로 UX리서치, UX라이팅, UX컨설팅, 앱 화면설계, UI디자인, IT개발 등 통합 서비스를 제공하는 외주 전문 UX에이전시입니다. AI를 활용한 UX기획 1:1강의와 기업 출강, 강사파견, UIUX디자인 포트폴리오 코칭 등 실무 교육 프로그램도 함께 운영합니다.">
-  <meta name="keywords" content="UI/UX외주업체, UX디자인 에이전시, UX리서치 회사, UX라이팅 회사, UX컨설팅 회사, UX강의, UX강의학원, 기업출강, 앱개발 외주업체, UX기획, UX디자인, IA설계, 와이어프레임, 화면설계서, UX 특허, 모바일앱 기획, 스타트업 UX컨설팅, 슈퍼플래닝, Superplanning">
+  <title>슈퍼플래닝: UX디자인 에이전시 · UX리서치 · UX라이팅 · UI/UX기획 · 웹·앱개발 전문 회사</title>
+  <meta name="description" content="슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다. AI-UX 실무 교육과 기업 컨설팅도 함께 운영합니다.">
+  <meta name="keywords" content="슈퍼플래닝, Superplanning, UX디자인 에이전시, UX리서치, UX라이팅, UI/UX기획, 웹앱개발, UX컨설팅">
   <meta name="author" content="슈퍼플래닝 (Superplanning)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://superplanning.blog/">
@@ -50,15 +54,32 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://superplanning.blog/#website",
+        "url": "https://superplanning.blog/",
+        "name": "슈퍼플래닝 (Superplanning)",
+        "description": "슈퍼플래닝 공식 메인 홈페이지 - UX디자인 에이전시"
+      },
+      {
         "@type": "ProfessionalService",
         "@id": "https://superplanning.blog/#organization",
         "name": "슈퍼플래닝 (Superplanning)",
         "alternateName": "UX디자인 에이전시 슈퍼플래닝",
         "url": "https://superplanning.blog",
         "logo": "https://superplanning.blog/favicon.ico",
-        "description": "슈퍼플래닝은 웹/앱 서비스 기획과 UX/UI 디자인을 중심으로 UX리서치, UX라이팅, UX컨설팅, 앱 화면설계, UI디자인, IT개발 등 통합 서비스를 제공하는 외주 전문 UX에이전시입니다. AI를 활용한 UX기획 1:1강의와 기업 출강, 강사파견, UIUX디자인 포트폴리오 코칭 등 실무 교육 프로그램도 함께 운영합니다.",
+        "description": "슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다. AI-UX 실무 교육과 기업 컨설팅도 함께 운영합니다.",
         "email": "jake@superplanning.co.kr",
+        "telephone": "+82-31-699-3298",
         "priceRange": "$$",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": "+82-31-699-3298",
+          "email": "jake@superplanning.co.kr",
+          "availableLanguage": ["ko-KR"],
+          "areaServed": "KR",
+          "url": "https://superplanning.blog/contact/"
+        },
         "knowsAbout": [
           "UX Writing",
           "UX Research",
@@ -85,6 +106,22 @@
                 "@type": "Service",
                 "name": "UX 라이팅",
                 "description": "고객 언어 기반의 짧고 분명한 서술문과 버튼 카피를 설계합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UX/UI 기획 및 디자인",
+                "description": "사용자 인터뷰를 기반으로 핵심 문제를 해결하며 UI스토리보드와 디자인시스템을 구축합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "웹 / 앱 개발",
+                "description": "최적의 사용자 경험을 제공하는 하이브리드 웹과 모바일 앱을 개발합니다."
               }
             },
             {
@@ -123,7 +160,7 @@
             "name": "프로젝트 문의는 어떻게 하나요?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "공식 웹사이트(superplanning.blog)의 프로젝트 문의 폼 또는 이메일(jake@superplanning.co.kr)로 문의할 수 있습니다. 보통 1~3일 이내에 답변을 드립니다."
+              "text": "공식 웹사이트(superplanning.blog)의 프로젝트 문의 폼 또는 이메일(jake@superplanning.co.kr)로 문의할 수 있습니다. 보통 10분 이내에 빠른 회신을 드립니다."
             }
           }
         ]
@@ -195,7 +232,6 @@
       -webkit-user-select: none !important;
     }
 
-    /* Themes */
     /* Themes & Dark Mode High Contrast Text Fix */
     body[data-theme="dark"] {
       --bg: var(--bg-dark);
@@ -996,7 +1032,7 @@
     .eq-bar:nth-child(5) { animation-delay: 0.5s; background: #00ffff; }
     @keyframes eqAnim { 0% { height: 10%; } 100% { height: 95%; } }
 
-    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
+    /* EXACT WIN95 TASKBAR & START MENU CSS */
     #taskbar {
       display: flex !important;
       position: fixed !important;
@@ -1058,7 +1094,7 @@
       pointer-events: none !important;
     }
 
-    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET SCREENS */
     @media (max-width: 900px) {
       #taskbar, #startMenu, .bottom-gnb {
         display: none !important;
@@ -1068,7 +1104,7 @@
       }
     }
 
-    /* MOBILE GNB MENU DRAWER CSS SYNCED WITH SUBPAGES */
+    /* MOBILE GNB MENU DRAWER CSS */
     @media (max-width: 768px) {
       #mobileMenuBtn {
         display: inline-flex !important;
@@ -1092,7 +1128,6 @@
         display: block !important;
       }
     }
-
 </style>
   
 </head>
@@ -1100,31 +1135,33 @@
 
   <!-- SEMANTIC HIDDEN HEADER FOR SEARCH ENGINES & AI CRAWLERS (SEO/GEO) -->
   <header class="sr-only">
-    <h1>슈퍼플래닝 (Superplanning) — UX디자인 에이전시 &amp; UI/UX 기획 전문</h1>
-    <p>슈퍼플래닝은 복잡한 화면을 덜어내고 사용자가 과업을 완성하도록 돕는 UX디자인 에이전시입니다. UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌 전문 에이전시입니다.</p>
+    <h1>슈퍼플래닝 (Superplanning) — UX디자인 에이전시 &amp; UI/UX 기획·개발 전문</h1>
+    <p>슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다.</p>
   </header>
 
-  <!-- SEMANTIC KNOWLEDGE STRUCTURE FOR GPTBOT, CLAUDEBOT, CRAWLERS -->
+  <!-- SEMANTIC KNOWLEDGE STRUCTURE FOR AI CRAWLERS (GEO & SEARCH ENGINES) -->
   <main class="sr-only" aria-hidden="false">
+    <!-- 1. 슈퍼플래닝 소개 -->
     <section id="about-us">
       <h2>슈퍼플래닝 소개 (About Superplanning)</h2>
-      <p>UX디자인 에이전시, 슈퍼플래닝입니다. 때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠. 슈퍼플래닝은 'less but better' 철학으로 일합니다.</p>
+      <p>UX디자인 에이전시 슈퍼플래닝입니다. 때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 합니다. 슈퍼플래닝은 'less but better' 철학으로 실무에 가장 효율적인 UX를 설계합니다.</p>
       <ul>
         <li>1. less but better: 화려함보다 본질에 집중합니다.</li>
         <li>2. 고객의 언어로 말하기: 전문 용어를 배제하고 직관적인 언어를 씁니다.</li>
-        <li>3. 끊김 없는 경험 설계: 리서치, 라이팅, 기획, 개발이 하나의 워크플로우로 연결됩니다.</li>
+        <li>3. 끊김 없는 경험 설계: 리서치, 라이팅, 기획, 개발이 하나의 통합 워크플로우로 연결됩니다.</li>
       </ul>
     </section>
 
+    <!-- 2. 핵심 서비스 -->
     <section id="services-list">
       <h2>UX 전문 서비스</h2>
       <article>
         <h3>UX 리서치</h3>
-        <p>FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.</p>
+        <p>FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 정량·정성적 근거를 만듭니다.</p>
       </article>
       <article>
         <h3>UX 라이팅</h3>
-        <p>보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.</p>
+        <p>보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관되고 직관적인 브랜드 언어 경험을 전달합니다.</p>
       </article>
       <article>
         <h3>UX/UI 기획 및 디자인</h3>
@@ -1132,7 +1169,7 @@
       </article>
       <article>
         <h3>웹 / 앱 개발</h3>
-        <p>React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
+        <p>React, Vue 등을 활용하여 최적의 사용자경험을 제공하는 하이브리드 웹과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
       </article>
       <article>
         <h3>UX 컨설팅</h3>
@@ -1140,20 +1177,27 @@
       </article>
       <article>
         <h3>AI-UX 강의</h3>
-        <p>최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
+        <p>최신 생성형 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
       </article>
     </section>
 
+    <!-- 3. 주요 고객사 및 신뢰 요소 -->
+    <section id="clients-trust">
+      <h2>주요 고객사 및 프로젝트 실적</h2>
+      <p>SK텔레콤, 현대자동차, 롯데그룹, LG유플러스, 비씨카드, CJ올리브네트웍스, KB국민은행, NH농협은행, 서민금융진흥원, 제일기획 등 주요 대기업 및 공공기관의 UX 프로젝트를 수행했습니다.</p>
+    </section>
+
+    <!-- 4. 문의 CTA -->
     <section id="contact-info">
       <h2>프로젝트 문의 및 찾아오시는 길</h2>
-      <p>이메일: jake@superplanning.co.kr | 웹사이트: https://superplanning.blog</p>
+      <p>이메일: jake@superplanning.co.kr | 대표전화: 031-699-3298 | 위치: 경기 하남시 미사강변동로72 SB비즈타워 1116호</p>
     </section>
   </main>
 
   <noscript>
     <div style="padding:20px; background:#fff; color:#000;">
       <h2>슈퍼플래닝 (Superplanning UX Studio)</h2>
-      <p>자바스크립트가 비활성화되어 있습니다. 슈퍼플래닝은 UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌를 제공하는 전문 에이전시입니다. 문의: jake@superplanning.co.kr</p>
+      <p>자바스크립트가 비활성화되어 있습니다. 슈퍼플래닝은 UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌를 제공하는 전문 UX디자인 에이전시입니다. 문의: jake@superplanning.co.kr</p>
     </div>
   </noscript>
 
@@ -1170,28 +1214,15 @@
   </div>
 
   <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
-  <div id="brandLogo" title="Superplanning OS95 — Home" onclick="goHome();">
-    <span id="brandLogoText" data-i18n="home">Home</span>
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="goHome();">
+    <span id="brandLogoText">홈</span>
   </div>
-  <script>
-    (function(){
-      try {
-        var lang = localStorage.getItem('os95_lang');
-        if (!lang) {
-          var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-          lang = navLang.startsWith('en') ? 'en' : 'ko';
-        }
-        var el = document.getElementById('brandLogoText');
-        if (el) el.textContent = (lang === 'ko') ? '홈' : 'Home';
-      } catch(e) {}
-    })();
-  </script>
 
-  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, 6 MENU BUTTONS + BROCHURE BTN & KO|EN TOGGLE AT FAR RIGHT) -->
+  <!-- 4. GNB HEADER BAR -->
   <div id="gnb">
     <ul class="gnb-menu">
       <li class="gnb-item">
-        <a class="gnb-link" href="/ux-research" onclick="blip(660, 0.04);"><span>UX리서치</span></a>
+        <a class="gnb-link" href="/ux-research/" onclick="blip(660, 0.04);"><span>UX리서치</span></a>
       </li>
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-writing/" onclick="blip(660, 0.04);"><span>UX라이팅</span></a>
@@ -1200,13 +1231,13 @@
         <a class="gnb-link" href="/ux-design/" onclick="blip(660, 0.04);"><span>UX기획/디자인</span></a>
       </li>
       <li class="gnb-item">
-        <a class="gnb-link" href="/web-app-development/"><span>웹/앱개발</span></a>
+        <a class="gnb-link" href="/web-app-development/" onclick="blip(660, 0.04);"><span>웹/앱개발</span></a>
       </li>
       <li class="gnb-item">
-        <a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a>
+        <a class="gnb-link" href="/ux-academy/" onclick="blip(660, 0.04);"><span>AI-UX강의</span></a>
       </li>
       <li class="gnb-item">
-        <a class="gnb-link" onclick="location.href='/ux-blog/'; blip(660, 0.04);"><span>UX블로그</span></a>
+        <a class="gnb-link" href="/ux-blog/" onclick="blip(660, 0.04);"><span>UX블로그</span></a>
       </li>
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-company/" onclick="blip(660, 0.04);"><span>회사소개</span></a>
@@ -1218,8 +1249,7 @@
 
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"careers'); blip(660, 0.04);"><span>인재채용</span></button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="toggleLang();" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers'); blip(660, 0.04);"><span>인재채용</span></button>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1235,10 +1265,10 @@
     </div>
   </div>
 
-          <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <!-- MOBILE GNB NAVIGATION DRAWER -->
   <div id="mobileNavDrawer">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
-      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
+      <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
       <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
     </div>
     <div style="display:flex; flex-direction:column; gap:4px;">
@@ -1335,106 +1365,16 @@
         </svg>
         <div class="icon-label">찾아오시는 길</div>
       </div>
-
     </div>
   </div>
 
   <!-- 6. WINDOW AREA (POPUPS DISPLAY HERE FIRST) -->
   <div id="windowArea"></div>
 
-  <!-- 7. CONTACT SKYSCRAPER (ALWAYS BELOW POPUPS ON MOBILE) -->
-  <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
-  <div id="desktop">
-    <div id="iconsArea">
-      <!-- 1. 슈퍼플래닝 소개 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('about'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <path d="M6 30h24V14H6v16z" fill="#ffffff" />
-          <path d="M10 17h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zm-12 6h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4z" fill="#000000"/>
-          <path d="M14 8h8v6h-8z" fill="#ffffff"/>
-          <path d="M16 10h4v4h-4z" fill="#000000"/>
-        </svg>
-        <div class="icon-label">슈퍼플래닝</div>
-      </div>
-
-      <!-- 1-2. 주요 고객사 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('clients'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <path d="M6 28h24V12H6v16z" fill="#ffffff"/>
-          <path d="M9 15h4v10H9zm7 0h4v10h-4zm7 0h4v10h-4z" fill="#000000"/>
-          <path d="M6 10l12-5 12 5v2H6z" fill="#ffffff"/>
-        </svg>
-        <div class="icon-label">주요 고객사</div>
-      </div>
-
-      <!-- 2. UX서비스 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('services'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <rect x="6" y="6" width="24" height="24" fill="#ffffff"/>
-          <rect x="9" y="9" width="8" height="8" fill="#000000"/>
-          <rect x="19" y="9" width="8" height="8" stroke="#000000" stroke-width="2" fill="none"/>
-          <rect x="9" y="19" width="18" height="8" fill="#000000"/>
-          <rect x="11" y="21" width="14" height="4" fill="#ffffff"/>
-        </svg>
-        <div class="icon-label">UX서비스</div>
-      </div>
-
-      <!-- 5. 인스타그램 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('instagram'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <rect x="7" y="7" width="22" height="22" rx="6" fill="#ffffff"/>
-          <rect x="10" y="10" width="16" height="16" rx="4" stroke="#000000" stroke-width="2" fill="none"/>
-          <circle cx="18" cy="18" r="4" stroke="#000000" stroke-width="2" fill="none"/>
-          <circle cx="22.5" cy="13.5" r="1.5" fill="#000000"/>
-        </svg>
-        <div class="icon-label">인스타그램</div>
-      </div>
-
-      <!-- 6. 쓰레드 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('threads'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
-          <rect x="12" y="12" width="12" height="12" fill="#000000"/>
-          <rect x="16" y="16" width="4" height="4" fill="#ffffff"/>
-        </svg>
-        <div class="icon-label">쓰레드</div>
-      </div>
-
-      <!-- 7. 소개영상 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('intro-video'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="4"/>
-          <path d="M15 13.5l8 4.5-8 4.5z" fill="#000000"/>
-        </svg>
-        <div class="icon-label">유튜브</div>
-      </div>
-
-      <!-- 8. 찾아오시는 길 -->
-      <div class="desktop-icon" onclick="selectIcon(this); blip(660, 0.04);" ondblclick="openWindow('contact'); blip(880, 0.05);">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <path d="M18 6c-5.52 0-10 4.48-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#ffffff"/>
-          <circle cx="18" cy="16" r="2" fill="#000000"/>
-        </svg>
-        <div class="icon-label">찾아오시는 길</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 6. WINDOW AREA (POPUPS DISPLAY HERE FIRST) -->
-  <div id="windowArea"></div>
-
-  <!-- 7. CONTACT SKYSCRAPER (ALWAYS BELOW POPUPS ON MOBILE) -->
+  <!-- 7. CONTACT SKYSCRAPER -->
   <div id="skyscraper" class="w95-box">
     <div class="sky-title">UX프로젝트 문의</div>
-    <div class="sky-hero" data-i18n="sky.hero">빠르게 회신 드리겠습니다 (보통 10분 이내 응답)</div>
+    <div class="sky-hero">빠르게 회신 드리겠습니다 (보통 10분 이내 응답)</div>
     <input type="text" placeholder="이름 *" id="skyName" required>
     <input type="text" placeholder="회사명 (선택)" id="skyCompany">
     <input type="email" placeholder="이메일 *" id="skyEmail" required>
@@ -1461,7 +1401,7 @@
         <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)">복사</button>
       </div>
 
-      <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD ON DESKTOP -->
+      <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD -->
       <a href="http://pf.kakao.com/_efpVxb/chat" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none; margin-top:8px; background:#ffffff; border:2px solid #000000; padding:6px 8px; cursor:pointer; box-shadow:1px 1px 0 #000; border-radius:2px;" onclick="blip(880, 0.05);">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <div style="display:flex; align-items:center; gap:6px;">
@@ -1480,7 +1420,6 @@
   </div>
 
   <!-- 8. START MENU -->
-    <!-- START MENU -->
   <div id="startMenu">
     <div class="start-banner">SUPERPLANNING</div>
     <div class="start-items">
@@ -1536,79 +1475,9 @@
         localStorage.setItem(key, val);
       } catch (e) {}
     }
-    function detectInitialLanguage() {
-      try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        if (urlLang === 'en' || urlLang === 'ko') return urlLang;
-      } catch (e) {}
 
-      const savedLang = getStorage('os95_lang', null);
-      if (savedLang === 'en' || savedLang === 'ko') return savedLang;
-
-      try {
-        const userNavLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (userNavLang.startsWith('en')) return 'en';
-      } catch (e) {}
-
-      return 'ko';
-    }
-    let currentLang = detectInitialLanguage();
     let winSeq = 0;
     const windows = {};
-
-    const STRINGS = {
-      ko: {
-        'w.welcome': '초기 안내',
-        'w.services': 'UX 서비스',
-        'w.portfolio': '포트폴리오',
-        'w.classes': 'AI-UX강의',
-        'w.blog': 'UX블로그',
-        'w.contact': '찾아오시는 길',
-        'w.about': '슈퍼플래닝',
-        'w.clients': '주요 고객사',
-        'w.intro-video': '슈퍼플래닝 소개영상',
-        'w.brochure': '포트폴리오 보기',
-        'w.careers': '인재 채용',
-        'w.instagram': '인스타그램',
-        'w.threads': '쓰레드',
-        'w.np': '지금 듣는 곡',
-        'w.links': '바로가기',
-        'w.tweaks': '환경 설정',
-        'w.shut': '시스템 종료',
-        'wel.head': '환영합니다, UX디자인 에이전시 슈퍼플래닝입니다',
-        'wel.body': '복잡한 화면을 덜어내고, 진짜 필요한 것만 남깁니다.',
-        'about.lead': 'UX디자인 에이전시, 슈퍼플래닝입니다.',
-        'about.body1': '디자인을 잘한다는 건 화면을 화려하게 만드는 일이 아닙니다.',
-        'about.body2': '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.',
-        'sky.hero': '빠르게 회신 드리겠습니다 (보통 10분 이내 응답)'
-      },
-      en: {
-        'w.welcome': 'Welcome',
-        'w.services': 'UX Services & Dev',
-        'w.portfolio': 'Portfolio',
-        'w.classes': 'AI-UX Classes',
-        'w.blog': 'UX Blog',
-        'w.contact': 'Location',
-        'w.about': 'About Us',
-        'w.clients': 'Key Clients',
-        'w.intro-video': 'Promo Video',
-        'w.brochure': 'Company Brochure Viewer',
-        'w.careers': 'Careers',
-        'w.instagram': 'Instagram',
-        'w.threads': 'Threads',
-        'w.np': 'Now Playing',
-        'w.links': 'Links',
-        'w.tweaks': 'Settings',
-        'w.shut': 'Shutdown',
-        'wel.head': 'Welcome to Superplanning UX Studio',
-        'wel.body': 'We strip away clutter and leave only what is genuinely necessary.',
-        'about.lead': 'Dedicated UX Agency, Superplanning.',
-        'about.body1': 'Great design is not about flashy screens.',
-        'about.body2': 'Sometimes, for a better user experience, flashy design must be boldly discarded.',
-        'sky.hero': 'We reply quickly (Usually within 10 mins)'
-      }
-    };
 
     let audioCtx = null;
     function blip(freq=440, dur=0.06, type='square') {
@@ -1688,21 +1557,6 @@
       }
     }
 
-    function getSequentialTopOnMobile() {
-      let baseTop = 60;
-      let maxBottom = baseTop;
-      const winEls = Array.from(document.querySelectorAll('.win')).filter(el => el.style.display !== 'none' && !el.classList.contains('maximized'));
-      for (const el of winEls) {
-        const t = parseInt(el.style.top, 10) || 0;
-        const h = el.offsetHeight || el.getBoundingClientRect().height || 280;
-        const b = t + h;
-        if (b > maxBottom) {
-          maxBottom = b;
-        }
-      }
-      return maxBottom === baseTop ? baseTop : maxBottom + 14;
-    }
-
     function getCenteredWindowPos(w, h) {
       const minTop = getMinWindowTop();
       const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
@@ -1757,7 +1611,6 @@
 
       blip(660, 0.06);
       winSeq++;
-      const minTop = getMinWindowTop();
       
       let leftOffset, topOffset;
       if (!isMobile) {
@@ -1782,7 +1635,7 @@
       }
       winEl.style.zIndex = getNextZIndex();
 
-      const titleText = STRINGS[currentLang]['w.' + key] || def.title;
+      const titleText = def.title;
 
       winEl.innerHTML = `
         <div class="w-title">
@@ -1823,8 +1676,6 @@
     }
 
     function getWindowBody(key) {
-      const isKo = currentLang === 'ko';
-
       if (key === 'about') {
         return `
           <div class="win-menu-bar" style="margin: -12px -12px 10px -12px;">
@@ -1834,127 +1685,123 @@
             <div class="win-menu-item"><span>H</span>elp</div>
           </div>
           
-          <!-- BRAND LOGO CARD BOX (ABOVE C:\SUPERPLANNING> HELLO BOX) -->
           <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
             <img src="/images/superplanning_brand_logo.png" alt="SUPERPLANNING" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_brand_logo.png';}">
           </div>
 
-          <!-- RETRO IMPACTFUL HERO CONTAINER -->
           <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:12px 14px; margin-bottom:8px; border-radius:3px;">
             <div class="cmd-prompt" style="font-family:var(--font-mono); font-size:12.5px; color:#ffffff; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
               <span>C:\\SUPERPLANNING&gt; <span id="cmdDynamicText">HELLO</span></span><span class="blink-cursor" style="height:13px; width:6px; background:#ffffff; display:inline-block;"></span>
             </div>
 
             <h2 id="heroTypingText" style="font-size:21px; font-weight:900; margin:0 0 4px 0; line-height:1.3; color:#ffffff; letter-spacing:-0.02em; min-height:28px; word-break:keep-all;">
-              ${isKo ? 'UX디자인 에이전시, <span style="color:#ffffff; font-weight:900;">슈퍼플래닝입니다.</span>' : 'Dedicated UX Agency, <span style="color:#ffffff; font-weight:900;">Superplanning.</span>'}
+              UX디자인 에이전시, <span style="color:#ffffff; font-weight:900;">슈퍼플래닝입니다.</span>
             </h2>
 
             <p id="heroBody2Text" style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
-              ${isKo ? '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.' : 'Sometimes, for a better user experience, flashy design must be boldly discarded.'}
+              때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.
             </p>
           </div>
 
-          <!-- SPACING & SECTION HEADER (BLACK TEXT, NO ICON, NO BLUE LINE) -->
           <div style="margin-top:8px; margin-bottom:6px;">
-            <h4 style="font-weight:900; font-size:12.5px; margin:0; color:#000000; letter-spacing:-0.01em;">${isKo ? 'UX프로젝트 수행원칙' : 'UX Execution Principles'}</h4>
+            <h4 style="font-weight:900; font-size:12.5px; margin:0; color:#000000; letter-spacing:-0.01em;">UX프로젝트 수행원칙</h4>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:8px;">
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">${isKo ? '1. 최근 사용자들의 3초 법칙' : '1. The 3-Second Rule'}</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">${isKo ? '사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.' : 'Capture user attention within 3 seconds. First impressions that convey core value are paramount.'}</p>
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">1. 최근 사용자들의 3초 법칙</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자의 시선은 3초 안에 사로잡아야 합니다. 이탈을 막고 핵심 가치를 전하는 최초 사용자 경험이 무엇보다 중요합니다.</p>
             </div>
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">${isKo ? '2. 그렇게 쓰면 아무도 안읽습니다.' : '2. People Don\'t Read Large Text Blocks'}</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">${isKo ? '사용자는 화면을 읽지 않고 \'스캔\'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.' : 'Users scan rather than read. Remove fluff and guide action through concise UX writing.'}</p>
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
             </div>
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">${isKo ? '3. 더 적게 하지만 더 좋게' : '3. Less But Better'}</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">${isKo ? '디자인에서는 \'무엇을 추가할까\'가 아닌 \'무엇을 덜어낼까\' 고민해야 합니다. \'Less but better\'' : 'Focus on what to eliminate rather than what to add. Less but better.'}</p>
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">3. 더 적게 하지만 더 좋게</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. 'Less but better'</p>
             </div>
           </div>
 
           <div style="display:flex; gap:8px; margin-top:6px; margin-bottom:0; padding-top:0; flex-wrap:wrap;">
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">${isKo ? '포트폴리오 보기' : 'View Portfolio'}</button>
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">${isKo ? '소개영상 보기' : 'Promo Video'}</button>
-            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">${isKo ? '찾아오시는 길' : 'Location'}</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">포트폴리오 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">소개영상 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">찾아오시는 길</button>
           </div>
         `;
       } else if (key === 'services') {
         return `
-          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">${isKo ? '이런 서비스를 제공합니다.' : 'Services We Provide'}</h3>
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
           <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
-            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux_research'; blip(660, 0.04);">
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-research/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? 'UX 리서치' : 'UX Research'}</h4>
-                <a href="/ux-research" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">UX 리서치</h4>
+                <a href="/ux-research/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? 'FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.' : 'FGI, in-depth interviews, and UT research to validate hypotheses and eliminate failure risks.'}</p>
+              <p style="margin:0;">FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 근거를 만듭니다.</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-writing/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? 'UX 라이팅' : 'UX Writing'}</h4>
-                <a href="/ux-writing/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">UX 라이팅</h4>
+                <a href="/ux-writing/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? '보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.' : 'Voice & tone definition and UX writing guidelines for a unified brand experience.'}</p>
+              <p style="margin:0;">보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관된 브랜드 경험을 전달합니다.</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-design/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? 'UX 기획 / 디자인' : 'UX/UI Design'}</h4>
-                <a href="/ux-design/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">UX 기획 / 디자인</h4>
+                <a href="/ux-design/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? '사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.' : 'Problem solving based on user interviews, building UI storyboards and design systems.'}</p>
+              <p style="margin:0;">사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/web-app-development/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? '웹 / 앱 개발' : 'Web & App Dev'}</h4>
-                <a href="/web-app-development/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">웹 / 앱 개발</h4>
+                <a href="/web-app-development/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? 'React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.' : 'Building high-performance hybrid and iOS/Android native apps with React and Vue.'}</p>
+              <p style="margin:0;">React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-design/#consulting'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? 'UX 컨설팅' : 'UX Consulting'}</h4>
-                <a href="/ux-design/#consulting" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">UX 컨설팅</h4>
+                <a href="/ux-design/#consulting" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? '비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.' : 'App renewal strategies aligned with business goals and data-driven UX roadmaps.'}</p>
+              <p style="margin:0;">비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.</p>
             </div>
 
             <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-academy/'; blip(660, 0.04);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <h4 style="margin:0;">${isKo ? 'AI-UX 강의' : 'AI-UX Classes'}</h4>
-                <a href="/ux-academy/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">${isKo ? '상세보기 →' : 'Details →'}</a>
+                <h4 style="margin:0;">AI-UX 강의</h4>
+                <a href="/ux-academy/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
               </div>
-              <p style="margin:0;">${isKo ? '최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.' : 'Practical training using latest AI tools from service planning to Figma and vibe coding.'}</p>
+              <p style="margin:0;">최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
             </div>
           </div>
         `;
       } else if (key === 'clients') {
         return `
-          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">${isKo ? '국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.' : 'Executed UX research, UX writing, app planning, and IT development projects for top enterprises and public agencies.'}</p>
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
 
           <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
-            <div class="info-card" style="padding:10px 4px;">${isKo ? 'SK텔레콤' : 'SK Telecom'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '현대자동차' : 'Hyundai Motor'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '롯데그룹' : 'LOTTE Group'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? 'LG유플러스' : 'LG U+'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '비씨카드' : 'BC Card'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? 'CJ올리브네트웍스' : 'CJ OliveNetworks'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? 'KB국민은행' : 'KB Kookmin Bank'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? 'NH농협은행' : 'NH NongHyup Bank'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '서민금융진흥원' : 'Kinfa'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '제일기획' : 'Cheil Worldwide'}</div>
-            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">${isKo ? '한국식품안전관리인증원' : 'KISCO'}</div>
-            <div class="info-card" style="padding:10px 4px;">${isKo ? '경기도일자리재단' : 'Gyeonggi Job Foundation'}</div>
+            <div class="info-card" style="padding:10px 4px;">SK텔레콤</div>
+            <div class="info-card" style="padding:10px 4px;">현대자동차</div>
+            <div class="info-card" style="padding:10px 4px;">롯데그룹</div>
+            <div class="info-card" style="padding:10px 4px;">LG유플러스</div>
+            <div class="info-card" style="padding:10px 4px;">비씨카드</div>
+            <div class="info-card" style="padding:10px 4px;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:10px 4px;">KB국민은행</div>
+            <div class="info-card" style="padding:10px 4px;">NH농협은행</div>
+            <div class="info-card" style="padding:10px 4px;">서민금융진흥원</div>
+            <div class="info-card" style="padding:10px 4px;">제일기획</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">한국식품안전관리인증원</div>
+            <div class="info-card" style="padding:10px 4px;">경기도일자리재단</div>
           </div>
         `;
       } else if (key === 'contact') {
         return `
-
           <h3 style="font-size:13.5px; font-weight:700; margin-bottom:8px;">📬 UX프로젝트 신규 문의 등록</h3>
           <p style="font-size:11px; line-height:1.4; margin-bottom:10px; color:#333;">아래 문의 폼을 작성해 주시면 실무 PM이 <strong>jake@superplanning.co.kr</strong> 로 실시간 메일을 수신하여 10분 이내 회신드립니다.</p>
 
@@ -1991,83 +1838,83 @@
         `;
       } else if (key === 'portfolio') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? '대표 수행 프로젝트 (6건)' : 'Key Projects (6 Projects)'}</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">대표 수행 프로젝트 (6건)</h3>
           <div class="card-grid">
             <div class="info-card">
               <h4>Fintech Mobile UX</h4>
-              <p>${isKo ? '송금 절차 5단계 → 2단계 축소. 전환율 24% 개선 사례.' : 'Reduced money transfer steps 5 → 2. Increased conversion rate by 24%.'}</p>
+              <p>송금 절차 5단계 → 2단계 축소. 전환율 24% 개선 사례.</p>
             </div>
             <div class="info-card">
               <h4>AI SaaS Dashboard</h4>
-              <p>${isKo ? '복잡한 데이터 시각화의 대폭 가공 및 노이즈 제거.' : 'Streamlined complex data visualization and removed interface noise.'}</p>
+              <p>복잡한 데이터 시각화의 대폭 가공 및 노이즈 제거.</p>
             </div>
             <div class="info-card">
               <h4>E-Commerce Checkout</h4>
-              <p>${isKo ? '장바구니 이탈률 18% 감소시킨 UX 라이팅 재설계.' : 'Redesigned UX writing reducing cart abandonment rate by 18%.'}</p>
+              <p>장바구니 이탈률 18% 감소시킨 UX 라이팅 재설계.</p>
             </div>
             <div class="info-card">
               <h4>Global Logistics Tool</h4>
-              <p>${isKo ? '물류 관리자를 위한 윈도우 스타일 고성능 웹앱.' : 'High-performance desktop-grade web app for logistics managers.'}</p>
+              <p>물류 관리자를 위한 윈도우 스타일 고성능 웹앱.</p>
             </div>
             <div class="info-card">
               <h4>Healthcare App</h4>
-              <p>${isKo ? '고령층 사용자 관점의 큰 글씨 및 직관적 동선 구축.' : 'Built large fonts & intuitive flows designed for elderly users.'}</p>
+              <p>고령층 사용자 관점의 큰 글씨 및 직관적 동선 구축.</p>
             </div>
             <div class="info-card">
               <h4>B2B Admin System</h4>
-              <p>${isKo ? '업무 효율성 40% 향상시킨 어드민 인터페이스.' : 'B2B admin interface improving work efficiency by 40%.'}</p>
+              <p>업무 효율성 40% 향상시킨 어드민 인터페이스.</p>
             </div>
           </div>
         `;
       } else if (key === 'classes') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">${isKo ? '실전 AI-UX 기획 & 라이팅 커리큘럼' : 'Practical AI-UX Planning & Writing Curriculum'}</h3>
-          <p style="margin-bottom:10px;">${isKo ? '실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.' : 'Actionable UX design course leveraging latest AI tools for immediate work application.'}</p>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="margin-bottom:10px;">실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.</p>
           <div class="info-card" style="margin-bottom:8px;">
-            <h4>${isKo ? '수강 대상' : 'Target Audience'}</h4>
-            <p>${isKo ? '제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가' : 'Product Managers, UX Designers, Frontend Devs, Solo Founders'}</p>
+            <h4>수강 대상</h4>
+            <p>제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가</p>
           </div>
           <div class="info-card">
-            <h4>${isKo ? '주요 내용' : 'Key Topics'}</h4>
-            <p>${isKo ? '• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습' : '• LLM-based automated UX writing prompts<br>• Fast user journey map generation techniques<br>• Figma & AI prototyping hands-on lab'}</p>
+            <h4>주요 내용</h4>
+            <p>• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습</p>
           </div>
-          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">${isKo ? '강의 수강 문의하기' : 'Inquire About Classes'}</button>
+          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">강의 수강 문의하기</button>
         `;
       } else if (key === 'blog') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? 'UX 인사이트 아카이브' : 'UX Insight Archive'}</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 인사이트 아카이브</h3>
           <div style="display:flex; flex-direction:column; gap:8px;">
             <div class="info-card">
-              <h4>${isKo ? '버튼 문구 하나로 이탈률 18% 줄인 방법' : 'How Changing One Button Label Cut Bounce Rate by 18%'}</h4>
-              <p>${isKo ? '확인/취소 버튼 대신 사용자가 얻게 될 가치를 서술형 명사로 바꾼 실수 해결 기록.' : 'Replacing OK/Cancel buttons with value-oriented action verbs.'}</p>
+              <h4>버튼 문구 하나로 이탈률 18% 줄인 방법</h4>
+              <p>확인/취소 버튼 대신 사용자가 얻게 될 가치를 서술형 명사로 바꾼 실수 해결 기록.</p>
             </div>
             <div class="info-card">
-              <h4>${isKo ? 'AI 시대의 UX 라이터가 일하는 법' : 'How UX Writers Work in the Age of AI'}</h4>
-              <p>${isKo ? '초안 작성을 AI에게 맡기고 라이터는 인간 맥락의 절제미에 집중하는 구조.' : 'Outsourcing drafts to AI while writers focus on human context and clarity.'}</p>
+              <h4>AI 시대의 UX 라이터가 일하는 법</h4>
+              <p>초안 작성을 AI에게 맡기고 라이터는 인간 맥락의 절제미에 집중하는 구조.</p>
             </div>
             <div class="info-card">
-              <h4>${isKo ? 'Win95에서 배우는 직관적 UI 계층' : 'Intuitive UI Hierarchy Learned from Win95'}</h4>
-              <p>${isKo ? '30년 전 윈도우95 입체 베벨(Bevel) 디자인이 제공하던 최고의 시각적 피드백.' : 'Tactile visual feedback provided by 3D bevels in 1990s desktop operating systems.'}</p>
+              <h4>Win95에서 배우는 직관적 UI 계층</h4>
+              <p>30년 전 윈도우95 입체 베벨(Bevel) 디자인이 제공하던 최고의 시각적 피드백.</p>
             </div>
           </div>
         `;
       } else if (key === 'tweaks') {
         return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">${isKo ? '시스템 환경 설정 (Tweaks)' : 'System Preferences (Tweaks)'}</h3>
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
           <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '데스크톱 테마 선택:' : 'Select Desktop Theme:'}</label>
+            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
             <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="setTheme(this.value)">
-              <option value="light">Teal Classic (${isKo ? '기본 1995' : 'Classic 1995'})</option>
-              <option value="dark">Dark Slate (${isKo ? '다크 모드' : 'Dark Mode'})</option>
-              <option value="matrix">Matrix Green (${isKo ? '이스터에그 테마' : 'Matrix Theme'})</option>
+              <option value="light">Teal Classic (기본 1995)</option>
+              <option value="dark">Dark Slate (다크 모드)</option>
+              <option value="matrix">Matrix Green (이스터에그 테마)</option>
             </select>
           </div>
           <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">${isKo ? '사운드 효과:' : 'Sound Effects:'}</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">${isKo ? '사운드: ON 🔊' : 'Sound: ON 🔊'}</button>
+            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
+            <button class="w95-btn" id="tweakSoundBtn" onclick="toggleSound();">사운드: ON 🔊</button>
           </div>
           <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">${isKo ? '갑자기 PC가 이상해요 (블루스크린 호출)' : 'My PC acts weird (Trigger BSOD)'}</button>
+          <button class="w95-btn" style="background:var(--danger); color:#fff;" onclick="triggerBSOD();">갑자기 PC가 이상해요 (블루스크린 호출)</button>
         `;
       } else if (key === 'shut') {
         return `
@@ -2092,7 +1939,7 @@
               style="width:100%; flex:1; min-height:345px; height:345px; border:2px solid #000; box-shadow:inset 1px 1px 0 var(--bevel-shadow); background:#000; display:block; flex-shrink:0;">
             </iframe>
             <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:2px;">
-              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:var(--win-fg);">${isKo ? '유튜브에서 크게 보기 ↗' : 'Watch Larger on YouTube ↗'}</a>
+              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:var(--win-fg);">유튜브에서 크게 보기 ↗</a>
             </div>
           </div>
         `;
@@ -2100,17 +1947,17 @@
         return `
           <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
             <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
-              <span style="font-weight:bold; color:#000;">📄 ${isKo ? '슈퍼플래닝_회사소개서.pdf' : 'Superplanning_Company_Brochure.pdf'}</span>
+              <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
               <div style="display:flex; gap:6px;">
-                <a href="Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '새 창에서 열기 ↗' : 'Open in New Tab ↗'}</a>
-                <a href="Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">${isKo ? '파일 다운로드' : 'Download PDF'}</a>
+                <a href="Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+                <a href="Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">파일 다운로드</a>
               </div>
             </div>
             <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
               <iframe 
                 src="Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1" 
                 style="width:100%; height:100%; border:0; display:block;" 
-                title="${isKo ? '슈퍼플래닝 포트폴리오 보기' : 'Superplanning Portfolio Viewer'}">
+                title="슈퍼플래닝 포트폴리오 보기">
               </iframe>
             </div>
           </div>
@@ -2207,7 +2054,7 @@
           </div>
         `;
       }
-      return `<p>${STRINGS[currentLang]['w.' + key] || key} 본문 콘텐츠입니다.</p>`;
+      return `<p>${WINDOW_DEFS[key] ? WINDOW_DEFS[key].title : key} 본문 콘텐츠입니다.</p>`;
     }
 
     let cmdLoopTimer = null;
@@ -2277,9 +2124,9 @@
       const bodyContainer = document.getElementById('heroBody2Text');
       if (!container) return;
 
-      const p1Text = currentLang === 'ko' ? 'UX디자인 에이전시, ' : 'UX Design Agency, ';
-      const p2Text = currentLang === 'ko' ? '슈퍼플래닝입니다.' : 'Superplanning.';
-      const bodyText = (STRINGS[currentLang] && STRINGS[currentLang]['about.body2']) || '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.';
+      const p1Text = 'UX디자인 에이전시, ';
+      const p2Text = '슈퍼플래닝입니다.';
+      const bodyText = '때로는 사용자 경험을 위해 예쁜 디자인은 과감히 포기할 수 있어야 하죠.';
 
       container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#ffffff; font-weight:900;"></span><span id="twCursor1" class="blink-cursor" style="height:24px; width:6px; background:#ffffff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
       if (bodyContainer) {
@@ -2487,17 +2334,6 @@
       soundOn = !soundOn;
       document.getElementById('tweakSoundBtn').textContent = soundOn ? '사운드: ON 🔊' : '사운드: OFF 🔇';
     }
-    function toggleDensity() {
-      const cur = document.body.getAttribute('data-density');
-      const next = cur === 'compact' ? 'comfortable' : 'compact';
-      document.body.setAttribute('data-density', next);
-    }
-    function toggleLang() {
-      currentLang = currentLang === 'ko' ? 'en' : 'ko';
-      setStorage('os95_lang', currentLang);
-      applyI18n();
-      blip(750, 0.05);
-    }
 
     function goHome() {
       blip(880, 0.07);
@@ -2514,169 +2350,8 @@
       if (previews) previews.innerHTML = '';
 
       initDirectAccess();
-      applyI18n();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    function applyI18n() {
-      try {
-        const isKo = currentLang === 'ko';
-
-        // 0. Brand Logo / Home Button
-        const brandLogo = document.getElementById('brandLogo');
-        if (brandLogo) {
-          brandLogo.title = isKo ? 'Superplanning OS95 — 홈으로 이동' : 'Superplanning OS95 — Go to Home';
-        }
-        const homeSpans = document.querySelectorAll('#brandLogoText, [data-i18n="home"], #brandLogo span:last-child');
-        if (homeSpans && homeSpans.length > 0) {
-          homeSpans.forEach(span => {
-            span.textContent = isKo ? '홈' : 'Home';
-          });
-        } else if (brandLogo) {
-          brandLogo.innerHTML = `<span id="brandLogoText" data-i18n="home">${isKo ? '홈' : 'Home'}</span>`;
-        }
-
-      // 1. Language Toggle Button
-      const langBtn = document.getElementById('langBtn');
-      if (langBtn) {
-        langBtn.innerHTML = isKo 
-          ? '<span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span>'
-          : '<span style="opacity:0.5;">KOR</span> | <span style="font-weight:bold; color:#000080;">ENG</span>';
-      }
-
-      // 2. GNB links & buttons
-      const gnbLinks = document.querySelectorAll('.gnb-link span');
-      const gnbKo = ['UX리서치', 'UX라이팅', 'UX기획/디자인', '웹/앱개발', 'AI-UX강의', 'UX블로그', '회사소개'];
-      const gnbEn = ['UX Research', 'UX Writing', 'UX/UI Design', 'Web/App Dev', 'AI-UX Class', 'UX Blog', 'About Us'];
-      gnbLinks.forEach((el, idx) => {
-        if (gnbKo[idx]) el.textContent = isKo ? gnbKo[idx] : gnbEn[idx];
-      });
-
-      const gnbBtns = document.querySelectorAll('.gnb-right .w95-btn span:last-child');
-      if (gnbBtns[0]) gnbBtns[0].textContent = isKo ? '포트폴리오 보기' : 'View Portfolio';
-      if (gnbBtns[1]) gnbBtns[1].textContent = isKo ? '인재채용' : 'Careers';
-
-      // 3. Desktop Icons
-      const icons = document.querySelectorAll('.desktop-icon .icon-label');
-      const iconKo = ['슈퍼플래닝', '주요 고객사', 'UX서비스', '인스타그램', '쓰레드', '유튜브', '찾아오시는 길'];
-      const iconEn = ['About Us', 'Key Clients', 'UX Services', 'Instagram', 'Threads', 'YouTube', 'Location'];
-      icons.forEach((el, idx) => {
-        if (iconKo[idx]) el.textContent = isKo ? iconKo[idx] : iconEn[idx];
-      });
-
-      // 4. Skyscraper Inquiry Form
-      const skyTitle = document.querySelector('#skyscraper .sky-title');
-      if (skyTitle) skyTitle.textContent = isKo ? 'UX프로젝트 문의' : 'UX Project Inquiry';
-
-      const skyHero = document.querySelector('#skyscraper .sky-hero');
-      if (skyHero) skyHero.textContent = isKo ? '빠르게 회신 드리겠습니다 (보통 10분 이내 응답)' : 'We reply quickly (Usually within 10 mins)';
-
-      const nameInp = document.getElementById('skyName');
-      if (nameInp) nameInp.placeholder = isKo ? '이름 *' : 'Name *';
-
-      const compInp = document.getElementById('skyCompany');
-      if (compInp) compInp.placeholder = isKo ? '회사명 (선택)' : 'Company (Optional)';
-
-      const emailInp = document.getElementById('skyEmail');
-      if (emailInp) emailInp.placeholder = isKo ? '이메일 *' : 'Email *';
-
-      const phoneInp = document.getElementById('skyPhone');
-      if (phoneInp) phoneInp.placeholder = isKo ? '연락처 (선택)' : 'Phone (Optional)';
-
-      const msgInp = document.getElementById('skyMsg');
-      if (msgInp) msgInp.placeholder = isKo ? '문의내용 *' : 'Inquiry details *';
-
-      const skyPrivacyLabel = document.getElementById('skyPrivacyLabel');
-      if (skyPrivacyLabel) skyPrivacyLabel.textContent = isKo ? '개인정보 수집 및 이용 동의 (필수)' : 'Privacy Policy Agreement (Required)';
-
-      const skySubmit = document.querySelector('#skyscraper button.w95-btn');
-      if (skySubmit) skySubmit.textContent = isKo ? '보내기' : 'Send';
-
-      // Footer Company, Address, Copy Buttons, Kakao Chat Banner inside #skyscraper
-      const skyCompName = document.getElementById('skyFooterCompName');
-      if (skyCompName) skyCompName.textContent = isKo ? '슈퍼플래닝' : 'Superplanning Studio';
-
-      const skyAddr = document.getElementById('skyFooterAddr');
-      if (skyAddr) skyAddr.textContent = isKo ? '경기 하남시 미사강변동로72 SB비즈타워 1116호' : 'Suite 1116, SB Biz Tower, 72 Misagangbyeondong-ro, Hanam-si, Gyeonggi-do';
-
-      const skyCopyBtns = document.querySelectorAll('#skyscraper .sky-copy-btn');
-      skyCopyBtns.forEach(btn => {
-        btn.textContent = isKo ? '복사' : 'Copy';
-      });
-
-      const skyKakaoTitle = document.getElementById('skyKakaoTitle');
-      if (skyKakaoTitle) skyKakaoTitle.textContent = isKo ? '카카오채널 실시간 채팅문의' : 'Kakao Realtime Chat';
-
-      const skyKakaoDesc = document.getElementById('skyKakaoDesc');
-      if (skyKakaoDesc) skyKakaoDesc.textContent = isKo ? '카카오톡으로 빠른 UX상담 (24시간)' : 'Quick UX consultation via KakaoTalk (24/7)';
-
-      const skyKakaoBtn = document.getElementById('skyKakaoBtn');
-      if (skyKakaoBtn) skyKakaoBtn.textContent = isKo ? '채팅 시작 ↗' : 'Start Chat ↗';
-
-            // 5. Mobile Drawer Menu Items
-      const drawerItems = document.querySelectorAll('#mobileNavDrawer .start-item');
-      const drawerKo = [
-        '• UX리서치', '• UX라이팅', '• UX기획/디자인', '• 웹/앱개발', 
-        '• AI-UX강의', '• UX블로그', '• 회사소개', '• 문의하기', '• 포트폴리오 보기'
-      ];
-      const drawerEn = [
-        '• UX Research', '• UX Writing', '• UX Planning & Design', '• Web/App Dev', 
-        '• AI-UX Academy', '• UX Blog', '• About Us', '• Contact Us', '• Portfolio'
-      ];
-      const drawerActions = [
-        function() { location.href = '/ux-research/'; },
-        function() { location.href = '/ux-writing/'; },
-        function() { location.href = '/ux-design/'; },
-        function() { location.href = '/web-app-development/'; },
-        function() { location.href = '/ux-academy/'; },
-        function() { location.href = '/ux-blog/'; },
-        function() { location.href = '/ux-company/'; },
-        function() { location.href = '/contact/'; },
-        function() { if(typeof openWindow==='function'){ openWindow('brochure'); } else { location.href='/ux-company/#brochure'; } }
-      ];
-      drawerItems.forEach((el, idx) => {
-        if (drawerKo[idx]) el.textContent = isKo ? drawerKo[idx] : drawerEn[idx];
-        el.onclick = function() {
-          if (drawerActions[idx]) drawerActions[idx]();
-          toggleMobileMenu();
-        };
-      });
-
-      // 6. Start Menu Items
-      const startItems = document.querySelectorAll('#startMenu .start-item');
-      const startKo = [
-        '• 슈퍼플래닝', '• 주요 고객사', '• UX서비스', '• 인스타그램', '• 쓰레드', '• 유튜브', 
-        '• 포트폴리오 보기', '• 인재채용', '• 환경설정', '• 찾아오시는길',
-        '• UX리서치', '• UX라이팅', '• UX기획/디자인', '• 웹/앱개발', '• AI-UX강의', '• UX블로그', '• 회사소개'
-      ];
-      const startEn = [
-        '• About Us', '• Key Clients', '• UX Services', '• Instagram', '• Threads', '• YouTube', 
-        '• View Portfolio', '• Careers', '• Tweaks', '• Location',
-        '• UX Research', '• UX Writing', '• UX Design', '• Web/App Dev', '• AI-UX Classes', '• UX Blog', '• About Company'
-      ];
-      startItems.forEach((el, idx) => {
-        if (startKo[idx]) el.textContent = isKo ? startKo[idx] : startEn[idx];
-      });
-
-      // 7. Update all open window titles and window bodies
-      for (const k in windows) {
-        if (windows[k] && windows[k].el) {
-          const winEl = windows[k].el;
-          const titleSpan = winEl.querySelector('.w-title span');
-          if (titleSpan) {
-            titleSpan.textContent = STRINGS[currentLang]['w.' + k] || (WINDOW_DEFS[k] ? WINDOW_DEFS[k].title : k);
-          }
-          const bodyEl = winEl.querySelector('.w-body');
-          if (bodyEl) {
-            bodyEl.innerHTML = getWindowBody(k);
-          }
-        }
-      }
-    } catch (err) {
-      console.error('applyI18n error:', err);
-    }
-  }
-  applyI18n();
 
     function triggerBSOD() {
       blip(110, 0.4, 'sawtooth');
@@ -2726,7 +2401,7 @@
         else if (iconCode.includes('13') || mainCond.includes('Snow')) emoji = '❄️';
         else if (iconCode.includes('50') || mainCond.includes('Mist') || mainCond.includes('Fog')) emoji = '🌫️';
 
-        let name = currentLang === 'en' ? 'Seoul' : '서울';
+        let name = '서울';
         const desc = data.weather[0].description || '';
         const humidity = data.main.humidity || 0;
         const feelsLike = Math.round((data.main.feels_like || temp) * 10) / 10;
@@ -2736,7 +2411,7 @@
       }
 
       function fetchWeatherSeoul() {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=Seoul,KR&units=metric&lang=${currentLang === 'en' ? 'en' : 'kr'}&appid=${apiKey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=Seoul,KR&units=metric&lang=kr&appid=${apiKey}`)
           .then(res => res.json())
           .then(updateWeatherUI)
           .catch(err => {
@@ -2751,7 +2426,7 @@
     async function submitSkyscraper() {
       const privacyCb = document.getElementById('skyPrivacy');
       if (privacyCb && !privacyCb.checked) {
-        alert((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Please agree to the privacy policy.' : '개인정보 수집 및 이용 동의(필수)에 체크해 주세요.');
+        alert('개인정보 수집 및 이용 동의(필수)에 체크해 주세요.');
         return;
       }
       const name = document.getElementById('skyName') ? document.getElementById('skyName').value.trim() : '';
@@ -2761,7 +2436,7 @@
       const message = document.getElementById('skyMsg') ? document.getElementById('skyMsg').value.trim() : '';
 
       if (!name || !phone || !message) {
-        alert((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Please fill out all required fields (*).' : '이름, 연락처, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
+        alert('이름, 연락처, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
         return;
       }
       if (typeof blip === 'function') blip(880, 0.08);
@@ -2820,7 +2495,6 @@
     function initApp() {
       initDirectAccess();
       initWeatherAndLocation();
-      applyI18n();
 
       const skyEl = document.getElementById('skyscraper');
       if (skyEl) {
@@ -2880,7 +2554,6 @@
   </script>
 
   <script>
-
     async function handlePopupInquiry(e) {
       if (e) e.preventDefault();
       const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
@@ -2937,11 +2610,9 @@
         submitBtn.innerHTML = origText;
       }
     }
-
   </script>
 
   <script>
-
     // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
     function showInquirySuccessModal(userName) {
       let modal = document.getElementById('inquirySuccessModal');
@@ -2982,7 +2653,6 @@
       const modal = document.getElementById('inquirySuccessModal');
       if (modal) modal.style.display = 'none';
     }
-
   </script>
 
   <script>
@@ -2998,57 +2668,56 @@
     }
   </script>
 
+  <script>
+    window.copyToClipboard = function(text, label, btn) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopySuccess(text, label, btn);
+        }).catch(function() {
+          fallbackCopyText(text, label, btn);
+        });
+      } else {
+        fallbackCopyText(text, label, btn);
+      }
+    };
 
-<script>
-window.copyToClipboard = function(text, label, btn) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function() {
-      showCopySuccess(text, label, btn);
-    }).catch(function() {
-      fallbackCopyText(text, label, btn);
-    });
-  } else {
-    fallbackCopyText(text, label, btn);
-  }
-};
-
-function fallbackCopyText(text, label, btn) {
-  try {
-    var textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.top = '-9999px';
-    textArea.style.left = '-9999px';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    var successful = document.execCommand('copy');
-    document.body.removeChild(textArea);
-    if (successful) {
-      showCopySuccess(text, label, btn);
-    } else {
-      alert('복사 실패: ' + text);
+    function fallbackCopyText(text, label, btn) {
+      try {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        var successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) {
+          showCopySuccess(text, label, btn);
+        } else {
+          alert('복사 실패: ' + text);
+        }
+      } catch (err) {
+        alert('복사 실패: ' + text);
+      }
     }
-  } catch (err) {
-    alert('복사 실패: ' + text);
-  }
-}
 
-function showCopySuccess(text, label, btn) {
-  if (btn) {
-    var origText = btn.textContent;
-    btn.textContent = '완료!';
-    btn.style.background = '#000000';
-    btn.style.color = '#ffffff';
-    setTimeout(function() {
-      btn.textContent = origText;
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 1500);
-  }
-  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
-}
-</script>
+    function showCopySuccess(text, label, btn) {
+      if (btn) {
+        var origText = btn.textContent;
+        btn.textContent = '완료!';
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+        setTimeout(function() {
+          btn.textContent = origText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1500);
+      }
+      alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+    }
+  </script>
 
 </body>
 </html>
