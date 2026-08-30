@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 1. 메인 홈 -->
   <url>
     <loc>https://superplanning.blog/</loc>
     <lastmod>2026-08-02T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- 2. 핵심 서비스 및 주요 HTML 페이지 -->
+  <url>
+    <loc>https://superplanning.blog/ux-research/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/ux-writing/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/ux-design/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/web-app-development/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/ux-academy/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/ux-blog/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/ux-company/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/contact/</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 3. UX 블로그 개별 아티클 (19개) -->
   <url>
     <loc>https://superplanning.blog/ux-blog/post-1/</loc>
     <lastmod>2026-08-16T12:00:00+09:00</lastmod>
@@ -120,77 +173,49 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://superplanning.blog/services/ux-research.md</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/services/ux-writing.md</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/services/ux-planning-design.md</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/services/ux-blog.md</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/ux-research/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/ux-writing/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/ux-design/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/ux-academy/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/ux-company/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- 4. AI 색인 파일 및 Plain-Text 마크다운 미러 -->
   <url>
     <loc>https://superplanning.blog/llms.txt</loc>
     <lastmod>2026-08-30T12:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://superplanning.blog/llms-full.txt</loc>
     <lastmod>2026-08-30T12:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://superplanning.blog/contact/</loc>
+    <loc>https://superplanning.blog/services/ux-research.md</loc>
     <lastmod>2026-08-30T12:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/services/ux-writing.md</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/services/ux-planning-design.md</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/services/web-app-development.md</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://superplanning.blog/services/ux-blog.md</loc>
+    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://superplanning.blog/services/ux-academy.md</loc>
@@ -206,12 +231,6 @@
   </url>
   <url>
     <loc>https://superplanning.blog/services/portfolio.md</loc>
-    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://superplanning.blog/services/web-app-development.md</loc>
     <lastmod>2026-08-30T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
