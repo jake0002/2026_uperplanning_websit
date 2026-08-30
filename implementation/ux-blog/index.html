@@ -1928,48 +1928,7 @@
       document.body.removeChild(input);
     }
 
-      // 3. Take active max scroll ratio & current scroll
-      const activeRatio = Math.max(winRatio, paneRatio);
-      const activeScroll = Math.max(winScroll, paneScroll);
-
-      // 4. Compute final percentage
-      const scrolled = Math.min(100, Math.max(0, activeRatio * 100));
-
-      // 5. Update DOM
-      progressBar.style.width = scrolled + '%';
-      if (progressBadge) {
-        progressBadge.textContent = Math.round(scrolled) + '%';
-      }
-
-      // 6. Active scrolling badge visibility timer (1200ms auto-fade)
-      if (activeScroll > 10) {
-        document.body.classList.add('is-scrolling');
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-          document.body.classList.remove('is-scrolling');
-        }, 1200);
-      } else {
-        document.body.classList.remove('is-scrolling');
-      }
-    }
-
-    // Attach listeners to window, document, and main pane
-    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
-    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
-    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
-
-    const mainPaneEl = document.querySelector('.main-content-pane');
-    if (mainPaneEl) {
-      mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
-    }
-
-    // Fire initial update and heartbeat timer fallback
-    updateGnbScrollProgress();
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
-    }
-    setTimeout(updateGnbScrollProgress, 300);
-    setTimeout(updateGnbScrollProgress, 1000);
+      
   </script>
 <!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
   <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
