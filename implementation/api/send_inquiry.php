@@ -37,7 +37,7 @@ $body .= "=== 프로젝트 상세 내용 및 주요 요청사항 ===\n";
 $body .= "{$message}\n\n";
 $body .= "========================================\n";
 
-$headers = "From: webmaster@superplanning.blog\r\n";
+$headers = "From: webmaster@www.superplanning.co.kr\r\n";
 if (!empty($email)) {
     $headers .= "Reply-To: {$email}\r\n";
 }

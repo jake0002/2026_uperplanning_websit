@@ -9,16 +9,16 @@
   <meta name="keywords" content="웹개발, 앱개발, 앱개발 외주업체, AI기반 개발, UI/UX 개발, IT개발, 웹앱 유지보수, 슈퍼플래닝, Superplanning">
   <meta name="author" content="슈퍼플래닝 (Superplanning)">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <link rel="canonical" href="https://superplanning.blog/web-app-development">
-  <link rel="alternate" hreflang="ko" href="https://superplanning.blog/ux-research">
-  <link rel="alternate" hreflang="en" href="https://superplanning.blog/ux-research?lang=en">
-  <link rel="alternate" title="AI 색인 (llms.txt) - UX리서치" href="https://superplanning.blog/ux-research/llms.txt">
-  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)" href="https://superplanning.blog/services/ux-research.md">
+  <link rel="canonical" href="https://www.superplanning.co.kr/web-app-development">
+  <link rel="alternate" hreflang="ko" href="https://www.superplanning.co.kr/ux-research">
+  <link rel="alternate" hreflang="en" href="https://www.superplanning.co.kr/ux-research?lang=en">
+  <link rel="alternate" title="AI 색인 (llms.txt) - UX리서치" href="https://www.superplanning.co.kr/ux-research/llms.txt">
+  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)" href="https://www.superplanning.co.kr/services/ux-research.md">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="슈퍼플래닝 (Superplanning UX Studio)">
-  <meta property="og:url" content="https://superplanning.blog/ux-research">
+  <meta property="og:url" content="https://www.superplanning.co.kr/ux-research">
   <meta property="og:title" content="웹/앱 개발 전문 에이전시 슈퍼플래닝">
   <meta property="og:description" content="완벽한 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 및 유지보수 서비스.">
   <meta property="og:locale" content="ko_KR">
@@ -35,9 +35,9 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://superplanning.blog/#organization",
+        "@id": "https://www.superplanning.co.kr/#organization",
         "name": "슈퍼플래닝 (Superplanning)",
-        "url": "https://superplanning.blog",
+        "url": "https://www.superplanning.co.kr",
         "email": "jake@superplanning.co.kr",
         "founder": {
           "@type": "Person",
@@ -46,38 +46,38 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://superplanning.blog/#website",
-        "url": "https://superplanning.blog",
+        "@id": "https://www.superplanning.co.kr/#website",
+        "url": "https://www.superplanning.co.kr",
         "name": "슈퍼플래닝 UX스튜디오",
         "inLanguage": "ko-KR"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://superplanning.blog/ux-research#breadcrumb",
+        "@id": "https://www.superplanning.co.kr/ux-research#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "홈",
-            "item": "https://superplanning.blog"
+            "item": "https://www.superplanning.co.kr"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Programs",
-            "item": "https://superplanning.blog/#services"
+            "item": "https://www.superplanning.co.kr/#services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "UX리서치",
-            "item": "https://superplanning.blog/ux-research"
+            "item": "https://www.superplanning.co.kr/ux-research"
           }
         ]
       },
       {
         "@type": "Article",
-        "@id": "https://superplanning.blog/ux-research#article",
+        "@id": "https://www.superplanning.co.kr/ux-research#article",
         "headline": "UX리서치",
         "datePublished": "2026-08-03",
         "dateModified": "2026-08-03",
@@ -99,7 +99,7 @@
       },
       {
         "@type": "Service",
-        "@id": "https://superplanning.blog/ux-research#service",
+        "@id": "https://www.superplanning.co.kr/ux-research#service",
         "name": "UX리서치",
         "serviceType": "UX리서치",
         "provider": {
@@ -139,7 +139,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://superplanning.blog/ux-research#faq",
+        "@id": "https://www.superplanning.co.kr/ux-research#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -1161,7 +1161,7 @@
 <body>
 
   <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
-  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://superplanning.blog/';">
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://www.superplanning.co.kr/';">
     <span>🏠</span> <span id="brandLogoText">홈</span>
   </div>
 
@@ -1184,7 +1184,7 @@
         <a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a>
       </li>
       <li class="gnb-item">
-        <a class="gnb-link" href="https://superplanning.blog/#blog"><span>UX블로그</span></a>
+        <a class="gnb-link" href="https://www.superplanning.co.kr/#blog"><span>UX블로그</span></a>
       </li>
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-company/"><span>회사소개</span></a>
@@ -1195,10 +1195,10 @@
     </ul>
 
     <div class="gnb-right">
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://www.superplanning.co.kr/';">
         <span>📄</span> <span>회사소개서 보기</span>
       </button>
-      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://superplanning.blog/';">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='https://www.superplanning.co.kr/';">
         <span>🤝</span> <span>인재채용</span>
       </button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" id="langBtn"><span style="font-weight:bold; color:#000080;">KOR</span> | <span style="opacity:0.5;">ENG</span></button>
@@ -1911,7 +1911,7 @@ table.process-table tbody td strong {
     <div class="taskbar-right">
       <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
-      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://superplanning.blog/';">⚙️ 환경설정</button>
+      <button class="w95-btn" style="padding:1px 6px; font-size:10px;" onclick="location.href='https://www.superplanning.co.kr/';">⚙️ 환경설정</button>
     </div>
   </div>
 
