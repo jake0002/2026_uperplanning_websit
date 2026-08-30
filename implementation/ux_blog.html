@@ -1701,52 +1701,100 @@
       }
     ];
 
-    // STATE VARIABLES
+  <script>
+    // STATE VARIABLES & SAFE BOOKMARK RETRIEVAL
     let currentCategory = 'all';
     let activeTagFilter = null;
     let searchQuery = '';
-    let bookmarks = JSON.parse(localStorage.getItem('sp_blog_bookmarks') || '[]');
 
-    // DOM ELEMENTS
-    const postitGrid = document.getElementById('postitGrid');
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const categoryNav = document.getElementById('categoryNav');
-    const countAllEl = document.getElementById('countAll');
-    const countFavEl = document.getElementById('countFav');
-    const statusCountEl = document.getElementById('statusCount');
-    const postModal = document.getElementById('postModal');
-    const modalTitlebarText = document.getElementById('modalTitlebarText');
-    const modalBody = document.getElementById('modalBody');
-    const toast = document.getElementById('toast');
+    function getBookmarks() {
+      try {
+        const raw = localStorage.getItem('sp_blog_bookmarks');
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
 
-    // RENDER CARDS
-    
+    function saveBookmarks(arr) {
+      try {
+        localStorage.setItem('sp_blog_bookmarks', JSON.stringify(Array.isArray(arr) ? arr : []));
+      } catch (e) {}
+    }
+
+    function showToast(msg) {
+      let toast = document.getElementById('spToastNotification');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'spToastNotification';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#111111; color:#ffffff; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:700; z-index:999999; box-shadow:0 4px 16px rgba(0,0,0,0.35); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity:0; pointer-events:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; text-align:center; min-width:200px;';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%, -6px)';
+      clearTimeout(window._spToastTimer);
+      window._spToastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, 0)';
+      }, 2300);
+    }
+    window.showToast = showToast;
+
     function filterByTag(tag) {
       activeTagFilter = tag;
-      const url = new URL(window.location);
-      url.searchParams.set('tag', tag);
-      window.history.pushState({}, '', url);
-      const urlParams = new URLSearchParams(window.location.search);
-      const tagParam = urlParams.get('tag');
-      if (tagParam) { activeTagFilter = tagParam; }
+      try {
+        const url = new URL(window.location);
+        url.searchParams.set('tag', tag);
+        window.history.pushState({}, '', url);
+      } catch (e) {}
       renderCards();
       updateTagBanner();
-      updateTagBanner();
     }
+    window.filterByTag = filterByTag;
 
     function clearTagFilter() {
       activeTagFilter = null;
-      const url = new URL(window.location);
-      url.searchParams.delete('tag');
-      window.history.pushState({}, '', url);
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('tag');
+        window.history.pushState({}, '', url);
+      } catch (e) {}
       renderCards();
       updateTagBanner();
     }
+    window.clearTagFilter = clearTagFilter;
+
+    function clearAllFilters() {
+      activeTagFilter = null;
+      currentCategory = 'all';
+      searchQuery = '';
+      const searchInputEl = document.getElementById('searchInput');
+      if (searchInputEl) searchInputEl.value = '';
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('tag');
+        url.searchParams.delete('category');
+        url.searchParams.delete('search');
+        url.searchParams.delete('q');
+        window.history.pushState({}, '', url);
+      } catch (e) {}
+
+      document.querySelectorAll('.tree-link').forEach(l => {
+        if (l.getAttribute('data-category') === 'all') l.classList.add('active');
+        else l.classList.remove('active');
+      });
+
+      renderCards();
+      updateTagBanner();
+    }
+    window.clearAllFilters = clearAllFilters;
 
     function updateTagBanner() {
       let banner = document.getElementById('tagFilterBanner');
-      const grid = document.getElementById('postitGrid');
+      const grid = document.getElementById('postitGrid') || document.querySelector('.postit-grid');
       if (!banner && grid && grid.parentNode) {
         banner = document.createElement('div');
         banner.id = 'tagFilterBanner';
@@ -1764,134 +1812,121 @@
       }
     }
 
-    function getFilteredPostsCount() {
-      return POSTS_DATA.filter(post => {
-        const matchesCategory = (currentCategory === 'all') || (post.category === currentCategory);
-        const matchesSearch = !currentSearchQuery || 
-          post.title.toLowerCase().includes(currentSearchQuery.toLowerCase()) || 
-          post.excerpt.toLowerCase().includes(currentSearchQuery.toLowerCase()) || 
-          post.tags.some(t => t.toLowerCase().includes(currentSearchQuery.toLowerCase()));
-        const matchesBookmark = !showOnlyBookmarks || bookmarks.includes(post.id);
-        const matchesTag = !activeTagFilter || post.tags.some(t => t.toLowerCase() === activeTagFilter.toLowerCase() || t.replace('#','').toLowerCase() === activeTagFilter.replace('#','').toLowerCase());
-        return matchesCategory && matchesSearch && matchesBookmark && matchesTag;
-      }).length;
-    }
-
     function renderCards() {
-      let filtered = POSTS_DATA.filter(post => {
-        // Category Filter
-        if (currentCategory === 'bookmark') {
-          if (!bookmarks.includes(post.id)) return false;
-        } else if (currentCategory !== 'all') {
-          if (post.category !== currentCategory) return false;
+      const grid = document.getElementById('postitGrid') || document.querySelector('.postit-grid');
+      if (!grid) return;
+
+      try {
+        const bookmarks = getBookmarks();
+        let filtered = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).filter(post => {
+          if (!post || typeof post !== 'object') return false;
+
+          // Category Filter
+          if (currentCategory === 'bookmark') {
+            if (!bookmarks.includes(post.id)) return false;
+          } else if (currentCategory && currentCategory !== 'all') {
+            if (post.category !== currentCategory) return false;
+          }
+
+          // Search Filter
+          if (searchQuery && searchQuery.trim() !== '') {
+            const q = searchQuery.toLowerCase().trim();
+            const matchTitle = (post.title || '').toLowerCase().includes(q);
+            const matchExcerpt = (post.excerpt || '').toLowerCase().includes(q);
+            const matchCategory = (post.category || '').toLowerCase().includes(q);
+            const matchTags = Array.isArray(post.tags) && post.tags.some(t => String(t).toLowerCase().includes(q));
+            if (!matchTitle && !matchExcerpt && !matchCategory && !matchTags) return false;
+          }
+
+          // Tag Filter
+          if (activeTagFilter) {
+            const normFilter = String(activeTagFilter).replace('#', '').toLowerCase();
+            const hasTag = Array.isArray(post.tags) && post.tags.some(t => String(t).replace('#', '').toLowerCase() === normFilter);
+            if (!hasTag) return false;
+          }
+
+          return true;
+        });
+
+        // Update Counts
+        const countAllEl = document.getElementById('countAll');
+        const countFavEl = document.getElementById('countFav');
+        const statusCountEl = document.getElementById('statusCount');
+
+        if (countAllEl) countAllEl.textContent = POSTS_DATA.length;
+        if (countFavEl) countFavEl.textContent = bookmarks.length;
+        if (statusCountEl) statusCountEl.textContent = `${filtered.length}개 개체`;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="no-results" style="grid-column: 1 / -1; padding: 60px 20px; text-align: center; border: 2px dashed #000; background: #fafafa;">
+              <h3 style="font-size: 16px; margin-bottom: 8px; font-weight: 800;">검색 또는 필터링 결과가 없습니다.</h3>
+              <p style="font-size: 13px; color: #555;">상단 검색어를 지우시거나 좌측 '▣ 전체글 보기' 카테고리를 선택해 주세요.</p>
+              <button class="w95-btn" onclick="clearAllFilters();" style="margin-top:12px; padding:6px 16px;">전체 글 목록 보기</button>
+            </div>
+          `;
+          return;
         }
 
-        // Search Filter
-        if (searchQuery.trim() !== '') {
-          const q = searchQuery.toLowerCase();
-          const matchTitle = post.title.toLowerCase().includes(q);
-          const matchExcerpt = post.excerpt.toLowerCase().includes(q);
-          const matchCategory = post.category.toLowerCase().includes(q);
-          const matchTags = post.tags.some(t => t.toLowerCase().includes(q));
-          if (!matchTitle && !matchExcerpt && !matchCategory && !matchTags) return false;
-        }
+        grid.innerHTML = filtered.map(post => {
+          const isFav = bookmarks.includes(post.id);
+          const tagHtml = Array.isArray(post.tags) ? post.tags.map(t => {
+            const isActive = activeTagFilter && (String(t).replace('#','').toLowerCase() === String(activeTagFilter).replace('#','').toLowerCase());
+            return `<span class="tag-pill ${isActive ? 'active-tag' : ''}" onclick="event.stopPropagation(); filterByTag('${t}');" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`;
+          }).join('') : '';
 
-        // Tag Filter
-        if (activeTagFilter) {
-          const normFilter = activeTagFilter.replace('#', '').toLowerCase();
-          const hasTag = post.tags.some(t => t.replace('#', '').toLowerCase() === normFilter);
-          if (!hasTag) return false;
-        }
-
-        return true;
-      });
-
-      // Update Counts
-      if (countAllEl) countAllEl.textContent = POSTS_DATA.length;
-      if (countFavEl) countFavEl.textContent = bookmarks.length;
-      if (statusCountEl) statusCountEl.textContent = `${filtered.length}개 개체`;
-
-      if (filtered.length === 0) {
-        postitGrid.innerHTML = `
-          <div class="no-results">
-            <h3>검색 결과가 없습니다.</h3>
-            <p>다른 검색어를 입력하시거나 카테고리를 변경해 보세요.</p>
-          </div>
-        `;
-        return;
-      }
-
-      postitGrid.innerHTML = filtered.map(post => {
-        const isFav = bookmarks.includes(post.id);
-        return `
+          return `
+            <article class="postit-card" data-id="${post.id}">
+              <div class="postit-top-band">
+                <span class="category-badge">${post.category || 'UX'}</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn ${isFav ? 'bookmarked' : ''}" onclick="toggleBookmark(event, ${post.id});" title="즐겨찾기 추가/제거">
+                    ${isFav ? '★' : '☆'}
+                  </button>
+                  <button class="icon-action-btn" onclick="sharePost(event, ${post.id});" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + ${post.id} + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.excerpt}</a></p>
+                <div class="postit-tags">
+                  ${tagHtml}
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-${post.id}/" class="read-time-btn" style="text-decoration:none;">
+                    ${post.readTime || 60}초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error("renderCards error:", err);
+        grid.innerHTML = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).map(post => `
           <article class="postit-card" data-id="${post.id}">
             <div class="postit-top-band">
               <span class="category-badge">${post.category}</span>
-              <div class="card-actions">
-                <button class="icon-action-btn ${isFav ? 'bookmarked' : ''}" onclick="toggleBookmark(event, ${post.id});" title="즐겨찾기 추가/제거">
-                  ${isFav ? '★' : '☆'}
-                </button>
-                <button class="icon-action-btn" onclick="sharePost(event, ${post.id});" title="아티클 링크 공유하기">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                  <span style="font-size:11px; font-weight:800;">공유</span>
-                </button>
-              </div>
             </div>
-            <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + post.id + '/';" style="cursor:pointer;">
-              <h3 class="postit-title"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
-              <p class="postit-excerpt"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.excerpt}</a></p>
-              <div class="postit-tags">
-                ${post.tags.map(t => {
-                const isActive = activeTagFilter && (t.replace('#','').toLowerCase() === activeTagFilter.replace('#','').toLowerCase());
-                return `<span class="tag-pill ${isActive ? 'active-tag' : ''}" onclick="event.stopPropagation(); filterByTag('${t}');" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`;
-              }).join('')}
-              </div>
-              <div class="postit-footer">
-                <a href="/ux-blog/post-${post.id}/" class="read-time-btn" style="text-decoration:none;">
-                  ${post.readTime}초 만에 읽기 →
-                </a>
-              </div>
+            <div class="postit-body" onclick="location.href='/ux-blog/post-${post.id}/';" style="cursor:pointer;">
+              <h3 class="postit-title"><a href="/ux-blog/post-${post.id}/">${post.title}</a></h3>
+              <p class="postit-excerpt">${post.excerpt}</p>
             </div>
           </article>
-        `;
-      }).join('');
-    }
-
-    // INITIAL BLOG LOAD & EVENT LISTENERS
-    function initBlog() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const tagParam = urlParams.get('tag');
-      const catParam = urlParams.get('category');
-      const qParam = urlParams.get('q') || urlParams.get('search');
-
-      if (tagParam) activeTagFilter = tagParam;
-      if (catParam) currentCategory = catParam;
-      if (qParam) searchQuery = qParam;
-
-      const searchInputEl = document.getElementById('searchInput');
-      if (searchInputEl && searchQuery) {
-        searchInputEl.value = searchQuery;
-      }
-
-      renderCards();
-      if (typeof updateTagBanner === 'function') {
-        updateTagBanner();
+        `).join('');
       }
     }
+    window.renderCards = renderCards;
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initBlog);
-    } else {
-      initBlog();
-    }
-
-
-    // BOOKMARK TOGGLE
     function toggleBookmark(e, postId) {
       if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
       const id = (typeof e === 'number') ? e : (postId || null);
       if (!id) return;
 
+      let bookmarks = getBookmarks();
       const idx = bookmarks.indexOf(id);
       if (idx > -1) {
         bookmarks.splice(idx, 1);
@@ -1900,8 +1935,9 @@
         bookmarks.push(id);
         showToast('★ 즐겨찾기에 추가되었습니다.');
       }
-      localStorage.setItem('sp_blog_bookmarks', JSON.stringify(bookmarks));
+      saveBookmarks(bookmarks);
 
+      const countFavEl = document.getElementById('countFav');
       if (countFavEl) countFavEl.textContent = bookmarks.length;
 
       const modalBookmarkBtn = document.getElementById('modalBookmarkBtn');
@@ -1916,7 +1952,6 @@
     window.toggleBookmark = toggleBookmark;
     window.togglePostBookmark = toggleBookmark;
 
-    // SHARE POST
     function sharePost(e, postId) {
       if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
       const id = (typeof e === 'number') ? e : (postId || null);
@@ -1957,9 +1992,109 @@
       document.body.removeChild(input);
     }
 
-      
+    function openPostModal(postId) {
+      const post = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).find(p => p.id === postId);
+      if (!post) return;
+
+      const bookmarks = getBookmarks();
+      const isFav = bookmarks.includes(post.id);
+      const modalTitlebarText = document.getElementById('modalTitlebarText');
+      const modalBody = document.getElementById('modalBody');
+      const postModal = document.getElementById('postModal');
+
+      if (modalTitlebarText) modalTitlebarText.textContent = `[포스트 읽기] ${post.title}`;
+      if (modalBody) {
+        modalBody.innerHTML = `
+          <div class="modal-meta">
+            <span class="category-badge">${post.category}</span>
+            <span style="font-size:12px; font-weight:bold; color:#666;">⏱️ ${post.readTime}초 소요</span>
+            <button class="w95-btn" id="modalBookmarkBtn" onclick="toggleBookmark(event, ${post.id});" style="font-size:11px; padding:2px 8px; ${isFav ? 'color:#e67e22;' : ''}">
+              ${isFav ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장'}
+            </button>
+            <button class="w95-btn" onclick="sharePost(event, ${post.id});" style="font-size:11px; padding:2px 8px;">
+              🔗 공유하기
+            </button>
+          </div>
+          <h2 class="modal-post-title">${post.title}</h2>
+          <div class="modal-post-content">
+            <p style="font-size:14px; font-weight:bold; color:#000; margin-bottom:16px;">${post.excerpt}</p>
+            ${post.content || ''}
+          </div>
+          <div style="margin-top:24px; padding-top:14px; border-top:2px solid #000; display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:4px;">
+              ${Array.isArray(post.tags) ? post.tags.map(t => `<span class="tag-pill" onclick="event.stopPropagation(); filterByTag('${t}'); closeModal();" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`).join('') : ''}
+            </div>
+            <button class="w95-btn" onclick="closeModal();">✕ 닫기</button>
+          </div>
+        `;
+      }
+      if (postModal) postModal.classList.add('show');
+    }
+    window.openPostModal = openPostModal;
+
+    function closeModal() {
+      const postModal = document.getElementById('postModal');
+      if (postModal) postModal.classList.remove('show');
+    }
+    window.closeModal = closeModal;
+
+    function initBlog() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tagParam = urlParams.get('tag');
+      const catParam = urlParams.get('category');
+      const qParam = urlParams.get('q') || urlParams.get('search');
+
+      if (tagParam) activeTagFilter = tagParam;
+      if (catParam) currentCategory = catParam;
+      if (qParam) searchQuery = qParam;
+
+      const searchInputEl = document.getElementById('searchInput');
+      if (searchInputEl && searchQuery) {
+        searchInputEl.value = searchQuery;
+      }
+
+      document.querySelectorAll('.tree-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelectorAll('.tree-link').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          const cat = this.getAttribute('data-category');
+          if (cat) {
+            currentCategory = cat;
+            activeTagFilter = null;
+            renderCards();
+            updateTagBanner();
+          }
+        });
+      });
+
+      const sInput = document.getElementById('searchInput');
+      const sBtn = document.getElementById('searchBtn');
+      if (sInput) {
+        sInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderCards();
+        });
+      }
+      if (sBtn) {
+        sBtn.addEventListener('click', () => {
+          if (sInput) searchQuery = sInput.value;
+          renderCards();
+        });
+      }
+
+      renderCards();
+      updateTagBanner();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBlog);
+    } else {
+      initBlog();
+    }
   </script>
-<!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
+
+  <!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
   <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
     <span>▲</span> <span>TOP</span>
   </button>
