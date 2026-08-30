@@ -1857,6 +1857,35 @@
       }).join('');
     }
 
+    // INITIAL BLOG LOAD & EVENT LISTENERS
+    function initBlog() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tagParam = urlParams.get('tag');
+      const catParam = urlParams.get('category');
+      const qParam = urlParams.get('q') || urlParams.get('search');
+
+      if (tagParam) activeTagFilter = tagParam;
+      if (catParam) currentCategory = catParam;
+      if (qParam) searchQuery = qParam;
+
+      const searchInputEl = document.getElementById('searchInput');
+      if (searchInputEl && searchQuery) {
+        searchInputEl.value = searchQuery;
+      }
+
+      renderCards();
+      if (typeof updateTagBanner === 'function') {
+        updateTagBanner();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBlog);
+    } else {
+      initBlog();
+    }
+
+
     // BOOKMARK TOGGLE
     function toggleBookmark(e, postId) {
       if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
