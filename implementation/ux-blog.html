@@ -1421,15 +1421,508 @@
           <div class="postit-grid" id="postitGrid">
           <noscript>
           <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
-          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 19건의 전체 글·검색·태그 필터링을 보실 수 있습니다. 아래는 가장 많이 본 5건을 정적으로 노출한 백업 목록입니다.</p>
-          <ul style="margin:0 0 14px 18px; padding:0; line-height:1.7;">
-            <li><a href="/ux-blog/post-1/">UX리서치 — 클릭을 주저하게 만드는 원인</a> <span style="font-size:11px; color:#666;">(카테고리: UX리서치)</span></li>
-            <li><a href="/ux-blog/post-2/">실무 적용 체크리스트</a> <span style="font-size:11px; color:#666;">(카테고리: UX리서치)</span></li>
-            <li><a href="/ux-blog/post-3/">가상의 질문 vs 과거 경험 질문</a> <span style="font-size:11px; color:#666;">(카테고리: UX리서치)</span></li>
-            <li><a href="/ux-blog/post-4/">UX라이팅 — 에러 메시지 3대 작성 규칙</a> <span style="font-size:11px; color:#666;">(카테고리: UX라이팅)</span></li>
-            <li><a href="/ux-blog/post-5/">피그마 꿀팁 모음</a> <span style="font-size:11px; color:#666;">(카테고리: 피그마)</span></li>
-          </ul>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 19건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
+
+            <article class="postit-card" data-id="1">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 1);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 1);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 1 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-1/" style="color:inherit; text-decoration:none;">전환율보다 먼저 봐야 하는 버튼 문구의 명확성</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-1/" style="color:inherit; text-decoration:none;">좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#버튼카피');" style="cursor:pointer;" title="#버튼카피 태그 포스팅 모아보기">#버튼카피</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#전환율');" style="cursor:pointer;" title="#전환율 태그 포스팅 모아보기">#전환율</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#마이크로카피');" style="cursor:pointer;" title="#마이크로카피 태그 포스팅 모아보기">#마이크로카피</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-1/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="2">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 2);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 2);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 2 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-2/" style="color:inherit; text-decoration:none;">인터뷰 질문 설계에서 자주 생기는 초보 실수</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-2/" style="color:inherit; text-decoration:none;">질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#인터뷰질문');" style="cursor:pointer;" title="#인터뷰질문 태그 포스팅 모아보기">#인터뷰질문</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX리서치');" style="cursor:pointer;" title="#UX리서치 태그 포스팅 모아보기">#UX리서치</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#사용자조사');" style="cursor:pointer;" title="#사용자조사 태그 포스팅 모아보기">#사용자조사</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-2/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="3">
+              <div class="postit-top-band">
+                <span class="category-badge">UX기획/디자인</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 3);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 3);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 3 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-3/" style="color:inherit; text-decoration:none;">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-3/" style="color:inherit; text-decoration:none;">보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#화면정의서');" style="cursor:pointer;" title="#화면정의서 태그 포스팅 모아보기">#화면정의서</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#서비스기획');" style="cursor:pointer;" title="#서비스기획 태그 포스팅 모아보기">#서비스기획</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#예외흐름');" style="cursor:pointer;" title="#예외흐름 태그 포스팅 모아보기">#예외흐름</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-3/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="4">
+              <div class="postit-top-band">
+                <span class="category-badge">피그마</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 4);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 4);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 4 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-4/" style="color:inherit; text-decoration:none;">피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-4/" style="color:inherit; text-decoration:none;">피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마');" style="cursor:pointer;" title="#피그마 태그 포스팅 모아보기">#피그마</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#협업툴');" style="cursor:pointer;" title="#협업툴 태그 포스팅 모아보기">#협업툴</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#컴포넌트');" style="cursor:pointer;" title="#컴포넌트 태그 포스팅 모아보기">#컴포넌트</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-4/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="5">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 5);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 5);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 5 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-5/" style="color:inherit; text-decoration:none;">AI UX에서 프롬프트보다 먼저 정해야 하는 기준</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-5/" style="color:inherit; text-decoration:none;">프롬프트를 잘 쓰는 것보다 먼저 필요한 건 문제정의와 검증 기준입니다. 어떤 장면에서 AI를 쓸지, 결과를 누가 어떤 기준으로 확인하는지 정리되지 않으면 도입은 금방 흐려집니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX 태그 포스팅 모아보기">#AIUX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#문제정의');" style="cursor:pointer;" title="#문제정의 태그 포스팅 모아보기">#문제정의</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#검증기준');" style="cursor:pointer;" title="#검증기준 태그 포스팅 모아보기">#검증기준</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-5/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="6">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 6);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 6);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 6 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-6/" style="color:inherit; text-decoration:none;">바이브코딩으로 프로토타입 검증 속도를 높이는 방법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-6/" style="color:inherit; text-decoration:none;">완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프로토타입');" style="cursor:pointer;" title="#프로토타입 태그 포스팅 모아보기">#프로토타입</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#검증루프');" style="cursor:pointer;" title="#검증루프 태그 포스팅 모아보기">#검증루프</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-6/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="7">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 7);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 7);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 7 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-7/" style="color:inherit; text-decoration:none;">에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-7/" style="color:inherit; text-decoration:none;">시스템 오케스트레이션 코드 대신 사용자가 지금 무엇을 바로잡아야 하는지 친절하고 간결하게 설명할 때 탈퇴율을 극적으로 낮출 수 있습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#에러메시지');" style="cursor:pointer;" title="#에러메시지 태그 포스팅 모아보기">#에러메시지</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX라이팅');" style="cursor:pointer;" title="#UX라이팅 태그 포스팅 모아보기">#UX라이팅</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#예외처리');" style="cursor:pointer;" title="#예외처리 태그 포스팅 모아보기">#예외처리</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-7/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="8">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 8);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 8);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 8 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-8/" style="color:inherit; text-decoration:none;">UT(사용성 테스트) 진행 시 모더레이터가 절대 하지 말아야 할 말</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-8/" style="color:inherit; text-decoration:none;">사용자가 헤매는 순간 '오른쪽 상단 버튼을 누르시면 됩니다'라고 힌트를 주는 순간, 테스트의 모든 데이터는 왜곡됩니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#사용성테스트');" style="cursor:pointer;" title="#사용성테스트 태그 포스팅 모아보기">#사용성테스트</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UT');" style="cursor:pointer;" title="#UT 태그 포스팅 모아보기">#UT</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#모더레이팅');" style="cursor:pointer;" title="#모더레이팅 태그 포스팅 모아보기">#모더레이팅</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-8/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="9">
+              <div class="postit-top-band">
+                <span class="category-badge">UX기획/디자인</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 9);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 9);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 9 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-9/" style="color:inherit; text-decoration:none;">디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-9/" style="color:inherit; text-decoration:none;">컬러와 타이포그래피 변수(Token)를 컴포넌트 하드코딩 값과 독립시켜야 다크모드 및 모바일/데스크톱 파급 변경 시 오류가 생기지 않습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자인시스템');" style="cursor:pointer;" title="#디자인시스템 태그 포스팅 모아보기">#디자인시스템</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자인토큰');" style="cursor:pointer;" title="#디자인토큰 태그 포스팅 모아보기">#디자인토큰</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#컴포넌트');" style="cursor:pointer;" title="#컴포넌트 태그 포스팅 모아보기">#컴포넌트</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-9/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="10">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 10);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 10);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 10 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-10/" style="color:inherit; text-decoration:none;">생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-10/" style="color:inherit; text-decoration:none;">단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#생성형AI');" style="cursor:pointer;" title="#생성형AI 태그 포스팅 모아보기">#생성형AI</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#캔버스UX');" style="cursor:pointer;" title="#캔버스UX 태그 포스팅 모아보기">#캔버스UX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AI인터페이스');" style="cursor:pointer;" title="#AI인터페이스 태그 포스팅 모아보기">#AI인터페이스</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-10/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="11">
+              <div class="postit-top-band">
+                <span class="category-badge">피그마</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 11);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 11);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 11 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-11/" style="color:inherit; text-decoration:none;">피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-11/" style="color:inherit; text-decoration:none;">오토 레이아웃의 Min/Max Width 설정과 컴포넌트 속성(Variant, Boolean, Instance Swap)을 정교하게 다루는 실무 테크닉.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AutoLayout');" style="cursor:pointer;" title="#AutoLayout 태그 포스팅 모아보기">#AutoLayout</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마팁');" style="cursor:pointer;" title="#피그마팁 태그 포스팅 모아보기">#피그마팁</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#생산성');" style="cursor:pointer;" title="#생산성 태그 포스팅 모아보기">#생산성</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-11/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="12">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 12);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 12);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 12 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-12/" style="color:inherit; text-decoration:none;">프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-12/" style="color:inherit; text-decoration:none;">기획안 텍스트를 LLM 개발 프롬프트로 변환하여 실시간 브라우저 실행 코드로 구축하는 실전 절차 가이드.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#MVP');" style="cursor:pointer;" title="#MVP 태그 포스팅 모아보기">#MVP</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프롬프트');" style="cursor:pointer;" title="#프롬프트 태그 포스팅 모아보기">#프롬프트</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-12/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="13">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 13);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 13);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 13 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-13/" style="color:inherit; text-decoration:none;">온보딩 과정에서 사용자의 인지 부하를 줄이는 마이크로카피</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-13/" style="color:inherit; text-decoration:none;">처음 앱을 켠 사용자에게 권한 요청(알림, 위치)을 받아낼 때 명백한 이득을 제시하는 혜택 중심 서술 기법.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#온보딩');" style="cursor:pointer;" title="#온보딩 태그 포스팅 모아보기">#온보딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#마이크로카피');" style="cursor:pointer;" title="#마이크로카피 태그 포스팅 모아보기">#마이크로카피</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX카피');" style="cursor:pointer;" title="#UX카피 태그 포스팅 모아보기">#UX카피</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-13/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="14">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 14);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 14);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 14 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-14/" style="color:inherit; text-decoration:none;">FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-14/" style="color:inherit; text-decoration:none;">목소리 큰 참석 한 명이 전체 분위기를 주도하는 현상을 막기 위해 사전 서면 작성과 독립 득표 방식을 병행하는 리서치 스킬.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#FGI');" style="cursor:pointer;" title="#FGI 태그 포스팅 모아보기">#FGI</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#패널조사');" style="cursor:pointer;" title="#패널조사 태그 포스팅 모아보기">#패널조사</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#리서치설계');" style="cursor:pointer;" title="#리서치설계 태그 포스팅 모아보기">#리서치설계</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-14/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="15">
+              <div class="postit-top-band">
+                <span class="category-badge">UX기획/디자인</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 15);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 15);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 15 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-15/" style="color:inherit; text-decoration:none;">모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-15/" style="color:inherit; text-decoration:none;">주소 입력, 쿠폰 적용, 결제 수단 선택을 한 페이지 안에서 아코디언 컴포넌트로 처리하여 이탈률을 24% 감소시킨 사례.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#결제동선');" style="cursor:pointer;" title="#결제동선 태그 포스팅 모아보기">#결제동선</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#1PageCheckout');" style="cursor:pointer;" title="#1PageCheckout 태그 포스팅 모아보기">#1PageCheckout</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#전환개선');" style="cursor:pointer;" title="#전환개선 태그 포스팅 모아보기">#전환개선</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-15/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="16">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 16);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 16);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 16 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-16/" style="color:inherit; text-decoration:none;">LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-16/" style="color:inherit; text-decoration:none;">10초 이상 소요되는 복잡한 AI 추론 과정 동안 사용자에게 단계별 진행 상태(Progress Stage)를 투명하게 시각화하기.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#LLM');" style="cursor:pointer;" title="#LLM 태그 포스팅 모아보기">#LLM</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#로딩패턴');" style="cursor:pointer;" title="#로딩패턴 태그 포스팅 모아보기">#로딩패턴</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#대기시간UX');" style="cursor:pointer;" title="#대기시간UX 태그 포스팅 모아보기">#대기시간UX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-16/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="17">
+              <div class="postit-top-band">
+                <span class="category-badge">피그마</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 17);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 17);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 17 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-17/" style="color:inherit; text-decoration:none;">Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-17/" style="color:inherit; text-decoration:none;">피그마 배리어블 모드를 활용해 버튼 클릭 한 번으로 국문/영문 및 라이트/다크모드 전체 시안을 전환하는 시스템 설계.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#Variables');" style="cursor:pointer;" title="#Variables 태그 포스팅 모아보기">#Variables</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#다크모드');" style="cursor:pointer;" title="#다크모드 태그 포스팅 모아보기">#다크모드</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마수업');" style="cursor:pointer;" title="#피그마수업 태그 포스팅 모아보기">#피그마수업</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-17/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="18">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 18);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 18);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 18 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-18/" style="color:inherit; text-decoration:none;">디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-18/" style="color:inherit; text-decoration:none;">디자인 시스템 tokens.css와 LLM 바이브코딩 프롬프트 사이의 세만틱 일관성을 유지하는 주의사항.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프론트엔드');" style="cursor:pointer;" title="#프론트엔드 태그 포스팅 모아보기">#프론트엔드</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자이너개발');" style="cursor:pointer;" title="#디자이너개발 태그 포스팅 모아보기">#디자이너개발</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-18/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="19">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 19);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 19);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 19 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">undefined</a></p>
+                <div class="postit-tags">
+                  
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-19/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="19">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 19);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 19);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 19 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">과도한 혜택 과장이나 모호한 법적 경고 문구 대신 직관적이고 솔직한 텍스트로 사용자의 신뢰감을 극대화하는 법.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#신뢰디자인');" style="cursor:pointer;" title="#신뢰디자인 태그 포스팅 모아보기">#신뢰디자인</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#톤앤매너');" style="cursor:pointer;" title="#톤앤매너 태그 포스팅 모아보기">#톤앤매너</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#금융UX');" style="cursor:pointer;" title="#금융UX 태그 포스팅 모아보기">#금융UX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-19/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
             <!-- Cards populated dynamically via JavaScript -->
           </div>
         
@@ -1829,7 +2322,9 @@
           if (currentCategory === 'bookmark') {
             if (!bookmarks.includes(post.id)) return false;
           } else if (currentCategory && currentCategory !== 'all') {
-            if (post.category !== currentCategory) return false;
+            const normCategory = String(currentCategory).replace(/[\s\/]/g, '').toLowerCase();
+            const normPostCategory = String(post.category || '').replace(/[\s\/]/g, '').toLowerCase();
+            if (normPostCategory !== normCategory) return false;
           }
 
           // Search Filter
@@ -2051,6 +2546,20 @@
       if (tagParam) activeTagFilter = tagParam;
       if (catParam) currentCategory = catParam;
       if (qParam) searchQuery = qParam;
+
+      if (window.location.hash) {
+        const rawHash = decodeURIComponent(window.location.hash.replace('#', '')).trim();
+        if (rawHash) {
+          const matchCat = ['UX리서치', 'UX라이팅', 'UX기획/디자인', 'UX기획디자인', 'AI트랜드', '피그마', '바이브코딩', 'bookmark', 'all'].find(c =>
+            c.replace(/[\s\/]/g, '').toLowerCase() === rawHash.replace(/[\s\/]/g, '').toLowerCase()
+          );
+          if (matchCat) {
+            currentCategory = matchCat === 'UX기획디자인' ? 'UX기획/디자인' : matchCat;
+          } else if (rawHash.startsWith('#') || rawHash.length > 0) {
+            activeTagFilter = rawHash;
+          }
+        }
+      }
 
       const searchInputEl = document.getElementById('searchInput');
       if (searchInputEl && searchQuery) {

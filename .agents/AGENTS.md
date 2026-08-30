@@ -1,7 +1,7 @@
 # Project Rules for 2026 Super Planning Website
 
 ## Mandatory Deployment Rules (AWS EC2 Live Server)
-1. **Live Server Deployment (CRITICAL)**: `superplanning.blog` is hosted on an **AWS EC2 Apache Server (`13.125.12.112`)`. `git push` to GitHub alone DOES NOT update the live site.
+1. **Live Server Deployment (CRITICAL)**: `www.superplanning.co.kr` (`https://www.superplanning.co.kr/`) is hosted on an **AWS EC2 Apache Server (`13.125.12.112`)`. Do NOT use `superplanning.blog`. `git push` to GitHub alone DOES NOT update the live site.
 2. **Automatic Dual-Deployment**: Whenever any code changes are made to `implementation/index.html` or other website assets, you MUST ALWAYS upload updated files to `/var/www/html/index.html` on AWS (`admin@13.125.12.112`) using `shkey.pem` AND reload Apache (`sudo systemctl reload apache2`) in addition to Git commit & push. Alternatively, execute `npm run deploy` or `./deploy.ps1`.
 
 ## Git Version Control Rules

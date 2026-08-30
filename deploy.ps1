@@ -73,4 +73,4 @@ if (Test-Path deploy.tar.gz) { Remove-Item deploy.tar.gz -Force }
 Write-Host "3. Pushing changes to GitHub (origin master)..." -ForegroundColor Cyan
 git push origin master --quiet 2>&1 | Out-Null
 
-Write-Host "Deployment completed successfully to https://superplanning.blog!" -ForegroundColor Green
+Write-Host "Deployment completed successfully to https://www.superplanning.co.kr!" -ForegroundColor Green
