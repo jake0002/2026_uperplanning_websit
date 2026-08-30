@@ -1859,157 +1859,74 @@
 
     // BOOKMARK TOGGLE
     function toggleBookmark(e, postId) {
-      e.stopPropagation();
-      const idx = bookmarks.indexOf(postId);
+      if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+      const id = (typeof e === 'number') ? e : (postId || null);
+      if (!id) return;
+
+      const idx = bookmarks.indexOf(id);
       if (idx > -1) {
         bookmarks.splice(idx, 1);
-        showToast('즐겨찾기에서 제거되었습니다.');
+        showToast('☆ 즐겨찾기에서 제거되었습니다.');
       } else {
-        bookmarks.push(postId);
+        bookmarks.push(id);
         showToast('★ 즐겨찾기에 추가되었습니다.');
       }
       localStorage.setItem('sp_blog_bookmarks', JSON.stringify(bookmarks));
+
+      if (countFavEl) countFavEl.textContent = bookmarks.length;
+
+      const modalBookmarkBtn = document.getElementById('modalBookmarkBtn');
+      if (modalBookmarkBtn) {
+        const isFavNow = bookmarks.includes(id);
+        modalBookmarkBtn.innerHTML = isFavNow ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장';
+        modalBookmarkBtn.style.color = isFavNow ? '#e67e22' : '';
+      }
+
       renderCards();
     }
+    window.toggleBookmark = toggleBookmark;
+    window.togglePostBookmark = toggleBookmark;
 
     // SHARE POST
     function sharePost(e, postId) {
-      e.stopPropagation();
-      const post = POSTS_DATA.find(p => p.id === postId);
-      const shareUrl = window.location.origin + window.location.pathname + '#post-' + postId;
-      navigator.clipboard.writeText(shareUrl).then(() => {
-        showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
-      }).catch(() => {
-        showToast('링크 복사 완료!');
-      });
-    }
+      if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+      const id = (typeof e === 'number') ? e : (postId || null);
 
-    // OPEN POST MODAL
-    function openPostModal(postId) {
-      const post = POSTS_DATA.find(p => p.id === postId);
-      if (!post) return;
-
-      const isFav = bookmarks.includes(post.id);
-      modalTitlebarText.textContent = `[포스트 읽기] ${post.title}`;
-      modalBody.innerHTML = `
-        <div class="modal-meta">
-          <span class="category-badge">${post.category}</span>
-          <span style="font-size:12px; font-weight:bold; color:#666;">⏱️ ${post.readTime}초 소요</span>
-          <button class="w95-btn" onclick="toggleBookmark(event, ${post.id});" style="font-size:11px; padding:2px 8px;">
-            ${isFav ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장'}
-          </button>
-          <button class="w95-btn" onclick="sharePost(event, ${post.id});" style="font-size:11px; padding:2px 8px;">
-            🔗 공유하기
-          </button>
-        </div>
-        <h2 class="modal-post-title">${post.title}</h2>
-        <div class="modal-post-content">
-          <p style="font-size:14px; font-weight:bold; color:#000; margin-bottom:16px;">${post.excerpt}</p>
-          ${post.content}
-        </div>
-        <div style="margin-top:24px; padding-top:14px; border-top:2px solid #000; display:flex; justify-content:space-between; align-items:center;">
-          <div style="display:flex; gap:4px;">
-            ${post.tags.map(t => {
-                const isActive = activeTagFilter && (t.replace('#','').toLowerCase() === activeTagFilter.replace('#','').toLowerCase());
-                return `<span class="tag-pill ${isActive ? 'active-tag' : ''}" onclick="event.stopPropagation(); filterByTag('${t}');" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`;
-              }).join('')}
-          </div>
-          <button class="w95-btn" onclick="closeModal();">✕ 닫기</button>
-        </div>
-      `;
-      postModal.classList.add('show');
-    }
-
-    function closeModal() {
-      postModal.classList.remove('show');
-    }
-
-    function toggleMobileMenu() {
-      const drawer = document.getElementById('mobileNavDrawer');
-      if (drawer) drawer.classList.toggle('show');
-    }
-
-    // SHOW TOAST
-    function showToast(msg) {
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2000);
-    }
-
-    // EVENT LISTENERS
-    categoryNav.addEventListener('click', (e) => {
-      const link = e.target.closest('.tree-link');
-      if (!link) return;
-
-      document.querySelectorAll('.tree-link').forEach(el => el.classList.remove('active'));
-      link.classList.add('active');
-
-      currentCategory = link.dataset.category;
-      renderCards();
-    });
-
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderCards();
-    });
-
-    searchBtn.addEventListener('click', () => {
-      searchQuery = searchInput.value;
-      renderCards();
-    });
-
-    // Close modal on backdrop click
-    postModal.addEventListener('click', (e) => {
-      if (e.target === postModal) closeModal();
-    });
-
-    // INITIAL RENDER & URL PARAM CHECK
-    const urlParams = new URLSearchParams(window.location.search);
-    const tagParam = urlParams.get('tag');
-    if (tagParam) {
-      activeTagFilter = decodeURIComponent(tagParam);
-    }
-    renderCards();
-    updateTagBanner();
-
-    // Check URL Hash for deep-link
-    if (window.location.hash.startsWith('#post-')) {
-      const pId = parseInt(window.location.hash.replace('#post-', ''));
-      if (pId) openPostModal(pId);
-    }
-
-    // GNB Scroll Progress Gauge Handler (Exact UX-Research Match)
-    let scrollTimer = null;
-    function updateGnbScrollProgress() {
-      const progressBar = document.getElementById('gnbProgressBar');
-      const progressBadge = document.getElementById('gnbProgressBadge');
-      if (!progressBar) return;
-
-      // 1. Window scroll calculation
-      const winScroll = Math.max(0, window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
-      const winDocHeight = Math.max(
-        document.body.scrollHeight || 0,
-        document.documentElement.scrollHeight || 0,
-        document.body.offsetHeight || 0,
-        document.documentElement.offsetHeight || 0
-      );
-      const winViewport = window.innerHeight || document.documentElement.clientHeight || 0;
-      const winMaxScroll = Math.max(0, winDocHeight - winViewport);
-      const winRatio = winMaxScroll > 5 ? (winScroll / winMaxScroll) : 0;
-
-      // 2. Main content pane scroll calculation
-      const mainPane = document.querySelector('.main-content-pane');
-      let paneRatio = 0;
-      let paneScroll = 0;
-      if (mainPane) {
-        paneScroll = mainPane.scrollTop || 0;
-        const paneMaxScroll = Math.max(0, mainPane.scrollHeight - mainPane.clientHeight);
-        if (paneMaxScroll > 5) {
-          paneRatio = paneScroll / paneMaxScroll;
-        }
+      let shareUrl = 'https://www.superplanning.co.kr/ux-blog/';
+      if (id) {
+        shareUrl = 'https://www.superplanning.co.kr/ux-blog/post-' + id + '/';
+      } else {
+        shareUrl = window.location.href;
       }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+        }).catch(() => {
+          fallbackCopyText(shareUrl);
+        });
+      } else {
+        fallbackCopyText(shareUrl);
+      }
+    }
+    window.sharePost = sharePost;
+    window.shareCurrentPost = sharePost;
+
+    function fallbackCopyText(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+      } catch (err) {
+        showToast('링크 복사에 실패했습니다.');
+      }
+      document.body.removeChild(input);
+    }
 
       // 3. Take active max scroll ratio & current scroll
       const activeRatio = Math.max(winRatio, paneRatio);
