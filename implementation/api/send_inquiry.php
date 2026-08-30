@@ -19,8 +19,8 @@ $company = isset($input['company']) ? trim($input['company']) : '고객사';
 $email = isset($input['email']) ? trim($input['email']) : '';
 $message = isset($input['message']) ? trim($input['message']) : '';
 
-if (empty($name) || empty($phone)) {
-    echo json_encode(['success' => false, 'message' => '이름과 연락처는 필수 입력값입니다.']);
+if (empty($name) && empty($phone) && empty($email)) {
+    echo json_encode(['success' => false, 'message' => '필수 입력값이 누락되었습니다.']);
     exit;
 }
 
@@ -37,7 +37,7 @@ $body .= "=== 프로젝트 상세 내용 및 주요 요청사항 ===\n";
 $body .= "{$message}\n\n";
 $body .= "========================================\n";
 
-$headers = "From: webmaster@www.superplanning.co.kr\r\n";
+$headers = "From: jake@superplanning.co.kr\r\n";
 if (!empty($email)) {
     $headers .= "Reply-To: {$email}\r\n";
 }
