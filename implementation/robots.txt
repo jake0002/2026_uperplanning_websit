@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 
+# Specific UA override OpenAI/Anthropic/Google/Naver/Bing — 와일드카드와 등가지만 정책 선언 log 남김
 User-agent: GPTBot
 Allow: /
 
@@ -26,7 +27,17 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
+User-agent: Naverbot
+Allow: /
+
 User-agent: bingbot
+Allow: /
+
+# Apple Intelligence + DuckDuckGo search engines
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 Sitemap: https://superplanning.blog/sitemap.xml
