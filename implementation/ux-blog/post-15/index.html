@@ -1462,5 +1462,105 @@ function showCopySuccess(text, label, btn) {
 }
 </script>
 
+
+  <script>
+    // Post Detail Bookmark & Share Handlers
+    function getPostBookmarks() {
+      try {
+        return JSON.parse(localStorage.getItem('sp_blog_bookmarks') || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function updatePostBookmarkUI(postId) {
+      const bookmarks = getPostBookmarks();
+      const isFav = bookmarks.includes(postId);
+      const btn = document.getElementById('postBookmarkBtn');
+      const star = document.getElementById('bookmarkStar');
+      
+      if (star) {
+        star.textContent = isFav ? '★' : '☆';
+      }
+      if (btn) {
+        if (isFav) {
+          btn.classList.add('bookmarked');
+          btn.style.color = '#e67e22';
+          btn.style.fontWeight = 'bold';
+        } else {
+          btn.classList.remove('bookmarked');
+          btn.style.color = '';
+          btn.style.fontWeight = '';
+        }
+      }
+    }
+
+    function togglePostBookmark(postId) {
+      let bookmarks = getPostBookmarks();
+      const idx = bookmarks.indexOf(postId);
+      if (idx > -1) {
+        bookmarks.splice(idx, 1);
+        showToast('☆ 즐겨찾기에서 제거되었습니다.');
+      } else {
+        bookmarks.push(postId);
+        showToast('★ 즐겨찾기에 추가되었습니다.');
+      }
+      try {
+        localStorage.setItem('sp_blog_bookmarks', JSON.stringify(bookmarks));
+      } catch (e) {}
+      updatePostBookmarkUI(postId);
+    }
+
+    function shareCurrentPost(postId) {
+      const shareUrl = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+        }).catch(() => {
+          fallbackCopyText(shareUrl);
+        });
+      } else {
+        fallbackCopyText(shareUrl);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+      } catch (err) {
+        showToast('링크 복사에 실패했습니다.');
+      }
+      document.body.removeChild(input);
+    }
+
+    function showToast(msg) {
+      let toast = document.getElementById('spToastNotification');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'spToastNotification';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#111111; color:#ffffff; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:700; z-index:999999; box-shadow:0 4px 16px rgba(0,0,0,0.35); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity:0; pointer-events:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; text-align:center; min-width:200px;';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%, -6px)';
+      clearTimeout(window._spToastTimer);
+      window._spToastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, 0)';
+      }, 2300);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updatePostBookmarkUI(15);
+    });
+  </script>
 </body>
 </html>
