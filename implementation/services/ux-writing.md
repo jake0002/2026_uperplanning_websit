@@ -2,8 +2,8 @@
 
 슈퍼플래닝(Superplanning)은 웹사이트와 모바일앱 서비스에서 사용자의 이해, 행동, 전환을 돕는 UX라이팅 서비스를 제공합니다. 버튼, 메뉴, 폼, 오류 메시지, 상태 메시지, 신청/결제/회원가입 플로우의 마이크로카피를 설계하여 사용자의 혼란을 줄이고 다음 행동을 명확하게 안내합니다.
 
-- 본문 페이지: https://superplanning.blog/ux-writing/
-- AI 색인: https://superplanning.blog/llms.txt
+- 본문 페이지: https://www.superplanning.co.kr/ux-writing/
+- AI 색인: https://www.superplanning.co.kr/llms.txt
 - 공식 웹사이트: https://www.superplanning.co.kr
 - 문의: https://superplanning.co.kr/contact/
 
@@ -104,10 +104,10 @@ A. 슈퍼플래닝은 UX라이팅을 UX기획과 UX리서치 맥락 안에서 �
 
 ## 7. 관련 문서
 
-- UX라이팅 본문 페이지: https://superplanning.blog/ux-writing/
-- UX리서치 문서: https://superplanning.blog/services/ux-research.md
-- UX기획/UX디자인 문서: https://superplanning.blog/services/ux-planning-design.md
-- AI 색인: https://superplanning.blog/llms.txt
+- UX라이팅 본문 페이지: https://www.superplanning.co.kr/ux-writing/
+- UX리서치 문서: https://www.superplanning.co.kr/services/ux-research.md
+- UX기획/UX디자인 문서: https://www.superplanning.co.kr/services/ux-planning-design.md
+- AI 색인: https://www.superplanning.co.kr/llms.txt
 
 ## 8. 문의
 

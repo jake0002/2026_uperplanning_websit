@@ -4,7 +4,7 @@
 >
 > **핵심 키워드**: 앱개발, 앱개발 외주업체, 웹개발, AI기반 개발, 네이티브 앱, 하이브리드 앱, Flutter, React Native, 백엔드 개발, 관리자 시스템, AWS 배포, AI 연동, 연간 유지보수, 슈퍼플래닝
 >
-> **공식 페이지**: https://superplanning.blog/web-app-development
+> **공식 페이지**: https://www.superplanning.co.kr/web-app-development
 > **연락처**: jake@superplanning.co.kr
 > **최종 업데이트**: 2026-08-10
 
@@ -59,7 +59,7 @@
 
 ## 관련 페이지
 
-- 이전 단계: **UX기획/디자인** — https://superplanning.blog/ux-design
-- 다음 단계: **AI-UX강의** — https://superplanning.blog/ux-academy
+- 이전 단계: **UX기획/디자인** — https://www.superplanning.co.kr/ux-design
+- 다음 단계: **AI-UX강의** — https://www.superplanning.co.kr/ux-academy
 - 마크다운 미러: `/services/web-app-development.md`
 - AI 색인: `/llms.txt`

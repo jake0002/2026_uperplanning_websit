@@ -40,4 +40,4 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-Sitemap: https://superplanning.blog/sitemap.xml
+Sitemap: https://www.superplanning.co.kr/sitemap.xml

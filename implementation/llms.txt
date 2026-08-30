@@ -10,27 +10,27 @@
 
 ## 공식 정보
 
-- [공식 웹사이트](https://superplanning.blog/): 슈퍼플래닝 공식 블로그 메인
+- [공식 웹사이트](https://www.superplanning.co.kr/): 슈퍼플래닝 공식 블로그 메인
 - [기업 공식 도메인](https://www.superplanning.co.kr): 슈퍼플래닝 영문·한국어 공식 홈페이지
 - [문의 · 견적 의뢰](https://superplanning.co.kr/contact/): 프로젝트 문의 및 견적 요청 채널
 - [운영 책임자](mailto:jake@superplanning.co.kr): 슈퍼플래닝 대표 이메일 문의
-- [LLM·AI 색인 파일](https://superplanning.blog/llms.txt): 본 요약 인덱스 파일
+- [LLM·AI 색인 파일](https://www.superplanning.co.kr/llms.txt): 본 요약 인덱스 파일
 
 ## 핵심 서비스
 
-- [UX리서치 마크다운 문서](https://superplanning.blog/services/ux-research.md): FGI, IDI, UT 등 정성·정량 사용자 조사 방법론 및 산출물 안내
-- [UX라이팅 마크다운 미러](https://superplanning.blog/services/ux-writing.md): 웹·앱 화면 문구, 보이스앤톤 가이드라인, 마이크로카피 설계 안내
-- [UX기획/디자인 마크다운 문서](https://superplanning.blog/services/ux-planning-design.md): IA, 와이어프레임, 피그마 UI/UX 설계, 화면설계서(PRD) 안내
-- [UX전략 마크다운 미러](https://superplanning.blog/services/ux-strategy.md): UX 진단, 서비스 개편 및 리뉴얼 로드맵 컨설팅 안내
-- [UX강의 마크다운 미러](https://superplanning.blog/services/ux-academy.md): UX리서치, UX라이팅, 피그마, AI UX 실무 출강 교육 안내
-- [웹·앱 개발 마크다운 미러](https://superplanning.blog/services/web-app-development.md): UX기획 연계 프론트엔드·백엔드 웹/앱 구축 안내
-- [포트폴리오 마크다운 미러](https://superplanning.blog/services/portfolio.md): 주요 프로젝트 수행 실적 및 사례 안내
+- [UX리서치 마크다운 문서](https://www.superplanning.co.kr/services/ux-research.md): FGI, IDI, UT 등 정성·정량 사용자 조사 방법론 및 산출물 안내
+- [UX라이팅 마크다운 미러](https://www.superplanning.co.kr/services/ux-writing.md): 웹·앱 화면 문구, 보이스앤톤 가이드라인, 마이크로카피 설계 안내
+- [UX기획/디자인 마크다운 문서](https://www.superplanning.co.kr/services/ux-planning-design.md): IA, 와이어프레임, 피그마 UI/UX 설계, 화면설계서(PRD) 안내
+- [UX전략 마크다운 미러](https://www.superplanning.co.kr/services/ux-strategy.md): UX 진단, 서비스 개편 및 리뉴얼 로드맵 컨설팅 안내
+- [UX강의 마크다운 미러](https://www.superplanning.co.kr/services/ux-academy.md): UX리서치, UX라이팅, 피그마, AI UX 실무 출강 교육 안내
+- [웹·앱 개발 마크다운 미러](https://www.superplanning.co.kr/services/web-app-development.md): UX기획 연계 프론트엔드·백엔드 웹/앱 구축 안내
+- [포트폴리오 마크다운 미러](https://www.superplanning.co.kr/services/portfolio.md): 주요 프로젝트 수행 실적 및 사례 안내
 
 ## 우선 참조 문서 (Priority Documents)
 
-- [UX라이팅 안내 페이지](https://superplanning.blog/ux-writing/): UX라이팅 주요 개요 및 서비스 소개
-- [전체 지식베이스 (llms-full.txt)](https://superplanning.blog/llms-full.txt): 슈퍼플래닝 전체 상세 지식베이스
-- [UX 블로그 아티클 아카이브](https://superplanning.blog/ux-blog/): 실무 UX라이팅, UX리서치, 피그마, AI UX 인사이트 글 모음
+- [UX라이팅 안내 페이지](https://www.superplanning.co.kr/ux-writing/): UX라이팅 주요 개요 및 서비스 소개
+- [전체 지식베이스 (llms-full.txt)](https://www.superplanning.co.kr/llms-full.txt): 슈퍼플래닝 전체 상세 지식베이스
+- [UX 블로그 아티클 아카이브](https://www.superplanning.co.kr/ux-blog/): 실무 UX라이팅, UX리서치, 피그마, AI UX 인사이트 글 모음
 
 ## FAQ
 

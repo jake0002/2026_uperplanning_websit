@@ -2,7 +2,7 @@
 title: "UX리서치 전문 에이전시 슈퍼플래닝 | FGI·UT·사용자 인터뷰"
 description: "슈퍼플래닝은 FGI, UT, IDI 등 정성·정량 조사를 수행하는 UX리서치 전문 회사입니다. 인터뷰 참석자 리크루팅부터 MVP검증, 사용자 행동 데이터 분석을 통해 서비스 문제 원인을 찾고 UI/UX 개선안을 도출해 드립니다."
 keywords: "UX리서치 전문회사, UX리서치 외주업체, FGI조사 회사, UT조사 회사, IDI조사 에이전시, 사용자 인터뷰 회사, MVP 검증 업체, 사용자 리크루팅 대행, UX리서치 강의, 기업출강 UX리서치, 슈퍼플래닝, Superplanning"
-canonical: "https://superplanning.blog/services/ux-research.md"
+canonical: "https://www.superplanning.co.kr/services/ux-research.md"
 updated: "2026-08-10"
 ---
 
@@ -135,8 +135,8 @@ UX리서치의 핵심은 조사를 했다는 사실이 아니라, 어떤 문제�
 ## 9. 공식 리소스 & 도메인
 
 - **공식 문의 웹페이지**: [https://superplanning.co.kr/contact/](https://superplanning.co.kr/contact/)
-- **공식 웹사이트**: [https://superplanning.blog](https://superplanning.blog) / [https://www.superplanning.co.kr](https://www.superplanning.co.kr)
-- **UX리서치 서브페이지**: [https://superplanning.blog/ux-research](https://superplanning.blog/ux-research)
-- **마크다운 미러 (AI / GEO용)**: [https://superplanning.blog/services/ux-research.md](https://superplanning.blog/services/ux-research.md)
-- **AI 색인**: [https://superplanning.blog/llms.txt](https://superplanning.blog/llms.txt)
+- **공식 웹사이트**: [https://www.superplanning.co.kr](https://www.superplanning.co.kr) / [https://www.superplanning.co.kr](https://www.superplanning.co.kr)
+- **UX리서치 서브페이지**: [https://www.superplanning.co.kr/ux-research](https://www.superplanning.co.kr/ux-research)
+- **마크다운 미러 (AI / GEO용)**: [https://www.superplanning.co.kr/services/ux-research.md](https://www.superplanning.co.kr/services/ux-research.md)
+- **AI 색인**: [https://www.superplanning.co.kr/llms.txt](https://www.superplanning.co.kr/llms.txt)
 - **문의 이메일**: jake@superplanning.co.kr
