@@ -27,9 +27,9 @@ tar -czf deploy.tar.gz -C implementation .
 # SCP deploy archive to AWS EC2
 scp -i "shkey.pem" -o StrictHostKeyChecking=no deploy.tar.gz admin@13.125.12.112:/tmp/
 
-# Extract archive, sync all URL route aliases, fix permissions, and reload Apache
+# Extract archive to /var/www/html and sync to /var/www/superplanning (domain DocumentRoot)
 $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
-"sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux-research /var/www/html/ux_research /var/www/html/ux-writing /var/www/html/ux_writing /var/www/html/UX_Writing /var/www/html/ux-academy /var/www/html/ux_academy /var/www/html/ux-company /var/www/html/company /var/www/html/ux_company /var/www/html/ux_plan /var/www/html/contact /var/www/html/web-app-development /var/www/html/app_dev && " +
+"sudo mkdir -p /var/www/html/ux-design /var/www/html/ux_design /var/www/html/ux-research /var/www/html/ux_research /var/www/html/ux-writing /var/www/html/ux_writing /var/www/html/UX_Writing /var/www/html/ux-academy /var/www/html/ux_academy /var/www/html/ux-company /var/www/html/company /var/www/html/ux_company /var/www/html/ux-blog /var/www/html/ux_blog /var/www/html/ux_plan /var/www/html/contact /var/www/html/web-app-development /var/www/html/app_dev && " +
 "sudo cp -f /var/www/html/ux-company/index.html /var/www/html/ux-company.html 2>/dev/null || true && " +
 "sudo cp -f /var/www/html/ux-company/index.html /var/www/html/company/index.html 2>/dev/null || true && " +
 "sudo cp -f /var/www/html/ux-company/index.html /var/www/html/company.html 2>/dev/null || true && " +
@@ -64,6 +64,10 @@ $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux_plan/images/ 2>/dev/null || true && " +
 "sudo chmod -R 755 /var/www/html && " +
 "sudo chown -R admin:www-data /var/www/html && " +
+"sudo mkdir -p /var/www/superplanning && " +
+"sudo rsync -a --delete /var/www/html/ /var/www/superplanning/ && " +
+"sudo chmod -R 755 /var/www/superplanning && " +
+"sudo chown -R admin:www-data /var/www/superplanning && " +
 "sudo systemctl reload apache2"
 
 ssh -i "shkey.pem" -o StrictHostKeyChecking=no admin@13.125.12.112 $remoteCmds
