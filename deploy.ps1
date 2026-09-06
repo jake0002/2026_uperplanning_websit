@@ -55,12 +55,14 @@ $remoteCmds = "sudo tar -xzf /tmp/deploy.tar.gz -C /var/www/html/ && " +
 "sudo cp -f /var/www/html/web-app-development/index.html /var/www/html/app_dev/index.html 2>/dev/null || true && " +
 "sudo cp -f /var/www/html/web-app-development/index.html /var/www/html/app_dev.html 2>/dev/null || true && " +
 "sudo cp -f /var/www/html/contact/index.html /var/www/html/contact.html 2>/dev/null || true && " +
-"sudo mkdir -p /var/www/html/ux-research/images /var/www/html/ux_research/images /var/www/html/ux-design/images /var/www/html/ux_design/images /var/www/html/ux-writing/images /var/www/html/ux_writing/images /var/www/html/ux_plan/images && " +
+"sudo mkdir -p /var/www/html/ux-research/images /var/www/html/ux_research/images /var/www/html/ux-design/images /var/www/html/ux_design/images /var/www/html/ux-writing/images /var/www/html/ux_writing/images /var/www/html/ux_plan/images /var/www/html/web-app-development/images /var/www/html/app_dev/images && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux-research/images/ 2>/dev/null || true && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux_research/images/ 2>/dev/null || true && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux-design/images/ 2>/dev/null || true && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux_design/images/ 2>/dev/null || true && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux-writing/images/ 2>/dev/null || true && " +
+"sudo cp -rf /var/www/html/images/* /var/www/html/web-app-development/images/ 2>/dev/null || true && " +
+"sudo cp -rf /var/www/html/images/* /var/www/html/app_dev/images/ 2>/dev/null || true && " +
 "sudo cp -rf /var/www/html/images/* /var/www/html/ux_plan/images/ 2>/dev/null || true && " +
 "sudo chmod -R 755 /var/www/html && " +
 "sudo chown -R admin:www-data /var/www/html && " +
