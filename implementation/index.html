@@ -2178,7 +2178,9 @@
       doLoop();
     }
 
+    let typeWriterTimer = null;
     function typeWriterHero() {
+      if (typeWriterTimer) clearTimeout(typeWriterTimer);
       startCmdPromptLoop();
       const container = document.getElementById('heroTypingText');
       const bodyContainer = document.getElementById('heroBody2Text');
@@ -2203,12 +2205,12 @@
           elP1.textContent += p1Text[i];
           i++;
           blip(700 + i * 15, 0.02, 'sine');
-          setTimeout(step, 35);
+          typeWriterTimer = setTimeout(step, 35);
         } else if (j < p2Text.length) {
           elP2.textContent += p2Text[j];
           j++;
           blip(850 + j * 20, 0.02, 'sine');
-          setTimeout(step, 35);
+          typeWriterTimer = setTimeout(step, 35);
         } else {
           const cursor1 = document.getElementById('twCursor1');
           if (cursor1) cursor1.remove();
@@ -2222,7 +2224,7 @@
               elBody.textContent += bodyText[k];
               k++;
               blip(650 + (k % 10) * 20, 0.015, 'sine');
-              setTimeout(step, 30);
+              typeWriterTimer = setTimeout(step, 30);
             } else {
               const cursor2 = document.getElementById('twCursor2');
               if (cursor2) cursor2.remove();
