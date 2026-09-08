@@ -11,3 +11,9 @@ DirectoryIndex index.html index.php
         Header set Expires 0
     </FilesMatch>
 </IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^/?class\.html$ /ux-academy/ [R=301,L,QSA]
+    RewriteRule ^/?uxplan\.html$ /ux-research/ [R=301,L,QSA]
+</IfModule>
