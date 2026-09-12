@@ -2179,54 +2179,25 @@
     function typeWriterHero() {
       if (typeWriterTimer) clearTimeout(typeWriterTimer);
       startCmdPromptLoop();
-      const container = document.getElementById('heroTypingText');
+      // SEO/GEO H1(heroTypingText)은 정적 텍스트로 100% 유지하고 타이핑 효과는 하단 설명 요소에만 적용
       const bodyContainer = document.getElementById('heroBody2Text');
-      if (!container) return;
+      if (!bodyContainer) return;
 
-      const p1Text = 'UX디자인 에이전시, ';
-      const p2Text = '슈퍼플래닝입니다.';
       const bodyText = "이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.";
+      bodyContainer.innerHTML = '<span id="twBody"></span><span id="twCursor2" class="blink-cursor" style="height:16px; width:5px; background:#ffffff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
+      const elBody = document.getElementById('twBody');
 
-      container.innerHTML = '<span id="twP1"></span><span id="twP2" style="color:#ffffff; font-weight:900;"></span><span id="twCursor1" class="blink-cursor" style="height:24px; width:6px; background:#ffffff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
-      if (bodyContainer) {
-        bodyContainer.innerHTML = '<span id="twBody"></span>';
-      }
-
-      const elP1 = document.getElementById('twP1');
-      const elP2 = document.getElementById('twP2');
-
-      let i = 0, j = 0, k = 0;
+      let k = 0;
       function step() {
-        if (!document.getElementById('heroTypingText')) return;
-        if (i < p1Text.length) {
-          elP1.textContent += p1Text[i];
-          i++;
-          blip(700 + i * 15, 0.02, 'sine');
-          typeWriterTimer = setTimeout(step, 35);
-        } else if (j < p2Text.length) {
-          elP2.textContent += p2Text[j];
-          j++;
-          blip(850 + j * 20, 0.02, 'sine');
-          typeWriterTimer = setTimeout(step, 35);
+        if (!document.getElementById('heroBody2Text')) return;
+        if (elBody && k < bodyText.length) {
+          elBody.textContent += bodyText[k];
+          k++;
+          blip(650 + (k % 10) * 20, 0.015, 'sine');
+          typeWriterTimer = setTimeout(step, 30);
         } else {
-          const cursor1 = document.getElementById('twCursor1');
-          if (cursor1) cursor1.remove();
-
-          if (bodyContainer) {
-            if (!document.getElementById('twCursor2')) {
-              bodyContainer.innerHTML = '<span id="twBody"></span><span id="twCursor2" class="blink-cursor" style="height:16px; width:5px; background:#ffffff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
-            }
-            const elBody = document.getElementById('twBody');
-            if (elBody && k < bodyText.length) {
-              elBody.textContent += bodyText[k];
-              k++;
-              blip(650 + (k % 10) * 20, 0.015, 'sine');
-              typeWriterTimer = setTimeout(step, 30);
-            } else {
-              const cursor2 = document.getElementById('twCursor2');
-              if (cursor2) cursor2.remove();
-            }
-          }
+          const cursor2 = document.getElementById('twCursor2');
+          if (cursor2) cursor2.remove();
         }
       }
       step();
