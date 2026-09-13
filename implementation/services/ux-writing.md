@@ -1,3 +1,11 @@
+---
+title: "UX라이팅 회사 슈퍼플래닝 | 마이크로카피·보이스앤톤 가이드"
+description: "슈퍼플래닝은 웹사이트와 모바일앱 서비스에서 사용자의 이해, 행동, 전환을 돕는 UX라이팅 서비스를 제공합니다. 버튼, 메뉴, 폼, 오류 메시지, 신청/결제/회원가입 플로우의 마이크로카피를 설계합니다."
+keywords: "UX라이팅, UX라이팅 회사, UX라이팅 외주, 마이크로카피, 보이스앤톤, UX카피라이팅, 슈퍼플래닝, Superplanning"
+canonical: "https://www.superplanning.co.kr/services/ux-writing.md"
+updated: "2026-09-14"
+---
+
 # UX라이팅 | 슈퍼플래닝 (Superplanning)
 
 슈퍼플래닝(Superplanning)은 웹사이트와 모바일앱 서비스에서 사용자의 이해, 행동, 전환을 돕는 UX라이팅 서비스를 제공합니다. 버튼, 메뉴, 폼, 오류 메시지, 상태 메시지, 신청/결제/회원가입 플로우의 마이크로카피를 설계하여 사용자의 혼란을 줄이고 다음 행동을 명확하게 안내합니다.
@@ -5,7 +13,7 @@
 - 본문 페이지: https://www.superplanning.co.kr/ux-writing/
 - AI 색인: https://www.superplanning.co.kr/llms.txt
 - 공식 웹사이트: https://www.superplanning.co.kr
-- 문의: https://superplanning.co.kr/contact/
+- 문의: https://www.superplanning.co.kr/contact/
 
 ## 1. UX라이팅이란
 
@@ -102,14 +110,19 @@ A. 가능하지만 먼저 서비스의 문구 원칙과 용어 기준을 정리�
 ### Q. 슈퍼플래닝의 차별점은 무엇인가요?
 A. 슈퍼플래닝은 UX라이팅을 UX기획과 UX리서치 맥락 안에서 다루며, 텍스트 톤 분석 및 추천 자동화 관련 특허 등록 이력을 보유하고 있습니다.
 
-## 7. 관련 문서
+## 7. 주요 고객사 및 프로젝트 수행 실적
+
+- **금융 / 공공 서비스**: KB국민은행, NH농협은행, 서민금융진흥원 등
+- **플랫폼 / 모빌리티 / 대기업**: 삼성전자, 롯데렌터카, LG유플러스, LG생활건강, 오스템임플란트, CJ올리브네트웍스, 아이스크림에듀 등
+
+## 8. 관련 문서
 
 - UX라이팅 본문 페이지: https://www.superplanning.co.kr/ux-writing/
 - UX리서치 문서: https://www.superplanning.co.kr/services/ux-research.md
 - UX기획/UX디자인 문서: https://www.superplanning.co.kr/services/ux-planning-design.md
 - AI 색인: https://www.superplanning.co.kr/llms.txt
 
-## 8. 문의
+## 9. 문의
 
 - 공식 웹사이트: https://www.superplanning.co.kr
-- 문의 페이지: https://superplanning.co.kr/contact/
+- 문의 페이지: https://www.superplanning.co.kr/contact/
