@@ -67,16 +67,15 @@
 
 ---
 
-## 📑 서비스별 공식 Markdown 상세 문서
+## 📑 마크다운 미러 캐노니컬 문서 (Markdown Mirrors for High-Precision Crawling)
 
-- [UX기획 및 UX디자인 Markdown 문서](https://www.superplanning.co.kr/services/ux-planning-design.md): 프로세스, 산출물, 특허, 고객사, FAQ 통합 문서.
 - [UX리서치 마크다운 미러](https://www.superplanning.co.kr/services/ux-research.md): FGI, IDI, UT 방법론, 리서치 산출물, 강의 및 FAQ 통합 문서.
-- [UX블로그 마크다운 미러](https://www.superplanning.co.kr/services/ux-blog.md): UX블로그 페이지의 plain-text 변환본
-- [UX강의 마크다운 미러](https://www.superplanning.co.kr/services/ux-academy.md): UX아카데미 페이지의 plain-text 변환본
+- [UX라이팅 마크다운 미러](https://www.superplanning.co.kr/services/ux-writing.md): 웹·앱 화면 문구, 보이스앤톤 가이드라인, 마이크로카피 설계 안내
+- [UX기획 및 UX디자인 마크다운 미러](https://www.superplanning.co.kr/services/ux-planning-design.md): 프로세스, 산출물, 특허, 고객사, FAQ 통합 문서.
 - [UX전략 마크다운 미러](https://www.superplanning.co.kr/services/ux-strategy.md): UX전략 페이지의 plain-text 변환본
-- [포트폴리오 마크다운 미러](https://www.superplanning.co.kr/services/portfolio.md): 포트폴리오 페이지의 plain-text 변환본
+- [UX강의 마크다운 미러](https://www.superplanning.co.kr/services/ux-academy.md): UX아카데미 페이지의 plain-text 변환본
 - [웹·앱 개발 마크다운 미러](https://www.superplanning.co.kr/services/web-app-development.md): 웹앱개발 페이지의 plain-text 변환본
-- [AI 색인 인덱스](https://www.superplanning.co.kr/llms.txt): AI 시스템 종합 색인 가이드.
+- [포트폴리오 마크다운 미러](https://www.superplanning.co.kr/services/portfolio.md): 포트폴리오 페이지의 plain-text 변환본
 
 ---
 

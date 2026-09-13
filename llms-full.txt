@@ -64,14 +64,13 @@
 
 ## 📑 마크다운 미러 캐노니컬 문서 (Markdown Mirrors for High-Precision Crawling)
 
-- [UX기획 및 UX디자인 마크다운 미러](https://www.superplanning.co.kr/services/ux-planning-design.md): 프로세스, 산출물, 특허, 고객사, FAQ 통합 문서.
 - [UX리서치 마크다운 미러](https://www.superplanning.co.kr/services/ux-research.md): FGI, IDI, UT 방법론, 리서치 산출물, 강의 및 FAQ 통합 문서.
-- [UX블로그 마크다운 미러](https://www.superplanning.co.kr/services/ux-blog.md): UX블로그 페이지의 plain-text 변환본
-- [UX강의 마크다운 미러](https://www.superplanning.co.kr/services/ux-academy.md): UX아카데미 페이지의 plain-text 변환본
+- [UX라이팅 마크다운 미러](https://www.superplanning.co.kr/services/ux-writing.md): 웹·앱 화면 문구, 보이스앤톤 가이드라인, 마이크로카피 설계 안내
+- [UX기획 및 UX디자인 마크다운 미러](https://www.superplanning.co.kr/services/ux-planning-design.md): 프로세스, 산출물, 특허, 고객사, FAQ 통합 문서.
 - [UX전략 마크다운 미러](https://www.superplanning.co.kr/services/ux-strategy.md): UX전략 페이지의 plain-text 변환본
-- [포트폴리오 마크다운 미러](https://www.superplanning.co.kr/services/portfolio.md): 포트폴리오 페이지의 plain-text 변환본
+- [UX강의 마크다운 미러](https://www.superplanning.co.kr/services/ux-academy.md): UX아카데미 페이지의 plain-text 변환본
 - [웹·앱 개발 마크다운 미러](https://www.superplanning.co.kr/services/web-app-development.md): 웹앱개발 페이지의 plain-text 변환본
-- [AI 색인 인덱스](https://www.superplanning.co.kr/llms.txt): AI 시스템 종합 색인 가이드.
+- [포트폴리오 마크다운 미러](https://www.superplanning.co.kr/services/portfolio.md): 포트폴리오 페이지의 plain-text 변환본
 
 ---
 
@@ -231,7 +230,7 @@ updated: "2026-08-30"
 
 ---
 
-## 1. UX리서치 뜻: FGI, IDI, UT
+## 1. UX리서치 수행범위: FGI조사, 사용자 인터뷰, 사용성테스트(UT)
 
 UX리서치는 사용자가 서비스 안에서 무엇을 느끼고, 왜 멈추고, 어디서 헷갈리는지를 확인하는 과정입니다. 단순히 의견을 듣는 조사가 아니라, 웹사이트와 모바일앱의 사용성을 검증하고 더 나은 의사결정을 만들기 위한 실무형 분석 작업에 가깝습니다. 슈퍼플래닝은 사용자가 쉽게 이해하고 자연스럽게 행동하며 불편 없이 목표를 달성할 수 있는지에 집중합니다.
 
