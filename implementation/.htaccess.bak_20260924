@@ -1,0 +1,21 @@
+DirectoryIndex index.html index.php
+
+<IfModule mod_mime.c>
+    AddDefaultCharset UTF-8
+    AddType "text/markdown; charset=UTF-8" .md
+    AddCharset UTF-8 .md .txt
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^/?class\.html$ /ux-academy/ [R=301,L,QSA]
+    RewriteRule ^/?uxplan\.html$ /ux-research/ [R=301,L,QSA]
+</IfModule>
