@@ -650,18 +650,17 @@
       color: #ffffff;
     }
 
-    /* [수정] 관련 서비스 안내 — 광고 문구 없이, 얇은 구분선 아래 버튼 2개만 깔끔하게 배치 */
-    .related-links {
-      margin: 28px 0 4px;
-      padding-top: 14px;
-      border-top: 1px dashed #cccccc;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .related-links .w95-btn {
-      padding: 6px 16px;
-      font-size: 12px;
+    /* 시각적으로는 숨기되 DOM에는 남겨 AI/크롤러가 읽을 수 있게 하는 접근성 표준 기법 (display:none 아님) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .tag-container {
@@ -1176,7 +1175,7 @@
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                 <span class="category-badge">UX리서치</span>
                 <span class="read-time-pill">3분 분량</span>
-                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 UX Lab · 2026-08-16 게시</span>
+                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 UX Lab<time class="sr-only" datetime="2026-08-16"> · 2026-08-16 게시</time></span>
               </div>
               <div style="display:flex; align-items:center; gap:6px;">
                 <button class="icon-action-btn" id="postBookmarkBtn" onclick="togglePostBookmark(2);" title="즐겨찾기 추가/제거">
@@ -1194,45 +1193,35 @@
 
             <div class="article-body">
 
-      <h2>가상의 질문이 왜 답을 왜곡시키나요?</h2>
-      <p>"만약 이런 기능이 나오면 쓰시겠어요?"라는 질문은 대부분 긍정적인 거짓 답변을 유도합니다. 사람은 미래의 자신을 실제보다 관대하게 평가하기 때문에, 가상의 상황을 물으면 <strong>의지의 응답</strong>이 나올 뿐 <strong>행동의 근거</strong>는 나오지 않습니다.</p>
-      <p>인터뷰가 겉으로는 부드럽게 흘러가도, 질문 설계 자체가 가상·의견 중심이면 그 결과는 의사결정에 쓸 수 없는 데이터가 됩니다.</p>
+      <h2>인터뷰가 부드럽게 흘러가도 왜 실패할 수 있나요?</h2>
+      <p>진행자와 참여자 사이에 어색함이 없고, 대화가 끊기지 않고 흘러갔다면 인터뷰가 잘 됐다고 느끼기 쉽습니다. 하지만 <strong>대화의 편안함</strong>과 <strong>데이터의 밀도</strong>는 서로 다른 문제입니다. 질문 설계가 가상의 상황이나 의견을 먼저 묻는 방식으로 짜여 있으면, 참여자는 편안하게 대답하면서도 실제로는 의사결정에 쓸 수 없는 답변만 내놓게 됩니다.</p>
+      <p>"이런 기능이 있으면 쓰시겠어요?"라는 질문에 "네, 쓸 것 같아요"라는 답이 돌아왔다고 해서 실제 사용으로 이어지지는 않습니다. 사람은 미래의 자신을 실제보다 관대하게 평가하기 때문에, 가상의 질문에는 <strong>의지의 응답</strong>이 나올 뿐 <strong>행동의 근거</strong>는 나오지 않습니다.</p>
 
-      <h2>과거 행동을 묻는 질문은 어떻게 설계하나요?</h2>
-      <p>핵심은 순서입니다. 의견이나 만족도를 먼저 묻지 말고, <strong>실제로 있었던 구체적 행동과 맥락</strong>부터 확인한 뒤 감정과 의견으로 넘어가야 답변의 밀도가 유지됩니다.</p>
-
-      <h3>침묵의 3초는 왜 필요할까요?</h3>
-      <p>사용자가 답을 마친 것 같아도 3초 정도 침묵을 유지하면, 대부분 스스로 답을 보충하며 더 솔직한 정보를 꺼냅니다. 진행자가 침묵을 못 견디고 다음 질문으로 넘어가면 이 구간의 정보는 영구히 사라집니다.</p>
-
-      <table class="compare-table">
-        <caption>인터뷰 질문 설계 Before → After 비교</caption>
-        <thead>
-          <tr><th>피해야 할 질문 (가상·의견형)</th><th class="compare-arrow-col" aria-hidden="true"></th><th>권장 질문 (과거 행동형)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>이 기능이 있으면 쓰시겠어요?</td><td class="compare-arrow-col" aria-hidden="true">→</td><td>지난주에 비슷한 문제를 어떻게 해결하셨나요?</td></tr>
-          <tr><td>이 화면 어떠세요?</td><td class="compare-arrow-col" aria-hidden="true">→</td><td>방금 이 화면에서 무엇을 하려고 하셨나요?</td></tr>
-          <tr><td>왜 이 앱을 안 쓰세요?</td><td class="compare-arrow-col" aria-hidden="true">→</td><td>마지막으로 이 앱을 쓴 게 언제였나요?</td></tr>
-        </tbody>
-      </table>
-
-      <h2>실무에서 바로 쓸 수 있는 인터뷰 체크리스트는 무엇인가요?</h2>
+      <h2>질문은 어떤 순서로 설계해야 하나요?</h2>
+      <p>인터뷰 질문지를 짤 때는 아래 3단계 순서를 지키는 것이 답변 밀도를 결정하는 가장 큰 변수입니다. 순서를 바꾸는 순간 같은 질문이라도 나오는 답의 질이 달라집니다.</p>
       <ol>
-        <li>첫 질문이 의견이 아닌 최근 행동을 묻고 있는가?</li>
-        <li>"왜(Why)"를 직접 반복해서 사용자를 방어적으로 만들지 않았는가?</li>
-        <li>답변 후 3초의 침묵을 의도적으로 유지했는가?</li>
-        <li>가정형("만약 ~라면") 질문을 실제 경험 질문으로 바꿨는가?</li>
+        <li><strong>맥락 확인</strong> — "최근에 이 문제를 겪은 상황을 하나 떠올려 주시겠어요?"처럼 구체적인 시점과 상황부터 고정합니다.</li>
+        <li><strong>행동 확인</strong> — "그때 실제로 어떻게 하셨나요?"처럼 그 상황에서 취한 실제 행동을 묻습니다. 의견이 아니라 행동입니다.</li>
+        <li><strong>의견 확인</strong> — 행동을 충분히 확인한 뒤에야 "그 방법이 만족스러우셨나요?"처럼 평가와 의견을 묻습니다.</li>
       </ol>
 
-      <blockquote><span class="type-text" id="quoteTypeText">"지난 일주일 동안 이 문제를 해결하기 위해 실제로 어떤 방법을 쓰셨나요?"처럼 과거 행동을 물어야 진짜 인사이트가 나옵니다.</span></blockquote>
+      <h3>순서를 바꾸면 어떤 문제가 생기나요?</h3>
+      <p>의견이나 만족도를 맨 앞에 두면 참여자는 그 시점부터 <strong>평가자 모드</strong>로 전환됩니다. 이후에 아무리 행동을 물어도 이미 자신이 내린 평가에 맞춰 답을 재구성하는 경향이 생기기 때문에, 맥락과 행동을 먼저 고정하는 순서를 지켜야 합니다.</p>
 
-      <h2>인터뷰 질문지는 몇 번을 검토해야 하나요?</h2>
-      <p>질문 하나하나보다 <strong>질문의 순서</strong>가 답변 밀도를 좌우하기 때문에, 최소 1회는 팀 내에서 실제로 서로 인터뷰해보며 순서를 리허설하는 것을 권장합니다. 슈퍼플래닝은 IDI(심층 인터뷰) 설계 시 질문지 초안을 실제 리허설 세션으로 먼저 검증한 뒤 현장에 투입합니다.</p>
+      <blockquote><span class="type-text" id="quoteTypeText">질문 하나의 표현보다, 맥락 → 행동 → 의견이라는 질문의 순서가 답변 밀도를 결정합니다.</span></blockquote>
 
-            </div>
+      <h2>침묵과 "왜"를 다루는 현장 기술은 무엇인가요?</h2>
+      <p>질문지가 잘 설계돼 있어도, 현장에서 진행자가 답변을 받는 방식에 따라 정보량이 크게 달라집니다. 아래 항목은 실제 인터뷰 세션에서 자주 놓치는 부분입니다.</p>
+      <ul>
+        <li>사용자가 답을 마친 것 같아도 3초 정도 침묵을 유지하면, 대부분 스스로 답을 보충하며 더 솔직한 정보를 꺼냅니다.</li>
+        <li>"왜 그렇게 하셨나요?"를 반복하면 참여자는 추궁받는 느낌을 받아 방어적으로 답하기 시작합니다. "그 순간에 어떤 생각이 드셨나요?"처럼 우회해서 묻는 편이 안전합니다.</li>
+        <li>참여자의 표현을 그대로 따라 반복해주는 것("방금 말씀하신 '번거롭다'는 게 구체적으로 어떤 느낌이었나요?")만으로도 답변이 한 단계 더 구체화됩니다.</li>
+        <li>한 세션에 다루는 주제는 최대 2~3개로 제한해야, 뒤로 갈수록 답변이 형식적으로 짧아지는 현상을 줄일 수 있습니다.</li>
+      </ul>
 
-            <div class="related-links">
-              <a href="/contact/" class="w95-btn">무료 컨설팅 받기 →</a>
+      <h2>질문지는 인터뷰 전에 무엇을 검증해야 하나요?</h2>
+      <p>질문 하나하나를 다듬는 것보다 <strong>질문 순서를 실제로 소리 내어 리허설</strong>해보는 과정이 훨씬 큰 차이를 만듭니다. 순서가 자연스러운지, 감정을 묻는 질문이 행동 질문보다 먼저 나오지는 않는지는 글로만 봐서는 잘 드러나지 않기 때문입니다. 슈퍼플래닝은 IDI(심층 인터뷰) 설계 시 질문지 초안을 팀 내 리허설 세션으로 먼저 검증한 뒤 실제 현장에 투입합니다.</p>
+
             </div>
 
             <div class="tag-container">
