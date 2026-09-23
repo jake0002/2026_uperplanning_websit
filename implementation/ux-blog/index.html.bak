@@ -1,0 +1,3392 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://www.superplanning.co.kr | SECONDARY: https://superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://www.superplanning.co.kr">
+
+  <!-- OPEN GRAPH & KAKAOTALK / NAVER / FACEBOOK SHARE THUMBNAIL (CACHE BUSTING: ?v=20260818) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="UX블로그 — UX디자인·리서치·라이팅·AI-UX 인사이트 | 슈퍼플래닝">
+  <meta property="og:description" content="슈퍼플래닝 공식 UX블로그. UX리서치·UX라이팅·UX기획·AI-UX·바이브코딩·피그마 실무 노트와 사례 19건을 UX에이전시 실무 리드가 직접 정리했습니다.">
+  <meta property="og:url" content="https://www.superplanning.co.kr/ux-blog/">
+  <meta property="og:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:secure_url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="슈퍼플래닝 UX블로그 — UX디자인·리서치·라이팅·AI-UX 인사이트 썸네일">
+  <meta property="og:image:url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <link rel="image_src" href="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UX블로그 — UX디자인·리서치·라이팅·AI-UX 인사이트 | 슈퍼플래닝">
+  <meta name="twitter:description" content="슈퍼플래닝 공식 UX블로그. UX리서치·UX라이팅·UX기획·AI-UX·바이브코딩·피그마 실무 노트와 사례 19건을 UX에이전시 실무 리드가 직접 정리했습니다.">
+  <meta name="twitter:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta name="twitter:domain" content="www.superplanning.co.kr">
+  <meta name="twitter:url" content="https://www.superplanning.co.kr/ux-blog/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="UX블로그, UX리서치, UX라이팅, UX디자인, AI UX, 피그마, 바이브코딩, UX 인사이트, 슈퍼플래닝, Superplanning">
+  <meta name="author" content="슈퍼플래닝 (Superplanning)">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="canonical" href="https://www.superplanning.co.kr/ux-blog/">
+  <link rel="alternate" hreflang="ko" href="https://www.superplanning.co.kr/ux-blog/" />
+  <link rel="describedby" type="text/plain" title="AI 색인 (llms.txt) - UX블로그" href="https://www.superplanning.co.kr/llms.txt">
+  <link rel="alternate" type="text/markdown" title="마크다운 미러 (UX블로그)" href="https://www.superplanning.co.kr/services/ux-blog.md">
+  <title>UX 블로그 | UX디자인·리서치·라이팅 및 AI-UX 실무 인사이트 - 슈퍼플래닝</title>
+  <meta name="description" content="UX디자인 에이전시 슈퍼플래닝의 공식 블로그입니다. 5건의 UX 특허 기술과 풍부한 현업 노하우를 바탕으로 UX리서치, UX라이팅, 서비스 기획, 프로덕트 디자인, AI 기반 웹·앱 개발 인사이트를 공유합니다.">
+
+  <style>
+    /* ==================================================== */
+    /* DESIGN TOKENS & RESET (EXACT UX-RESEARCH SUBPAGE MATCH) */
+    /* ==================================================== */
+    :root {
+      --bg: #ffffff;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --bevel-hi: #ffffff;
+      --bevel-shadow: #7b7b7b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      letter-spacing: -0.01em;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a {
+      color: #111111;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #555555;
+    }
+
+    /* Win95 Button Utility */
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+      text-decoration: none;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* HOME BUTTON AT FAR LEFT */
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo span, #brandLogoText {
+      color: #ffffff !important;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+
+    /* GNB HEADER BAR */
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (EXACT UX-RESEARCH MATCH) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible !important;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1 !important;
+    }
+
+    .gnb-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      user-select: none !important;
+    }
+    .gnb-link:hover, .gnb-link:active, .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span, .gnb-link:active span, .gnb-link.active span {
+      color: #ffffff !important;
+    }
+    .gnb-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Mobile Hamburger & Drawer */
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 10px;
+    }
+    #mobileNavDrawer.show { display: block !important; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    /* Outer Wrapper for Left Alignment */
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* ==================================================== */
+    /* WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT UX-RESEARCH MATCH) */
+    /* ==================================================== */
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 1. Black Titlebar (#000000 - Main Screen Match) */
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+      user-select: none;
+    }
+    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .titlebar-controls { display: flex; flex-direction: row; align-items: center; gap: 3px; }
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+
+    /* 2. Menu Bar (#c0c0c0) */
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+      user-select: none;
+    }
+    .menubar span { cursor: default; }
+    .menubar u { text-decoration: underline; }
+
+    /* 3. Toolbar & Address Bar Area */
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active { box-shadow: inset 1px 1px 0 #808080; }
+
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .addr-label { font-weight: bold; white-space: nowrap; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /* 4. Explorer Split Pane */
+    .explorer-split {
+      display: flex;
+      background: #ffffff;
+      min-height: 640px;
+    }
+
+    /* Left Explorer Tree View Sidebar (Exact UX-Research Match) */
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      box-shadow: inset -1px 0 0 #d0d0d0;
+      padding: 16px 12px;
+      user-select: none;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tree-toggle {
+      font-size: 11px;
+      font-weight: bold;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      line-height: 1;
+    }
+
+    /* Tree Navigation List (ul.tree-list.toc) */
+    ul.tree-list {
+      list-style-type: none;
+      padding-left: 8px;
+      margin: 0;
+      position: relative;
+    }
+    ul.tree-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 12px;
+      left: 18px;
+      border-left: 1px dotted #808080;
+    }
+
+    .tree-item {
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .tree-item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -10px;
+      width: 10px;
+      border-top: 1px dotted #808080;
+    }
+
+    .tree-item a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      padding: 4px 8px;
+      color: #000000;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+    .tree-item a:hover, .tree-item a.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    .tree-item a:hover .badge-count, .tree-item a.active .badge-count {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+    .badge-count {
+      font-size: 11px;
+      font-weight: 800;
+      background: #e0e0e0;
+      color: #000000;
+      padding: 1px 6px;
+      border-radius: 10px;
+      border: 1px solid #000000;
+    }
+
+    /* Right Main Content Pane */
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 32px 36px;
+      overflow-y: auto;
+    }
+
+    /* BLOG HEADER ROW */
+    .blog-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #000000;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .blog-header-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .blog-breadcrumb {
+      font-size: 12px;
+      color: #666666;
+      font-weight: 600;
+    }
+    .blog-header-title h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.02em;
+    }
+
+    /* SEARCH BAR BOX */
+    .search-box-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .search-input {
+      width: 220px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #000000;
+      outline: none;
+      background: #ffffff;
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+    .search-btn {
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      background: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      cursor: pointer;
+    }
+    .search-btn:hover { background: #333333; }
+
+    /* POST-IT STICKY NOTE CARDS GRID */
+    .postit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* POST-IT STICKY NOTE CARD (B&W High-Contrast Theme) */
+    .postit-card {
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 4px 4px 0 #000000;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .postit-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0 #000000;
+    }
+
+    .postit-top-band {
+      background: #f0f0f0;
+      border-bottom: 2px solid #000000;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .category-badge {
+      font-size: 11px;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .icon-action-btn {
+      background: #ffffff;
+      border: 1px solid #000000;
+      box-shadow: 1px 1px 0 #000000;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 3px 7px;
+      color: #000000;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.1s ease;
+    }
+    .icon-action-btn:hover { background: #000000; color: #ffffff; box-shadow: 0 0 0 #000000; }
+    .icon-action-btn:hover svg { stroke: #ffffff; }
+    .icon-action-btn.bookmarked { color: #000000; font-weight: bold; }
+
+    .postit-body {
+      padding: 14px 14px 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .postit-title a:hover { text-decoration: underline; }
+    .postit-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .postit-excerpt {
+      font-size: 12.5px;
+      color: #333333;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .postit-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+    .tag-pill.active-tag { background: #000000 !important; color: #ffffff !important; }
+    .tag-pill {
+      font-size: 11px;
+      font-weight: 700;
+      background: #f4f4f4;
+      color: #000000;
+      padding: 2px 6px;
+      border: 1px solid #000000;
+    }
+
+    .postit-footer {
+      border-top: 1px dashed #000000;
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .read-time-btn {
+      font-size: 12px;
+      font-weight: 800;
+      background: #ffffff;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #000000;
+      transition: all 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .read-time-btn:hover {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 0 0 #000000;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      padding: 60px 20px;
+      text-align: center;
+      border: 2px dashed #000000;
+      background: #fafafa;
+    }
+    .no-results h3 { font-size: 16px; margin-bottom: 8px; font-weight: 800; }
+    .no-results p { font-size: 13px; color: #555555; }
+
+    /* W95 POST READER MODAL */
+    .w95-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      padding: 16px;
+    }
+    .w95-modal-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .w95-modal-window {
+      background: #ffffff;
+      border: 3px solid #000000;
+      box-shadow: 8px 8px 0 #000000;
+      width: 100%;
+      max-width: 720px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .modal-titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .modal-post-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #000000;
+    }
+    .modal-post-content {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #222222;
+    }
+    .modal-post-content p { margin-bottom: 14px; }
+    .modal-post-content h3 { font-size: 16px; font-weight: 800; margin: 20px 0 10px; color: #000000; }
+    .modal-post-content blockquote {
+      border-left: 4px solid #000000;
+      padding: 10px 14px;
+      background: #f4f4f4;
+      margin: 16px 0;
+      font-weight: 600;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #000000;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0 #000000;
+      z-index: 10001;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* STATUSBAR */
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333333;
+      user-select: none;
+    }
+
+    @media (max-width: 960px) {
+      .postit-grid { grid-template-columns: repeat(2, 1fr); }
+      .tree-sidebar { width: 220px; }
+    }
+        /* Responsive Adjustments for Mobile Explorer Split (EXACT UX-WRITING MATCH) */
+    @media (max-width: 980px) {
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+      .tree-sidebar { width: 220px; min-width: 200px; }
+      .main-content-pane { padding: 24px 28px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 8px;
+        font-size: 11px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      .page-wrapper {
+        padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 8px 16px 8px;
+      }
+      .explorer-split {
+        flex-direction: column;
+      }
+      .tree-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #808080;
+      }
+    }
+    @media (max-width: 720px) {
+      .explorer-split { flex-direction: column; }
+      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #808080; }
+      .postit-grid { grid-template-columns: 1fr; }
+      .blog-header-row { flex-direction: column; align-items: flex-start; }
+      .search-box-wrap { width: 100%; }
+      .search-input { flex: 1; }
+    }
+  /* RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+  
+    /* Bottom Inline Navigation Footer (Exact UX-Research Match) */
+    .bottom-nav {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #000000;
+      font-size: 13px;
+    }
+    .bottom-nav p {
+      margin-bottom: 8px;
+    }
+
+/* 9. TASKBAR (EXACT COPY FROM MAIN PAGE) */
+    #taskbar {
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--taskbar-h);
+      background: var(--taskbar);
+      border-top: 2px solid #fff;
+      box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 6px;
+      user-select: none !important;
+    }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+
+    /* Start Menu (z-index: 999999 !important) */
+    #startMenu {
+      position: fixed !important;
+      bottom: 38px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      display: none;
+      padding: 4px !important;
+    }
+    #startMenu.show { display: flex !important; }
+    .start-banner {
+      width: 28px;
+      background: #000000;
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      max-width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #dfdfdf;
+      font-weight: bold;
+    }
+
+    /* Responsive Adjustments for Mobile Explorer Split */
+    @media (max-width: 980px) {
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+      .tree-sidebar { width: 220px; min-width: 200px; }
+      .main-content-pane { padding: 24px 28px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 8px;
+        font-size: 11px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      .page-wrapper {
+        padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 8px 16px 8px;
+      }
+      .explorer-split {
+        flex-direction: column;
+      }
+      .tree-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #808080;
+        padding: 12px;
+      }
+      .main-content-pane {
+        padding: 20px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+    }
+  
+    /* BACK TO TOP ANCHOR BUTTON (RETRO WINDOWS STYLE) */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 50px;
+      right: 20px !important; left: auto !important;
+      z-index: 999999;
+      background: var(--win-bg);
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35);
+      padding: 5px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b;
+      transform: translate(1px, 1px);
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn { display: none !important;  right: 20px !important; left: auto !important;}
+      /* #taskbar visible on all screens */
+      body { padding-bottom: 0 !important; }
+    }
+
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+
+    /* Start Button Pointer-Events Guard */
+    #startBtn * { pointer-events: none !important; }
+    #startMenu {
+      position: fixed !important;
+      bottom: 38px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      display: none;
+      padding: 4px !important;
+    }
+    #startMenu.show { display: flex !important; }
+
+    /* TASKBAR ALWAYS VISIBLE & HIGH Z-INDEX */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      height: 36px !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      box-shadow: inset 0 1px 0 #7b7b7b !important;
+    }
+    #startMenu {
+      position: fixed !important;
+      bottom: 36px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      padding: 4px !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+    }
+
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      right: 20px !important; left: auto !important;
+      bottom: 48px !important;
+    }
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu {
+      display: none;
+      position: fixed !important;
+      bottom: 32px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+</style>
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Organization","@id": "https://www.superplanning.co.kr/#organization","name":"슈퍼플래닝 (Superplanning)","alternateName":"Superplanning","url":"https://www.superplanning.co.kr/","logo":{"@type":"ImageObject","url":"https://www.superplanning.co.kr/og-thumbnail.png?v=20260818","width":1200,"height":630},"image":"https://www.superplanning.co.kr/og-thumbnail.png?v=20260818","email":"jake@superplanning.co.kr","telephone":"+82-31-699-3298","contactPoint":[{"@type":"ContactPoint","telephone":"+82-31-699-3298","contactType":"customer service","areaServed":"KR","availableLanguage":["ko-KR"]}],"founder":{"@type":"Person","name":"제이크 (Jake)"},"sameAs":["https://www.superplanning.co.kr","https://www.youtube.com/@superplanning","https://www.threads.net/@superplanning","https://www.instagram.com/superplanning.kr"]},
+    {"@type":"WebSite","@id": "https://www.superplanning.co.kr/#website","url":"https://www.superplanning.co.kr/","name":"슈퍼플래닝 (Superplanning)","inLanguage":"ko-KR","publisher":{"@id": "https://www.superplanning.co.kr/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.superplanning.co.kr/search?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"CollectionPage","@id": "https://www.superplanning.co.kr/ux-blog#webpage","url":"https://www.superplanning.co.kr/ux-blog/","name":"UX블로그 | 슈퍼플래닝","description":"UX디자인·리서치·라이팅·AI-UX 실무 인사이트 아카이브 (총 19건).","inLanguage":"ko-KR","isPartOf":{"@id": "https://www.superplanning.co.kr/#website"},"breadcrumb":{"@id":"https://www.superplanning.co.kr/ux-blog/#breadcrumb"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://www.superplanning.co.kr/og-thumbnail.png?v=20260818"}},
+    {"@type":"BreadcrumbList","@id":"https://www.superplanning.co.kr/ux-blog/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.superplanning.co.kr/"},{"@type":"ListItem","position":2,"name":"UX블로그","item":"https://www.superplanning.co.kr/ux-blog/"}]},
+    {"@type":"ItemList","@id":"https://www.superplanning.co.kr/ux-blog/#category-list","name":"UX블로그 카테고리 묶음","itemListElement":[{"@type":"ListItem","position":1,"name":"UX리서치","url":"https://www.superplanning.co.kr/ux-blog/#UX리서치"},{"@type":"ListItem","position":2,"name":"UX라이팅","url":"https://www.superplanning.co.kr/ux-blog/#UX라이팅"},{"@type":"ListItem","position":3,"name":"UX기획/디자인","url":"https://www.superplanning.co.kr/ux-blog/#UX기획디자인"},{"@type":"ListItem","position":4,"name":"AI트랜드","url":"https://www.superplanning.co.kr/ux-blog/#AI트랜드"},{"@type":"ListItem","position":5,"name":"피그마","url":"https://www.superplanning.co.kr/ux-blog/#피그마"},{"@type":"ListItem","position":6,"name":"바이브코딩","url":"https://www.superplanning.co.kr/ux-blog/#바이브코딩"}]},
+    {"@type":"DefinedTerm","@id":"https://www.superplanning.co.kr/ux-blog/#term-ux-blog","name":"UX 블로그 (UX Blog)","alternateName":["슈퍼플래닝 블로그","UX 인사이트"],"description":"UX디자인 에이전시 슈퍼플래닝이 운영하는 UX리서치·UX라이팅·UX기획·AI-UX 실무 노트와 사례 공개 아카이브.","inDefinedTermSet":{"@type":"DefinedTermSet","name":"슈퍼플래닝 용어집"}},
+    {"@type":"DigitalDocument","@id":"https://www.superplanning.co.kr/services/ux-blog.md","name":"UX블로그 - 마크다운 미러","encodingFormat":"text/markdown","url":"https://www.superplanning.co.kr/services/ux-blog.md","isBasedOn":{"@id": "https://www.superplanning.co.kr/ux-blog#webpage"},"inLanguage":"ko-KR","publisher":{"@id": "https://www.superplanning.co.kr/#organization"},"dateModified":"2026-08-30T09:00:00+09:00"},
+    {"@type":"WebAPI","@id":"https://www.superplanning.co.kr/llms.txt","name":"슈퍼플래닝 AI 색인 (llms.txt)","documentation":"https://www.superplanning.co.kr/llms.txt","provider":{"@id": "https://www.superplanning.co.kr/#organization"}},
+    {"@type":"WebPage","@id":"https://www.superplanning.co.kr/ux-blog/#webpage-info","url":"https://www.superplanning.co.kr/ux-blog/","name":"UX블로그 | 슈퍼플래닝","inLanguage":"ko-KR","isPartOf":{"@id": "https://www.superplanning.co.kr/#website"},"about":{"@type":"Thing","name":"UX디자인 실무 인사이트"}}
+  ]}
+  </script>
+</head>
+<body>
+
+  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://www.superplanning.co.kr/';">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="gnb">
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-writing/"><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-design/"><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/web-app-development/"><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link active" href="/ux-blog/"><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-company/"><span>회사소개</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/contact/"><span>문의하기</span></a>
+      </li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+    </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
+    </div>
+  </div>
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <!-- WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT UX-RESEARCH MATCH) -->
+    <div class="explorer-window">
+      
+      <!-- 1. Black Titlebar (#000000 - Main Screen Match) -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn" onclick="location.href='https://www.superplanning.co.kr/';">✕</div>
+        </div>
+      </div>
+
+      <!-- 2. Menu Bar (#c0c0c0) -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- 3. Toolbar & Address Bar Area -->
+      <div class="toolbar-area">
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_블로그</div>
+        </div>
+      </div>
+
+      <!-- 4. Explorer Split Pane (Left Sidebar + Right Main Content) -->
+      <div class="explorer-split">
+
+        <!-- Left Explorer Tree Sidebar (Exact UX-Research Match) -->
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>슈퍼플래닝 &gt; UX블로그</span>
+          </div>
+
+          <!-- Tree List TOC (ul.tree-list.toc) -->
+          <ul class="tree-list toc" id="categoryNav">
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">19</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>1. UX리서치</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX라이팅"><span class="doc-icon">📄</span> <span>2. UX라이팅</span> <span class="badge-count">4</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획/디자인"><span class="doc-icon">📄</span> <span>3. UX기획/디자인</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="AI트랜드"><span class="doc-icon">📄</span> <span>4. AI트랜드</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="피그마"><span class="doc-icon">📄</span> <span>5. 피그마</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="바이브코딩"><span class="doc-icon">📄</span> <span>6. 바이브코딩</span> <span class="badge-count">3</span></a></li>
+          </ul>
+        </aside>
+
+        <!-- Right Main Content View Pane -->
+        <main class="main-content-pane">
+          <!-- HEADER & SEARCH -->
+          <div class="blog-header-row">
+            <div class="blog-header-title">
+              
+              <h1>UX블로그</h1>
+            </div>
+            <div class="search-box-wrap">
+              <input type="text" id="searchInput" class="search-input" placeholder="검색어 입력">
+              <button id="searchBtn" class="search-btn">검색하기</button>
+            </div>
+          </div>
+
+          <!-- POST-IT CARDS GRID CONTAINER -->
+          <div class="postit-grid" id="postitGrid">
+          <noscript>
+          <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 19건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
+          </noscript>
+
+                        <article class="postit-card" data-id="1">
+              <div class="postit-top-band">
+                <span class="category-badge">UX?쇱씠??/span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 1);" title="利먭꺼李얘린 異붽?/?쒓굅">??/button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 1);" title="?꾪떚??留곹겕 怨듭쑀?섍린">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">怨듭쑀</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') &amp;&amp; !event.target.closest('.tag-pill')) location.href='/ux-blog/button-copy-clarity-conversion/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/button-copy-clarity-conversion/" style="color:inherit; text-decoration:none;">?꾪솚?⑤낫??癒쇱? 遊먯빞 ?섎뒗 踰꾪듉 臾멸뎄??紐낇솗??/a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/button-copy-clarity-conversion/" style="color:inherit; text-decoration:none;">醫뗭븘 蹂댁씠??臾멸뎄蹂대떎 以묒슂??嫄??대┃ ?댄썑 ?대뼡 ?쇱씠 踰뚯뼱吏?붿? 諛붾줈 ?댄빐?섍쾶 留뚮뱶???쇱엯?덈떎. ?뺤씤, ?쒖텧 媛숈? 異붿긽 臾멸뎄 ????ㅼ쓬 ?됰룞???덇퀬?섎뒗 移댄뵾媛 ?ъ슜??遺덉븞??癒쇱? 以꾩엯?덈떎.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#踰꾪듉移댄뵾');" style="cursor:pointer;" title="#踰꾪듉移댄뵾 ?쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#踰꾪듉移댄뵾</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?꾪솚??);" style="cursor:pointer;" title="#?꾪솚???쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?꾪솚??/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#留덉씠?щ줈移댄뵾');" style="cursor:pointer;" title="#留덉씠?щ줈移댄뵾 ?쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#留덉씠?щ줈移댄뵾</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/button-copy-clarity-conversion/" class="read-time-btn" style="text-decoration:none;">
+                    45珥?留뚯뿉 ?쎄린 ??                  </a>
+                </div>
+              </div>
+            </article>
+
+                        <article class="postit-card" data-id="2">
+              <div class="postit-top-band">
+                <span class="category-badge">UX由ъ꽌移?/span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 2);" title="利먭꺼李얘린 異붽?/?쒓굅">??/button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 2);" title="?꾪떚??留곹겕 怨듭쑀?섍린">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">怨듭쑀</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') &amp;&amp; !event.target.closest('.tag-pill')) location.href='/ux-blog/interview-question-design-mistakes/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/interview-question-design-mistakes/" style="color:inherit; text-decoration:none;">?명꽣酉?吏덈Ц ?ㅺ퀎?먯꽌 ?먯＜ ?앷린??珥덈낫 ?ㅼ닔</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/interview-question-design-mistakes/" style="color:inherit; text-decoration:none;">吏덈Ц??遺?쒕읇?ㅺ퀬 ?명꽣酉곌? ???섎뒗 嫄??꾨떃?덈떎. 寃쏀뿕 ?뺤씤 ?놁씠 ?섍껄遺??臾산굅?? 留λ씫怨?媛먯젙????吏덈Ц???욌뒗 ?쒓컙 ?듬???諛?꾧? 湲됯꺽???⑥뼱吏묐땲?? ?ㅼ젣 ?됰룞???뚯뼱?대뒗 ?쒖꽌媛 ?듭떖?낅땲??</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?명꽣酉곗쭏臾?);" style="cursor:pointer;" title="#?명꽣酉곗쭏臾??쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?명꽣酉곗쭏臾?/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX由ъ꽌移?);" style="cursor:pointer;" title="#UX由ъ꽌移??쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#UX由ъ꽌移?/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?ъ슜?먯“??);" style="cursor:pointer;" title="#?ъ슜?먯“???쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?ъ슜?먯“??/span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/interview-question-design-mistakes/" class="read-time-btn" style="text-decoration:none;">
+                    60珥?留뚯뿉 ?쎄린 ??                  </a>
+                </div>
+              </div>
+            </article>
+
+                        <article class="postit-card" data-id="3">
+              <div class="postit-top-band">
+                <span class="category-badge">UX湲고쉷/?붿옄??/span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 3);" title="利먭꺼李얘린 異붽?/?쒓굅">??/button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 3);" title="?꾪떚??留곹겕 怨듭쑀?섍린">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">怨듭쑀</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') &amp;&amp; !event.target.closest('.tag-pill')) location.href='/ux-blog/ux-spec-document-developer-confusion/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/ux-spec-document-developer-confusion/" style="color:inherit; text-decoration:none;">?붾㈃?뺤쓽?쒓? ?덉걶?곕룄 媛쒕컻???룰컝由щ뒗 ?댁쑀</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/ux-spec-document-developer-confusion/" style="color:inherit; text-decoration:none;">蹂닿린 醫뗭? ?뺤쓽?쒓? 怨?醫뗭? ?뺤쓽?쒕뒗 ?꾨떃?덈떎. ?곹깭媛? ?덉쇅 ?먮쫫, ?곌껐 洹쒖튃??鍮꾩뼱 ?덉쑝硫??붿옄?대꼫? 媛쒕컻?? QA媛 ?쒕줈 ?ㅻⅨ ?붾㈃???곸긽?섍쾶 ?⑸땲?? 誘멸컧蹂대떎 湲곗???癒쇱??낅땲??</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?붾㈃?뺤쓽??);" style="cursor:pointer;" title="#?붾㈃?뺤쓽???쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?붾㈃?뺤쓽??/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?쒕퉬?ㅺ린??);" style="cursor:pointer;" title="#?쒕퉬?ㅺ린???쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?쒕퉬?ㅺ린??/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?덉쇅?먮쫫');" style="cursor:pointer;" title="#?덉쇅?먮쫫 ?쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?덉쇅?먮쫫</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/ux-spec-document-developer-confusion/" class="read-time-btn" style="text-decoration:none;">
+                    45珥?留뚯뿉 ?쎄린 ??                  </a>
+                </div>
+              </div>
+            </article>
+
+                        <article class="postit-card" data-id="4">
+              <div class="postit-top-band">
+                <span class="category-badge">AI-UX媛뺤쓽</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 4);" title="利먭꺼李얘린 異붽?/?쒓굅">??/button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 4);" title="?꾪떚??留곹겕 怨듭쑀?섍린">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">怨듭쑀</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') &amp;&amp; !event.target.closest('.tag-pill')) location.href='/ux-blog/ai-wireframe-ux-criteria/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/ai-wireframe-ux-criteria/" style="color:inherit; text-decoration:none;">AI?먭쾶 ??댁뼱?꾨젅?꾩쓣 留↔린湲??꾩뿉 癒쇱? ?뺥빐???섎뒗 UX 湲곗?</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/ai-wireframe-ux-criteria/" style="color:inherit; text-decoration:none;">AI?먭쾶 ??댁뼱?꾨젅?꾩쓣 洹몃깷 留↔린硫?洹몃윺?명븯吏留??닿툔???붾㈃???섏샃?덈떎. 紐⑹쟻, 留λ씫, ?곗꽑?쒖쐞, ?깃났 湲곗???癒쇱? ?뺣━?댁빞 ?꾨＼?꾪듃媛 ?쒕?濡??묐룞?⑸땲??</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX ?쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#AIUX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#??댁뼱?꾨젅??);" style="cursor:pointer;" title="#??댁뼱?꾨젅???쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#??댁뼱?꾨젅??/span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#?꾨＼?꾪듃?ㅺ퀎');" style="cursor:pointer;" title="#?꾨＼?꾪듃?ㅺ퀎 ?쒓렇 ?ъ뒪??紐⑥븘蹂닿린">#?꾨＼?꾪듃?ㅺ퀎</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/ai-wireframe-ux-criteria/" class="read-time-btn" style="text-decoration:none;">
+                    60珥?留뚯뿉 ?쎄린 ??                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="5">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 5);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 5);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 5 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-5/" style="color:inherit; text-decoration:none;">AI UX에서 프롬프트보다 먼저 정해야 하는 기준</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-5/" style="color:inherit; text-decoration:none;">프롬프트를 잘 쓰는 것보다 먼저 필요한 건 문제정의와 검증 기준입니다. 어떤 장면에서 AI를 쓸지, 결과를 누가 어떤 기준으로 확인하는지 정리되지 않으면 도입은 금방 흐려집니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX 태그 포스팅 모아보기">#AIUX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#문제정의');" style="cursor:pointer;" title="#문제정의 태그 포스팅 모아보기">#문제정의</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#검증기준');" style="cursor:pointer;" title="#검증기준 태그 포스팅 모아보기">#검증기준</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-5/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="6">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 6);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 6);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 6 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-6/" style="color:inherit; text-decoration:none;">바이브코딩으로 프로토타입 검증 속도를 높이는 방법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-6/" style="color:inherit; text-decoration:none;">완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프로토타입');" style="cursor:pointer;" title="#프로토타입 태그 포스팅 모아보기">#프로토타입</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#검증루프');" style="cursor:pointer;" title="#검증루프 태그 포스팅 모아보기">#검증루프</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-6/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="7">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 7);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 7);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 7 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-7/" style="color:inherit; text-decoration:none;">에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-7/" style="color:inherit; text-decoration:none;">시스템 오케스트레이션 코드 대신 사용자가 지금 무엇을 바로잡아야 하는지 친절하고 간결하게 설명할 때 탈퇴율을 극적으로 낮출 수 있습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#에러메시지');" style="cursor:pointer;" title="#에러메시지 태그 포스팅 모아보기">#에러메시지</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX라이팅');" style="cursor:pointer;" title="#UX라이팅 태그 포스팅 모아보기">#UX라이팅</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#예외처리');" style="cursor:pointer;" title="#예외처리 태그 포스팅 모아보기">#예외처리</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-7/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="8">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 8);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 8);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 8 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-8/" style="color:inherit; text-decoration:none;">UT(사용성 테스트) 진행 시 모더레이터가 절대 하지 말아야 할 말</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-8/" style="color:inherit; text-decoration:none;">사용자가 헤매는 순간 '오른쪽 상단 버튼을 누르시면 됩니다'라고 힌트를 주는 순간, 테스트의 모든 데이터는 왜곡됩니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#사용성테스트');" style="cursor:pointer;" title="#사용성테스트 태그 포스팅 모아보기">#사용성테스트</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UT');" style="cursor:pointer;" title="#UT 태그 포스팅 모아보기">#UT</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#모더레이팅');" style="cursor:pointer;" title="#모더레이팅 태그 포스팅 모아보기">#모더레이팅</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-8/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="9">
+              <div class="postit-top-band">
+                <span class="category-badge">UX기획/디자인</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 9);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 9);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 9 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-9/" style="color:inherit; text-decoration:none;">디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-9/" style="color:inherit; text-decoration:none;">컬러와 타이포그래피 변수(Token)를 컴포넌트 하드코딩 값과 독립시켜야 다크모드 및 모바일/데스크톱 파급 변경 시 오류가 생기지 않습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자인시스템');" style="cursor:pointer;" title="#디자인시스템 태그 포스팅 모아보기">#디자인시스템</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자인토큰');" style="cursor:pointer;" title="#디자인토큰 태그 포스팅 모아보기">#디자인토큰</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#컴포넌트');" style="cursor:pointer;" title="#컴포넌트 태그 포스팅 모아보기">#컴포넌트</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-9/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="10">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 10);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 10);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 10 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-10/" style="color:inherit; text-decoration:none;">생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-10/" style="color:inherit; text-decoration:none;">단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#생성형AI');" style="cursor:pointer;" title="#생성형AI 태그 포스팅 모아보기">#생성형AI</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#캔버스UX');" style="cursor:pointer;" title="#캔버스UX 태그 포스팅 모아보기">#캔버스UX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AI인터페이스');" style="cursor:pointer;" title="#AI인터페이스 태그 포스팅 모아보기">#AI인터페이스</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-10/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="11">
+              <div class="postit-top-band">
+                <span class="category-badge">피그마</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 11);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 11);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 11 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-11/" style="color:inherit; text-decoration:none;">피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-11/" style="color:inherit; text-decoration:none;">오토 레이아웃의 Min/Max Width 설정과 컴포넌트 속성(Variant, Boolean, Instance Swap)을 정교하게 다루는 실무 테크닉.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AutoLayout');" style="cursor:pointer;" title="#AutoLayout 태그 포스팅 모아보기">#AutoLayout</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마팁');" style="cursor:pointer;" title="#피그마팁 태그 포스팅 모아보기">#피그마팁</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#생산성');" style="cursor:pointer;" title="#생산성 태그 포스팅 모아보기">#생산성</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-11/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="12">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 12);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 12);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 12 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-12/" style="color:inherit; text-decoration:none;">프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-12/" style="color:inherit; text-decoration:none;">기획안 텍스트를 LLM 개발 프롬프트로 변환하여 실시간 브라우저 실행 코드로 구축하는 실전 절차 가이드.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#MVP');" style="cursor:pointer;" title="#MVP 태그 포스팅 모아보기">#MVP</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프롬프트');" style="cursor:pointer;" title="#프롬프트 태그 포스팅 모아보기">#프롬프트</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-12/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="13">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 13);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 13);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 13 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-13/" style="color:inherit; text-decoration:none;">온보딩 과정에서 사용자의 인지 부하를 줄이는 마이크로카피</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-13/" style="color:inherit; text-decoration:none;">처음 앱을 켠 사용자에게 권한 요청(알림, 위치)을 받아낼 때 명백한 이득을 제시하는 혜택 중심 서술 기법.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#온보딩');" style="cursor:pointer;" title="#온보딩 태그 포스팅 모아보기">#온보딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#마이크로카피');" style="cursor:pointer;" title="#마이크로카피 태그 포스팅 모아보기">#마이크로카피</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX카피');" style="cursor:pointer;" title="#UX카피 태그 포스팅 모아보기">#UX카피</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-13/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="14">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 14);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 14);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 14 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-14/" style="color:inherit; text-decoration:none;">FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-14/" style="color:inherit; text-decoration:none;">목소리 큰 참석 한 명이 전체 분위기를 주도하는 현상을 막기 위해 사전 서면 작성과 독립 득표 방식을 병행하는 리서치 스킬.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#FGI');" style="cursor:pointer;" title="#FGI 태그 포스팅 모아보기">#FGI</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#패널조사');" style="cursor:pointer;" title="#패널조사 태그 포스팅 모아보기">#패널조사</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#리서치설계');" style="cursor:pointer;" title="#리서치설계 태그 포스팅 모아보기">#리서치설계</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-14/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="15">
+              <div class="postit-top-band">
+                <span class="category-badge">UX기획/디자인</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 15);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 15);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 15 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-15/" style="color:inherit; text-decoration:none;">모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-15/" style="color:inherit; text-decoration:none;">주소 입력, 쿠폰 적용, 결제 수단 선택을 한 페이지 안에서 아코디언 컴포넌트로 처리하여 이탈률을 24% 감소시킨 사례.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#결제동선');" style="cursor:pointer;" title="#결제동선 태그 포스팅 모아보기">#결제동선</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#1PageCheckout');" style="cursor:pointer;" title="#1PageCheckout 태그 포스팅 모아보기">#1PageCheckout</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#전환개선');" style="cursor:pointer;" title="#전환개선 태그 포스팅 모아보기">#전환개선</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-15/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="16">
+              <div class="postit-top-band">
+                <span class="category-badge">AI트랜드</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 16);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 16);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 16 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-16/" style="color:inherit; text-decoration:none;">LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-16/" style="color:inherit; text-decoration:none;">10초 이상 소요되는 복잡한 AI 추론 과정 동안 사용자에게 단계별 진행 상태(Progress Stage)를 투명하게 시각화하기.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#LLM');" style="cursor:pointer;" title="#LLM 태그 포스팅 모아보기">#LLM</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#로딩패턴');" style="cursor:pointer;" title="#로딩패턴 태그 포스팅 모아보기">#로딩패턴</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#대기시간UX');" style="cursor:pointer;" title="#대기시간UX 태그 포스팅 모아보기">#대기시간UX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-16/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="17">
+              <div class="postit-top-band">
+                <span class="category-badge">피그마</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 17);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 17);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 17 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-17/" style="color:inherit; text-decoration:none;">Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-17/" style="color:inherit; text-decoration:none;">피그마 배리어블 모드를 활용해 버튼 클릭 한 번으로 국문/영문 및 라이트/다크모드 전체 시안을 전환하는 시스템 설계.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#Variables');" style="cursor:pointer;" title="#Variables 태그 포스팅 모아보기">#Variables</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#다크모드');" style="cursor:pointer;" title="#다크모드 태그 포스팅 모아보기">#다크모드</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마수업');" style="cursor:pointer;" title="#피그마수업 태그 포스팅 모아보기">#피그마수업</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-17/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="18">
+              <div class="postit-top-band">
+                <span class="category-badge">바이브코딩</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 18);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 18);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 18 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-18/" style="color:inherit; text-decoration:none;">디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-18/" style="color:inherit; text-decoration:none;">디자인 시스템 tokens.css와 LLM 바이브코딩 프롬프트 사이의 세만틱 일관성을 유지하는 주의사항.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프론트엔드');" style="cursor:pointer;" title="#프론트엔드 태그 포스팅 모아보기">#프론트엔드</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#바이브코딩');" style="cursor:pointer;" title="#바이브코딩 태그 포스팅 모아보기">#바이브코딩</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#디자이너개발');" style="cursor:pointer;" title="#디자이너개발 태그 포스팅 모아보기">#디자이너개발</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-18/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="19">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 19);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 19);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 19 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">undefined</a></p>
+                <div class="postit-tags">
+                  
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-19/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="postit-card" data-id="19">
+              <div class="postit-top-band">
+                <span class="category-badge">UX라이팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 19);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 19);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 19 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-19/" style="color:inherit; text-decoration:none;">과도한 혜택 과장이나 모호한 법적 경고 문구 대신 직관적이고 솔직한 텍스트로 사용자의 신뢰감을 극대화하는 법.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#신뢰디자인');" style="cursor:pointer;" title="#신뢰디자인 태그 포스팅 모아보기">#신뢰디자인</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#톤앤매너');" style="cursor:pointer;" title="#톤앤매너 태그 포스팅 모아보기">#톤앤매너</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#금융UX');" style="cursor:pointer;" title="#금융UX 태그 포스팅 모아보기">#금융UX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/post-19/" class="read-time-btn" style="text-decoration:none;">
+                    120초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+            <!-- Cards populated dynamically via JavaScript -->
+          </div>
+        
+          <!-- BOTTOM INLINE GNB NAVIGATION (EXACT UX-RESEARCH MATCH) -->
+          <div class="bottom-nav">
+            <p>이전 단계: <a href="/ux-academy/">AI-UX강의</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-company/">회사소개</a></p>
+          </div>
+</main>
+      </div>
+
+      <!-- STATUSBAR -->
+      <div class="statusbar">
+        <div id="statusCount">19개 개체</div>
+        <div>C:SUPERPLANNINGUX_서비스UX_블로그</div>
+        <div>내 컴퓨터</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- W95 POST READER MODAL -->
+  <div class="w95-modal-backdrop" id="postModal">
+    <div class="w95-modal-window">
+      <div class="modal-titlebar">
+        <span id="modalTitlebarText">[포스트 읽기] 슈퍼플래닝 UX 블로그</span>
+        <button class="win-btn" onclick="closeModal();" style="cursor:pointer;">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Modal content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toast">링크가 클립보드에 복사되었습니다!</div>
+
+  <script>
+    // 19 CURATED BLOG POSTS DATA
+    const POSTS_DATA = [
+      {
+        id: 1,
+        category: "UX라이팅",
+        title: "전환율보다 먼저 봐야 하는 버튼 문구의 명확성",
+        excerpt: "좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.",
+        readTime: 60,
+        tags: ["#버튼카피", "#전환율", "#마이크로카피"],
+        content: `
+          <h3>클릭을 주저하게 만드는 대표적인 원인</h3>
+          <p>사용자가 구매, 신청, 제출 버튼 앞에서 망설이는 이유는 결제가 두려워서라기보다 '이 버튼을 누르면 당장 돈이 빠져나가는가?' '수정이 가능한가?'라는 정보의 불확실성 때문입니다.</p>
+          <blockquote>'확인' 대신 '결제 단계로 이동', '제출' 대신 '3분 만에 신청 완료'처럼 결과의 명확성을 제공해야 전환율이 오릅니다.</blockquote>
+          <h3>실무 적용 체크리스트</h3>
+          <p>1. 버튼 텍스트가 독립된 맥락으로 읽히는가?<br>2. 행동의 결과(페이지 이동 vs 즉시 제출)가 명확한가?<br>3. 사용자가 언제든 되돌릴 수 있다는 안도감을 주는가?</p>
+        `
+      },
+      {
+        id: 2,
+        category: "UX리서치",
+        title: "인터뷰 질문 설계에서 자주 생기는 초보 실수",
+        excerpt: "질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.",
+        readTime: 90,
+        tags: ["#인터뷰질문", "#UX리서치", "#사용자조사"],
+        content: `
+          <h3>가상의 질문 vs 과거 경험 질문</h3>
+          <p>"만약 이런 기능이 나오면 쓰시겠어요?"라는 질문은 99% 긍정적 거짓 답변을 유도합니다. 사람들은 미래의 자신을 실제보다 관대하게 평가하기 때문입니다.</p>
+          <blockquote>"지난 일주일 동안 이 문제를 해결하기 위해 실제로 어떤 앱을 사용하셨나요?"라고 과거 행동을 물어야 진짜 인사이트가 나옵니다.</blockquote>
+          <h3>IDI 인터뷰 필수 규칙</h3>
+          <p>· 왜(Why)라는 단어를 직접 남발하여 사용자를 방어적으로 만들지 않기<br>· 침묵의 3초를 기다려 사용자의 솔직한 추가 발화 유도하기</p>
+        `
+      },
+      {
+        id: 3,
+        category: "UX기획/디자인",
+        title: "화면정의서가 예쁜데도 개발이 헷갈리는 이유",
+        excerpt: "보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.",
+        readTime: 60,
+        tags: ["#화면정의서", "#서비스기획", "#예외흐름"],
+        content: `
+          <h3>정상 케이스 80% vs 예외 케이스 20%</h3>
+          <p>대부분의 기획 오류는 데이터가 없거나(Empty state), 글자 수가 넘치거나, 서버 통신 오류가 날 때 발생합니다. 예쁜 Figma 시안만으로는 개발을 진행할 수 없습니다.</p>
+          <blockquote>와이어프레임 작성 시 4대 상태(Default, Hover/Active, Disabled, Error)와 빈 화면 처리 기준을 반드시 명시해야 합니다.</blockquote>
+        `
+      },
+      {
+        id: 4,
+        category: "피그마",
+        title: "피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유",
+        excerpt: "피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.",
+        readTime: 90,
+        tags: ["#피그마", "#협업툴", "#컴포넌트"],
+        content: `
+          <h3>디자인 파일 구조화 방법론</h3>
+          <p>Page 1: 🧹 Draft (아이디어 스케치)<br>Page 2: 🚀 Dev Ready (개발 전달용 검증 시안)<br>Page 3: ❖ Design System (공용 컴포넌트)</p>
+          <p>구조화된 피그마 파일은 개발자와 기획자가 커뮤니케이션 비용을 70% 이상 절감시켜 줍니다.</p>
+        `
+      },
+      {
+        id: 5,
+        category: "AI트랜드",
+        title: "AI UX에서 프롬프트보다 먼저 정해야 하는 기준",
+        excerpt: "프롬프트를 잘 쓰는 것보다 먼저 필요한 건 문제정의와 검증 기준입니다. 어떤 장면에서 AI를 쓸지, 결과를 누가 어떤 기준으로 확인하는지 정리되지 않으면 도입은 금방 흐려집니다.",
+        readTime: 120,
+        tags: ["#AIUX", "#문제정의", "#검증기준"],
+        content: `
+          <h3>AI 도구 도입 시 흔한 딜레마</h3>
+          <p>AI가 생성한 답변의 할루시네이션(환각)을 사용자가 어떻게 감지하고 수정할 수 있게 만드느냐가 AI UI/UX의 핵심 설계 지점입니다.</p>
+          <blockquote>AI 기능을 '전지전능한 유기체'가 아닌 '생산성을 5배 높이는 지능형 보조 도구'로 포지셔닝해야 기대치 불일치가 발생하지 않습니다.</blockquote>
+        `
+      },
+      {
+        id: 6,
+        category: "바이브코딩",
+        title: "바이브코딩으로 프로토타입 검증 속도를 높이는 방법",
+        excerpt: "완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.",
+        readTime: 90,
+        tags: ["#바이브코딩", "#프로토타입", "#검증루프"],
+        content: `
+          <h3>자연어 프롬프트 기반 웹/앱 MVP 제작</h3>
+          <p>코드 한 줄 몰라도 최신 AI 바이브코딩 도구와 HTML/CSS/JS 템플릿을 연동하면 10분 만에 동작 가능한 하이브리드 프로토타입을 구축할 수 있습니다.</p>
+          <p>실제 동작하는 프로토타입으로 사용자 UT를 진행하면 static 피그마 시안 대비 3배 이상의 깊이 있는 반응 데이터를 수집할 수 있습니다.</p>
+        `
+      },
+      {
+        id: 7,
+        category: "UX라이팅",
+        title: "에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙",
+        excerpt: "시스템 오케스트레이션 코드 대신 사용자가 지금 무엇을 바로잡아야 하는지 친절하고 간결하게 설명할 때 탈퇴율을 극적으로 낮출 수 있습니다.",
+        readTime: 90,
+        tags: ["#에러메시지", "#UX라이팅", "#예외처리"],
+        content: `
+          <h3>에러 메시지 3대 작성 규칙</h3>
+          <p>1. 탓하지 않기: '잘못된 입력입니다' (X) -> '비밀번호 8자 이상을 입력해 주세요' (O)<br>2. 원인 설명: 어떤 규칙이 충족되지 않았는지 명시<br>3. 다음 행동 제안: 어디로 이동해서 해결 가능한지 버튼 제공</p>
+        `
+      },
+      {
+        id: 8,
+        category: "UX리서치",
+        title: "UT(사용성 테스트) 진행 시 모더레이터가 절대 하지 말아야 할 말",
+        excerpt: "사용자가 헤매는 순간 '오른쪽 상단 버튼을 누르시면 됩니다'라고 힌트를 주는 순간, 테스트의 모든 데이터는 왜곡됩니다.",
+        readTime: 60,
+        tags: ["#사용성테스트", "#UT", "#모더레이팅"],
+        content: `
+          <h3>관찰자의 중립 유지 원칙</h3>
+          <p>사용자가 멈추었을 때는 "어떤 생각을 하고 계신가요?" "어디를 살펴보고 계신가요?"라고 씽크얼라우드(Think Aloud)를 유도해야 합니다.</p>
+        `
+      },
+      {
+        id: 9,
+        category: "UX기획/디자인",
+        title: "디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유",
+        excerpt: "컬러와 타이포그래피 변수(Token)를 컴포넌트 하드코딩 값과 독립시켜야 다크모드 및 모바일/데스크톱 파급 변경 시 오류가 생기지 않습니다.",
+        readTime: 90,
+        tags: ["#디자인시스템", "#디자인토큰", "#컴포넌트"],
+        content: `
+          <h3>Semantic Token 구조화</h3>
+          <p>color-primary-500 -> color-bg-brand -> button-bg-default 형태의 3단계 토큰 위계 설정이 필수입니다.</p>
+        `
+      },
+      {
+        id: 10,
+        category: "AI트랜드",
+        title: "생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드",
+        excerpt: "단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.",
+        readTime: 90,
+        tags: ["#생성형AI", "#캔버스UX", "#AI인터페이스"],
+        content: `
+          <h3>작업 맥락 유지를 위한 화면 split 패턴</h3>
+          <p>왼쪽에서 프롬프트를 입력하고 오른쪽 캔버스에서 실시간 변경 결과를 시각화할 때 사용자 피로도가 급감합니다.</p>
+        `
+      },
+      {
+        id: 11,
+        category: "피그마",
+        title: "피그마 Auto Layout과 Component Properties로 제작속도 3배 올리기",
+        excerpt: "오토 레이아웃의 Min/Max Width 설정과 컴포넌트 속성(Variant, Boolean, Instance Swap)을 정교하게 다루는 실무 테크닉.",
+        readTime: 60,
+        tags: ["#AutoLayout", "#피그마팁", "#생산성"],
+        content: `
+          <h3>피그마 꿀팁 모음</h3>
+          <p>· Shift + A: Auto layout 적용<br>· Hug vs Fill container 설정을 통한 반응형 모바일 화면 즉시 대응</p>
+        `
+      },
+      {
+        id: 12,
+        category: "바이브코딩",
+        title: "프롬프트 기반 바이브코딩으로 10분 만에 랜딩페이지 MVP 검증하기",
+        excerpt: "기획안 텍스트를 LLM 개발 프롬프트로 변환하여 실시간 브라우저 실행 코드로 구축하는 실전 절차 가이드.",
+        readTime: 60,
+        tags: ["#MVP", "#바이브코딩", "#프롬프트"],
+        content: `
+          <h3>초고속 검증 루프</h3>
+          <p>와이어프레임 텍스트 -> AI HTML/CSS 코드 생성 -> 깃허브 페이지스/Netlify 배포 -> 사용자 반응 수집까지 단 하루 만에 완료하기.</p>
+        `
+      },
+      {
+        id: 13,
+        category: "UX라이팅",
+        title: "온보딩 과정에서 사용자의 인지 부하를 줄이는 마이크로카피",
+        excerpt: "처음 앱을 켠 사용자에게 권한 요청(알림, 위치)을 받아낼 때 명백한 이득을 제시하는 혜택 중심 서술 기법.",
+        readTime: 60,
+        tags: ["#온보딩", "#마이크로카피", "#UX카피"],
+        content: `
+          <p>'위치 권한을 허용하시겠습니까?' 대신 '내 주변 500m 이내 맛집 쿠폰을 바로 받으려면 위치 확인이 필요해요'로 가치 전달하기.</p>
+        `
+      },
+      {
+        id: 14,
+        category: "UX리서치",
+        title: "FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술",
+        excerpt: "목소리 큰 참석 한 명이 전체 분위기를 주도하는 현상을 막기 위해 사전 서면 작성과 독립 득표 방식을 병행하는 리서치 스킬.",
+        readTime: 120,
+        tags: ["#FGI", "#패널조사", "#리서치설계"],
+        content: `
+          <p>토론 전 3분 간 포스트잇 개인 의견 기재 후 제출하게 하면 발언 강자의 영향을 최소화할 수 있습니다.</p>
+        `
+      },
+      {
+        id: 15,
+        category: "UX기획/디자인",
+        title: "모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계",
+        excerpt: "주소 입력, 쿠폰 적용, 결제 수단 선택을 한 페이지 안에서 아코디언 컴포넌트로 처리하여 이탈률을 24% 감소시킨 사례.",
+        readTime: 90,
+        tags: ["#결제동선", "#1PageCheckout", "#전환개선"],
+        content: `
+          <p>단계 이동 시 로딩 스피너를 제거하고 스무스 스크롤로 다음 입력 필드에 자동 포커스를 주는 UI 패턴.</p>
+        `
+      },
+      {
+        id: 16,
+        category: "AI트랜드",
+        title: "LLM 에이전트 서비스의 로딩 대기 시간을 견디게 만드는 UI 패턴",
+        excerpt: "10초 이상 소요되는 복잡한 AI 추론 과정 동안 사용자에게 단계별 진행 상태(Progress Stage)를 투명하게 시각화하기.",
+        readTime: 60,
+        tags: ["#LLM", "#로딩패턴", "#대기시간UX"],
+        content: `
+          <p>'처리 중...' 대신 '1/3단계: 문서 데이터 분석 중', '2/3단계: 주요 키워드 추출 중'으로 안내하여 이탈 방지.</p>
+        `
+      },
+      {
+        id: 17,
+        category: "피그마",
+        title: "Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법",
+        excerpt: "피그마 배리어블 모드를 활용해 버튼 클릭 한 번으로 국문/영문 및 라이트/다크모드 전체 시안을 전환하는 시스템 설계.",
+        readTime: 120,
+        tags: ["#Variables", "#다크모드", "#피그마수업"],
+        content: `
+          <p>String Variable과 Color Variable을 분리 등록하여 고도화된 글로벌 모바일 프로젝트 시안 구축하기.</p>
+        `
+      },
+      {
+        id: 18,
+        category: "바이브코딩",
+        title: "디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas",
+        excerpt: "디자인 시스템 tokens.css와 LLM 바이브코딩 프롬프트 사이의 세만틱 일관성을 유지하는 주의사항.",
+        readTime: 120,
+        tags: ["#프론트엔드", "#바이브코딩", "#디자이너개발"],
+        content: `
+          <p>CSS 클래스명을 하드코딩하지 않고 변수화된 토큰명(e.g., var(--w95-black))으로 AI에 요청하는 프롬프팅 스킬.</p>
+        `
+      },
+      {
+        id: 19,
+        category: "UX라이팅",
+        title: "금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너",
+},
+      {
+        id: 19,
+        category: "UX라이팅",
+        title: "금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너",
+        excerpt: "과도한 혜택 과장이나 모호한 법적 경고 문구 대신 직관적이고 솔직한 텍스트로 사용자의 신뢰감을 극대화하는 법.",
+        readTime: 120,
+        tags: ["#신뢰디자인", "#톤앤매너", "#금융UX"],
+        content: `
+          <p>작은 글씨의 숨겨진 유의사항 대신 중요한 가입 해지 조건과 수수료 발생 기준을 첫 화면 굵은 글씨로 노출할 때 신뢰 지수가 대폭 상승합니다.</p>
+        `
+      }
+    ];
+
+    // STATE VARIABLES & SAFE BOOKMARK RETRIEVAL
+    let currentCategory = 'all';
+    let activeTagFilter = null;
+    let searchQuery = '';
+
+    function getBookmarks() {
+      try {
+        const raw = localStorage.getItem('sp_blog_bookmarks');
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveBookmarks(arr) {
+      try {
+        localStorage.setItem('sp_blog_bookmarks', JSON.stringify(Array.isArray(arr) ? arr : []));
+      } catch (e) {}
+    }
+
+    function showToast(msg) {
+      let toast = document.getElementById('spToastNotification');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'spToastNotification';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#111111; color:#ffffff; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:700; z-index:999999; box-shadow:0 4px 16px rgba(0,0,0,0.35); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity:0; pointer-events:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; text-align:center; min-width:200px;';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%, -6px)';
+      clearTimeout(window._spToastTimer);
+      window._spToastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, 0)';
+      }, 2300);
+    }
+    window.showToast = showToast;
+
+    function filterByTag(tag) {
+      activeTagFilter = tag;
+      try {
+        const url = new URL(window.location);
+        url.searchParams.set('tag', tag);
+        window.history.pushState({}, '', url);
+      } catch (e) {}
+      renderCards();
+      updateTagBanner();
+    }
+    window.filterByTag = filterByTag;
+
+    function clearTagFilter() {
+      activeTagFilter = null;
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('tag');
+        window.history.pushState({}, '', url);
+      } catch (e) {}
+      renderCards();
+      updateTagBanner();
+    }
+    window.clearTagFilter = clearTagFilter;
+
+    function clearAllFilters() {
+      activeTagFilter = null;
+      currentCategory = 'all';
+      searchQuery = '';
+      const searchInputEl = document.getElementById('searchInput');
+      if (searchInputEl) searchInputEl.value = '';
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('tag');
+        url.searchParams.delete('category');
+        url.searchParams.delete('search');
+        url.searchParams.delete('q');
+        window.history.pushState({}, '', url);
+      } catch (e) {}
+
+      document.querySelectorAll('.tree-link').forEach(l => {
+        if (l.getAttribute('data-category') === 'all') l.classList.add('active');
+        else l.classList.remove('active');
+      });
+
+      renderCards();
+      updateTagBanner();
+    }
+    window.clearAllFilters = clearAllFilters;
+
+    function updateTagBanner() {
+      let banner = document.getElementById('tagFilterBanner');
+      const grid = document.getElementById('postitGrid') || document.querySelector('.postit-grid');
+      if (!banner && grid && grid.parentNode) {
+        banner = document.createElement('div');
+        banner.id = 'tagFilterBanner';
+        banner.style.cssText = 'margin-bottom:14px; padding:8px 14px; background:#000000; color:#ffffff; font-size:12.5px; font-weight:700; display:flex; align-items:center; justify-content:space-between; border:2px solid #000; border-radius:3px; box-shadow:2px 2px 0 rgba(0,0,0,0.2);';
+        grid.parentNode.insertBefore(banner, grid);
+      }
+
+      if (activeTagFilter && banner) {
+        const filteredCount = document.querySelectorAll('.postit-card').length;
+        banner.style.display = 'flex';
+        banner.innerHTML = `<div>🏷️ 태그 필터링 중: <span style="background:#ffffff; color:#000000; padding:2px 8px; border-radius:3px; font-weight:800; margin-left:4px;">${activeTagFilter}</span> (${filteredCount}개 포스팅)</div>
+          <button onclick="clearTagFilter();" style="background:#ffffff; color:#000000; border:1px solid #000000; padding:3px 10px; font-size:11.5px; font-weight:800; cursor:pointer; box-shadow:1px 1px 0 #000;">전체보기 ✕</button>`;
+      } else if (banner) {
+        banner.style.display = 'none';
+      }
+    }
+
+    function renderCards() {
+      const grid = document.getElementById('postitGrid') || document.querySelector('.postit-grid');
+      if (!grid) return;
+
+      try {
+        const bookmarks = getBookmarks();
+        let filtered = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).filter(post => {
+          if (!post || typeof post !== 'object') return false;
+
+          // Category Filter
+          if (currentCategory === 'bookmark') {
+            if (!bookmarks.includes(post.id)) return false;
+          } else if (currentCategory && currentCategory !== 'all') {
+            const normCategory = String(currentCategory).replace(/[\s\/]/g, '').toLowerCase();
+            const normPostCategory = String(post.category || '').replace(/[\s\/]/g, '').toLowerCase();
+            if (normPostCategory !== normCategory) return false;
+          }
+
+          // Search Filter
+          if (searchQuery && searchQuery.trim() !== '') {
+            const q = searchQuery.toLowerCase().trim();
+            const matchTitle = (post.title || '').toLowerCase().includes(q);
+            const matchExcerpt = (post.excerpt || '').toLowerCase().includes(q);
+            const matchCategory = (post.category || '').toLowerCase().includes(q);
+            const matchTags = Array.isArray(post.tags) && post.tags.some(t => String(t).toLowerCase().includes(q));
+            if (!matchTitle && !matchExcerpt && !matchCategory && !matchTags) return false;
+          }
+
+          // Tag Filter
+          if (activeTagFilter) {
+            const normFilter = String(activeTagFilter).replace('#', '').toLowerCase();
+            const hasTag = Array.isArray(post.tags) && post.tags.some(t => String(t).replace('#', '').toLowerCase() === normFilter);
+            if (!hasTag) return false;
+          }
+
+          return true;
+        });
+
+        // Update Counts
+        const countAllEl = document.getElementById('countAll');
+        const countFavEl = document.getElementById('countFav');
+        const statusCountEl = document.getElementById('statusCount');
+
+        if (countAllEl) countAllEl.textContent = POSTS_DATA.length;
+        if (countFavEl) countFavEl.textContent = bookmarks.length;
+        if (statusCountEl) statusCountEl.textContent = `${filtered.length}개 개체`;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="no-results" style="grid-column: 1 / -1; padding: 60px 20px; text-align: center; border: 2px dashed #000; background: #fafafa;">
+              <h3 style="font-size: 16px; margin-bottom: 8px; font-weight: 800;">검색 또는 필터링 결과가 없습니다.</h3>
+              <p style="font-size: 13px; color: #555;">상단 검색어를 지우시거나 좌측 '▣ 전체글 보기' 카테고리를 선택해 주세요.</p>
+              <button class="w95-btn" onclick="clearAllFilters();" style="margin-top:12px; padding:6px 16px;">전체 글 목록 보기</button>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map(post => {
+          const isFav = bookmarks.includes(post.id);
+          const tagHtml = Array.isArray(post.tags) ? post.tags.map(t => {
+            const isActive = activeTagFilter && (String(t).replace('#','').toLowerCase() === String(activeTagFilter).replace('#','').toLowerCase());
+            return `<span class="tag-pill ${isActive ? 'active-tag' : ''}" onclick="event.stopPropagation(); filterByTag('${t}');" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`;
+          }).join('') : '';
+
+          return `
+            <article class="postit-card" data-id="${post.id}">
+              <div class="postit-top-band">
+                <span class="category-badge">${post.category || 'UX'}</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn ${isFav ? 'bookmarked' : ''}" onclick="toggleBookmark(event, ${post.id});" title="즐겨찾기 추가/제거">
+                    ${isFav ? '★' : '☆'}
+                  </button>
+                  <button class="icon-action-btn" onclick="sharePost(event, ${post.id});" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href=(post.url || ('/ux-blog/post-' + ${post.id} + '/'));" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="${post.url || (`/ux-blog/post-` + post.id + `/`)}" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
+                <p class="postit-excerpt"><a href="${post.url || (`/ux-blog/post-` + post.id + `/`)}" style="color:inherit; text-decoration:none;">${post.excerpt}</a></p>
+                <div class="postit-tags">
+                  ${tagHtml}
+                </div>
+                <div class="postit-footer">
+                  <a href="${post.url || (`/ux-blog/post-` + post.id + `/`)}" class="read-time-btn" style="text-decoration:none;">
+                    ${post.readTime || 60}초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error("renderCards error:", err);
+        grid.innerHTML = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).map(post => `
+          <article class="postit-card" data-id="${post.id}">
+            <div class="postit-top-band">
+              <span class="category-badge">${post.category}</span>
+            </div>
+            <div class="postit-body" onclick="location.href='/ux-blog/post-${post.id}/';" style="cursor:pointer;">
+              <h3 class="postit-title"><a href="${post.url || (`/ux-blog/post-` + post.id + `/`)}">${post.title}</a></h3>
+              <p class="postit-excerpt">${post.excerpt}</p>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+    window.renderCards = renderCards;
+
+    function toggleBookmark(e, postId) {
+      if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+      const id = (typeof e === 'number') ? e : (postId || null);
+      if (!id) return;
+
+      let bookmarks = getBookmarks();
+      const idx = bookmarks.indexOf(id);
+      if (idx > -1) {
+        bookmarks.splice(idx, 1);
+        showToast('☆ 즐겨찾기에서 제거되었습니다.');
+      } else {
+        bookmarks.push(id);
+        showToast('★ 즐겨찾기에 추가되었습니다.');
+      }
+      saveBookmarks(bookmarks);
+
+      const countFavEl = document.getElementById('countFav');
+      if (countFavEl) countFavEl.textContent = bookmarks.length;
+
+      const modalBookmarkBtn = document.getElementById('modalBookmarkBtn');
+      if (modalBookmarkBtn) {
+        const isFavNow = bookmarks.includes(id);
+        modalBookmarkBtn.innerHTML = isFavNow ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장';
+        modalBookmarkBtn.style.color = isFavNow ? '#e67e22' : '';
+      }
+
+      renderCards();
+    }
+    window.toggleBookmark = toggleBookmark;
+    window.togglePostBookmark = toggleBookmark;
+
+    function sharePost(e, postId) {
+      if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+      const id = (typeof e === 'number') ? e : (postId || null);
+
+      let shareUrl = 'https://www.superplanning.co.kr/ux-blog/';
+      if (id) {
+        shareUrl = 'https://www.superplanning.co.kr/ux-blog/post-' + id + '/';
+      } else {
+        shareUrl = window.location.href;
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+        }).catch(() => {
+          fallbackCopyText(shareUrl);
+        });
+      } else {
+        fallbackCopyText(shareUrl);
+      }
+    }
+    window.sharePost = sharePost;
+    window.shareCurrentPost = sharePost;
+
+    function fallbackCopyText(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+      } catch (err) {
+        showToast('링크 복사에 실패했습니다.');
+      }
+      document.body.removeChild(input);
+    }
+
+    function openPostModal(postId) {
+      const post = (Array.isArray(POSTS_DATA) ? POSTS_DATA : []).find(p => p.id === postId);
+      if (!post) return;
+
+      const bookmarks = getBookmarks();
+      const isFav = bookmarks.includes(post.id);
+      const modalTitlebarText = document.getElementById('modalTitlebarText');
+      const modalBody = document.getElementById('modalBody');
+      const postModal = document.getElementById('postModal');
+
+      if (modalTitlebarText) modalTitlebarText.textContent = `[포스트 읽기] ${post.title}`;
+      if (modalBody) {
+        modalBody.innerHTML = `
+          <div class="modal-meta">
+            <span class="category-badge">${post.category}</span>
+            <span style="font-size:12px; font-weight:bold; color:#666;">⏱️ ${post.readTime}초 소요</span>
+            <button class="w95-btn" id="modalBookmarkBtn" onclick="toggleBookmark(event, ${post.id});" style="font-size:11px; padding:2px 8px; ${isFav ? 'color:#e67e22;' : ''}">
+              ${isFav ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 저장'}
+            </button>
+            <button class="w95-btn" onclick="sharePost(event, ${post.id});" style="font-size:11px; padding:2px 8px;">
+              🔗 공유하기
+            </button>
+          </div>
+          <h2 class="modal-post-title">${post.title}</h2>
+          <div class="modal-post-content">
+            <p style="font-size:14px; font-weight:bold; color:#000; margin-bottom:16px;">${post.excerpt}</p>
+            ${post.content || ''}
+          </div>
+          <div style="margin-top:24px; padding-top:14px; border-top:2px solid #000; display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:4px;">
+              ${Array.isArray(post.tags) ? post.tags.map(t => `<span class="tag-pill" onclick="event.stopPropagation(); filterByTag('${t}'); closeModal();" style="cursor:pointer;" title="${t} 태그 포스팅 모아보기">${t}</span>`).join('') : ''}
+            </div>
+            <button class="w95-btn" onclick="closeModal();">✕ 닫기</button>
+          </div>
+        `;
+      }
+      if (postModal) postModal.classList.add('show');
+    }
+    window.openPostModal = openPostModal;
+
+    function closeModal() {
+      const postModal = document.getElementById('postModal');
+      if (postModal) postModal.classList.remove('show');
+    }
+    window.closeModal = closeModal;
+
+    function initBlog() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tagParam = urlParams.get('tag');
+      const catParam = urlParams.get('category');
+      const qParam = urlParams.get('q') || urlParams.get('search');
+
+      if (tagParam) activeTagFilter = tagParam;
+      if (catParam) currentCategory = catParam;
+      if (qParam) searchQuery = qParam;
+
+      if (window.location.hash) {
+        const rawHash = decodeURIComponent(window.location.hash.replace('#', '')).trim();
+        if (rawHash) {
+          const matchCat = ['UX리서치', 'UX라이팅', 'UX기획/디자인', 'UX기획디자인', 'AI트랜드', '피그마', '바이브코딩', 'bookmark', 'all'].find(c =>
+            c.replace(/[\s\/]/g, '').toLowerCase() === rawHash.replace(/[\s\/]/g, '').toLowerCase()
+          );
+          if (matchCat) {
+            currentCategory = matchCat === 'UX기획디자인' ? 'UX기획/디자인' : matchCat;
+          } else if (rawHash.startsWith('#') || rawHash.length > 0) {
+            activeTagFilter = rawHash;
+          }
+        }
+      }
+
+      const searchInputEl = document.getElementById('searchInput');
+      if (searchInputEl && searchQuery) {
+        searchInputEl.value = searchQuery;
+      }
+
+      document.querySelectorAll('.tree-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelectorAll('.tree-link').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          const cat = this.getAttribute('data-category');
+          if (cat) {
+            currentCategory = cat;
+            activeTagFilter = null;
+            renderCards();
+            updateTagBanner();
+          }
+        });
+      });
+
+      const sInput = document.getElementById('searchInput');
+      const sBtn = document.getElementById('searchBtn');
+      if (sInput) {
+        sInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderCards();
+        });
+      }
+      if (sBtn) {
+        sBtn.addEventListener('click', () => {
+          if (sInput) searchQuery = sInput.value;
+          renderCards();
+        });
+      }
+
+      renderCards();
+      updateTagBanner();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBlog);
+    } else {
+      initBlog();
+    }
+  </script>
+
+  <!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+  <script>
+    (function() {
+      function initScrollTopBtn() {
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+          const updateVisibility = () => {
+            if (window.innerWidth > 900) {
+              scrollTopBtn.style.display = (window.scrollY > 80) ? 'inline-flex' : 'none';
+            } else {
+              scrollTopBtn.style.display = 'none';
+            }
+          };
+          window.addEventListener('scroll', updateVisibility, { passive: true });
+          window.addEventListener('resize', updateVisibility, { passive: true });
+          updateVisibility();
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollTopBtn);
+      } else {
+        initScrollTopBtn();
+      }
+    })();
+  </script>
+  <!-- START MENU -->
+  <div id="startMenu">
+    <div class="start-banner">SUPERPLANNING</div>
+    <div class="start-items">
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.net/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
+      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
+      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
+    </div>
+  </div>
+
+  <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(event);">
+        <span>💻</span> <strong>전체 메뉴보기</strong>
+      </button>
+      <div id="taskPreviews">
+        <div class="task-preview active">
+          <span>📁</span> <span>서비스 탐색기</span>
+        </div>
+      </div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+
+  <script>
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
+      if (typeof closeStart === 'function') {
+        closeStart();
+      }
+    }
+
+    // Subpage Win95 Retro Popup Window Engine
+    const WINDOW_DEFS = {
+      'about': { w: 640, h: 480, title: '• 슈퍼플래닝 소개' },
+      'clients': { w: 600, h: 380, title: '• 주요 고객사' },
+      'services': { w: 620, h: 500, title: '• UX 서비스' },
+      'classes': { w: 640, h: 420, title: '• AI-UX 강의' },
+      'blog': { w: 600, h: 420, title: '• UX 블로그' },
+      'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
+      'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
+      'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
+      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
+    };
+
+    function openWindow(key) {
+      closeStart();
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — UX 리서치' };
+      var titleText = def.title;
+
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+
+      var isMobile = window.innerWidth <= 768;
+
+      var overlay = document.createElement('div');
+      overlay.id = 'subpageModalOverlay';
+      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
+
+      var win = document.createElement('div');
+      var winW = isMobile ? '94vw' : def.w + 'px';
+      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
+
+      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+
+      win.innerHTML = `
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+          <span>${titleText}</span>
+          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
+          ${getSubpageWindowBody(key)}
+        </div>
+      `;
+
+      overlay.appendChild(win);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSubpageWindow();
+      });
+    }
+
+    function closeSubpageWindow() {
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSubpageWindow();
+    });
+
+    function getSubpageWindowBody(key) {
+            if (key === 'about') {
+        return `
+          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px; display:flex; gap:12px; background:#c0c0c0; padding:2px 6px; border-bottom:1px solid #808080; font-size:11px;">
+            <div><span style="text-decoration:underline;">F</span>ile</div>
+            <div><span style="text-decoration:underline;">E</span>dit</div>
+            <div><span style="text-decoration:underline;">V</span>iew</div>
+            <div><span style="text-decoration:underline;">H</span>elp</div>
+          </div>
+          
+          <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
+            <img src="/images/superplanning_brand_logo.png" alt="SUPERPLANNING" width="180" height="48" fetchpriority="high" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_brand_logo.png';}">
+          </div>
+
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:12px 14px; margin-bottom:8px; border-radius:3px;">
+            <div class="cmd-prompt" style="font-family:monospace; font-size:12.5px; color:#ffffff; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+              <span>C:\\SUPERPLANNING&gt; <span>HELLO</span></span><span class="blink-cursor" style="height:13px; width:6px; background:#ffffff; display:inline-block;"></span>
+            </div>
+
+            <h2 style="font-size:21px; font-weight:900; margin:0 0 4px 0; line-height:1.3; color:#ffffff; letter-spacing:-0.02em; min-height:28px; word-break:keep-all;">
+              UX디자인 에이전시, <span style="color:#ffffff; font-weight:900;">슈퍼플래닝입니다.</span>
+            </h2>
+
+            <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
+              이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.
+            </p>
+          </div>
+
+          <div style="margin-top:8px; margin-bottom:6px;">
+            <h4 style="font-weight:900; font-size:12.5px; margin:0; color:#000000; letter-spacing:-0.01em;">UX프로젝트 수행원칙</h4>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:8px;">
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">1. 3초, 고객이 지갑을 닫고 떠나는 시간.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">첫 3초가 전환율의 80%를 결정합니다. 3초 안에 고객이 무엇을 눌러야 할지 가장 직관적인 경험을 설계합니다.</p>
+            </div>
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+            </div>
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">3. 더 적게 하지만 더 좋게.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. 'Less but better'</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:6px; margin-bottom:0; padding-top:0; flex-wrap:wrap;">
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">포트폴리오 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">소개영상 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">찾아오시는 길</button>
+          </div>
+        `;} else if (key === 'brochure') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+              <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
+              <div style="display:flex; gap:6px;">
+                <a href="/Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+                <a href="/Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">파일 다운로드</a>
+              </div>
+            </div>
+            <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+              <iframe 
+                src="/Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                style="width:100%; height:100%; border:0; display:block;" 
+                title="슈퍼플래닝 포트폴리오 보기">
+              </iframe>
+            </div>
+          </div>
+        `;
+            } else if (key === 'clients') {
+        return `
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
+
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">SK텔레콤</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">현대자동차</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">롯데그룹</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">LG유플러스</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">비씨카드</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">KB국민은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">NH농협은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">서민금융진흥원</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">제일기획</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">IBK기업은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">경기도일자리재단</div>
+          </div>
+        `;} else if (key === 'services') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
+          <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-research/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 리서치</h4>
+                <a href="/ux-research/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">FGI조사, 사용자 인터뷰, 사용성테스트(UT)를 통해 고객의 진짜 속마음과 핵심 문제를 찾아냅니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-writing/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 라이팅</h4>
+                <a href="/ux-writing/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">보이스앤톤과 UX라이팅 가이드를 통해 일관된 브랜드 경험을 제공하고 구매전환을 유도 합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-design/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 기획 / 디자인</h4>
+                <a href="/ux-design/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/web-app-development/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">웹 / 앱 개발</h4>
+                <a href="/web-app-development/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-design/#consulting';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 컨설팅</h4>
+                <a href="/ux-design/#consulting" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-academy/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">AI-UX 강의</h4>
+                <a href="/ux-academy/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
+            </div>
+          </div>
+        `;} else if (key === 'contact') {
+        return `
+
+          <h3 style="font-size:13.5px; font-weight:700; margin-bottom:8px;">📬 UX프로젝트 신규 문의 등록</h3>
+          <p style="font-size:11px; line-height:1.4; margin-bottom:10px; color:#333;">아래 문의 폼을 작성해 주시면 실무 PM이 <strong>jake@superplanning.co.kr</strong> 로 실시간 메일을 수신하여 10분 이내 회신드립니다.</p>
+
+          <form id="popupInquiryForm" onsubmit="handlePopupInquiry(event);" style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:10px;">
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">성함 / 담당자명 *</label>
+              <input type="text" id="popName" required placeholder="예: 홍길동 팀장" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">연락처 <span style="font-weight:normal; color:#666666;">(선택)</span></label>
+              <input type="tel" id="popPhone" placeholder="예: 010-1234-5678" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">회사명 / 소속 (선택)</label>
+              <input type="text" id="popCompany" placeholder="예: (주)슈퍼플래닝" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">이메일 주소 (선택)</label>
+              <input type="email" id="popEmail" placeholder="example@domain.com" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">프로젝트 내용 및 문의사항 *</label>
+              <textarea id="popMessage" required rows="3" placeholder="프로젝트 일정, 범위, 요구사항을 자유롭게 입력해 주세요." style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box; resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="w95-btn" style="width:100%; padding:7px; font-size:12px; font-weight:bold; background:#000; color:#fff; cursor:pointer;">
+              ✉️ jake@superplanning.co.kr 로 문의 전송
+            </button>
+          </form>
+
+          <div class="info-card" style="margin-bottom:8px; padding:8px 10px; background:#f9f9f9; border:1px solid #000;">
+            <div style="font-size:11.5px;"><strong>대표 이메일:</strong> jake@superplanning.co.kr</div>
+            <div style="font-size:11.5px;"><strong>대표 전화:</strong> 031-699-3298</div>
+          </div>
+        `;} else if (key === 'classes') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:6px;">🎓 실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="font-size:11.5px; margin-bottom:10px;">최신 AI 도구를 활용한 UX기획, 와이어프레임 설계, 바이브코딩 실무 교육을 제공합니다.</p>
+          <div style="padding:8px 10px; background:#fff; border:2px solid #000; margin-bottom:8px;">
+            <h4 style="font-size:12px; margin:0 0 3px 0;">수강 대상</h4>
+            <p style="font-size:11px; margin:0;">기획자, UX디자이너, 프론트엔드 개발자, 스타트업 대표</p>
+          </div>
+          <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact')">강의 수강 문의하기</button>
+        `;
+      } else if (key === 'blog') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📝 UX 인사이트 아카이브</h3>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">버튼 문구 하나로 이탈률 18% 줄인 방법</h4><p style="margin:0; font-size:11px;">명확한 UX라이팅과 사용자 심리 설계 접근법</p></div>
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
+          </div>
+        `;
+            } else if (key === 'instagram') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold;">Address:</span>
+              <input type="text" readonly value="https://www.instagram.com/ux_superplanning/" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000;">
+              <a href="https://www.instagram.com/ux_superplanning/" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+            </div>
+
+            <div style="flex:1; min-height:400px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#fafafa; position:relative; overflow:hidden;">
+              <iframe 
+                src="https://www.instagram.com/ux_superplanning/embed" 
+                style="width:100%; height:100%; border:0; background:#fff;" 
+                allowtransparency="true"
+                frameborder="0"
+                title="Superplanning Instagram">
+              </iframe>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000000;">@ux_superplanning</span>
+              <span>슈퍼플래닝 공식 인스타그램</span>
+            </div>
+          </div>
+        `;      } else if (key === 'threads') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold; color:#000;">Address:</span>
+              <input type="text" readonly value="https://www.threads.net/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000; color:#000;">
+              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000; font-weight:bold;">새 창에서 열기 ↗</a>
+            </div>
+
+            <div style="flex:1; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#101010; color:#fff; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:12px; position:relative; overflow:hidden;">
+              <div style="width:64px; height:64px; border-radius:50%; background:#000; border:2px solid #444; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.5);">
+                <img src="/images/threads-logo.jpg" alt="Threads Logo" width="100" height="100" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+
+              <div>
+                <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
+                  최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
+                </p>
+              </div>
+
+              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:8px 18px; background:#ffffff; color:#000000; font-weight:bold; font-size:12px; border:2px solid #ffffff; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border-radius:4px; box-shadow:2px 2px 0 #000;">
+                <img src="/images/threads-logo.jpg" alt="Threads Icon" width="16" height="16" loading="lazy" decoding="async" style="width:16px; height:16px; border-radius:50%; display:block;">
+                Threads 프로필 방문하기 (@ux_superplanning) ↗
+              </a>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000; display:flex; align-items:center; gap:4px;">
+                <img src="/images/threads-logo.jpg" alt="Threads Icon" width="14" height="14" loading="lazy" decoding="async" style="width:14px; height:14px; border-radius:50%; display:block;">
+                @ux_superplanning
+              </span>
+              <span>슈퍼플래닝 공식 쓰레드</span>
+            </div>
+          </div>
+        `;      } else if (key === 'intro-video') {
+        return `
+          <div style="width:100%; height:100%; display:flex; flex-direction:column; gap:6px;">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" 
+              title="슈퍼플래닝 소개영상" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              style="width:100%; flex:1; min-height:345px; height:345px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#000; display:block; flex-shrink:0;">
+            </iframe>
+            <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:2px;">
+              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a>
+            </div>
+          </div>
+        `;      } else if (key === 'careers') {
+        return `
+          <h3 style="font-size:15px; font-weight:800; margin-bottom:4px; color:#000080;">인재를 채용합니다 (상시 모집)</h3>
+          <p style="font-size:12px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
+          <div class="info-card" style="margin-bottom:8px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">1. UX/UI 디자이너 (경력 3년 이상)</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">모바일 앱/웹 UX 기획, 디자인 시스템 구축, 피그마 Pro 사용 우대</p>
+          </div>
+          <div class="info-card" style="margin-bottom:8px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">2. 프론트엔드 개발자 (경력 2년 이상)</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">React, Vue.js, TypeScript 기반 모바일 웹/앱 인터페이스 구축 경험자</p>
+          </div>
+          <div class="info-card" style="margin-bottom:12px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">3. 지원 방법</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
+          </div>
+          <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
+        `;      } else if (key === 'tweaks') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
+            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(typeof setTheme==='function') setTheme(this.value)">
+              <option value="light">Teal Classic (기본 1995)</option>
+              <option value="dark">Dark Slate (다크 모드)</option>
+              <option value="matrix">Matrix Green (이스터에그 테마)</option>
+            </select>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
+            <button class="w95-btn" id="tweakSoundBtn" onclick="if(typeof toggleSound==='function') toggleSound();">사운드: ON 🔊</button>
+          </div>
+          <hr style="margin:10px 0;">
+          <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">팀장님, 갑자기 PC가 고장났어요! (블루스크린 띄우기)</button>
+        `;
+      }
+      return '<div>내용을 불러올 수 없습니다.</div>';
+    }
+
+        // Highlight active tree item on scroll & click
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('main h2[id]');
+      const navLinks = document.querySelectorAll('.tree-link');
+
+      function updateActiveToc() {
+        if (!sections.length || !navLinks.length) return;
+
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+
+        let current = '';
+
+        if (scrollPosition + windowHeight >= fullHeight - 50) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec) current = lastSec.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+            if (scrollPosition >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
+
+    // GNB Scroll Progress Gauge Handler (Exact Main Page Copy)
+    let scrollTimer = null;
+    function updateGnbScrollProgress() {
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      if (!progressBar) return;
+
+      // 1. Window scroll calculation
+      const winScroll = Math.max(0, window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+      const winDocHeight = Math.max(
+        document.body.scrollHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.offsetHeight || 0
+      );
+      const winViewport = window.innerHeight || document.documentElement.clientHeight || 0;
+      const winMaxScroll = Math.max(0, winDocHeight - winViewport);
+      const winRatio = winMaxScroll > 5 ? (winScroll / winMaxScroll) : 0;
+
+      // 2. Main content pane scroll calculation
+      const mainPane = document.querySelector('.main-content-pane');
+      let paneRatio = 0;
+      let paneScroll = 0;
+      if (mainPane) {
+        paneScroll = mainPane.scrollTop || 0;
+        const paneMaxScroll = Math.max(0, mainPane.scrollHeight - mainPane.clientHeight);
+        if (paneMaxScroll > 5) {
+          paneRatio = paneScroll / paneMaxScroll;
+        }
+      }
+
+      // 3. Take active max scroll ratio & current scroll
+      const activeRatio = Math.max(winRatio, paneRatio);
+      const activeScroll = Math.max(winScroll, paneScroll);
+
+      // 4. Compute final percentage
+      const scrolled = Math.min(100, Math.max(0, activeRatio * 100));
+
+      // 5. Update DOM
+      progressBar.style.width = scrolled + '%';
+      if (progressBadge) {
+        progressBadge.textContent = Math.round(scrolled) + '%';
+      }
+
+      // 6. Active scrolling badge visibility timer (1200ms auto-fade, identical to main page)
+      if (activeScroll > 10) {
+        document.body.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          document.body.classList.remove('is-scrolling');
+        }, 1200);
+      } else {
+        document.body.classList.remove('is-scrolling');
+      }
+    }
+
+    // Attach listeners to window, document, and main pane
+    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+
+    const mainPaneEl = document.querySelector('.main-content-pane');
+    if (mainPaneEl) {
+      mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+    }
+
+    // Fire initial update and heartbeat timer fallback
+    updateGnbScrollProgress();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
+    }
+    window.addEventListener('load', updateGnbScrollProgress);
+    setTimeout(updateGnbScrollProgress, 200);
+    setTimeout(updateGnbScrollProgress, 800);
+    setInterval(updateGnbScrollProgress, 250);
+
+    setInterval(() => {
+      const d = new Date();
+      const clockEl = document.getElementById('taskClock');
+      if (clockEl) {
+        clockEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+    }, 1000);
+  </script>
+
+  <script>
+
+    async function handlePopupInquiry(e) {
+      if (e) e.preventDefault();
+      const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
+      const origText = submitBtn ? submitBtn.innerHTML : '';
+
+      const name = document.getElementById('popName') ? document.getElementById('popName').value.trim() : '';
+      const phone = document.getElementById('popPhone') ? document.getElementById('popPhone').value.trim() : '';
+      const company = document.getElementById('popCompany') ? document.getElementById('popCompany').value.trim() : '';
+      const email = document.getElementById('popEmail') ? document.getElementById('popEmail').value.trim() : '';
+      const message = document.getElementById('popMessage') ? document.getElementById('popMessage').value.trim() : '';
+
+      if (!name || !email) {
+        alert('성함과 이메일 주소를 입력해 주세요.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '✉️ 이메일 전송 중...';
+      }
+
+      const payload = {
+        name, phone, company, email, message,
+        _subject: `[슈퍼플래닝 팝업 문의] ${name} - ${company || '고객사'}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const p1 = fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const p2 = fetch('/api/send_inquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        await Promise.race([p1, p2, new Promise(resolve => setTimeout(resolve, 3000))]);
+      } catch (err) {
+        console.log('Popup inquiry error:', err);
+      }
+
+      showInquirySuccessModal(name);
+
+      const form = document.getElementById('popupInquiryForm');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+      }
+    }
+
+  </script>
+
+  <script>
+
+    // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    function showInquirySuccessModal(userName) {
+      let modal = document.getElementById('inquirySuccessModal');
+      if (!modal) {
+        const modalHtml = `
+          <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
+            <div style="width:100%; max-width:380px; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); overflow:hidden;">
+              <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+                <span>[문의 접수 완료]</span>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;">✕</button>
+              </div>
+              <div style="padding:22px 20px; text-align:center; background:#ffffff;">
+                <div style="font-size:32px; margin-bottom:12px;">✉️</div>
+                <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:800; color:#000000;">[문의 접수 완료]</h3>
+                <div style="font-size:13px; line-height:1.65; color:#222222; font-weight:600; margin-bottom:20px; text-align:center; word-break:keep-all;">
+                  <span id="inquiryUserName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
+                  문의 주신 내용은 잘 받았습니다.<br>
+                  빠르게 회신드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:9px 36px; min-width:140px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; cursor:pointer; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
+                  감사합니다
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        modal = document.getElementById('inquirySuccessModal');
+      }
+
+      const nameEl = document.getElementById('inquiryUserName');
+      if (nameEl) nameEl.textContent = userName || '방문자';
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeInquirySuccessModal() {
+      const modal = document.getElementById('inquirySuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+  </script>
+
+  <script>
+
+    /* EXACT TASKBAR & START MENU SCRIPT (100% SYNCED WITH CONTACT PAGE) */
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
+      var menu = document.getElementById('startMenu');
+      if (menu) {
+        menu.classList.toggle('show');
+        if (typeof blip === 'function') blip(520, 0.05);
+      }
+    }
+
+    function closeStart() {
+      var menu = document.getElementById('startMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', function(e) {
+      var menu = document.getElementById('startMenu');
+      var btn = document.getElementById('startBtn');
+      if (menu && menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+
+  </script>
+
+<script>
+window.copyToClipboard = function(text, label, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopySuccess(text, label, btn);
+    }).catch(function() {
+      fallbackCopyText(text, label, btn);
+    });
+  } else {
+    fallbackCopyText(text, label, btn);
+  }
+};
+
+function fallbackCopyText(text, label, btn) {
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    var successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    if (successful) {
+      showCopySuccess(text, label, btn);
+    } else {
+      alert('복사 실패: ' + text);
+    }
+  } catch (err) {
+    alert('복사 실패: ' + text);
+  }
+}
+
+function showCopySuccess(text, label, btn) {
+  if (btn) {
+    var origText = btn.textContent;
+    btn.textContent = '완료!';
+    btn.style.background = '#000000';
+    btn.style.color = '#ffffff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 1500);
+  }
+  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+}
+</script>
+
+</body>
+</html>

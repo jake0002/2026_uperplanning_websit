@@ -1,15 +1,16 @@
-# UX블로그 마크다운 미러 (UX Blog Markdown Mirror)
+﻿# UX釉붾줈洹?留덊겕?ㅼ슫 誘몃윭 (UX Blog Markdown Mirror)
 
-> 슈퍼플래닝(Superplanning) UX블로그의 실무 인사이트 아티클 모음의 Plain-Text 마크다운 문서입니다.
+> ?덊띁?뚮옒??Superplanning) UX釉붾줈洹몄쓽 ?ㅻТ ?몄궗?댄듃 ?꾪떚??紐⑥쓬??Plain-Text 留덊겕?ㅼ슫 臾몄꽌?낅땲??
 
-- **대표 도메인**: [https://www.superplanning.co.kr/ux-blog/](https://www.superplanning.co.kr/ux-blog/)
-- **주요 내용**: UX라이팅, UX리서치, UI/UX기획, Figma 활용법, AI UX, 바이브코딩 실무 가이드 및 아티클 인덱스.
-- **최종 업데이트**: 2026-09-24
+- **????꾨찓??*: [https://www.superplanning.co.kr/ux-blog/](https://www.superplanning.co.kr/ux-blog/)
+- **二쇱슂 ?댁슜**: UX?쇱씠?? UX由ъ꽌移? UI/UX湲고쉷, Figma ?쒖슜踰? AI UX, 諛붿씠釉뚯퐫???ㅻТ 媛?대뱶 諛??꾪떚???몃뜳??
+- **理쒖쥌 ?낅뜲?댄듃**: 2026-09-24
 
-## 아티클 목록
+## ?꾪떚??紐⑸줉
 
-- [전환율보다 먼저 봐야 하는 버튼 문구의 명확성](https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/) — UX라이팅 · 확인/제출 같은 추상적 버튼 문구 대신 결과를 예고하는 카피가 전환율에 미치는 영향
-- [인터뷰 질문 설계에서 자주 생기는 초보 실수](https://www.superplanning.co.kr/ux-blog/interview-question-design-mistakes/) — UX리서치 · 가상의 질문 대신 과거 행동을 묻는 인터뷰 질문 설계 원칙
-- [화면정의서가 예쁜데도 개발이 헷갈리는 이유](https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/) — UX기획/디자인 · Empty·Loading·Error 상태값까지 포함해야 하는 화면정의서 작성 기준
+- [?꾪솚?⑤낫??癒쇱? 遊먯빞 ?섎뒗 踰꾪듉 臾멸뎄??紐낇솗??(https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/) ??UX?쇱씠??쨌 ?뺤씤/?쒖텧 媛숈? 異붿긽??踰꾪듉 臾멸뎄 ???寃곌낵瑜??덇퀬?섎뒗 移댄뵾媛 ?꾪솚?⑥뿉 誘몄튂???곹뼢
+- [?명꽣酉?吏덈Ц ?ㅺ퀎?먯꽌 ?먯＜ ?앷린??珥덈낫 ?ㅼ닔](https://www.superplanning.co.kr/ux-blog/interview-question-design-mistakes/) ??UX由ъ꽌移?쨌 媛?곸쓽 吏덈Ц ???怨쇨굅 ?됰룞??臾삳뒗 ?명꽣酉?吏덈Ц ?ㅺ퀎 ?먯튃
+- [?붾㈃?뺤쓽?쒓? ?덉걶?곕룄 媛쒕컻???룰컝由щ뒗 ?댁쑀](https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/) ??UX湲고쉷/?붿옄??쨌 Empty쨌Loading쨌Error ?곹깭媛믨퉴吏 ?ы븿?댁빞 ?섎뒗 ?붾㈃?뺤쓽???묒꽦 湲곗?
+- [AI?먭쾶 ??댁뼱?꾨젅?꾩쓣 留↔린湲??꾩뿉 癒쇱? ?뺥빐???섎뒗 UX 湲곗?](https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/) ??AI-UX媛뺤쓽 쨌 紐⑹쟻쨌留λ씫쨌?곗꽑?쒖쐞쨌?깃났 湲곗???癒쇱? ?뺤쓽?댁빞 AI ?꾨＼?꾪듃媛 ?쒕?濡??묐룞?섎뒗 ?댁쑀
 
-> 이 인덱스는 슈퍼플래닝 UX블로그에 실제 게시된 아티클만 반영합니다. 신규 아티클이 게시되는 대로 이 목록에 순차적으로 추가됩니다.
+> ???몃뜳?ㅻ뒗 ?덊띁?뚮옒??UX釉붾줈洹몄뿉 ?ㅼ젣 寃뚯떆???꾪떚?대쭔 諛섏쁺?⑸땲?? ?좉퇋 ?꾪떚?댁씠 寃뚯떆?섎뒗 ?濡???紐⑸줉???쒖감?곸쑝濡?異붽??⑸땲??

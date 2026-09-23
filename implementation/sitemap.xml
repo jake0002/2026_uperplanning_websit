@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 1. 메인 홈 -->
+  <!-- 1. 硫붿씤 ??-->
   <url>
     <loc>https://www.superplanning.co.kr/</loc>
     <lastmod>2026-08-02T12:00:00+09:00</lastmod>
@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 2. 핵심 서비스 및 주요 HTML 페이지 -->
+  <!-- 2. ?듭떖 ?쒕퉬??諛?二쇱슂 HTML ?섏씠吏 -->
   <url>
     <loc>https://www.superplanning.co.kr/ux-research/</loc>
     <lastmod>2026-08-30T12:00:00+09:00</lastmod>
@@ -58,7 +58,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 3. UX 블로그 개별 아티클 (슬러그는 영문 kebab-case로 전환됨) -->
+  <!-- 3. UX 釉붾줈洹?媛쒕퀎 ?꾪떚??(?꾩꽦???ъ뒪?몃쭔 ?ы븿, ?щ윭洹몃뒗 ?곷Ц kebab-case) -->
   <url>
     <loc>https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/</loc>
     <lastmod>2026-09-24T12:00:00+09:00</lastmod>
@@ -77,6 +77,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/</loc>
+    <lastmod>2026-09-24T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- 4. AI 색인 파일 및 Plain-Text 마크다운 미러 -->
+  <!-- 4. AI ?됱씤 ?뚯씪 諛?Plain-Text 留덊겕?ㅼ슫 誘몃윭 -->
 </urlset>

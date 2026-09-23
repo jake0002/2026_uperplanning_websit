@@ -1,4 +1,4 @@
-DirectoryIndex index.html index.php
+﻿DirectoryIndex index.html index.php
 
 <IfModule mod_mime.c>
     AddDefaultCharset UTF-8
@@ -25,4 +25,5 @@ DirectoryIndex index.html index.php
 Redirect 301 /ux-blog/post-1/ /ux-blog/button-copy-clarity-conversion/
 Redirect 301 /ux-blog/post-2/ /ux-blog/interview-question-design-mistakes/
 Redirect 301 /ux-blog/post-3/ /ux-blog/ux-spec-document-developer-confusion/
+Redirect 301 /ux-blog/post-4/ /ux-blog/ai-wireframe-ux-criteria/
 
