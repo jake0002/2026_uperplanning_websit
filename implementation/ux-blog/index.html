@@ -1424,7 +1424,7 @@
           <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 19건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
 
-                                    <article class="postit-card" data-id="1">
+                        <article class="postit-card" data-id="1">
               <div class="postit-top-band">
                 <span class="category-badge">UX?쇱씠??/span>
                 <div class="card-actions">
@@ -1448,7 +1448,7 @@
               </div>
             </article>
 
-                                    <article class="postit-card" data-id="2">
+                        <article class="postit-card" data-id="2">
               <div class="postit-top-band">
                 <span class="category-badge">UX由ъ꽌移?/span>
                 <div class="card-actions">
@@ -1472,7 +1472,7 @@
               </div>
             </article>
 
-                                    <article class="postit-card" data-id="3">
+                        <article class="postit-card" data-id="3">
               <div class="postit-top-band">
                 <span class="category-badge">UX湲고쉷/?붿옄??/span>
                 <div class="card-actions">
@@ -1496,7 +1496,7 @@
               </div>
             </article>
 
-                                    <article class="postit-card" data-id="4">
+                        <article class="postit-card" data-id="4">
               <div class="postit-top-band">
                 <span class="category-badge">AI-UX媛뺤쓽</span>
                 <div class="card-actions">
@@ -2320,7 +2320,7 @@
           } else if (currentCategory && currentCategory !== 'all') {
             const normCategory = String(currentCategory).replace(/[\s\/]/g, '').toLowerCase();
             const normPostCategory = String(post.category || '').replace(/[\s\/]/g, '').toLowerCase();
-            if (normPostCategory !== normCategory) { if ((normCategory === "ai?몃옖?? || normCategory === "aiux媛뺤쓽") && (normPostCategory === "ai?몃옖?? || normPostCategory === "aiux媛뺤쓽")) {} else { return false; } }
+            if (normPostCategory !== normCategory) return false;
           }
 
           // Search Filter
