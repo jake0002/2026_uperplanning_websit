@@ -19,3 +19,8 @@ DirectoryIndex index.html index.php
     RewriteRule ^/?class\.html$ /ux-academy/ [R=301,L,QSA]
     RewriteRule ^/?uxplan\.html$ /ux-research/ [R=301,L,QSA]
 </IfModule>
+
+Redirect 301 /ux-blog/post-1/ /ux-blog/button-copy-clarity-conversion/
+Redirect 301 /ux-blog/post-2/ /ux-blog/interview-question-design-mistakes/
+Redirect 301 /ux-blog/post-3/ /ux-blog/ux-spec-document-developer-confusion/
+Redirect 301 /ux-blog/post-4/ /ux-blog/ai-wireframe-ux-criteria/

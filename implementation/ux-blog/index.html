@@ -2309,6 +2309,16 @@
       }
     }
 
+        const SLUG_MAP = {
+      1: "button-copy-clarity-conversion",
+      2: "interview-question-design-mistakes",
+      3: "ux-spec-document-developer-confusion",
+      4: "ai-wireframe-ux-criteria"
+    };
+    function postUrl(id) {
+      return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";
+    }
+
     function renderCards() {
       const grid = document.getElementById('postitGrid') || document.querySelector('.postit-grid');
       if (!grid) return;
@@ -2388,14 +2398,14 @@
                   </button>
                 </div>
               </div>
-              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + ${post.id} + '/';" style="cursor:pointer;">
-                <h3 class="postit-title"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
-                <p class="postit-excerpt"><a href="/ux-blog/post-${post.id}/" style="color:inherit; text-decoration:none;">${post.excerpt}</a></p>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='${postUrl(post.id)}';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="${postUrl(post.id)}" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
+                <p class="postit-excerpt"><a href="${postUrl(post.id)}" style="color:inherit; text-decoration:none;">${post.excerpt}</a></p>
                 <div class="postit-tags">
                   ${tagHtml}
                 </div>
                 <div class="postit-footer">
-                  <a href="/ux-blog/post-${post.id}/" class="read-time-btn" style="text-decoration:none;">
+                  <a href="${postUrl(post.id)}" class="read-time-btn" style="text-decoration:none;">
                     ${post.readTime || 60}초 만에 읽기 →
                   </a>
                 </div>
@@ -2410,8 +2420,8 @@
             <div class="postit-top-band">
               <span class="category-badge">${post.category}</span>
             </div>
-            <div class="postit-body" onclick="location.href='/ux-blog/post-${post.id}/';" style="cursor:pointer;">
-              <h3 class="postit-title"><a href="/ux-blog/post-${post.id}/">${post.title}</a></h3>
+            <div class="postit-body" onclick="location.href='${postUrl(post.id)}';" style="cursor:pointer;">
+              <h3 class="postit-title"><a href="${postUrl(post.id)}">${post.title}</a></h3>
               <p class="postit-excerpt">${post.excerpt}</p>
             </div>
           </article>
@@ -2457,7 +2467,7 @@
 
       let shareUrl = 'https://www.superplanning.co.kr/ux-blog/';
       if (id) {
-        shareUrl = 'https://www.superplanning.co.kr/ux-blog/post-' + id + '/';
+        shareUrl = 'https://www.superplanning.co.kr' + postUrl(id);
       } else {
         shareUrl = window.location.href;
       }

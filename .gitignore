@@ -49,6 +49,7 @@ Desktop.ini
 *.njsproj
 *.sln
 *.sw?
+*.bak
 
 # Agent / Tool cache
 .gemini/
