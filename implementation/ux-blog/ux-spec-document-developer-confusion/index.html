@@ -734,7 +734,11 @@
     }
     @media (max-width: 720px) {
       .explorer-split { flex-direction: column; }
-      .tree-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #808080; }
+      /* PC 화면(720px 초과)에서는 좌측 전체글 목록(사이드바)을 그대로 유지하고,
+         모바일 상세화면에서만 목록을 숨겨서 본문으로 바로 진입하게 한다.
+         display:none은 이 미디어쿼리 안에서만 적용되므로 PC 레이아웃에는 영향이 없다. */
+      .tree-sidebar { display: none; }
+      .main-content-pane { padding: 20px 16px; }
       .compare-table { font-size: 12px; }
     }
 
