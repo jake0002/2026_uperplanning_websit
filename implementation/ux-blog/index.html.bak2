@@ -1435,15 +1435,15 @@
                   </button>
                 </div>
               </div>
-              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/button-copy-clarity-conversion/';" style="cursor:pointer;">
-                <h3 class="postit-title"><a href="/ux-blog/button-copy-clarity-conversion/" style="color:inherit; text-decoration:none;">전환율보다 먼저 봐야 하는 버튼 문구의 명확성</a></h3>
-                <p class="postit-excerpt"><a href="/ux-blog/button-copy-clarity-conversion/" style="color:inherit; text-decoration:none;">좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.</a></p>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 1 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-1/" style="color:inherit; text-decoration:none;">전환율보다 먼저 봐야 하는 버튼 문구의 명확성</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-1/" style="color:inherit; text-decoration:none;">좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.</a></p>
                 <div class="postit-tags">
                   <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#버튼카피');" style="cursor:pointer;" title="#버튼카피 태그 포스팅 모아보기">#버튼카피</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#전환율');" style="cursor:pointer;" title="#전환율 태그 포스팅 모아보기">#전환율</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#마이크로카피');" style="cursor:pointer;" title="#마이크로카피 태그 포스팅 모아보기">#마이크로카피</span>
                 </div>
                 <div class="postit-footer">
-                  <a href="/ux-blog/button-copy-clarity-conversion/" class="read-time-btn" style="text-decoration:none;">
-                    45초 만에 읽기 →
+                  <a href="/ux-blog/post-1/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1460,15 +1460,15 @@
                   </button>
                 </div>
               </div>
-              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/interview-question-design-mistakes/';" style="cursor:pointer;">
-                <h3 class="postit-title"><a href="/ux-blog/interview-question-design-mistakes/" style="color:inherit; text-decoration:none;">인터뷰 질문 설계에서 자주 생기는 초보 실수</a></h3>
-                <p class="postit-excerpt"><a href="/ux-blog/interview-question-design-mistakes/" style="color:inherit; text-decoration:none;">질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.</a></p>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 2 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-2/" style="color:inherit; text-decoration:none;">인터뷰 질문 설계에서 자주 생기는 초보 실수</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-2/" style="color:inherit; text-decoration:none;">질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.</a></p>
                 <div class="postit-tags">
                   <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#인터뷰질문');" style="cursor:pointer;" title="#인터뷰질문 태그 포스팅 모아보기">#인터뷰질문</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX리서치');" style="cursor:pointer;" title="#UX리서치 태그 포스팅 모아보기">#UX리서치</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#사용자조사');" style="cursor:pointer;" title="#사용자조사 태그 포스팅 모아보기">#사용자조사</span>
                 </div>
                 <div class="postit-footer">
-                  <a href="/ux-blog/interview-question-design-mistakes/" class="read-time-btn" style="text-decoration:none;">
-                    60초 만에 읽기 →
+                  <a href="/ux-blog/post-2/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1485,15 +1485,15 @@
                   </button>
                 </div>
               </div>
-              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/ux-spec-document-developer-confusion/';" style="cursor:pointer;">
-                <h3 class="postit-title"><a href="/ux-blog/ux-spec-document-developer-confusion/" style="color:inherit; text-decoration:none;">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a></h3>
-                <p class="postit-excerpt"><a href="/ux-blog/ux-spec-document-developer-confusion/" style="color:inherit; text-decoration:none;">보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.</a></p>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 3 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-3/" style="color:inherit; text-decoration:none;">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-3/" style="color:inherit; text-decoration:none;">보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.</a></p>
                 <div class="postit-tags">
                   <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#화면정의서');" style="cursor:pointer;" title="#화면정의서 태그 포스팅 모아보기">#화면정의서</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#서비스기획');" style="cursor:pointer;" title="#서비스기획 태그 포스팅 모아보기">#서비스기획</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#예외흐름');" style="cursor:pointer;" title="#예외흐름 태그 포스팅 모아보기">#예외흐름</span>
                 </div>
                 <div class="postit-footer">
-                  <a href="/ux-blog/ux-spec-document-developer-confusion/" class="read-time-btn" style="text-decoration:none;">
-                    45초 만에 읽기 →
+                  <a href="/ux-blog/post-3/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1501,7 +1501,7 @@
 
             <article class="postit-card" data-id="4">
               <div class="postit-top-band">
-                <span class="category-badge">AI-UX강의</span>
+                <span class="category-badge">피그마</span>
                 <div class="card-actions">
                   <button class="icon-action-btn" onclick="toggleBookmark(event, 4);" title="즐겨찾기 추가/제거">☆</button>
                   <button class="icon-action-btn" onclick="sharePost(event, 4);" title="아티클 링크 공유하기">
@@ -1510,15 +1510,15 @@
                   </button>
                 </div>
               </div>
-              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/ai-wireframe-ux-criteria/';" style="cursor:pointer;">
-                <h3 class="postit-title"><a href="/ux-blog/ai-wireframe-ux-criteria/" style="color:inherit; text-decoration:none;">AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</a></h3>
-                <p class="postit-excerpt"><a href="/ux-blog/ai-wireframe-ux-criteria/" style="color:inherit; text-decoration:none;">AI에게 와이어프레임을 그냥 맡기면 그럴싸하지만 어긋난 화면이 나옵니다. 목적, 맥락, 우선순위, 성공 기준을 먼저 정리해야 프롬프트가 제대로 작동합니다.</a></p>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/post-' + 4 + '/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/post-4/" style="color:inherit; text-decoration:none;">피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/post-4/" style="color:inherit; text-decoration:none;">피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.</a></p>
                 <div class="postit-tags">
-                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX 태그 포스팅 모아보기">#AIUX</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#와이어프레임');" style="cursor:pointer;" title="#와이어프레임 태그 포스팅 모아보기">#와이어프레임</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#프롬프트설계');" style="cursor:pointer;" title="#프롬프트설계 태그 포스팅 모아보기">#프롬프트설계</span>
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#피그마');" style="cursor:pointer;" title="#피그마 태그 포스팅 모아보기">#피그마</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#협업툴');" style="cursor:pointer;" title="#협업툴 태그 포스팅 모아보기">#협업툴</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#컴포넌트');" style="cursor:pointer;" title="#컴포넌트 태그 포스팅 모아보기">#컴포넌트</span>
                 </div>
                 <div class="postit-footer">
-                  <a href="/ux-blog/ai-wireframe-ux-criteria/" class="read-time-btn" style="text-decoration:none;">
-                    60초 만에 읽기 →
+                  <a href="/ux-blog/post-4/" class="read-time-btn" style="text-decoration:none;">
+                    90초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1966,7 +1966,7 @@
         category: "UX라이팅",
         title: "전환율보다 먼저 봐야 하는 버튼 문구의 명확성",
         excerpt: "좋아 보이는 문구보다 중요한 건 클릭 이후 어떤 일이 벌어지는지 바로 이해하게 만드는 일입니다. 확인, 제출 같은 추상 문구 대신 다음 행동을 예고하는 카피가 사용자 불안을 먼저 줄입니다.",
-        readTime: 45,
+        readTime: 60,
         tags: ["#버튼카피", "#전환율", "#마이크로카피"],
         content: `
           <h3>클릭을 주저하게 만드는 대표적인 원인</h3>
@@ -1981,7 +1981,7 @@
         category: "UX리서치",
         title: "인터뷰 질문 설계에서 자주 생기는 초보 실수",
         excerpt: "질문이 부드럽다고 인터뷰가 잘 되는 건 아닙니다. 경험 확인 없이 의견부터 묻거나, 맥락과 감정을 한 질문에 섞는 순간 답변의 밀도가 급격히 떨어집니다. 실제 행동을 끌어내는 순서가 핵심입니다.",
-        readTime: 60,
+        readTime: 90,
         tags: ["#인터뷰질문", "#UX리서치", "#사용자조사"],
         content: `
           <h3>가상의 질문 vs 과거 경험 질문</h3>
@@ -1996,7 +1996,7 @@
         category: "UX기획/디자인",
         title: "화면정의서가 예쁜데도 개발이 헷갈리는 이유",
         excerpt: "보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.",
-        readTime: 45,
+        readTime: 60,
         tags: ["#화면정의서", "#서비스기획", "#예외흐름"],
         content: `
           <h3>정상 케이스 80% vs 예외 케이스 20%</h3>
@@ -2006,15 +2006,15 @@
       },
       {
         id: 4,
-        category: "AI-UX강의",
-        title: "AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준",
-        excerpt: "AI에게 와이어프레임을 그냥 맡기면 그럴싸하지만 어긋난 화면이 나옵니다. 목적, 맥락, 우선순위, 성공 기준을 먼저 정리해야 프롬프트가 제대로 작동합니다.",
-        readTime: 60,
-        tags: ["#AIUX", "#와이어프레임", "#프롬프트설계"],
+        category: "피그마",
+        title: "피그마를 디자인 툴이 아니라 협업 툴로 봐야 하는 이유",
+        excerpt: "피그마의 핵심은 화면을 예쁘게 만드는 데 있지 않습니다. 코멘트 흐름, 컴포넌트 기준, 버전 공유 구조가 정리될 때 팀 전체의 의사결정 속도가 함께 빨라집니다.",
+        readTime: 90,
+        tags: ["#피그마", "#협업툴", "#컴포넌트"],
         content: `
-          <h3>AI에게 그냥 맡기면 왜 어긋난 화면이 나올까요?</h3>
-          <p>AI는 화면을 그려줄 뿐, 목적과 맥락과 성공 기준은 정의해주지 않습니다. 이 3가지를 프롬프트에 먼저 명시해야 결과물이 실제 서비스에 맞게 나옵니다.</p>
-          <blockquote>AI는 화면을 그려줄 뿐, 이 화면이 왜 필요한지는 정의해주지 않습니다. 그 정의는 여전히 UX기획자의 몫입니다.</blockquote>
+          <h3>디자인 파일 구조화 방법론</h3>
+          <p>Page 1: 🧹 Draft (아이디어 스케치)<br>Page 2: 🚀 Dev Ready (개발 전달용 검증 시안)<br>Page 3: ❖ Design System (공용 컴포넌트)</p>
+          <p>구조화된 피그마 파일은 개발자와 기획자가 커뮤니케이션 비용을 70% 이상 절감시켜 줍니다.</p>
         `
       },
       {
