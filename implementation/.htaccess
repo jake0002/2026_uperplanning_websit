@@ -20,10 +20,8 @@ DirectoryIndex index.html index.php
     RewriteRule ^/?uxplan\.html$ /ux-research/ [R=301,L,QSA]
 </IfModule>
 
-# 슈퍼플래닝 UX블로그 슬러그 변경 301 리다이렉트 (build.py 자동 생성)
-# .htaccess 또는 Apache VirtualHost 설정에 추가
 Redirect 301 /ux-blog/post-1/ /ux-blog/button-copy-clarity-conversion/
 Redirect 301 /ux-blog/post-2/ /ux-blog/interview-question-design-mistakes/
 Redirect 301 /ux-blog/post-3/ /ux-blog/ux-spec-document-developer-confusion/
 Redirect 301 /ux-blog/post-4/ /ux-blog/ai-wireframe-ux-criteria/
-
+Redirect 301 /ux-blog/post-5/ /ux-blog/startup-ux-consulting-reasons/

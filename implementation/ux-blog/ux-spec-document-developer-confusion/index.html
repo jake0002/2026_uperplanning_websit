@@ -43,7 +43,7 @@
   <title>화면정의서가 예쁜데도 개발이 헷갈리는 이유 — 슈퍼플래닝 UX블로그</title>
   <meta name="description" content="보기 좋은 정의서가 곧 좋은 정의서는 아닙니다. 상태값, 예외 흐름, 연결 규칙이 비어 있으면 디자이너와 개발자, QA가 서로 다른 화면을 상상하게 됩니다. 미감보다 기준이 먼저입니다.">
   <meta name="keywords" content="화면정의서, 서비스기획, 예외흐름, UX기획/디자인, 슈퍼플래닝">
-  <meta name="author" content="김휘수 (슈퍼플래닝)">
+  <meta name="author" content="슈퍼플래닝 UX기획팀">
   <link rel="canonical" href="https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/">
 
   <!-- ============================================================
@@ -70,11 +70,10 @@
     "keywords": "화면정의서, 서비스기획, 예외흐름, UX기획/디자인, 슈퍼플래닝",
     "inLanguage": "ko-KR",
     "author": {
-      "@type": "Person",
-      "name": "김휘수",
-      "jobTitle": "대표",
+      "@type": "Organization",
+      "name": "슈퍼플래닝 UX기획팀",
       "url": "https://www.superplanning.co.kr/ux-company/",
-      "worksFor": {
+      "parentOrganization": {
         "@type": "Organization",
         "name": "슈퍼플래닝 (Superplanning)",
         "url": "https://www.superplanning.co.kr"
@@ -89,7 +88,7 @@
       }
     },
     "datePublished": "2026-08-16",
-    "dateModified": "2026-09-24"
+    "dateModified": "2026-09-25"
   }
   </script>
 
@@ -1082,9 +1081,9 @@
               </li>
 
               <li class="tree-item">
-                <span class="tree-link" style="color:#999999; cursor:default;">
-                  <span class="doc-icon">📄</span> <span>AI UX에서 프롬프트보다 먼저 정해야 하는 기준 <em style="font-style:normal; font-size:10px; color:#bbbbbb;">(준비중)</em></span>
-                </span>
+                <a href="/ux-blog/startup-ux-consulting-reasons/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</span>
+                </a>
               </li>
 
               <li class="tree-item">
@@ -1179,7 +1178,7 @@
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                 <span class="category-badge">UX기획</span>
                 <span class="read-time-pill">3분 분량</span>
-                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 UX Lab<time class="sr-only" datetime="2026-08-16"> · 2026-08-16 게시</time></span>
+                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 UX기획팀<time class="sr-only" datetime="2026-08-16"> · 2026-08-16 게시</time></span>
               </div>
               <div style="display:flex; align-items:center; gap:6px;">
                 <button class="icon-action-btn" id="postBookmarkBtn" onclick="togglePostBookmark(3);" title="즐겨찾기 추가/제거">
@@ -1718,6 +1717,10 @@ function showCopySuccess(text, label, btn) {
         { id: 'quoteTypeText', speed: 26 }
       ];
 
+      function allTypeTargets() {
+        return Array.prototype.slice.call(document.querySelectorAll('.type-text'));
+      }
+
       function start() {
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function(entries) {
@@ -1729,15 +1732,10 @@ function showCopySuccess(text, label, btn) {
               }
             });
           }, { threshold: 0.4 });
-          targets.forEach(function(t) {
-            var el = document.getElementById(t.id);
-            if (el) observer.observe(el);
-          });
+          // 본문의 모든 .type-text(핵심 문장)에 적용 — 포스트마다 인용구가 여러 개여도 동작
+          allTypeTargets().forEach(function(el) { observer.observe(el); });
         } else {
-          targets.forEach(function(t) {
-            var el = document.getElementById(t.id);
-            if (el) typewriterInit(el, t.speed);
-          });
+          allTypeTargets().forEach(function(el) { typewriterInit(el, 26); });
         }
       }
 
