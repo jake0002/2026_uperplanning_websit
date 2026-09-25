@@ -649,6 +649,14 @@
       color: #ffffff;
     }
 
+    /* [신규] 케이스 스터디 프로젝트 정보 — Win95 "속성" 창 스타일 (흑·백·회색만) */
+    .props-window { border: 2px solid #000000; background: #c0c0c0; margin: 20px 0 24px; box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff; }
+    .props-title { display: flex; justify-content: space-between; align-items: center; background: #000000; color: #ffffff; font-size: 12.5px; font-weight: 800; padding: 4px 8px; }
+    .props-x { display: inline-block; width: 16px; height: 14px; line-height: 12px; text-align: center; background: #c0c0c0; color: #000000; border: 1px solid #ffffff; border-right-color: #000000; border-bottom-color: #000000; font-size: 11px; }
+    .props-table { width: calc(100% - 16px); margin: 8px; border-collapse: collapse; table-layout: fixed; background: #ffffff; font-size: 13.5px; }
+    .props-table th, .props-table td { border: 1px solid #808080; padding: 8px 10px; text-align: left; vertical-align: top; color: #000000; }
+    .props-table th { background: #e0e0e0; font-weight: 800; white-space: nowrap; }
+
     /* 시각적으로는 숨기되 DOM에는 남겨 AI/크롤러가 읽을 수 있게 하는 접근성 표준 기법 (display:none 아님) */
     .sr-only {
       position: absolute;
@@ -1093,6 +1101,18 @@
               </li>
 
               <li class="tree-item">
+                <a href="/ux-blog/app-development-cost-quote-difference/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
                 <span class="tree-link" style="color:#999999; cursor:default;">
                   <span class="doc-icon">📄</span> <span>바이브코딩으로 프로토타입 검증 속도를 높이는 방법 <em style="font-style:normal; font-size:10px; color:#bbbbbb;">(준비중)</em></span>
                 </span>
@@ -1315,7 +1335,7 @@
 
               <!-- Next Post (Right) -->
               <div style="flex:1; min-width:0; text-align:right;">
-                <span style="color:#999999; font-weight:500; font-size:13px;">다음 글이 없습니다.</span>
+                <a href="/ux-blog/app-development-cost-quote-difference/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; justify-content:flex-end; gap:6px; max-width:100%;"><span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</span> <span style="white-space:nowrap; font-weight:800; color:#444;">:다음글 ➡</span></a>
               </div>
             </div>
 

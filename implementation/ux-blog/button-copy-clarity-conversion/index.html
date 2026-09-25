@@ -649,6 +649,14 @@
       color: #ffffff;
     }
 
+    /* [신규] 케이스 스터디 프로젝트 정보 — Win95 "속성" 창 스타일 (흑·백·회색만) */
+    .props-window { border: 2px solid #000000; background: #c0c0c0; margin: 20px 0 24px; box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff; }
+    .props-title { display: flex; justify-content: space-between; align-items: center; background: #000000; color: #ffffff; font-size: 12.5px; font-weight: 800; padding: 4px 8px; }
+    .props-x { display: inline-block; width: 16px; height: 14px; line-height: 12px; text-align: center; background: #c0c0c0; color: #000000; border: 1px solid #ffffff; border-right-color: #000000; border-bottom-color: #000000; font-size: 11px; }
+    .props-table { width: calc(100% - 16px); margin: 8px; border-collapse: collapse; table-layout: fixed; background: #ffffff; font-size: 13.5px; }
+    .props-table th, .props-table td { border: 1px solid #808080; padding: 8px 10px; text-align: left; vertical-align: top; color: #000000; }
+    .props-table th { background: #e0e0e0; font-weight: 800; white-space: nowrap; }
+
     /* 시각적으로는 숨기되 DOM에는 남겨 AI/크롤러가 읽을 수 있게 하는 접근성 표준 기법 (display:none 아님) */
     .sr-only {
       position: absolute;
@@ -1089,6 +1097,18 @@
               <li class="tree-item">
                 <a href="/ux-blog/corporate-ux-training-planning/" class="tree-link ">
                   <span class="doc-icon">📄</span> <span>사내 UX교육을 기획할 때 먼저 정해야 할 5가지</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/app-development-cost-quote-difference/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span>
                 </a>
               </li>
 

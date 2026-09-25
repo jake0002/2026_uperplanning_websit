@@ -60,32 +60,26 @@
 
   <!-- 3. UX 블로그 개별 아티클 (19개) -->
   <url>
-    <loc>https://www.superplanning.co.kr/ux-blog/post-1/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
+    <loc>https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.superplanning.co.kr/ux-blog/post-2/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
+    <loc>https://www.superplanning.co.kr/ux-blog/interview-question-design-mistakes/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.superplanning.co.kr/ux-blog/post-3/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
+    <loc>https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.superplanning.co.kr/ux-blog/post-4/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.superplanning.co.kr/ux-blog/post-5/</loc>
-    <lastmod>2026-08-16T12:00:00+09:00</lastmod>
+    <loc>https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -97,6 +91,18 @@
   </url>
   <url>
     <loc>https://www.superplanning.co.kr/ux-blog/corporate-ux-training-planning/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/</loc>
+    <lastmod>2026-09-25T12:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/</loc>
     <lastmod>2026-09-25T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
