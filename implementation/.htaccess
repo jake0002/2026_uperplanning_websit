@@ -26,3 +26,4 @@ Redirect 301 /ux-blog/post-2/ /ux-blog/interview-question-design-mistakes/
 Redirect 301 /ux-blog/post-3/ /ux-blog/ux-spec-document-developer-confusion/
 Redirect 301 /ux-blog/post-4/ /ux-blog/ai-wireframe-ux-criteria/
 Redirect 301 /ux-blog/post-5/ /ux-blog/startup-ux-consulting-reasons/
+RedirectMatch gone "^/ux-blog/post-([6-9]|1[0-9])/?(index\.html)?$"
