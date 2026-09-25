@@ -1392,7 +1392,7 @@
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc" id="categoryNav">
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">19</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">20</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">0</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">1</span></a></li>
@@ -1402,7 +1402,7 @@
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UI디자인"><span class="doc-icon">📄</span> <span>6. UI디자인</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="웹/앱 개발"><span class="doc-icon">📄</span> <span>7. 웹/앱 개발</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="AI-UX"><span class="doc-icon">📄</span> <span>8. AI-UX</span> <span class="badge-count">3</span></a></li>
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX강의"><span class="doc-icon">📄</span> <span>9. UX강의</span> <span class="badge-count">0</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX강의"><span class="doc-icon">📄</span> <span>9. UX강의</span> <span class="badge-count">1</span></a></li>
           </ul>
         </aside>
 
@@ -1546,11 +1546,37 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/startup-ux-consulting-reasons/" class="read-time-btn" style="text-decoration:none;">
-                    180초 만에 읽기 →
+                    55초 만에 읽기 →
                   </a>
                 </div>
               </div>
             </article>
+
+            <article class="postit-card" data-id="20">
+              <div class="postit-top-band">
+                <span class="category-badge">UX강의</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 20);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 20);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/corporate-ux-training-planning/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/corporate-ux-training-planning/" style="color:inherit; text-decoration:none;">사내 UX교육을 기획할 때 먼저 정해야 할 5가지</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/corporate-ux-training-planning/" style="color:inherit; text-decoration:none;">강사 섭외보다 먼저 정해야 할 것은 교육이 끝난 뒤 무엇이 달라져야 하는지입니다. 행동 목표, 수강 대상, 자사 서비스 실습, 교육 형태, 교육 후 단계까지 기업 UX교육 기획의 핵심을 정리했습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX강의');" style="cursor:pointer;" title="#UX강의 태그 포스팅 모아보기">#UX강의</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#기업UX교육');" style="cursor:pointer;" title="#기업UX교육 태그 포스팅 모아보기">#기업UX교육</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#HRD');" style="cursor:pointer;" title="#HRD 태그 포스팅 모아보기">#HRD</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/corporate-ux-training-planning/" class="read-time-btn" style="text-decoration:none;">
+                    50초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
 
             <article class="postit-card" data-id="6">
               <div class="postit-top-band">
@@ -1571,7 +1597,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-6/" class="read-time-btn" style="text-decoration:none;">
-                    90초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1596,7 +1622,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-7/" class="read-time-btn" style="text-decoration:none;">
-                    90초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1646,7 +1672,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-9/" class="read-time-btn" style="text-decoration:none;">
-                    90초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1671,7 +1697,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-10/" class="read-time-btn" style="text-decoration:none;">
-                    90초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1771,7 +1797,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-14/" class="read-time-btn" style="text-decoration:none;">
-                    120초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1796,7 +1822,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-15/" class="read-time-btn" style="text-decoration:none;">
-                    90초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1846,7 +1872,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-17/" class="read-time-btn" style="text-decoration:none;">
-                    120초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1871,7 +1897,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-18/" class="read-time-btn" style="text-decoration:none;">
-                    120초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -1896,7 +1922,7 @@
                 </div>
                 <div class="postit-footer">
                   <a href="/ux-blog/post-19/" class="read-time-btn" style="text-decoration:none;">
-                    120초 만에 읽기 →
+                    60초 만에 읽기 →
                   </a>
                 </div>
               </div>
@@ -2000,7 +2026,7 @@
         category: "UX컨설팅",
         title: "스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유",
         excerpt: "스타트업의 가장 비싼 실수는 사용자가 원하지 않는 기능을 빠르게 만드는 것입니다. UX컨설팅이 개발비를 쓰기 전에 그 실수를 걸러내는 5가지 이유와 단계별 활용법을 정리했습니다.",
-        readTime: 180,
+        readTime: 55,
         tags: ["#UX컨설팅", "#스타트업", "#UX진단"],
         content: `
           <h3>스타트업에게 UX컨설팅은 사치일까요?</h3>
@@ -2008,12 +2034,26 @@
           <blockquote>스타트업이 가장 비싸게 치르는 비용은 개발비가 아니라, 아무도 쓰지 않는 기능을 만드는 데 쓴 시간입니다.</blockquote>
         `
       },
+
+      {
+        id: 20,
+        category: "UX강의",
+        title: "사내 UX교육을 기획할 때 먼저 정해야 할 5가지",
+        excerpt: "강사 섭외보다 먼저 정해야 할 것은 교육이 끝난 뒤 무엇이 달라져야 하는지입니다. 행동 목표, 수강 대상, 자사 서비스 실습, 교육 형태, 교육 후 단계까지 기업 UX교육 기획의 핵심을 정리했습니다.",
+        readTime: 50,
+        tags: ["#UX강의", "#기업UX교육", "#HRD"],
+        content: `
+          <h3>사내 UX교육, 무엇부터 정해야 할까요?</h3>
+          <p>강사 섭외보다 먼저 정해야 할 것은 교육이 끝난 뒤 무엇이 달라져야 하는지입니다. 행동 목표, 수강 대상, 자사 서비스 실습, 교육 형태, 교육 후 단계까지 기업 UX교육 기획의 핵심을 정리했습니다.</p>
+          <blockquote>교육의 성패는 강사의 유명세가 아니라, 교육 후 업무에 자사 서비스 화면이 얼마나 바뀌었는가로 결정됩니다.</blockquote>
+        `
+      },
       {
         id: 6,
         category: "웹/앱 개발",
         title: "바이브코딩으로 프로토타입 검증 속도를 높이는 방법",
         excerpt: "완성도 높은 제품을 만들기보다 작은 인터랙션을 빨리 확인하는 데 집중하면 검증 속도가 크게 빨라집니다. 기획자와 디자이너가 직접 프로토타입을 만져보는 순간 회의 시간이 줄어듭니다.",
-        readTime: 90,
+        readTime: 60,
         tags: ["#바이브코딩", "#프로토타입", "#검증루프"],
         content: `
           <h3>자연어 프롬프트 기반 웹/앱 MVP 제작</h3>
@@ -2026,7 +2066,7 @@
         category: "UX라이팅",
         title: "에러 메시지 작성 시 사용자 이탈을 막는 3가지 서술 규칙",
         excerpt: "시스템 오케스트레이션 코드 대신 사용자가 지금 무엇을 바로잡아야 하는지 친절하고 간결하게 설명할 때 탈퇴율을 극적으로 낮출 수 있습니다.",
-        readTime: 90,
+        readTime: 60,
         tags: ["#에러메시지", "#UX라이팅", "#예외처리"],
         content: `
           <h3>에러 메시지 3대 작성 규칙</h3>
@@ -2050,7 +2090,7 @@
         category: "UI디자인",
         title: "디자인 시스템 구축 시 토큰과 컴포넌트를 분리해야 하는 이유",
         excerpt: "컬러와 타이포그래피 변수(Token)를 컴포넌트 하드코딩 값과 독립시켜야 다크모드 및 모바일/데스크톱 파급 변경 시 오류가 생기지 않습니다.",
-        readTime: 90,
+        readTime: 60,
         tags: ["#디자인시스템", "#디자인토큰", "#컴포넌트"],
         content: `
           <h3>Semantic Token 구조화</h3>
@@ -2062,7 +2102,7 @@
         category: "AI-UX",
         title: "생성형 AI 인터페이스의 대화형 vs 캔버스형 선택 가이드",
         excerpt: "단순 질의응답은 대화형(Chatbot)이 유리하지만, 복잡한 문서 및 디자인 편집 작업은 캔버스(Canvas) 뷰 Split 구조가 훨씬 효율적입니다.",
-        readTime: 90,
+        readTime: 60,
         tags: ["#생성형AI", "#캔버스UX", "#AI인터페이스"],
         content: `
           <h3>작업 맥락 유지를 위한 화면 split 패턴</h3>
@@ -2109,7 +2149,7 @@
         category: "UX리서치",
         title: "FGI 표적집단 면접조사에서 그룹 편향을 방지하는 구조화 기술",
         excerpt: "목소리 큰 참석 한 명이 전체 분위기를 주도하는 현상을 막기 위해 사전 서면 작성과 독립 득표 방식을 병행하는 리서치 스킬.",
-        readTime: 120,
+        readTime: 60,
         tags: ["#FGI", "#패널조사", "#리서치설계"],
         content: `
           <p>토론 전 3분 간 포스트잇 개인 의견 기재 후 제출하게 하면 발언 강자의 영향을 최소화할 수 있습니다.</p>
@@ -2120,7 +2160,7 @@
         category: "UX기획",
         title: "모바일 결제 단계에서 이탈을 줄이는 1-Page Checkout 동선 설계",
         excerpt: "주소 입력, 쿠폰 적용, 결제 수단 선택을 한 페이지 안에서 아코디언 컴포넌트로 처리하여 이탈률을 24% 감소시킨 사례.",
-        readTime: 90,
+        readTime: 60,
         tags: ["#결제동선", "#1PageCheckout", "#전환개선"],
         content: `
           <p>단계 이동 시 로딩 스피너를 제거하고 스무스 스크롤로 다음 입력 필드에 자동 포커스를 주는 UI 패턴.</p>
@@ -2142,7 +2182,7 @@
         category: "UI디자인",
         title: "Figma Variables를 활용한 다크모드 및 다국어 스위칭 구축법",
         excerpt: "피그마 배리어블 모드를 활용해 버튼 클릭 한 번으로 국문/영문 및 라이트/다크모드 전체 시안을 전환하는 시스템 설계.",
-        readTime: 120,
+        readTime: 60,
         tags: ["#Variables", "#다크모드", "#피그마수업"],
         content: `
           <p>String Variable과 Color Variable을 분리 등록하여 고도화된 글로벌 모바일 프로젝트 시안 구축하기.</p>
@@ -2153,7 +2193,7 @@
         category: "웹/앱 개발",
         title: "디자이너가 바이브코딩으로 직접 코드형 프론트엔드를 구축할 때의 Gotchas",
         excerpt: "디자인 시스템 tokens.css와 LLM 바이브코딩 프롬프트 사이의 세만틱 일관성을 유지하는 주의사항.",
-        readTime: 120,
+        readTime: 60,
         tags: ["#프론트엔드", "#바이브코딩", "#디자이너개발"],
         content: `
           <p>CSS 클래스명을 하드코딩하지 않고 변수화된 토큰명(e.g., var(--w95-black))으로 AI에 요청하는 프롬프팅 스킬.</p>
@@ -2164,7 +2204,7 @@
         category: "UX라이팅",
         title: "금융 & 커머스 앱에서 Trust(신뢰)를 구축하는 서술 톤앤매너",
         excerpt: "과도한 혜택 과장이나 모호한 법적 경고 문구 대신 직관적이고 솔직한 텍스트로 사용자의 신뢰감을 극대화하는 법.",
-        readTime: 120,
+        readTime: 60,
         tags: ["#신뢰디자인", "#톤앤매너", "#금융UX"],
         content: `
           <p>작은 글씨의 숨겨진 유의사항 대신 중요한 가입 해지 조건과 수수료 발생 기준을 첫 화면 굵은 글씨로 노출할 때 신뢰 지수가 대폭 상승합니다.</p>
@@ -2287,7 +2327,8 @@
       2: "interview-question-design-mistakes",
       3: "ux-spec-document-developer-confusion",
       4: "ai-wireframe-ux-criteria",
-      5: "startup-ux-consulting-reasons"
+      5: "startup-ux-consulting-reasons",
+      20: "corporate-ux-training-planning"
     };
     function postUrl(id) {
       return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";
