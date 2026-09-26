@@ -2,7 +2,7 @@
 title: "UX라이팅 회사 슈퍼플래닝 | 마이크로카피·보이스앤톤 가이드"
 description: "슈퍼플래닝은 웹사이트와 모바일앱 서비스에서 사용자의 이해, 행동, 전환을 돕는 UX라이팅 서비스를 제공합니다. 버튼, 메뉴, 폼, 오류 메시지, 신청/결제/회원가입 플로우의 마이크로카피를 설계합니다."
 keywords: "UX라이팅, UX라이팅 회사, UX라이팅 외주, 마이크로카피, 보이스앤톤, UX카피라이팅, 슈퍼플래닝, Superplanning"
-canonical: "https://www.superplanning.co.kr/services/ux-writing.md"
+canonical: "https://www.superplanning.co.kr/ux-writing/"
 updated: "2026-09-14"
 ---
 

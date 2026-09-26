@@ -3,7 +3,7 @@
   <!-- 1. 메인 홈 -->
   <url>
     <loc>https://www.superplanning.co.kr/</loc>
-    <lastmod>2026-08-02T12:00:00+09:00</lastmod>
+    <lastmod>2026-09-26T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -35,19 +35,19 @@
   </url>
   <url>
     <loc>https://www.superplanning.co.kr/ux-academy/</loc>
-    <lastmod>2026-09-25T09:30:00+09:00</lastmod>
+    <lastmod>2026-09-26T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.superplanning.co.kr/ux-blog/</loc>
-    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <lastmod>2026-09-26T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.superplanning.co.kr/ux-company/</loc>
-    <lastmod>2026-08-30T12:00:00+09:00</lastmod>
+    <lastmod>2026-09-26T12:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -58,7 +58,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 3. UX 블로그 개별 아티클 (19개) -->
+  <!-- 3. UX 블로그 개별 아티클 (8개) -->
   <url>
     <loc>https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/</loc>
     <lastmod>2026-09-25T12:00:00+09:00</lastmod>
@@ -108,5 +108,4 @@
     <priority>0.8</priority>
   </url>
 
-<!-- 4. AI 색인 파일 및 Plain-Text 마크다운 미러 -->
 </urlset>
