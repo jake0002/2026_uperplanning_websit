@@ -2463,6 +2463,27 @@
       }
     }
 
+    /* 고객사 로고 흐르는 띠 (우→좌, 마우스 올리면 멈춤, 동작 줄이기 설정이면 정지 그리드) */
+    .client-marquee { margin: 20px 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+    .client-marquee-row { overflow: hidden; padding: 14px 0; border-top: 1px solid #e0e0e0; }
+    .client-marquee-row:last-of-type { border-bottom: 1px solid #e0e0e0; }
+    .client-marquee-track { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 14px; }
+    .client-marquee-track li { flex: 0 0 auto; margin: 0 28px; height: 68px; display: flex; align-items: center; }
+    .main-content-pane .client-marquee-track img, .client-marquee-track img { width: auto; height: auto; max-width: 170px; max-height: 64px; display: block; object-fit: contain; }
+    .client-marquee.is-ready .client-marquee-track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; animation: client-marquee-rtl var(--marquee-dur, 40s) linear infinite; }
+    .client-marquee.is-ready .client-marquee-track li { margin: 0 56px 0 0; }
+    .client-marquee-row:hover .client-marquee-track { animation-play-state: paused; }
+    @keyframes client-marquee-rtl { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (max-width: 768px) {
+      .client-marquee-row { padding: 10px 0; }
+      .client-marquee-track li { height: 52px; margin: 0 16px; }
+      .client-marquee.is-ready .client-marquee-track li { margin: 0 36px 0 0; }
+      .main-content-pane .client-marquee-track img, .client-marquee-track img { max-width: 140px; max-height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .client-marquee.is-ready .client-marquee-track { animation: none; }
+    }
+
     /* 수강후기 자동 세로 스크롤 (고정 높이, 마우스·터치·포커스 시 멈춤, 동작 줄이기 설정 존중) */
     .review-roll {
       height: 600px;
@@ -2670,10 +2691,28 @@
             <span class="typewriter-quote" data-text="슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다." style="display:inline; padding:6px 10px 7px 10px; color:#ffffff; background:#000000; border:2px solid #000000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-size:14.5px; line-height:1.7; font-weight:600; word-break:keep-all;">슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다.</span>
           </p>
     
-          <figure class="cases-logo-figure">
-          <div class="cases-logo-stack">
-          <img width="640" height="100" decoding="async" loading="lazy" src="/images/ux-academy/ux-lecture-clients-1.webp" alt="슈퍼플래닝 UX강의·컨설팅 고객사 로고 — GS칼텍스, 비씨카드, CJ올리브네트웍스, 경기도일자리재단, 세종대학교, 순천향대학교, 서울여자대학교"/>
-          <img width="640" height="100" decoding="async" loading="lazy" src="/images/ux-academy/ux-lecture-clients-2.webp" alt="슈퍼플래닝 UX강의·컨설팅 고객사 로고 — SK텔레콤, 롯데, LG유플러스, 아시아나항공, 현대자동차, 신한은행, KB국민은행"/>
+          <figure class="client-marquee" id="client-marquee" aria-label="슈퍼플래닝 UX강의·컨설팅 고객사">
+          <div class="client-marquee-row">
+            <ul class="client-marquee-track">
+              <li><img src="/images/ux-academy/clients/gs-caltex.webp" width="127" height="44" alt="GS칼텍스" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/bccard.webp" width="117" height="34" alt="비씨카드" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/cj-olivenetworks.webp" width="161" height="55" alt="CJ올리브네트웍스" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/gjf.webp" width="120" height="66" alt="경기도일자리재단" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/sejong-univ.webp" width="127" height="38" alt="세종대학교" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/sch-univ.webp" width="88" height="63" alt="순천향대학교" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/swu.webp" width="143" height="45" alt="서울여자대학교" loading="lazy" decoding="async"/></li>
+            </ul>
+          </div>
+          <div class="client-marquee-row client-marquee-row--2">
+            <ul class="client-marquee-track">
+              <li><img src="/images/ux-academy/clients/sk-telecom.webp" width="118" height="51" alt="SK텔레콤" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/lotte.webp" width="117" height="43" alt="롯데" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/lg-uplus.webp" width="135" height="35" alt="LG유플러스" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/asiana.webp" width="127" height="41" alt="아시아나항공" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/hyundai.webp" width="154" height="28" alt="현대자동차" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/shinhan-bank.webp" width="108" height="33" alt="신한은행" loading="lazy" decoding="async"/></li>
+              <li><img src="/images/ux-academy/clients/kb-bank.webp" width="134" height="29" alt="KB국민은행" loading="lazy" decoding="async"/></li>
+            </ul>
           </div>
           </figure>
           
@@ -4282,6 +4321,38 @@ function showCopySuccess(text, label, btn) {
 }
 </script>
 
+  <!-- CLIENT LOGO MARQUEE (right to left) -->
+  <script>
+    (function initClientMarquee() {
+      function setup() {
+        var fig = document.getElementById('client-marquee');
+        if (!fig) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var rows = fig.querySelectorAll('.client-marquee-track');
+        Array.prototype.forEach.call(rows, function (track, idx) {
+          var items = Array.prototype.slice.call(track.children);
+          items.forEach(function (li) {
+            var c = li.cloneNode(true);
+            c.setAttribute('aria-hidden', 'true');
+            var img = c.querySelector('img'); if (img) img.alt = '';
+            track.appendChild(c);
+          });
+        });
+        fig.classList.add('is-ready');
+        function setDur() {
+          Array.prototype.forEach.call(rows, function (track, idx) {
+            var half = track.scrollWidth / 2;
+            var pxPerSec = idx === 0 ? 45 : 38;
+            track.style.setProperty('--marquee-dur', Math.max(15, Math.round(half / pxPerSec)) + 's');
+          });
+        }
+        setDur();
+        window.addEventListener('load', setDur);
+        Array.prototype.forEach.call(fig.querySelectorAll('img'), function (img) { if (!img.complete) img.addEventListener('load', setDur); });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
+    })();
+  </script>
   <!-- REVIEW TEXT AUTO SCROLL -->
   <script>
     (function initReviewRoll() {
