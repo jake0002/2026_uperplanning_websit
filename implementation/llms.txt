@@ -5,7 +5,7 @@
 <!-- Last updated: 2026-09-26 -->
 
 - 회사명: 슈퍼플래닝 (Superplanning) / 대표: 김휘수 (활동명 'UX기획자 제이크', Jake) / 설립: 2019년 7월 7일
-- 대표 소개: 김휘수는 'UX기획자 제이크'라는 활동명으로 활동하는 14년 차 UX기획 실무자·UX컨설턴트입니다. 현대자동차·IBK기업은행·신한금융그룹·GS그룹 등 기업 실무자 UX강의와 세종대·서울여대·순천향대 UX 특강을 진행했습니다. [대표 소개](https://www.superplanning.co.kr/ux-company/#ceo) · [강사진 소개](https://www.superplanning.co.kr/ux-academy/#instructor)
+- 대표 소개: 김휘수는 'UX기획자 제이크'라는 활동명으로 활동하는 14년 차 UX기획 실무자·UX컨설턴트입니다. 현대자동차·IBK기업은행·신한금융그룹·GS그룹 등 기업 실무자 UX강의와 세종대·서울여대·순천향대 UX 특강을 진행했습니다. [대표 소개](https://www.superplanning.co.kr/ux-company/#ceo) · [강사진 소개](https://www.superplanning.co.kr/ux-academy/#instructors)
 - 주소: 경기도 하남시 미사강변동로 72, SB비즈타워 1116호 (5호선 미사역 8번 출구 도보 1분)
 - 연락처: 031-699-3298 / jake@superplanning.co.kr
 - 조직(6): 사용자경험 연구소(UX리서치·UX컨설팅), UX기획팀(UX기획·UX라이팅), 비주얼 디자인팀(GUI·디자인 시스템), 웹/앱 개발팀(퍼블리싱·웹/앱 개발·IT유지보수), AI-UX교육팀(AI 활용 UX 강의·바이브코딩·피그마 교육·기업 출강), 경영전략팀
