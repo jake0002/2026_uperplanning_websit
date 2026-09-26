@@ -1,14 +1,14 @@
 ---
 title: "웹/앱 개발 외주업체 슈퍼플래닝 | AI기반 네이티브·하이브리드 앱 개발"
-description: "슈퍼플래닝은 완벽한 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 전문 회사입니다. 네이티브/하이브리드 모바일앱, 웹서비스, 관리자 시스템, AI 연동, 연간 유지보수까지 한 번에 제공합니다."
+description: "슈퍼플래닝은 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 전문 회사입니다. 네이티브/하이브리드 모바일앱, 웹서비스, 관리자 시스템, AI 연동, 연간 유지보수까지 한 번에 제공합니다."
 keywords: "앱개발, 앱개발 외주업체, 웹개발, AI기반 개발, 네이티브 앱, 하이브리드 앱, Flutter, React Native, 백엔드 개발, 관리자 시스템, AWS 배포, AI 연동, 연간 유지보수, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/web-app-development/"
-updated: "2026-09-14"
+updated: "2026-09-26"
 ---
 
 # 웹/앱 개발 (Web & App Development) | 슈퍼플래닝 (Superplanning)
 
-> 슈퍼플래닝(Superplanning)은 완벽한 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 전문 회사입니다. 네이티브/하이브리드 모바일앱, 웹서비스, 관리자 시스템, AI 연동, 연간 유지보수까지 한 번에 제공합니다.
+> 슈퍼플래닝(Superplanning)은 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 전문 회사입니다. 네이티브/하이브리드 모바일앱, 웹서비스, 관리자 시스템, AI 연동, 연간 유지보수까지 한 번에 제공합니다.
 
 ---
 
@@ -59,26 +59,28 @@ updated: "2026-09-14"
 
 ---
 
-## 보유 특허 현황 (UX관련 지식재산 특허 5건 보유)
+## 보유 특허 현황 (UX 관련 특허 4건(출원 1건 포함)과 디자인등록)
 
 1. **어플리케이션 UI/UX설계 작성** (제10-2211864호)
 2. **모바일앱 UX기획을 위한 와이어프레임 설계 관리장치** (제10-2560058호)
 3. **UX라이팅 텍스트톤 분석 및 추천자동화 시스템** (제10-2844334호)
 4. **AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템** (제10-2025-0057033호, 출원)
-5. **디자인등록** (제30-1076209호 / 제30-2020-0042081호)
+5. **디자인등록** (제30-1076209호 / 디자인 출원 제30-2020-0042081호)
 
 ---
 
 ## 주요 고객사 및 프로젝트 수행 실적
 
-- **금융 / 공공 서비스**: KB국민은행, NH농협은행, 서민금융진흥원 등
-- **플랫폼 / 모빌리티 / 대기업**: 삼성전자, 롯데렌터카, LG유플러스, LG생활건강, 오스템임플란트, CJ올리브네트웍스, 아이스크림에듀 등
+- **웹/앱 개발 프로젝트**: 아이스크림에듀 홈런 AI학습 웹/앱 개발, 케이카 백엔드 시스템 개발, 예술의전당 사이버 투어 웹서비스 개발, LG유플러스 인증앱 헬스케어 서비스(UX리서치·기획·디자인·개발), 롯데렌터카 신차장 모바일앱·다이렉트 웹 등
+- **UX 프로젝트**: KB국민은행 리브 Next, NH농협은행 올원뱅크, 서민금융진흥원, 삼성전자 SDC(제일기획), LG생활건강, 오스템임플란트 등
+- 관련 글: [앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/)
 
 ---
 
 ## 관련 페이지
 
 - 이전 단계: **UX기획/디자인** — https://www.superplanning.co.kr/ux-design/
-- 다음 단계: **AI-UX강의** — https://www.superplanning.co.kr/ux-academy/
-- 마크다운 미러: `/services/web-app-development.md`
-- AI 색인: `/llms.txt`
+- 다음 단계: **AI활용 UX강의** — https://www.superplanning.co.kr/ux-academy/
+- 대표: 김휘수(UX기획자 제이크) — https://www.superplanning.co.kr/ux-company/#ceo
+- AI 색인: https://www.superplanning.co.kr/llms.txt
+- 문의 페이지: https://www.superplanning.co.kr/contact/

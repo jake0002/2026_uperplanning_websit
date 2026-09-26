@@ -2,8 +2,8 @@
 title: "UX컨설팅 | 슈퍼플래닝 (Superplanning) - 스타트업·기업 맞춤 UX 진단 컨설팅"
 description: "슈퍼플래닝은 예비창업자, 스타트업 대표, 기업 UX 실무자를 대상으로 서비스 현황 분석, 1:1 맞춤 컨설팅, 진단 리포트 제공을 수행하는 UX컨설팅 서비스를 제공합니다."
 keywords: "UX컨설팅, UX컨설팅 회사, UX진단, 서비스 리뉴얼 컨설팅, UX전략, 스타트업 UX컨설팅, 슈퍼플래닝, Superplanning"
-canonical: "https://www.superplanning.co.kr/services/ux-strategy.md"
-updated: "2026-09-14"
+canonical: "https://www.superplanning.co.kr/ux-company/"
+updated: "2026-09-26"
 ---
 
 # UX컨설팅 (UX Consulting) | 슈퍼플래닝 (Superplanning)
@@ -30,20 +30,22 @@ updated: "2026-09-14"
 
 ---
 
-## 3. 보유 특허 현황 (UX관련 지식재산 특허 5건 보유)
+## 3. 보유 특허 현황 (UX 관련 특허 4건(출원 1건 포함)과 디자인등록)
 
 1. **어플리케이션 UI/UX설계 작성** (제10-2211864호)
 2. **모바일앱 UX기획을 위한 와이어프레임 설계 관리장치** (제10-2560058호)
 3. **UX라이팅 텍스트톤 분석 및 추천자동화 시스템** (제10-2844334호)
-4. **AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템** (제10-2025-0057033호)
-5. **디자인등록 특허** (제30-1076209호 / 제30-2020-0042081호)
+4. **AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템** (제10-2025-0057033호, 출원)
+5. **디자인등록** (제30-1076209호 / 디자인 출원 제30-2020-0042081호)
 
 ---
 
 ## 4. 주요 고객사 및 프로젝트 수행 실적
 
-- **금융 / 공공 서비스**: KB국민은행, NH농협은행, 서민금융진흥원 등
-- **플랫폼 / 모빌리티 / 대기업**: 삼성전자, 롯데렌터카, LG유플러스, LG생활건강, 오스템임플란트, CJ올리브네트웍스, 아이스크림에듀 등
+- **금융 / 공공**: KB국민은행 리브 Next AI보이스뱅킹, NH농협은행 올원뱅크·스마트뱅킹 UX라이팅 가이드, KB국민카드 마일리지 앱, 서민금융진흥원 맞춤대출 웹/앱, 식품의약품안전처 스마트해썹 등
+- **헬스케어 / 생활 / 모빌리티 / 커머스**: LG유플러스 인증앱 헬스케어 서비스, 오스템임플란트 원클릭 치과 의료용 솔루션, LG생활건강, 롯데렌터카 신차장, 불스원 와이즈비 Mall 등
+- **플랫폼 / 교육**: 삼성전자 SDC 글로벌 컨퍼런스(제일기획), 하이브 위버스 커뮤니티 UX리서치, 아이스크림에듀 홈런 AI학습, 청담에듀 메타러닝 등
+- 대표 사례: [헬스케어 앱 UX개선 케이스 스터디](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/)
 
 ---
 
@@ -66,6 +68,8 @@ A. 공식 문의 페이지(https://www.superplanning.co.kr/contact/)를 통해 �
 ## 6. 관련 문서 및 문의
 
 - 회사소개 페이지(UX컨설팅 소개 포함): https://www.superplanning.co.kr/ux-company/
+- 대표: 김휘수(UX기획자 제이크) — https://www.superplanning.co.kr/ux-company/#ceo
+- 관련 글: [스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유](https://www.superplanning.co.kr/ux-blog/startup-ux-consulting-reasons/)
 - UX기획/디자인 문서: https://www.superplanning.co.kr/services/ux-planning-design.md
 - AI 색인: https://www.superplanning.co.kr/llms.txt
 - 공식 웹사이트: https://www.superplanning.co.kr
