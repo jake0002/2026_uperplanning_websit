@@ -1775,6 +1775,31 @@
       }
     ];
 
+  // === UX블로그 랜덤 정렬: 페이지 로드당 1회, 뒤로가기 시 순서 유지 ===
+  var SP_ORDER_KEY = 'sp_blog_order_v1';
+  var SP_RANDOM_ORDER = (function () {
+    var ids = POSTS_DATA.map(function (p) { return String(p.id); });
+    var nav = (window.performance && performance.getEntriesByType) ? performance.getEntriesByType('navigation')[0] : null;
+    try {
+      if (nav && nav.type === 'back_forward') {
+        var saved = JSON.parse(sessionStorage.getItem(SP_ORDER_KEY) || 'null');
+        if (saved && saved.length === ids.length && ids.every(function (id) { return saved.indexOf(id) > -1; })) return saved;
+      }
+    } catch (e) {}
+    var a = ids.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    try { sessionStorage.setItem(SP_ORDER_KEY, JSON.stringify(a)); } catch (e) {}
+    return a;
+  })();
+  function spRandomOrder(list) {
+    return list.slice().sort(function (x, y) {
+      return SP_RANDOM_ORDER.indexOf(String(x.id)) - SP_RANDOM_ORDER.indexOf(String(y.id));
+    });
+  }
+
     // STATE VARIABLES & SAFE BOOKMARK RETRIEVAL
     let currentCategory = 'all';
     let activeTagFilter = null;
@@ -1962,6 +1987,8 @@
           `;
           return;
         }
+
+        filtered = spRandomOrder(filtered);
 
         grid.innerHTML = filtered.map(post => {
           const isFav = bookmarks.includes(post.id);
