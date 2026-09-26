@@ -49,170 +49,177 @@
 
   <!-- JSON-LD Structured Data (@graph) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.superplanning.co.kr/#organization",
-      "name": "슈퍼플래닝 (Superplanning)",
-      "url": "https://www.superplanning.co.kr/",
-      "logo": "https://www.superplanning.co.kr/og-thumbnail.png",
-      "email": "jake@superplanning.co.kr",
-      "telephone": "+82-31-699-3298",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+82-31-699-3298",
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://www.superplanning.co.kr/#organization",
+        "name": "슈퍼플래닝 (Superplanning)",
+        "url": "https://www.superplanning.co.kr/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.superplanning.co.kr/images/superplanning_brand_logo.png"
+        },
         "email": "jake@superplanning.co.kr",
-        "contactType": "customer service",
-        "areaServed": "KR",
-        "availableLanguage": "ko-KR"
+        "telephone": "+82-31-699-3298",
+        "founder": {
+          "@id": "https://www.superplanning.co.kr/#founder"
+        },
+        "sameAs": [
+          "https://www.instagram.com/ux_superplanning/",
+          "https://www.threads.com/@ux_superplanning",
+          "https://www.youtube.com/@TV-ve4hc",
+          "https://blog.naver.com/ux_superplanning"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.superplanning.co.kr/#website",
+        "url": "https://www.superplanning.co.kr/",
+        "name": "슈퍼플래닝",
+        "inLanguage": "ko-KR"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.superplanning.co.kr/web-app-development/#webpage",
+        "url": "https://www.superplanning.co.kr/web-app-development/",
+        "name": "웹/앱 개발 전문 에이전시 슈퍼플래닝 | AI기반 개발 및 유지보수",
+        "description": "슈퍼플래닝은 UI/UX 기획·디자인과 연계된 AI 기반 웹개발·앱개발 외주업체입니다. 네이티브·하이브리드 모바일앱 신규개발, 웹퍼블리싱, 백오피스·관리자 시스템, Spring·AWS 기반 운영, 기존 서비스 리뉴얼·고도화, 연간 유지보수까지 대응합니다.",
+        "isPartOf": {
+          "@id": "https://www.superplanning.co.kr/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://www.superplanning.co.kr/web-app-development/#breadcrumb"
+        },
+        "inLanguage": "ko-KR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.superplanning.co.kr/web-app-development/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://www.superplanning.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "서비스",
+            "item": "https://www.superplanning.co.kr/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "웹/앱 개발",
+            "item": "https://www.superplanning.co.kr/web-app-development/"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.superplanning.co.kr/web-app-development/#service",
+        "name": "웹/앱 개발",
+        "serviceType": "AI 기반 웹개발 및 모바일앱 개발 외주",
+        "description": "UI/UX 기획·디자인 연계형 AI 모바일앱 개발, 웹퍼블리싱, 백오피스 구축, Spring·AWS 운영 및 연간 유지보수",
+        "provider": {
+          "@id": "https://www.superplanning.co.kr/#organization"
+        },
+        "mainEntityOfPage": "https://www.superplanning.co.kr/web-app-development/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.superplanning.co.kr/web-app-development/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "웹개발과 앱개발을 함께 의뢰할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 슈퍼플래닝은 웹사이트, 관리자 페이지, 백오피스, 모바일앱 개발을 하나의 흐름 안에서 설계하고 구축할 수 있습니다. 사용자용 앱과 운영용 웹 시스템이 따로 놀지 않도록 일관성 있게 개발할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "네이티브 앱과 하이브리드 앱은 어떻게 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네이티브 앱은 iOS와 안드로이드 각각에 최적화해 개발하는 방식이고, 하이브리드 앱은 하나의 공통 기반으로 여러 운영체제를 대응하는 방식입니다. 서비스 목적, 필요한 기능, 예산, 일정에 따라 선택이 달라집니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "앱개발 비용은 어느 정도로 생각해야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "앱개발 비용은 화면 수, 기능 복잡도, 관리자 시스템 유무, 외부 연동, 디자인 수준, 운영체제 범위에 따라 크게 달라집니다. 그래서 평균 금액만 보기보다 핵심 기능과 우선순위를 먼저 정리한 뒤 산정하는 방식이 현실적입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "앱개발 외주비용이 업체마다 차이가 큰 이유는 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "앱개발 외주비용 차이는 기획 범위, UX디자인 포함 여부, 관리자 기능, 테스트 범위, 유지보수 조건, 개발 인력 숙련도에 따라 달라집니다. 초기 견적보다 총 프로젝트 비용 관점에서 비교하는 것이 중요합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "기획이나 디자인이 완성되지 않은 상태에서도 개발이 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 아이디어 단계이거나 간단한 문서만 있는 경우에도 요구사항 정리, 기능 범위 설정, UX디자인 검토를 거쳐 개발 가능한 수준으로 구체화할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "앱개발자 상주근무 형태로 협업이 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "프로젝트 성격에 따라 밀착 협업 구조로 진행할 수 있습니다. 빠른 커뮤니케이션과 즉각적인 이슈 대응이 필요한 경우 실무 대응 중심으로 유연하게 협업합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "모바일앱 개발 후 유지보수도 함께 맡길 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 배포 이후 발생하는 기능 개선, 오류 수정, 성능 보완, 운영 안정화, 연간 유지보수까지 함께 지원할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AI 기능이 들어간 앱이나 웹서비스도 개발할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 챗봇, 추천, 자동화, 텍스트 처리, 요약, 데이터 분석 등 필요한 목적에 맞춰 AI 기능을 웹/앱 서비스에 연동할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "기존에 운영 중인 웹사이트나 앱 리뉴얼도 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 신규 개발뿐 아니라 기존 서비스의 구조 개선, UI 리뉴얼, 기능 추가, 관리자 시스템 보완, 속도 개선, 운영 안정화 등 리뉴얼과 고도화 중심의 개발도 수행할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "웹/앱 개발 문의는 어떻게 시작하면 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "현재 운영 중인 서비스가 있는지, 신규 구축인지, 필요한 기능이 무엇인지 정도만 정리해도 충분합니다. 목표와 우선순위를 먼저 정리한 뒤 적정한 개발 범위와 방식으로 구체화하는 것이 효율적입니다."
+            }
+          }
+        ]
       }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.superplanning.co.kr/#website",
-      "url": "https://www.superplanning.co.kr/",
-      "name": "슈퍼플래닝",
-      "inLanguage": "ko-KR"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.superplanning.co.kr/web-app-development#webpage",
-      "url": "https://www.superplanning.co.kr/web-app-development/",
-      "name": "웹/앱 개발 전문 에이전시 슈퍼플래닝 | AI기반 개발 및 유지보수",
-      "description": "슈퍼플래닝은 UI/UX 기획·디자인과 연계된 AI 기반 웹개발·앱개발 외주업체입니다. 네이티브·하이브리드 모바일앱 신규개발, 웹퍼블리싱, 백오피스·관리자 시스템, Spring·AWS 기반 운영, 기존 서비스 리뉴얼·고도화, 연간 유지보수까지 대응합니다.",
-      "isPartOf": {
-        "@id": "https://www.superplanning.co.kr/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.superplanning.co.kr/web-app-development/#breadcrumb"
-      },
-      "inLanguage": "ko-KR"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.superplanning.co.kr/web-app-development/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "홈",
-          "item": "https://www.superplanning.co.kr/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "서비스",
-          "item": "https://www.superplanning.co.kr/#services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "웹/앱 개발",
-          "item": "https://www.superplanning.co.kr/web-app-development/"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.superplanning.co.kr/web-app-development/#service",
-      "name": "웹/앱 개발",
-      "serviceType": "AI 기반 웹개발 및 모바일앱 개발 외주",
-      "description": "UI/UX 기획·디자인 연계형 AI 모바일앱 개발, 웹퍼블리싱, 백오피스 구축, Spring·AWS 운영 및 연간 유지보수",
-      "provider": {
-        "@id": "https://www.superplanning.co.kr/#organization"
-      },
-      "mainEntityOfPage": "https://www.superplanning.co.kr/web-app-development/"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.superplanning.co.kr/web-app-development/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "웹개발과 앱개발을 함께 의뢰할 수 있나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "가능합니다. 슈퍼플래닝은 웹사이트, 관리자 페이지, 백오피스, 모바일앱 개발을 하나의 흐름 안에서 설계하고 구축할 수 있습니다. 사용자용 앱과 운영용 웹 시스템이 따로 놀지 않도록 일관성 있게 개발할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "네이티브 앱과 하이브리드 앱은 어떻게 다른가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "네이티브 앱은 iOS와 안드로이드 각각에 최적화해 개발하는 방식이고, 하이브리드 앱은 하나의 공통 기반으로 여러 운영체제를 대응하는 방식입니다. 서비스 목적, 필요한 기능, 예산, 일정에 따라 선택이 달라집니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "앱개발 비용은 어느 정도로 생각해야 하나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "앱개발 비용은 화면 수, 기능 복잡도, 관리자 시스템 유무, 외부 연동, 디자인 수준, 운영체제 범위에 따라 크게 달라집니다. 그래서 평균 금액만 보기보다 핵심 기능과 우선순위를 먼저 정리한 뒤 산정하는 방식이 현실적입니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "앱개발 외주비용이 업체마다 차이가 큰 이유는 무엇인가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "앱개발 외주비용 차이는 기획 범위, UX디자인 포함 여부, 관리자 기능, 테스트 범위, 유지보수 조건, 개발 인력 숙련도에 따라 달라집니다. 초기 견적보다 총 프로젝트 비용 관점에서 비교하는 것이 중요합니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "기획이나 디자인이 완성되지 않은 상태에서도 개발이 가능한가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "가능합니다. 아이디어 단계이거나 간단한 문서만 있는 경우에도 요구사항 정리, 기능 범위 설정, UX디자인 검토를 거쳐 개발 가능한 수준으로 구체화할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "앱개발자 상주근무 형태로 협업이 가능한가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "프로젝트 성격에 따라 밀착 협업 구조로 진행할 수 있습니다. 빠른 커뮤니케이션과 즉각적인 이슈 대응이 필요한 경우 실무 대응 중심으로 유연하게 협업합니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "모바일앱 개발 후 유지보수도 함께 맡길 수 있나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "가능합니다. 배포 이후 발생하는 기능 개선, 오류 수정, 성능 보완, 운영 안정화, 연간 유지보수까지 함께 지원할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "AI 기능이 들어간 앱이나 웹서비스도 개발할 수 있나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "가능합니다. 챗봇, 추천, 자동화, 텍스트 처리, 요약, 데이터 분석 등 필요한 목적에 맞춰 AI 기능을 웹/앱 서비스에 연동할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "기존에 운영 중인 웹사이트나 앱 리뉴얼도 가능한가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "가능합니다. 신규 개발뿐 아니라 기존 서비스의 구조 개선, UI 리뉴얼, 기능 추가, 관리자 시스템 보완, 속도 개선, 운영 안정화 등 리뉴얼과 고도화 중심의 개발도 수행할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "웹/앱 개발 문의는 어떻게 시작하면 되나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "현재 운영 중인 서비스가 있는지, 신규 구축인지, 필요한 기능이 무엇인지 정도만 정리해도 충분합니다. 목표와 우선순위를 먼저 정리한 뒤 적정한 개발 범위와 방식으로 구체화하는 것이 효율적입니다."
-          }
-        }
-      ]
-    }
-  ]
-}
+    ]
+  }
   </script>
 
   <style>
@@ -1952,7 +1959,7 @@ table.process-table tbody td strong {
     <div class="start-items">
       <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
       <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.net/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
       <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
       <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
       <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
@@ -2083,7 +2090,7 @@ table.process-table tbody td strong {
           </div>
           
           <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
-            <img src="/images/superplanning_brand_logo.png" alt="SUPERPLANNING" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_brand_logo.png';}">
+            <img src="/images/superplanning_brand_logo.png" alt="슈퍼플래닝 로고" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_brand_logo.png';}">
           </div>
 
           <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:12px 14px; margin-bottom:8px; border-radius:3px;">
@@ -2263,8 +2270,8 @@ table.process-table tbody td strong {
         return `
           <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📝 UX 인사이트 아카이브</h3>
           <div style="display:flex; flex-direction:column; gap:6px;">
-            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">버튼 문구 하나로 이탈률 18% 줄인 방법</h4><p style="margin:0; font-size:11px;">명확한 UX라이팅과 사용자 심리 설계 접근법</p></div>
-            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;"><a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" style="color:#000000;">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</a></h4><p style="margin:0; font-size:11px;">LG유플러스 인증앱 헬스케어 서비스 케이스 스터디</p></div>
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;"><a href="/ux-blog/ux-spec-document-developer-confusion/" style="color:#000000;">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a></h4><p style="margin:0; font-size:11px;">상태값·예외 흐름까지 담는 화면정의서 작성 기준</p></div>
           </div>
         `;
             } else if (key === 'instagram') {
@@ -2296,8 +2303,8 @@ table.process-table tbody td strong {
           <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
             <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
               <span style="font-weight:bold; color:#000;">Address:</span>
-              <input type="text" readonly value="https://www.threads.net/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000; color:#000;">
-              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000; font-weight:bold;">새 창에서 열기 ↗</a>
+              <input type="text" readonly value="https://www.threads.com/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000; color:#000;">
+              <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000; font-weight:bold;">새 창에서 열기 ↗</a>
             </div>
 
             <div style="flex:1; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#101010; color:#fff; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:12px; position:relative; overflow:hidden;">
@@ -2313,7 +2320,7 @@ table.process-table tbody td strong {
                 </p>
               </div>
 
-              <a href="https://www.threads.net/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:8px 18px; background:#ffffff; color:#000000; font-weight:bold; font-size:12px; border:2px solid #ffffff; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border-radius:4px; box-shadow:2px 2px 0 #000;">
+              <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:8px 18px; background:#ffffff; color:#000000; font-weight:bold; font-size:12px; border:2px solid #ffffff; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border-radius:4px; box-shadow:2px 2px 0 #000;">
                 <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:16px; height:16px; border-radius:50%; display:block;">
                 Threads 프로필 방문하기 (@ux_superplanning) ↗
               </a>
