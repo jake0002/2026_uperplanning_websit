@@ -1212,6 +1212,27 @@
       }
     }
 
+    /* CLIENT LOGO MARQUEE (right to left, same as /ux-academy/) */
+    .client-marquee { margin: 20px 0 28px 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+    .client-marquee-row { overflow: hidden; padding: 14px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+    .client-marquee-track { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 14px; }
+    .client-marquee-track li { flex: 0 0 auto; margin: 0 28px; height: 68px; display: flex; align-items: center; }
+    .main-content-pane .client-marquee-track img, .client-marquee-track img { width: auto; height: auto; max-width: 170px; max-height: 52px; display: block; object-fit: contain; border: 0; box-shadow: none; }
+    .client-marquee.is-ready .client-marquee-track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; animation: client-marquee-rtl var(--marquee-dur, 40s) linear infinite; }
+    .client-marquee.is-ready .client-marquee-track li { margin: 0 56px 0 0; }
+    .client-marquee-row:hover .client-marquee-track { animation-play-state: paused; }
+    .client-marquee-caption { margin-top: 8px; font-size: 12.5px; color: #555; text-align: center; font-weight: 500; }
+    @keyframes client-marquee-rtl { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (max-width: 768px) {
+      .client-marquee-row { padding: 10px 0; }
+      .client-marquee-track li { height: 52px; margin: 0 16px; }
+      .client-marquee.is-ready .client-marquee-track li { margin: 0 36px 0 0; }
+      .main-content-pane .client-marquee-track img, .client-marquee-track img { max-width: 140px; max-height: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .client-marquee.is-ready .client-marquee-track { animation: none; }
+    }
+
 </style>
 
 <style>
@@ -1786,10 +1807,20 @@
           <h2 id="cases">6. UI/UX 프로젝트 성공사례</h2>
           <p>슈퍼플래닝은 단순한 UI디자인보다 실제 사용자와 서비스 이해가 중요한 고난도 프로젝트를 많이 수행해 왔습니다. 스타트업 부터 금융, 공공, 모빌리티, 제조, 헬스케어, 교육, 커머스 등 다양한 산업군에서 UX기획, UX리서치, UX라이팅, UI/UX 설계 업무를 진행해 왔습니다. 프로젝트의 공통점은 복잡한 서비스 구조를 사용자 기준으로 다시 정리하고, 실무에 바로 적용할 수 있는 기획과 디자인으로 연결했다는 점입니다.</p>
 
-          <div style="margin: 20px 0 28px 0; width: 100%;">
-            <img src="assets/img/ux-design-deliverables-03.png" decoding="async" loading="lazy" alt="슈퍼플래닝 주요 고객사" onerror="this.onerror=null;this.src='../images/ux_client_logos.png';" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); display: block; background: #ffffff; padding: 12px 16px;">
-            <div style="margin-top: 8px; font-size: 12.5px; color: #555; text-align: center; font-weight: 500;">슈퍼플래닝 주요 고객사</div>
-          </div>
+          <figure class="client-marquee" id="client-marquee" aria-label="슈퍼플래닝 주요 고객사">
+            <div class="client-marquee-row">
+              <ul class="client-marquee-track">
+                <li><img src="/images/ux-design/clients/sk-telecom.webp" width="116" height="48" alt="SK텔레콤" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/lotte.webp" width="125" height="42" alt="롯데" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/lg-uplus.webp" width="146" height="34" alt="LG유플러스" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/kb-bank.webp" width="158" height="28" alt="KB국민은행" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/nh-bank.webp" width="142" height="24" alt="NH농협은행" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/osstem.webp" width="121" height="46" alt="오스템임플란트" loading="lazy" decoding="async"/></li>
+                <li><img src="/images/ux-design/clients/cj-olivenetworks.webp" width="149" height="48" alt="CJ올리브네트웍스" loading="lazy" decoding="async"/></li>
+              </ul>
+            </div>
+            <figcaption class="client-marquee-caption">슈퍼플래닝 주요 고객사</figcaption>
+          </figure>
 
           <div style="display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 260px; border: 1px solid #ccc; padding: 20px; background-color: #fff;">
@@ -2647,5 +2678,36 @@ function showCopySuccess(text, label, btn) {
 }
 </script>
 
+  <!-- CLIENT LOGO MARQUEE (right to left) -->
+  <script>
+    (function initClientMarquee() {
+      function setup() {
+        var fig = document.getElementById('client-marquee');
+        if (!fig) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var rows = fig.querySelectorAll('.client-marquee-track');
+        Array.prototype.forEach.call(rows, function (track) {
+          var items = Array.prototype.slice.call(track.children);
+          items.forEach(function (li) {
+            var c = li.cloneNode(true);
+            c.setAttribute('aria-hidden', 'true');
+            var img = c.querySelector('img'); if (img) img.alt = '';
+            track.appendChild(c);
+          });
+        });
+        fig.classList.add('is-ready');
+        function setDur() {
+          Array.prototype.forEach.call(rows, function (track) {
+            var half = track.scrollWidth / 2;
+            track.style.setProperty('--marquee-dur', Math.max(15, Math.round(half / 40)) + 's');
+          });
+        }
+        setDur();
+        window.addEventListener('load', setDur);
+        Array.prototype.forEach.call(fig.querySelectorAll('img'), function (img) { if (!img.complete) img.addEventListener('load', setDur); });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
+    })();
+  </script>
 </body>
 </html>
