@@ -3,7 +3,7 @@ title: "UX컨설팅 | 슈퍼플래닝 (Superplanning) - 스타트업·기업 맞
 description: "슈퍼플래닝은 예비창업자, 스타트업 대표, 기업 UX 실무자를 대상으로 서비스 현황 분석, 1:1 맞춤 컨설팅, 진단 리포트 제공을 수행하는 UX컨설팅 서비스를 제공합니다."
 keywords: "UX컨설팅, UX컨설팅 회사, UX진단, 서비스 리뉴얼 컨설팅, UX전략, 스타트업 UX컨설팅, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-company/"
-updated: "2026-09-26"
+updated: "2026-10-04"
 ---
 
 # UX컨설팅 (UX Consulting) | 슈퍼플래닝 (Superplanning)
@@ -37,6 +37,8 @@ updated: "2026-09-26"
 3. **웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템** (제10-2844334호)
 4. **AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템** (제10-2025-0057033호, 출원)
 5. **디자인등록** (제30-1076209호 / 디자인 출원 제30-2020-0042081호)
+
+상세(등록일·출원번호·특허 조회 링크): https://www.superplanning.co.kr/ux-company/#patents
 
 ---
 

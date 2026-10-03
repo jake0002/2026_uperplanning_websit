@@ -1,16 +1,33 @@
-# UX釉붾줈洹?留덊겕?ㅼ슫 誘몃윭 (UX Blog Markdown Mirror)
+---
+title: "UX블로그 | 슈퍼플래닝 (Superplanning) - UX리서치·UX라이팅·UX기획·웹/앱 개발 실무 인사이트"
+description: "UX 전문 에이전시 슈퍼플래닝의 공식 UX블로그 아티클 목록입니다. 케이스 스터디, UX컨설팅, UX리서치, UX기획, UX라이팅, UI디자인, 웹/앱 개발, UX강의 8개 카테고리의 실무 글을 정리합니다."
+keywords: "UX블로그, UX 실무, UX리서치, UX라이팅, UX기획, 화면정의서, 앱개발 비용, UX컨설팅, UX강의, 케이스 스터디, 슈퍼플래닝"
+canonical: "https://www.superplanning.co.kr/ux-blog/"
+updated: "2026-10-04"
+---
 
-> ?덊띁?뚮옒??Superplanning) UX釉붾줈洹몄쓽 ?ㅻТ ?몄궗?댄듃 ?꾪떚??紐⑥쓬??Plain-Text 留덊겕?ㅼ슫 臾몄꽌?낅땲??
+# UX블로그 | 슈퍼플래닝 (Superplanning)
 
-- **????꾨찓??*: [https://www.superplanning.co.kr/ux-blog/](https://www.superplanning.co.kr/ux-blog/)
-- **二쇱슂 ?댁슜**: UX?쇱씠?? UX由ъ꽌移? UI/UX湲고쉷, Figma ?쒖슜踰? AI UX, 諛붿씠釉뚯퐫???ㅻТ 媛?대뱶 諛??꾪떚???몃뜳??
-- **理쒖쥌 ?낅뜲?댄듃**: 2026-09-24
+슈퍼플래닝 UX블로그는 슈퍼플래닝의 사용자경험 연구소, UX기획팀, 비주얼 디자인팀, 웹/앱 개발팀, AI-UX교육팀이 실제 프로젝트와 강의 경험을 바탕으로 쓰는 실무 글 모음입니다.
 
-## ?꾪떚??紐⑸줉
+- 목록 페이지: https://www.superplanning.co.kr/ux-blog/
+- 카테고리(8): 케이스 스터디, UX컨설팅, UX리서치, UX기획, UX라이팅, UI디자인, 웹/앱 개발, UX강의
 
-- [?꾪솚?⑤낫??癒쇱? 遊먯빞 ?섎뒗 踰꾪듉 臾멸뎄??紐낇솗??(https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/) ??UX?쇱씠??쨌 ?뺤씤/?쒖텧 媛숈? 異붿긽??踰꾪듉 臾멸뎄 ???寃곌낵瑜??덇퀬?섎뒗 移댄뵾媛 ?꾪솚?⑥뿉 誘몄튂???곹뼢
-- [?명꽣酉?吏덈Ц ?ㅺ퀎?먯꽌 ?먯＜ ?앷린??珥덈낫 ?ㅼ닔](https://www.superplanning.co.kr/ux-blog/interview-question-design-mistakes/) ??UX由ъ꽌移?쨌 媛?곸쓽 吏덈Ц ???怨쇨굅 ?됰룞??臾삳뒗 ?명꽣酉?吏덈Ц ?ㅺ퀎 ?먯튃
-- [?붾㈃?뺤쓽?쒓? ?덉걶?곕룄 媛쒕컻???룰컝由щ뒗 ?댁쑀](https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/) ??UX湲고쉷/?붿옄??쨌 Empty쨌Loading쨌Error ?곹깭媛믨퉴吏 ?ы븿?댁빞 ?섎뒗 ?붾㈃?뺤쓽???묒꽦 湲곗?
-- [AI?먭쾶 ??댁뼱?꾨젅?꾩쓣 留↔린湲??꾩뿉 癒쇱? ?뺥빐???섎뒗 UX 湲곗?](https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/) ??AI-UX媛뺤쓽 쨌 紐⑹쟻쨌留λ씫쨌?곗꽑?쒖쐞쨌?깃났 湲곗???癒쇱? ?뺤쓽?댁빞 AI ?꾨＼?꾪듃媛 ?쒕?濡??묐룞?섎뒗 ?댁쑀
+## 아티클 목록
 
-> ???몃뜳?ㅻ뒗 ?덊띁?뚮옒??UX釉붾줈洹몄뿉 ?ㅼ젣 寃뚯떆???꾪떚?대쭔 諛섏쁺?⑸땲?? ?좉퇋 ?꾪떚?댁씠 寃뚯떆?섎뒗 ?濡???紐⑸줉???쒖감?곸쑝濡?異붽??⑸땲??
+- [헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/) — 케이스 스터디 · LG유플러스 인증앱 헬스케어 서비스를 UX리서치부터 개발까지 5개월 동안 개선한 사례
+- [앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/) — 웹/앱 개발 · 견적 차이를 만드는 범위와 견적 비교 시 확인할 항목
+- [사내 UX교육을 기획할 때 먼저 정해야 할 5가지](https://www.superplanning.co.kr/ux-blog/corporate-ux-training-planning/) — UX강의 · 행동 목표, 수강 대상, 자사 서비스 실습 등 기업 UX교육 기획 기준
+- [스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유](https://www.superplanning.co.kr/ux-blog/startup-ux-consulting-reasons/) — UX컨설팅 · 개발비를 쓰기 전에 검증해야 하는 이유와 단계별 활용법
+- [AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준](https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/) — UX기획 · 목적·맥락·우선순위·성공 기준을 먼저 정해야 하는 이유
+- [화면정의서가 예쁜데도 개발이 헷갈리는 이유](https://www.superplanning.co.kr/ux-blog/ux-spec-document-developer-confusion/) — UX기획 · 상태값, 예외 흐름, 연결 규칙까지 담는 화면정의서 작성 기준
+- [인터뷰 질문 설계에서 자주 생기는 초보 실수](https://www.superplanning.co.kr/ux-blog/interview-question-design-mistakes/) — UX리서치 · 의견보다 과거 행동을 묻는 인터뷰 질문 설계 원칙
+- [전환율보다 먼저 봐야 하는 버튼 문구의 명확성](https://www.superplanning.co.kr/ux-blog/button-copy-clarity-conversion/) — UX라이팅 · 클릭 이후를 예고하는 버튼 카피가 불안을 줄이는 이유
+
+> 이 목록은 슈퍼플래닝 UX블로그에 실제 게시된 글만 반영합니다. 새 글이 게시되면 순서대로 추가합니다.
+
+## 관련 문서
+
+- 회사소개: https://www.superplanning.co.kr/ux-company/
+- AI 색인: https://www.superplanning.co.kr/llms.txt
+- 문의: https://www.superplanning.co.kr/contact/

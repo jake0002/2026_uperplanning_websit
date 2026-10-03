@@ -3,7 +3,7 @@ title: "웹/앱 개발 외주업체 슈퍼플래닝 | AI기반 네이티브·하
 description: "슈퍼플래닝은 UI/UX 기획과 연계된 AI 기반 웹/앱 개발 전문 회사입니다. 네이티브/하이브리드 모바일앱, 웹서비스, 관리자 시스템, AI 연동, 연간 유지보수까지 한 번에 제공합니다."
 keywords: "앱개발, 앱개발 외주업체, 웹개발, AI기반 개발, 네이티브 앱, 하이브리드 앱, Flutter, React Native, 백엔드 개발, 관리자 시스템, AWS 배포, AI 연동, 연간 유지보수, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/web-app-development/"
-updated: "2026-09-26"
+updated: "2026-10-04"
 ---
 
 # 웹/앱 개발 (Web & App Development) | 슈퍼플래닝 (Superplanning)
@@ -66,6 +66,8 @@ updated: "2026-09-26"
 3. **웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템** (제10-2844334호)
 4. **AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템** (제10-2025-0057033호, 출원)
 5. **디자인등록** (제30-1076209호 / 디자인 출원 제30-2020-0042081호)
+
+상세(등록일·출원번호·특허 조회 링크): https://www.superplanning.co.kr/ux-company/#patents
 
 ---
 
