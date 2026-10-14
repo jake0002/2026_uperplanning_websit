@@ -48,6 +48,7 @@
 
 ## UX 블로그
 
+- [AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계](https://www.superplanning.co.kr/ux-blog/ai-voice-service-vui-planning-guide/): UX기획
 - [SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정](https://www.superplanning.co.kr/ux-blog/si-developer-ui-ux-planning-corporate-training/): UX강의
 - [헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/): 케이스 스터디
 - [앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/): 웹/앱 개발

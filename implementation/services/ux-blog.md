@@ -3,7 +3,7 @@ title: "UX블로그 | 슈퍼플래닝 (Superplanning) - UX리서치·UX라이팅
 description: "UX 전문 에이전시 슈퍼플래닝의 공식 UX블로그 아티클 목록입니다. 케이스 스터디, UX컨설팅, UX리서치, UX기획, UX라이팅, UI디자인, 웹/앱 개발, UX강의 8개 카테고리의 실무 글을 정리합니다."
 keywords: "UX블로그, UX 실무, UX리서치, UX라이팅, UX기획, 화면정의서, 화면설계서, 기능정의서, UI/UX 기업출강, 앱개발 비용, UX컨설팅, UX강의, 케이스 스터디, 슈퍼플래닝"
 canonical: "https://www.superplanning.co.kr/ux-blog/"
-updated: "2026-10-13"
+updated: "2026-10-14"
 ---
 
 # UX블로그 | 슈퍼플래닝 (Superplanning)
@@ -15,6 +15,7 @@ updated: "2026-10-13"
 
 ## 아티클 목록
 
+- [AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계](https://www.superplanning.co.kr/ux-blog/ai-voice-service-vui-planning-guide/) — UX기획 · 화면 UX와 VUI 차이, 대화 흐름도·응답 문구 설계 5단계, 금융 음성 서비스 체크포인트(SK텔레콤 NUGU 공식 에이전시)
 - [SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정](https://www.superplanning.co.kr/ux-blog/si-developer-ui-ux-planning-corporate-training/) — UX강의 · SI 개발자 조직을 위한 기능정의서·화면설계서·IA설계·QA체크리스트 실습형 기업출강 커리큘럼과 비용 결정 기준
 - [헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/) — 케이스 스터디 · LG유플러스 인증앱 헬스케어 서비스를 UX리서치부터 개발까지 5개월 동안 개선한 사례
 - [앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/) — 웹/앱 개발 · 견적 차이를 만드는 범위와 견적 비교 시 확인할 항목
