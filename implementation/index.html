@@ -1761,7 +1761,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'blog': { w: 600, h: 420, title: 'UX 블로그' },
       'contact': { w: 660, h: 580, title: '찾아오시는 길' },
       'about': { w: 580, h: 480, title: '슈퍼플래닝' },
-      'clients': { w: 620, h: 336, title: '주요 고객사' },
+      'clients': { w: 620, h: 312, title: '주요 고객사' },
       'careers': { w: 580, h: 400, title: '인재 채용' },
       'intro-video': { w: 640, h: 430, title: '슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '포트폴리오 보기' },
@@ -2012,7 +2012,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         `;
       } else if (key === 'clients') {
         return `
-          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">UX 프로젝트·컨설팅·기업 UX교육으로 함께한 주요 고객사입니다.</p>
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:8px; font-weight:600;">UX 프로젝트·컨설팅·기업 UX교육으로 함께한 주요 고객사입니다.</p>
+          <a href="/ux-company/#partners" class="nugu-partner-banner" aria-label="SK텔레콤 AI 플랫폼 NUGU 공식 에이전시 슈퍼플래닝 — 파트너 및 공식 에이전시 보기" style="display:flex; align-items:center; gap:10px; margin:0 0 12px; padding:6px 12px; background:#000000; color:#ffffff; text-decoration:none; border:1px solid #000000; box-shadow:2px 2px 0 #808080;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#000000'"><img src="/images/ux-company/nugu-logo.webp" alt="NUGU" width="55" height="13" style="display:block; height:13px; width:auto; flex:none;"><span style="width:1px; height:12px; background:#5a5a5a; flex:none;"></span><span style="flex:1; font-size:12px; font-weight:600; letter-spacing:-0.2px; word-break:keep-all; line-height:1.4;">SK텔레콤 AI플랫폼 NUGU 공식 에이전시 슈퍼플래닝</span><svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" style="display:block; flex:none;"><path d="M6 3l5 5-5 5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square"/></svg></a>
 
           <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
             <div class="info-card" style="padding:10px 4px;">SK텔레콤</div>
@@ -2028,7 +2029,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">IBK기업은행</div>
             <div class="info-card" style="padding:10px 4px;">경기도일자리재단</div>
           </div>
-          <a href="/ux-company/#partners" class="nugu-partner-banner" aria-label="SK텔레콤 AI 플랫폼 NUGU 공식 에이전시 — 파트너 및 공식 에이전시 보기" style="display:flex; align-items:center; gap:14px; margin-top:12px; padding:10px 14px; background:#000000; color:#ffffff; text-decoration:none; border:2px solid #000000; box-shadow:3px 3px 0 #808080;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#000000'"><img src="/images/ux-company/nugu-logo.webp" alt="NUGU" width="84" height="20" style="display:block; height:20px; width:auto; flex:none;"><span style="width:1px; height:18px; background:#5a5a5a; flex:none;"></span><span style="flex:1; font-size:13px; font-weight:700; letter-spacing:-0.2px; word-break:keep-all; line-height:1.35;">SK텔레콤 AI플랫폼 NUGU 공식 에이전시 슈퍼플래닝</span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" style="display:block; flex:none;"><path d="M6 3l5 5-5 5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square"/></svg></a>
         `;
       } else if (key === 'contact') {
         return `
