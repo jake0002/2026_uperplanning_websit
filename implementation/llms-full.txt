@@ -27,7 +27,7 @@
 - **수상**: 2021 대한민국 국가사회산업 공헌대상 IT부문 대상 (헤럴드경제·코리아헤럴드 주최)
 - **언론 보도**: IT비즈뉴스 「슈퍼플래닝, 'UX리서치'로 바이브코딩 약점 넘는다」(2026-03-10), 「AI 기반 UX리서치 기술 특허 출원」(2025-05-12), 「클래스101과 손잡고 AI-UX강의 신규 오픈」(2024-05-16), 「모바일앱 UX라이팅 특허 출원」(2022-08-05), 「김휘수 대표, 모바일앱 UI/UX 설계 특허등록」(2021-02-03) — 목록과 링크는 [회사소개 수상 및 언론 보도](https://www.superplanning.co.kr/ux-company/#press) / **설립**: 2019년 7월 7일 / **업종**: 정보통신업·IT컨설팅
 - **조직(6)**: 사용자경험 연구소(UX리서치·UX컨설팅), UX기획팀(UX기획·UX라이팅), 비주얼 디자인팀(GUI·디자인 시스템), 웹/앱 개발팀(퍼블리싱·웹/앱 개발·IT유지보수), AI-UX교육팀(AI 활용 UX 강의·바이브코딩·피그마 교육·기업 출강), 경영전략팀
-- **파트너**: SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 NUGU developers 에이전시 소개 등재 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사, 클래스101·패스트캠퍼스·삼성 멀티캠퍼스 기업 UX직무교육 파트너사
+- **파트너**: SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사, 클래스101·패스트캠퍼스·삼성 멀티캠퍼스 기업 UX직무교육 파트너사
 - **공식 채널**: [인스타그램](https://www.instagram.com/ux_superplanning/), [스레드](https://www.threads.com/@ux_superplanning), [유튜브](https://www.youtube.com/@TV-ve4hc), [네이버 블로그](https://blog.naver.com/ux_superplanning)
 - **공식 웹사이트**: [슈퍼플래닝 공식 웹사이트](https://www.superplanning.co.kr/): 메인 홈페이지 및 서비스 안내
 - **실제 사무실**: 대한민국 경기도 하남시 미사강변동로 72, SB비즈타워 1116호 (12912)
@@ -835,7 +835,7 @@ A. 공식 문의 페이지(https://www.superplanning.co.kr/contact/)를 통해 �
 - 골프존 스크린게임 연동 앱 UX, 현대위아 VR 웹서비스 UX, 예술의전당 사이버 투어 웹서비스 개발
 
 #### 파트너
-- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 NUGU developers 에이전시 소개 등재 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
+- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
 
 #### UX교육·출강 (프로젝트 고객과 구분)
 - 기업: 현대자동차, GS그룹, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, 아시아나항공, BC카드, 모아저축은행 등

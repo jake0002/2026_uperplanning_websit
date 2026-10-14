@@ -33,7 +33,7 @@ updated: "2026-10-04"
 - 골프존 스크린게임 연동 앱 UX, 현대위아 VR 웹서비스 UX, 예술의전당 사이버 투어 웹서비스 개발
 
 ### 파트너
-- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 NUGU developers 에이전시 소개 등재 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
+- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
 
 ### UX교육·출강 (프로젝트 고객과 구분)
 - 기업: 현대자동차, GS그룹, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, 아시아나항공, BC카드, 모아저축은행 등
