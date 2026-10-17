@@ -1020,7 +1020,13 @@
       padding: 14px;
     }
     #skyscraper .sky-title { font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--win-fg-dark); }
-    #skyscraper .sky-hero { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+    #skyscraper .sky-hero { font-size: 11.5px; font-weight: 500; line-height: 1.45; margin-bottom: 12px; word-break: keep-all; }
+    /* 48: 문의 버튼 말풍선 툴팁 (/contact/ .inquiry-tooltip 과 같은 디자인·모션) */
+    #skyscraper .sky-cta-wrap { position: relative; margin-top: 34px; }
+    #skyscraper .sky-cta-tip { position: absolute; top: -32px; right: -4px; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); z-index: 10; pointer-events: none; letter-spacing: -0.2px; line-height: 1.4; animation: skyTipFloat 2.5s infinite ease-in-out; }
+    #skyscraper .sky-cta-tip::after { content: ""; position: absolute; bottom: -5px; right: 18px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+    @keyframes skyTipFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @media (prefers-reduced-motion: reduce) { #skyscraper .sky-cta-tip { animation: none; } }
     #skyscraper .sky-hint { font-size: 11px; opacity: 0.8; margin-bottom: 14px; line-height: 1.4; }
     #skyscraper input, #skyscraper textarea {
       width: 100%;
@@ -1606,7 +1612,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 7. CONTACT SKYSCRAPER -->
   <div id="skyscraper" class="w95-box">
     <div class="sky-title">UX프로젝트 문의</div>
-    <div class="sky-hero">빠르게 회신 드리겠습니다 (보통 10분 이내 응답)</div>
+    <div class="sky-hero">친절한 실무진이 직접 빠르게 답변 드리겠습니다.</div>
     <input type="text" placeholder="이름 *" id="skyName" required>
     <input type="text" placeholder="회사명 (선택)" id="skyCompany">
     <input type="email" placeholder="이메일 *" id="skyEmail" required>
@@ -1616,7 +1622,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="checkbox" id="skyPrivacy" required checked style="width:12px; height:12px; margin:2px 0 0 0; flex-shrink:0; accent-color:#000; cursor:pointer;">
       <label for="skyPrivacy" id="skyPrivacyLabel" style="cursor:pointer; font-size:10.5px; user-select:none; word-break:keep-all;">개인정보 수집 및 이용 동의 (필수)</label>
     </div>
-    <button class="w95-btn" style="width:100%; margin-top:6px; min-height:35px; padding:7px 8px !important; background:#000000 !important; color:#ffffff !important; border:1px solid #000000; font-size:12.5px !important; font-weight:700; letter-spacing:-0.01em;" onclick="submitSkyscraper();">메시지 보내고 10분 안에 연락받기</button>
+    <div class="sky-cta-wrap">
+      <span class="sky-cta-tip">보통 10분 이내 응답</span>
+      <button class="w95-btn" style="width:100%; min-height:35px; padding:7px 8px !important; background:#000000 !important; color:#ffffff !important; border:1px solid #000000; font-size:12.5px !important; font-weight:700; letter-spacing:-0.01em;" onclick="submitSkyscraper();">문의 등록하고 빠른 답변 받기</button>
+    </div>
     <hr style="margin:10px 0 8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
     <div style="display:flex; flex-direction:column; gap:5px; font-size:10.5px; color:var(--win-fg);">
       <div id="skyFooterCompName" style="font-weight:700; color:#000000;">슈퍼플래닝</div>
