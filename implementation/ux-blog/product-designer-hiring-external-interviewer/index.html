@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-54CP3F8');</script>
+  <!-- End Google Tag Manager -->
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://www.superplanning.co.kr | SECONDARY: https://superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://www.superplanning.co.kr">
+
+  <!-- OPEN GRAPH & KAKAOTALK / NAVER / FACEBOOK SHARE THUMBNAIL (CACHE BUSTING: ?v=20260923) -->
+  <!-- [버그 수정] og:title / og:description이 홈페이지용 일반 문구로 고정되어 있던 것을
+       이 포스트 고유의 제목/설명으로 교체함 (카카오톡/페이스북/링크 미리보기가 포스트 내용을 정확히 반영하도록) -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지 — 슈퍼플래닝 UX블로그">
+  <meta property="og:description" content="프로덕트 디자이너 채용 면접 대행과 UX포트폴리오 검증, IT스타트업 심사·멘토링을 진행합니다. 실무면접 평가 영역, 60분 면접 구성, Figma 실무과제, 서면 평가서, 경진대회 심사 기준을 정리했습니다.">
+  <meta property="og:url" content="https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/">
+  <meta property="og:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260923">
+  <meta property="og:image:secure_url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260923">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지 — 슈퍼플래닝 UX블로그">
+  <link rel="image_src" href="https://www.superplanning.co.kr/og-thumbnail.png?v=20260923">
+  <!-- [TODO: 전용 썸네일] https://www.superplanning.co.kr/og-thumbnail.png?v=20260923는 기본값으로 사이트 공통 og-thumbnail.png를 사용 중.
+       포스트 전용 1200x630 이미지가 준비되면 posts_data.json의 og_image 필드만 채우면 자동 반영됨. -->
+
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지 — 슈퍼플래닝 UX블로그">
+  <meta name="twitter:description" content="프로덕트 디자이너·UX디자이너 채용 면접과 IT스타트업 경진대회 심사를 외부 전문가에게 의뢰할 때 확인할 평가 기준을 정리했습니다. 포트폴리오 검증부터 Figma 실무과제, 서면 평가서까지 슈퍼플래닝이 안내합니다.">
+  <meta name="twitter:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260923">
+  <meta name="twitter:domain" content="www.superplanning.co.kr">
+  <meta name="twitter:url" content="https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- PRIMARY SEO METADATA -->
+  <title>프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지 — 슈퍼플래닝 UX블로그</title>
+  <meta name="description" content="프로덕트 디자이너 채용 면접 대행과 UX포트폴리오 검증, IT스타트업 심사·멘토링을 진행합니다. 실무면접 평가 영역, 60분 면접 구성, Figma 실무과제, 서면 평가서, 경진대회 심사 기준을 정리했습니다.">
+  <meta name="keywords" content="프로덕트 디자이너 면접 대행, UX포트폴리오 검증, 스타트업 UX멘토링, 프로덕트 디자이너 채용, 디자이너 채용 면접관, 외부 면접관, 실무면접관, 면접 대행, 포트폴리오 검증, Figma 실무과제, 디자이너 실무과제, UX디자이너 면접, UX기획자 채용, 서비스기획자 채용, 서류 검토 대행, IT스타트업 심사위원, 스타트업 경진대회 심사위원, 공모전 심사위원, 스타트업 첫 디자이너, 슈퍼플래닝">
+  <meta name="author" content="슈퍼플래닝 AI-UX교육팀">
+  <link rel="canonical" href="https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/">
+
+  <!-- ============================================================
+       GEO 구조화 데이터 (JSON-LD SCHEMA.ORG) — BlogPosting
+       [버그 수정] 원래 이 스크립트가 JSON을 닫지 않은 채 바로 아래
+       모달 시스템 JS 코드(WINDOW_DEFS, openWindow 등)와 뒤섞여 있었음.
+       → application/ld+json 안의 JS는 브라우저가 절대 실행하지 않고,
+         JSON 파서는 문법 오류로 전체 스키마를 무효 처리함(구조화 데이터
+         손실 + 포트폴리오 버튼 동작 불능이 동시에 발생).
+       → JSON을 여기서 완전히 닫고, JS는 별도의 일반 <script> 태그로 분리함.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/"
+    },
+    "headline": "프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지",
+    "description": "프로덕트 디자이너 채용 면접 대행과 UX포트폴리오 검증, IT스타트업 심사·멘토링을 진행합니다. 실무면접 평가 영역, 60분 면접 구성, Figma 실무과제, 서면 평가서, 경진대회 심사 기준을 정리했습니다.",
+    "image": "https://www.superplanning.co.kr/og-thumbnail.png?v=20260923",
+    "articleSection": "UX컨설팅",
+    "keywords": "프로덕트 디자이너 면접 대행, UX포트폴리오 검증, 스타트업 UX멘토링, 프로덕트 디자이너 채용, 디자이너 채용 면접관, 외부 면접관, 실무면접관, 면접 대행, 포트폴리오 검증, Figma 실무과제, 디자이너 실무과제, UX디자이너 면접, UX기획자 채용, 서비스기획자 채용, 서류 검토 대행, IT스타트업 심사위원, 스타트업 경진대회 심사위원, 공모전 심사위원, 스타트업 첫 디자이너, 슈퍼플래닝",
+    "inLanguage": "ko-KR",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "프로덕트 디자이너 채용 실무면접"
+      },
+      {
+        "@type": "Thing",
+        "name": "디자이너 포트폴리오 검증"
+      },
+      {
+        "@type": "Thing",
+        "name": "IT스타트업 경진대회·공모전 심사"
+      }
+    ],
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "디자이너·기획자를 채용하는 스타트업과 기업, 공모전 주최 기관"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "슈퍼플래닝 AI-UX교육팀",
+      "url": "https://www.superplanning.co.kr/ux-company/",
+      "parentOrganization": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.superplanning.co.kr/#organization",
+      "name": "슈퍼플래닝 (Superplanning)",
+      "url": "https://www.superplanning.co.kr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.superplanning.co.kr/images/superplanning_brand_logo.png"
+      }
+    },
+    "datePublished": "2026-10-17",
+    "dateModified": "2026-10-17"
+  }
+  </script>
+
+  <!-- SUBPAGE WINDOW MODAL SYSTEM (PORTFOLIO VIEWER) — 일반 JS, ld+json에서 완전히 분리됨 -->
+  <script>
+    const WINDOW_DEFS = {
+      'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' }
+    };
+
+    function openWindow(key) {
+      if (typeof closeStart === 'function') closeStart();
+      var def = WINDOW_DEFS[key] || { w: 780, h: 560, title: '📄 포트폴리오 보기' };
+      var titleText = def.title;
+
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+
+      var isMobile = window.innerWidth <= 768;
+
+      var overlay = document.createElement('div');
+      overlay.id = 'subpageModalOverlay';
+      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
+
+      var win = document.createElement('div');
+      var winW = isMobile ? '94vw' : def.w + 'px';
+      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
+
+      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+
+      win.innerHTML = `
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+          <span>${titleText}</span>
+          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
+          ${getSubpageWindowBody(key)}
+        </div>
+      `;
+
+      overlay.appendChild(win);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSubpageWindow();
+      });
+    }
+
+    function closeSubpageWindow() {
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSubpageWindow();
+    });
+
+    function getSubpageWindowBody(key) {
+      return `
+        <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+            <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
+            <div style="display:flex; gap:6px;">
+              <a href="/Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+              <a href="/Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">파일 다운로드</a>
+            </div>
+          </div>
+          <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+            <iframe
+              src="/Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1"
+              style="width:100%; height:100%; border:0; display:block;"
+              title="슈퍼플래닝 포트폴리오 보기">
+            </iframe>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://www.superplanning.co.kr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UX블로그",
+        "item": "https://www.superplanning.co.kr/ux-blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지",
+        "item": "https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/"
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --bevel-hi: #ffffff;
+      --bevel-shadow: #7b7b7b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a { color: #111111; text-decoration: underline; }
+    a:hover { color: #555555; }
+
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+      text-decoration: none;
+    }
+    .w95-btn:active { box-shadow: inset 1px 1px 0 var(--bevel-shadow); transform: translate(1px, 1px); }
+
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+    }
+    #brandLogo span, #brandLogoText { color: #ffffff !important; }
+
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (EXACT UX-RESEARCH MATCH) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible !important;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1 !important;
+    }
+
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .gnb-link:hover, .gnb-link.active { background: #000000 !important; color: #ffffff !important; }
+
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+      margin-left: auto !important;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      padding: 10px;
+    }
+    #mobileNavDrawer.show { display: block !important; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .titlebar-controls { display: flex; flex-direction: row; align-items: center; gap: 3px; }
+
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+      user-select: none;
+    }
+    .menubar span { cursor: default; }
+    .menubar u { text-decoration: underline; }
+
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active {
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
+    .address-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .addr-label { font-weight: bold; white-space: nowrap; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .explorer-split { display: flex; background: #ffffff; min-height: 640px; }
+
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      padding: 16px 12px;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 13px; color: #000000;
+      margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0;
+    }
+
+    ul.tree-list { list-style-type: none; padding-left: 8px; margin: 0; position: relative; }
+    ul.tree-list::before { content: ""; position: absolute; top: 0; bottom: 12px; left: 18px; border-left: 1px dotted #808080; }
+    .tree-item { position: relative; margin-bottom: 4px; }
+    .tree-item::before { content: ""; position: absolute; top: 12px; left: -10px; width: 10px; border-top: 1px dotted #808080; }
+
+    .tree-item a {
+      display: flex; align-items: center; justify-content: flex-start; gap: 6px;
+      padding: 4px 8px; color: #000000; text-decoration: none; font-size: 12.5px; font-weight: 500;
+    }
+    .tree-item a:hover, .tree-item a.active { background: #000000 !important; color: #ffffff !important; font-weight: 700 !important; }
+
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 32px 36px;
+      overflow-y: auto;
+    }
+
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .category-badge {
+      font-size: 12px;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .read-time-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .hero-excerpt {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 24px;
+      background: #000000;
+      padding: 14px 18px;
+      border-left: 4px solid #ffffff;
+    }
+
+
+    .article-body {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #222222;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .article-body p { margin-bottom: 16px; }
+    .article-body h2 { font-size: 19px; font-weight: 900; margin: 32px 0 14px; color: #000000; padding-bottom: 8px; border-bottom: 1px solid #000000; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 17px; font-weight: 800; margin: 24px 0 12px; color: #000000; }
+    .article-body ol, .article-body ul { margin: 0 0 16px 20px; }
+    .article-body li { margin-bottom: 6px; }
+    .article-body blockquote {
+      border-left: 4px solid #ffffff;
+      padding: 12px 16px;
+      background: #000000;
+      color: #ffffff;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    /* [신규] Before/After 비교 테이블 — 블랙&화이트 톤 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 24px;
+      font-size: 13.5px;
+    }
+    .compare-table caption {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+      margin-bottom: 6px;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid #000000;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .compare-table thead th {
+      background: #000000;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+    .compare-table tbody td:first-child {
+      color: #000000;
+      width: 38%;
+    }
+    .compare-table tbody td:last-child {
+      color: #000000;
+      font-weight: 700;
+    }
+    .compare-table .compare-arrow-col {
+      width: 28px;
+      text-align: center;
+      font-weight: 900;
+      color: #000000;
+      background: #ffffff;
+      padding: 10px 4px;
+    }
+    .compare-table thead th.compare-arrow-col {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* [신규] 케이스 스터디 프로젝트 정보 — Win95 "속성" 창 스타일 (흑·백·회색만) */
+    .props-window { border: 2px solid #000000; background: #c0c0c0; margin: 20px 0 24px; box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff; }
+    .props-title { display: flex; justify-content: space-between; align-items: center; background: #000000; color: #ffffff; font-size: 12.5px; font-weight: 800; padding: 4px 8px; }
+    .props-x { display: inline-block; width: 16px; height: 14px; line-height: 12px; text-align: center; background: #c0c0c0; color: #000000; border: 1px solid #ffffff; border-right-color: #000000; border-bottom-color: #000000; font-size: 11px; }
+    .props-table { width: calc(100% - 16px); margin: 8px; border-collapse: collapse; table-layout: fixed; background: #ffffff; font-size: 13.5px; }
+    .props-table th, .props-table td { border: 1px solid #808080; padding: 8px 10px; text-align: left; vertical-align: top; color: #000000; }
+    .props-table th { background: #e0e0e0; font-weight: 800; white-space: nowrap; }
+
+    /* 시각적으로는 숨기되 DOM에는 남겨 AI/크롤러가 읽을 수 있게 하는 접근성 표준 기법 (display:none 아님) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 28px 0 20px;
+      padding-top: 16px;
+      border-top: 1px dashed #000000;
+    }
+    .tag-pill {
+      font-size: 11.5px;
+      font-weight: 700;
+      background: #f4f4f4;
+      color: #000000;
+      padding: 3px 8px;
+      border: 1px solid #000000;
+    }
+
+    .post-nav-section {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #000000;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .post-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .post-nav-link {
+      color: #000000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 48%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .post-nav-link:hover { text-decoration: underline; }
+
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333333;
+      user-select: none;
+    }
+
+    @media (max-width: 900px) {
+      #gnb { left: 72px !important; right: 8px !important; justify-content: flex-end !important; }
+#brandLogo { display: flex !important; }
+      .gnb-menu, .gnb-right { display: none !important; }
+      #mobileMenuBtn { display: flex !important; }
+      .main-content-pane { padding: 24px 20px; }
+      .post-nav-link { max-width: 100%; }
+    }
+    @media (max-width: 720px) {
+      .explorer-split { flex-direction: column; }
+      /* PC 화면(720px 초과)에서는 좌측 전체글 목록(사이드바)을 그대로 유지하고,
+         모바일 상세화면에서만 목록을 숨겨서 본문으로 바로 진입하게 한다.
+         display:none은 이 미디어쿼리 안에서만 적용되므로 PC 레이아웃에는 영향이 없다. */
+      .tree-sidebar { display: none; }
+      .main-content-pane { padding: 20px 16px; }
+      .compare-table { font-size: 12px; }
+    }
+
+    .icon-action-btn {
+      background: #ffffff;
+      border: 1px solid #000000;
+      box-shadow: 1px 1px 0 #000000;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 3px 8px;
+      color: #000000;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.1s ease;
+    }
+    .icon-action-btn:hover { background: #000000; color: #ffffff; box-shadow: 0 0 0 #000000; }
+    .icon-action-btn:hover svg { stroke: #ffffff; }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #000000;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0 #000000;
+      z-index: 10001;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  /* RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+
+    /* Start Button Pointer-Events Guard */
+    #startBtn * { pointer-events: none !important; }
+    #startMenu {
+      position: fixed !important;
+      bottom: 38px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      display: none;
+      padding: 4px !important;
+    }
+    #startMenu.show { display: flex !important; }
+
+    /* TASKBAR ALWAYS VISIBLE & HIGH Z-INDEX */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      height: 36px !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      box-shadow: inset 0 1px 0 #7b7b7b !important;
+    }
+    #startMenu {
+      position: fixed !important;
+      bottom: 36px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      padding: 4px !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+    }
+
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      right: 20px !important; left: auto !important;
+      bottom: 48px !important;
+    }
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu {
+      display: none;
+      position: fixed !important;
+      bottom: 32px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54CP3F8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://www.superplanning.co.kr/';">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="gnb">
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-writing/"><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-design/"><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/web-app-development/"><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link active" href="/ux-blog/"><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-company/"><span>회사소개</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/contact/"><span>문의하기</span></a>
+      </li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+    </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
+    </div>
+  </div>
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <div class="explorer-window">
+      <!-- 1. Black Titlebar (Exact UX-Research Match) -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn" onclick="location.href='https://www.superplanning.co.kr/';">✕</div>
+        </div>
+      </div>
+
+      <!-- 2. Menu Bar (Exact UX-Research Match) -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- 3. Toolbar Area (Exact UX-Research Match) -->
+      <div class="toolbar-area">
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 뒤로</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_블로그\프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</div>
+        </div>
+      </div>
+
+      <!-- 4. Explorer Split Pane -->
+      <div class="explorer-split">
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>슈퍼플래닝 &gt; UX블로그</span>
+          </div>
+
+          <ul class="tree-list toc">
+            <li class="tree-item"><a href="/ux-blog/" class="tree-link"><span class="doc-icon">📄</span> <span>▣ 전체글 목록</span></a></li>
+              <li class="tree-item">
+                <a href="/ux-blog/button-copy-clarity-conversion/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>전환율보다 먼저 봐야 하는 버튼 문구의 명확성</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/interview-question-design-mistakes/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>인터뷰 질문 설계에서 자주 생기는 초보 실수</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ux-spec-document-developer-confusion/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>화면정의서가 예쁜데도 개발이 헷갈리는 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ai-wireframe-ux-criteria/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/startup-ux-consulting-reasons/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/corporate-ux-training-planning/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>사내 UX교육을 기획할 때 먼저 정해야 할 5가지</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/app-development-cost-quote-difference/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ai-voice-service-vui-planning-guide/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/product-designer-hiring-external-interviewer/" class="tree-link active">
+                  <span class="doc-icon">📄</span> <span>프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</span>
+                </a>
+              </li>
+          </ul>
+        </aside>
+
+        <main class="main-content-pane">
+          <article>
+            <div class="article-meta-bar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <span class="category-badge">UX컨설팅</span>
+                <span class="read-time-pill">60초 만에 읽기</span>
+                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 AI-UX교육팀<time class="sr-only" datetime="2026-10-17"> · 2026-10-17 게시</time></span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <button class="icon-action-btn" id="postBookmarkBtn" onclick="togglePostBookmark(25);" title="즐겨찾기 추가/제거">
+                  <span id="bookmarkStar">☆</span> <span style="font-size:11px; font-weight:800;">즐겨찾기</span>
+                </button>
+                <button class="icon-action-btn" onclick="shareCurrentPost(25);" title="아티클 링크 공유하기">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                  <span style="font-size:11px; font-weight:800;">공유</span>
+                </button>
+              </div>
+            </div>
+
+            <h1>프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</h1>
+            <div class="hero-excerpt"><span class="type-text" id="heroTypeText">프로덕트 디자이너 채용 면접 대행과 UX포트폴리오 검증, IT스타트업 심사·멘토링을 진행합니다. 실무면접 평가 영역, 60분 면접 구성, Figma 실무과제, 서면 평가서, 경진대회 심사 기준을 정리했습니다.</span></div>
+
+            <div class="article-body">
+      <h2>슈퍼플래닝은 채용 면접과 심사를 어떻게 지원하나요?</h2>
+      <p>슈퍼플래닝은 기업의 UX기획자, 서비스기획자, UX디자이너, 프로덕트 디자이너 채용 과정에서 서류 검토, 실무과제 출제·평가, 면접 참여, 서면 평가서 작성을 의뢰받아 수행해 왔습니다.<br>모바일 앱 창업 공모전과 IT스타트업 경진대회의 심사위원으로도 다수 참여했습니다.<br>대기업 사내 스타트업과 공공기관 청년 창업 프로그램의 UX멘토링도 진행한 경험이 있습니다.</p>
+      <p>평가 기준은 슈퍼플래닝이 누적 100건 이상 수행한 UX 프로젝트의 실무 기준을 바탕으로 합니다.<br>평가표는 채용 직무와 기업의 성장 단계에 맞추어 함께 설계합니다.<br>서울 지역 대면 면접과 온라인 면접 모두 진행할 수 있습니다.</p>
+
+      <h2>첫 디자이너 채용, 왜 외부 실무면접관에게 의뢰할까요?</h2>
+      <p>초기 스타트업이 첫 프로덕트 디자이너를 채용할 때 가장 큰 어려움은 사내에 디자인 역량을 평가할 전문가가 없다는 점입니다.<br>대표와 개발자는 화면의 인상은 판단할 수 있지만, 지원자가 직접 수행한 업무의 범위와 수준을 검증하기는 어렵습니다.<br>이 때문에 <strong>포트폴리오 검증, 실무과제 평가, 서면 평가서 작성</strong>을 외부 시니어 실무자에게 의뢰하는 기업이 늘고 있습니다.</p>
+      <p>외부 실무면접관의 역할은 지원자를 대신 고르는 것이 아닙니다.<br>사전에 합의한 평가 기준으로 모든 지원자를 동일하게 검증하고, 채용 판단에 필요한 근거를 기업에 제공하는 것입니다.</p>
+
+      <blockquote><span class="type-text" id="quoteTypeText">첫 디자이너는 이후 모든 화면의 기준이 됩니다. 따라서 첫 채용의 평가 기준이 곧 회사의 디자인 기준이 됩니다.</span></blockquote>
+
+      <h2>UX·프로덕트 디자이너 실무면접에서는 무엇을 평가할까요?</h2>
+      <p>Nielsen Norman Group이 채용을 담당하는 UX 실무자 204명을 조사한 결과, 채용 담당자들은 완성 화면보다 <strong>해결한 문제, 본인의 역할, 작업 과정, 결과</strong>를 확인하고자 했습니다.<br>(출처: <a href="https://www.nngroup.com/articles/ux-design-portfolios/" target="_blank" rel="noopener">NN/g, 5 Steps to Creating a UX-Design Portfolio</a>)<br>실무면접에서는 이 내용을 아래 평가 영역으로 나누어 검증합니다.</p>
+      <table class="compare-table" style="table-layout:fixed;">
+        <caption>프로덕트 디자이너 실무면접 평가 영역과 검증 방법</caption>
+        <colgroup>
+          <col style="width:30%;">
+          <col style="width:36%;">
+          <col style="width:34%;">
+        </colgroup>
+        <thead>
+          <tr><th>평가 영역</th><th>검증 내용</th><th>검증 방법</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>웹 UI 시각 완성도</td><td>레이아웃, 타이포그래피, 여백, 정렬, 일관성</td><td>포트폴리오 + 실무과제</td></tr>
+          <tr><td>Figma 실무 역량</td><td>Auto Layout, 컴포넌트, Variants, 개발 전달용 파일 구성</td><td>실무과제 작업 과정 관찰</td></tr>
+          <tr><td>사용자 흐름·정보구조</td><td>요구사항을 화면 흐름과 정보 우선순위로 구체화하는 역량</td><td>포트폴리오 심층 질의</td></tr>
+          <tr><td>상태·오류·예외 화면</td><td>로딩, 빈 화면, 오류, 권한 없음 등 상태별 설계</td><td>실무과제 + 추가 질의</td></tr>
+          <tr><td>출시·개발 협업 경험</td><td>실제 출시 여부, 개발 협업 방식, 본인 기여도</td><td>프로젝트별 역할 질의</td></tr>
+          <tr><td>디자인 시스템 활용</td><td>기존 컴포넌트의 재사용과 확장 방식</td><td>디자인 파일 구조 검토</td></tr>
+        </tbody>
+      </table>
+      <p>관리자 대시보드, 결제, 게임 UI 등 특정 도메인 경험은 우대 항목으로 두는 것이 바람직합니다.<br>필수 조건으로 설정하면 기본기가 우수한 지원자를 놓칠 수 있습니다.</p>
+
+      <h2>디자이너 실무면접 60분은 어떻게 구성할까요?</h2>
+      <p>지원자 1인당 60분 면접은 면접 전후 과정까지 함께 설계해야 평가의 일관성을 확보할 수 있습니다.</p>
+      <table class="compare-table" style="table-layout:fixed;">
+        <caption>프로덕트 디자이너 실무면접 60분 구성 예시</caption>
+        <colgroup>
+          <col style="width:22%;">
+          <col style="width:78%;">
+        </colgroup>
+        <thead>
+          <tr><th style="white-space:nowrap;">단계</th><th>진행 내용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;">면접 전</td><td>포트폴리오 사전 검토, 지원자별 확인 질문 설계, 공통 과제와 평가표 확정</td></tr>
+          <tr><td style="white-space:nowrap;">20분</td><td>포트폴리오 검증: 본인 기여도, 출시 여부, 개발 협업 방식 확인</td></tr>
+          <tr><td style="white-space:nowrap;">30분</td><td>Figma 실무과제: 제공된 웹 화면의 문제를 진단하고 1~2개 개선</td></tr>
+          <tr><td style="white-space:nowrap;">10분</td><td>질의응답: 과제에서 내린 디자인 판단의 근거 확인</td></tr>
+          <tr><td style="white-space:nowrap;">면접 후</td><td>항목별 근거와 채용 추천 의견을 담은 서면 평가서 작성</td></tr>
+        </tbody>
+      </table>
+      <p>30분 과제는 새 화면을 제작하는 방식보다 기존 화면을 진단하고 개선하는 방식이 공정합니다.<br>모든 지원자에게 동일한 화면, 동일한 시간, 동일한 평가표를 적용해야 결과를 객관적으로 비교할 수 있습니다.<br>과제 결과물 자체보다 <strong>무엇을 우선 개선했고, 어떤 근거로 판단했는지</strong>가 역량 차이를 더 명확하게 보여 줍니다.</p>
+
+      <h2>서면 평가서에는 어떤 내용이 포함되나요?</h2>
+      <ul>
+        <li><strong>항목별 평가와 근거</strong> — 점수와 함께 포트폴리오·실무과제에서 확인한 구체적 근거를 기록합니다.</li>
+        <li><strong>강점과 보완점</strong> — 입사 직후 수행 가능한 업무와 지원이 필요한 업무를 구분합니다.</li>
+        <li><strong>독립 업무 수행 가능성</strong> — 첫 디자이너의 경우 화면 설계를 주도적으로 수행할 수 있는지가 핵심입니다.</li>
+        <li><strong>채용 추천 의견</strong> — 추천, 조건부 추천, 비추천 중 하나와 그 판단 근거를 제시합니다.</li>
+      </ul>
+
+      <h2>UX기획자 서류 검토와 IT스타트업 심사도 같은 기준으로 진행되나요?</h2>
+      <p>기본 원칙은 같습니다.<br>UX기획자·서비스기획자 서류 검토에서는 산출물에 나타난 본인의 역할과 문제 정의 수준을 검증합니다.<br>모바일 앱 공모전, IT스타트업 경진대회, 아이디어 경진대회 심사 역시 사전에 공개한 심사 기준과 배점에 따라 평가해야 결과의 공정성을 확보할 수 있습니다.<br>심사위원 간 점수 편차가 큰 항목은 평가 근거를 재검토하는 절차가 필요합니다.</p>
+
+      <blockquote><span class="type-text" id="quoteTypeText2">신뢰할 수 있는 면접관과 심사위원은 결론보다 판단의 근거를 남깁니다.</span></blockquote>
+
+      <h2>디자이너 채용 면접관 의뢰, 자주 묻는 질문</h2>
+      <h3>외부 실무면접관 의뢰 비용은 어떻게 산정되나요?</h3>
+      <p>지원자 수, 사전 포트폴리오 검토 범위, 실무과제 출제 여부, 대면·온라인 진행 방식에 따라 산정됩니다.<br>슈퍼플래닝은 채용 직무와 평가 기준을 상담한 뒤 진행 방식과 견적을 함께 안내합니다.</p>
+      <h3>어떤 직무의 채용 면접과 서류 검토를 의뢰할 수 있나요?</h3>
+      <p>UX기획자, 서비스기획자, UX디자이너, UI디자이너, 프로덕트 디자이너 등 화면 설계와 사용자 경험을 다루는 직무를 의뢰할 수 있습니다.<br>포트폴리오 서류 검토, 실무과제 출제·평가, 면접 참여, 서면 평가서 작성 중 필요한 범위를 선택해 진행합니다.</p>
+      <h3>디자이너 실무과제는 어느 정도 시간이 적절한가요?</h3>
+      <p>면접 당일 진행하는 경우 30분 내외가 적절합니다.<br>새 화면을 처음부터 제작하기보다 제공된 화면의 핵심 문제 1~2개를 진단하고 개선하는 과제가 공정한 비교에 유리합니다.<br>과제 결과만으로 판단하지 않고 포트폴리오 검증 내용과 함께 종합 평가합니다.</p>
+      <h3>외부 면접관이 최종 합격 여부까지 결정하나요?</h3>
+      <p>그렇지 않습니다.<br>외부 면접관은 항목별 평가 근거와 채용 추천 의견을 제공하며, 최종 결정은 채용 기업이 내립니다.<br>서면 평가서는 기업이 내부 면접 결과와 비교·검토할 수 있도록 확인된 사실과 근거 중심으로 작성합니다.</p>
+
+      <p class="related-link">슈퍼플래닝의 조직 구성과 대표 이력, UX 특허는 <a href="/ux-company/">회사소개</a> 페이지에서 확인할 수 있습니다.</p>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "외부 실무면접관 의뢰 비용은 어떻게 산정되나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "지원자 수, 사전 포트폴리오 검토 범위, 실무과제 출제 여부, 대면·온라인 진행 방식에 따라 산정됩니다. 슈퍼플래닝은 채용 직무와 평가 기준을 상담한 뒤 진행 방식과 견적을 함께 안내합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "어떤 직무의 채용 면접과 서류 검토를 의뢰할 수 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "UX기획자, 서비스기획자, UX디자이너, UI디자이너, 프로덕트 디자이너 등 화면 설계와 사용자 경험을 다루는 직무를 의뢰할 수 있습니다. 포트폴리오 서류 검토, 실무과제 출제·평가, 면접 참여, 서면 평가서 작성 중 필요한 범위를 선택해 진행합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "디자이너 실무과제는 어느 정도 시간이 적절한가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "면접 당일 진행하는 경우 30분 내외가 적절합니다. 새 화면을 처음부터 제작하기보다 제공된 화면의 핵심 문제 1~2개를 진단하고 개선하는 과제가 공정한 비교에 유리합니다. 과제 결과만으로 판단하지 않고 포트폴리오 검증 내용과 함께 종합 평가합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "외부 면접관이 최종 합격 여부까지 결정하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "그렇지 않습니다. 외부 면접관은 항목별 평가 근거와 채용 추천 의견을 제공하며, 최종 결정은 채용 기업이 내립니다. 서면 평가서는 기업이 내부 면접 결과와 비교·검토할 수 있도록 확인된 사실과 근거 중심으로 작성합니다." }
+          }
+        ]
+      }
+      </script>
+
+            </div>
+
+            <div class="tag-container">
+              <a href="/ux-blog/?tag=%23UX%EC%BB%A8%EC%84%A4%ED%8C%85" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#UX컨설팅 태그 포스팅 모아보기">#UX컨설팅</a><a href="/ux-blog/?tag=%23%EC%B1%84%EC%9A%A9%EB%A9%B4%EC%A0%91" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#채용면접 태그 포스팅 모아보기">#채용면접</a><a href="/ux-blog/?tag=%23%ED%94%84%EB%A1%9C%EB%8D%95%ED%8A%B8%EB%94%94%EC%9E%90%EC%9D%B4%EB%84%88" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#프로덕트디자이너 태그 포스팅 모아보기">#프로덕트디자이너</a><a href="/ux-blog/?tag=%23IT%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%8B%AC%EC%82%AC%EC%9C%84%EC%9B%90" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#IT스타트업심사위원 태그 포스팅 모아보기">#IT스타트업심사위원</a>
+            </div>
+          </article>
+
+          <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
+          <!-- BOTTOM NAV WITH PREV & NEXT POST ON THE EXACT SAME HORIZONTAL ROW -->
+          <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000; display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:13.5px; font-weight:700;">
+              <!-- Prev Post (Left) -->
+              <div style="flex:1; min-width:0; text-align:left;">
+                <a href="/ux-blog/ai-voice-service-vui-planning-guide/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; gap:6px; max-width:100%;"><span style="white-space:nowrap; font-weight:800; color:#444;">⬅ 이전글:</span> <span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</span></a>
+              </div>
+
+              <!-- Next Post (Right) -->
+              <div style="flex:1; min-width:0; text-align:right;">
+                <span style="color:#999999; font-weight:500; font-size:13px;">다음 글이 없습니다.</span>
+              </div>
+            </div>
+
+            <!-- 목록보기 Button at Far Right -->
+            <div style="display:flex; justify-content:flex-end; border-top:1px dashed #e0e0e0; padding-top:12px;">
+              <a href="/ux-blog/" class="w95-btn" style="padding:6px 20px; font-size:12.5px;">목록보기</a>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!-- 5. Statusbar (Exact UX-Research Match) -->
+      <div class="statusbar">
+        <div>1개 개체 선택됨</div>
+        <div>C:\SUPERPLANNING\UX_블로그\프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</div>
+        <div>내 컴퓨터</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) drawer.classList.toggle('show');
+    }
+
+    // GNB Scroll Progress Gauge Handler (Exact UX-Research Match)
+    let scrollTimer = null;
+    function updateGnbScrollProgress() {
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      if (!progressBar) return;
+
+      // 1. Window scroll calculation
+      const winScroll = Math.max(0, window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+      const winDocHeight = Math.max(
+        document.body.scrollHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.offsetHeight || 0
+      );
+      const winViewport = window.innerHeight || document.documentElement.clientHeight || 0;
+      const winMaxScroll = Math.max(0, winDocHeight - winViewport);
+      const winRatio = winMaxScroll > 5 ? (winScroll / winMaxScroll) : 0;
+
+      // 2. Main content pane scroll calculation
+      const mainPane = document.querySelector('.main-content-pane');
+      let paneRatio = 0;
+      let paneScroll = 0;
+      if (mainPane) {
+        paneScroll = mainPane.scrollTop || 0;
+        const paneMaxScroll = Math.max(0, mainPane.scrollHeight - mainPane.clientHeight);
+        if (paneMaxScroll > 5) {
+          paneRatio = paneScroll / paneMaxScroll;
+        }
+      }
+
+      // 3. Take active max scroll ratio & current scroll
+      const activeRatio = Math.max(winRatio, paneRatio);
+      const activeScroll = Math.max(winScroll, paneScroll);
+
+      // 4. Compute final percentage
+      const scrolled = Math.min(100, Math.max(0, activeRatio * 100));
+
+      // 5. Update DOM
+      progressBar.style.width = scrolled + '%';
+      if (progressBadge) {
+        progressBadge.textContent = Math.round(scrolled) + '%';
+      }
+
+      // 6. Active scrolling badge visibility timer (1200ms auto-fade)
+      if (activeScroll > 10) {
+        document.body.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          document.body.classList.remove('is-scrolling');
+        }, 1200);
+      } else {
+        document.body.classList.remove('is-scrolling');
+      }
+    }
+
+    // Attach listeners to window, document, and main pane
+    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+
+    const mainPaneEl = document.querySelector('.main-content-pane');
+    if (mainPaneEl) {
+      mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+    }
+
+    // Fire initial update and heartbeat timer fallback
+    updateGnbScrollProgress();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
+    }
+    setTimeout(updateGnbScrollProgress, 300);
+    setTimeout(updateGnbScrollProgress, 1000);
+  </script>
+  <div class="toast-msg" id="toast">링크가 클립보드에 복사되었습니다!</div>
+<!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+  <script>
+    (function() {
+      function initScrollTopBtn() {
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+          const updateVisibility = () => {
+            if (window.innerWidth > 900) {
+              scrollTopBtn.style.display = (window.scrollY > 80) ? 'inline-flex' : 'none';
+            } else {
+              scrollTopBtn.style.display = 'none';
+            }
+          };
+          window.addEventListener('scroll', updateVisibility, { passive: true });
+          window.addEventListener('resize', updateVisibility, { passive: true });
+          updateVisibility();
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollTopBtn);
+      } else {
+        initScrollTopBtn();
+      }
+    })();
+  </script>
+
+  <script>
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+  </script>
+
+  <script>
+
+    async function handlePopupInquiry(e) {
+      if (e) e.preventDefault();
+      const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
+      const origText = submitBtn ? submitBtn.innerHTML : '';
+
+      const name = document.getElementById('popName') ? document.getElementById('popName').value.trim() : '';
+      const phone = document.getElementById('popPhone') ? document.getElementById('popPhone').value.trim() : '';
+      const company = document.getElementById('popCompany') ? document.getElementById('popCompany').value.trim() : '';
+      const email = document.getElementById('popEmail') ? document.getElementById('popEmail').value.trim() : '';
+      const message = document.getElementById('popMessage') ? document.getElementById('popMessage').value.trim() : '';
+
+      if (!name || !email) {
+        alert('성함과 이메일 주소를 입력해 주세요.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '✉️ 이메일 전송 중...';
+      }
+
+      const payload = {
+        name, phone, company, email, message,
+        _subject: `[슈퍼플래닝 팝업 문의] ${name} - ${company || '고객사'}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const p1 = fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const p2 = fetch('/api/send_inquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        await Promise.race([p1, p2, new Promise(resolve => setTimeout(resolve, 3000))]);
+      } catch (err) {
+        console.log('Popup inquiry error:', err);
+      }
+
+      showInquirySuccessModal(name);
+
+      const form = document.getElementById('popupInquiryForm');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+      }
+    }
+
+  </script>
+
+  <script>
+
+    // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    function showInquirySuccessModal(userName) {
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_submit', form_page: location.pathname }); } catch (e) {}
+      let modal = document.getElementById('inquirySuccessModal');
+      if (!modal) {
+        const modalHtml = `
+          <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
+            <div style="width:100%; max-width:380px; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); overflow:hidden;">
+              <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+                <span>[문의 접수 완료]</span>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;">✕</button>
+              </div>
+              <div style="padding:22px 20px; text-align:center; background:#ffffff;">
+                <div style="font-size:32px; margin-bottom:12px;">✉️</div>
+                <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:800; color:#000000;">[문의 접수 완료]</h3>
+                <div style="font-size:13px; line-height:1.65; color:#222222; font-weight:600; margin-bottom:20px; text-align:center; word-break:keep-all;">
+                  <span id="inquiryUserName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
+                  문의 주신 내용은 잘 받았습니다.<br>
+                  빠르게 회신드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:9px 36px; min-width:140px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; cursor:pointer; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
+                  감사합니다
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        modal = document.getElementById('inquirySuccessModal');
+      }
+
+      const nameEl = document.getElementById('inquiryUserName');
+      if (nameEl) nameEl.textContent = userName || '방문자';
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeInquirySuccessModal() {
+      const modal = document.getElementById('inquirySuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+  </script>
+
+  <script>
+
+    /* EXACT TASKBAR & START MENU SCRIPT (100% SYNCED WITH CONTACT PAGE) */
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
+      var menu = document.getElementById('startMenu');
+      if (menu) {
+        menu.classList.toggle('show');
+        if (typeof blip === 'function') blip(520, 0.05);
+      }
+    }
+
+    function closeStart() {
+      var menu = document.getElementById('startMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', function(e) {
+      var menu = document.getElementById('startMenu');
+      var btn = document.getElementById('startBtn');
+      if (menu && menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+
+  </script>
+
+<script>
+window.copyToClipboard = function(text, label, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopySuccess(text, label, btn);
+    }).catch(function() {
+      fallbackCopyText(text, label, btn);
+    });
+  } else {
+    fallbackCopyText(text, label, btn);
+  }
+};
+
+function fallbackCopyText(text, label, btn) {
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    var successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    if (successful) {
+      showCopySuccess(text, label, btn);
+    } else {
+      alert('복사 실패: ' + text);
+    }
+  } catch (err) {
+    alert('복사 실패: ' + text);
+  }
+}
+
+function showCopySuccess(text, label, btn) {
+  if (btn) {
+    var origText = btn.textContent;
+    btn.textContent = '완료!';
+    btn.style.background = '#000000';
+    btn.style.color = '#ffffff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 1500);
+  }
+  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+}
+</script>
+
+
+
+  <script>
+    // Post Detail Bookmark & Share Handlers
+    (function() {
+      function getBookmarks() {
+        try {
+          return JSON.parse(localStorage.getItem('sp_blog_bookmarks') || '[]');
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveBookmarks(arr) {
+        try {
+          localStorage.setItem('sp_blog_bookmarks', JSON.stringify(arr));
+        } catch (e) {}
+      }
+
+      function showToast(msg) {
+        let toast = document.getElementById('spToastNotification');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'spToastNotification';
+          toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#111111; color:#ffffff; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:700; z-index:999999; box-shadow:0 4px 16px rgba(0,0,0,0.35); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity:0; pointer-events:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; text-align:center; min-width:200px;';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.style.opacity = '1';
+        toast.style.transform = 'translate(-50%, -6px)';
+        clearTimeout(window._spToastTimer);
+        window._spToastTimer = setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translate(-50%, 0)';
+        }, 2300);
+      }
+      window.showToast = showToast;
+
+      function updateBookmarkUI(targetId) {
+        const id = targetId || 1;
+        const bookmarks = getBookmarks();
+        const isFav = bookmarks.includes(id);
+
+        const btn = document.getElementById('postBookmarkBtn');
+        const star = document.getElementById('bookmarkStar');
+
+        if (star) star.textContent = isFav ? '★' : '☆';
+        if (btn) {
+          if (isFav) {
+            btn.classList.add('bookmarked');
+            btn.style.color = '#e67e22';
+            btn.style.fontWeight = 'bold';
+          } else {
+            btn.classList.remove('bookmarked');
+            btn.style.color = '';
+            btn.style.fontWeight = '';
+          }
+        }
+      }
+      window.updateBookmarkUI = updateBookmarkUI;
+
+      function toggleBookmark(e, targetId) {
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        const id = (typeof e === 'number') ? e : (targetId || 1);
+
+        let bookmarks = getBookmarks();
+        const idx = bookmarks.indexOf(id);
+        if (idx > -1) {
+          bookmarks.splice(idx, 1);
+          showToast('☆ 즐겨찾기에서 제거되었습니다.');
+        } else {
+          bookmarks.push(id);
+          showToast('★ 즐겨찾기에 추가되었습니다.');
+        }
+        saveBookmarks(bookmarks);
+        updateBookmarkUI(id);
+      }
+      window.toggleBookmark = toggleBookmark;
+      window.togglePostBookmark = toggleBookmark;
+
+      function sharePost(e, targetId) {
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        const id = (typeof e === 'number') ? e : (targetId || 1);
+        const shareUrl = 'https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/';
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+          }).catch(() => {
+            fallbackCopy(shareUrl);
+          });
+        } else {
+          fallbackCopy(shareUrl);
+        }
+      }
+      window.sharePost = sharePost;
+      window.shareCurrentPost = sharePost;
+
+      function fallbackCopy(text) {
+        const input = document.createElement('textarea');
+        input.value = text;
+        input.style.position = 'fixed';
+        input.style.left = '-9999px';
+        document.body.appendChild(input);
+        input.select();
+        try {
+          document.execCommand('copy');
+          showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+        } catch (err) {
+          showToast('링크 복사에 실패했습니다.');
+        }
+        document.body.removeChild(input);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        updateBookmarkUI(25);
+      });
+    })();
+  </script>
+
+  <script>
+    // [신규] 흑백 타이핑 모션 — 화면에 스크롤되어 보이는 시점에 한 글자씩 출현 (SEO: 원문은 항상 DOM에 존재, 애니메이션은 텍스트를 재조립할 뿐)
+    (function() {
+      function typewriterInit(el, speed) {
+        if (!el || el.dataset.typed === '1') return;
+        el.dataset.typed = '1';
+        var fullText = el.textContent;
+        var chars = Array.from(fullText);
+        el.textContent = '';
+        var i = 0;
+        function step() {
+          if (i < chars.length) {
+            el.textContent += chars[i];
+            i++;
+            setTimeout(step, speed);
+          }
+        }
+        step();
+      }
+
+      var targets = [
+        { id: 'heroTypeText', speed: 26 },
+        { id: 'quoteTypeText', speed: 26 }
+      ];
+
+      function allTypeTargets() {
+        return Array.prototype.slice.call(document.querySelectorAll('.type-text'));
+      }
+
+      function start() {
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                var conf = targets.filter(function(t) { return t.id === entry.target.id; })[0];
+                typewriterInit(entry.target, conf ? conf.speed : 28);
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.4 });
+          // 본문의 모든 .type-text(핵심 문장)에 적용 — 포스트마다 인용구가 여러 개여도 동작
+          allTypeTargets().forEach(function(el) { observer.observe(el); });
+        } else {
+          allTypeTargets().forEach(function(el) { typewriterInit(el, 26); });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else {
+        start();
+      }
+    })();
+  </script>
+</body>
+</html>
