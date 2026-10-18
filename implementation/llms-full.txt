@@ -253,6 +253,8 @@
 - 원문: https://www.superplanning.co.kr/services/ux-research.md
 - 관련 페이지: https://www.superplanning.co.kr/ux-research/
 
+> 전환율이 오르지 않는 진짜 이유, 오프라인에서 사용자에게 직접 확인하세요. FGI·사용성 테스트(UT)로 이탈 원인을 찾고, UI/UX 개선 근거를 도출합니다.
+>
 > 슈퍼플래닝(Superplanning)은 FGI조사·사용자 인터뷰(IDI)·사용성 테스트(UT)·원격 인터뷰를 대행하는 UX리서치 전문 에이전시입니다. 인터뷰 설계, 참석자 섭외와 사례비 지급, 모더레이터 진행, 결과 보고서와 UX 개선안까지 슈퍼플래닝이 제공합니다.
 
 ### 한눈에 보는 슈퍼플래닝 UX리서치
