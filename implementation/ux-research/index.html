@@ -1381,7 +1381,7 @@
 </style>
   
   <meta name="twitter:url" content="https://www.superplanning.co.kr/ux-research/">
-<style>/* 46: 검정 바탕 문구 */ .sp-type-box { display: block; background: #000000; color: #ffffff; font-weight: 700; padding: 8px 14px; margin: 12px 0; line-height: 1.5; word-break: keep-all; letter-spacing: -0.01em; } .hero-intro .sp-type-box { margin: 10px 0 0 0; font-size: 15px; }</style>
+<style>/* 46: 검정 바탕 문구 (회사소개 미션과 같은 모션: 글자와 함께 검정 바탕이 늘어남) */ .sp-type-box { display: block; margin: 12px 0; font-size: 15px; font-weight: 700; line-height: 1.75; color: #000000; word-break: keep-all; letter-spacing: -0.01em; } .hero-intro .sp-type-box { margin: 10px 0 0 0; } h3.sp-type-box { margin: 0 0 14px 0; } .sp-type { display: inline; padding: 3px 8px 4px; color: #ffffff; background: #000000; border: 2px solid #000000; box-decoration-break: clone; -webkit-box-decoration-break: clone; } .sp-type.is-waiting { visibility: hidden; } .sp-type.is-typing { animation: spTypeCaret 0.8s step-end infinite; } @keyframes spTypeCaret { 0%, 49% { border-right-color: #ffffff; } 50%, 100% { border-right-color: #000000; } }</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1556,7 +1556,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <main class="main-content-pane">
 
           <h1>UX리서치</h1>
-          <p class="hero-intro">FGI조사·사용자 인터뷰·사용성 테스트(UT), 참석자 섭외까지 대행합니다.<span class="sp-type-box sp-type">인터뷰 설계, 사례비 지급, 모더레이터 진행, 결과 보고서와 UX 개선안까지 슈퍼플래닝이 제공합니다.</span></p>
+          <p class="hero-intro">FGI조사·사용자 인터뷰·사용성 테스트(UT), 참석자 섭외까지 대행합니다.<span class="sp-type-box"><span class="sp-type">인터뷰 설계, 사례비 지급, 모더레이터 진행, 결과 보고서와 UX 개선안까지 슈퍼플래닝이 제공합니다.</span></span></p>
 
           <div style="width:100%; overflow-x:auto; margin:0 0 8px;">
             <table class="compare-table summary-table">
@@ -1615,7 +1615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <!-- 3. 조사 방식 -->
           <h2 id="methods">3. 조사 방식: FGI · IDI · UT · 원격 조사</h2>
-          <p><span class="sp-type-box sp-type">조사 목적과 대상에 따라 적합한 리서치 방식을 추천 드립니다.</span>필요한 경우 FGI조사, 1:1 인터뷰, 사용성테스트를 혼합하여 진행도 가능합니다.</p>
+          <p><span class="sp-type-box"><span class="sp-type">조사 목적과 대상에 따라 적합한 리서치 방식을 추천 드립니다.</span></span>필요한 경우 FGI조사, 1:1 인터뷰, 사용성테스트를 혼합하여 진행도 가능합니다.</p>
           <div style="width:100%; overflow-x:auto;">
             <table class="compare-table">
               <caption>표 1. UX리서치 조사 방식 비교</caption>
@@ -2647,22 +2647,31 @@ function showCopySuccess(text, label, btn) {
 }
 </script>
 
-<script>/* 46: 검정 바탕 문구 한 글자씩 타이핑 (문구는 HTML에 그대로 있어 검색·AI가 읽음) */
+<script>/* 46: 검정 바탕 문구 한 글자씩 타이핑 — 회사소개 미션과 같은 방식(바탕이 글자와 함께 늘어남). 문구는 HTML에 그대로 있어 검색·AI가 읽음 */
 (function () {
   var els = Array.prototype.slice.call(document.querySelectorAll(".sp-type"));
-  if (!els.length) return;
+  if (!els.length || !("IntersectionObserver" in window)) return;
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  function typeIt(el) {
-    var chars = Array.from(el.textContent), i = 0;
-    el.style.minHeight = el.offsetHeight + "px";
+  els.forEach(function (el) {
+    var box = el.parentNode;
+    box.style.minHeight = box.offsetHeight + "px";
+    el.setAttribute("data-text", el.textContent);
     el.textContent = "";
-    (function step() { if (i < chars.length) { el.textContent += chars[i++]; setTimeout(step, 28); } })();
+    el.classList.add("is-waiting");
+  });
+  function typeIt(el) {
+    var chars = Array.from(el.getAttribute("data-text") || ""), i = 0;
+    el.classList.remove("is-waiting");
+    el.classList.add("is-typing");
+    (function step() {
+      if (i < chars.length) { el.textContent += chars[i++]; setTimeout(step, 38); }
+      else { el.classList.remove("is-typing"); el.classList.add("is-done"); }
+    })();
   }
-  if (!("IntersectionObserver" in window)) return;
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); typeIt(e.target); } });
+    entries.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); typeIt(e.target.querySelector(".sp-type")); } });
   }, { threshold: 0.4 });
-  els.forEach(function (el) { io.observe(el); });
+  els.forEach(function (el) { io.observe(el.parentNode); });
 })();
 </script>
 </body>
