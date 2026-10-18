@@ -3,7 +3,7 @@ title: "포트폴리오 | 슈퍼플래닝 (Superplanning) - 주요 고객사 및
 description: "슈퍼플래닝은 금융, 공공, 플랫폼, 모빌리티, 대기업 등 다양한 산업군의 UX리서치, UX라이팅, UI/UX기획·디자인, 웹·앱개발 프로젝트를 수행한 UX 전문 에이전시입니다."
 keywords: "슈퍼플래닝 포트폴리오, UX 프로젝트 실적, UX 에이전시 고객사, UI UX 외주 사례, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-company/"
-updated: "2026-10-04"
+updated: "2026-10-18"
 ---
 
 # 포트폴리오 (Portfolio) | 슈퍼플래닝 (Superplanning)
@@ -28,7 +28,7 @@ updated: "2026-10-04"
 - 롯데렌터카 신차장 모바일앱·다이렉트 웹 UX/UI (롯데렌탈), 불스원 와이즈비 Mall UX/UI, 케이카 백엔드 시스템 개발
 
 ### 플랫폼 / 교육 / 기타
-- 삼성전자 SDC 글로벌 컨퍼런스 UX/UI (제일기획), 하이브 위버스 커뮤니티 UX리서치
+- 삼성전자 SDC 글로벌 컨퍼런스 UX/UI (제일기획)
 - 아이스크림에듀 홈런 AI학습 웹/앱 개발, 청담에듀 메타러닝 UX/UI, 단꿈교육 설민석 한국사 웹/모바일 UX
 - 골프존 스크린게임 연동 앱 UX, 현대위아 VR 웹서비스 UX, 예술의전당 사이버 투어 웹서비스 개발
 

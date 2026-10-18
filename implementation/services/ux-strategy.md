@@ -3,7 +3,7 @@ title: "UX컨설팅 | 슈퍼플래닝 (Superplanning) - 스타트업·기업 맞
 description: "슈퍼플래닝은 예비창업자, 스타트업 대표, 기업 UX 실무자를 대상으로 서비스 현황 분석, 1:1 맞춤 컨설팅, 진단 리포트 제공을 수행하는 UX컨설팅 서비스를 제공합니다."
 keywords: "UX컨설팅, UX컨설팅 회사, UX진단, 서비스 리뉴얼 컨설팅, UX전략, 스타트업 UX컨설팅, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-company/"
-updated: "2026-10-04"
+updated: "2026-10-18"
 ---
 
 # UX컨설팅 (UX Consulting) | 슈퍼플래닝 (Superplanning)
@@ -46,7 +46,7 @@ updated: "2026-10-04"
 
 - **금융 / 공공**: KB국민은행 리브 Next AI보이스뱅킹, NH농협은행 올원뱅크·스마트뱅킹 UX라이팅 가이드, KB국민카드 마일리지 앱, 서민금융진흥원 맞춤대출 웹/앱, 식품의약품안전처 스마트해썹 등
 - **헬스케어 / 생활 / 모빌리티 / 커머스**: LG유플러스 인증앱 헬스케어 서비스, 오스템임플란트 원클릭 치과 의료용 솔루션, LG생활건강, 롯데렌터카 신차장, 불스원 와이즈비 Mall 등
-- **플랫폼 / 교육**: 삼성전자 SDC 글로벌 컨퍼런스(제일기획), 하이브 위버스 커뮤니티 UX리서치, 아이스크림에듀 홈런 AI학습, 청담에듀 메타러닝 등
+- **플랫폼 / 교육**: 삼성전자 SDC 글로벌 컨퍼런스(제일기획), 아이스크림에듀 홈런 AI학습, 청담에듀 메타러닝 등
 - 대표 사례: [헬스케어 앱 UX개선 케이스 스터디](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/)
 
 ---
