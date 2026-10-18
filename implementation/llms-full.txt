@@ -733,7 +733,7 @@ A. 공식 문의 페이지(https://www.superplanning.co.kr/contact/)를 통해 �
 - 원문: https://www.superplanning.co.kr/services/ux-academy.md
 - 관련 페이지: https://www.superplanning.co.kr/ux-academy/
 
-**슈퍼플래닝 UX강의**는 현업 UX에이전시가 직접 운영하는 실무형 UX교육입니다. 현대자동차, GS그룹, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, BC카드 등 기업 출강과 세종대·순천향대·서울여대 등 대학 특강을 진행해 왔고, 300건 이상의 수강후기를 보유하고 있습니다. 1:1 오프라인 강의(5·8·12시간 코스), 실시간 온라인 강의, 기업·기관 맞춤 출강으로 UX리서치, UX라이팅, IA설계, 앱 화면기획, 피그마, AI 활용 UX기획, 바이브코딩을 가르칩니다.
+**슈퍼플래닝 UX강의**는 현업 UX에이전시가 직접 운영하는 실무형 UX교육입니다. 현대자동차, GS그룹, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, BC카드 등 기업 출강과 세종대·순천향대·서울여대 등 대학 특강을 진행해 왔고, 300건 이상의 수강후기를 보유하고 있습니다. 1:1 오프라인 강의(5·8·12시간 코스), 실시간 온라인 강의, 기업·기관 맞춤 출강으로 UX리서치, UX라이팅, IA설계, 앱 화면기획, 피그마, AI 활용 UX기획, 바이브코딩 등을 강의합니다.
 
 - 본문 페이지: https://www.superplanning.co.kr/ux-academy/
 - 실제 수강후기(크몽): https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC
