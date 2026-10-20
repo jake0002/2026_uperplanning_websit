@@ -2747,7 +2747,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="sp-src-btns">
                   <button type="button" class="w95-btn sp-src-b1" id="spSrcSend" onclick="spSrcSubmit();">답변 보내기</button>
-                  <button type="button" class="w95-btn sp-src-b2" onclick="closeInquirySuccessModal();">건너뛰기</button>
+                  <button type="button" class="w95-btn sp-src-b2" onclick="spSrcSkip();">건너뛰기</button>
                 </div>
                 <div class="sp-src-note">답변하지 않으셔도 문의는 정상 접수되었습니다.</div>
               </div>
@@ -2757,6 +2757,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="sp-src-msg" style="margin-bottom:18px;">
                   <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님의 문의 내용을 확인한 뒤<br>
                   담당 실무진이 빠르게 연락드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button type="button" class="w95-btn sp-src-b1" style="padding:9px 36px; min-width:120px;" onclick="closeInquirySuccessModal();">확인</button>
+              </div>
+              <div id="spSrcStep3" style="display:none; padding:22px 20px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">문의 접수가 완료되었습니다</h3>
+                <div class="sp-src-msg" style="margin-bottom:18px;">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님, 문의해 주셔서 감사합니다.<br>
+                  담당 실무진이 내용을 확인한 뒤<br>
+                  빠르게 연락드리겠습니다.<br>
                   (보통 10분 이내 회신)
                 </div>
                 <button type="button" class="w95-btn sp-src-b1" style="padding:9px 36px; min-width:120px;" onclick="closeInquirySuccessModal();">확인</button>
@@ -2775,11 +2786,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.getElementById('spSrcKwWrap').style.display = 'none';
       document.getElementById('spSrcStep1').style.display = 'block';
       document.getElementById('spSrcStep2').style.display = 'none';
+      document.getElementById('spSrcStep3').style.display = 'none';
       var sendBtn = document.getElementById('spSrcSend');
       if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = '답변 보내기'; }
       var names = modal.querySelectorAll('.spSrcName');
       for (var k = 0; k < names.length; k++) names[k].textContent = spSrcLast.name;
       modal.style.display = 'flex';
+    }
+
+    function spSrcSkip() {
+      document.getElementById('spSrcStep1').style.display = 'none';
+      document.getElementById('spSrcStep3').style.display = 'block';
     }
 
     function spSrcChecked() {
