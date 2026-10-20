@@ -1646,7 +1646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none; margin-top:8px; background:#ffffff; border:2px solid #000000; padding:7px 8px; cursor:pointer; box-shadow:1px 1px 0 #000; border-radius:2px;" onclick="blip(880, 0.05);">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <div style="display:flex; align-items:center; gap:6px;">
-            <span style="font-size:15px; line-height:1; display:inline-flex; align-items:center;">💬</span>
+            <span style="line-height:1; display:inline-flex; align-items:center;"><svg width="20" height="18" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg></span>
             <h4 id="skyKakaoTitle" style="color:#000000; font-size:11px; margin:0; font-weight:800; line-height:1.2; letter-spacing:-0.2px; white-space:nowrap;">카카오채널 실시간 채팅문의</h4>
           </div>
           <span id="skyKakaoBtn" class="w95-btn" style="padding:2px 6px; background:#000000; color:#ffffff; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-flex; align-items:center; pointer-events:none; white-space:nowrap;">1:1상담하기 ↗</span>
@@ -2689,8 +2689,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const phone = document.getElementById('skyPhone') ? document.getElementById('skyPhone').value.trim() : '';
       const message = document.getElementById('skyMsg') ? document.getElementById('skyMsg').value.trim() : '';
 
-      if (!name || !phone || !message) {
-        alert('이름, 연락처, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
+      if (!name || !email || !message) {
+        alert('이름, 이메일, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
         return;
       }
       if (typeof blip === 'function') blip(880, 0.08);
@@ -2868,29 +2868,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
     // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    // 60: 문의 접수 완료 팝업 + "어떻게 알게 되셨나요?"(선택) — 문의는 이미 접수된 뒤 묻는 방식(문의 손실 없음)
+    var SP_SRC_OPTIONS = [
+      ['google', '구글 검색'], ['naver', '네이버 검색'],
+      ['ai', 'AI 추천<br>(챗GPT, 클로드 등)'], ['blog', '블로그 글'],
+      ['referral', '지인·고객사 소개'], ['sns', 'SNS<br>(인스타, 스레드 등)'],
+      ['press', '기사·언론 보도'], ['lecture', '강의·세미나 참석'],
+      ['existing', '이전 거래·재문의'], ['etc', '기타 (직접 입력)']
+    ];
+    var spSrcLast = { name: '', email: '' };
+
     function showInquirySuccessModal(userName) {
       try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_submit', form_page: location.pathname }); } catch (e) {}
-      let modal = document.getElementById('inquirySuccessModal');
+      var email = '';
+      try {
+        var ems = document.querySelectorAll('input[type="email"]');
+        for (var i = 0; i < ems.length; i++) { if (ems[i].value && ems[i].value.trim()) { email = ems[i].value.trim(); break; } }
+      } catch (e) {}
+      spSrcLast = { name: userName || '방문자', email: email };
+
+      var modal = document.getElementById('inquirySuccessModal');
       if (!modal) {
-        const modalHtml = `
+        var opts = SP_SRC_OPTIONS.map(function (o) {
+          return '<label class="sp-src-opt" data-code="' + o[0] + '"><input type="checkbox" value="' + o[0] + '" onchange="spSrcToggle(this)"><span>' + o[1] + '</span></label>';
+        }).join('');
+        var modalHtml = `
           <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
-            <div style="width:100%; max-width:380px; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); overflow:hidden;">
+            <style>
+              #inquirySuccessModal .sp-src-box { width:100%; max-width:420px; max-height:92vh; overflow-y:auto; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); }
+              #inquirySuccessModal .sp-src-msg { font-size:13px; line-height:1.65; color:#222222; font-weight:600; text-align:center; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-hr { border-top:2px dashed #000000; margin:18px 0 14px 0; }
+              #inquirySuccessModal .sp-src-q { text-align:left; }
+              #inquirySuccessModal .sp-src-q .t { font-size:14px; font-weight:800; color:#000000; margin:0 0 4px 0; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-q .s { font-size:12px; color:#444444; margin:0 0 10px 0; line-height:1.5; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 8px; }
+              #inquirySuccessModal .sp-src-opt { display:flex; align-items:flex-start; gap:6px; font-size:12.5px; font-weight:600; line-height:1.4; border:1px solid #000000; padding:6px 7px; background:#ffffff; color:#000000; cursor:pointer; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-opt.on { background:#000000; color:#ffffff; }
+              #inquirySuccessModal .sp-src-opt input { margin:2px 0 0 0; accent-color:#000000; flex:none; }
+              #inquirySuccessModal .sp-src-label { font-size:12.5px; font-weight:700; color:#000000; margin:10px 0 0 0; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-input { width:100%; box-sizing:border-box; border:2px solid #000000; padding:7px 8px; font-size:12.5px; font-family:inherit; margin-top:6px; background:#ffffff; color:#000000; }
+              #inquirySuccessModal .sp-src-input::placeholder { color:#aaaaaa; opacity:1; }
+              #inquirySuccessModal .sp-src-btns { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+              #inquirySuccessModal .sp-src-b1 { padding:9px 26px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; box-shadow:3px 3px 0 #808080; cursor:pointer; }
+              #inquirySuccessModal .sp-src-b2 { padding:9px 18px; font-size:13px; font-weight:bold; background:#ffffff; color:#000000; border:2px solid #000000; box-shadow:3px 3px 0 #808080; cursor:pointer; }
+              #inquirySuccessModal .sp-src-note { font-size:11px; color:#666666; margin-top:10px; text-align:center; }
+            </style>
+            <div class="sp-src-box">
               <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
                 <span>[문의 접수 완료]</span>
-                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;">✕</button>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;" aria-label="닫기">✕</button>
               </div>
-              <div style="padding:22px 20px; text-align:center; background:#ffffff;">
-                <div style="font-size:32px; margin-bottom:12px;">✉️</div>
-                <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:800; color:#000000;">[문의 접수 완료]</h3>
-                <div style="font-size:13px; line-height:1.65; color:#222222; font-weight:600; margin-bottom:20px; text-align:center; word-break:keep-all;">
-                  <span id="inquiryUserName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
+              <div id="spSrcStep1" style="padding:20px 22px 22px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">문의가 정상 접수되었습니다</h3>
+                <div class="sp-src-msg">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
                   문의 주신 내용은 잘 받았습니다.<br>
-                  빠르게 회신드리겠습니다.<br>
+                  빠르게 회신드리겠습니다. (보통 10분 이내 회신)
+                </div>
+                <div class="sp-src-hr"></div>
+                <div class="sp-src-q">
+                  <p class="t">슈퍼플래닝을 어떻게 알게 되셨나요? <span style="font-weight:600; color:#555555;">(선택)</span></p>
+                  <p class="s">더 정확한 상담 준비에 참고하겠습니다. 여러 개 선택할 수 있습니다.</p>
+                  <div class="sp-src-grid">${opts}</div>
+                  <div id="spSrcEtcWrap" style="display:none;">
+                    <input type="text" id="spSrcEtc" class="sp-src-input" maxlength="200" placeholder="어떻게 알게 되셨는지 자유롭게 적어 주세요">
+                  </div>
+                  <div id="spSrcKwWrap" style="display:none;">
+                    <p class="sp-src-label">검색어나 AI에 질문하신 내용이 기억나시면 적어 주세요 (선택)</p>
+                    <input type="text" id="spSrcKw" class="sp-src-input" maxlength="200" placeholder="예: UX리서치, UX라이팅, UX디자인 등">
+                  </div>
+                </div>
+                <div class="sp-src-btns">
+                  <button type="button" class="w95-btn sp-src-b1" id="spSrcSend" onclick="spSrcSubmit();">답변 보내기</button>
+                  <button type="button" class="w95-btn sp-src-b2" onclick="closeInquirySuccessModal();">건너뛰기</button>
+                </div>
+                <div class="sp-src-note">답변하지 않으셔도 문의는 정상 접수되었습니다.</div>
+              </div>
+              <div id="spSrcStep2" style="display:none; padding:22px 20px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">소중한 답변 감사합니다</h3>
+                <div class="sp-src-msg" style="margin-bottom:18px;">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님의 문의 내용을 확인한 뒤<br>
+                  담당 실무진이 빠르게 연락드리겠습니다.<br>
                   (보통 10분 이내 회신)
                 </div>
-                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:9px 36px; min-width:140px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; cursor:pointer; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
-                  감사합니다
-                </button>
+                <button type="button" class="w95-btn sp-src-b1" style="padding:9px 36px; min-width:120px;" onclick="closeInquirySuccessModal();">확인</button>
               </div>
             </div>
           </div>
@@ -2899,9 +2962,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         modal = document.getElementById('inquirySuccessModal');
       }
 
-      const nameEl = document.getElementById('inquiryUserName');
-      if (nameEl) nameEl.textContent = userName || '방문자';
-      if (modal) modal.style.display = 'flex';
+      var boxes = modal.querySelectorAll('.sp-src-opt input');
+      for (var j = 0; j < boxes.length; j++) { boxes[j].checked = false; boxes[j].parentNode.classList.remove('on'); }
+      ['spSrcEtc', 'spSrcKw'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
+      document.getElementById('spSrcEtcWrap').style.display = 'none';
+      document.getElementById('spSrcKwWrap').style.display = 'none';
+      document.getElementById('spSrcStep1').style.display = 'block';
+      document.getElementById('spSrcStep2').style.display = 'none';
+      var sendBtn = document.getElementById('spSrcSend');
+      if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = '답변 보내기'; }
+      var names = modal.querySelectorAll('.spSrcName');
+      for (var k = 0; k < names.length; k++) names[k].textContent = spSrcLast.name;
+      modal.style.display = 'flex';
+    }
+
+    function spSrcChecked() {
+      var out = [];
+      var boxes = document.querySelectorAll('#inquirySuccessModal .sp-src-opt input');
+      for (var i = 0; i < boxes.length; i++) if (boxes[i].checked) out.push(boxes[i].value);
+      return out;
+    }
+
+    function spSrcToggle(cb) {
+      cb.parentNode.classList.toggle('on', cb.checked);
+      var codes = spSrcChecked();
+      var showKw = codes.indexOf('google') > -1 || codes.indexOf('naver') > -1 || codes.indexOf('ai') > -1;
+      var showEtc = codes.indexOf('etc') > -1;
+      document.getElementById('spSrcKwWrap').style.display = showKw ? 'block' : 'none';
+      document.getElementById('spSrcEtcWrap').style.display = showEtc ? 'block' : 'none';
+      if (!showKw) document.getElementById('spSrcKw').value = '';
+      if (!showEtc) document.getElementById('spSrcEtc').value = '';
+    }
+
+    function spSrcSubmit() {
+      var codes = spSrcChecked();
+      if (!codes.length) { alert('알게 되신 경로를 하나 이상 선택해 주세요.'); return; }
+      var labels = SP_SRC_OPTIONS.filter(function (o) { return codes.indexOf(o[0]) > -1; }).map(function (o) { return o[1].replace(/<br>/g, ' '); });
+      var kw = (document.getElementById('spSrcKw').value || '').trim();
+      var etc = (document.getElementById('spSrcEtc').value || '').trim();
+      var msg = '[알게 된 경로] ' + labels.join(', ');
+      if (kw) msg += '\n[검색어·AI 질문] ' + kw;
+      if (etc) msg += '\n[기타] ' + etc;
+      msg += '\n[문의 페이지] ' + location.pathname;
+      var payload = {
+        name: spSrcLast.name, email: spSrcLast.email, phone: '', company: '',
+        message: msg, inquiry_source: labels.join(', '), search_keyword: kw, source_etc: etc,
+        _subject: '[슈퍼플래닝 유입경로] ' + spSrcLast.name + ' - ' + labels.join(', '),
+        _template: 'table', _captcha: 'false'
+      };
+      var sendBtn = document.getElementById('spSrcSend');
+      if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = '보내는 중...'; }
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_source', inquiry_source: codes.join('|'), form_page: location.pathname }); } catch (e) {}
+      try {
+        fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload)
+        }).catch(function () {});
+        fetch('/api/send_inquiry.php', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        }).catch(function () {});
+      } catch (e) {}
+      document.getElementById('spSrcStep1').style.display = 'none';
+      document.getElementById('spSrcStep2').style.display = 'block';
     }
 
     function closeInquirySuccessModal() {
