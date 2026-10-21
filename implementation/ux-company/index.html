@@ -2350,7 +2350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <dt>프로젝트 견적 및 진행 신청은 어떻게 하나요?</dt>
   <dd>문의하기 페이지에서 프로젝트 목적, 현재 서비스 상황, 필요한 업무 범위, 일정, 예산 등을 정리해 문의 주시면 더 빠르게 검토할 수 있습니다.<br>슈퍼플래닝은 문의 내용을 바탕으로 적합한 협업 방식과 진행 범위를 함께 논의하며, 필요 시 UX리서치, UX컨설팅, UX디자인, 웹/앱개발까지 연계해 제안할 수 있습니다.
     <div style="margin-top: 12px;">
-      <a href="/contact/" class="w95-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 16px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer;">
+      <a href="/contact/" class="w95-btn" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;" style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 16px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer;">
         <span style="font-size: 14px;">✉️</span> <span>문의하기</span>
       </a>
     </div>
@@ -3335,5 +3335,6 @@ function showCopySuccess(text, label, btn) {
 }
 </script>
 
+  <script src="/assets/sp-inquiry.js?v=64" defer></script>
 </body>
 </html>

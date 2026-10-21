@@ -3283,7 +3283,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
 
           <!-- Action Buttons -->
           <button class="sticky-btn-kakao" type="button" onclick="window.open('https://open.kakao.com/o/sovRKoMi', '_blank');">카카오채널 실시간 1:1상담</button>
-          <button class="sticky-btn-apply" type="button" onclick="location.href='/contact/';">강의 신청하기</button>
+          <button class="sticky-btn-apply" type="button" onclick="if (window.spOpenLecture) { spOpenLecture(window.currentStickyCourse); } else { location.href='/contact/'; }">강의 신청하기</button>
         </div>
       </div>
     </aside>
@@ -4438,5 +4438,6 @@ function showCopySuccess(text, label, btn) {
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
     })();
   </script>
+  <script src="/assets/sp-inquiry.js?v=64" defer></script>
 </body>
 </html>
