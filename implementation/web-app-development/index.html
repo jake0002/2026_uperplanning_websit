@@ -1243,6 +1243,16 @@
 <style>/* 56: 본문 가독성 — 단어 중간 줄바꿈 방지 */ .main-content-pane { word-break: keep-all; overflow-wrap: break-word; }</style>
 <style>/* 46: 검정 바탕 문구 (회사소개 미션과 같은 모션: 글자와 함께 검정 바탕이 늘어남) */ .sp-type-box { display: block; margin: 12px 0; font-size: 15px; font-weight: 700; line-height: 1.75; color: #000000; word-break: keep-all; letter-spacing: -0.01em; } .hero-intro .sp-type-box { margin: 10px 0 0 0; } h3.sp-type-box { margin: 0 0 14px 0; } .sp-type { display: inline; padding: 3px 8px 4px; color: #ffffff; background: #000000; border: 2px solid #000000; box-decoration-break: clone; -webkit-box-decoration-break: clone; } .sp-type.is-waiting { visibility: hidden; } .sp-type.is-typing { animation: spTypeCaret 0.8s step-end infinite; } @keyframes spTypeCaret { 0%, 49% { border-right-color: #ffffff; } 50%, 100% { border-right-color: #000000; } }</style>
 <style>/* 56: 웹/앱 개발 상단 검정 박스 간격 */ .lead .sp-type-box { margin: 0 0 8px 0; }</style>
+<style>/* 71: FAQ 하단 문의하기 버튼 + 둥실둥실 말풍선 */
+.sp-faq-cta { margin: 28px 0 8px 0; padding-top: 40px; }
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13.5px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer; }
+.sp-faq-cta-btn:active { transform: translate(1px, 1px); }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1556,6 +1566,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div><dt>기존에 운영 중인 웹사이트나 앱 리뉴얼도 가능한가요?</dt><dd>가능합니다.<br>신규 개발뿐 아니라 기존 서비스의 구조 개선, UI 리뉴얼, 기능 추가, 관리자 시스템 보완, 속도 개선, 운영 안정화 등 리뉴얼과 고도화 중심의 개발도 수행할 수 있습니다.</dd></div>
 <div><dt>웹/앱 개발 문의는 어떻게 시작하면 되나요?</dt><dd>현재 운영 중인 서비스가 있는지, 신규 구축인지, 필요한 기능이 무엇인지 정도만 정리해도 충분합니다.<br>목표와 우선순위를 먼저 정리한 뒤 적정한 개발 범위와 방식으로 구체화하는 것이 효율적입니다.</dd></div>
 </dl>
+          <div class="sp-faq-cta">
+            <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
+            <a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span></a></span>
+          </div>
           <div class="bottom-nav">
             <p>이전 단계: <a href="/ux-design/">UX기획/디자인</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-academy/">AI-UX강의</a></p>
             
@@ -2816,5 +2830,6 @@ function showCopySuccess(text, label, btn) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
 })();
 </script>
+<script src="/assets/sp-inquiry.js?v=68" defer></script>
 </body>
 </html>

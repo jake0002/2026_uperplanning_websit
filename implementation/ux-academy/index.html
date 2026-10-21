@@ -2558,6 +2558,16 @@
 </style>
   
 <style>/* 55: 본문 가독성 — 단어 중간 줄바꿈 방지 */ .main-content-pane { word-break: keep-all; overflow-wrap: break-word; }</style>
+<style>/* 71: FAQ 하단 문의하기 버튼 + 둥실둥실 말풍선 */
+.sp-faq-cta { margin: 28px 0 8px 0; padding-top: 40px; }
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13.5px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer; }
+.sp-faq-cta-btn:active { transform: translate(1px, 1px); }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -3212,6 +3222,10 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
 <div><dt>수강 코스는 어떻게 나뉘나요?</dt><dd>수준과 목적에 따라 압축형, 심화형, 전체 프로세스형으로 나누어 운영합니다.<br>빠르게 핵심만 잡아야 하는 입문자, 피그마와 화면기획까지 깊게 다루고 싶은 실무자, PRD·성과지표·바이브코딩까지 전체 흐름을 익히고 싶은 대표나 담당자에게 적합한 방식이 서로 다릅니다.</dd></div>
 <div><dt>강의가 끝난 뒤에도 질문이나 피드백을 받을 수 있나요?</dt><dd>과정안 기준으로는 강의 후속 과제관리, 맞춤형 과제 피드백, 추가 질문 대응이 포함되어 있습니다.<br>그래서 수업 당일 이해에서 끝나는 것이 아니라, 실제 적용 단계에서 막히는 부분까지 이어서 점검하기 좋은 구조입니다.</dd></div>
 </dl>
+          <div class="sp-faq-cta">
+            <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
+            <a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenLecture ? spOpenLecture() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span></a></span>
+          </div>
           <div class="bottom-nav">
             <p>이전 단계: <a href="/web-app-development/">웹/앱 개발</a> &nbsp;|&nbsp; 다음 단계: <a href="/company/">UX블로그</a></p>
             
