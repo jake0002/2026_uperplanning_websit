@@ -72,7 +72,7 @@
 
   var SRC = [['google', '구글 검색'], ['naver', '네이버 검색'], ['ai', 'AI 추천<br>(챗GPT, 클로드 등)'], ['blog', '블로그 글'], ['referral', '지인·고객사 소개'], ['sns', 'SNS<br>(인스타, 스레드 등)'], ['press', '기사·언론 보도'], ['lecture', '강의·세미나 참석'], ['existing', '이전 거래·재문의'], ['etc', '기타 (직접 입력)']];
   var COURSES = { A: ['A코스', '입문형 · 5시간'], B: ['B코스', '심화형 · 8시간'], C: ['C코스', '확장형 · 12시간'], X: ['맞춤 설계', '상담 후 결정'] };
-  var TOPICS = ['UX리서치', 'UX라이팅', '서비스기획', 'IA설계', '기능정의서 작성', '웹/앱 화면기획서 작성', '피그마', '바이브코딩', 'AI 활용 UX기획', 'UX포트폴리오 코칭', '면접·커리어 코칭'];
+  var TOPICS = ['UX리서치', 'UX라이팅', '서비스기획', 'IA설계', '기능정의서 작성', '웹/앱 화면기획서 작성', '피그마', '바이브코딩', 'AI 활용 UX기획', 'UX포트폴리오 코칭', '면접·커리어 코칭', '맞춤설계 상담 후 결정'];
   var last = { name: '', email: '', mode: 'inquiry' };
   var built = false;
 
@@ -105,7 +105,7 @@
     var types = ['1:1 개인 강의', '기업·기관 출강', '대학·공공기관 특강', '기타'].map(function (t) { return chip('radio', 'splType', t, t, '', t === '기업·기관 출강'); }).join('');
     var courses = Object.keys(COURSES).map(function (k) { return chip('radio', 'splCourse', k, COURSES[k][0], COURSES[k][1], false); }).join('');
     var jobs = ['취업·이직 준비', '주니어 기획자·디자이너', '기업 실무자', 'SI 개발자', '스타트업 대표·예비창업자', '교육 담당자(HRD)', '기타'].map(function (t) { return chip('radio', 'splJob', t, t, '', t === '교육 담당자(HRD)'); }).join('');
-    var topics = TOPICS.map(function (t) { return chip('checkbox', 'splTopic', t, t); }).join('');
+    var topics = TOPICS.map(function (t) { return chip('checkbox', 'splTopic', t, t, '', t === '맞춤설계 상담 후 결정'); }).join('');
     var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '오프라인'); }).join('');
     var lec = '<div class="spq-ov" id="spqLec"><div class="spq-box wide" role="dialog" aria-modal="true" aria-labelledby="spqLecH">' +
       '<div class="spq-tb"><span>[강의 신청]</span><button type="button" class="spq-x" data-close aria-label="닫기">✕</button></div>' +
@@ -113,13 +113,13 @@
       '<div class="spq-sec"><p class="spq-lb">1. 수강 형태 <small>(선택)</small></p><div class="spq-chips">' + types + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">2. 코스 선택 * <small>선택하신 코스가 미리 체크됩니다</small></p><div class="spq-c4">' + courses + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">3. 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">4. 배우고 싶은 주제 <small>여러 개 선택 가능</small></p><div class="spq-chips">' + topics + '</div></div>' +
+      '<div class="spq-sec"><p class="spq-lb">4. 희망 강의내용 <small>여러 개 선택 가능</small></p><div class="spq-chips">' + topics + '</div></div>' +
       '<div class="spq-sec"><div class="spq-row"><div><p class="spq-lb">5. 예상 인원 *</p><select class="spq-in" id="splPeople"><option selected>1명~5명</option><option>5명~10명</option><option>10명~30명</option><option>30명~50명</option><option>50명 이상</option></select></div>' +
       '<div><p class="spq-lb">6. 희망 일정 *</p>' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)') + '</div></div></div>' +
       '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 *</p><div class="spq-chips">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장', 'text', ' style="margin:7px 0 0;"') + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">8. 신청자 정보</p><div class="spq-row">' + field('splName', '이름 *') + field('splCompany', '회사·학교명 (선택)') + '</div>' +
       '<div class="spq-row spq-mt">' + field('splEmail', '이메일 *', 'email') + field('splPhone', '연락처 (일정 조율용, 선택)', 'tel') + '</div>' +
-      '<textarea class="spq-in spq-mt" id="splReq" rows="3" style="margin-bottom:0;" placeholder="요청사항 (선택)&#10;수강 목적이나 현재 고민을 적어 주시면 커리큘럼에 반영합니다. 예: 현업 기능정의서 작성법, 포트폴리오 완성"></textarea></div>' +
+      '<textarea class="spq-in spq-mt" id="splReq" rows="3" style="margin-bottom:0;" placeholder="요청사항 (선택)&#10;수강 목적이나 현재 고민을 적어 주시면 커리큘럼에 반영합니다.&#10;예: 현업 기능정의서 작성법, 포트폴리오 완성"></textarea></div>' +
       agree('splAgree') + ctaBlock('splSend', '강의 신청하고 빠른 답변 받기') +
       '<p class="spq-note">신청 후 담당자가 일정·견적을 확인해 연락드립니다. 결제는 상담 후 진행됩니다.</p></div></div></div>';
     var opts = SRC.map(function (o) { return '<label class="spq-opt"><input type="checkbox" value="' + o[0] + '"><span>' + o[1] + '</span></label>'; }).join('');
@@ -220,7 +220,7 @@
     if (needEmail($('splEmail'))) return;
     var course = COURSES[courseK][0] + ' · ' + COURSES[courseK][1];
     var methodTxt = method + (method === '오프라인' && place ? ' · ' + place : '');
-    var lines = ['[코스] ' + course, '[수강 형태] ' + (type || '-'), '[현재 직업] ' + (job || '-'), '[배우고 싶은 주제] ' + (topics.join(', ') || '-'), '[예상 인원] ' + people, '[희망 일정] ' + date, '[진행 방식] ' + methodTxt, '[요청사항] ' + (req || '-'), '[신청 페이지] ' + location.pathname];
+    var lines = ['[코스] ' + course, '[수강 형태] ' + (type || '-'), '[현재 직업] ' + (job || '-'), '[희망 강의내용] ' + (topics.join(', ') || '-'), '[예상 인원] ' + people, '[희망 일정] ' + date, '[진행 방식] ' + methodTxt, '[요청사항] ' + (req || '-'), '[신청 페이지] ' + location.pathname];
     var btn = $('splSend'); btn.disabled = true; btn.textContent = '전송 중...';
     post({ name: name, phone: phone, company: company, email: email, message: lines.join('\n'), course: course, lecture_type: type, job: job, topics: topics.join(', '), people: people, schedule: date, method: methodTxt, form_page: location.pathname,
       _subject: '[슈퍼플래닝 강의 신청] ' + name + ' - ' + COURSES[courseK][0] + '·' + (type || '수강 형태 미선택'), _template: 'table', _captcha: 'false' }).then(function () {
