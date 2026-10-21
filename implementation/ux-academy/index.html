@@ -4439,5 +4439,21 @@ function showCopySuccess(text, label, btn) {
     })();
   </script>
   <script src="/assets/sp-inquiry.js?v=68" defer></script>
+<script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
+(function () {
+  function place() {
+    var b = document.getElementById('scrollTopBtn'), w = document.querySelector('.explorer-window');
+    if (!b || !w) return;
+    var r = w.getBoundingClientRect(), x = Math.round(r.right + 16), bw = b.offsetWidth || 80;
+    if (window.innerWidth > 900 && x + bw + 16 <= window.innerWidth) {
+      b.style.setProperty('left', x + 'px', 'important');
+      b.style.setProperty('right', 'auto', 'important');
+    } else { b.style.removeProperty('left'); b.style.removeProperty('right'); }
+  }
+  window.addEventListener('resize', place);
+  window.addEventListener('scroll', place, { passive: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
+})();
+</script>
 </body>
 </html>
