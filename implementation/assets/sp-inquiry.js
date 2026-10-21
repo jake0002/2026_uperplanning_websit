@@ -40,6 +40,7 @@
     '.spq-c4 .spq-chip small{font-weight:600;font-size:11px;opacity:.85;}',
     '.spq-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}',
     '.spq-row .spq-in{margin:0;}',
+    '.spq-row .spq-err{margin:7px 0 0;}',
     '.spq-mt{margin-top:7px !important;}',
     '.spq-err{position:relative;display:flex;align-items:flex-start;gap:6px;margin:-2px 0 8px;background:#383838;color:#fff;font-size:11.5px;font-weight:700;line-height:1.45;padding:6px 10px;border-radius:6px;word-break:keep-all;}',
     '.spq-err:before{content:"";position:absolute;top:-5px;left:16px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid #383838;}',
@@ -115,10 +116,10 @@
       '<div class="spq-sec"><p class="spq-lb">3. 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">4. 희망 강의내용 <small>여러 개 선택 가능</small></p><div class="spq-chips">' + topics + '</div></div>' +
       '<div class="spq-sec"><div class="spq-row"><div><p class="spq-lb">5. 예상 인원 *</p><select class="spq-in" id="splPeople"><option selected>1명~5명</option><option>5명~10명</option><option>10명~30명</option><option>30명~50명</option><option>50명 이상</option></select></div>' +
-      '<div><p class="spq-lb">6. 희망 일정 *</p>' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)') + '</div></div></div>' +
+      '<div><p class="spq-lb">6. 희망 일정 *</p>' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)', 'text', ' value="상담 후 결정"') + '</div></div></div>' +
       '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 *</p><div class="spq-chips">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장', 'text', ' style="margin:7px 0 0;"') + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">8. 신청자 정보</p><div class="spq-row">' + field('splName', '이름 *') + field('splCompany', '회사·학교명 (선택)') + '</div>' +
-      '<div class="spq-row spq-mt">' + field('splEmail', '이메일 *', 'email') + field('splPhone', '연락처 (일정 조율용, 선택)', 'tel') + '</div>' +
+      '<div class="spq-row spq-mt"><div>' + field('splEmail', '이메일 *', 'email') + '</div><div>' + field('splPhone', '연락처 (일정 조율용, 선택)', 'tel') + '</div></div>' +
       '<textarea class="spq-in spq-mt" id="splReq" rows="3" style="margin-bottom:0;" placeholder="요청사항 (선택)&#10;수강 목적이나 현재 고민을 적어 주시면 커리큘럼에 반영합니다.&#10;예: 현업 기능정의서 작성법, 포트폴리오 완성"></textarea></div>' +
       agree('splAgree') + ctaBlock('splSend', '강의 신청하고 빠른 답변 받기') +
       '<p class="spq-note">신청 후 담당자가 일정·견적을 확인해 연락드립니다. 결제는 상담 후 진행됩니다.</p></div></div></div>';
@@ -216,7 +217,9 @@
     var people = $('splPeople').value, date = $('splDate').value.trim(), place = $('splPlace').value.trim();
     var name = $('splName').value.trim(), company = $('splCompany').value.trim(), email = $('splEmail').value.trim(), phone = $('splPhone').value.trim(), req = $('splReq').value.trim();
     if (!$('splAgree').checked) { alert('개인정보 수집 및 이용 동의(필수)에 체크해 주세요.'); return; }
-    if (!courseK || !date || !method || !name || !email) { alert('코스, 희망 일정, 진행 방식, 이름, 이메일 등 필수 항목(*)을 모두 입력해 주세요.'); return; }
+    var miss = [], first = null;
+    [[!courseK, '코스'], [!date, '희망 일정', 'splDate'], [!method, '진행 방식'], [!name, '이름', 'splName'], [!email, '이메일', 'splEmail']].forEach(function (m) { if (m[0]) { miss.push('· ' + m[1]); if (!first && m[2]) first = m[2]; } });
+    if (miss.length) { alert('아래 필수 항목을 입력해 주세요.\n\n' + miss.join('\n')); if (first) { try { $(first).focus(); } catch (e) {} } return; }
     if (needEmail($('splEmail'))) return;
     var course = COURSES[courseK][0] + ' · ' + COURSES[courseK][1];
     var methodTxt = method + (method === '오프라인' && place ? ' · ' + place : '');
@@ -227,7 +230,7 @@
       dl({ event: 'inquiry_submit', form_page: location.pathname, form_type: 'lecture' });
       btn.disabled = false; btn.textContent = '강의 신청하고 빠른 답변 받기';
       var sum = [['코스', course], ['수강 형태', type ? type + ' · ' + people : people], ['희망 일정', date], ['진행 방식', methodTxt]];
-      ['splDate', 'splPlace', 'splName', 'splCompany', 'splEmail', 'splPhone', 'splReq'].forEach(function (id) { $(id).value = ''; });
+      ['splPlace', 'splName', 'splCompany', 'splEmail', 'splPhone', 'splReq'].forEach(function (id) { $(id).value = ''; }); $('splDate').value = '상담 후 결정';
       close('spqLec'); showDone('lecture', name, email, sum);
     });
   }
