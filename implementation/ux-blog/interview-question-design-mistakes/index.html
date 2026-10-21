@@ -577,16 +577,28 @@
       border-bottom: 2px solid #000000;
     }
 
+    /* 62: 타이핑 모션 표준(회사소개 미션과 같은 방식) — 검정 바탕이 글자와 함께 늘어나고 문장 끝에서 끝남 */
     .hero-excerpt {
       font-size: 15px;
       font-weight: 700;
-      line-height: 1.6;
-      color: #ffffff;
+      line-height: 1.75;
+      color: #000000;
       margin-bottom: 24px;
-      background: #000000;
-      padding: 14px 18px;
-      border-left: 4px solid #ffffff;
+      word-break: keep-all;
+      letter-spacing: -0.01em;
     }
+    .type-text {
+      display: inline;
+      padding: 3px 8px 4px;
+      color: #ffffff;
+      background: #000000;
+      border: 2px solid #000000;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .type-text.is-waiting { visibility: hidden; }
+    .type-text.is-typing { animation: spTypeCaret 0.8s step-end infinite; }
+    @keyframes spTypeCaret { 0%, 49% { border-right-color: #ffffff; } 50%, 100% { border-right-color: #000000; } }
 
 
     .article-body {
@@ -603,12 +615,16 @@
     .article-body ol, .article-body ul { margin: 0 0 16px 20px; }
     .article-body li { margin-bottom: 6px; }
     .article-body blockquote {
-      border-left: 4px solid #ffffff;
-      padding: 12px 16px;
-      background: #000000;
-      color: #ffffff;
       margin: 20px 0;
-      font-weight: 600;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #000000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.75;
+      word-break: keep-all;
+      letter-spacing: -0.01em;
     }
 
     /* [신규] Before/After 비교 테이블 — 블랙&화이트 톤 */
@@ -1148,6 +1164,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span class="doc-icon">📄</span> <span>UI/UX 에이전시 순위, 어떻게 판단할까: 포트폴리오·리서치·특허로 비교하는 법</span>
                 </a>
               </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ui-design-outsourcing-for-dev-team/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리</span>
+                </a>
+              </li>
           </ul>
         </aside>
 
@@ -1675,57 +1697,34 @@ function showCopySuccess(text, label, btn) {
   </script>
 
   <script>
-    // [신규] 흑백 타이핑 모션 — 화면에 스크롤되어 보이는 시점에 한 글자씩 출현 (SEO: 원문은 항상 DOM에 존재, 애니메이션은 텍스트를 재조립할 뿐)
-    (function() {
-      function typewriterInit(el, speed) {
-        if (!el || el.dataset.typed === '1') return;
-        el.dataset.typed = '1';
-        var fullText = el.textContent;
-        var chars = Array.from(fullText);
-        el.textContent = '';
-        var i = 0;
-        function step() {
-          if (i < chars.length) {
-            el.textContent += chars[i];
-            i++;
-            setTimeout(step, speed);
-          }
-        }
-        step();
-      }
-
-      var targets = [
-        { id: 'heroTypeText', speed: 26 },
-        { id: 'quoteTypeText', speed: 26 }
-      ];
-
-      function allTypeTargets() {
-        return Array.prototype.slice.call(document.querySelectorAll('.type-text'));
-      }
-
+    // 62: 타이핑 모션 표준 — 검정 바탕이 글자와 함께 늘어남, 38ms/자, 흰 커서 깜박임, 보일 때 시작, 자리 미리 확보. 문구는 HTML에 그대로 있어 검색·AI가 읽음
+    (function () {
       function start() {
-        if ('IntersectionObserver' in window) {
-          var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-              if (entry.isIntersecting) {
-                var conf = targets.filter(function(t) { return t.id === entry.target.id; })[0];
-                typewriterInit(entry.target, conf ? conf.speed : 28);
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.4 });
-          // 본문의 모든 .type-text(핵심 문장)에 적용 — 포스트마다 인용구가 여러 개여도 동작
-          allTypeTargets().forEach(function(el) { observer.observe(el); });
-        } else {
-          allTypeTargets().forEach(function(el) { typewriterInit(el, 26); });
+        var els = Array.prototype.slice.call(document.querySelectorAll('.type-text'));
+        if (!els.length || !('IntersectionObserver' in window)) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        els.forEach(function (el) {
+          var box = el.parentNode;
+          box.style.minHeight = box.offsetHeight + 'px';
+          el.setAttribute('data-text', el.textContent);
+          el.textContent = '';
+          el.classList.add('is-waiting');
+        });
+        function typeIt(el) {
+          var chars = Array.from(el.getAttribute('data-text') || ''), i = 0;
+          el.classList.remove('is-waiting');
+          el.classList.add('is-typing');
+          (function step() {
+            if (i < chars.length) { el.textContent += chars[i++]; setTimeout(step, 38); }
+            else { el.classList.remove('is-typing'); el.classList.add('is-done'); }
+          })();
         }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); typeIt(en.target.querySelector('.type-text')); } });
+        }, { threshold: 0.4 });
+        els.forEach(function (el) { io.observe(el.parentNode); });
       }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', start);
-      } else {
-        start();
-      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
     })();
   </script>
 </body>
