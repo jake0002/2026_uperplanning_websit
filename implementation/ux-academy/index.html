@@ -2568,6 +2568,20 @@
 @keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
 </style>
+<style>/* 78: 모바일 하단 고정 바 + 모바일 목차 접기 */
+#spMobileCtaBar { display: none; }
+.sp-toc-toggle { display: none; }
+@media (max-width: 900px) {
+  #spMobileCtaBar { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 999997; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #c0c0c0; border-top: 2px solid #000000; box-shadow: inset 0 1px 0 #ffffff; }
+  #spMobileCtaBar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; height: 40px; font-size: 14px; font-weight: 800; text-decoration: none; border: 2px solid #000000; box-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+  #spMobileCtaBar .sp-mcb-inq { background: #000000; color: #ffffff; }
+  #spMobileCtaBar .sp-mcb-kakao { background: #ffffff; color: #000000; }
+  body { padding-bottom: 64px; }
+  .sp-toc-toggle { display: block; width: 100%; margin: 6px 0 2px; padding: 6px 10px; font-size: 13px; font-weight: 800; text-align: left; color: #000000; background: #c0c0c0; border: 2px solid #000000; box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080; cursor: pointer; }
+  .tree-sidebar ul.tree-list.toc { display: none; }
+  .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2695,6 +2709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
+          <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
           <ul class="tree-list toc">
             <li class="tree-item"><a href="#intro" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX강의 소개</span></a></li>
             <li class="tree-item"><a href="#reviews" class="tree-link"><span class="doc-icon">📄</span> <span>2. 수강후기</span></a></li>
@@ -4468,6 +4483,16 @@ function showCopySuccess(text, label, btn) {
   window.addEventListener('scroll', place, { passive: true });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
 })();
+</script>
+  <!-- 78: 모바일 하단 고정 바 (카카오톡 상담 · 강의 신청) -->
+  <div id="spMobileCtaBar" role="navigation" aria-label="상담·문의 바로가기">
+    <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="sp-mcb-kakao" onclick="window.spQB && spQB('kakao', 'mobile');"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담</span></a>
+    <a href="/contact/" class="sp-mcb-inq" onclick="window.spQB && spQB('lecture', 'mobile'); return window.spOpenLecture ? spOpenLecture(window.currentStickyCourse) : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>강의 신청</span></a>
+  </div>
+<script>/* 78: 퀵배너·하단 바 클릭 측정 (버튼 종류·위치만 전송, 개인정보 없음) */
+window.spQB = function (btn, pos) {
+  try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
+};
 </script>
 </body>
 </html>

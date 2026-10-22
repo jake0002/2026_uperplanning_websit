@@ -1253,6 +1253,20 @@
 @keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
 </style>
+<style>/* 78: 모바일 하단 고정 바 + 모바일 목차 접기 */
+#spMobileCtaBar { display: none; }
+.sp-toc-toggle { display: none; }
+@media (max-width: 900px) {
+  #spMobileCtaBar { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 999997; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #c0c0c0; border-top: 2px solid #000000; box-shadow: inset 0 1px 0 #ffffff; }
+  #spMobileCtaBar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; height: 40px; font-size: 14px; font-weight: 800; text-decoration: none; border: 2px solid #000000; box-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+  #spMobileCtaBar .sp-mcb-inq { background: #000000; color: #ffffff; }
+  #spMobileCtaBar .sp-mcb-kakao { background: #ffffff; color: #000000; }
+  body { padding-bottom: 64px; }
+  .sp-toc-toggle { display: block; width: 100%; margin: 6px 0 2px; padding: 6px 10px; font-size: 13px; font-weight: 800; text-align: left; color: #000000; background: #c0c0c0; border: 2px solid #000000; box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080; cursor: pointer; }
+  .tree-sidebar ul.tree-list.toc { display: none; }
+  .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1381,7 +1395,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <nav aria-label="페이지 목차">
-            <ul class="tree-list toc">
+            <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
+          <ul class="tree-list toc">
               <li class="tree-item"><a href="#optimization" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX디자인에 최적화된 개발</span></a></li>
               <li class="tree-item"><a href="#ai-dev" class="tree-link"><span class="doc-icon">📄</span> <span>2. AI기반 모바일앱 개발</span></a></li>
               <li class="tree-item"><a href="#diff" class="tree-link"><span class="doc-icon">📄</span> <span>3. 슈퍼플래닝만의 차별점</span></a></li>
@@ -1391,33 +1406,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </nav>
         
-          <!-- MOBILE INLINE KAKAO CHAT BANNER (VISIBLE ONLY ON MOBILE/TABLET AFTER TOC) -->
-          <div id="mobileInlineKakaoBanner" style="margin-top:14px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); font-family:var(--font, sans-serif);">
-            <!-- Win95 Titlebar -->
-            <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11.5px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
-              <span>💬</span>
-              <span>실시간 상담</span>
-            </div>
-            <!-- Banner Content Body -->
-            <div style="padding:10px 12px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
-              <div>
-                <h4 style="margin:0 0 5px 0; font-size:11px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">
-                  신속한 문의답변 (보통 10분 이내 응답)
-                </h4>
-                <div style="font-size:11px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
-                  <span>문의전화: 031-699-3298</span>
-                  <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:10px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
-                </div>
-                <div style="font-size:11px; color:#555555; font-weight:500; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
-                  <span style="letter-spacing:-0.02em;">이메일: jake@superplanning.co.kr</span>
-                  <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:10px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:4px;">복사</button>
-                </div>
-              </div>
-              <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:flex; align-items:center; justify-content:center; gap:4px; padding:7px 10px; font-size:11.5px; font-weight:bold; background:#000000; color:#ffffff; border:1px solid #000000; text-decoration:none; text-align:center; box-shadow:2px 2px 0 rgba(0,0,0,0.3);">
-                <span>친절한 1:1 채팅 상담</span> <span>↗</span>
-              </a>
-            </div>
-          </div>
         </aside>
 
         <!-- Right Main Content View Pane (Exact Attached Image Match) -->
@@ -2559,19 +2547,15 @@ table.process-table tbody td strong {
     }, 1000);
   </script>
 
-  <!-- RETRO WIN95 STICKY KAKAO CHAT BANNER (ALIGNED WITH EXPLORER TITLEBAR TOP LINE) -->
+  <!-- 78: PC 퀵배너 (실시간 상담 · 카카오톡 상담하기 · 프로젝트 문의하기) -->
   <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
-    <!-- Win95 Titlebar -->
     <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
       <span>💬</span>
       <span>실시간 상담</span>
     </div>
-    <!-- Banner Content Body -->
-    <div style="padding:8px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
+    <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
       <div>
-        <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">
-          신속한 문의답변 (보통 10분 이내 응답)
-        </h4>
+        <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">신속한 문의답변 (보통 10분 이내 응답)</h4>
         <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
           <span>문의전화: 031-699-3298</span>
           <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
@@ -2581,9 +2565,8 @@ table.process-table tbody td strong {
           <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button>
         </div>
       </div>
-      <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn" style="display:flex; align-items:center; justify-content:center; gap:4px; padding:5px 8px; font-size:11px; font-weight:bold; background:#000000; color:#ffffff; border:1px solid #000000; text-decoration:none; text-align:center; box-shadow:2px 2px 0 rgba(0,0,0,0.3);">
-        <span>친절한 1:1 채팅 상담</span> <span>↗</span>
-      </a>
+      <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn sp-qb-kakao" onclick="window.spQB && spQB('kakao', 'pc');" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#ffffff; color:#000000;"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담하기</span></a>
+      <a href="/contact/" class="w95-btn sp-qb-inquiry" onclick="window.spQB && spQB('inquiry', 'pc'); return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#000000; color:#ffffff;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의하기</span></a>
     </div>
   </div>
   <style>
@@ -2831,5 +2814,15 @@ function showCopySuccess(text, label, btn) {
 })();
 </script>
 <script src="/assets/sp-inquiry.js?v=68" defer></script>
+  <!-- 78: 모바일 하단 고정 바 (카카오톡 상담 · 프로젝트 문의) -->
+  <div id="spMobileCtaBar" role="navigation" aria-label="상담·문의 바로가기">
+    <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="sp-mcb-kakao" onclick="window.spQB && spQB('kakao', 'mobile');"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담</span></a>
+    <a href="/contact/" class="sp-mcb-inq" onclick="window.spQB && spQB('inquiry', 'mobile'); return window.spOpenInquiry ? spOpenInquiry() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의</span></a>
+  </div>
+<script>/* 78: 퀵배너·하단 바 클릭 측정 (버튼 종류·위치만 전송, 개인정보 없음) */
+window.spQB = function (btn, pos) {
+  try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
+};
+</script>
 </body>
 </html>
