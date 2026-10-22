@@ -48,6 +48,7 @@
 
 ## UX 블로그
 
+- [오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지](https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/): 케이스 스터디
 - [AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI](https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/): 케이스 스터디
 - [앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교](https://www.superplanning.co.kr/ux-blog/app-development-cost-by-type-timeline/): 웹/앱 개발
 - [개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리](https://www.superplanning.co.kr/ux-blog/ui-design-outsourcing-for-dev-team/): UI디자인

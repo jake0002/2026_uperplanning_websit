@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-54CP3F8');</script>
+  <!-- End Google Tag Manager -->
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://www.superplanning.co.kr | SECONDARY: https://superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://www.superplanning.co.kr">
+
+  <!-- OPEN GRAPH & KAKAOTALK / NAVER / FACEBOOK SHARE THUMBNAIL (CACHE BUSTING: ?v=20260923) -->
+  <!-- [버그 수정] og:title / og:description이 홈페이지용 일반 문구로 고정되어 있던 것을
+       이 포스트 고유의 제목/설명으로 교체함 (카카오톡/페이스북/링크 미리보기가 포스트 내용을 정확히 반영하도록) -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지 — 슈퍼플래닝 UX블로그">
+  <meta property="og:description" content="현직 치과의사 6명과의 사용성 테스트(UT)로 검증한 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다. UX디자인 에이전시 슈퍼플래닝이 리서치 결과를 UX기획·UI/UX디자인 개선까지 직접 연결했습니다.">
+  <meta property="og:url" content="https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/">
+  <meta property="og:image" content="https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png">
+  <meta property="og:image:secure_url" content="https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지 — 슈퍼플래닝 UX블로그">
+  <link rel="image_src" href="https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png">
+  <!-- [TODO: 전용 썸네일] https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png는 기본값으로 사이트 공통 og-thumbnail.png를 사용 중.
+       포스트 전용 1200x630 이미지가 준비되면 posts_data.json의 og_image 필드만 채우면 자동 반영됨. -->
+
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지 — 슈퍼플래닝 UX블로그">
+  <meta name="twitter:description" content="의사가 쓰는 화면은 의사에게 먼저 검증받습니다. 현직 치과의사 6명 사용성 테스트부터 UI/UX 개선까지, 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다.">
+  <meta name="twitter:image" content="https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png">
+  <meta name="twitter:domain" content="www.superplanning.co.kr">
+  <meta name="twitter:url" content="https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- PRIMARY SEO METADATA -->
+  <title>오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지 — 슈퍼플래닝 UX블로그</title>
+  <meta name="description" content="현직 치과의사 6명과의 사용성 테스트(UT)로 검증한 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다. UX디자인 에이전시 슈퍼플래닝이 리서치 결과를 UX기획·UI/UX디자인 개선까지 직접 연결했습니다.">
+  <meta name="keywords" content="오스템임플란트 UX, 치과 소프트웨어 UX, 치과 의료용 소프트웨어, 의료 소프트웨어 사용성 테스트, 의료 UX리서치, 의사 대상 사용성 테스트, 전문직 UT 섭외, 사용성 테스트 대행, UX리서치 대행, 미러룸 UT, 휴리스틱 평가, 닐슨 10가지 휴리스틱, B2B 소프트웨어 UX, 전문가용 소프트웨어 UX, 시각적 위계, UI/UX 개선, 리뉴얼 UX 검증, UX 케이스 스터디, UX디자인 에이전시, 슈퍼플래닝">
+  <meta name="author" content="슈퍼플래닝 사용자경험 연구소">
+  <link rel="canonical" href="https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/">
+
+  <!-- ============================================================
+       GEO 구조화 데이터 (JSON-LD SCHEMA.ORG) — BlogPosting
+       [버그 수정] 원래 이 스크립트가 JSON을 닫지 않은 채 바로 아래
+       모달 시스템 JS 코드(WINDOW_DEFS, openWindow 등)와 뒤섞여 있었음.
+       → application/ld+json 안의 JS는 브라우저가 절대 실행하지 않고,
+         JSON 파서는 문법 오류로 전체 스키마를 무효 처리함(구조화 데이터
+         손실 + 포트폴리오 버튼 동작 불능이 동시에 발생).
+       → JSON을 여기서 완전히 닫고, JS는 별도의 일반 <script> 태그로 분리함.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/"
+    },
+    "headline": "오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지",
+    "description": "현직 치과의사 6명과의 사용성 테스트(UT)로 검증한 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다. UX디자인 에이전시 슈퍼플래닝이 리서치 결과를 UX기획·UI/UX디자인 개선까지 직접 연결했습니다.",
+    "image": "https://www.superplanning.co.kr/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-og.png",
+    "articleSection": "케이스 스터디",
+    "keywords": "오스템임플란트 UX, 치과 소프트웨어 UX, 치과 의료용 소프트웨어, 의료 소프트웨어 사용성 테스트, 의료 UX리서치, 의사 대상 사용성 테스트, 전문직 UT 섭외, 사용성 테스트 대행, UX리서치 대행, 미러룸 UT, 휴리스틱 평가, 닐슨 10가지 휴리스틱, B2B 소프트웨어 UX, 전문가용 소프트웨어 UX, 시각적 위계, UI/UX 개선, 리뉴얼 UX 검증, UX 케이스 스터디, UX디자인 에이전시, 슈퍼플래닝",
+    "inLanguage": "ko-KR",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "사용성 테스트(UT)"
+      },
+      {
+        "@type": "Thing",
+        "name": "휴리스틱 평가"
+      },
+      {
+        "@type": "Thing",
+        "name": "의료 소프트웨어 UX"
+      },
+      {
+        "@type": "Thing",
+        "name": "UX리서치"
+      },
+      {
+        "@type": "Service",
+        "name": "UX리서치 대행 · 사용성 테스트(UT)",
+        "serviceType": "UX리서치",
+        "areaServed": "KR",
+        "provider": {
+          "@id": "https://www.superplanning.co.kr/#organization"
+        },
+        "url": "https://www.superplanning.co.kr/ux-research/"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "오스템임플란트",
+        "alternateName": [
+          "Osstem Implant",
+          "OSSTEM IMPLANT"
+        ],
+        "url": "https://www.osstem.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "오스템임플란트 치과 의료용 소프트웨어",
+        "applicationCategory": "치과 진료용 소프트웨어",
+        "publisher": {
+          "@type": "Organization",
+          "name": "오스템임플란트"
+        }
+      }
+    ],
+    "citation": [
+      "https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/",
+      "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "슈퍼플래닝 사용자경험 연구소",
+      "url": "https://www.superplanning.co.kr/ux-company/",
+      "parentOrganization": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.superplanning.co.kr/#organization",
+      "name": "슈퍼플래닝 (Superplanning)",
+      "url": "https://www.superplanning.co.kr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.superplanning.co.kr/images/superplanning_brand_logo.png"
+      }
+    },
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22"
+  }
+  </script>
+
+  <!-- SUBPAGE WINDOW MODAL SYSTEM (PORTFOLIO VIEWER) — 일반 JS, ld+json에서 완전히 분리됨 -->
+  <script>
+    const WINDOW_DEFS = {
+      'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' }
+    };
+
+    function openWindow(key) {
+      if (typeof closeStart === 'function') closeStart();
+      var def = WINDOW_DEFS[key] || { w: 780, h: 560, title: '📄 포트폴리오 보기' };
+      var titleText = def.title;
+
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+
+      var isMobile = window.innerWidth <= 768;
+
+      var overlay = document.createElement('div');
+      overlay.id = 'subpageModalOverlay';
+      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
+
+      var win = document.createElement('div');
+      var winW = isMobile ? '94vw' : def.w + 'px';
+      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
+
+      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+
+      win.innerHTML = `
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+          <span>${titleText}</span>
+          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
+          ${getSubpageWindowBody(key)}
+        </div>
+      `;
+
+      overlay.appendChild(win);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSubpageWindow();
+      });
+    }
+
+    function closeSubpageWindow() {
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSubpageWindow();
+    });
+
+    function getSubpageWindowBody(key) {
+      return `
+        <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+            <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
+            <div style="display:flex; gap:6px;">
+              <a href="/Superplanning_Company_Brochure.pdf" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+              <a href="/Superplanning_Company_Brochure.pdf" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">파일 다운로드</a>
+            </div>
+          </div>
+          <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+            <iframe
+              src="/Superplanning_Company_Brochure.pdf#toolbar=1&navpanes=0&scrollbar=1"
+              style="width:100%; height:100%; border:0; display:block;"
+              title="슈퍼플래닝 포트폴리오 보기">
+            </iframe>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://www.superplanning.co.kr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UX블로그",
+        "item": "https://www.superplanning.co.kr/ux-blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지",
+        "item": "https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/"
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --bevel-hi: #ffffff;
+      --bevel-shadow: #7b7b7b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a { color: #111111; text-decoration: underline; }
+    a:hover { color: #555555; }
+
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+      text-decoration: none;
+    }
+    .w95-btn:active { box-shadow: inset 1px 1px 0 var(--bevel-shadow); transform: translate(1px, 1px); }
+
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+    }
+    #brandLogo span, #brandLogoText { color: #ffffff !important; }
+
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (EXACT UX-RESEARCH MATCH) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible !important;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1 !important;
+    }
+
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .gnb-link:hover, .gnb-link.active { background: #000000 !important; color: #ffffff !important; }
+
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+      margin-left: auto !important;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      padding: 10px;
+    }
+    #mobileNavDrawer.show { display: block !important; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .titlebar-text { display: flex; align-items: center; gap: 6px; }
+    .titlebar-controls { display: flex; flex-direction: row; align-items: center; gap: 3px; }
+
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+      user-select: none;
+    }
+    .menubar span { cursor: default; }
+    .menubar u { text-decoration: underline; }
+
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active {
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
+    .address-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .addr-label { font-weight: bold; white-space: nowrap; }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .explorer-split { display: flex; background: #ffffff; min-height: 640px; }
+
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      padding: 16px 12px;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 13px; color: #000000;
+      margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0;
+    }
+
+    ul.tree-list { list-style-type: none; padding-left: 8px; margin: 0; position: relative; }
+    ul.tree-list::before { content: ""; position: absolute; top: 0; bottom: 12px; left: 18px; border-left: 1px dotted #808080; }
+    .tree-item { position: relative; margin-bottom: 4px; }
+    .tree-item::before { content: ""; position: absolute; top: 12px; left: -10px; width: 10px; border-top: 1px dotted #808080; }
+
+    .tree-item a {
+      display: flex; align-items: center; justify-content: flex-start; gap: 6px;
+      padding: 4px 8px; color: #000000; text-decoration: none; font-size: 12.5px; font-weight: 500;
+    }
+    .tree-item a:hover, .tree-item a.active { background: #000000 !important; color: #ffffff !important; font-weight: 700 !important; }
+
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 32px 36px;
+      overflow-y: auto;
+    }
+
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .category-badge {
+      font-size: 12px;
+      font-weight: 800;
+      background: #000000;
+      color: #ffffff;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .read-time-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #000000;
+    }
+
+    /* 62: 타이핑 모션 표준(회사소개 미션과 같은 방식) — 검정 바탕이 글자와 함께 늘어나고 문장 끝에서 끝남 */
+    .hero-excerpt {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.75;
+      color: #000000;
+      margin-bottom: 24px;
+      word-break: keep-all;
+      letter-spacing: -0.01em;
+    }
+    .type-text {
+      display: inline;
+      padding: 3px 8px 4px;
+      color: #ffffff;
+      background: #000000;
+      border: 2px solid #000000;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .type-text.is-waiting { visibility: hidden; }
+    .type-text.is-typing { animation: spTypeCaret 0.8s step-end infinite; }
+    @keyframes spTypeCaret { 0%, 49% { border-right-color: #ffffff; } 50%, 100% { border-right-color: #000000; } }
+
+
+    .article-body {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #222222;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .article-body p { margin-bottom: 16px; }
+    .article-body h2 { font-size: 19px; font-weight: 900; margin: 32px 0 14px; color: #000000; padding-bottom: 8px; border-bottom: 1px solid #000000; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 17px; font-weight: 800; margin: 24px 0 12px; color: #000000; }
+    .article-body ol, .article-body ul { margin: 0 0 16px 20px; }
+    .article-body li { margin-bottom: 6px; }
+    .article-body blockquote {
+      margin: 20px 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #000000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.75;
+      word-break: keep-all;
+      letter-spacing: -0.01em;
+    }
+
+    /* [신규] Before/After 비교 테이블 — 블랙&화이트 톤 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 24px;
+      font-size: 13.5px;
+    }
+    .compare-table caption {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+      margin-bottom: 6px;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid #000000;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .compare-table thead th {
+      background: #000000;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+    .compare-table tbody td:first-child {
+      color: #000000;
+      width: 38%;
+    }
+    .compare-table tbody td:last-child {
+      color: #000000;
+      font-weight: 700;
+    }
+    .compare-table .compare-arrow-col {
+      width: 28px;
+      text-align: center;
+      font-weight: 900;
+      color: #000000;
+      background: #ffffff;
+      padding: 10px 4px;
+    }
+    .compare-table thead th.compare-arrow-col {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* [신규] 케이스 스터디 프로젝트 정보 — Win95 "속성" 창 스타일 (흑·백·회색만) */
+    .props-window { border: 2px solid #000000; background: #c0c0c0; margin: 20px 0 24px; box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff; }
+    .props-title { display: flex; justify-content: space-between; align-items: center; background: #000000; color: #ffffff; font-size: 12.5px; font-weight: 800; padding: 4px 8px; }
+    .props-x { display: inline-block; width: 16px; height: 14px; line-height: 12px; text-align: center; background: #c0c0c0; color: #000000; border: 1px solid #ffffff; border-right-color: #000000; border-bottom-color: #000000; font-size: 11px; }
+    .props-table { width: calc(100% - 16px); margin: 8px; border-collapse: collapse; table-layout: fixed; background: #ffffff; font-size: 13.5px; }
+    .props-table th, .props-table td { border: 1px solid #808080; padding: 8px 10px; text-align: left; vertical-align: top; color: #000000; }
+    .props-table th { background: #e0e0e0; font-weight: 800; white-space: nowrap; }
+
+    /* 시각적으로는 숨기되 DOM에는 남겨 AI/크롤러가 읽을 수 있게 하는 접근성 표준 기법 (display:none 아님) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 28px 0 20px;
+      padding-top: 16px;
+      border-top: 1px dashed #000000;
+    }
+    .tag-pill {
+      font-size: 11.5px;
+      font-weight: 700;
+      background: #f4f4f4;
+      color: #000000;
+      padding: 3px 8px;
+      border: 1px solid #000000;
+    }
+
+    .post-nav-section {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #000000;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .post-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .post-nav-link {
+      color: #000000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 48%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .post-nav-link:hover { text-decoration: underline; }
+
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333333;
+      user-select: none;
+    }
+
+    @media (max-width: 900px) {
+      #gnb { left: 72px !important; right: 8px !important; justify-content: flex-end !important; }
+#brandLogo { display: flex !important; }
+      .gnb-menu, .gnb-right { display: none !important; }
+      #mobileMenuBtn { display: flex !important; }
+      .main-content-pane { padding: 24px 20px; }
+      .post-nav-link { max-width: 100%; }
+    }
+    @media (max-width: 720px) {
+      .explorer-split { flex-direction: column; }
+      /* PC 화면(720px 초과)에서는 좌측 전체글 목록(사이드바)을 그대로 유지하고,
+         모바일 상세화면에서만 목록을 숨겨서 본문으로 바로 진입하게 한다.
+         display:none은 이 미디어쿼리 안에서만 적용되므로 PC 레이아웃에는 영향이 없다. */
+      .tree-sidebar { display: none; }
+      .main-content-pane { padding: 20px 16px; }
+      .compare-table { font-size: 12px; }
+    }
+
+    .icon-action-btn {
+      background: #ffffff;
+      border: 1px solid #000000;
+      box-shadow: 1px 1px 0 #000000;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 3px 8px;
+      color: #000000;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.1s ease;
+    }
+    .icon-action-btn:hover { background: #000000; color: #ffffff; box-shadow: 0 0 0 #000000; }
+    .icon-action-btn:hover svg { stroke: #ffffff; }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #000000;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0 #000000;
+      z-index: 10001;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  /* RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+
+    /* Start Button Pointer-Events Guard */
+    #startBtn * { pointer-events: none !important; }
+    #startMenu {
+      position: fixed !important;
+      bottom: 38px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      display: none;
+      padding: 4px !important;
+    }
+    #startMenu.show { display: flex !important; }
+
+    /* TASKBAR ALWAYS VISIBLE & HIGH Z-INDEX */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      height: 36px !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      box-shadow: inset 0 1px 0 #7b7b7b !important;
+    }
+    #startMenu {
+      position: fixed !important;
+      bottom: 36px !important;
+      left: 4px !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 3px 3px 0 rgba(0,0,0,0.4) !important;
+      z-index: 9999999 !important;
+      padding: 4px !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+    }
+
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      right: 20px !important; left: auto !important;
+      bottom: 48px !important;
+    }
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu {
+      display: none;
+      position: fixed !important;
+      bottom: 32px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+</style>
+<style>/* 73: 글 하단 문의하기 말풍선 (서비스 페이지 FAQ 버튼과 같은 모양) */
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; line-height: 1.5; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54CP3F8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://www.superplanning.co.kr/';">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER (EXACT COPY FROM UX-RESEARCH) -->
+  <div id="gnb">
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-writing/"><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-design/"><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/web-app-development/"><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-academy/"><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link active" href="/ux-blog/"><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/ux-company/"><span>회사소개</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/contact/"><span>문의하기</span></a>
+      </li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+    </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
+    </div>
+  </div>
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <div class="explorer-window">
+      <!-- 1. Black Titlebar (Exact UX-Research Match) -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — UX 블로그</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn" onclick="location.href='https://www.superplanning.co.kr/';">✕</div>
+        </div>
+      </div>
+
+      <!-- 2. Menu Bar (Exact UX-Research Match) -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- 3. Toolbar Area (Exact UX-Research Match) -->
+      <div class="toolbar-area">
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 뒤로</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_블로그\오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</div>
+        </div>
+      </div>
+
+      <!-- 4. Explorer Split Pane -->
+      <div class="explorer-split">
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+          <div class="tree-root">
+            <span class="tree-toggle">日</span>
+            <span class="folder-icon">📂</span>
+            <span>슈퍼플래닝 &gt; UX블로그</span>
+          </div>
+
+          <ul class="tree-list toc">
+            <li class="tree-item"><a href="/ux-blog/" class="tree-link"><span class="doc-icon">📄</span> <span>▣ 전체글 목록</span></a></li>
+              <li class="tree-item">
+                <a href="/ux-blog/button-copy-clarity-conversion/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>전환율보다 먼저 봐야 하는 버튼 문구의 명확성</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/interview-question-design-mistakes/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>인터뷰 질문 설계에서 자주 생기는 초보 실수</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ux-spec-document-developer-confusion/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>화면정의서가 예쁜데도 개발이 헷갈리는 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ai-wireframe-ux-criteria/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/startup-ux-consulting-reasons/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/corporate-ux-training-planning/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>사내 UX교육을 기획할 때 먼저 정해야 할 5가지</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/app-development-cost-quote-difference/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ai-voice-service-vui-planning-guide/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/product-designer-hiring-external-interviewer/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ui-ux-agency-ranking-selection-criteria/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>UI/UX 에이전시 순위, 어떻게 판단할까: 포트폴리오·리서치·특허로 비교하는 법</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/ui-design-outsourcing-for-dev-team/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/app-development-cost-by-type-timeline/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</span>
+                </a>
+              </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/osstem-implant-dental-software-ux-research-case-study/" class="tree-link active">
+                  <span class="doc-icon">📄</span> <span>오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</span>
+                </a>
+              </li>
+          </ul>
+        </aside>
+
+        <main class="main-content-pane">
+          <article>
+            <div class="article-meta-bar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <span class="category-badge">케이스 스터디</span>
+                <span class="read-time-pill">60초 만에 읽기</span>
+                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 사용자경험 연구소<time class="sr-only" datetime="2026-10-22"> · 2026-10-22 게시</time></span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <button class="icon-action-btn" id="postBookmarkBtn" onclick="togglePostBookmark(30);" title="즐겨찾기 추가/제거">
+                  <span id="bookmarkStar">☆</span> <span style="font-size:11px; font-weight:800;">즐겨찾기</span>
+                </button>
+                <button class="icon-action-btn" onclick="shareCurrentPost(30);" title="아티클 링크 공유하기">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                  <span style="font-size:11px; font-weight:800;">공유</span>
+                </button>
+              </div>
+            </div>
+
+            <h1 style="word-break:keep-all; overflow-wrap:break-word;">오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</h1>
+            <div class="hero-excerpt"><span class="type-text" id="heroTypeText">현직 치과의사 6명과의 사용성 테스트(UT)로 검증한 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다. UX디자인 에이전시 슈퍼플래닝이 리서치 결과를 UX기획·UI/UX디자인 개선까지 직접 연결했습니다.</span></div>
+
+            <div class="article-body">
+
+      <p><strong>"리뉴얼 버전 출시 전, 사용자의 관점에서 UX디자인과 신규 기능을 검증하고 싶습니다."</strong><br>오스템임플란트 UI/UX개선 프로젝트는 고객사의 이 요청에서 출발했습니다.<br>슈퍼플래닝은 UX리서처·UX기획자·UX컨설턴트 6명으로 프로젝트팀을 구성해,<br>약 3개월간 조사 설계부터 개선안, 화면설계서까지 하나의 흐름으로 수행했습니다.<br>사용성 테스트에서 도출된 문제는 화면 전체의 콘텐츠 위계 재설계로 이어졌으며,<br>개선 전·후 비교 평가에서 사용성 향상이 확인되었습니다.</p>
+
+      <figure style="margin:20px 0 24px 0; padding:0;">
+        <img src="/images/ux-blog/osstem-dental-software/osstem-dental-software-ux-cover.webp" alt="의사가 쓰는 화면은 의사에게 먼저 검증받습니다 — 오스템임플란트 치과 의료용 소프트웨어 UX리서치 사례, 현직 치과의사 6명 사용성 테스트(UT), 슈퍼플래닝" width="1200" height="630" decoding="async" style="display:block; width:100%; height:auto; border:2px solid #000000;">
+      </figure>
+
+      <div class="props-window" role="group" aria-label="프로젝트 속성">
+        <div class="props-title"><span>프로젝트 속성</span><span class="props-x" aria-hidden="true">×</span></div>
+        <table class="props-table">
+          <colgroup>
+            <col style="width:26%;">
+            <col style="width:74%;">
+          </colgroup>
+          <tbody>
+            <tr><th scope="row">프로젝트</th><td>오스템임플란트 치과 의료용 소프트웨어 UX리서치 · UI/UX 개선 컨설팅</td></tr>
+            <tr><th scope="row">고객사</th><td>오스템임플란트</td></tr>
+            <tr><th scope="row">플랫폼</th><td>치과 진료실용 소프트웨어 (PC 설치형 · 웹 · 태블릿)</td></tr>
+            <tr><th scope="row">수행사</th><td>슈퍼플래닝 (UX디자인 에이전시)</td></tr>
+            <tr><th scope="row">수행 범위</th><td>UX리서치 · UX기획 · UI/UX디자인 개선 컨설팅</td></tr>
+            <tr><th scope="row">기간</th><td>약 3개월</td></tr>
+            <tr><th scope="row">투입 인력</th><td>6명 (UX리서처 3명 · UX기획자 2명 · UX컨설턴트 1명)</td></tr>
+            <tr><th scope="row">참석자</th><td>현직 치과의사 6명 (기존 사용 · 이탈 · 미사용 고객)</td></tr>
+            <tr><th scope="row">조사 방식</th><td>1:1 미션 기반 사용성 테스트(미션 5개) + 휴리스틱 기반 정량평가</td></tr>
+            <tr><th scope="row">장소</th><td>서울 강남구 논현동 UX리서치 전문 Lab실 (미러룸)</td></tr>
+            <tr><th scope="row">핵심 목표</th><td>리뉴얼 UI/UX·신규 기능 출시 전 검증, 기존 사용자 불편 확인</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure style="margin:20px 0 24px 0; padding:0;">
+        <img src="/images/ux-blog/osstem-dental-software/osstem-dental-software-charting-screen.webp" alt="오스템임플란트 치과 의료용 소프트웨어 차팅 화면 — 치아 차트에서 진료 내역을 기록하는 치과 진료실용 소프트웨어 UI" width="721" height="391" decoding="async" style="display:block; width:100%; height:auto; border:2px solid #000000;">
+        <figcaption style="margin-top:8px; font-size:12.5px; color:#555;">UX리서치 대상이 된 오스템임플란트 치과 의료용 소프트웨어의 차팅 화면</figcaption>
+      </figure>
+
+      <h2>이 사례의 핵심은 무엇인가요?</h2>
+      <ul>
+        <li><strong>검증 대상</strong> — 치과 진료실에서 사용하는 의료용 소프트웨어의 리뉴얼 버전입니다.</li>
+        <li><strong>참석자</strong> — 기존 사용 고객, 이탈 고객, 미사용 고객으로 구분한 현직 치과의사 6명입니다.</li>
+        <li><strong>방법</strong> — 미션 5개 기반 1:1 사용성 테스트와 휴리스틱 기반 정량평가를 병행했습니다.</li>
+        <li><strong>발견</strong> — 진료 현장과 다른 용어, 찾기 어려운 주요 차팅 메뉴, 약한 시각적 위계가 확인되었습니다.</li>
+        <li><strong>반영</strong> — 리서치 결과를 개선안과 화면설계서로 구체화하고, 콘텐츠 강약 체계를 재설계했습니다.</li>
+        <li><strong>성과</strong> — 개선 전·후 비교 평가에서 사용성 향상이 확인되었습니다.</li>
+      </ul>
+
+      <blockquote><span class="type-text" id="quoteTypeText">UX리서치의 가치는 보고서가 아니라, 개선된 화면에서 증명됩니다.</span></blockquote>
+
+      <h2>왜 출시 전에 현직 치과의사와 사용성 테스트를 진행했나요?</h2>
+      <p>전문가용 소프트웨어는 내부 검토만으로 현장의 문제를 찾기 어렵기 때문입니다.<br>치과 진료실 소프트웨어의 사용자는 진료 흐름 안에서 프로그램을 다루는 전문가이며,<br>이들이 쓰는 용어와 작업 순서는 내부 기획자나 일반 사용자로는 재현하기 어렵습니다.</p>
+      <p>프로젝트의 목표는 두 가지로 정의했습니다.</p>
+      <ol>
+        <li><strong>출시 전 검증</strong> — 리뉴얼된 UI/UX디자인과 신규 기능이 실제 진료 환경에서 문제없이 쓰이는지 확인합니다.</li>
+        <li><strong>기존 불편 진단</strong> — 이전 버전 사용자가 겪어 온 불편을 찾아 리뉴얼 설계에 반영합니다.</li>
+      </ol>
+
+      <h2>의사 참석자는 어떤 기준으로 선정하고 섭외했나요?</h2>
+      <p>페르소나와 유저 저니맵으로 스크리닝 조건을 먼저 확정하고, 사용 경험에 따라 세 그룹으로 나눴습니다.<br>바쁜 전문직일수록 조사 목적에 정확히 맞는 참석자를 고르는 것이 결과의 품질을 좌우합니다.</p>
+      <table class="compare-table" style="table-layout:fixed;">
+        <caption>표 1. 참석자 그룹별 검증 포인트</caption>
+        <colgroup>
+          <col style="width:26%;">
+          <col style="width:74%;">
+        </colgroup>
+        <thead>
+          <tr><th>참석자 그룹</th><th>검증 포인트</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>기존 사용 고객</td><td>익숙한 사용 방식이 리뉴얼 버전에서도 자연스럽게 이어지는가</td></tr>
+          <tr><td>이탈 고객</td><td>사용을 중단하게 만든 불편이 리뉴얼 버전에서 해소되었는가</td></tr>
+          <tr><td>미사용 고객</td><td>처음 접하는 사용자도 별도 안내 없이 주요 기능을 찾을 수 있는가</td></tr>
+        </tbody>
+      </table>
+      <p>참석자 규모는 현직 치과의사 6명입니다.<br>문제 발견을 목적으로 하는 질적 사용성 테스트는 5명 안팎으로도 주요 사용성 문제의 대부분을 찾을 수 있습니다.<br>(출처: <a href="https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/" target="_blank" rel="noopener">Nielsen Norman Group, Why You Only Need to Test with 5 Users</a>)</p>
+
+      <h2>사용성 테스트(UT)는 어떻게 진행했나요?</h2>
+      <p>서울 강남구 논현동의 UX리서치 전문 Lab실에서 1:1 미션 기반으로 진행했습니다.<br>참석자가 미션을 수행하는 동안 프로젝트 팀은 미러룸에서 화면과 행동을 실시간으로 관찰했으며,<br>참석자 1인당 1시간~1시간 30분이 소요되었습니다.</p>
+      <figure style="margin:20px 0 24px 0; padding:0;">
+        <img src="/images/ux-blog/osstem-dental-software/osstem-dentist-ut-mirror-room.webp" alt="오스템임플란트 치과 의료용 소프트웨어 사용성 테스트 현장 — 서울 강남구 논현동 UX리서치 전문 Lab실 미러룸에서 현직 치과의사 UT를 관찰하는 슈퍼플래닝 리서치팀" width="604" height="321" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border:2px solid #000000;">
+        <figcaption style="margin-top:8px; font-size:12.5px; color:#555;">현직 치과의사 대상 사용성 테스트 현장 (서울 강남구 논현동 UX리서치 전문 Lab실 미러룸)</figcaption>
+      </figure>
+      <ol>
+        <li><strong>UT 설계서</strong> — 조사 목적, 참석자 조건, 관찰 포인트, 평가 기준을 정의했습니다.</li>
+        <li><strong>미션 시나리오</strong> — 실제 진료실 업무를 바탕으로 미션 5개를 설계했습니다.</li>
+        <li><strong>1:1 미션 수행·관찰</strong> — 미션별로 막히는 지점과 행동 패턴을 기록했습니다.</li>
+        <li><strong>정량평가</strong> — 미션 종료 후 휴리스틱 기반 평가문항으로 사용성을 수치화했습니다.</li>
+        <li><strong>결과보고서·개선안</strong> — 관찰 결과와 평가 점수를 종합해 개선 우선순위를 도출했습니다.</li>
+      </ol>
+
+      <h2>정량평가는 어떤 기준으로 설계했나요?</h2>
+      <p>제이콥 닐슨(Jakob Nielsen)의 10가지 사용성 휴리스틱을 기준으로 평가문항을 설계했습니다.<br>관찰만으로는 "불편해 보인다"는 인상에 머물기 쉽습니다.<br>동일한 기준의 점수로 문제의 크기를 비교해, 개선 우선순위를 객관적으로 정할 수 있도록 했습니다.</p>
+      <ul>
+        <li>시스템 상태의 가시성 (Visibility of system status)</li>
+        <li>시스템과 실제 세계의 일치 (Match between system and the real world)</li>
+        <li>사용자 통제와 자유 · 일관성과 표준 · 오류 예방</li>
+        <li>기억보다 인식 · 사용의 유연성과 효율성 · 미니멀한 디자인</li>
+        <li>오류 인식·진단·복구 지원 · 도움말과 문서</li>
+      </ul>
+      <p>(출처: <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="noopener">Nielsen Norman Group, 10 Usability Heuristics for User Interface Design</a>)</p>
+
+      <h2>사용성 테스트에서 어떤 문제가 발견되었나요?</h2>
+      <p>핵심은 기능의 부족이 아니라, 소프트웨어와 진료 현장 사이의 간극이었습니다.<br>관찰 기록과 정량평가 결과에서 공통적으로 확인된 문제는 다음 세 가지입니다.</p>
+      <table class="compare-table" style="table-layout:fixed;">
+        <caption>표 2. 주요 발견점과 개선 방향</caption>
+        <colgroup>
+          <col style="width:26%;">
+          <col style="width:37%;">
+          <col style="width:37%;">
+        </colgroup>
+        <thead>
+          <tr><th>발견점</th><th>문제의 의미</th><th>개선 방향</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>현장과 다른 용어</td><td>화면 용어가 진료 현장의 용어와 달라 한 번 더 해석해야 함</td><td>진료 현장 용어 기준으로 메뉴·버튼 문구 정비</td></tr>
+          <tr><td>찾기 어려운 차팅 메뉴</td><td>자주 쓰는 주요 차팅 메뉴를 바로 찾지 못함</td><td>주요 메뉴의 위치와 진입 경로 재설계</td></tr>
+          <tr><td>약한 시각적 위계</td><td>중요한 정보와 보조 정보의 강약 구분이 약함</td><td>화면 전체의 콘텐츠 강약 체계 재설계</td></tr>
+        </tbody>
+      </table>
+      <p>세 가지 문제는 모두 휴리스틱의 "시스템과 실제 세계의 일치", "기억보다 인식" 원칙과 연결됩니다.<br>즉, 기능을 현장의 언어와 작업 순서로 보여 주는 설계가 필요하다는 결론입니다.</p>
+
+      <h2>리서치 결과는 UI/UX 개선에 어떻게 반영되었나요?</h2>
+      <p>슈퍼플래닝은 리서치 결과를 보고서로 전달하는 데서 끝내지 않습니다.<br>같은 프로젝트팀의 UX기획자와 UX컨설턴트가 발견점을 개선안과 화면설계서로 직접 구체화했습니다.</p>
+      <p>특히 "시각적 위계가 약하다"는 평가를 근거로 화면 전체의 콘텐츠 강약 체계를 재설계했습니다.<br>그 결과, 개선 전·후 비교 평가에서 사용성 향상이 확인되었습니다.<br>세부 수치는 고객사 보안 정책에 따라 공개하지 않습니다.</p>
+      <table class="compare-table" style="table-layout:fixed;">
+        <caption>표 3. 프로젝트 산출물</caption>
+        <colgroup>
+          <col style="width:26%;">
+          <col style="width:74%;">
+        </colgroup>
+        <thead>
+          <tr><th>산출물</th><th>주요 내용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>UT 설계서</td><td>조사 목적, 참석자 스크리닝 조건, 관찰 포인트, 정량평가 문항</td></tr>
+          <tr><td>미션 시나리오</td><td>실제 진료 업무 기반 미션 5개와 진행 스크립트</td></tr>
+          <tr><td>결과보고서</td><td>관찰 결과, 휴리스틱 평가 점수, 개선 우선순위</td></tr>
+          <tr><td>개선안</td><td>용어·메뉴 구조·시각적 위계 개선 방향</td></tr>
+          <tr><td>화면설계서</td><td>개선안을 반영한 UI/UX 화면설계</td></tr>
+        </tbody>
+      </table>
+      <p>오스템임플란트 담당자는 UX리서치를 통해 실제 현장의 반응을 즉시 프로덕트 개선에 반영할 수 있었다며,<br>임직원 모두 만족한다는 의견을 전해 왔습니다.<br>더 자세한 UI/UX기획·화면설계 범위는 <a href="/ux-design/">UI/UX기획·디자인</a>에서 확인할 수 있습니다.</p>
+
+      <h2>이 사례에서 얻은 인사이트는 무엇인가요?</h2>
+      <ul>
+        <li><strong>전문가용 소프트웨어는 전문가가 검증해야 합니다.</strong><br>의료진·실무자가 쓰는 B2B 소프트웨어는 내부 검토만으로 현장 용어와 작업 순서를 놓치기 쉽습니다.</li>
+        <li><strong>참석자는 사용 경험별로 구분해야 합니다.</strong><br>기존 사용자, 이탈 고객, 미사용 고객은 같은 화면에서도 서로 다른 문제를 드러냅니다.</li>
+        <li><strong>리서치와 설계는 하나의 흐름이어야 합니다.</strong><br>리서치 팀과 설계 팀이 연결되어 있을 때, 발견점이 보고서에 머물지 않고 화면 개선으로 이어집니다.</li>
+      </ul>
+      <p>참석자 질문을 설계할 때 주의할 점은 <a href="/ux-blog/interview-question-design-mistakes/">인터뷰 질문 설계에서 자주 생기는 초보 실수</a>에서,<br>리서치를 지표 개선으로 연결한 사례는 <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">LG유플러스 인증앱 헬스케어 서비스 UX개선 사례</a>를 참고하세요.</p>
+
+      <h2>의료·B2B 소프트웨어 UX리서치, 슈퍼플래닝은 어떻게 진행하나요?</h2>
+      <p>슈퍼플래닝은 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 수행한 UX디자인 에이전시입니다.<br>조사 설계, 참석자 섭외, 사례비 지급, 모더레이터 진행, 결과보고서까지 UX리서치 전 과정을 대행합니다.<br>의사·변호사 등 전문직과 B2B 실무자도 조건에 맞게 스크리닝해 섭외하며, 원격 사용성 테스트도 가능합니다.<br>의료·헬스케어 분야에서는 오스템임플란트 치과 의료용 소프트웨어,<br>LG유플러스 인증앱 헬스케어 서비스 프로젝트를 수행했습니다.<br>슈퍼플래닝에서는 AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템을 특허 출원했습니다.<br>무엇보다 리서치 결과를 UX기획, UI/UX디자인, 개발까지 한 팀에서 이어서 진행합니다.<br>출시 전 검증이나 리뉴얼을 준비하고 있다면 <a href="/contact/">문의하기</a>로 서비스 상황을 알려 주세요.</p>
+
+      <h2>의료 소프트웨어 사용성 테스트, 자주 묻는 질문</h2>
+      <h3>의사 같은 전문직도 사용성 테스트 참석자로 섭외할 수 있나요?</h3>
+      <p>네, 가능합니다.<br>슈퍼플래닝은 오스템임플란트 프로젝트에서 현직 치과의사 6명을 섭외해 1:1 사용성 테스트를 진행했습니다.<br>의사·변호사 등 전문직, B2B 실무자, 시니어, 국내 거주 외국인도 조건에 맞게 스크리닝해 섭외합니다.</p>
+      <h3>B2B·전문가용 소프트웨어도 사용성 테스트가 필요한가요?</h3>
+      <p>필요합니다.<br>전문가용 소프트웨어는 사용자의 업무 용어와 작업 순서가 화면에 맞지 않으면 숙련자도 불편을 겪습니다.<br>이 프로젝트에서도 진료 현장과 다른 용어, 찾기 어려운 차팅 메뉴가 사용성 테스트로 확인되었습니다.</p>
+      <h3>사용성 테스트 참석자는 몇 명이 적당한가요?</h3>
+      <p>문제 발견을 목적으로 하는 질적 사용성 테스트는 그룹당 5명 안팎이 일반적인 기준입니다.<br>이 프로젝트는 기존 사용 고객, 이탈 고객, 미사용 고객으로 구분해 현직 치과의사 6명과 진행했습니다.</p>
+      <h3>휴리스틱 평가는 무엇인가요?</h3>
+      <p>제이콥 닐슨의 10가지 사용성 휴리스틱처럼 검증된 기준으로 화면의 사용성을 평가하는 방법입니다.<br>이 프로젝트에서는 해당 기준으로 정량평가 문항을 설계해, 미션 종료 후 참석자가 직접 평가하도록 했습니다.</p>
+      <h3>이 프로젝트의 기간과 투입 인력은 어떻게 되나요?</h3>
+      <p>약 3개월간 슈퍼플래닝 프로젝트팀 6명(UX리서처 3명, UX기획자 2명, UX컨설턴트 1명)이 참여했습니다.<br>UX리서치, UX기획, UI/UX디자인 개선 컨설팅을 모두 포함한 기간입니다.</p>
+      <h3>UX리서치 결과를 UI/UX기획·디자인까지 이어서 맡길 수 있나요?</h3>
+      <p>네, 가능합니다.<br>슈퍼플래닝은 리서치 결과를 개선안, 화면설계서, UI/UX디자인, 개발까지 한 팀에서 이어서 진행합니다.<br>이 프로젝트에서도 리서치로 확인된 시각적 위계 문제를 화면 개선으로 연결했습니다.</p>
+      <h3>미러룸 사용성 테스트는 어디에서 진행하나요?</h3>
+      <p>서울 강남구 논현동의 UX리서치 전문 Lab실에서 진행합니다.<br>참석자가 미션을 수행하는 동안 고객사와 프로젝트 팀이 미러룸에서 함께 관찰할 수 있습니다.<br>필요한 경우 원격 인터뷰나 원격 사용성 테스트로도 진행합니다.</p>
+      <h3>의료·헬스케어 소프트웨어 UX리서치 업체는 어떻게 선택하나요?</h3>
+      <p>의사 같은 전문직 참석자를 섭외해 본 경험이 있는지,<br>리서치 결과를 화면설계와 디자인까지 직접 연결할 수 있는지를 확인하세요.<br>슈퍼플래닝은 오스템임플란트 프로젝트에서 현직 치과의사 6명과 사용성 테스트를 수행했으며,<br>LG유플러스 인증앱 헬스케어 서비스의 UX리서치부터 개발까지 진행한 UX디자인 에이전시입니다.</p>
+      <h3>의료 소프트웨어 UX리서치 비용은 어떻게 정해지나요?</h3>
+      <p>참석자 그룹 수, 섭외 난이도, 조사 방식에 따라 달라집니다.<br>견적에는 참석자 섭외비, 사례비 지급, UX리서치 전문 Lab실 대여비, 모더레이터 진행비가 포함되며,<br>상담 후 바로 견적서를 보내 드립니다.</p>
+
+      <p class="related-link">FGI·사용성 테스트·사용자 인터뷰 대행 범위는 <a href="/ux-research/">UX리서치</a> 페이지에서 확인할 수 있습니다.</p>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "의사 같은 전문직도 사용성 테스트 참석자로 섭외할 수 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "네, 가능합니다. 슈퍼플래닝은 오스템임플란트 프로젝트에서 현직 치과의사 6명을 섭외해 1:1 사용성 테스트를 진행했습니다. 의사·변호사 등 전문직, B2B 실무자, 시니어, 국내 거주 외국인도 조건에 맞게 스크리닝해 섭외합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "B2B·전문가용 소프트웨어도 사용성 테스트가 필요한가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "필요합니다. 전문가용 소프트웨어는 사용자의 업무 용어와 작업 순서가 화면에 맞지 않으면 숙련자도 불편을 겪습니다. 이 프로젝트에서도 진료 현장과 다른 용어, 찾기 어려운 차팅 메뉴가 사용성 테스트로 확인되었습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "사용성 테스트 참석자는 몇 명이 적당한가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "문제 발견을 목적으로 하는 질적 사용성 테스트는 그룹당 5명 안팎이 일반적인 기준입니다. 이 프로젝트는 기존 사용 고객, 이탈 고객, 미사용 고객으로 구분해 현직 치과의사 6명과 진행했습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "휴리스틱 평가는 무엇인가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "제이콥 닐슨의 10가지 사용성 휴리스틱처럼 검증된 기준으로 화면의 사용성을 평가하는 방법입니다. 이 프로젝트에서는 해당 기준으로 정량평가 문항을 설계해, 미션 종료 후 참석자가 직접 평가하도록 했습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "이 프로젝트의 기간과 투입 인력은 어떻게 되나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "약 3개월간 슈퍼플래닝 프로젝트팀 6명(UX리서처 3명, UX기획자 2명, UX컨설턴트 1명)이 참여했습니다. UX리서치, UX기획, UI/UX디자인 개선 컨설팅을 모두 포함한 기간입니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "UX리서치 결과를 UI/UX기획·디자인까지 이어서 맡길 수 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "네, 가능합니다. 슈퍼플래닝은 리서치 결과를 개선안, 화면설계서, UI/UX디자인, 개발까지 한 팀에서 이어서 진행합니다. 이 프로젝트에서도 리서치로 확인된 시각적 위계 문제를 화면 개선으로 연결했습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "미러룸 사용성 테스트는 어디에서 진행하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "서울 강남구 논현동의 UX리서치 전문 Lab실에서 진행합니다. 참석자가 미션을 수행하는 동안 고객사와 프로젝트 팀이 미러룸에서 함께 관찰할 수 있습니다. 필요한 경우 원격 인터뷰나 원격 사용성 테스트로도 진행합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "의료·헬스케어 소프트웨어 UX리서치 업체는 어떻게 선택하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "의사 같은 전문직 참석자를 섭외해 본 경험이 있는지, 리서치 결과를 화면설계와 디자인까지 직접 연결할 수 있는지를 확인하세요. 슈퍼플래닝은 오스템임플란트 프로젝트에서 현직 치과의사 6명과 사용성 테스트를 수행했으며, LG유플러스 인증앱 헬스케어 서비스의 UX리서치부터 개발까지 진행한 UX디자인 에이전시입니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "의료 소프트웨어 UX리서치 비용은 어떻게 정해지나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "참석자 그룹 수, 섭외 난이도, 조사 방식에 따라 달라집니다. 견적에는 참석자 섭외비, 사례비 지급, UX리서치 전문 Lab실 대여비, 모더레이터 진행비가 포함되며, 상담 후 바로 견적서를 보내 드립니다." }
+          }
+        ]
+      }
+      </script>
+
+            </div>
+
+            <!-- 63: 글 하단 문의하기 버튼(/ux-design/ FAQ 하단 버튼과 같은 윈도우 스타일) -->
+            <div class="post-inquiry-cta" style="margin:52px 0 26px 0;">
+              <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
+              <a href="/contact/" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background-color:#c0c0c0; color:#000000; text-decoration:none; font-weight:bold; font-size:13.5px; border-top:2px solid #ffffff; border-left:2px solid #ffffff; border-right:2px solid #404040; border-bottom:2px solid #404040; box-shadow:inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span>
+              </a></span>
+            </div>
+
+            <div class="tag-container">
+              <a href="/ux-blog/?tag=%23%EC%BC%80%EC%9D%B4%EC%8A%A4%EC%8A%A4%ED%84%B0%EB%94%94" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#케이스스터디 태그 포스팅 모아보기">#케이스스터디</a><a href="/ux-blog/?tag=%23UX%EB%A6%AC%EC%84%9C%EC%B9%98" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#UX리서치 태그 포스팅 모아보기">#UX리서치</a><a href="/ux-blog/?tag=%23%EC%82%AC%EC%9A%A9%EC%84%B1%ED%85%8C%EC%8A%A4%ED%8A%B8" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#사용성테스트 태그 포스팅 모아보기">#사용성테스트</a><a href="/ux-blog/?tag=%23%EC%9D%98%EB%A3%8CUX" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#의료UX 태그 포스팅 모아보기">#의료UX</a><a href="/ux-blog/?tag=%23%ED%9C%B4%EB%A6%AC%EC%8A%A4%ED%8B%B1%ED%8F%89%EA%B0%80" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#휴리스틱평가 태그 포스팅 모아보기">#휴리스틱평가</a>
+            </div>
+          </article>
+
+          <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
+          <!-- BOTTOM NAV WITH PREV & NEXT POST ON THE EXACT SAME HORIZONTAL ROW -->
+          <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000; display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:13.5px; font-weight:700;">
+              <!-- Prev Post (Left) -->
+              <div style="flex:1; min-width:0; text-align:left;">
+                <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; gap:6px; max-width:100%;"><span style="white-space:nowrap; font-weight:800; color:#444;">⬅ 이전글:</span> <span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</span></a>
+              </div>
+
+              <!-- Next Post (Right) -->
+              <div style="flex:1; min-width:0; text-align:right;">
+                <span style="color:#999999; font-weight:500; font-size:13px;">다음 글이 없습니다.</span>
+              </div>
+            </div>
+
+            <!-- 목록보기 Button at Far Right -->
+            <div style="display:flex; justify-content:flex-end; border-top:1px dashed #e0e0e0; padding-top:12px;">
+              <a href="/ux-blog/" class="w95-btn" style="padding:6px 20px; font-size:12.5px;">목록보기</a>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!-- 5. Statusbar (Exact UX-Research Match) -->
+      <div class="statusbar">
+        <div>1개 개체 선택됨</div>
+        <div>C:\SUPERPLANNING\UX_블로그\오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</div>
+        <div>내 컴퓨터</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) drawer.classList.toggle('show');
+    }
+
+    // GNB Scroll Progress Gauge Handler (Exact UX-Research Match)
+    let scrollTimer = null;
+    function updateGnbScrollProgress() {
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      if (!progressBar) return;
+
+      // 1. Window scroll calculation
+      const winScroll = Math.max(0, window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+      const winDocHeight = Math.max(
+        document.body.scrollHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.offsetHeight || 0
+      );
+      const winViewport = window.innerHeight || document.documentElement.clientHeight || 0;
+      const winMaxScroll = Math.max(0, winDocHeight - winViewport);
+      const winRatio = winMaxScroll > 5 ? (winScroll / winMaxScroll) : 0;
+
+      // 2. Main content pane scroll calculation
+      const mainPane = document.querySelector('.main-content-pane');
+      let paneRatio = 0;
+      let paneScroll = 0;
+      if (mainPane) {
+        paneScroll = mainPane.scrollTop || 0;
+        const paneMaxScroll = Math.max(0, mainPane.scrollHeight - mainPane.clientHeight);
+        if (paneMaxScroll > 5) {
+          paneRatio = paneScroll / paneMaxScroll;
+        }
+      }
+
+      // 3. Take active max scroll ratio & current scroll
+      const activeRatio = Math.max(winRatio, paneRatio);
+      const activeScroll = Math.max(winScroll, paneScroll);
+
+      // 4. Compute final percentage
+      const scrolled = Math.min(100, Math.max(0, activeRatio * 100));
+
+      // 5. Update DOM
+      progressBar.style.width = scrolled + '%';
+      if (progressBadge) {
+        progressBadge.textContent = Math.round(scrolled) + '%';
+      }
+
+      // 6. Active scrolling badge visibility timer (1200ms auto-fade)
+      if (activeScroll > 10) {
+        document.body.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          document.body.classList.remove('is-scrolling');
+        }, 1200);
+      } else {
+        document.body.classList.remove('is-scrolling');
+      }
+    }
+
+    // Attach listeners to window, document, and main pane
+    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+
+    const mainPaneEl = document.querySelector('.main-content-pane');
+    if (mainPaneEl) {
+      mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+    }
+
+    // Fire initial update and heartbeat timer fallback
+    updateGnbScrollProgress();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
+    }
+    setTimeout(updateGnbScrollProgress, 300);
+    setTimeout(updateGnbScrollProgress, 1000);
+  </script>
+  <div class="toast-msg" id="toast">링크가 클립보드에 복사되었습니다!</div>
+<!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+  <script>
+    (function() {
+      function initScrollTopBtn() {
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+          const updateVisibility = () => {
+            if (window.innerWidth > 900) {
+              scrollTopBtn.style.display = (window.scrollY > 80) ? 'inline-flex' : 'none';
+            } else {
+              scrollTopBtn.style.display = 'none';
+            }
+          };
+          window.addEventListener('scroll', updateVisibility, { passive: true });
+          window.addEventListener('resize', updateVisibility, { passive: true });
+          updateVisibility();
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollTopBtn);
+      } else {
+        initScrollTopBtn();
+      }
+    })();
+  </script>
+
+  <script>
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+  </script>
+
+  <script>
+
+    async function handlePopupInquiry(e) {
+      if (e) e.preventDefault();
+      const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
+      const origText = submitBtn ? submitBtn.innerHTML : '';
+
+      const name = document.getElementById('popName') ? document.getElementById('popName').value.trim() : '';
+      const phone = document.getElementById('popPhone') ? document.getElementById('popPhone').value.trim() : '';
+      const company = document.getElementById('popCompany') ? document.getElementById('popCompany').value.trim() : '';
+      const email = document.getElementById('popEmail') ? document.getElementById('popEmail').value.trim() : '';
+      const message = document.getElementById('popMessage') ? document.getElementById('popMessage').value.trim() : '';
+
+      if (!name || !email) {
+        alert('성함과 이메일 주소를 입력해 주세요.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '✉️ 이메일 전송 중...';
+      }
+
+      const payload = {
+        name, phone, company, email, message,
+        _subject: `[슈퍼플래닝 팝업 문의] ${name} - ${company || '고객사'}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const p1 = fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const p2 = fetch('/api/send_inquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        await Promise.race([p1, p2, new Promise(resolve => setTimeout(resolve, 3000))]);
+      } catch (err) {
+        console.log('Popup inquiry error:', err);
+      }
+
+      showInquirySuccessModal(name);
+
+      const form = document.getElementById('popupInquiryForm');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+      }
+    }
+
+  </script>
+
+  <script>
+
+    // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    function showInquirySuccessModal(userName) {
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_submit', form_page: location.pathname }); } catch (e) {}
+      let modal = document.getElementById('inquirySuccessModal');
+      if (!modal) {
+        const modalHtml = `
+          <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
+            <div style="width:100%; max-width:380px; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); overflow:hidden;">
+              <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+                <span>[문의 접수 완료]</span>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;">✕</button>
+              </div>
+              <div style="padding:22px 20px; text-align:center; background:#ffffff;">
+                <div style="font-size:32px; margin-bottom:12px;">✉️</div>
+                <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:800; color:#000000;">[문의 접수 완료]</h3>
+                <div style="font-size:13px; line-height:1.65; color:#222222; font-weight:600; margin-bottom:20px; text-align:center; word-break:keep-all;">
+                  <span id="inquiryUserName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
+                  문의 주신 내용은 잘 받았습니다.<br>
+                  빠르게 회신드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:9px 36px; min-width:140px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; cursor:pointer; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
+                  감사합니다
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        modal = document.getElementById('inquirySuccessModal');
+      }
+
+      const nameEl = document.getElementById('inquiryUserName');
+      if (nameEl) nameEl.textContent = userName || '방문자';
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeInquirySuccessModal() {
+      const modal = document.getElementById('inquirySuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+  </script>
+
+  <script>
+
+    /* EXACT TASKBAR & START MENU SCRIPT (100% SYNCED WITH CONTACT PAGE) */
+    function toggleStartMenu(e) {
+      if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+      }
+      var menu = document.getElementById('startMenu');
+      if (menu) {
+        menu.classList.toggle('show');
+        if (typeof blip === 'function') blip(520, 0.05);
+      }
+    }
+
+    function closeStart() {
+      var menu = document.getElementById('startMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', function(e) {
+      var menu = document.getElementById('startMenu');
+      var btn = document.getElementById('startBtn');
+      if (menu && menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+
+  </script>
+
+<script>
+window.copyToClipboard = function(text, label, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopySuccess(text, label, btn);
+    }).catch(function() {
+      fallbackCopyText(text, label, btn);
+    });
+  } else {
+    fallbackCopyText(text, label, btn);
+  }
+};
+
+function fallbackCopyText(text, label, btn) {
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    var successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    if (successful) {
+      showCopySuccess(text, label, btn);
+    } else {
+      alert('복사 실패: ' + text);
+    }
+  } catch (err) {
+    alert('복사 실패: ' + text);
+  }
+}
+
+function showCopySuccess(text, label, btn) {
+  if (btn) {
+    var origText = btn.textContent;
+    btn.textContent = '완료!';
+    btn.style.background = '#000000';
+    btn.style.color = '#ffffff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 1500);
+  }
+  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+}
+</script>
+
+
+
+  <script>
+    // Post Detail Bookmark & Share Handlers
+    (function() {
+      function getBookmarks() {
+        try {
+          return JSON.parse(localStorage.getItem('sp_blog_bookmarks') || '[]');
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveBookmarks(arr) {
+        try {
+          localStorage.setItem('sp_blog_bookmarks', JSON.stringify(arr));
+        } catch (e) {}
+      }
+
+      function showToast(msg) {
+        let toast = document.getElementById('spToastNotification');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'spToastNotification';
+          toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#111111; color:#ffffff; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:700; z-index:999999; box-shadow:0 4px 16px rgba(0,0,0,0.35); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity:0; pointer-events:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; text-align:center; min-width:200px;';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.style.opacity = '1';
+        toast.style.transform = 'translate(-50%, -6px)';
+        clearTimeout(window._spToastTimer);
+        window._spToastTimer = setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translate(-50%, 0)';
+        }, 2300);
+      }
+      window.showToast = showToast;
+
+      function updateBookmarkUI(targetId) {
+        const id = targetId || 1;
+        const bookmarks = getBookmarks();
+        const isFav = bookmarks.includes(id);
+
+        const btn = document.getElementById('postBookmarkBtn');
+        const star = document.getElementById('bookmarkStar');
+
+        if (star) star.textContent = isFav ? '★' : '☆';
+        if (btn) {
+          if (isFav) {
+            btn.classList.add('bookmarked');
+            btn.style.color = '#e67e22';
+            btn.style.fontWeight = 'bold';
+          } else {
+            btn.classList.remove('bookmarked');
+            btn.style.color = '';
+            btn.style.fontWeight = '';
+          }
+        }
+      }
+      window.updateBookmarkUI = updateBookmarkUI;
+
+      function toggleBookmark(e, targetId) {
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        const id = (typeof e === 'number') ? e : (targetId || 1);
+
+        let bookmarks = getBookmarks();
+        const idx = bookmarks.indexOf(id);
+        if (idx > -1) {
+          bookmarks.splice(idx, 1);
+          showToast('☆ 즐겨찾기에서 제거되었습니다.');
+        } else {
+          bookmarks.push(id);
+          showToast('★ 즐겨찾기에 추가되었습니다.');
+        }
+        saveBookmarks(bookmarks);
+        updateBookmarkUI(id);
+      }
+      window.toggleBookmark = toggleBookmark;
+      window.togglePostBookmark = toggleBookmark;
+
+      function sharePost(e, targetId) {
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        const id = (typeof e === 'number') ? e : (targetId || 1);
+        const shareUrl = 'https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/';
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+          }).catch(() => {
+            fallbackCopy(shareUrl);
+          });
+        } else {
+          fallbackCopy(shareUrl);
+        }
+      }
+      window.sharePost = sharePost;
+      window.shareCurrentPost = sharePost;
+
+      function fallbackCopy(text) {
+        const input = document.createElement('textarea');
+        input.value = text;
+        input.style.position = 'fixed';
+        input.style.left = '-9999px';
+        document.body.appendChild(input);
+        input.select();
+        try {
+          document.execCommand('copy');
+          showToast('📌 아티클 링크가 클립보드에 복사되었습니다!');
+        } catch (err) {
+          showToast('링크 복사에 실패했습니다.');
+        }
+        document.body.removeChild(input);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        updateBookmarkUI(30);
+      });
+    })();
+  </script>
+
+  <script>
+    // 62: 타이핑 모션 표준 — 검정 바탕이 글자와 함께 늘어남, 38ms/자, 흰 커서 깜박임, 보일 때 시작, 자리 미리 확보. 문구는 HTML에 그대로 있어 검색·AI가 읽음
+    (function () {
+      function start() {
+        var els = Array.prototype.slice.call(document.querySelectorAll('.type-text'));
+        if (!els.length || !('IntersectionObserver' in window)) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        els.forEach(function (el) {
+          var box = el.parentNode;
+          box.style.minHeight = box.offsetHeight + 'px';
+          el.setAttribute('data-text', el.textContent);
+          el.textContent = '';
+          el.classList.add('is-waiting');
+        });
+        function typeIt(el) {
+          var chars = Array.from(el.getAttribute('data-text') || ''), i = 0;
+          el.classList.remove('is-waiting');
+          el.classList.add('is-typing');
+          (function step() {
+            if (i < chars.length) { el.textContent += chars[i++]; setTimeout(step, 38); }
+            else { el.classList.remove('is-typing'); el.classList.add('is-done'); }
+          })();
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); typeIt(en.target.querySelector('.type-text')); } });
+        }, { threshold: 0.4 });
+        els.forEach(function (el) { io.observe(el.parentNode); });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
+    })();
+  </script>
+  <script src="/assets/sp-inquiry.js?v=64" defer></script>
+<script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
+(function () {
+  function place() {
+    var b = document.getElementById('scrollTopBtn'), w = document.querySelector('.explorer-window');
+    if (!b || !w) return;
+    var r = w.getBoundingClientRect(), x = Math.round(r.right + 16), bw = b.offsetWidth || 80;
+    if (window.innerWidth > 900 && x + bw + 16 <= window.innerWidth) {
+      b.style.setProperty('left', x + 'px', 'important');
+      b.style.setProperty('right', 'auto', 'important');
+    } else { b.style.removeProperty('left'); b.style.removeProperty('right'); }
+  }
+  window.addEventListener('resize', place);
+  window.addEventListener('scroll', place, { passive: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
+})();
+</script>
+</body>
+</html>
