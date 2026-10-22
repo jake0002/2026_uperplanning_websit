@@ -1276,6 +1276,14 @@
     {"@type":"WebPage","@id":"https://www.superplanning.co.kr/ux-blog/#webpage-info","url":"https://www.superplanning.co.kr/ux-blog/","name":"UX블로그 | 슈퍼플래닝","inLanguage":"ko-KR","isPartOf":{"@id": "https://www.superplanning.co.kr/#website"},"about":{"@type":"Thing","name":"UX디자인 실무 인사이트"}}
   ]}
   </script>
+<style>/* 80: 모바일 블로그 카테고리 접기 */
+.sp-toc-toggle { display: none; }
+@media (max-width: 900px) {
+  .sp-toc-toggle { display: block; width: 100%; margin: 6px 0 2px; padding: 6px 10px; font-size: 13px; font-weight: 800; text-align: left; color: #000000; background: #c0c0c0; border: 2px solid #000000; box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080; cursor: pointer; }
+  .tree-sidebar ul.tree-list.toc { display: none; }
+  .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1402,6 +1410,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
+          <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '카테고리 닫기 ▴' : '카테고리 보기 ▾';">카테고리 보기 ▾</button>
           <ul class="tree-list toc" id="categoryNav">
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">16</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
@@ -3377,6 +3386,17 @@ function showCopySuccess(text, label, btn) {
   window.addEventListener('resize', place);
   window.addEventListener('scroll', place, { passive: true });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
+})();
+</script>
+<script>/* 80: 모바일에서 카테고리를 고르면 목록을 다시 접음 */
+(function () {
+  var nav = document.getElementById("categoryNav"); if (!nav) return;
+  nav.addEventListener("click", function (e) {
+    if (!e.target.closest("a") || window.innerWidth > 900) return;
+    var aside = nav.closest(".tree-sidebar"), btn = aside && aside.querySelector(".sp-toc-toggle");
+    if (!aside || !btn) return;
+    aside.classList.remove("sp-toc-open"); btn.setAttribute("aria-expanded", "false"); btn.textContent = "카테고리 보기 ▾";
+  });
 })();
 </script>
 </body>
