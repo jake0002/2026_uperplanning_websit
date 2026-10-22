@@ -9,7 +9,7 @@
 - 주소: 경기도 하남시 미사강변동로 72, SB비즈타워 1116호 (5호선 미사역 8번 출구 도보 1분)
 - 연락처: 031-699-3298 / jake@superplanning.co.kr
 - 조직(6): 사용자경험 연구소(UX리서치·UX컨설팅), UX기획팀(UX기획·UX라이팅), 비주얼 디자인팀(GUI·디자인 시스템), 웹/앱 개발팀(퍼블리싱·웹/앱 개발·IT유지보수), AI-UX교육팀(AI 활용 UX 강의·바이브코딩·피그마 교육·기업 출강), 경영전략팀
-- 파트너: SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사, 클래스101·패스트캠퍼스·삼성 멀티캠퍼스 기업 UX직무교육 파트너사
+- 파트너: SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 KB국민은행 리브 Next AI 보이스뱅킹 UX컨설팅·UX기획 수행, 사례 https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사, 클래스101·패스트캠퍼스·삼성 멀티캠퍼스 기업 UX직무교육 파트너사
 
 ## 서비스
 

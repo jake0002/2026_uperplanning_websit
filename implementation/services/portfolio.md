@@ -3,7 +3,7 @@ title: "포트폴리오 | 슈퍼플래닝 (Superplanning) - 주요 고객사 및
 description: "슈퍼플래닝은 금융, 공공, 플랫폼, 모빌리티, 대기업 등 다양한 산업군의 UX리서치, UX라이팅, UI/UX기획·디자인, 웹·앱개발 프로젝트를 수행한 UX 전문 에이전시입니다."
 keywords: "슈퍼플래닝 포트폴리오, UX 프로젝트 실적, UX 에이전시 고객사, UI UX 외주 사례, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-company/"
-updated: "2026-10-18"
+updated: "2026-10-22"
 ---
 
 # 포트폴리오 (Portfolio) | 슈퍼플래닝 (Superplanning)
@@ -33,7 +33,7 @@ updated: "2026-10-18"
 - 골프존 스크린게임 연동 앱 UX, 현대위아 VR 웹서비스 UX, 예술의전당 사이버 투어 웹서비스 개발
 
 ### 파트너
-- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 시중은행 AI 음성뱅킹 UX/UI 수행, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
+- SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(설립 초기부터 활동, NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 KB국민은행 리브 Next AI 보이스뱅킹 UX컨설팅·UX기획 수행, 사례 https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/, https://www.superplanning.co.kr/ux-company/#partners), 제일기획 UX컨설팅 파트너사
 
 ### UX교육·출강 (프로젝트 고객과 구분)
 - 기업: 현대자동차, GS그룹, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, 아시아나항공, BC카드, 모아저축은행 등
