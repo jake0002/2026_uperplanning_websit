@@ -126,7 +126,7 @@
       }
     },
     "datePublished": "2026-10-14",
-    "dateModified": "2026-10-14"
+    "dateModified": "2026-10-22"
   }
   </script>
 
@@ -1001,6 +1001,13 @@
     }
 
 </style>
+<style>/* 73: 글 하단 문의하기 말풍선 (서비스 페이지 FAQ 버튼과 같은 모양) */
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; line-height: 1.5; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1207,6 +1214,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span class="doc-icon">📄</span> <span>앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교</span>
                 </a>
               </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</span>
+                </a>
+              </li>
           </ul>
         </aside>
 
@@ -1229,7 +1242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
 
-            <h1>AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</h1>
+            <h1 style="word-break:keep-all; overflow-wrap:break-word;">AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</h1>
             <div class="hero-excerpt"><span class="type-text" id="heroTypeText">AI 스피커·음성비서·보이스봇 같은 음성 서비스는 화면설계서 대신 대화 흐름도와 응답 문구가 UX를 결정합니다. 화면 UX와 VUI의 차이, 기획 5단계, 금융 음성 서비스 체크포인트와 산출물을 정리했습니다.</span></div>
 
             <div class="article-body">
@@ -1291,7 +1304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <blockquote><span class="type-text" id="quoteTypeText2">음성 인식 기술은 플랫폼이 제공하지만, 사용자가 다시 쓰고 싶은 대화는 기획이 만듭니다.</span></blockquote>
 
       <h2>슈퍼플래닝은 AI 음성 서비스 기획을 어떻게 돕나요?</h2>
-      <p>슈퍼플래닝은 설립 초기부터 <strong>SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시</strong>로 활동하고 있습니다.<br>NUGU 개발자 사이트의 '에이전시 소개'에서 AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅 파트너로 소개하고 있습니다.<br>NUGU와 연동한 시중은행 앱의 AI 음성뱅킹 UX/UI 프로젝트도 수행했습니다.<br>자세한 내용은 <a href="/ux-company/#partners">파트너 및 공식 에이전시</a>에서 확인할 수 있습니다.</p>
+      <p>슈퍼플래닝은 설립 초기부터 <strong>SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시</strong>로 활동하고 있습니다.<br>NUGU 개발자 사이트의 '에이전시 소개'에서 AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅 파트너로 소개하고 있습니다.<br>KB국민은행 리브 Next AI 보이스뱅킹 프로젝트에서 UX컨설팅과 UX기획을 맡았습니다(<a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">AI 보이스뱅킹 UX 사례 보기</a>).<br>자세한 내용은 <a href="/ux-company/#partners">파트너 및 공식 에이전시</a>에서 확인할 수 있습니다.</p>
       <p>사용 맥락 정의, 발화 수집, 대화 흐름도, 응답 문구, 화면 UX, 테스트까지 UX기획팀과 <a href="/web-app-development/">웹/앱 개발팀</a>이 한 흐름으로 진행합니다.<br>응답 문구 설계에는 대표 김휘수가 발명·등록한 UX라이팅 텍스트 톤 분석 특허(제10-2844334호) 관점도 활용합니다.</p>
 
       <h2>AI 음성 서비스 기획, 자주 묻는 질문</h2>
@@ -1302,7 +1315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>챗봇 기획과 음성 서비스 기획은 무엇이 다른가요?</h3>
       <p>챗봇은 사용자가 화면에서 이전 대화와 버튼을 다시 볼 수 있지만, 음성은 한 번 들은 내용을 기억에 의존해야 합니다.<br>그래서 음성 서비스는 선택지를 2~3개로 줄이고, 금액이나 날짜 같은 중요한 정보는 되읽어 확인하며, 문장을 더 짧게 설계해야 합니다.</p>
       <h3>슈퍼플래닝은 AI 음성 서비스 기획을 어떻게 진행하나요?</h3>
-      <p>슈퍼플래닝은 설립 초기부터 SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시로 활동하며(AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅), NUGU와 연동한 시중은행 앱의 AI 음성뱅킹 UX/UI 프로젝트를 수행했습니다.<br>사용 맥락 정의부터 대화 흐름도, 응답 문구, 화면 UX, 테스트까지 한 팀에서 설계합니다.</p>
+      <p>슈퍼플래닝은 설립 초기부터 SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시로 활동하며(AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅), KB국민은행 리브 Next AI 보이스뱅킹 프로젝트의 UX컨설팅과 UX기획을 맡았습니다.<br>사용 맥락 정의부터 대화 흐름도, 응답 문구, 화면 UX, 테스트까지 한 팀에서 설계합니다.</p>
 
       <p class="related-link">음성·챗봇을 포함한 AI 서비스 기획과 화면설계는 <a href="/ux-design/">UI/UX기획 및 디자인</a> 페이지에서 자세히 볼 수 있습니다.</p>
 
@@ -1329,7 +1342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           {
             "@type": "Question",
             "name": "슈퍼플래닝은 AI 음성 서비스 기획을 어떻게 진행하나요?",
-            "acceptedAnswer": { "@type": "Answer", "text": "슈퍼플래닝은 설립 초기부터 SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시로 활동하며(AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅), NUGU와 연동한 시중은행 앱의 AI 음성뱅킹 UX/UI 프로젝트를 수행했습니다. 사용 맥락 정의부터 대화 흐름도, 응답 문구, 화면 UX, 테스트까지 한 팀에서 설계합니다." }
+            "acceptedAnswer": { "@type": "Answer", "text": "슈퍼플래닝은 설립 초기부터 SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시로 활동하며(AI서비스 기획·개발, 앱 기획·개발, UI 컨설팅), KB국민은행 리브 Next AI 보이스뱅킹 프로젝트의 UX컨설팅과 UX기획을 맡았습니다. 사용 맥락 정의부터 대화 흐름도, 응답 문구, 화면 UX, 테스트까지 한 팀에서 설계합니다." }
           }
         ]
       }
@@ -1338,10 +1351,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <!-- 63: 글 하단 문의하기 버튼(/ux-design/ FAQ 하단 버튼과 같은 윈도우 스타일) -->
-            <div class="post-inquiry-cta" style="margin:4px 0 26px 0;">
+            <div class="post-inquiry-cta" style="margin:52px 0 26px 0;">
+              <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
               <a href="/contact/" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background-color:#c0c0c0; color:#000000; text-decoration:none; font-weight:bold; font-size:13.5px; border-top:2px solid #ffffff; border-left:2px solid #ffffff; border-right:2px solid #404040; border-bottom:2px solid #404040; box-shadow:inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor:pointer;">
                 <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span>
-              </a>
+              </a></span>
             </div>
 
             <div class="tag-container">

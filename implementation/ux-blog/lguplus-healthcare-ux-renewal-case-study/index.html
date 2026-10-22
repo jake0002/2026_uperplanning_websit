@@ -110,7 +110,7 @@
       }
     },
     "datePublished": "2026-09-25",
-    "dateModified": "2026-09-25"
+    "dateModified": "2026-10-22"
   }
   </script>
 
@@ -985,6 +985,13 @@
     }
 
 </style>
+<style>/* 73: 글 하단 문의하기 말풍선 (서비스 페이지 FAQ 버튼과 같은 모양) */
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; line-height: 1.5; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1191,6 +1198,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span class="doc-icon">📄</span> <span>앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교</span>
                 </a>
               </li>
+
+              <li class="tree-item">
+                <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" class="tree-link ">
+                  <span class="doc-icon">📄</span> <span>AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</span>
+                </a>
+              </li>
           </ul>
         </aside>
 
@@ -1213,7 +1226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
 
-            <h1>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</h1>
+            <h1 style="word-break:keep-all; overflow-wrap:break-word;">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</h1>
             <div class="hero-excerpt"><span class="type-text" id="heroTypeText">LG유플러스 인증앱의 헬스케어 유료 부가서비스를 UX리서치부터 개발까지 5개월 동안 개선한 케이스 스터디입니다. 리워드보다 기록의 쉬움에 집중해 리뉴얼한 결과, 리텐션과 운동 기록률, 재방문율이 모두 상승했습니다.</span></div>
 
             <div class="article-body">
@@ -1346,6 +1359,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>앱 안의 웹뷰로 제공되는 서비스도 UX개선 효과를 볼 수 있나요?</h3>
       <p>볼 수 있습니다.<br>이 서비스도 앱 안의 웹뷰로 제공되었고, 리뉴얼 후 리텐션과 재방문율이 상승했습니다.<br>다만 웹뷰는 앱 안에서 열리기 때문에 로딩, 뒤로가기, 화면 전환이 앱과 다르게 느껴지지 않도록 설계와 개발 단계에서 함께 확인해야 합니다.</p>
 
+      <p>음성으로 송금하는 금융앱 사례는 <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">AI 보이스뱅킹 UX 사례: KB국민은행 리브 Next</a>에서 볼 수 있습니다.</p>
+
       <p class="related-link">슈퍼플래닝의 조직 구성과 다른 수행 이력은 <a href="/ux-company/">회사소개</a>에서 볼 수 있습니다.</p>
 
       <script type="application/ld+json">
@@ -1384,10 +1399,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <!-- 63: 글 하단 문의하기 버튼(/ux-design/ FAQ 하단 버튼과 같은 윈도우 스타일) -->
-            <div class="post-inquiry-cta" style="margin:4px 0 26px 0;">
+            <div class="post-inquiry-cta" style="margin:52px 0 26px 0;">
+              <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
               <a href="/contact/" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background-color:#c0c0c0; color:#000000; text-decoration:none; font-weight:bold; font-size:13.5px; border-top:2px solid #ffffff; border-left:2px solid #ffffff; border-right:2px solid #404040; border-bottom:2px solid #404040; box-shadow:inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor:pointer;">
                 <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span>
-              </a>
+              </a></span>
             </div>
 
             <div class="tag-container">

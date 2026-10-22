@@ -1403,9 +1403,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc" id="categoryNav">
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">14</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">15</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">1</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">2</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>3. UX리서치</span> <span class="badge-count">1</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획"><span class="doc-icon">📄</span> <span>4. UX기획</span> <span class="badge-count">3</span></a></li>
@@ -1434,7 +1434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="postit-grid" id="postitGrid">
           <noscript>
           <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
-          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 14건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 15건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
 
             <article class="postit-card" data-id="1">
@@ -1787,6 +1787,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </article>
 
+            <article class="postit-card" data-id="29">
+              <div class="postit-top-band">
+                <span class="category-badge">케이스 스터디</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 29);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 29);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" style="color:inherit; text-decoration:none;">AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" style="color:inherit; text-decoration:none;">SK텔레콤 NUGU 공식 에이전시 슈퍼플래닝이 UX컨설팅·UX기획을 맡은 KB국민은행 리브 Next AI 보이스뱅킹 사례입니다. 말로 끝나는 송금·잔액조회, ZERO UI 개념과 보이스뱅킹 UX 설계 포인트를 정리했습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#케이스스터디');" style="cursor:pointer;" title="#케이스스터디 태그 포스팅 모아보기">#케이스스터디</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#보이스뱅킹');" style="cursor:pointer;" title="#보이스뱅킹 태그 포스팅 모아보기">#보이스뱅킹</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#ZEROUI');" style="cursor:pointer;" title="#ZEROUI 태그 포스팅 모아보기">#ZEROUI</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#NUGU');" style="cursor:pointer;" title="#NUGU 태그 포스팅 모아보기">#NUGU</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX 태그 포스팅 모아보기">#AIUX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <!-- Cards populated dynamically via JavaScript -->
           </div>
         
@@ -2011,6 +2036,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>앱 개발 비용은 앱 유형과 개발 방식에 따라 달라집니다. 쇼핑몰·예약·플랫폼·AI 앱 유형별 평균 비용과 기간, iOS·안드로이드 동시 개발 방식 비교, UI/UX 디자인 비용 포함 여부와 견적 준비 방법을 정리했습니다.</p>
           <blockquote>앱 개발 비용을 알고 싶다면, 먼저 내 앱이 어떤 유형인지부터 정해야 합니다.</blockquote>
         `
+      },
+      {
+        id: 29,
+        category: "케이스 스터디",
+        title: "AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI",
+        excerpt: "SK텔레콤 NUGU 공식 에이전시 슈퍼플래닝이 UX컨설팅·UX기획을 맡은 KB국민은행 리브 Next AI 보이스뱅킹 사례입니다. 말로 끝나는 송금·잔액조회, ZERO UI 개념과 보이스뱅킹 UX 설계 포인트를 정리했습니다.",
+        readTime: 60,
+        tags: ["#케이스스터디", "#보이스뱅킹", "#ZEROUI", "#NUGU", "#AIUX"],
+        content: `
+          <h3>AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</h3>
+          <p>SK텔레콤 NUGU 공식 에이전시 슈퍼플래닝이 UX컨설팅·UX기획을 맡은 KB국민은행 리브 Next AI 보이스뱅킹 사례입니다. 말로 끝나는 송금·잔액조회, ZERO UI 개념과 보이스뱅킹 UX 설계 포인트를 정리했습니다.</p>
+          <blockquote>모든 UX디자이너는 ZERO UI를 꿈꿉니다. 보이스뱅킹은 그 꿈을 금융앱에서 구현한 결과물입니다.</blockquote>
+        `
       }
     ];
 
@@ -2163,7 +2201,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       25: "product-designer-hiring-external-interviewer",
       26: "ui-ux-agency-ranking-selection-criteria",
       27: "ui-design-outsourcing-for-dev-team",
-      28: "app-development-cost-by-type-timeline"
+      28: "app-development-cost-by-type-timeline",
+      29: "kb-liiv-next-ai-voice-banking-zero-ui-case-study"
     };
     function postUrl(id) {
       return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";
