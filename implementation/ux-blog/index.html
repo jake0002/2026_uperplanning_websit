@@ -1412,10 +1412,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '카테고리 닫기 ▴' : '카테고리 보기 ▾';">카테고리 보기 ▾</button>
           <ul class="tree-list toc" id="categoryNav">
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">16</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">17</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">3</span></a></li>
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">4</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>3. UX리서치</span> <span class="badge-count">1</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획"><span class="doc-icon">📄</span> <span>4. UX기획</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX라이팅"><span class="doc-icon">📄</span> <span>5. UX라이팅</span> <span class="badge-count">1</span></a></li>
@@ -1443,7 +1443,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="postit-grid" id="postitGrid">
           <noscript>
           <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
-          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 16건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 17건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
 
             <article class="postit-card" data-id="1">
@@ -1846,6 +1846,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </article>
 
+            <article class="postit-card" data-id="31">
+              <div class="postit-top-band">
+                <span class="category-badge">UX컨설팅</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 31);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 31);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/startup-government-fund-ux-consulting-app-development/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/startup-government-fund-ux-consulting-app-development/" style="color:inherit; text-decoration:none;">스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/startup-government-fund-ux-consulting-app-development/" style="color:inherit; text-decoration:none;">스타트업·예비창업자도 K-스타트업·모두의 창업 등 정부지원사업비로 UX진단·UX컨설팅, UX디자인, 앱개발을 외주로 맡길 수 있습니다. 프로토타입이 있다면 필요한 항목만 부분 의뢰하는 법, 외주용역비 기준, 견적서 체크리스트를 정리했습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#스타트업');" style="cursor:pointer;" title="#스타트업 태그 포스팅 모아보기">#스타트업</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#예비창업자');" style="cursor:pointer;" title="#예비창업자 태그 포스팅 모아보기">#예비창업자</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#모두의창업');" style="cursor:pointer;" title="#모두의창업 태그 포스팅 모아보기">#모두의창업</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX진단');" style="cursor:pointer;" title="#UX진단 태그 포스팅 모아보기">#UX진단</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/startup-government-fund-ux-consulting-app-development/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <!-- Cards populated dynamically via JavaScript -->
           </div>
         
@@ -2096,6 +2121,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>현직 치과의사 6명과의 사용성 테스트(UT)로 검증한 오스템임플란트 치과 의료용 소프트웨어 UX 사례입니다. UX디자인 에이전시 슈퍼플래닝이 리서치 결과를 UX기획·UI/UX디자인 개선까지 직접 연결했습니다.</p>
           <blockquote>UX리서치의 가치는 보고서가 아니라, 개선된 화면에서 증명됩니다.</blockquote>
         `
+      },
+      {
+        id: 31,
+        category: "UX컨설팅",
+        title: "스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법",
+        excerpt: "스타트업·예비창업자도 K-스타트업·모두의 창업 등 정부지원사업비로 UX진단·UX컨설팅, UX디자인, 앱개발을 외주로 맡길 수 있습니다. 프로토타입이 있다면 필요한 항목만 부분 의뢰하는 법, 외주용역비 기준, 견적서 체크리스트를 정리했습니다.",
+        readTime: 60,
+        tags: ["#스타트업", "#예비창업자", "#모두의창업", "#UX진단"],
+        content: `
+          <h3>스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법</h3>
+          <p>스타트업·예비창업자도 K-스타트업·모두의 창업 등 정부지원사업비로 UX진단·UX컨설팅, UX디자인, 앱개발을 외주로 맡길 수 있습니다. 프로토타입이 있다면 필요한 항목만 부분 의뢰하는 법, 외주용역비 기준, 견적서 체크리스트를 정리했습니다.</p>
+          <blockquote>지원사업비 외주는 "누구에게 맡길까"보다 "무엇을, 어떤 서류로, 언제까지 끝낼까"를 먼저 정해야 합니다.</blockquote>
+        `
       }
     ];
 
@@ -2250,7 +2288,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       27: "ui-design-outsourcing-for-dev-team",
       28: "app-development-cost-by-type-timeline",
       29: "kb-liiv-next-ai-voice-banking-zero-ui-case-study",
-      30: "osstem-implant-dental-software-ux-research-case-study"
+      30: "osstem-implant-dental-software-ux-research-case-study",
+      31: "startup-government-fund-ux-consulting-app-development"
     };
     function postUrl(id) {
       return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";

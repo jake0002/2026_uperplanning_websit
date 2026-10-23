@@ -1,9 +1,9 @@
 ---
 title: "UX블로그 | 슈퍼플래닝 (Superplanning) - UX리서치·UX라이팅·UX기획·웹/앱 개발 실무 인사이트"
 description: "UX 전문 에이전시 슈퍼플래닝의 공식 UX블로그 아티클 목록입니다. 케이스 스터디, UX컨설팅, UX리서치, UX기획, UX라이팅, UI디자인, 웹/앱 개발, UX강의 8개 카테고리의 실무 글을 정리합니다."
-keywords: "UX블로그, UI디자인 외주, 앱 디자인 외주, UI/UX 에이전시, UI UX 에이전시 순위, UX 에이전시 선택, UX 실무, UX리서치, UX라이팅, UX기획, 화면정의서, 화면설계서, 기능정의서, UI/UX 기업출강, 앱개발 비용, 앱 개발 기간, 보이스뱅킹 UX, ZERO UI, NUGU 공식 에이전시, 의료 소프트웨어 사용성 테스트, 오스템임플란트 UX, UX컨설팅, UX강의, 케이스 스터디, 프로덕트 디자이너 채용 면접 대행, IT스타트업 심사위원, 슈퍼플래닝"
+keywords: "UX블로그, UI디자인 외주, 앱 디자인 외주, UI/UX 에이전시, UI UX 에이전시 순위, UX 에이전시 선택, UX 실무, UX리서치, UX라이팅, UX기획, 화면정의서, 화면설계서, 기능정의서, UI/UX 기업출강, 앱개발 비용, 앱 개발 기간, 보이스뱅킹 UX, ZERO UI, NUGU 공식 에이전시, 의료 소프트웨어 사용성 테스트, 오스템임플란트 UX, 스타트업 앱 외주, 예비창업자 앱 개발, 모두의 창업, K-스타트업, 정부지원사업 외주, UX진단, UX컨설팅, UX강의, 케이스 스터디, 프로덕트 디자이너 채용 면접 대행, IT스타트업 심사위원, 슈퍼플래닝"
 canonical: "https://www.superplanning.co.kr/ux-blog/"
-updated: "2026-10-22"
+updated: "2026-10-23"
 ---
 
 # UX블로그 | 슈퍼플래닝 (Superplanning)
@@ -15,6 +15,7 @@ updated: "2026-10-22"
 
 ## 아티클 목록
 
+- [스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법](https://www.superplanning.co.kr/ux-blog/startup-government-fund-ux-consulting-app-development/) — UX컨설팅 · K-스타트업 창업지원사업 외주용역비 기준(통합관리지침 제38조), 모두의 창업 창업활동자금, 프로토타입 단계별 부분 의뢰(UX진단·UX디자인·앱개발), 외주 업체에 확인할 9가지, 집행 마감일 역산 일정
 - [오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지](https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/) — 케이스 스터디 · 현직 치과의사 6명 대상 1:1 미션 기반 사용성 테스트(UT)와 닐슨 10가지 휴리스틱 정량평가, 진료 현장 용어·차팅 메뉴·시각적 위계 문제 도출, UX기획·UI/UX디자인 개선(콘텐츠 강약 체계 재설계)으로 연결, 약 3개월·프로젝트팀 6명(UX리서처 3·UX기획자 2·UX컨설턴트 1)
 - [AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI](https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/) — 케이스 스터디 · SK텔레콤 NUGU 공식 에이전시 슈퍼플래닝이 UX컨설팅·UX기획(서비스 플로우, 기능정의, 앱 화면기획서)을 맡은 KB국민은행 리브 Next AI 보이스뱅킹, 약 4개월·전문인력 5명, ZERO UI 개념과 보이스뱅킹 UX 설계 포인트
 - [앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교](https://www.superplanning.co.kr/ux-blog/app-development-cost-by-type-timeline/) — 웹/앱 개발 · 앱 유형별 평균 개발 비용·기간(위시켓 자료), 앱 개발 기간(QA 포함 보통 2~3개월), 네이티브·크로스 플랫폼·하이브리드 비교, UI/UX 디자인 비용 포함 여부, 견적 준비 5가지
