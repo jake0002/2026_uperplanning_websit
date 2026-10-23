@@ -35,7 +35,7 @@
     '.spq-chip input{margin:0 5px 0 0;accent-color:#000;vertical-align:-2px;}',
     '.spq-chip input[type=radio]{position:absolute;opacity:0;pointer-events:none;}',
     '.spq-chip.on .spq-rk:before{content:"\\2713";font-weight:900;margin-right:2px;}',
-    '.spq-c4{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}',
+    '.spq-c4{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}',
     '.spq-c4 .spq-chip{flex-direction:column;align-items:flex-start;gap:1px;}',
     '.spq-c4 .spq-chip small{font-weight:600;font-size:11px;opacity:.85;}',
     '.spq-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}',
@@ -72,7 +72,7 @@
   ].join('\n');
 
   var SRC = [['google', '구글 검색'], ['naver', '네이버 검색'], ['ai', 'AI 추천<br>(챗GPT, 클로드 등)'], ['blog', '블로그 글'], ['referral', '지인·고객사 소개'], ['sns', 'SNS<br>(인스타, 스레드 등)'], ['press', '기사·언론 보도'], ['lecture', '강의·세미나 참석'], ['existing', '이전 거래·재문의'], ['etc', '기타 (직접 입력)']];
-  var COURSES = { A: ['A코스', '입문형 · 5시간'], B: ['B코스', '심화형 · 8시간'], C: ['C코스', '확장형 · 12시간'], X: ['맞춤 설계', '상담 후 결정'] };
+  var COURSES = { A: ['A코스', '실속형 · 2시간'], B: ['B코스', '입문형 · 5시간'], C: ['C코스', '심화형 · 8시간'], D: ['D코스', '확장형 · 12시간'], X: ['맞춤 설계', '상담 후 결정'] };
   var TOPICS = ['UX리서치', 'UX라이팅', '서비스기획', 'IA설계', '기능정의서 작성', '웹/앱 화면기획서 작성', '피그마', '바이브코딩', 'AI 활용 UX기획', 'UX포트폴리오 코칭', '면접·커리어 코칭', '맞춤설계 상담 후 결정'];
   var last = { name: '', email: '', mode: 'inquiry' };
   var built = false;
@@ -122,7 +122,7 @@
       '<div class="spq-row spq-mt"><div>' + field('splEmail', '이메일 *', 'email') + '</div><div>' + field('splPhone', '연락처 (일정 조율용, 선택)', 'tel') + '</div></div>' +
       '<textarea class="spq-in spq-mt" id="splReq" rows="3" style="margin-bottom:0;" placeholder="요청사항 (선택)&#10;수강 목적이나 현재 고민을 적어 주시면 커리큘럼에 반영합니다.&#10;예: 현업 기능정의서 작성법, 포트폴리오 완성"></textarea></div>' +
       agree('splAgree') + ctaBlock('splSend', '강의 신청하고 빠른 답변 받기') +
-      '<p class="spq-note">신청 후 담당자가 일정·견적을 확인해 연락드립니다. 결제는 상담 후 진행됩니다.</p></div></div></div>';
+      '<p class="spq-note">신청하시면 담당자가 일정을 확인하고 연락드립니다. 결제는 상담 후 진행됩니다.</p></div></div></div>';
     var opts = SRC.map(function (o) { return '<label class="spq-opt"><input type="checkbox" value="' + o[0] + '"><span>' + o[1] + '</span></label>'; }).join('');
     var done = '<div class="spq-ov" id="spqDone"><div class="spq-box white" role="dialog" aria-modal="true">' +
       '<div class="spq-tb"><span id="spqDoneTb">[문의 접수 완료]</span><button type="button" class="spq-x" data-close aria-label="닫기">✕</button></div>' +
@@ -186,7 +186,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hookTabs); else hookTabs();
   window.spOpenLecture = function (courseKey) {
     build();
-    var k = window.spqTabTouched && COURSES[courseKey] ? courseKey : 'B';
+    var k = COURSES[courseKey] ? courseKey : 'A';
     var r = document.querySelector('#spqLec input[name="splCourse"][value="' + k + '"]');
     if (r) { r.checked = true; r.dispatchEvent(new Event('change')); }
     open('spqLec');
