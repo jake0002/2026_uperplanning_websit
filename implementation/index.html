@@ -1931,9 +1931,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       makeDraggable(winEl);
 
-      winEl.addEventListener('mousedown', () => {
+      winEl.addEventListener('mousedown', (e) => {
         winEl.style.zIndex = getNextZIndex();
-        if (isMobile && winArea && winArea.firstChild !== winEl) {
+        /* 85: 모바일에서 링크·버튼·카드를 누를 때 창을 맨 위로 옮기면 클릭이 취소되어 이동하지 않던 버그 수정 */
+        const spTapTarget = e && e.target && e.target.closest ? e.target.closest('a, button, input, textarea, select, label, [onclick]') : null;
+        if (isMobile && !spTapTarget && winArea && winArea.firstChild !== winEl) {
           winArea.prepend(winEl);
         }
         updatePreview(key, true);
