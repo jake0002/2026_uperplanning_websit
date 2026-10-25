@@ -1,4 +1,4 @@
-/* 86·87: 모바일 상단 헤더 + 메뉴 탭 줄 + 전체보기 화면(E안 v2) + 모바일 회사소개서 보기(페이지 이미지). 화면 표시는 sp-mnav.css가 768px 이하에서만 켭니다. */
+/* 86·87·88: 모바일 상단 헤더 + 메뉴 탭 줄 + 전체보기 화면(E안 v2) + 모바일 회사소개서 보기(페이지 이미지) + 88 좌우 스와이프 이동·메인 안내 토스트. 화면 표시는 sp-mnav.css가 768px 이하에서만 켭니다. */
 (function () {
   if (window.__spMnav) return; window.__spMnav = true;
   var KAKAO = 'https://open.kakao.com/o/sovRKoMi';
@@ -139,6 +139,79 @@
         return origOpen.apply(this, arguments);
       };
     }
+    swipe();
+  }
+
+  /* 88: 좌우 스와이프로 메뉴 순서(상단 탭 순서)대로 이동 — 왼쪽으로 밀면 다음, 오른쪽으로 밀면 이전, 끝에서는 처음으로 순환. 화면 가장자리 24px는 브라우저 뒤로가기 제스처에 양보 */
+  function swipe() {
+    var N = TABS.length, cur = 0;
+    TABS.forEach(function (t, i) { if (isOn(t[0])) cur = i; });
+    var nx = (cur + 1) % N, pv = (cur - 1 + N) % N;
+    var ui = document.createElement('div');
+    ui.id = 'spSwipe';
+    ui.setAttribute('aria-hidden', 'true');
+    function panel(side, i, arr) { return '<div class="sps ' + side + '"><b>' + arr + '</b><span>' + esc(TABS[i][1]) + '</span><i>' + (i + 1) + ' / ' + N + '</i></div>'; }
+    ui.innerHTML = panel('l', pv, '‹') + panel('r', nx, '›');
+    document.body.appendChild(ui);
+    var pL = ui.querySelector('.l'), pR = ui.querySelector('.r'), sx = 0, sy = 0, mode = 0, dx = 0, GO = 80, MAX = 104;
+    function blocked(el) {
+      if (!isMobile() || document.querySelector('#spMnavSheet.is-open, #spPdf.is-open, .spq-ov.open')) return true;
+      for (; el && el !== document.body && el.nodeType === 1; el = el.parentElement) {
+        if (/^(INPUT|TEXTAREA|SELECT|IFRAME)$/.test(el.tagName) || el.id === 'spMnav' || el.isContentEditable) return true;
+        var o = window.getComputedStyle(el).overflowX;
+        if ((o === 'auto' || o === 'scroll') && el.scrollWidth > el.clientWidth + 2) return true;
+      }
+      return false;
+    }
+    function reset() { mode = 0; dx = 0; pL.style.width = '0'; pR.style.width = '0'; pL.classList.remove('ready'); pR.classList.remove('ready'); }
+    document.addEventListener('touchstart', function (e) {
+      reset();
+      var t = e.touches[0];
+      if (e.touches.length > 1 || t.clientX < 24 || t.clientX > window.innerWidth - 24 || blocked(e.target)) { mode = -1; return; }
+      sx = t.clientX; sy = t.clientY;
+    }, { passive: true });
+    document.addEventListener('touchmove', function (e) {
+      if (mode < 0) return;
+      var t = e.touches[0], dy = t.clientY - sy;
+      dx = t.clientX - sx;
+      if (mode === 0) {
+        if (Math.abs(dy) > 12 && Math.abs(dy) > Math.abs(dx)) { mode = -1; return; }
+        if (Math.abs(dx) > 14 && Math.abs(dx) > Math.abs(dy) * 1.6) mode = 1; else return;
+      }
+      if (e.cancelable) e.preventDefault();
+      var p = dx < 0 ? pR : pL;
+      (dx < 0 ? pL : pR).style.width = '0';
+      p.style.width = Math.min(Math.abs(dx) * 0.9, MAX) + 'px';
+      p.classList.toggle('ready', Math.abs(dx) >= GO);
+    }, { passive: false });
+    function end() {
+      if (mode === 1 && Math.abs(dx) >= GO) {
+        track(dx < 0 ? 'swipe_next' : 'swipe_prev', 'mobile_swipe');
+        location.href = TABS[dx < 0 ? nx : pv][0];
+        return;
+      }
+      reset();
+    }
+    document.addEventListener('touchend', end);
+    document.addEventListener('touchcancel', reset);
+    if (path === '/' && isMobile()) toast();
+  }
+
+  /* 88: 메인 첫 진입 시 스와이프 안내 토스트(글자 없이 손가락 + 좌우 화살표, 1.5초 후 사라짐, 방문(세션)당 1회) */
+  function toast() {
+    try { if (window.sessionStorage.getItem('sp_swipe_tip')) return; window.sessionStorage.setItem('sp_swipe_tip', '1'); } catch (e) {}
+    var H = [[5,0,2],[4,1,4],[4,2,4],[4,3,4],[4,4,4],[4,5,4],[9,5,2],[4,6,4],[9,6,3],[13,6,2],[1,7,2],[4,7,4],[9,7,3],[13,7,3],[0,8,8],[9,8,3],[13,8,3],[0,9,16],[0,10,16],[1,11,15],[2,12,13],[3,13,11],[4,14,9],[4,15,9]];
+    function rects(list, fill, op) { return list.map(function (r) { return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + (r[3] || 1) + '" fill="' + fill + '"' + (op ? ' opacity="' + op + '"' : '') + '/>'; }).join(''); }
+    var hand = '<g class="h">' + rects(H.map(function (r) { return [r[0] + 19, r[1] + 11, r[2]]; }), '#ffffff') + rects([[24, 6, 4], [22, 7, 1, 2], [29, 7, 1, 2]], '#ffffff', '.55') + '</g>';
+    var aL = '<g class="al">' + rects([[3, 16, 1], [4, 15, 1, 3], [5, 14, 1, 5], [6, 16, 6]], '#ffffff') + rects([[13, 16, 1]], '#ffffff', '.6') + rects([[15, 16, 1]], '#ffffff', '.3') + '</g>';
+    var aR = '<g class="ar">' + rects([[50, 16, 1], [49, 15, 1, 3], [48, 14, 1, 5], [42, 16, 6]], '#ffffff') + rects([[40, 16, 1]], '#ffffff', '.6') + rects([[38, 16, 1]], '#ffffff', '.3') + '</g>';
+    var t = document.createElement('div');
+    t.id = 'spSwipeToast';
+    t.setAttribute('role', 'img');
+    t.setAttribute('aria-label', '화면을 좌우로 넘기면 다른 메뉴로 이동합니다');
+    t.innerHTML = '<svg width="150" height="84" viewBox="0 0 54 30" shape-rendering="crispEdges" aria-hidden="true">' + aL + aR + hand + '</svg>';
+    document.body.appendChild(t);
+    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
 })();
