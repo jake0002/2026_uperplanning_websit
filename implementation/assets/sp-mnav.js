@@ -216,19 +216,19 @@
     setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500);
     return true;
   }
-  /* 90: 같은 방문(탭)에서 본 페이지 수 — 3번째·6번째 페이지에서 각 1회 안내 말풍선(글자만, 1.5초, 누를 수 없음). 모바일·PC 공통. 다시 접속하면 초기화(sessionStorage) */
+  /* 90: 같은 방문(탭)에서 본 페이지 수 — 4번째·7번째 페이지에서 각 1회 안내 말풍선(글자만, 3초, 누를 수 없음). 모바일·PC 공통. 다시 접속하면 초기화(sessionStorage) */
   function pvCount() {  /* 페이지에 들어오자마자 셈(바로 다음 페이지로 넘어가도 빠지지 않게). 보여 줄 차례면 3 또는 6, 아니면 0 */
     try {
       var list = JSON.parse(window.sessionStorage.getItem('sp_pv') || '[]');
       if (list.indexOf(path) < 0) { list.push(path); window.sessionStorage.setItem('sp_pv', JSON.stringify(list)); }
-      var n = list.length, key = n === 3 ? 'sp_pv3' : n === 6 ? 'sp_pv6' : '';
+      var n = list.length, key = n === 4 ? 'sp_pv4' : n === 7 ? 'sp_pv7' : '';  /* 92: 4번째·7번째 페이지로 변경 */
       if (!key || window.sessionStorage.getItem(key)) return 0;
       window.sessionStorage.setItem(key, '1');
       return n;
     } catch (e) { return 0; }
   }
   function pvToast(n) {
-    var msg = n === 3 ? '3페이지나 보셨네요.<br>편하게 문의해 보세요.' : '충분히 둘러보셨다면<br>슈퍼플래닝과 함께해 보세요.';
+    var msg = n === 4 ? '3페이지나 보셨네요.<br>편하게 문의해 보세요.' : '충분히 둘러보셨다면<br>슈퍼플래닝과 함께해 보세요.';
     var t = document.createElement('div');
     t.id = 'spPvToast';
     t.setAttribute('role', 'status');
@@ -243,8 +243,8 @@
       t.style.left = Math.max(8, r.right - t.offsetWidth) + 'px';
       t.style.top = (r.bottom + 16) + 'px';
     }
-    track('toast_view', n === 3 ? 'pv_toast_3' : 'pv_toast_6');
-    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500);
+    track('toast_view', n === 4 ? 'pv_toast_4' : 'pv_toast_7');
+    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 3000);  /* 92: 1.5초 → 3초 */
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
 })();
