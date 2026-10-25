@@ -1,6 +1,7 @@
 /* 86·87·88: 모바일 상단 헤더(로고 + 전체보기) + 메뉴 탭 줄 + 전체보기 화면 — E안 v2. 768px 이하에서만 동작 */
-#spMnav, #spMnavSheet { display: none; }
+#spMnav, #spMnavSheet, #spSwipe { display: none; } /* 94: 스와이프 가장자리 패널 PC 숨김(88번 누락 — PC 하단에 메뉴 글자가 보이던 버그) */
 @media (max-width: 768px) {
+  #spSwipe { display: block; }
   :root, body, body[data-density] { --logo-top: 0px !important; --gnb-h: 108px !important; }
   #brandLogo, #gnb, #mobileMenuBtn, #mobileNavDrawer, #gnbProgressBarTrack, #gnbProgressBadge { display: none !important; }
 
