@@ -195,8 +195,8 @@
     document.addEventListener('touchend', end);
     document.addEventListener('touchcancel', reset);
     var tipShown = path === '/' && isMobile() ? toast() : false;
-    var pv = pvCount();
-    if (pv) setTimeout(function () { pvToast(pv); }, tipShown ? 1700 : 600);
+    var pvN = pvCount(); /* 91: 이전 페이지 번호 변수(pv)와 이름이 겹쳐 오른쪽으로 밀면 홈으로 가던 버그 수정 */
+    if (pvN) setTimeout(function () { pvToast(pvN); }, tipShown ? 1700 : 600);
   }
 
   /* 88: 메인 첫 진입 시 스와이프 안내 토스트(글자 없이 손가락 + 좌우 화살표, 1.5초 후 사라짐, 방문(세션)당 1회) */
