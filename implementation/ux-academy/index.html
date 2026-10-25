@@ -2028,7 +2028,7 @@
     }
     .course-cards-grid {
       display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
+      grid-template-columns: repeat(4, 1fr) !important;
       gap: 14px !important;
       margin-bottom: 16px !important;
     }
@@ -2130,7 +2130,7 @@
     }
     @media (max-width: 768px) {
       .course-cards-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 89: 모바일 2×2 — 4열 인라인 스타일이 모바일 규칙을 덮어 본문이 가로로 넘치던 문제 수정 */
       }
       .course-compare-table {
         display: block !important;
@@ -3085,7 +3085,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
 
           <div class="course-pricing-container">
             <!-- Top 3 Pricing Cards -->
-            <div class="course-cards-grid" style="grid-template-columns:repeat(4, 1fr) !important;">
+            <div class="course-cards-grid">
               <article class="course-card-item">
                 <span class="course-reco-badge" style="background:#ffffff !important; color:#0f172a !important; border:1.5px solid #0f172a !important;">실속 추천</span>
                 <h3>A타입 코스</h3>
