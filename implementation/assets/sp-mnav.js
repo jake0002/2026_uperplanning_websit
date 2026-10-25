@@ -194,12 +194,14 @@
     }
     document.addEventListener('touchend', end);
     document.addEventListener('touchcancel', reset);
-    if (path === '/' && isMobile()) toast();
+    var tipShown = path === '/' && isMobile() ? toast() : false;
+    var pv = pvCount();
+    if (pv) setTimeout(function () { pvToast(pv); }, tipShown ? 1700 : 600);
   }
 
   /* 88: 메인 첫 진입 시 스와이프 안내 토스트(글자 없이 손가락 + 좌우 화살표, 1.5초 후 사라짐, 방문(세션)당 1회) */
   function toast() {
-    try { if (window.sessionStorage.getItem('sp_swipe_tip')) return; window.sessionStorage.setItem('sp_swipe_tip', '1'); } catch (e) {}
+    try { if (window.sessionStorage.getItem('sp_swipe_tip')) return false; window.sessionStorage.setItem('sp_swipe_tip', '1'); } catch (e) {}
     var H = [[5,0,2],[4,1,4],[4,2,4],[4,3,4],[4,4,4],[4,5,4],[9,5,2],[4,6,4],[9,6,3],[13,6,2],[1,7,2],[4,7,4],[9,7,3],[13,7,3],[0,8,8],[9,8,3],[13,8,3],[0,9,16],[0,10,16],[1,11,15],[2,12,13],[3,13,11],[4,14,9],[4,15,9]];
     function rects(list, fill, op) { return list.map(function (r) { return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + (r[3] || 1) + '" fill="' + fill + '"' + (op ? ' opacity="' + op + '"' : '') + '/>'; }).join(''); }
     var hand = '<g class="h">' + rects(H.map(function (r) { return [r[0] + 19, r[1] + 11, r[2]]; }), '#ffffff') + rects([[24, 6, 4], [22, 7, 1, 2], [29, 7, 1, 2]], '#ffffff', '.55') + '</g>';
@@ -211,6 +213,37 @@
     t.setAttribute('aria-label', '화면을 좌우로 넘기면 다른 메뉴로 이동합니다');
     t.innerHTML = '<svg width="150" height="84" viewBox="0 0 54 30" shape-rendering="crispEdges" aria-hidden="true">' + aL + aR + hand + '</svg>';
     document.body.appendChild(t);
+    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500);
+    return true;
+  }
+  /* 90: 같은 방문(탭)에서 본 페이지 수 — 3번째·6번째 페이지에서 각 1회 안내 말풍선(글자만, 1.5초, 누를 수 없음). 모바일·PC 공통. 다시 접속하면 초기화(sessionStorage) */
+  function pvCount() {  /* 페이지에 들어오자마자 셈(바로 다음 페이지로 넘어가도 빠지지 않게). 보여 줄 차례면 3 또는 6, 아니면 0 */
+    try {
+      var list = JSON.parse(window.sessionStorage.getItem('sp_pv') || '[]');
+      if (list.indexOf(path) < 0) { list.push(path); window.sessionStorage.setItem('sp_pv', JSON.stringify(list)); }
+      var n = list.length, key = n === 3 ? 'sp_pv3' : n === 6 ? 'sp_pv6' : '';
+      if (!key || window.sessionStorage.getItem(key)) return 0;
+      window.sessionStorage.setItem(key, '1');
+      return n;
+    } catch (e) { return 0; }
+  }
+  function pvToast(n) {
+    var msg = n === 3 ? '3페이지나 보셨네요.<br>편하게 문의해 보세요.' : '충분히 둘러보셨다면<br>슈퍼플래닝과 함께해 보세요.';
+    var t = document.createElement('div');
+    t.id = 'spPvToast';
+    t.setAttribute('role', 'status');
+    t.innerHTML = msg;
+    document.body.appendChild(t);
+    var bar = document.getElementById('spMobileCtaBar'), qb = document.querySelector('.sp-qb-inquiry');
+    if (isMobile()) {
+      if (bar && bar.offsetHeight) { t.classList.add('to-bar'); t.style.setProperty('--tail', Math.max(14, (window.innerWidth - 36) / 4 - 10) + 'px'); }
+    } else if (qb && qb.offsetWidth) {
+      var r = qb.getBoundingClientRect();
+      t.classList.add('to-qb');
+      t.style.left = Math.max(8, r.right - t.offsetWidth) + 'px';
+      t.style.top = (r.bottom + 16) + 'px';
+    }
+    track('toast_view', n === 3 ? 'pv_toast_3' : 'pv_toast_6');
     setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
