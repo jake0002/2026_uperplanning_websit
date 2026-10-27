@@ -1427,7 +1427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '카테고리 닫기 ▴' : '카테고리 보기 ▾';">카테고리 보기 ▾</button>
           <ul class="tree-list toc" id="categoryNav">
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">17</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">18</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">4</span></a></li>
@@ -1435,7 +1435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획"><span class="doc-icon">📄</span> <span>4. UX기획</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX라이팅"><span class="doc-icon">📄</span> <span>5. UX라이팅</span> <span class="badge-count">1</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UI디자인"><span class="doc-icon">📄</span> <span>6. UI디자인</span> <span class="badge-count">1</span></a></li>
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="웹/앱 개발"><span class="doc-icon">📄</span> <span>7. 웹/앱 개발</span> <span class="badge-count">2</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="웹/앱 개발"><span class="doc-icon">📄</span> <span>7. 웹/앱 개발</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX강의"><span class="doc-icon">📄</span> <span>8. UX강의</span> <span class="badge-count">2</span></a></li>
           </ul>
         </aside>
@@ -1458,7 +1458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="postit-grid" id="postitGrid">
           <noscript>
           <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
-          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 17건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 18건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
 
             <article class="postit-card" data-id="1">
@@ -1886,6 +1886,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </article>
 
+            <article class="postit-card" data-id="32">
+              <div class="postit-top-band">
+                <span class="category-badge">웹/앱 개발</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 32);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 32);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/product-detail-page-html-conversion-seo/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/product-detail-page-html-conversion-seo/" style="color:inherit; text-decoration:none;">상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/product-detail-page-html-conversion-seo/" style="color:inherit; text-decoration:none;">슈퍼플래닝은 이미지로 만든 제품 상세페이지를 검색엔진과 AI가 읽는 HTML 텍스트로 변환하고, 온라인몰에 바로 적용할 수 있는 HTML 소스까지 제공합니다. 진행 방식과 몰 규격, 견적 기준을 정리했습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#상세페이지');" style="cursor:pointer;" title="#상세페이지 태그 포스팅 모아보기">#상세페이지</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#HTML퍼블리싱');" style="cursor:pointer;" title="#HTML퍼블리싱 태그 포스팅 모아보기">#HTML퍼블리싱</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#SEO');" style="cursor:pointer;" title="#SEO 태그 포스팅 모아보기">#SEO</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#AIUX');" style="cursor:pointer;" title="#AIUX 태그 포스팅 모아보기">#AIUX</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/product-detail-page-html-conversion-seo/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <!-- Cards populated dynamically via JavaScript -->
           </div>
         
@@ -2149,6 +2174,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>스타트업·예비창업자도 K-스타트업·모두의 창업 등 정부지원사업비로 UX진단·UX컨설팅, UX디자인, 앱개발을 외주로 맡길 수 있습니다. 프로토타입이 있다면 필요한 항목만 부분 의뢰하는 법, 외주용역비 기준, 견적서 체크리스트를 정리했습니다.</p>
           <blockquote>지원사업비 외주는 "누구에게 맡길까"보다 "무엇을, 어떤 서류로, 언제까지 끝낼까"를 먼저 정해야 합니다.</blockquote>
         `
+      },
+      {
+        id: 32,
+        category: "웹/앱 개발",
+        title: "상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법",
+        excerpt: "슈퍼플래닝은 이미지로 만든 제품 상세페이지를 검색엔진과 AI가 읽는 HTML 텍스트로 변환하고, 온라인몰에 바로 적용할 수 있는 HTML 소스까지 제공합니다. 진행 방식과 몰 규격, 견적 기준을 정리했습니다.",
+        readTime: 60,
+        tags: ["#상세페이지", "#HTML퍼블리싱", "#SEO", "#AIUX"],
+        content: `
+          <h3>상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법</h3>
+          <p>슈퍼플래닝은 이미지로 만든 제품 상세페이지를 검색엔진과 AI가 읽는 HTML 텍스트로 변환하고, 온라인몰에 바로 적용할 수 있는 HTML 소스까지 제공합니다. 진행 방식과 몰 규격, 견적 기준을 정리했습니다.</p>
+          <blockquote>이미지 속 문구는 사람 눈에는 보이지만, 검색엔진과 AI에게는 읽기 어려운 정보입니다.</blockquote>
+        `
       }
     ];
 
@@ -2304,7 +2342,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       28: "app-development-cost-by-type-timeline",
       29: "kb-liiv-next-ai-voice-banking-zero-ui-case-study",
       30: "osstem-implant-dental-software-ux-research-case-study",
-      31: "startup-government-fund-ux-consulting-app-development"
+      31: "startup-government-fund-ux-consulting-app-development",
+      32: "product-detail-page-html-conversion-seo"
     };
     function postUrl(id) {
       return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";
