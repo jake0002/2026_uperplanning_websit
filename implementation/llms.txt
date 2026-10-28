@@ -53,14 +53,14 @@
 - [스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법](https://www.superplanning.co.kr/ux-blog/startup-government-fund-ux-consulting-app-development/): UX컨설팅
 - [오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지](https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/): 케이스 스터디
 - [AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI](https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/): 케이스 스터디
-- [앱 개발 비용 얼마나 들까? 유형별 비용·기간·개발 방식 비교](https://www.superplanning.co.kr/ux-blog/app-development-cost-by-type-timeline/): 웹/앱 개발
+- [앱 개발 비용 2026: 어플 유형별 견적표·개발 기간 한눈에 비교](https://www.superplanning.co.kr/ux-blog/app-development-cost-by-type-timeline/): 웹/앱 개발
 - [개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리](https://www.superplanning.co.kr/ux-blog/ui-design-outsourcing-for-dev-team/): UI디자인
 - [UI/UX 에이전시 순위, 어떻게 판단할까: 포트폴리오·리서치·특허로 비교하는 법](https://www.superplanning.co.kr/ux-blog/ui-ux-agency-ranking-selection-criteria/): UX컨설팅
 - [프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지](https://www.superplanning.co.kr/ux-blog/product-designer-hiring-external-interviewer/): UX컨설팅
 - [AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계](https://www.superplanning.co.kr/ux-blog/ai-voice-service-vui-planning-guide/): UX기획
 - [SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정](https://www.superplanning.co.kr/ux-blog/si-developer-ui-ux-planning-corporate-training/): UX강의
 - [헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유](https://www.superplanning.co.kr/ux-blog/lguplus-healthcare-ux-renewal-case-study/): 케이스 스터디
-- [앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/): 웹/앱 개발
+- [앱 개발 견적 비교: 업체마다 몇 배 차이 나는 이유와 견적서 체크리스트](https://www.superplanning.co.kr/ux-blog/app-development-cost-quote-difference/): 웹/앱 개발
 - [사내 UX교육을 기획할 때 먼저 정해야 할 5가지](https://www.superplanning.co.kr/ux-blog/corporate-ux-training-planning/): UX강의
 - [스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유](https://www.superplanning.co.kr/ux-blog/startup-ux-consulting-reasons/): UX컨설팅
 - [AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준](https://www.superplanning.co.kr/ux-blog/ai-wireframe-ux-criteria/): UX기획
