@@ -41,16 +41,16 @@
     '.sp-live[data-sp-live="mini"] .spl-st{font-size:10px;gap:4px}' +
     '.sp-live[data-sp-live="mini"] .spl-dot{width:6px;height:6px}' +
     '.sp-live[data-sp-live="mini"] .spl-day{font-size:9.5px}' +
-    '.sp-live[data-sp-live="mini"] .spl-mid{margin:8px 0 7px}' +
-    '.sp-live[data-sp-live="mini"] .spl-clock{gap:4px;width:100%}' +
-    '.sp-live[data-sp-live="mini"] .spl-clock svg{flex:1 1 0;min-width:0;width:auto;height:auto;aspect-ratio:22/36}' +
-    '.sp-live[data-sp-live="mini"] .spl-colon{gap:14px;margin:0 3px}' +
-    '.sp-live[data-sp-live="mini"] .spl-colon i{width:6px;height:6px}' +
-    '.sp-live[data-sp-live="mini"] .spl-team{display:none}' +
-    '.sp-live[data-sp-live="mini"] .spl-mid{justify-content:center}' +
-    '.sp-live[data-sp-live="mini"] .spl-b{font-size:9px;gap:3px}' +
+    '.sp-live[data-sp-live="mini"] .spl-mid{margin:7px 0 2px}' +
+    '.sp-live[data-sp-live="mini"] .spl-clock{gap:2px}' +
+    '.sp-live[data-sp-live="mini"] .spl-clock svg{width:17px;height:26px}' +
+    '.sp-live[data-sp-live="mini"] .spl-colon{gap:7px;margin:0 1px}' +
+    '.sp-live[data-sp-live="mini"] .spl-colon i{width:3px;height:3px}' +
+    '.sp-live[data-sp-live="mini"] .spl-team{gap:5px 6px}' +
+    '.sp-live[data-sp-live="mini"] .spl-mid{justify-content:space-between;gap:6px}' +
+    '.sp-live[data-sp-live="mini"] .spl-b{font-size:9px;gap:3px;letter-spacing:-.03em}' +
     '.sp-live[data-sp-live="mini"] .spl-b i{width:8px;height:8px}' +
-    '.sp-live[data-sp-live="mini"] .spl-ft{font-size:8.5px;padding-top:4px;gap:4px;letter-spacing:-.02em}' +
+    '.sp-live[data-sp-live="mini"] .spl-ft{display:none}' +
     '@media (max-width:640px){.sp-live[data-sp-live="wide"] .spl-team{grid-template-columns:auto auto;gap:6px 14px}.sp-live[data-sp-live="wide"] .spl-clock svg{width:22px;height:35px}.sp-live[data-sp-live="wide"] .spl-ft{justify-content:space-between;gap:6px}}' +
     '@keyframes splBlink{0%,60%{opacity:1}80%{opacity:.25}100%{opacity:1}}' +
     '@media (prefers-reduced-motion:reduce){.spl-dot{animation:none}}';
@@ -64,7 +64,7 @@
     e: '2.5,18.5 5.5,20.5 5.5,30.5 2.5,33.5', c: '19.5,18.5 19.5,33.5 16.5,30.5 16.5,20.5'
   };
   function digit(n) {
-    var on = SEG[n], s = '<svg width="18" height="29" viewBox="0 0 22 36" aria-hidden="true">';
+    var on = SEG[n], s = '<svg width="18" height="29" viewBox="0 0 22 36" preserveAspectRatio="none" aria-hidden="true">';
     'abcdefg'.split('').forEach(function (k) {
       s += '<polygon points="' + P[k] + '" fill="#fff" opacity="' + (on.indexOf(k) > -1 ? 1 : 0.07) + '"/>';
     });
@@ -102,7 +102,7 @@
     el.innerHTML =
       '<div class="spl-top"><span class="spl-st"><span class="spl-dot"></span><span class="spl-stt"></span></span><span class="spl-day"></span></div>' +
       '<div class="spl-mid"><div class="spl-clock">' + digit(8) + digit(8) + '<span class="spl-colon"><i></i><i></i></span>' + digit(8) + digit(8) + '</div>' +
-      '<div class="spl-team">' + NAMES.map(function (nm) { return '<span class="spl-b"><i></i>' + nm + '</span>'; }).join('') + '</div></div>' +
+      '<div class="spl-team">' + NAMES.map(function (nm) { return '<span class="spl-b"><i></i>' + (el.getAttribute('data-sp-live') === 'mini' ? nm.replace('팀', '') : nm) + '</span>'; }).join('') + '</div></div>' +
       '<div class="spl-ft"><span>평일·야간 <b>08:00–22:00</b></span><span>주말 <b>10:00–19:00</b></span></div>';
   }
   function setDigit(svg, n) {
