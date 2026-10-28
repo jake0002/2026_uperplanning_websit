@@ -36,6 +36,21 @@
     '.sp-live[data-sp-live="wide"] .spl-b{font-size:13px;gap:7px}' +
     '.sp-live[data-sp-live="wide"] .spl-b i{width:15px;height:15px}' +
     '.sp-live[data-sp-live="wide"] .spl-ft{font-size:12px;padding-top:9px;justify-content:flex-start;gap:24px}' +
+    '.sp-live[data-sp-live="mini"]{padding:7px 8px 6px;margin:0 0 2px;border-width:1px;border-radius:5px}' +
+    '.sp-live[data-sp-live="mini"] .spl-top{font-size:9px}' +
+    '.sp-live[data-sp-live="mini"] .spl-st{font-size:10px;gap:4px}' +
+    '.sp-live[data-sp-live="mini"] .spl-dot{width:6px;height:6px}' +
+    '.sp-live[data-sp-live="mini"] .spl-day{font-size:9.5px}' +
+    '.sp-live[data-sp-live="mini"] .spl-mid{margin:8px 0 7px}' +
+    '.sp-live[data-sp-live="mini"] .spl-clock{gap:4px;width:100%}' +
+    '.sp-live[data-sp-live="mini"] .spl-clock svg{flex:1 1 0;min-width:0;width:auto;height:auto;aspect-ratio:22/36}' +
+    '.sp-live[data-sp-live="mini"] .spl-colon{gap:14px;margin:0 3px}' +
+    '.sp-live[data-sp-live="mini"] .spl-colon i{width:6px;height:6px}' +
+    '.sp-live[data-sp-live="mini"] .spl-team{display:none}' +
+    '.sp-live[data-sp-live="mini"] .spl-mid{justify-content:center}' +
+    '.sp-live[data-sp-live="mini"] .spl-b{font-size:9px;gap:3px}' +
+    '.sp-live[data-sp-live="mini"] .spl-b i{width:8px;height:8px}' +
+    '.sp-live[data-sp-live="mini"] .spl-ft{font-size:8.5px;padding-top:4px;gap:4px;letter-spacing:-.02em}' +
     '@media (max-width:640px){.sp-live[data-sp-live="wide"] .spl-team{grid-template-columns:auto auto;gap:6px 14px}.sp-live[data-sp-live="wide"] .spl-clock svg{width:22px;height:35px}.sp-live[data-sp-live="wide"] .spl-ft{justify-content:space-between;gap:6px}}' +
     '@keyframes splBlink{0%,60%{opacity:1}80%{opacity:.25}100%{opacity:1}}' +
     '@media (prefers-reduced-motion:reduce){.spl-dot{animation:none}}';
