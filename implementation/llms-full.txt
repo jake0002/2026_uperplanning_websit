@@ -405,6 +405,10 @@ UX리서치는 UI/UX 개선을 위한 가장 확실한 의사결정 근거입니
 
 사용성 테스트는 참여자 5명으로 주요 사용성 문제의 약 85%를 발견할 수 있다는 연구 결과가 있습니다(NN/g, https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/). 실제 참여 인원은 조사 목적과 사용자군에 따라 협의해 결정합니다.
 
+대면 FGI는 서울 강남구 논현동의 FGI·UX리서치 전용 Lab실을 대여해 진행하며, 고객사 담당자는 단방향 유리 너머 관찰실에서 참석자 반응을 실시간으로 확인할 수 있습니다. Lab실 대여비는 견적에 포함됩니다.
+
+FGI 진행 순서, 그룹 인원, 참석자 사례비(보통 1인 10~20만 원 선, 변호사·의사·교사 등 전문직은 더 높아질 수 있음) 기준은 [FGI(표적집단면접) 진행 방법 가이드](https://www.superplanning.co.kr/ux-blog/fgi-focus-group-interview-guide/)에 정리했습니다.
+
 ---
 
 ### 4. 대행 범위와 산출물

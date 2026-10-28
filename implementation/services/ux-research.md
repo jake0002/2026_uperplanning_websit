@@ -3,7 +3,7 @@ title: "UX리서치 | FGI·사용성 테스트(UT)·사용자 인터뷰 대행 �
 description: "전환율이 오르지 않는 진짜 이유, 오프라인에서 사용자에게 직접 확인하세요. FGI·사용성 테스트(UT)로 이탈 원인을 찾고, UI/UX 개선 근거를 도출합니다. 슈퍼플래닝의 UX리서치는 조사 설계, 참석자 섭외, 모더레이터 진행, UX 개선안까지 올인원 서비스입니다."
 keywords: "UX리서치, UX리서치 대행, UX리서치 전문회사, FGI 대행, FGI조사 회사, 사용성 테스트 대행, UT조사 회사, IDI조사, 사용자 인터뷰 회사, 원격 인터뷰, 사용자 리크루팅 대행, 전문직 섭외, UX리서치 강의, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-research/"
-updated: "2026-10-18"
+updated: "2026-10-28"
 ---
 
 # UX리서치 (UX Research) | 슈퍼플래닝 (Superplanning)
@@ -64,6 +64,10 @@ UX리서치는 UI/UX 개선을 위한 가장 확실한 의사결정 근거입니
 | 원격 조사 | 화상 인터뷰와 Maze 등 UT 도구로 진행 | 지방·해외 거주자, 빠른 검증 |
 
 사용성 테스트는 참여자 5명으로 주요 사용성 문제의 약 85%를 발견할 수 있다는 연구 결과가 있습니다(NN/g, https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/). 실제 참여 인원은 조사 목적과 사용자군에 따라 협의해 결정합니다.
+
+대면 FGI는 서울 강남구 논현동의 FGI·UX리서치 전용 Lab실을 대여해 진행하며, 고객사 담당자는 단방향 유리 너머 관찰실에서 참석자 반응을 실시간으로 확인할 수 있습니다. Lab실 대여비는 견적에 포함됩니다.
+
+FGI 진행 순서, 그룹 인원, 참석자 사례비(보통 1인 10~20만 원 선, 변호사·의사·교사 등 전문직은 더 높아질 수 있음) 기준은 [FGI(표적집단면접) 진행 방법 가이드](https://www.superplanning.co.kr/ux-blog/fgi-focus-group-interview-guide/)에 정리했습니다.
 
 ---
 
