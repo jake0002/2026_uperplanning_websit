@@ -1944,6 +1944,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.body.appendChild(winEl);
       }
       makeDraggable(winEl);
+      /* 113: 슈퍼플래닝·찾아오시는 길 창은 내용 높이에 맞춰 하단 빈 공간 제거(PC) */
+      if (!isMobile && (key === 'about' || key === 'contact')) spFitWin(winEl);
 
       winEl.addEventListener('mousedown', (e) => {
         winEl.style.zIndex = getNextZIndex();
@@ -1963,6 +1965,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         setTimeout(() => winEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       }
       if (key === 'about') setTimeout(typeWriterHero, 60);
+    }
+
+    function spFitWin(el) {
+      const fit = () => {
+        if (window.innerWidth <= 768 || el.classList.contains('maximized')) return;
+        const body = el.querySelector('.w-body');
+        const kids = body ? Array.from(body.children).filter(c => c.offsetParent !== null) : [];
+        if (!kids.length) return;
+        const bottom = Math.max.apply(null, kids.map(c => c.getBoundingClientRect().bottom));
+        const need = bottom - el.getBoundingClientRect().top + parseFloat(getComputedStyle(body).paddingBottom) + parseFloat(getComputedStyle(el).borderBottomWidth);
+        if (need > 180) el.style.height = Math.ceil(need) + 'px';
+      };
+      requestAnimationFrame(fit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+      const body = el.querySelector('.w-body');
+      if (body && window.ResizeObserver) { const ro = new ResizeObserver(fit); Array.from(body.children).forEach(c => ro.observe(c)); }
+      window.addEventListener('resize', fit);
     }
 
     function getWindowBody(key) {
@@ -3178,6 +3197,6 @@ window.spQB = function (btn, pos) {
 </script>
 <script src="/assets/sp-inquiry.js?v=89" defer></script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
-<script src="/assets/sp-live.js?v=106" defer></script>
+<script src="/assets/sp-live.js?v=113" defer></script>
 </body>
 </html>
