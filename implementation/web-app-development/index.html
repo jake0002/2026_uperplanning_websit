@@ -1412,7 +1412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <nav aria-label="페이지 목차">
-            <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
+            <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.closest('.tree-sidebar')||this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
           <ul class="tree-list toc">
               <li class="tree-item"><a href="#optimization" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX디자인에 최적화된 개발</span></a></li>
               <li class="tree-item"><a href="#ai-dev" class="tree-link"><span class="doc-icon">📄</span> <span>2. AI기반 모바일앱 개발</span></a></li>
