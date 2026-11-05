@@ -1944,8 +1944,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.body.appendChild(winEl);
       }
       makeDraggable(winEl);
-      /* 113·115: 슈퍼플래닝·찾아오시는 길·인재 채용 창은 내용 높이에 맞춰 하단 빈 공간 제거(PC) */
-      if (!isMobile && (key === 'about' || key === 'contact' || key === 'careers')) spFitWin(winEl);
+      /* 113·115·117: 슈퍼플래닝·찾아오시는 길·인재 채용·환경 설정 창은 내용 높이에 맞춰 하단 빈 공간 제거(PC) */
+      if (!isMobile && (key === 'about' || key === 'contact' || key === 'careers' || key === 'tweaks')) spFitWin(winEl);
 
       winEl.addEventListener('mousedown', (e) => {
         winEl.style.zIndex = getNextZIndex();
