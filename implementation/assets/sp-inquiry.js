@@ -110,7 +110,7 @@
     var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '오프라인'); }).join('');
     var lec = '<div class="spq-ov" id="spqLec"><div class="spq-box wide" role="dialog" aria-modal="true" aria-labelledby="spqLecH">' +
       '<div class="spq-tb"><span>[강의 신청]</span><button type="button" class="spq-x" data-close aria-label="닫기">✕</button></div>' +
-      '<div class="spq-bd"><h3 class="spq-h" id="spqLecH">AI활용 UX강의 신청</h3><p class="spq-sub">일정과 견적은 상담 후 확정됩니다. 선택하신 내용으로 맞춤 커리큘럼을 안내해 드립니다.</p>' +
+      '<div class="spq-bd"><h3 class="spq-h" id="spqLecH">AI활용 서비스기획 및 UX강의 신청</h3><p class="spq-sub">일정과 견적은 상담 후 확정됩니다. 선택하신 내용으로 맞춤 커리큘럼을 안내해 드립니다.</p>' +
       '<div class="spq-sec"><p class="spq-lb">1. 수강 형태 <small>(선택)</small></p><div class="spq-chips">' + types + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">2. 코스 선택 * <small>선택하신 코스가 미리 체크됩니다</small></p><div class="spq-c4">' + courses + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">3. 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div>' +
