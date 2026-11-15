@@ -6,12 +6,26 @@
     <atom:link href="https://www.superplanning.co.kr/ux-blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>UX디자인 에이전시 슈퍼플래닝이 UX리서치·UX컨설팅·UX기획·UX라이팅·UI디자인·웹/앱 개발 실무 기준과 프로젝트 사례를 정리하는 블로그입니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 12:00:00 +0900</lastBuildDate>
     <image>
       <url>https://www.superplanning.co.kr/og-thumbnail.png</url>
       <title>슈퍼플래닝 UX블로그</title>
       <link>https://www.superplanning.co.kr/ux-blog/</link>
     </image>
+    <item>
+      <title>AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다</title>
+      <link>https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/</link>
+      <guid isPermaLink="true">https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate>
+      <category>UX강의</category>
+      <dc:creator>슈퍼플래닝 AI-UX교육팀</dc:creator>
+      <description><![CDATA[<p><img src="https://www.superplanning.co.kr/images/ux-blog/ai-training/ai-training-og.png" alt="AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다"></p><p>슈퍼플래닝은 기업, 정부·지자체 취업·창업 기관, 대학, 여성인력개발센터, KDT 과정에 AI 서비스기획 과정 교육을 출강하는 현업 UX에이전시입니다. 기관 유형별 출강 이력과 AI 활용 창업 교육 16시간·AI기반 UX/UI 콘텐츠 디자인 250시간 과정 구성을 정리했습니다.</p><h2>슈퍼플래닝은 어떤 AI 서비스기획 교육을 하나요?</h2>
+      <p><strong>슈퍼플래닝은 기업, 정부·지자체 취업·창업 기관, 대학, 여성인력개발센터, KDT 과정에 AI 서비스기획 과정 교육을 출강하는 현업 UX에이전시입니다.</strong><br>1:1 UX강의뿐 아니라, 기관의 인원과 교육 목표에 맞춘 단체 과정을 원데이 특강(2·4·6시간)부터 250시간 장기 과정까지 설계하고 직접 강의합니다.</p>
+      <p>AI 서비스기획 교육은 생성형 AI를 활용해 사용자 문제 정의, 요구사항(PRD), 화면기획, 시제품 검증까지 서비스를 기획하는 실무를 배우는 교육입니다.<br>슈퍼플래닝 AI-UX교육팀은 실제 UX리서치·UX기획·UI디자인 프로젝트를 수행하는 실무자가 강의한다는 점이 다릅니다.</p>
+      <figure>
+        <img src="https://www.superplanning.co.kr/images/ux-blog/ai-training/ai-training-cover.webp" alt="AI 서비스기획 교육 강사 출강, 현업 UX에이전시가 직접 강의합니다 — 원데이 5시간, AI 활용 창업 교육 16시간, AI기반 UX/UI 콘텐츠 디자인 250시간 과정과 클로드 코드·피그마 MCP·DESIGN.md·피그마 AI·바이브코딩 실무, 슈퍼플래닝 AI-UX교육팀" width="1200" height="630">
+      </figure><p><a href="https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/">전체 글 읽기</a></p>]]></description>
+    </item>
     <item>
       <title>AI 시대, UI/UX가 더 중요해지는 이유: AI 서비스 성공을 가르는 사용자 경험 5가지</title>
       <link>https://www.superplanning.co.kr/ux-blog/ai-era-ui-ux-importance/</link>
