@@ -6,12 +6,23 @@
     <atom:link href="https://www.superplanning.co.kr/ux-blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>UX디자인 에이전시 슈퍼플래닝이 UX리서치·UX컨설팅·UX기획·UX라이팅·UI디자인·웹/앱 개발 실무 기준과 프로젝트 사례를 정리하는 블로그입니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 15 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 +0900</lastBuildDate>
     <image>
       <url>https://www.superplanning.co.kr/og-thumbnail.png</url>
       <title>슈퍼플래닝 UX블로그</title>
       <link>https://www.superplanning.co.kr/ux-blog/</link>
     </image>
+    <item>
+      <title>사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법</title>
+      <link>https://www.superplanning.co.kr/ux-blog/user-interview-participant-recruiting-agency/</link>
+      <guid isPermaLink="true">https://www.superplanning.co.kr/ux-blog/user-interview-participant-recruiting-agency/</guid>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate>
+      <category>UX리서치</category>
+      <dc:creator>슈퍼플래닝 사용자경험 연구소</dc:creator>
+      <description><![CDATA[<p><img src="https://www.superplanning.co.kr/og-thumbnail.png" alt="사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법"></p><p>사용자 인터뷰·FGI·사용성 테스트 대상자를 찾기 어렵다면 인터뷰 대상자 섭외(리크루팅)만, 또는 사례비 지급만 따로 맡길 수 있습니다. 의뢰 형태 4가지, 섭외 가능한 인터뷰 대상자, 섭외 진행 순서, 사례비 기준과 대행 업체 체크리스트를 정리했습니다.</p><h2>사용자 인터뷰 대상자 섭외, 슈퍼플래닝에 맡길 수 있나요?</h2>
+      <p><strong>조사 설계와 진행은 직접 하시고, 조건에 맞는 인터뷰 대상자 섭외와 사례비 지급만 슈퍼플래닝에 맡기실 수 있습니다.</strong><br>슈퍼플래닝 사용자경험 연구소는 사용자 인터뷰·FGI·사용성 테스트(UT)의 리서치 대상자를 직접 섭외하는 UX리서치 전문 조직입니다.</p>
+      <p>인터뷰 대상자 섭외(리크루팅)만, 사례비 지급만, 또는 둘 다 묶어서 의뢰하실 수 있습니다.<br>조사 전체를 맡기실 때는 설계부터 진행, 결과보고서까지 함께 수행합니다.</p><p><a href="https://www.superplanning.co.kr/ux-blog/user-interview-participant-recruiting-agency/">전체 글 읽기</a></p>]]></description>
+    </item>
     <item>
       <title>AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다</title>
       <link>https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/</link>

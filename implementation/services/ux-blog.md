@@ -3,7 +3,7 @@ title: "UX블로그 | 슈퍼플래닝 (Superplanning) - UX리서치·UX라이팅
 description: "UX 전문 에이전시 슈퍼플래닝의 공식 UX블로그 아티클 목록입니다. 케이스 스터디, UX컨설팅, UX리서치, UX기획, UX라이팅, UI디자인, 웹/앱 개발, UX강의 8개 카테고리의 실무 글을 정리합니다."
 keywords: "UX블로그, UI디자인 외주, 앱 디자인 외주, UI/UX 에이전시, UI UX 에이전시 순위, UX 에이전시 선택, UX 실무, UX리서치, UX라이팅, UX기획, 화면정의서, 화면설계서, 기능정의서, UI/UX 기업출강, 앱개발 비용, 앱 개발 기간, 보이스뱅킹 UX, ZERO UI, NUGU 공식 에이전시, 의료 소프트웨어 사용성 테스트, 오스템임플란트 UX, 스타트업 앱 외주, 예비창업자 앱 개발, 모두의 창업, K-스타트업, 정부지원사업 외주, 상세페이지 HTML 변환, 상세페이지 퍼블리싱, 이미지 상세페이지 SEO, FGI, 표적집단면접, 모더레이팅, 인터뷰 사례비, AI UX, AI 서비스 UX, AI 서비스 UX진단, UX진단, UX컨설팅, UX강의, 케이스 스터디, 프로덕트 디자이너 채용 면접 대행, IT스타트업 심사위원, 슈퍼플래닝"
 canonical: "https://www.superplanning.co.kr/ux-blog/"
-updated: "2026-11-15"
+updated: "2026-11-16"
 ---
 
 # UX블로그 | 슈퍼플래닝 (Superplanning)
@@ -15,11 +15,12 @@ updated: "2026-11-15"
 
 ## 아티클 목록
 
+- [사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법](https://www.superplanning.co.kr/ux-blog/user-interview-participant-recruiting-agency/) — UX리서치 · 사용자 인터뷰·FGI·사용성 테스트 인터뷰 대상자 섭외(리크루팅)만 또는 사례비 지급만 단독 의뢰, 의뢰 형태 4가지(섭외만·사례비 지급만·섭외+사례비·리서치 전체), 섭외 가능 대상 7군(일반 소비자·사업주·자영업자·현업 실무자·전문직·가족·생활·서비스 공급자·시니어·외국인), 섭외 진행 6단계(섭외 조건 정리→사전 선별 설문→섭외·선정→일정 확정→사전 안내→사례비 지급), FGI 사례비 보통 1인 10~20만 원 선, 불참 대비 예비 인원 1~2명 섭외, 대행 업체 체크리스트, 원격·매장 방문 인터뷰, 지원사업 카드 결제·정산 서류
 - [AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다](https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/) — UX강의 · 슈퍼플래닝은 기업(현대자동차·신한금융그룹·GS그룹·IBK기업은행), 정부·지자체 취업·창업 기관(SBA 청년취업사관학교 새싹캠퍼스·마포구청 청년나루·서초구청 UX취업 과정·경기스타트업캠퍼스), 여성인력개발센터(동작·관악·성남), KDT(패스트캠퍼스 커널아카데미 AX 창업 과정), 대학(세종대·서울여대·순천향대·한국교통대·한국공학대)에 AI 서비스기획 과정 교육을 출강하는 현업 UX에이전시, 원데이 특강(2·4·6시간)·16시간 집중·250시간 장기 과정, AI 활용 창업 교육 16시간 구성, AI기반 UX/UI 콘텐츠 디자인 과정 4단계, 클로드 코드·피그마 MCP·DESIGN.md·피그마 AI, 강의계획서·강사 이력·세금계산서 제공, 전국 출강·온라인
 - [AI 시대, UI/UX가 더 중요해지는 이유: AI 서비스 성공을 가르는 사용자 경험 5가지](https://www.superplanning.co.kr/ux-blog/ai-era-ui-ux-importance/) — UX컨설팅 · AI 서비스 성공을 가르는 사용자 경험, MIT NANDA 생성형 AI 파일럿 95% 성과 미흡, 가트너 PoC 이후 30% 중단 전망, 국내 AI 이용 88%·결과 신뢰 38%(CJ메조미디어 2026), 제이콥 닐슨의 세 번째 UI 패러다임과 표현의 장벽, AI 서비스 UX 5가지(의도 입력·근거 표시·오류 회복·사람의 확인·업무 흐름 연결), 인터뷰·UT 기반 AI 서비스 UX진단
-- [FGI(표적집단면접) 인터뷰 진행 방법: 인원·진행 순서·사례비 10~20만 원 기준](https://www.superplanning.co.kr/ux-blog/fgi-focus-group-interview-guide/) — UX리서치 · FGI(표적집단면접) 진행 순서 6단계, 그룹당 6~8명·90~120분, FGI·IDI·UT 비교, 모더레이팅 원칙, 참석자 사례비 보통 1인 10~20만 원 선(변호사·의사·교사 등 전문직은 더 높아질 수 있음), 슈퍼플래닝 견적에 섭외비·사례비·전용 Lab실 대여비·모더레이터 진행비 포함, 설계~보고서 2~3주
+- [FGI(표적집단면접) 인터뷰 진행 방법: 인원·진행 순서·사례비 10~20만 원 기준](https://www.superplanning.co.kr/ux-blog/fgi-focus-group-interview-guide/) — UX리서치 · FGI(표적집단면접) 진행 순서 6단계, 그룹당 6~8명·90~120분, FGI·IDI·UT 비교, 모더레이팅 원칙, FGI 대상자 사례비 보통 1인 10~20만 원 선(변호사·의사·교사 등 전문직은 더 높아질 수 있음), 슈퍼플래닝 견적에 섭외비·사례비·전용 Lab실 대여비·모더레이터 진행비 포함, 설계~보고서 2~3주
 - [상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법](https://www.superplanning.co.kr/ux-blog/product-detail-page-html-conversion-seo/) — 웹/앱 개발 · 이미지(JPG·PNG) 상세페이지의 정보성 문구를 HTML 텍스트로 퍼블리싱, 검색엔진·AI 검색·Ctrl+F 검색 가능, 온라인몰 규격 HTML 소스 제공, 대표 상세페이지 2~3개 테스트 후 전체 확대, 몰별 허용 태그·인라인 스타일·이미지 호스팅 확인, 슈퍼플래닝 전문 퍼블리셔(국토교통부·KT·CJ대한통운·HD현대인프라코어·한국비씨피솔루션즈 등 퍼블리싱 이력)
-- [스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법](https://www.superplanning.co.kr/ux-blog/startup-government-fund-ux-consulting-app-development/) — UX컨설팅 · K-스타트업 창업지원사업 외주용역비 기준(통합관리지침 제38조), 모두의 창업 창업활동자금, 프로토타입 단계별 부분 의뢰(UX진단·UX디자인·앱개발), 외주 업체에 확인할 9가지, 집행 마감일 역산 일정
+- [스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법](https://www.superplanning.co.kr/ux-blog/startup-government-fund-ux-consulting-app-development/) — UX컨설팅 · K-스타트업 창업지원사업 외주용역비 기준(통합관리지침 제38조), 모두의 창업 창업활동자금(1라운드 선발자 1인당 200만 원) 사용처로 먼저 맡기기 좋은 UX 작업 4가지(UX진단·핵심 화면 UI디자인·화면기획서·랜딩페이지 진단), 지원사업 선불카드 결제 절차, 프로토타입 단계별 부분 의뢰(UX진단·UX디자인·앱개발), 외주 업체에 확인할 9가지, 집행 마감일 역산 일정
 - [오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지](https://www.superplanning.co.kr/ux-blog/osstem-implant-dental-software-ux-research-case-study/) — 케이스 스터디 · 현직 치과의사 6명 대상 1:1 미션 기반 사용성 테스트(UT)와 닐슨 10가지 휴리스틱 정량평가, 진료 현장 용어·차팅 메뉴·시각적 위계 문제 도출, UX기획·UI/UX디자인 개선(콘텐츠 강약 체계 재설계)으로 연결, 약 3개월·프로젝트팀 6명(UX리서처 3·UX기획자 2·UX컨설턴트 1)
 - [AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI](https://www.superplanning.co.kr/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/) — 케이스 스터디 · SK텔레콤 NUGU 공식 에이전시 슈퍼플래닝이 UX컨설팅·UX기획(서비스 플로우, 기능정의, 앱 화면기획서)을 맡은 KB국민은행 리브 Next AI 보이스뱅킹, 약 4개월·전문인력 5명, ZERO UI 개념과 보이스뱅킹 UX 설계 포인트
 - [앱 개발 비용 2026: 어플 유형별 견적표·개발 기간 한눈에 비교](https://www.superplanning.co.kr/ux-blog/app-development-cost-by-type-timeline/) — 웹/앱 개발 · 앱 유형별 평균 개발 비용·기간(위시켓 자료), 앱 개발 기간(QA 포함 보통 2~3개월), 네이티브·크로스 플랫폼·하이브리드 비교, UI/UX 디자인 비용 포함 여부, 견적 준비 5가지

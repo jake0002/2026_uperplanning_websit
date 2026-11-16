@@ -1428,11 +1428,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '카테고리 닫기 ▴' : '카테고리 보기 ▾';">카테고리 보기 ▾</button>
           <ul class="tree-list toc" id="categoryNav">
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">21</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link active" data-category="all"><span class="doc-icon">📄</span> <span>▣ 전체글 보기</span> <span class="badge-count" id="countAll">22</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="bookmark"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="countFav">0</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="케이스 스터디"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX컨설팅"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">5</span></a></li>
-            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>3. UX리서치</span> <span class="badge-count">2</span></a></li>
+            <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX리서치"><span class="doc-icon">📄</span> <span>3. UX리서치</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX기획"><span class="doc-icon">📄</span> <span>4. UX기획</span> <span class="badge-count">3</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UX라이팅"><span class="doc-icon">📄</span> <span>5. UX라이팅</span> <span class="badge-count">1</span></a></li>
             <li class="tree-item"><a href="javascript:void(0)" class="tree-link" data-category="UI디자인"><span class="doc-icon">📄</span> <span>6. UI디자인</span> <span class="badge-count">1</span></a></li>
@@ -1459,7 +1459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="postit-grid" id="postitGrid">
           <noscript>
           <h2 style="margin:8px 0 6px 0; font-size:16px; font-weight:800;">UX블로그 — 주요 글 목록 (SSR fallback)</h2>
-          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 21건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
+          <p style="margin:0 0 10px 0; font-size:13px; line-height:1.55; color:#333;">본 페이지는 자바스크립트를 활성화하시면 22건의 전체 글·검색·태그 필터링을 보실 수 있습니다.</p>
           </noscript>
 
             <article class="postit-card" data-id="1">
@@ -1987,6 +1987,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </article>
 
+            <article class="postit-card" data-id="36">
+              <div class="postit-top-band">
+                <span class="category-badge">UX리서치</span>
+                <div class="card-actions">
+                  <button class="icon-action-btn" onclick="toggleBookmark(event, 36);" title="즐겨찾기 추가/제거">☆</button>
+                  <button class="icon-action-btn" onclick="sharePost(event, 36);" title="아티클 링크 공유하기">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    <span style="font-size:11px; font-weight:800;">공유</span>
+                  </button>
+                </div>
+              </div>
+              <div class="postit-body" onclick="if (!event.target.closest('.icon-action-btn') && !event.target.closest('.tag-pill')) location.href='/ux-blog/user-interview-participant-recruiting-agency/';" style="cursor:pointer;">
+                <h3 class="postit-title"><a href="/ux-blog/user-interview-participant-recruiting-agency/" style="color:inherit; text-decoration:none;">사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법</a></h3>
+                <p class="postit-excerpt"><a href="/ux-blog/user-interview-participant-recruiting-agency/" style="color:inherit; text-decoration:none;">사용자 인터뷰·FGI·사용성 테스트 대상자를 찾기 어렵다면 인터뷰 대상자 섭외(리크루팅)만, 또는 사례비 지급만 따로 맡길 수 있습니다. 의뢰 형태 4가지, 섭외 가능한 인터뷰 대상자, 섭외 진행 순서, 사례비 기준과 대행 업체 체크리스트를 정리했습니다.</a></p>
+                <div class="postit-tags">
+                  <span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#UX리서치');" style="cursor:pointer;" title="#UX리서치 태그 포스팅 모아보기">#UX리서치</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#대상자섭외');" style="cursor:pointer;" title="#대상자섭외 태그 포스팅 모아보기">#대상자섭외</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#사용자인터뷰');" style="cursor:pointer;" title="#사용자인터뷰 태그 포스팅 모아보기">#사용자인터뷰</span><span class="tag-pill" onclick="event.stopPropagation(); filterByTag('#FGI');" style="cursor:pointer;" title="#FGI 태그 포스팅 모아보기">#FGI</span>
+                </div>
+                <div class="postit-footer">
+                  <a href="/ux-blog/user-interview-participant-recruiting-agency/" class="read-time-btn" style="text-decoration:none;">
+                    60초 만에 읽기 →
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <!-- Cards populated dynamically via JavaScript -->
           </div>
         
@@ -2302,6 +2327,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>슈퍼플래닝은 기업, 정부·지자체 취업·창업 기관, 대학, 여성인력개발센터, KDT 과정에 AI 서비스기획 과정 교육을 출강하는 현업 UX에이전시입니다. 기관 유형별 출강 이력과 AI 활용 창업 교육 16시간·AI기반 UX/UI 콘텐츠 디자인 250시간 과정 구성을 정리했습니다.</p>
           <blockquote>AI 도구는 매달 바뀌지만, 좋은 서비스를 기획하는 기본기는 바뀌지 않습니다.</blockquote>
         `
+      },
+      {
+        id: 36,
+        category: "UX리서치",
+        title: "사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법",
+        excerpt: "사용자 인터뷰·FGI·사용성 테스트 대상자를 찾기 어렵다면 인터뷰 대상자 섭외(리크루팅)만, 또는 사례비 지급만 따로 맡길 수 있습니다. 의뢰 형태 4가지, 섭외 가능한 인터뷰 대상자, 섭외 진행 순서, 사례비 기준과 대행 업체 체크리스트를 정리했습니다.",
+        readTime: 60,
+        tags: ["#UX리서치", "#대상자섭외", "#사용자인터뷰", "#FGI"],
+        content: `
+          <h3>사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법</h3>
+          <p>사용자 인터뷰·FGI·사용성 테스트 대상자를 찾기 어렵다면 인터뷰 대상자 섭외(리크루팅)만, 또는 사례비 지급만 따로 맡길 수 있습니다. 의뢰 형태 4가지, 섭외 가능한 인터뷰 대상자, 섭외 진행 순서, 사례비 기준과 대행 업체 체크리스트를 정리했습니다.</p>
+          <blockquote>조사 설계와 진행은 직접 하시고, 조건에 맞는 인터뷰 대상자 섭외와 사례비 지급만 슈퍼플래닝에 맡기실 수 있습니다.</blockquote>
+        `
       }
     ];
 
@@ -2461,7 +2499,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       32: "product-detail-page-html-conversion-seo",
       33: "fgi-focus-group-interview-guide",
       34: "ai-era-ui-ux-importance",
-      35: "ai-service-planning-training-instructor-guide"
+      35: "ai-service-planning-training-instructor-guide",
+      36: "user-interview-participant-recruiting-agency"
     };
     function postUrl(id) {
       return SLUG_MAP[id] ? "/ux-blog/" + SLUG_MAP[id] + "/" : "/ux-blog/post-" + id + "/";
