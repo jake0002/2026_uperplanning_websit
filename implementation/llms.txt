@@ -14,6 +14,7 @@
 ## 서비스
 
 - [UX리서치](https://www.superplanning.co.kr/ux-research/): FGI조사·IDI(1:1 심층인터뷰)·사용성 테스트(UT)·원격 인터뷰 대행, 일반소비자·현업 임직원·전문직(의사, 변호사 등)·국내 거주 외국인 섭외와 사례비 지급 대행, 외국인 리서치(중국·일본·몽골·베트남·태국·필리핀·인도네시아·캄보디아·미얀마·네팔·이란·우즈베키스탄·카자흐스탄·러시아·미국·캐나다·영국·호주 등 국적 섭외) 실시간 통역사 배치·영어 인터뷰 진행·영문 번역 리서치 보고서, 서울 강남구 논현동 UX리서치 전문 Lab실(대여) 진행, 약 2~3주, 인터뷰 가이드라인·현장 음성·녹화영상·UX리서치 보고서(UI/UX개선안 포함). 사례: 오스템임플란트(현직 치과의사 UT), LG생활건강, 서민금융진흥원, 청담에듀
+- [UX Research Agency in Korea (English)](https://www.superplanning.co.kr/en/ux-research/): English page — UX research in Korea for global teams: participant recruiting in Korea (consumers, B2B professionals, specialists, seniors, foreign residents), user interviews, focus groups, usability testing (in a Seoul lab or remote), English moderation, live interpretation, English reports, overseas users (U.S., Japan, etc.) and cross-country store UT (Shopify, Cafe24)
 - [UX라이팅](https://www.superplanning.co.kr/ux-writing/): 보이스앤톤, UI텍스트 개선, 마이크로카피, 패러프레이즈 테스트, AI챗봇 시나리오, 네이밍·키메시지
 - [UI/UX기획·디자인](https://www.superplanning.co.kr/ux-design/): UI/UX기획·디자인 전문 에이전시. 앱·웹 UX 개선과 리뉴얼, IA, 사용자 플로우, 와이어프레임, 화면설계서, UI디자인, 디자인 시스템, 바이브코딩 프로토타입. UX컨설팅/UX진단, 스타트업·예비창업팀·대학 연구과제의 필요한 항목만 부분 의뢰 가능, 정부·대학 지원사업 계약 서류·산출물 대응
 - [웹/앱 개발](https://www.superplanning.co.kr/web-app-development/): 하이브리드·네이티브 앱, 웹서비스, DB·서버·프론트 풀스택, AI서비스 개발, IT유지보수. 퍼블리싱(웹 표준·반응형·관리자 화면, 퍼블리싱 단독 의뢰)과 제품 상세페이지 HTML 변환(온라인몰 규격 HTML 소스 제공). 퍼블리싱 이력: 국토교통부 공간 빅데이터 체계, KT OneBox, CJ대한통운, HD현대인프라코어, 한국비씨피솔루션즈
@@ -96,6 +97,7 @@
 
 - [전체 지식베이스 (llms-full.txt)](https://www.superplanning.co.kr/llms-full.txt)
 - [UX리서치 마크다운](https://www.superplanning.co.kr/services/ux-research.md)
+- [UX Research (English) Markdown](https://www.superplanning.co.kr/services/ux-research-en.md)
 - [UX라이팅 마크다운](https://www.superplanning.co.kr/services/ux-writing.md)
 - [UX기획·디자인 마크다운](https://www.superplanning.co.kr/services/ux-planning-design.md)
 - [UX전략 마크다운](https://www.superplanning.co.kr/services/ux-strategy.md)
