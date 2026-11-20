@@ -48,6 +48,7 @@
 
 ## UX 블로그
 
+- [해외 자사몰 사용성 테스트(UT) 대행: 쇼피파이 해외몰 현지 사용자 섭외부터 영문 보고서까지](https://www.superplanning.co.kr/ux-blog/overseas-shopify-store-usability-test-agency/): UX리서치
 - [국내 거주 외국인 인터뷰·사용성 테스트 대행: 다국적 섭외부터 통역·영문 보고서까지](https://www.superplanning.co.kr/ux-blog/foreign-resident-interview-usability-test-agency/): UX리서치
 - [사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법](https://www.superplanning.co.kr/ux-blog/user-interview-participant-recruiting-agency/): UX리서치
 - [AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다](https://www.superplanning.co.kr/ux-blog/ai-service-planning-training-instructor-guide/): UX강의
