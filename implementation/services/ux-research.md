@@ -3,7 +3,7 @@ title: "UX리서치 | FGI·사용성 테스트(UT)·사용자 인터뷰 대행 �
 description: "전환율이 오르지 않는 진짜 이유, 오프라인에서 사용자에게 직접 확인하세요. FGI·사용성 테스트(UT)로 이탈 원인을 찾고, UI/UX 개선 근거를 도출합니다. 슈퍼플래닝의 UX리서치는 조사 설계, 리서치 대상자 섭외, 모더레이터(진행자) 진행, UX 개선안까지 올인원 서비스입니다."
 keywords: "외국인 리서치, 중국인 인터뷰, 베트남인 인터뷰, 외국인 다국적 섭외, 국내 거주 외국인 인터뷰, 외국인 FGI, 외국인 사용성 테스트, 외국인 인터뷰 대상자 섭외, 리서치 통역, 실시간 통역 FGI, 영문 리서치 보고서, UX리서치, UX리서치 대행, UX리서치 전문회사, FGI 대행, FGI조사 회사, 사용성 테스트 대행, UT조사 회사, IDI조사, 사용자 인터뷰 회사, 원격 인터뷰, 사용자 리크루팅 대행, 사용자 인터뷰 리크루팅, FGI 대행 업체, 인터뷰 참가자 모집 대행, 사례비 지급 대행, 점주 인터뷰, 전문직 섭외, UX리서치 강의, 슈퍼플래닝, Superplanning"
 canonical: "https://www.superplanning.co.kr/ux-research/"
-updated: "2026-11-20"
+updated: "2026-11-21"
 ---
 
 # UX리서치 (UX Research) | 슈퍼플래닝 (Superplanning)
@@ -142,6 +142,12 @@ FGI 진행 순서, 그룹 인원, 리서치 대상자 사례비(보통 1인 10~2
 | 영문 번역 리서치 보고서 | 결과보고서를 영문으로 번역해 해외 본사·글로벌 팀과 공유 |
 
 필요한 항목만 골라 견적에 넣어 안내해 드립니다.
+
+외국인·해외 사용자 리서치를 준비하신다면 아래 글도 함께 참고해 보세요.
+
+- [국내 거주 외국인 인터뷰·사용성 테스트 대행: 다국적 섭외부터 통역·영문 보고서까지](https://www.superplanning.co.kr/ux-blog/foreign-resident-interview-usability-test-agency/)
+- [해외 자사몰 사용성 테스트(UT) 대행: 쇼피파이 해외몰 현지 사용자 섭외부터 영문 보고서까지](https://www.superplanning.co.kr/ux-blog/overseas-shopify-store-usability-test-agency/)
+- [UX Research Agency in Korea (English)](https://www.superplanning.co.kr/en/ux-research/)
 
 ---
 
