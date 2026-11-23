@@ -1398,44 +1398,9 @@
   <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
   <div id="desktop">
     <div id="iconsArea">
-      <!-- 1. 슈퍼플래닝 소개 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('about');">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <path d="M6 30h24V14H6v16z" fill="#ffffff" />
-          <path d="M10 17h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zm-12 6h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4z" fill="#000000"/>
-          <path d="M14 8h8v6h-8z" fill="#ffffff"/>
-          <path d="M16 10h4v4h-4z" fill="#000000"/>
-        </svg>
-        <div class="icon-label">슈퍼플래닝</div>
-      </div>
-
-      <!-- 1-2. 주요 고객사 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('clients');">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <path d="M6 28h24V12H6v16z" fill="#ffffff"/>
-          <path d="M9 15h4v10H9zm7 0h4v10h-4zm7 0h4v10h-4z" fill="#000000"/>
-          <path d="M6 10l12-5 12 5v2H6z" fill="#ffffff"/>
-        </svg>
-        <div class="icon-label">주요 고객사</div>
-      </div>
-
-      <!-- 2. UX서비스 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('services');">
-        <svg class="icon-svg" viewBox="0 0 36 36">
-          <rect width="36" height="36" fill="#000000" rx="4"/>
-          <rect x="6" y="6" width="24" height="24" fill="#ffffff"/>
-          <rect x="9" y="9" width="8" height="8" fill="#000000"/>
-          <rect x="19" y="9" width="8" height="8" stroke="#000000" stroke-width="2" fill="none"/>
-          <rect x="9" y="19" width="18" height="8" fill="#000000"/>
-          <rect x="11" y="21" width="14" height="4" fill="#ffffff"/>
-        </svg>
-        <div class="icon-label">UX서비스</div>
-      </div>
 
       <!-- 5. 인스타그램 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('instagram');">
+      <div class="desktop-icon" data-ico="instagram" onclick="selectIcon(this); openWindow('instagram');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="7" y="7" width="22" height="22" rx="6" fill="#ffffff"/>
@@ -1447,7 +1412,7 @@
       </div>
 
       <!-- 6. 스레드 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('threads');">
+      <div class="desktop-icon" data-ico="threads" onclick="selectIcon(this); openWindow('threads');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
@@ -1458,7 +1423,7 @@
       </div>
 
       <!-- 7. 소개영상 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('intro-video');">
+      <div class="desktop-icon" data-ico="youtube" onclick="selectIcon(this); openWindow('intro-video');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="4"/>
@@ -1466,9 +1431,15 @@
         </svg>
         <div class="icon-label">유튜브</div>
       </div>
+      <!-- 156. 링크드인 -->
+      <a class="desktop-icon" data-ico="linkedin" href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener" onclick="selectIcon(this);"><div class="icon-label">링크드인</div></a>
+
+      <!-- 156. 네이버 블로그 -->
+      <a class="desktop-icon" data-ico="blog" href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener" onclick="selectIcon(this);"><div class="icon-label">블로그</div></a>
+
 
       <!-- 8. 찾아오시는 길 -->
-      <div class="desktop-icon" onclick="selectIcon(this); openWindow('contact');">
+      <div class="desktop-icon" data-ico="map" onclick="selectIcon(this); openWindow('contact');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <path d="M18 6c-5.52 0-10 4.48-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#ffffff"/>
