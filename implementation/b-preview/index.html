@@ -1588,8 +1588,8 @@
       'brochure': { w: 1000, h: 780, title: '포트폴리오 보기' },
       'instagram': { w: 720, h: 800, title: '인스타그램' },
       'threads': { w: 600, h: 460, title: '스레드' },
-      'naverblog': { w: 900, h: 800, title: '블로그' },
-      'linkedin': { w: 720, h: 560, title: '링크드인' },
+      'naverblog': { w: 600, h: 460, title: '블로그' },
+      'linkedin': { w: 600, h: 460, title: '링크드인' },
     };
 
     function getMinWindowTop() {
@@ -1724,7 +1724,6 @@
       if (isMobile) {
         setTimeout(() => winEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       }
-      if (key === 'linkedin') spbLiBadge();
       if (key === 'about') setTimeout(typeWriterHero, 60);
     }
 
@@ -1982,23 +1981,40 @@
         `;
       } else if (key === 'linkedin') {
         return `
-          <div class="sp-pop sp-pop-media">
+          <div class="sp-pop">
             <div class="sp-pop-bar">
               <span class="sp-pop-addr">https://www.linkedin.com/in/uxjake/</span>
               <a href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
             </div>
-            <div class="sp-pop-li"><div class="badge-base LI-profile-badge" data-locale="ko_KR" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="uxjake" data-version="v1"></div></div>
-            <div class="sp-pop-foot"><b>김휘수 (UX기획자 제이크)</b><span>UX디자인 에이전시 슈퍼플래닝 대표 · UX컨설턴트</span></div>
+            <div class="sp-pop-card sp-pop-profile">
+              <div class="sp-pop-logo"><span class="sp-pop-ico" data-ico="linkedin" aria-hidden="true"></span></div>
+              <div class="sp-pop-who">
+                <h3 class="sp-pop-h">김휘수 (UX기획자 제이크)</h3>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 대표 · UX컨설턴트</p>
+                <p class="sp-pop-p">UX리서치·UX라이팅·UI/UX기획·디자인 프로젝트 이야기와<br>AI활용 UX강의 소식을 공유합니다.</p>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener noreferrer" class="sp-pop-cta">LinkedIn 프로필 방문하기 (uxjake)<i class="sp-arw w" aria-hidden="true"></i></a>
+            <p class="sp-pop-note c">LinkedIn 외부 보안 정책에 따라 버튼을 누르면 공식 프로필로 바로 연결됩니다.</p>
           </div>
         `;
       } else if (key === 'naverblog') {
         return `
-          <div class="sp-pop sp-pop-media">
+          <div class="sp-pop">
             <div class="sp-pop-bar">
               <span class="sp-pop-addr">https://blog.naver.com/ux_superplanning</span>
               <a href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
             </div>
-            <iframe class="sp-pop-frame sp-pop-doc sp-pop-blog" src="https://blog.naver.com/ux_superplanning" loading="lazy" title="슈퍼플래닝 공식 네이버 블로그"></iframe>
+            <div class="sp-pop-card sp-pop-profile">
+              <div class="sp-pop-logo"><span class="sp-pop-ico" data-ico="blog" aria-hidden="true"></span></div>
+              <div class="sp-pop-who">
+                <h3 class="sp-pop-h">ux_superplanning</h3>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 공식 네이버 블로그</p>
+                <p class="sp-pop-p">UX리서치·UX라이팅 실무 노하우와 프로젝트 사례,<br>에이전시 소식을 공유합니다.</p>
+              </div>
+            </div>
+            <a href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener noreferrer" class="sp-pop-cta">네이버 블로그 방문하기 (ux_superplanning)<i class="sp-arw w" aria-hidden="true"></i></a>
+            <p class="sp-pop-note c">네이버 블로그 외부 보안 정책에 따라 버튼을 누르면 공식 블로그로 바로 연결됩니다.</p>
           </div>
         `;
       } else if (key === 'threads') {
@@ -2340,13 +2356,6 @@
     document.addEventListener('click', function () { setTimeout(spbDimSync, 0); }, true);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && window.innerWidth > 768) { var k = spbTopPop(); if (k) { closeWindow(k); spbDimSync(); } } });
 
-
-    /* 161: 링크드인 공식 프로필 배지 — 팝업을 열 때만 스크립트 로드 */
-    function spbLiBadge() {
-      if (window.LIRenderAll) { try { window.LIRenderAll(); } catch (e) {} return; }
-      if (document.getElementById('spbLiJs')) return;
-      var sc = document.createElement('script'); sc.id = 'spbLiJs'; sc.async = true; sc.src = 'https://platform.linkedin.com/badges/js/profile.js'; document.body.appendChild(sc);
-    }
     function initDirectAccess() {
       const minTop = getMinWindowTop();
       if (window.innerWidth <= 768) {

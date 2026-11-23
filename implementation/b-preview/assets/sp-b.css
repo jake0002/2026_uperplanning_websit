@@ -1526,10 +1526,10 @@ html.sp-b .w-body .sp-prin-card { background: var(--sp-inset); box-shadow: var(-
 html.sp-b .w-body .sp-prin-card h4 { margin: 0 0 6px !important; font: 700 15px/1.45 var(--sp-font) !important; color: var(--sp-text) !important; }
 html.sp-b .w-body .sp-prin-card p { margin: 0 !important; font: 400 14px/1.75 var(--sp-font) !important; color: var(--sp-text-2) !important; word-break: keep-all; }
 html.sp-b .w-body .sp-prin-card p b { font-weight: 700; color: var(--sp-text-2); }
-/* 161 링크드인·블로그 팝업 */
-html.sp-b .sp-pop-li { min-height: 300px; display: flex; align-items: center; justify-content: center; border-radius: var(--sp-r-m); background: var(--sp-inset); box-shadow: var(--sp-inset-s); padding: 20px; }
-html.sp-b .sp-pop-li .LI-profile-badge { max-width: 100%; }
-html.sp-b .sp-pop-blog { height: 640px; }
-@media (max-width: 768px) { html.sp-b .sp-pop-blog { height: 70vh; } html.sp-b .w-body .sp-prin-card { padding: 16px 18px; } html.sp-b .w-body .sp-prin-card p br { display: none; } }
+@media (max-width: 768px) { html.sp-b .w-body .sp-prin-card { padding: 16px 18px; } html.sp-b .w-body .sp-prin-card p br { display: none; } }
 /* 161-3 UX라이팅 산출물 2장 배경 통일(사용자 11-23 21:51): 보이스앤톤 카드에 보이는 색(이미지 #F5F7F9 × 면 #F5F7F9 곱하기 = #EBEFF3) 기준. 가이드북은 흰 배경 이미지라 곱하기 결과 = 면 색 → 면을 #EBEFF3 으로 */
 html.sp-b .sp-books figure:first-child { background: #EBEFF3 !important; }
+/* 162 링크드인·블로그 팝업 = 스레드 창 방식(프로필 카드 + 방문 버튼). 로고 타일 안 아이콘 = 바탕화면 아이콘과 같은 선 그림 */
+html.sp-b .sp-pop-ico { display: block; width: 60px; height: 60px; border-radius: 16px; background: var(--sp-surface) center / 30px 30px no-repeat; box-shadow: 3px 3px 8px rgba(26,31,36,.18), -3px -3px 8px rgba(255,255,255,.8); }
+html.sp-b .sp-pop-ico[data-ico="linkedin"] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='4'/%3E%3Cpath d='M8 10.5V16.5M12 16.5V10.5M12 13.3c0-1.6 1-2.8 2.5-2.8s2.5 1.2 2.5 2.8v3.2'/%3E%3Ccircle cx='8' cy='7.6' r='.6' fill='%23111'/%3E%3C/svg%3E"); }
+html.sp-b .sp-pop-ico[data-ico="blog"] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4.5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.5L9 20.5v-3H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z'/%3E%3Cpath d='M8.5 8v5.5'/%3E%3Ccircle cx='10.6' cy='11.4' r='2.1'/%3E%3Cpath d='M15 9.2v4.3'/%3E%3C/svg%3E"); }
