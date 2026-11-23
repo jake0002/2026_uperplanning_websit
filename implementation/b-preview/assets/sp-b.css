@@ -1467,3 +1467,55 @@ html.sp-b .sp-rv-prog { display: flex; gap: 6px; margin-top: 20px; } html.sp-b .
   html.sp-b figure.sp-dd .sp-dd-col ul { position: static; transform: none !important; width: auto; margin-top: 10px !important; } }
 /* 158 보정: 후기 보드 검정 바탕(섹션 공통 초기화보다 우선), 다이아몬드 명암 */
 html.sp-b .main-content-pane section.sp-rv { background: var(--sp-ink) !important; padding: 30px 32px 26px !important; border-radius: var(--sp-r-l) !important; }
+/* 160 웹/앱 개발(피그마 41:1366): 검정 안내 박스, 카드 목록 줄, NUGU 공식 에이전시 카드, 상세페이지 HTML 변환 도식, 오목 미니 카드 */
+html.sp-b .main-content-pane .sp-lines .sp-card p { line-height: 1.75 !important; }
+html.sp-b .main-content-pane .sp-blackbox { margin-top: 22px !important; margin-bottom: 18px !important; }
+html.sp-b .main-content-pane .sp-blackbox h3 { margin: 0 0 8px !important; font: 700 16px/1.45 var(--sp-font) !important; }
+html.sp-b .main-content-pane .sp-blackbox p { margin: 0 !important; font-size: 13px !important; line-height: 1.7 !important; color: #C9CDD2 !important; max-width: none !important; }
+html.sp-b .sp-inset .sp-card { background: var(--sp-inset); border-color: transparent; box-shadow: var(--sp-inset-s); }
+html.sp-b figure.sp-nugu, html.sp-b figure.sp-hconv { margin: 6px 0 18px !important; padding: 0 !important; max-width: 740px; }
+html.sp-b .sp-nugu-card, html.sp-b .sp-hc-card { background: var(--sp-surface); border-radius: var(--sp-r-l); box-shadow: var(--sp-raised-m); padding: 26px 28px; display: flex; align-items: center; gap: 28px; }
+html.sp-b .sp-nugu-logos { flex: none; display: flex; align-items: center; gap: 14px; }
+html.sp-b .sp-nugu-logos > i { font-style: normal; font: 500 16px/1 var(--sp-font); color: var(--sp-text-3); }
+html.sp-b .sp-nugu-tile { width: 132px; height: 132px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background: var(--sp-surface); box-shadow: var(--sp-raised-s); }
+html.sp-b .sp-nugu-tile.is-dark { background: var(--sp-ink); box-shadow: none; }
+html.sp-b .sp-nugu-tile img { display: block; width: auto !important; height: auto !important; max-width: 100px; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+html.sp-b .sp-nugu-badge { display: inline-flex; align-items: center; height: 22px; padding: 0 10px; border-radius: 999px; background: var(--sp-ink); color: #fff; font: 700 10.5px/1 var(--sp-font); letter-spacing: .04em; }
+html.sp-b .main-content-pane .sp-nugu-txt h3 { margin: 10px 0 10px !important; font: 700 17px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; }
+html.sp-b .main-content-pane .sp-nugu-txt p { margin: 0 !important; font-size: 12.5px !important; line-height: 1.7 !important; color: var(--sp-text-2) !important; max-width: none !important; }
+html.sp-b .main-content-pane .sp-nugu-txt p a { color: inherit !important; text-decoration: underline; text-underline-offset: 2px; }
+html.sp-b .main-content-pane .sp-nugu-txt p.sp-nugu-case { margin-top: 10px !important; position: relative; padding-left: 14px; font-size: 11.5px !important; font-weight: 600; color: var(--sp-text) !important; }
+html.sp-b .main-content-pane .sp-nugu-txt p.sp-nugu-case::before { content: ''; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--sp-ink); }
+html.sp-b figure.sp-nugu figcaption, html.sp-b figure.sp-hconv figcaption { text-align: left !important; margin-top: 10px; }
+/* 상세페이지 HTML 변환 도식 */
+html.sp-b .sp-hc-card { padding: 18px 26px 18px 18px; gap: 18px; }
+html.sp-b .sp-hc-l { flex: 0 0 160px; background: var(--sp-surface); border-radius: var(--sp-r-m); box-shadow: var(--sp-raised-s); padding: 12px; }
+html.sp-b .sp-hc-l b { display: block; font: 700 11px/1.3 var(--sp-font); color: var(--sp-text); margin: 0 0 8px; }
+html.sp-b .sp-hc-l ul { list-style: none; margin: 0 !important; padding: 0 !important; display: grid; gap: 6px; }
+html.sp-b .sp-hc-l li { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); font: 500 10.5px/1.3 var(--sp-font); color: var(--sp-text-2); white-space: nowrap; }
+html.sp-b .sp-hc-l li em { flex: none; font: 600 9px/1 var(--sp-mono); font-style: normal; padding: 3px 6px; border-radius: 4px; background: var(--sp-inset); color: var(--sp-text-3); }
+html.sp-b .sp-hc-l li.is-t { color: var(--sp-text); font-weight: 600; } html.sp-b .sp-hc-l li.is-t em { background: var(--sp-ink); color: #fff; }
+html.sp-b .sp-hc-arr { flex: none; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+html.sp-b .sp-hc-arr i.sp-arr { width: 40px; } html.sp-b .sp-hc-arr small { font: 500 9.5px/1 var(--sp-font); color: var(--sp-text-2); }
+html.sp-b .sp-hc-code { flex: 1; min-width: 0; background: var(--sp-ink); border-radius: var(--sp-r-m); padding: 12px 12px 10px; color: #fff; }
+html.sp-b .sp-hc-bar { display: flex; align-items: center; gap: 4px; font: 500 10px/1 var(--sp-mono); color: #C9CDD2; margin-bottom: 10px; }
+html.sp-b .sp-hc-bar i { width: 5px; height: 5px; border-radius: 50%; background: #6B7178; } html.sp-b .sp-hc-bar i:last-of-type { margin-right: 6px; }
+html.sp-b .sp-hc-code ol { list-style: none; margin: 0 !important; padding: 0 !important; display: grid; gap: 3px; }
+html.sp-b .sp-hc-code li { padding: 3px 6px; border-radius: 4px; }
+html.sp-b .sp-hc-code li code { font: 500 10px/1.4 var(--sp-mono); color: #8C939B; background: none; padding: 0; white-space: nowrap; }
+html.sp-b .sp-hc-code li.is-hl { background: #3A3F45; } html.sp-b .sp-hc-code li.is-hl code { color: #fff; font-weight: 600; }
+html.sp-b .sp-hc-code small { display: block; margin-top: 8px; font: 500 9.5px/1.3 var(--sp-font); color: #C9CDD2; }
+@media (max-width: 768px) {
+  html.sp-b .sp-nugu-card { flex-direction: column; align-items: flex-start; padding: 20px; gap: 18px; }
+  html.sp-b .sp-nugu-tile { width: 96px; height: 96px; border-radius: 20px; } html.sp-b .sp-nugu-tile img { max-width: 76px; }
+  html.sp-b .sp-hc-card { flex-direction: column; align-items: stretch; padding: 16px; }
+  html.sp-b .sp-hc-l { flex: none; } html.sp-b .sp-hc-arr { flex-direction: row; } html.sp-b .sp-hc-arr i.sp-arr { transform: rotate(90deg); width: 28px; }
+  html.sp-b .sp-hc-code li code { white-space: normal; overflow-wrap: anywhere; } }
+html.sp-b .main-content-pane .sp-nugu-tile img { box-shadow: none !important; filter: none !important; max-width: 96px !important; }
+html.sp-b .main-content-pane .sp-nugu-tile:not(.is-dark) img { max-width: 100px !important; }
+html.sp-b .main-content-pane .hero-intro.sp-hero-pill .sp-type-box { display: block; margin-top: 16px; }
+html.sp-b .main-content-pane .hero-intro.sp-hero-pill .sp-type { display: inline-block; border-radius: 10px !important; padding: 10px 16px !important; font-size: 13.5px !important; line-height: 1.5 !important; border: 0 !important; }
+@media (max-width: 768px) {
+  html.sp-b .sp-cards.sp-m1 { grid-template-columns: 1fr; }
+  html.sp-b table.sp-tb-nw td:first-child strong { white-space: nowrap; }
+  html.sp-b:has(figure.sp-nugu) .main-content-pane h2 { text-wrap: balance; } }
