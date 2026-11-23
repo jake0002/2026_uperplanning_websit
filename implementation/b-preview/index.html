@@ -1432,10 +1432,10 @@
         <div class="icon-label">유튜브</div>
       </div>
       <!-- 156. 링크드인 -->
-      <a class="desktop-icon" data-ico="linkedin" href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener" onclick="selectIcon(this);"><div class="icon-label">링크드인</div></a>
+      <div class="desktop-icon" data-ico="linkedin" onclick="selectIcon(this); openWindow('linkedin');"><div class="icon-label">링크드인</div></div>
 
       <!-- 156. 네이버 블로그 -->
-      <a class="desktop-icon" data-ico="blog" href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener" onclick="selectIcon(this);"><div class="icon-label">블로그</div></a>
+      <div class="desktop-icon" data-ico="blog" onclick="selectIcon(this); openWindow('naverblog');"><div class="icon-label">블로그</div></div>
 
 
       <!-- 8. 찾아오시는 길 -->
@@ -1588,6 +1588,8 @@
       'brochure': { w: 1000, h: 780, title: '포트폴리오 보기' },
       'instagram': { w: 720, h: 800, title: '인스타그램' },
       'threads': { w: 600, h: 460, title: '스레드' },
+      'naverblog': { w: 900, h: 800, title: '블로그' },
+      'linkedin': { w: 720, h: 560, title: '링크드인' },
     };
 
     function getMinWindowTop() {
@@ -1722,6 +1724,7 @@
       if (isMobile) {
         setTimeout(() => winEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       }
+      if (key === 'linkedin') spbLiBadge();
       if (key === 'about') setTimeout(typeWriterHero, 60);
     }
 
@@ -1770,6 +1773,12 @@
             </p>
           </div>
 
+          <div class="sp-prin">
+            <h4 class="sp-prin-h">UX프로젝트 수행원칙</h4>
+            <div class="sp-prin-card"><h4>1. 3초, 고객이 지갑을 닫고 떠나는 시간.</h4><p>첫 3초가 전환율의 80%를 결정합니다.<br>3초 안에 고객이 무엇을 눌러야 할지 가장 직관적인 경험을 설계합니다.</p></div>
+            <div class="sp-prin-card"><h4>2. 그렇게 쓰면 아무도 안 읽습니다.</h4><p>사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고,<br>명확한 UX라이팅으로 다음 행동을 유도합니다.</p></div>
+            <div class="sp-prin-card"><h4>3. 더 적게 하지만 더 좋게.</h4><p>디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다.<br><b>'Less but better'</b></p></div>
+          </div>
         `;
       } else if (key === 'services') {
         return `
@@ -1969,6 +1978,27 @@
             </div>
             <iframe class="sp-pop-frame sp-pop-doc sp-pop-insta" src="https://www.instagram.com/ux_superplanning/embed" allowtransparency="true" frameborder="0" scrolling="no" title="Superplanning Instagram"></iframe>
             <div class="sp-pop-foot"><b>@ux_superplanning</b><span>슈퍼플래닝 공식 인스타그램</span></div>
+          </div>
+        `;
+      } else if (key === 'linkedin') {
+        return `
+          <div class="sp-pop sp-pop-media">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://www.linkedin.com/in/uxjake/</span>
+              <a href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <div class="sp-pop-li"><div class="badge-base LI-profile-badge" data-locale="ko_KR" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="uxjake" data-version="v1"></div></div>
+            <div class="sp-pop-foot"><b>김휘수 (UX기획자 제이크)</b><span>UX디자인 에이전시 슈퍼플래닝 대표 · UX컨설턴트</span></div>
+          </div>
+        `;
+      } else if (key === 'naverblog') {
+        return `
+          <div class="sp-pop sp-pop-media">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://blog.naver.com/ux_superplanning</span>
+              <a href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <iframe class="sp-pop-frame sp-pop-doc sp-pop-blog" src="https://blog.naver.com/ux_superplanning" loading="lazy" title="슈퍼플래닝 공식 네이버 블로그"></iframe>
           </div>
         `;
       } else if (key === 'threads') {
@@ -2310,6 +2340,13 @@
     document.addEventListener('click', function () { setTimeout(spbDimSync, 0); }, true);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && window.innerWidth > 768) { var k = spbTopPop(); if (k) { closeWindow(k); spbDimSync(); } } });
 
+
+    /* 161: 링크드인 공식 프로필 배지 — 팝업을 열 때만 스크립트 로드 */
+    function spbLiBadge() {
+      if (window.LIRenderAll) { try { window.LIRenderAll(); } catch (e) {} return; }
+      if (document.getElementById('spbLiJs')) return;
+      var sc = document.createElement('script'); sc.id = 'spbLiJs'; sc.async = true; sc.src = 'https://platform.linkedin.com/badges/js/profile.js'; document.body.appendChild(sc);
+    }
     function initDirectAccess() {
       const minTop = getMinWindowTop();
       if (window.innerWidth <= 768) {

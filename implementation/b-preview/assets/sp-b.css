@@ -1519,3 +1519,17 @@ html.sp-b .main-content-pane .hero-intro.sp-hero-pill .sp-type { display: inline
   html.sp-b .sp-cards.sp-m1 { grid-template-columns: 1fr; }
   html.sp-b table.sp-tb-nw td:first-child strong { white-space: nowrap; }
   html.sp-b:has(figure.sp-nugu) .main-content-pane h2 { text-wrap: balance; } }
+/* 161 메인 슈퍼플래닝 창: UX프로젝트 수행원칙(사용자 첨부 이미지) — 제목 + 오목 카드 3장 */
+html.sp-b .w-body .sp-prin { display: flex; flex-direction: column; gap: 18px; margin: 26px 0 4px; }
+html.sp-b .w-body .sp-prin .sp-prin-h { margin: 0 0 2px !important; font: 700 15px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; }
+html.sp-b .w-body .sp-prin-card { background: var(--sp-inset); box-shadow: var(--sp-inset-m); border-radius: var(--sp-r-m); padding: 20px 24px 18px; }
+html.sp-b .w-body .sp-prin-card h4 { margin: 0 0 6px !important; font: 700 15px/1.45 var(--sp-font) !important; color: var(--sp-text) !important; }
+html.sp-b .w-body .sp-prin-card p { margin: 0 !important; font: 400 14px/1.75 var(--sp-font) !important; color: var(--sp-text-2) !important; word-break: keep-all; }
+html.sp-b .w-body .sp-prin-card p b { font-weight: 700; color: var(--sp-text-2); }
+/* 161 링크드인·블로그 팝업 */
+html.sp-b .sp-pop-li { min-height: 300px; display: flex; align-items: center; justify-content: center; border-radius: var(--sp-r-m); background: var(--sp-inset); box-shadow: var(--sp-inset-s); padding: 20px; }
+html.sp-b .sp-pop-li .LI-profile-badge { max-width: 100%; }
+html.sp-b .sp-pop-blog { height: 640px; }
+@media (max-width: 768px) { html.sp-b .sp-pop-blog { height: 70vh; } html.sp-b .w-body .sp-prin-card { padding: 16px 18px; } html.sp-b .w-body .sp-prin-card p br { display: none; } }
+/* 161-3 UX라이팅 산출물 2장 배경 통일(사용자 11-23 21:51): 보이스앤톤 카드에 보이는 색(이미지 #F5F7F9 × 면 #F5F7F9 곱하기 = #EBEFF3) 기준. 가이드북은 흰 배경 이미지라 곱하기 결과 = 면 색 → 면을 #EBEFF3 으로 */
+html.sp-b .sp-books figure:first-child { background: #EBEFF3 !important; }
