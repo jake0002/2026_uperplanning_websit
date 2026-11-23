@@ -980,7 +980,7 @@ html.sp-b .sp-pop-note { padding: 0 4px; }
 /* 미디어 창: 주소창 + 버튼(오른쪽), 화면 크기 */
 html.sp-b .sp-pop-media { gap: 14px; }
 html.sp-b .sp-pop-video { aspect-ratio: 16 / 9; height: auto; }
-html.sp-b .sp-pop-insta { height: 700px; }
+html.sp-b .sp-pop-insta { height: 616px; }
 html.sp-b .sp-pop-pdf { height: 640px; }
 html.sp-b .win[data-key="intro-video"] .w-body, html.sp-b .win[data-key="instagram"] .w-body, html.sp-b .win[data-key="brochure"] .w-body { padding: 18px 20px 20px !important; }
 /* 스레드: 프로필 카드 — 로고는 오목 우물 안, 글 간격 정리 */
