@@ -705,7 +705,7 @@ html.sp-b #spPvToast { outline: 0 !important; animation: spbToastIn .35s ease-ou
 @media (min-width: 769px) {
   html.sp-b-home #gnb, html.sp-b-home #brandLogo, html.sp-b-home #iconsArea, html.sp-b-home #taskbar, html.sp-b-home #startMenu,
   html.sp-b-home .win .w-title { zoom: var(--k, 1); }
-  html.sp-b-home .win:not([data-key="intro-video"]):not([data-key="brochure"]):not([data-key="instagram"]) .w-body { zoom: var(--k, 1); }
+  html.sp-b-home .win .w-body { zoom: var(--k, 1); }
   html.sp-b-home #iconsArea { overflow: visible !important; padding: 6px 4px 12px !important; height: auto !important; }
   html.sp-b-home #desktop { overflow: visible !important; }
 }
@@ -713,15 +713,13 @@ html.sp-b #spPvToast { outline: 0 !important; animation: spbToastIn .35s ease-ou
   html.sp-b-home #skyscraper { zoom: var(--k, 1); position: absolute !important; max-height: none !important; overflow: visible !important; }
 }
 /* 창 = 내용 높이(세로 스크롤 없음). 영상·PDF·인스타그램 창만 고정 높이(내용이 외부 화면이라) */
-html.sp-b-home .win:not(.maximized):not([data-key="intro-video"]):not([data-key="brochure"]):not([data-key="instagram"]) { height: auto !important; }
-html.sp-b-home .win:not([data-key="intro-video"]):not([data-key="brochure"]):not([data-key="instagram"]) .w-body { overflow: visible !important; height: auto !important; }
-html.sp-b-home .win[data-key="intro-video"] .w-body, html.sp-b-home .win[data-key="brochure"] .w-body, html.sp-b-home .win[data-key="instagram"] .w-body {
-  overflow: hidden !important; display: flex; flex-direction: column; height: calc(100% - 44px * var(--k, 1)) !important; padding: 16px !important;
-}
+html.sp-b-home .win:not(.maximized) { height: auto !important; }
+html.sp-b-home .win .w-body { overflow: visible !important; height: auto !important; }
+/* (11-23 18:06) 영상·PDF·인스타그램 창도 내용 높이 + 같은 비율(--k) — 버튼·주소창 글자 크기가 다른 팝업과 같아짐 */
 
 /* 팝업 공통(B안) */
 html.sp-b .sp-pop { display: flex; flex-direction: column; gap: 14px; font-family: var(--sp-font); color: var(--sp-text); }
-html.sp-b .sp-pop-media { height: 100%; min-height: 0; }
+html.sp-b .sp-pop-media { min-height: 0; }
 html.sp-b .sp-pop-h { font: 700 18px/1.4 var(--sp-font) !important; margin: 0 !important; color: var(--sp-text) !important; }
 html.sp-b .sp-pop-lead { font: 500 14px/1.6 var(--sp-font); color: var(--sp-text-2); margin: -6px 0 0; }
 html.sp-b .sp-pop-p { font: 400 13.5px/1.75 var(--sp-font); color: var(--sp-text-2); margin: 0; word-break: keep-all; }
@@ -755,7 +753,6 @@ html.sp-b .sp-pop-btn { height: 36px; padding: 0 16px !important; display: inlin
 html.sp-b .sp-arw { display: inline-block; width: 24px; height: 6px; flex: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='6' viewBox='0 0 24 6'%3E%3Cpath d='M0 5.4H23.2L17 .6' fill='none' stroke='%23111' stroke-width='1.2'/%3E%3C/svg%3E") center / contain no-repeat; }
 html.sp-b .sp-arw.w { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='6' viewBox='0 0 24 6'%3E%3Cpath d='M0 5.4H23.2L17 .6' fill='none' stroke='%23fff' stroke-width='1.2'/%3E%3C/svg%3E"); }
 html.sp-b .sp-pop-frame { width: 100%; border: 0; border-radius: var(--sp-r-m); background: #111; display: block; box-shadow: var(--sp-raised-s); }
-html.sp-b .sp-pop-media .sp-pop-frame { flex: 1; min-height: 0; }
 html.sp-b .sp-pop-doc { background: #fff; }
 html.sp-b .sp-pop-foot { display: flex; gap: 10px; align-items: baseline; font: 400 12px/1.4 var(--sp-font); color: var(--sp-text-3); flex: none; }
 html.sp-b .sp-pop-foot b { font-weight: 600; color: var(--sp-text); }
@@ -969,3 +966,39 @@ html.sp-b #spbDim.on { opacity: 1; pointer-events: auto; cursor: pointer; }
 html.sp-b.spb-modal #windowArea { z-index: 1000005 !important; }
 html.sp-b .win.spb-modal-top { box-shadow: 0 24px 64px rgba(10,14,20,.30), 0 2px 8px rgba(10,14,20,.12) !important; }
 @media (prefers-reduced-motion: reduce) { html.sp-b #spbDim { transition: none; } }
+
+/* ── 11-23 18:06 팝업 보정 ── */
+/* 공통: 팝업 카드 = 볼록(테두리 없음), 칩 = 작은 볼록 알약, 이메일 행 = 오목 트레이 + 볼록 버튼 */
+html.sp-b .sp-pop-card { border: 0 !important; box-shadow: var(--sp-raised-s); padding: 20px 22px; gap: 12px; }
+html.sp-b .sp-pop-chips span { border: 0; background: var(--sp-surface); box-shadow: -2px -2px 5px rgba(255,255,255,.9), 2px 2px 5px rgba(26,31,36,.12); padding: 8px 14px; font-size: 12.5px; }
+html.sp-b .sp-pop > .sp-pop-row { background: var(--sp-inset); box-shadow: var(--sp-inset-s); }
+html.sp-b .sp-pop-row .w95-btn { background: var(--sp-surface) !important; box-shadow: -3px -3px 6px rgba(255,255,255,.9), 3px 3px 6px rgba(26,31,36,.14) !important; border: 0 !important; border-radius: var(--sp-pill) !important; }
+html.sp-b .sp-pop-sec { display: flex; flex-direction: column; gap: 10px; }
+html.sp-b .sp-pop-sec + .sp-pop-sec { padding-top: 14px; border-top: 1px solid rgba(26,31,36,.07); }
+html.sp-b .sp-pop-sub { letter-spacing: -.1px; }
+html.sp-b .sp-pop-note { padding: 0 4px; }
+/* 미디어 창: 주소창 + 버튼(오른쪽), 화면 크기 */
+html.sp-b .sp-pop-media { gap: 14px; }
+html.sp-b .sp-pop-video { aspect-ratio: 16 / 9; height: auto; }
+html.sp-b .sp-pop-insta { height: 700px; }
+html.sp-b .sp-pop-pdf { height: 640px; }
+html.sp-b .win[data-key="intro-video"] .w-body, html.sp-b .win[data-key="instagram"] .w-body, html.sp-b .win[data-key="brochure"] .w-body { padding: 18px 20px 20px !important; }
+/* 스레드: 프로필 카드 — 로고는 오목 우물 안, 글 간격 정리 */
+html.sp-b .sp-pop-profile { gap: 20px; padding: 22px 24px; }
+html.sp-b .sp-pop-logo { flex: none; width: 84px; height: 84px; border-radius: 24px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); display: flex; align-items: center; justify-content: center; }
+html.sp-b .sp-pop-profile .sp-pop-logo img { width: 60px; height: 60px; border-radius: 16px; box-shadow: 3px 3px 8px rgba(26,31,36,.18), -3px -3px 8px rgba(255,255,255,.8); }
+html.sp-b .sp-pop-who { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+html.sp-b .sp-pop-who .sp-pop-h { font-size: 17px !important; line-height: 1.35 !important; }
+html.sp-b .sp-pop-who .sp-pop-lead { margin: 0; font: 600 13.5px/1.5 var(--sp-font); color: var(--sp-text); }
+html.sp-b .sp-pop-who .sp-pop-p { margin-top: 6px; font-size: 13px; line-height: 1.7; }
+html.sp-b .sp-pop-cta { height: 46px; font-size: 13.5px; box-shadow: 4px 4px 10px rgba(26,31,36,.22), -4px -4px 10px rgba(255,255,255,.9); }
+html.sp-b .sp-pop-note.c { text-align: center; }
+/* 찾아오시는 길: 뉴모피즘 지도(피그마 81:2122) */
+html.sp-b .sp-pop-mapwrap { height: auto; padding: 0; background: none; box-shadow: none; }
+html.sp-b .sp-map { display: block; width: 100%; height: auto; border-radius: 20px; }
+html.sp-b .sp-map .r { filter: drop-shadow(-5px -5px 5px rgba(255,255,255,.95)) drop-shadow(5px 5px 5px rgba(26,31,36,.14)); }
+html.sp-b .sp-map text { font-family: var(--sp-font); }
+html.sp-b .sp-pop-head { display: flex; flex-direction: column; gap: 6px; }
+html.sp-b .sp-pop-head .sp-pop-lead { margin: 0; }
+html.sp-b .sp-pop-mapwrap { position: relative; border-radius: 20px; overflow: hidden; }
+html.sp-b .sp-pop-mapwrap::after { content: ''; position: absolute; inset: 0; border-radius: 20px; pointer-events: none; box-shadow: inset 4px 4px 8px rgba(26,31,36,.14), inset -4px -4px 8px rgba(255,255,255,.9); }
