@@ -838,3 +838,58 @@ html.sp-b #startMenu .start-item { width: auto !important; white-space: nowrap; 
   html.sp-b .main-content-pane > p, html.sp-b .main-content-pane .hero-intro { max-width: 1183px; }
 }
 html.sp-b ul.tree-list::before, html.sp-b ul.tree-list::after { display: none !important; }
+
+/* =====================================================================
+   보정 4차(사용자 11-23 14:38)
+   ===================================================================== */
+/* 아트보드 가운데 정렬: 고정 요소 좌우 위치에 --x0v(축소 전 단위) 더함 */
+@media (min-width: 769px) {
+  html.sp-b #gnb, html.sp-b #taskbar { left: calc(var(--x0v, 0px) + 40px) !important; right: calc(var(--x0v, 0px) + 40px) !important; }
+  html.sp-b #brandLogo { left: calc(var(--x0v, 0px) + 240px) !important; }
+  html.sp-b-home #iconsArea { left: calc(var(--x0v, 0px) + 40px) !important; }
+  html.sp-b #startMenu { left: calc(var(--x0v, 0px) + 40px) !important; }
+  html.sp-b #scrollTopBtn.sp-top { right: calc(var(--x0v, 0px) + 40px) !important; }
+  html.sp-b:not(.sp-b-home) #stickyKakaoBanner { right: calc(var(--x0v, 0px) + 40px) !important; }
+  html.sp-b:not(.sp-b-home) .page-wrapper { padding-left: calc(var(--x0v, 0px) + 40px) !important; padding-right: calc(var(--x0v, 0px) + 332px) !important; }
+}
+@media (min-width: 981px) { html.sp-b-home #skyscraper { right: calc(var(--x0v, 0px) + 40px) !important; } }
+
+/* 히어로: 피그마 4:9 형광등 점등 — 타이핑 없이 문구가 깜빡이며 켜지고 은은한 빛 유지(약 1.5초 점등 + 8초 유지 반복) */
+html.sp-b #heroTypingText > span { display: block; }
+html.sp-b .hero-banner-box .cmd-prompt { animation: spbFadeTo7 .9s ease-out .1s both; }
+html.sp-b #heroBody2Text { animation: spbRise .8s ease-out 1.3s both; }
+html.sp-b #heroTypingText { animation: spbFlick2 9.5s linear infinite !important; }
+@keyframes spbFadeTo7 { from { opacity: 0; } to { opacity: .7; } }
+@keyframes spbRise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes spbFlick2 {
+  0% { opacity: 0; text-shadow: none; } 1.5% { opacity: .9; } 3% { opacity: .12; } 4.5% { opacity: 1; } 6% { opacity: .25; } 8% { opacity: .25; }
+  9% { opacity: .85; } 10.5% { opacity: .35; } 13% { opacity: 1; text-shadow: 0 0 22px rgba(255,255,255,.35); }
+  16%, 96% { opacity: 1; text-shadow: 0 0 14px rgba(255,255,255,.22); } 100% { opacity: 1; text-shadow: 0 0 14px rgba(255,255,255,.22); }
+}
+@media (prefers-reduced-motion: reduce) { html.sp-b #heroTypingText, html.sp-b #heroBody2Text, html.sp-b .hero-banner-box .cmd-prompt { animation: none !important; opacity: 1; } }
+
+/* 전체 메뉴: 영문·아이콘 제거, 여유 있는 간격 */
+html.sp-b #startMenu { width: 360px !important; padding: 26px 24px 24px !important; }
+html.sp-b .spm2-head { margin: 0 2px 18px; }
+html.sp-b .spm2-cap { margin: 20px 4px 10px; font-size: 11.5px; }
+html.sp-b .spm2-quick { grid-template-columns: 1fr 1fr !important; gap: 12px; }
+html.sp-b .spm2-q { height: 46px !important; flex-direction: row !important; gap: 0 !important; font-size: 13px !important; font-weight: 500 !important; }
+html.sp-b .spm2-q i { display: none !important; }
+html.sp-b .spm2-grid { gap: 12px; }
+html.sp-b .spm2-m { height: 46px !important; padding: 0 18px 0 22px !important; gap: 12px !important; font-weight: 500 !important; }
+html.sp-b .spm2-m.is-current { font-weight: 600 !important; }
+
+/* UX 서비스 카드 특허 배지: 작고 촘촘하게(피그마 Badge/Patent 3:75) */
+html.sp-b .card-grid .info-card h4 span[title] { padding: 3px 8px 3px 7px !important; margin-left: 8px !important; display: inline-flex !important; align-items: center; gap: 4px !important; vertical-align: 1px !important; }
+html.sp-b .card-grid .info-card h4 span[title]::before { content: '' !important; width: 4px; height: 4px; border-radius: 50%; background: var(--sp-ink); }
+html.sp-b .card-grid .info-card h4 span[title]::after { content: '특허'; font: 600 9.5px/1 var(--sp-font); color: var(--sp-text); letter-spacing: -.1px; }
+
+/* 바탕화면 아이콘: 누르는 동안만 오목, 창이 열리면 다시 볼록 */
+html.sp-b .desktop-icon.selected::before { background-color: var(--sp-surface) !important; box-shadow: var(--sp-raised-s) !important; }
+html.sp-b .desktop-icon:active::before { background-color: var(--sp-inset) !important; box-shadow: var(--sp-inset-s) !important; }
+
+/* 언어 전환 글자 세로 가운데 */
+html.sp-b .sp-lang a, html.sp-b .sp-lang b { display: block !important; height: 26px !important; line-height: 26px !important; padding: 0 10px !important; text-align: center; }
+html.sp-b .sp-lang { align-items: center !important; }
+html.sp-b #startMenu .start-item.spm2-m { padding: 0 18px 0 22px !important; gap: 12px !important; }
+html.sp-b #startMenu .start-item.spm2-q { padding: 0 12px !important; justify-content: center !important; }
