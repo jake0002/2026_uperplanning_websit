@@ -1419,3 +1419,51 @@ html.sp-b .main-content-pane .sp-traybox p { margin: 0 !important; max-width: no
   html.sp-b ul.sp-caselinks a { flex-wrap: wrap; }
 }
 html.sp-b ul.sp-caselinks a b { flex: none; } html.sp-b ul.sp-caselinks a small { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* =====================================================================
+   158 — UX기획/디자인 보정(사용자 11-23 21:04)
+   ===================================================================== */
+html.sp-b .sp-logos-cap { margin: 10px 4px 0 !important; font: 500 12px/1.4 var(--sp-font) !important; color: var(--sp-text-3) !important; text-align: left; }
+@media (min-width: 769px) { html.sp-b .main-content-pane p.sp-1line { white-space: nowrap; } }
+/* 더블 다이아몬드(첨부 이미지): 볼록 다이아몬드 + 같은 폭 칩, 칩 묶음 = 다이아몬드 가운데 높이 */
+html.sp-b figure.sp-dd { min-height: 513px !important; background: var(--sp-surface) !important; border: 1px solid var(--sp-line) !important; }
+html.sp-b figure.sp-dd .sp-dd-bg { height: 513px !important; }
+html.sp-b figure.sp-dd .sp-dd-cols { height: 513px !important; display: grid; grid-template-columns: 293px 267px 268px 1fr; }
+html.sp-b figure.sp-dd .sp-dd-col { position: relative; display: block; padding-top: 22px; }
+html.sp-b figure.sp-dd .sp-dd-h { text-align: center; }
+html.sp-b figure.sp-dd .sp-dd-col ul { position: absolute; left: 50%; top: 57.7%; transform: translate(-50%, -50%) !important; width: 76%; margin: 0 !important; display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+html.sp-b figure.sp-dd .sp-dd-col:first-child ul { left: 54%; }
+html.sp-b figure.sp-dd .sp-dd-col:last-child ul { left: 46%; width: 72%; }
+html.sp-b figure.sp-dd .sp-dd-col li { text-align: center; background: #F2F4F7; border: 1px solid #D3D8DE; border-radius: 999px; padding: 9px 12px; font: 500 13px/1.2 var(--sp-font); color: var(--sp-text);
+  box-shadow: 3px 3px 8px rgba(26,31,36,.06), -3px -3px 8px rgba(255,255,255,.8); }
+/* 스타트업 고객 후기 = 카드형 보드(피그마 114:1993) */
+html.sp-b section.sp-rv { background: var(--sp-ink); border-radius: var(--sp-r-l); padding: 30px 32px 26px; margin-top: 22px !important; margin-bottom: 10px !important; color: #fff; }
+html.sp-b .sp-rv-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+html.sp-b .sp-rv-stars { font-size: 26px; letter-spacing: 2px; line-height: 1; color: #fff; }
+html.sp-b .main-content-pane .sp-rv-top p { margin: 10px 0 0 !important; font-size: 13px !important; color: #C9CDD2 !important; max-width: none !important; }
+html.sp-b .sp-rv-ctl { display: flex; align-items: center; gap: 16px; }
+html.sp-b .sp-rv-ctl button { border: 0; background: none; cursor: pointer; padding: 0; }
+html.sp-b .sp-rv-prev, html.sp-b .sp-rv-next { width: 40px; height: 24px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='7' viewBox='0 0 40 7'%3E%3Cpath d='M0 6.4H39L31 .6' fill='none' stroke='%23fff' stroke-width='1.2'/%3E%3C/svg%3E") center / 40px 7px no-repeat !important; }
+html.sp-b .sp-rv-prev { transform: scaleX(-1); }
+html.sp-b .sp-rv-count { font: 500 12px/1 var(--sp-mono); letter-spacing: .04em; color: #fff; min-width: 70px; text-align: center; }
+html.sp-b .sp-rv-ctl .sp-rv-pause { height: 32px; padding: 0 14px !important; border-radius: 999px; background: #fff !important; color: var(--sp-ink) !important; font: 600 12px/1 var(--sp-font); }
+html.sp-b ul.sp-rv-track { list-style: none; margin: 0 !important; padding: 0 0 4px !important; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3.25); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; }
+html.sp-b ul.sp-rv-track::-webkit-scrollbar { display: none; }
+html.sp-b .sp-rv-card { scroll-snap-align: start; background: #fff; border-radius: var(--sp-r-m); padding: 22px 22px 20px; display: flex; flex-direction: column; color: var(--sp-text); min-height: 300px; }
+html.sp-b .sp-rv-star { font-size: 13px; letter-spacing: 1px; color: var(--sp-ink); margin-bottom: 12px; }
+html.sp-b .sp-rv-card blockquote { margin: 0 !important; padding: 0 !important; background: none !important; border: 0 !important; box-shadow: none !important; }
+html.sp-b .main-content-pane .sp-rv-card blockquote p { margin: 0 !important; font-size: 13px !important; line-height: 1.75 !important; color: var(--sp-text) !important; max-width: none !important; word-break: keep-all;
+  display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; overflow: hidden; }
+html.sp-b .sp-rv-card.is-open blockquote p { -webkit-line-clamp: unset; display: block; }
+html.sp-b .sp-rv-more-btn { align-self: flex-start; margin-top: 8px; border: 0; background: none; padding: 0; font: 600 12px/1.4 var(--sp-font); color: var(--sp-text-2); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+html.sp-b .sp-rv-who { margin-top: auto; padding-top: 14px; font: 500 12px/1.4 var(--sp-font); color: var(--sp-text-3); }
+html.sp-b .sp-rv-card.sp-rv-more { background: #1E2227; color: #fff; }
+html.sp-b .sp-rv-card.sp-rv-more a { display: flex; flex-direction: column; gap: 10px; height: 100%; color: #fff !important; text-decoration: none !important; justify-content: center; }
+html.sp-b .sp-rv-card.sp-rv-more b { font: 700 17px/1.4 var(--sp-font); } html.sp-b .sp-rv-card.sp-rv-more span { font-size: 13px; line-height: 1.7; color: #C9CDD2; }
+html.sp-b .sp-rv-card.sp-rv-more .sp-arr { margin: 6px 0 0; filter: invert(1); }
+html.sp-b .sp-rv-prog { display: flex; gap: 6px; margin-top: 20px; } html.sp-b .sp-rv-prog i { width: 8px; height: 4px; border-radius: 2px; background: #4A4F55; } html.sp-b .sp-rv-prog i.on { width: 28px; background: #fff; }
+@media (max-width: 768px) { html.sp-b ul.sp-rv-track { grid-auto-columns: 86%; } html.sp-b .sp-rv-top { flex-direction: column; align-items: flex-start; }
+  html.sp-b figure.sp-dd { min-height: 0 !important; } html.sp-b figure.sp-dd .sp-dd-cols { height: auto !important; grid-template-columns: 1fr 1fr; }
+  html.sp-b figure.sp-dd .sp-dd-col ul { position: static; transform: none !important; width: auto; margin-top: 10px !important; } }
+/* 158 보정: 후기 보드 검정 바탕(섹션 공통 초기화보다 우선), 다이아몬드 명암 */
+html.sp-b .main-content-pane section.sp-rv { background: var(--sp-ink) !important; padding: 30px 32px 26px !important; border-radius: var(--sp-r-l) !important; }

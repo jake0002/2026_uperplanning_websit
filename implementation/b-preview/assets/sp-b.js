@@ -122,3 +122,42 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+/* 후기 카드 보드(.sp-rv, 158): 이전/다음 = 카드 1장씩, 자동 넘김 5초(호버·포커스·일시정지·동작 줄이기 시 멈춤), 진행 막대·숫자, 긴 후기는 '전체 보기' */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  function init(root) {
+    var tr = root.querySelector('.sp-rv-track'), cards = [].slice.call(tr.children), n = cards.filter(function (c) { return !c.classList.contains('sp-rv-more'); }).length;
+    var cnt = root.querySelector('.sp-rv-count'), prog = root.querySelector('.sp-rv-prog'), pz = root.querySelector('.sp-rv-pause');
+    var pad = function (x) { return (x < 10 ? '0' : '') + x; };
+    prog.innerHTML = cards.map(function () { return '<i></i>'; }).join('');
+    cards.forEach(function (c) {
+      var p = c.querySelector('blockquote p'); if (!p) return;
+      requestAnimationFrame(function () {
+        if (p.scrollHeight > p.clientHeight + 4) {
+          var b = document.createElement('button'); b.type = 'button'; b.className = 'sp-rv-more-btn'; b.textContent = '전체 보기';
+          b.addEventListener('click', function () { var o = c.classList.toggle('is-open'); b.textContent = o ? '접기' : '전체 보기'; });
+          p.parentNode.after(b);
+        }
+      });
+    });
+    function idx() { var w = cards[0].offsetWidth + 16, max = tr.scrollWidth - tr.clientWidth; return tr.scrollLeft >= max - 2 && max > 0 ? Math.ceil(max / w) : Math.round(tr.scrollLeft / w); }
+    function upd() {
+      var i = idx(), vis = Math.max(1, Math.floor(tr.clientWidth / (cards[0].offsetWidth + 8)));
+      cnt.textContent = pad(Math.min(n, i + 1)) + '–' + pad(Math.min(n, i + vis)) + ' / ' + pad(n);
+      [].forEach.call(prog.children, function (d, k) { d.classList.toggle('on', k === i); });
+    }
+    function go(d) { var w = cards[0].offsetWidth + 16, max = tr.scrollWidth - tr.clientWidth;
+      var cur = tr.scrollLeft, t; if (d > 0) t = cur >= max - 2 ? 0 : Math.min(max, cur + w); else t = cur <= 2 ? max : Math.max(0, cur - w); tr.scrollTo({ left: t, behavior: 'smooth' }); }
+    root.querySelector('.sp-rv-prev').addEventListener('click', function () { go(-1); });
+    root.querySelector('.sp-rv-next').addEventListener('click', function () { go(1); });
+    var paused = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches, hover = false;
+    if (paused) pz.textContent = '재생';
+    pz.addEventListener('click', function () { paused = !paused; pz.textContent = paused ? '재생' : '일시정지'; });
+    root.addEventListener('mouseenter', function () { hover = true; }); root.addEventListener('mouseleave', function () { hover = false; });
+    root.addEventListener('focusin', function () { hover = true; }); root.addEventListener('focusout', function () { hover = false; });
+    setInterval(function () { if (!paused && !hover && document.visibilityState === 'visible') go(1); }, 5000);
+    tr.addEventListener('scroll', function () { requestAnimationFrame(upd); }, { passive: true }); window.addEventListener('resize', upd); upd();
+  }
+  function boot() { [].forEach.call(document.querySelectorAll('.sp-rv'), init); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
