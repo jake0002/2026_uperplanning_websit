@@ -122,12 +122,12 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
-/* 후기 카드 보드(.sp-rv, 158): 이전/다음 = 카드 1장씩, 자동 넘김 5초(호버·포커스·일시정지·동작 줄이기 시 멈춤), 진행 막대·숫자, 긴 후기는 '전체 보기' */
+/* 후기 카드 보드(.sp-rv, 158·159): 이전/다음 = 카드 1장씩(자동 넘김 없음), 진행 막대·숫자, 긴 후기는 '전체 보기' */
 (function () {
   if (!document.documentElement.classList.contains('sp-b')) return;
   function init(root) {
     var tr = root.querySelector('.sp-rv-track'), cards = [].slice.call(tr.children), n = cards.filter(function (c) { return !c.classList.contains('sp-rv-more'); }).length;
-    var cnt = root.querySelector('.sp-rv-count'), prog = root.querySelector('.sp-rv-prog'), pz = root.querySelector('.sp-rv-pause');
+    var cnt = root.querySelector('.sp-rv-count'), prog = root.querySelector('.sp-rv-prog');
     var pad = function (x) { return (x < 10 ? '0' : '') + x; };
     prog.innerHTML = cards.map(function () { return '<i></i>'; }).join('');
     cards.forEach(function (c) {
@@ -150,12 +150,7 @@
       var cur = tr.scrollLeft, t; if (d > 0) t = cur >= max - 2 ? 0 : Math.min(max, cur + w); else t = cur <= 2 ? max : Math.max(0, cur - w); tr.scrollTo({ left: t, behavior: 'smooth' }); }
     root.querySelector('.sp-rv-prev').addEventListener('click', function () { go(-1); });
     root.querySelector('.sp-rv-next').addEventListener('click', function () { go(1); });
-    var paused = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches, hover = false;
-    if (paused) pz.textContent = '재생';
-    pz.addEventListener('click', function () { paused = !paused; pz.textContent = paused ? '재생' : '일시정지'; });
-    root.addEventListener('mouseenter', function () { hover = true; }); root.addEventListener('mouseleave', function () { hover = false; });
-    root.addEventListener('focusin', function () { hover = true; }); root.addEventListener('focusout', function () { hover = false; });
-    setInterval(function () { if (!paused && !hover && document.visibilityState === 'visible') go(1); }, 5000);
+    /* 159: 자동 넘김·일시정지 제거(사용자 11-23 21:22) — 이전/다음 버튼·가로 스와이프로만 이동 */
     tr.addEventListener('scroll', function () { requestAnimationFrame(upd); }, { passive: true }); window.addEventListener('resize', upd); upd();
   }
   function boot() { [].forEach.call(document.querySelectorAll('.sp-rv'), init); }
