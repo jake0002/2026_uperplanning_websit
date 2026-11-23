@@ -1174,3 +1174,74 @@ html.sp-b .compare-table thead tr:first-child > :last-child,
 html.sp-b .compare-table:not(:has(thead)) tbody tr:first-child > :last-child { border-top-right-radius: var(--sp-r-m); }
 html.sp-b .compare-table tbody tr:last-child > :first-child { border-bottom-left-radius: var(--sp-r-m); }
 html.sp-b .compare-table tbody tr:last-child > :last-child { border-bottom-right-radius: var(--sp-r-m); }
+
+/* =====================================================================
+   154 — UX라이팅 B안(피그마 20:502) · 서브 공통 보강
+   ===================================================================== */
+/* 섹션으로 감싼 본문(UX라이팅 등)도 설명 문단 860 */
+@media (min-width: 769px) { html.sp-b:not(.sp-b-home) .main-content-pane > section > p { max-width: 860px; } }
+html.sp-b .main-content-pane > section { margin-top: 0 !important; padding: 0 !important; border: 0 !important; background: none !important; }
+/* 본문 그림 공통: 인라인 흰 테두리 상자 해제 + 볼록 사진 */
+html.sp-b .main-content-pane figure { max-width: none !important; padding: 0 !important; background: none !important; margin: 0 !important; }
+html.sp-b .main-content-pane figure img { border: 0 !important; border-radius: var(--sp-r-m) !important; box-shadow: var(--sp-raised-m) !important; }
+/* 첫 화면 산출물 책 2권(피그마 37:764): 같은 볼록 면 위에 책 이미지, 왼쪽 책은 배경과 섞이게(multiply) */
+html.sp-b .sp-books { margin: 28px 0 0 !important; gap: 20px !important; }
+html.sp-b .sp-books figure img { aspect-ratio: 581 / 330 !important; height: auto !important; object-fit: contain !important; background: #F5F7F9 !important; padding: 14px 24px; box-sizing: border-box; mix-blend-mode: normal; }
+html.sp-b .sp-books figure:first-child img { mix-blend-mode: multiply; }
+html.sp-b .sp-books .photo-caption { margin-top: 12px !important; }
+/* 1. 오목 트레이(설명형 강조) */
+html.sp-b .main-content-pane p.sp-tray { background: var(--sp-inset); box-shadow: var(--sp-inset-s); border-radius: var(--sp-r-m); padding: 18px 22px !important; margin-top: 18px !important; margin-bottom: 18px !important; max-width: 1183px !important; color: var(--sp-text-2); }
+html.sp-b .main-content-pane p.sp-tray strong { font-size: 15px; color: var(--sp-text); }
+/* 2. 산출물 카드 4열 + 번호 배지(오목 NumBadge) — 정보 카드 = 선+면 */
+html.sp-b .ux-writing-box-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 16px !important; margin: 22px 0 !important; counter-reset: spw; }
+html.sp-b .ux-writing-box { counter-increment: spw; background: var(--sp-surface) !important; border: 1px solid var(--sp-line) !important; border-radius: var(--sp-r-m) !important; box-shadow: none !important; padding: 20px 22px !important; }
+html.sp-b .ux-writing-box::before { content: counter(spw, decimal-leading-zero); display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 9px; border-radius: 999px;
+  background: var(--sp-inset); box-shadow: var(--sp-inset-s); font: 500 11px/1 var(--sp-mono); letter-spacing: .04em; color: var(--sp-text-2); margin-bottom: 12px; }
+html.sp-b .ux-writing-box h3 { margin: 0 0 8px !important; font: 700 15px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; border: 0 !important; padding: 0 !important; background: none !important; }
+html.sp-b .ux-writing-box p { margin: 0 !important; font-size: 13.5px !important; line-height: 1.65 !important; color: var(--sp-text-2) !important; word-break: keep-all; }
+/* 3. 특허 카드: 특허증 왼쪽 + 정보 행 오른쪽(라벨 | 오목 값) */
+html.sp-b .sp-patent { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; align-items: start; background: var(--sp-surface); border: 1px solid var(--sp-line); border-radius: var(--sp-r-l); padding: 28px; margin: 22px 0 !important; }
+html.sp-b .sp-patent figure img { box-shadow: var(--sp-raised-s) !important; border-radius: 10px !important; }
+html.sp-b .sp-patent figcaption { font: 500 12px/1.5 var(--sp-font) !important; color: var(--sp-text-3) !important; margin-top: 10px !important; }
+html.sp-b .sp-patent .patent-info-box { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+html.sp-b .sp-patent .patent-info-box h3 { margin: 0 0 16px !important; font: 700 18px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; border: 0 !important; background: none !important; padding: 0 !important; }
+html.sp-b .sp-patent .patent-info-box ul { list-style: none !important; margin: 0 !important; padding: 0 !important; display: grid; gap: 10px; }
+html.sp-b .sp-patent .patent-info-box li { display: grid !important; grid-template-columns: 112px minmax(0, 1fr); align-items: center; gap: 12px; margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 13.5px !important; line-height: 1.55 !important; }
+html.sp-b .sp-patent .patent-info-box li::before { display: none !important; }
+html.sp-b .sp-patent .patent-info-box li strong { font-weight: 600 !important; color: var(--sp-text) !important; }
+html.sp-b .sp-patent .patent-info-box li span { background: var(--sp-inset); box-shadow: var(--sp-inset-s); border-radius: 10px; padding: 9px 14px; color: var(--sp-text-2); word-break: keep-all; }
+html.sp-b .sp-patent .sp-patent-b > p { margin: 18px 0 0 !important; max-width: none !important; }
+/* 4. 진행 프로세스: 표 구조(DOM) 유지 + 5단계 카드로 표시 */
+html.sp-b .ux-writing-table-wrap { overflow: visible !important; border: 0 !important; margin: 22px 0 !important; padding: 0 !important; }
+html.sp-b table.ux-writing-table, html.sp-b table.ux-writing-table tbody { display: block !important; width: 100% !important; border: 0 !important; background: none !important; }
+html.sp-b table.ux-writing-table thead { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+html.sp-b table.ux-writing-table tbody { display: grid !important; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+html.sp-b table.ux-writing-table tr { display: flex !important; flex-direction: column; gap: 10px; background: var(--sp-surface); border: 1px solid var(--sp-line); border-radius: var(--sp-r-m); padding: 20px 18px; }
+html.sp-b table.ux-writing-table td { display: block !important; border: 0 !important; padding: 0 !important; background: none !important; font-size: 13.5px !important; line-height: 1.65 !important; color: var(--sp-text-2) !important; word-break: keep-all; }
+html.sp-b table.ux-writing-table td:first-child strong { font: 700 15px/1.4 var(--sp-font); color: var(--sp-text); }
+html.sp-b table.ux-writing-table td:last-child { margin-top: auto; background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s); border-radius: 10px; padding: 10px 12px !important; color: var(--sp-text) !important; font-weight: 500; font-size: 12.5px !important; }
+html.sp-b table.ux-writing-table td:last-child::before { content: '산출물'; display: block; font: 500 11px/1.4 var(--sp-font); color: var(--sp-text-3); margin-bottom: 2px; }
+/* 5. 강의 바로가기 = 볼록 알약 링크 + 긴 화살표 */
+html.sp-b a.sp-pill-link { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 999px; background: var(--sp-surface); box-shadow: var(--sp-raised-s);
+  color: var(--sp-text) !important; font: 600 13px/1 var(--sp-font); text-decoration: none !important; transition: transform .15s; }
+html.sp-b a.sp-pill-link:hover { transform: translateY(-1px); }
+html.sp-b .sp-split .sp-type-box { margin-bottom: 10px; }
+/* 6. 핵심 문장 = 검정 강조 박스(그림자 없음) + 화면 예시 그림 700 */
+html.sp-b .main-content-pane p.sp-emph { background: var(--sp-ink); color: #fff !important; border-radius: var(--sp-r-m); padding: 22px 26px !important; margin-top: 22px !important; margin-bottom: 22px !important; max-width: 1183px !important; font-weight: 600; box-shadow: none; }
+html.sp-b figure.sp-fig-plugin { max-width: 700px !important; margin: 10px 0 28px !important; }
+@media (max-width: 768px) {
+  html.sp-b .sp-books, html.sp-b .sp-patent { grid-template-columns: 1fr !important; }
+  html.sp-b .ux-writing-box-grid { grid-template-columns: 1fr 1fr !important; }
+  html.sp-b table.ux-writing-table tbody { grid-template-columns: 1fr; }
+  html.sp-b .sp-patent .patent-info-box li { grid-template-columns: 1fr; gap: 4px; }
+}
+/* 154 보정 */
+@media (min-width: 769px) { html.sp-b:not(.sp-b-home) .main-content-pane section > p:not(.sp-tray):not(.sp-emph) { max-width: 860px; } }
+html.sp-b table.ux-writing-table td, html.sp-b table.ux-writing-table tr { width: auto !important; min-width: 0 !important; max-width: none !important; white-space: normal !important; }
+html.sp-b .sp-patent .patent-info-box li, html.sp-b .sp-patent .patent-info-box li span { white-space: normal !important; min-width: 0; overflow-wrap: anywhere; }
+html.sp-b .sp-books figure { background: #F5F7F9 !important; border-radius: var(--sp-r-m); box-shadow: var(--sp-raised-m); overflow: visible; }
+html.sp-b .sp-books figure img { background: transparent !important; box-shadow: none !important; mix-blend-mode: multiply !important; border-radius: var(--sp-r-m) !important; }
+html.sp-b .sp-books figure .photo-caption { position: absolute; }
+html.sp-b .sp-books figure { position: relative; margin-bottom: 40px !important; }
+html.sp-b .sp-books figure .photo-caption { left: 0; top: 100%; }
+html.sp-b .sp-books figure:last-child img { object-fit: cover !important; padding: 0 !important; }
