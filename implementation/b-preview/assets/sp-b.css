@@ -1002,3 +1002,18 @@ html.sp-b .sp-pop-head { display: flex; flex-direction: column; gap: 6px; }
 html.sp-b .sp-pop-head .sp-pop-lead { margin: 0; }
 html.sp-b .sp-pop-mapwrap { position: relative; border-radius: 20px; overflow: hidden; }
 html.sp-b .sp-pop-mapwrap::after { content: ''; position: absolute; inset: 0; border-radius: 20px; pointer-events: none; box-shadow: inset 4px 4px 8px rgba(26,31,36,.14), inset -4px -4px 8px rgba(255,255,255,.9); }
+/* ── 11-23 18:28 ── */
+/* ① 작업표시줄 시계 크게 */
+html.sp-b #taskClock { font: 600 14.5px/1 var(--sp-font) !important; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+/* ② 전체 메뉴 블릿 제거 */
+html.sp-b .spm2-m::before { content: none !important; display: none !important; }
+html.sp-b #startMenu .start-item.spm2-m { padding: 0 18px !important; }
+/* ④ 마이크로 인터랙션: 테두리를 따라 그려지는 얇은 검정 선 + 살짝 떠오름 */
+html.sp-b svg.sp-trace { position: absolute !important; left: 0; top: 0; width: 100% !important; height: 100% !important; display: block !important; overflow: visible; pointer-events: none; z-index: 2; }
+html.sp-b svg.sp-trace.i { width: 64px !important; height: 64px !important; left: 50%; margin-left: -32px; }
+html.sp-b .sp-trace rect { fill: none; stroke: #111; stroke-width: 1.2; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset .55s cubic-bezier(.4,0,.2,1); }
+html.sp-b .sp-tr:hover > .sp-trace rect { stroke-dashoffset: 0; }
+html.sp-b .win[data-key="services"] .card-grid .info-card { transition: transform .25s ease, box-shadow .25s ease; }
+html.sp-b .win[data-key="services"] .card-grid .info-card.sp-tr:hover { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { html.sp-b .sp-trace { display: none; } }
+html.sp-b #skyscraper a[href*="open.kakao.com"] svg.sp-trace { width: 100% !important; height: 100% !important; left: 0 !important; top: 0 !important; margin: 0 !important; }

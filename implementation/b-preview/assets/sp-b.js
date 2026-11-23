@@ -46,3 +46,27 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+/* 마이크로 인터랙션(사용자 11-23 18:28): 마우스를 올리면 버튼·카드 테두리를 따라 얇은 검정 선이 한 바퀴 그려지고, 떼면 되감긴다.
+   대상: UX 서비스 카드, 바탕화면 아이콘(네모 버튼), 카카오톡 상담 버튼, GNB 포트폴리오 보기·인재채용. 터치 기기·동작 줄이기 설정에서는 동작 안 함. */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn';
+  var NS = 'http://www.w3.org/2000/svg';
+  function prep(el) {
+    if (el.querySelector(':scope > .sp-trace')) return;
+    var icon = el.classList.contains('desktop-icon');
+    var cs = getComputedStyle(el);
+    if (cs.position === 'static') el.style.position = 'relative';
+    var r = icon ? 18 : (parseFloat(cs.borderTopLeftRadius) || 0);
+    var svg = document.createElementNS(NS, 'svg'); svg.setAttribute('class', 'sp-trace' + (icon ? ' i' : '')); svg.setAttribute('aria-hidden', 'true');
+    var rect = document.createElementNS(NS, 'rect');
+    rect.setAttribute('x', '0'); rect.setAttribute('y', '0'); rect.setAttribute('width', '100%'); rect.setAttribute('height', '100%');
+    var h = icon ? 64 : el.offsetHeight; rect.setAttribute('rx', Math.min(r, h / 2)); rect.setAttribute('pathLength', '100');
+    svg.appendChild(rect); el.appendChild(svg);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('sp-tr'); }); });
+  }
+  document.addEventListener('mouseover', function (e) {
+    var el = e.target && e.target.closest ? e.target.closest(SEL) : null; if (el) prep(el);
+  }, true);
+})();
