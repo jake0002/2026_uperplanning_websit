@@ -3,6 +3,11 @@
    기존 #scrollTopBtn(서브페이지)이 있으면 그대로 쓰고, 없으면(메인) 새로 만든다. 클릭 = 맨 위로(부드럽게). */
 (function () {
   if (!document.documentElement.classList.contains('sp-b')) return;
+  /* 화면 비율 --k(서브페이지용, 메인은 자체 spbK 사용) — 1920 = 0.84, 좁으면 비례 축소(최소 0.62), 모바일 1 */
+  if (!document.documentElement.classList.contains('sp-b-home')) {
+    var setK = function () { var W = window.innerWidth; document.documentElement.style.setProperty('--k', W <= 768 ? 1 : Math.max(0.62, Math.min(0.84, W / 1920 * 0.86))); };
+    setK(); window.addEventListener('resize', setK);
+  }
   function init() {
     var b = document.getElementById('scrollTopBtn');
     if (!b) {

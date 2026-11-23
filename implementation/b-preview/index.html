@@ -1398,7 +1398,7 @@
   <div id="desktop">
     <div id="iconsArea">
       <!-- 1. 슈퍼플래닝 소개 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('about');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('about');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <path d="M6 30h24V14H6v16z" fill="#ffffff" />
@@ -1410,7 +1410,7 @@
       </div>
 
       <!-- 1-2. 주요 고객사 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('clients');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('clients');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <path d="M6 28h24V12H6v16z" fill="#ffffff"/>
@@ -1421,7 +1421,7 @@
       </div>
 
       <!-- 2. UX서비스 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('services');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('services');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="6" y="6" width="24" height="24" fill="#ffffff"/>
@@ -1434,7 +1434,7 @@
       </div>
 
       <!-- 5. 인스타그램 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('instagram');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('instagram');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="7" y="7" width="22" height="22" rx="6" fill="#ffffff"/>
@@ -1445,19 +1445,19 @@
         <div class="icon-label">인스타그램</div>
       </div>
 
-      <!-- 6. 쓰레드 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('threads');">
+      <!-- 6. 스레드 -->
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('threads');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
           <rect x="12" y="12" width="12" height="12" fill="#000000"/>
           <rect x="16" y="16" width="4" height="4" fill="#ffffff"/>
         </svg>
-        <div class="icon-label">쓰레드</div>
+        <div class="icon-label">스레드</div>
       </div>
 
       <!-- 7. 소개영상 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('intro-video');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('intro-video');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="4"/>
@@ -1467,7 +1467,7 @@
       </div>
 
       <!-- 8. 찾아오시는 길 -->
-      <div class="desktop-icon" onclick="selectIcon(this);" ondblclick="openWindow('contact');">
+      <div class="desktop-icon" onclick="selectIcon(this); openWindow('contact');">
         <svg class="icon-svg" viewBox="0 0 36 36">
           <rect width="36" height="36" fill="#000000" rx="4"/>
           <path d="M18 6c-5.52 0-10 4.48-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#ffffff"/>
@@ -1518,11 +1518,11 @@
         <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard(document.getElementById('skyFooterAddr').textContent, '주소')">복사</button>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
-        <span>T: 031-699-3298</span>
+        <span>T. 031-699-3298</span>
         <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호', this)">복사</button>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
-        <span>E: jake@superplanning.co.kr</span>
+        <span>E. jake@superplanning.co.kr</span>
         <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)">복사</button>
       </div>
 
@@ -1531,23 +1531,10 @@
   </div>
 
   <!-- 8. START MENU -->
-  <div id="startMenu">
-    <div class="start-banner">SUPERPLANNING</div>
-    <div class="start-items">
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
-      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
-      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
-      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
-      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
-      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b><span>SUPERPLANNING</span></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><i aria-hidden="true"></i><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><i aria-hidden="true"></i><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><i aria-hidden="true"></i><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><i aria-hidden="true"></i><span>유튜브</span></div></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
   </div>
 
   <!-- 9. TASKBAR -->
@@ -1628,7 +1615,7 @@
       'intro-video': { w: 640, h: 430, title: '슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '포트폴리오 보기' },
       'instagram': { w: 600, h: 520, title: '인스타그램' },
-      'threads': { w: 600, h: 460, title: '쓰레드' },
+      'threads': { w: 600, h: 460, title: '스레드' },
     };
 
     function getMinWindowTop() {
@@ -2053,7 +2040,7 @@
               <img src="/images/threads-logo.jpg" alt="Threads Logo" width="64" height="64">
               <div>
                 <h3 class="sp-pop-h">@ux_superplanning</h3>
-                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
                 <p class="sp-pop-p">최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.</p>
               </div>
             </div>
@@ -2292,8 +2279,8 @@
     }
 
 
-    /* B안: 화면 폭 비율(k) — 피그마 1920 기준 92%, 좁은 화면은 비례 축소(최소 70%). 창 내용·GNB·아이콘·문의 패널·작업표시줄에 zoom 적용 */
-    function spbK() { var W = window.innerWidth; return W <= 768 ? 1 : Math.max(0.7, Math.min(0.92, W / 1920 * 0.96)); }
+    /* B안: 화면 폭 비율(k) — 피그마 1920 기준 84%(사용자 11-23 14:18 추가 축소), 좁은 화면은 비례 축소(최소 62%). 창 내용·GNB·아이콘·문의 패널·작업표시줄에 zoom 적용 */
+    function spbK() { var W = window.innerWidth; return W <= 768 ? 1 : Math.max(0.62, Math.min(0.84, W / 1920 * 0.86)); }
     function spbApplyK() { document.documentElement.style.setProperty('--k', spbK()); }
     spbApplyK();
     /* 기본 창 3개 배치(사용자가 옮긴 창은 그대로): 슈퍼플래닝 왼쪽 / UX 서비스 오른쪽 위 / 주요 고객사 그 아래 */
