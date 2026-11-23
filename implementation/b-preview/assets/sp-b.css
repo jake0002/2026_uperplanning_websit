@@ -1065,25 +1065,7 @@ html.sp-b .toolbar-area .tool-btn { display: inline-flex !important; align-items
 }
 html.sp-b:not(.sp-b-home) { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html.sp-b:not(.sp-b-home) { scroll-behavior: auto; } }
-/* ③④ 목차 위 경로 글자 삭제 → 뉴모피즘 바탕 오브제(메인 #spbObj 축소판: 볼록 캡슐·원 + 흰 1px 동심원, 절제) */
-html.sp-b .sp-toc-obj { position: relative !important; top: auto !important; height: 150px; margin: -8px 0 18px; pointer-events: none; overflow: hidden;
-  -webkit-mask-image: radial-gradient(ellipse 70% 72% at 42% 46%, #000 52%, transparent 100%); mask-image: radial-gradient(ellipse 70% 72% at 42% 46%, #000 52%, transparent 100%); }
-html.sp-b .sp-toc-obj .c { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.95); box-shadow: 0 0 0 .5px rgba(163,176,194,.12); }
-html.sp-b .sp-toc-obj .c1 { left: 104px; top: 29px; width: 92px; height: 92px; }
-html.sp-b .sp-toc-obj .c2 { left: 78px; top: 3px; width: 144px; height: 144px; }
-html.sp-b .sp-toc-obj .c3 { left: 0; top: -75px; width: 300px; height: 300px; }
-html.sp-b .sp-toc-obj b { position: absolute; display: block; border-radius: 999px; background: linear-gradient(145deg, #F2F4F7, #E3E7EB);
-  box-shadow: 7px 7px 14px rgba(163,176,194,.5), -6px -6px 13px rgba(255,255,255,.95); }
-html.sp-b .sp-toc-obj .p1 { left: 24px; top: 26px; width: 24px; height: 98px; }
-html.sp-b .sp-toc-obj .d1 { left: 66px; top: 30px; width: 28px; height: 28px; }
-html.sp-b .sp-toc-obj .p2 { display: none; }
-html.sp-b .sp-toc-obj .d2 { left: 128px; top: 53px; width: 44px; height: 44px; }
-html.sp-b .sp-toc-obj .p3 { left: 66px; top: 106px; width: 64px; height: 22px; }
-@media (prefers-reduced-motion: no-preference) {
-  html.sp-b .sp-toc-obj .d2 { animation: spbFloat 7s ease-in-out infinite; }
-  html.sp-b .sp-toc-obj .d1 { animation: spbFloat 9s ease-in-out -3s infinite; }
-}
-@media (max-width: 768px) { html.sp-b .sp-toc-obj { display: none !important; } }
+/* ③④ 목차 위 경로 글자 삭제 — 오브제는 153 에서 제거(사용자) */
 /* ⑤ 본문 정렬: 모든 블록의 왼쪽 끝 = 본문 열(1183) 왼쪽 끝. 설명 문단·목록 860, 사진·표·카드 줄 = 1183 오른쪽 끝까지 */
 @media (min-width: 769px) {
   html.sp-b:not(.sp-b-home) .main-content-pane > * { margin-left: max(0px, calc((100% - 1183px) / 2)) !important; margin-right: auto !important; max-width: 1183px; }
@@ -1166,3 +1148,29 @@ html.sp-b svg.sp-ftrace { position: absolute; pointer-events: none; overflow: vi
 html.sp-b svg.sp-ftrace rect { fill: none; stroke: #A3AAB3; stroke-width: 1.2; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset .55s cubic-bezier(.4,0,.2,1); }
 html.sp-b svg.sp-ftrace.on rect { stroke-dashoffset: 0; }
 @media (prefers-reduced-motion: reduce) { html.sp-b svg.sp-ftrace rect { transition: none; } }
+
+/* =====================================================================
+   153 — UX리서치 보정 2(사용자 11-23 19:44)
+   ===================================================================== */
+/* ① 가로 스크롤 제거: 표 래퍼가 본문 열보다 넓어(+30) 본문 창에 가로 스크롤이 생기던 문제 → PC 는 래퍼 = 본문 열 폭, 넘침 보이게(표 그림자·캡션 잘림도 함께 해결 ⑤) */
+@media (min-width: 769px) {
+  html.sp-b:not(.sp-b-home) .main-content-pane { overflow-x: visible !important; }
+  html.sp-b:not(.sp-b-home) .main-content-pane > div[style*="overflow-x:auto"] {
+    overflow: visible !important; padding: 0 !important; width: min(100%, 1183px) !important; max-width: 1183px !important;
+    margin: 28px auto 28px max(0px, calc((100% - 1183px) / 2)) !important;
+  }
+  html.sp-b:not(.sp-b-home) .main-content-pane .compare-table { width: 100% !important; }
+}
+/* ⑤ 표 캡션: 표 위 한 줄, 잘림 없이 */
+html.sp-b .compare-table caption { line-height: 1.6 !important; padding: 0 0 10px !important; overflow: visible; }
+@media (min-width: 769px) { html.sp-b .compare-table caption { white-space: nowrap; } }
+/* ⑥ Lab 캡션 1줄 */
+@media (min-width: 769px) { html.sp-b .sp-photos.sp-c4 .photo-caption { white-space: nowrap; } }
+/* ⑤ 표 캡션 첫 글자 잘림: 표의 overflow:hidden(둥근 모서리용)이 캡션까지 자름 → 표는 넘침 보이게, 둥근 모서리는 모서리 칸에 직접 */
+@media (min-width: 769px) { html.sp-b .compare-table { overflow: visible !important; } }
+html.sp-b .compare-table thead tr:first-child > :first-child,
+html.sp-b .compare-table:not(:has(thead)) tbody tr:first-child > :first-child { border-top-left-radius: var(--sp-r-m); }
+html.sp-b .compare-table thead tr:first-child > :last-child,
+html.sp-b .compare-table:not(:has(thead)) tbody tr:first-child > :last-child { border-top-right-radius: var(--sp-r-m); }
+html.sp-b .compare-table tbody tr:last-child > :first-child { border-bottom-left-radius: var(--sp-r-m); }
+html.sp-b .compare-table tbody tr:last-child > :last-child { border-bottom-right-radius: var(--sp-r-m); }
