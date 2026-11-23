@@ -1798,7 +1798,7 @@
               이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
             </p>
           </div>
-          <div class="sp-about-deco" aria-hidden="true"><i class="on"></i><i></i><i></i><span class="g"></span><span class="n"></span></div>
+
         `;
       } else if (key === 'services') {
         return `
@@ -2288,7 +2288,25 @@
       put(a, X + 40 * k, T, 560 * k);
       put(sv, X + 632 * k, T, 848 * k);
       if (c && sv) put(c, X + 632 * k, T + Math.round(sv.el.getBoundingClientRect().height) + G, 848 * k);
+      spbObj(a, X, k);
       if (typeof updateScrollHeight === 'function') updateScrollHeight();
+    }
+    /* 바탕화면 오브제(사용자 11-23 18:50): 슈퍼플래닝 창 아래 빈 영역에 볼록 캡슐·원 + 얇은 흰 동심원 라인. 장식(aria-hidden), 창 아래층, 공간이 부족하면 숨김 */
+    function spbObj(a, X, k) {
+      var area = document.getElementById('windowArea'); if (!area) return;
+      var o = document.getElementById('spbObj');
+      if (!o) {
+        o = document.createElement('div'); o.id = 'spbObj'; o.setAttribute('aria-hidden', 'true');
+        o.innerHTML = '<div class="in"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i>'
+          + '<b class="p p1"></b><b class="d d1"></b><b class="p p2"></b><b class="d d2"></b><b class="p p3"></b><b class="p p4"></b></div>';
+        area.insertBefore(o, area.firstChild);
+      }
+      var tb = document.getElementById('taskbar');
+      if (!a || !a.el || a.el.style.display === 'none' || a.el.dataset.spbMoved || !tb) { o.style.display = 'none'; return; }
+      var wa = area.getBoundingClientRect(), ar = a.el.getBoundingClientRect();
+      var top = Math.round(ar.bottom - wa.top + 28 * k), bottom = Math.round(tb.getBoundingClientRect().top - wa.top - 20 * k), h = bottom - top;
+      if (h < 220 * k) { o.style.display = 'none'; return; }
+      o.style.display = 'block'; o.style.left = Math.round(X + 40 * k) + 'px'; o.style.top = top + 'px'; o.style.width = Math.round(560 * k) + 'px'; o.style.height = h + 'px';
     }
     window.addEventListener('resize', function () { spbApplyK(); spbDesk(); spbDimSync(); });
     /* 팝업 = 모달(사용자 11-23 15:17): 기본 창 3개 외의 창이 열려 있으면 뒤 배경 딤. 딤 클릭·Esc = 맨 위 팝업 닫기. 모바일 제외 */

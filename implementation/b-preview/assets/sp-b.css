@@ -1018,18 +1018,32 @@ html.sp-b .win[data-key="services"] .card-grid .info-card.sp-tr:hover { transfor
 @media (prefers-reduced-motion: reduce) { html.sp-b .sp-trace { display: none; } }
 html.sp-b #skyscraper a[href*="open.kakao.com"] svg.sp-trace { width: 100% !important; height: 100% !important; left: 0 !important; top: 0 !important; margin: 0 !important; }
 /* ── 11-23 18:41 ── */
-/* ① 슈퍼플래닝 창 하단 여백 축소 + ③ 배너 아래 뉴모피즘 오브제(인디케이터·오목 홈·볼록 노브) */
-html.sp-b .win[data-key="about"] .w-body { padding-bottom: 20px !important; }
+/* ① 슈퍼플래닝 창 하단 여백 축소 */
+html.sp-b .win[data-key="about"] .w-body { padding-bottom: 24px !important; }
 html.sp-b .win[data-key="about"] .hero-banner-box { margin-bottom: 0 !important; }
-html.sp-b .sp-about-deco { display: flex; align-items: center; gap: 8px; margin: 20px 2px 0; height: 16px; }
-html.sp-b .sp-about-deco i { flex: none; width: 6px; height: 6px; border-radius: 3px; background: var(--sp-inset); box-shadow: inset 1.5px 1.5px 2px rgba(26,31,36,.18), inset -1.5px -1.5px 2px rgba(255,255,255,.9); }
-html.sp-b .sp-about-deco i.on { width: 22px; background: #3A3F45; box-shadow: 1.5px 1.5px 3px rgba(26,31,36,.2), -1.5px -1.5px 3px rgba(255,255,255,.9); }
-html.sp-b .sp-about-deco .g { flex: 1; height: 4px; margin-left: 8px; border-radius: 2px; background: var(--sp-inset); box-shadow: inset 1.5px 1.5px 2.5px rgba(26,31,36,.16), inset -1.5px -1.5px 2.5px rgba(255,255,255,.95); }
-html.sp-b .sp-about-deco .n { flex: none; position: relative; width: 16px; height: 16px; border-radius: 50%; background: var(--sp-surface); box-shadow: 2px 2px 4px rgba(26,31,36,.16), -2px -2px 4px rgba(255,255,255,.95); }
-html.sp-b .sp-about-deco .n::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: #3A3F45; }
-@media (prefers-reduced-motion: no-preference) {
-  html.sp-b .sp-about-deco i.on { animation: spbDeco 9.5s infinite; }
-}
-@keyframes spbDeco { 0%, 14% { width: 6px; background: var(--sp-inset); } 20%, 100% { width: 22px; background: #3A3F45; } }
 /* ② 테두리 선 = 짙은 회색 */
-html.sp-b .sp-trace rect { stroke: #3A3F45 !important; }
+html.sp-b .sp-trace rect { stroke: #A3AAB3 !important; }
+
+/* ── 11-23 18:50 바탕화면 오브제(레퍼런스: 볼록 캡슐·원 + 얇은 흰 동심원) — 슈퍼플래닝 창 아래 빈 영역 ── */
+html.sp-b #spbObj { display: none; position: absolute; z-index: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 46% 42%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse 62% 58% at 46% 42%, #000 58%, transparent 100%); }
+html.sp-b #spbObj .in { position: absolute; left: 0; top: 0; width: 560px; height: 520px; zoom: var(--k, 1); }
+html.sp-b #spbObj .c { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.95); box-shadow: 0 0 0 .5px rgba(163,176,194,.12); }
+html.sp-b #spbObj .c1 { left: 250px; top: 18px; width: 230px; height: 230px; }
+html.sp-b #spbObj .c2 { left: 210px; top: -22px; width: 310px; height: 310px; }
+html.sp-b #spbObj .c3 { left: 60px; top: 90px; width: 330px; height: 330px; }
+html.sp-b #spbObj .c4 { left: -120px; top: -140px; width: 760px; height: 760px; }
+html.sp-b #spbObj b { position: absolute; display: block; border-radius: 999px; background: linear-gradient(145deg, #F2F4F7, #E3E7EB);
+  box-shadow: 12px 12px 24px rgba(163,176,194,.55), -10px -10px 22px rgba(255,255,255,.95); }
+html.sp-b #spbObj .p1 { left: 44px; top: 60px; width: 48px; height: 300px; }
+html.sp-b #spbObj .d1 { left: 196px; top: 150px; width: 62px; height: 62px; }
+html.sp-b #spbObj .p2 { left: 196px; top: 236px; width: 62px; height: 220px; }
+html.sp-b #spbObj .d2 { left: 316px; top: 70px; width: 70px; height: 70px; }
+html.sp-b #spbObj .p3 { left: 318px; top: 160px; width: 66px; height: 130px; }
+html.sp-b #spbObj .p4 { left: 318px; top: 318px; width: 66px; height: 240px; }
+@media (prefers-reduced-motion: no-preference) {
+  html.sp-b #spbObj .d2 { animation: spbFloat 7s ease-in-out infinite; }
+  html.sp-b #spbObj .d1 { animation: spbFloat 9s ease-in-out -3s infinite; }
+}
+@keyframes spbFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (max-width: 980px) { html.sp-b #spbObj { display: none !important; } }
