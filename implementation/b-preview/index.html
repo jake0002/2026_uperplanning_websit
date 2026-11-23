@@ -2311,7 +2311,36 @@
       if (c && sv) put(c, X + 632 * k, T + Math.round(sv.el.getBoundingClientRect().height) + G, 848 * k);
       if (typeof updateScrollHeight === 'function') updateScrollHeight();
     }
-    window.addEventListener('resize', function () { spbApplyK(); spbDesk(); });
+    window.addEventListener('resize', function () { spbApplyK(); spbDesk(); spbDimSync(); });
+    /* 팝업 = 모달(사용자 11-23 15:17): 기본 창 3개 외의 창이 열려 있으면 뒤 배경 딤. 딤 클릭·Esc = 맨 위 팝업 닫기. 모바일 제외 */
+    var SPB_BASE = { about: 1, services: 1, clients: 1 };
+    function spbTopPop() {
+      var best = null, bz = -1;
+      for (var k in windows) {
+        if (SPB_BASE[k] || !windows[k] || !windows[k].el || windows[k].el.style.display === 'none') continue;
+        var z = parseInt(windows[k].el.style.zIndex, 10) || 0; if (z > bz) { bz = z; best = k; }
+      }
+      return best;
+    }
+    function spbDimSync() {
+      var area = document.getElementById('windowArea'); if (!area) return;
+      var dim = document.getElementById('spbDim');
+      if (!dim) {
+        dim = document.createElement('div'); dim.id = 'spbDim'; dim.setAttribute('aria-hidden', 'true');
+        dim.addEventListener('click', function () { var k = spbTopPop(); if (k) closeWindow(k); spbDimSync(); });
+        area.appendChild(dim);
+      }
+      var k = window.innerWidth > 768 ? spbTopPop() : null;
+      var prevTop = document.querySelector('.win.spb-modal-top'); if (prevTop && (!k || prevTop !== windows[k].el)) prevTop.classList.remove('spb-modal-top');
+      if (k) windows[k].el.classList.add('spb-modal-top');
+      if (k) {
+        var mz = 0; for (var q in windows) { if (q !== k && windows[q] && windows[q].el) mz = Math.max(mz, parseInt(windows[q].el.style.zIndex, 10) || 0); }
+        if ((parseInt(windows[k].el.style.zIndex, 10) || 0) <= mz) windows[k].el.style.zIndex = mz + 1;
+        dim.style.zIndex = Math.max(1, (parseInt(windows[k].el.style.zIndex, 10) || 300) - 1); if (dim !== area.lastChild) area.appendChild(dim); dim.classList.add('on'); document.documentElement.classList.add('spb-modal'); }
+      else { dim.classList.remove('on'); document.documentElement.classList.remove('spb-modal'); }
+    }
+    document.addEventListener('click', function () { setTimeout(spbDimSync, 0); }, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && window.innerWidth > 768) { var k = spbTopPop(); if (k) { closeWindow(k); spbDimSync(); } } });
 
     function initDirectAccess() {
       const minTop = getMinWindowTop();
@@ -2326,7 +2355,7 @@
       } else {
         openWindow('about', { left: 40, top: Math.max(minTop, 248) });
         openWindow('services', { left: 632, top: Math.max(minTop, 248) });
-        openWindow('clients', { left: 632, top: Math.max(minTop, 248) + 547 }); spbDesk(); requestAnimationFrame(spbDesk); setTimeout(spbDesk, 400); if (window.ResizeObserver && windows['services']) new ResizeObserver(spbDesk).observe(windows['services'].el);
+        openWindow('clients', { left: 632, top: Math.max(minTop, 248) + 547 }); spbDesk(); spbDimSync(); requestAnimationFrame(spbDesk); setTimeout(spbDesk, 400); if (window.ResizeObserver && windows['services']) new ResizeObserver(spbDesk).observe(windows['services'].el);
       }
       updateScrollHeight();
     }
