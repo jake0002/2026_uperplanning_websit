@@ -51,7 +51,9 @@
 (function () {
   if (!document.documentElement.classList.contains('sp-b')) return;
   if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn, #gnb .gnb-link, #brandLogo';
+  var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn, #gnb .gnb-link, #brandLogo' +
+    /* 152(11-23 19:18): 서브페이지 — 이전/다음 단계, 퀵배너 카카오·문의·복사, 뒤로, CTA 띠 버튼, FAQ 질문, 링크 카드 */
+    ', .sp-pn a, #stickyKakaoBanner a, #stickyKakaoBanner .sp-qb-row button, .toolbar-area .tool-btn, .sp-cta-band .sp-faq-cta-btn, .faq dt, ul.sp-linkcards a';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
@@ -69,4 +71,54 @@
   document.addEventListener('mouseover', function (e) {
     var el = e.target && e.target.closest ? e.target.closest(SEL) : null; if (el) prep(el);
   }, true);
+})();
+/* 입력란 포커스 마이크로 인터랙션(152, 11-23 19:18): 커서를 두면 연한 회색 선(#A3AAB3)이 입력란 테두리를 따라 0.55초에 그려지고, 벗어나면 되감긴다.
+   두꺼운 검정 기본 외곽선은 CSS 에서 끔. 터치 기기에서도 동작(포커스 기준). */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var Q = 'input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea';
+  function place(el, ov) {
+    var par = el.parentNode;
+    if (getComputedStyle(par).position === 'static') par.style.position = 'relative';
+    var w = el.offsetWidth, h = el.offsetHeight, r = parseFloat(getComputedStyle(el).borderTopLeftRadius) || 0;
+    ov.style.left = el.offsetLeft + 'px'; ov.style.top = el.offsetTop + 'px'; ov.style.width = w + 'px'; ov.style.height = h + 'px';
+    ov.firstChild.setAttribute('rx', Math.min(r, h / 2));
+  }
+  document.addEventListener('focusin', function (e) {
+    var el = e.target; if (!el || !el.matches || !el.matches(Q) || !el.parentNode) return;
+    var ov = el._spFt;
+    if (!ov) {
+      ov = document.createElementNS(NS, 'svg'); ov.setAttribute('class', 'sp-ftrace'); ov.setAttribute('aria-hidden', 'true');
+      var rect = document.createElementNS(NS, 'rect');
+      rect.setAttribute('x', '0'); rect.setAttribute('y', '0'); rect.setAttribute('width', '100%'); rect.setAttribute('height', '100%'); rect.setAttribute('pathLength', '100');
+      ov.appendChild(rect); el.parentNode.insertBefore(ov, el.nextSibling); el._spFt = ov;
+    }
+    place(el, ov);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { ov.classList.add('on'); }); });
+  });
+  document.addEventListener('focusout', function (e) { var el = e.target; if (el && el._spFt) el._spFt.classList.remove('on'); });
+})();
+/* 서브페이지 목차: 현재 섹션 표시를 화면 위치 기준으로 다시 계산(축소 비율 --k 에서도 정확하게) — 기존 스크립트 뒤에 실행(rAF) */
+(function () {
+  var de = document.documentElement;
+  if (!de.classList.contains('sp-b') || de.classList.contains('sp-b-home')) return;
+  function init() {
+    var links = [].slice.call(document.querySelectorAll('.tree-list.toc a.tree-link[href^="#"]'));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    if (!links.length) return;
+    var t = false;
+    function upd() {
+      t = false; var cur = 0, line = 170;
+      secs.forEach(function (h, i) { if (h && h.getBoundingClientRect().top <= line) cur = i; });
+      var se = document.scrollingElement || de;
+      if (se.scrollTop + window.innerHeight >= se.scrollHeight - 4) cur = links.length - 1;
+      links.forEach(function (a, i) { a.classList.toggle('active', i === cur); if (i === cur) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });
+    }
+    function req() { if (!t) { t = true; requestAnimationFrame(upd); } }
+    window.addEventListener('scroll', req, { passive: true }); window.addEventListener('resize', req);
+    links.forEach(function (a, i) { a.addEventListener('click', function () { setTimeout(req, 0); }); });
+    req();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
