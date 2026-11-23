@@ -893,3 +893,69 @@ html.sp-b .sp-lang a, html.sp-b .sp-lang b { display: block !important; height: 
 html.sp-b .sp-lang { align-items: center !important; }
 html.sp-b #startMenu .start-item.spm2-m { padding: 0 18px 0 22px !important; gap: 12px !important; }
 html.sp-b #startMenu .start-item.spm2-q { padding: 0 12px !important; justify-content: center !important; }
+
+/* =====================================================================
+   보정 5차(사용자 11-23 15:02)
+   ===================================================================== */
+/* ① 히어로 = 피그마 4:9 그대로: 볼록 그림자 + 따뜻한 형광 빛(light bloom) 계단식 점멸 → 점등, 제목 빠른 점멸, 서브카피 자연스럽게 */
+html.sp-b .hero-banner-box {
+  background: #111 !important; border-radius: var(--sp-r-m) !important;
+  box-shadow: 10px 10px 24px rgba(163,176,194,.55), -10px -10px 24px rgba(255,255,255,.9), 0 0 0 rgba(255,247,230,0) !important;
+  animation: spbBoxGlow 9.5s infinite !important; isolation: isolate;
+}
+html.sp-b .hero-banner-box::before {
+  content: ''; position: absolute; inset: auto; left: -10% !important; top: -71% !important; right: auto !important; bottom: auto !important; width: 120%; height: 130% !important; pointer-events: none; z-index: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255,247,230,.26) 0%, rgba(255,247,230,.08) 45%, rgba(255,247,230,0) 100%) !important;
+  filter: blur(24px); opacity: 0; animation: spbBloom2 9.5s infinite !important;
+}
+html.sp-b .hero-banner-box::after {   /* 위쪽 형광등 관 반사 — 아주 얇고 은은하게 */
+  content: ''; position: absolute; left: 12%; right: 12%; top: 0; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,247,230,0), rgba(255,247,230,.55), rgba(255,247,230,0)); opacity: 0; animation: spbBloom2 9.5s infinite;
+}
+html.sp-b #heroTypingText { font: 700 34px/1.25 var(--sp-font) !important; animation: spbFlick3 9.5s infinite !important; }
+html.sp-b .hero-banner-box .cmd-prompt { color: #9EA6B0 !important; }
+html.sp-b #heroBody2Text { color: #CCD1D9 !important; animation: spbRise 1s cubic-bezier(.2,.7,.2,1) 1.5s both !important; }
+@keyframes spbBloom2 {
+  0% { opacity: 0; animation-timing-function: step-end; } 1.3% { opacity: .81; animation-timing-function: step-end; } 2.5% { opacity: .11; animation-timing-function: step-end; }
+  3.6% { opacity: .9; animation-timing-function: step-end; } 4.8% { opacity: .23; animation-timing-function: step-end; } 7% { opacity: .77; animation-timing-function: step-end; }
+  8.2% { opacity: .32; animation-timing-function: ease-out; } 10.5% { opacity: .9; animation-timing-function: ease-in-out; } 12.5% { opacity: .75; animation-timing-function: ease-in-out; }
+  16%, 97% { opacity: 1; } 100% { opacity: 0; }
+}
+@keyframes spbFlick3 {
+  0% { opacity: 0; text-shadow: none; animation-timing-function: step-end; } 1.3% { opacity: .9; animation-timing-function: step-end; } 2.5% { opacity: .12; animation-timing-function: step-end; }
+  3.6% { opacity: 1; animation-timing-function: step-end; } 4.8% { opacity: .25; animation-timing-function: step-end; } 7% { opacity: .85; animation-timing-function: step-end; }
+  8.2% { opacity: .35; animation-timing-function: ease-out; } 10.5% { opacity: 1; text-shadow: 0 0 18px rgba(255,247,230,.45); }
+  16%, 97% { opacity: 1; text-shadow: 0 0 18px rgba(255,247,230,.28); } 100% { opacity: 0; text-shadow: none; }
+}
+@keyframes spbBoxGlow {
+  0%, 8% { box-shadow: 10px 10px 24px rgba(163,176,194,.55), -10px -10px 24px rgba(255,255,255,.9), 0 0 2px rgba(255,247,230,0); }
+  12%, 96% { box-shadow: 10px 10px 24px rgba(163,176,194,.55), -10px -10px 24px rgba(255,255,255,.9), 0 -6px 30px rgba(255,247,230,.55); }
+  100% { box-shadow: 10px 10px 24px rgba(163,176,194,.55), -10px -10px 24px rgba(255,255,255,.9), 0 0 2px rgba(255,247,230,0); }
+}
+@media (prefers-reduced-motion: reduce) { html.sp-b .hero-banner-box, html.sp-b .hero-banner-box::before, html.sp-b .hero-banner-box::after { animation: none !important; } html.sp-b .hero-banner-box::before, html.sp-b .hero-banner-box::after { opacity: 1; } }
+
+/* ③ 수행원칙 문단 줄바꿈은 HTML <br>(의미 단위) */
+html.sp-b .w-body .info-card p { word-break: keep-all; }
+
+/* ④ 로고 = 홈 링크 */
+@media (min-width: 769px) {
+  html.sp-b #gnb::before { display: none !important; content: none !important; }
+  html.sp-b .sp-logo { position: absolute; left: 30px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; height: 36px; padding: 0 2px; }
+  html.sp-b .sp-logo img { display: block; width: 128px; height: auto; }
+}
+html.sp-b .sp-logo { display: none; }
+@media (min-width: 769px) { html.sp-b #gnb .sp-logo { display: flex; } }
+
+/* ⑤ GNB 글자: 현재 페이지만 진하게, 나머지 짙은 회색 */
+html.sp-b #gnb .gnb-link span, html.sp-b #brandLogo span, html.sp-b #brandLogoText { color: #555B63 !important; }
+html.sp-b #gnb .gnb-link:hover span, html.sp-b #brandLogo:hover span { color: var(--sp-text) !important; }
+html.sp-b #gnb .gnb-link.active span, html.sp-b #gnb .gnb-link[aria-current="page"] span, html.sp-b.sp-b-home #brandLogo span, html.sp-b.sp-b-home #brandLogoText { color: var(--sp-text) !important; }
+
+/* ⑥ UX 서비스 카드 특허 배지 제거 */
+html.sp-b .card-grid .info-card h4 span[title] { display: none !important; }
+
+/* ⑦ 작업표시줄: 열린 창 = 볼록, 닫힘·최소화 = 오목 + 연한 글자 */
+html.sp-b .task-preview, html.sp-b .task-preview.active { background: var(--sp-surface) !important; box-shadow: -3px -3px 6px rgba(255,255,255,.9), 3px 3px 6px rgba(26,31,36,.12) !important; color: var(--sp-text) !important; }
+html.sp-b .task-preview.is-closed { background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s) !important; color: var(--sp-text-3) !important; }
+html.sp-b .task-preview.is-closed > span:first-child { background: var(--sp-text-3) !important; }
+html.sp-b .hero-banner-box > * { position: relative; z-index: 1; }

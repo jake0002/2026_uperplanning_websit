@@ -1329,6 +1329,7 @@
 
   <!-- 4. GNB HEADER BAR -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-research/" ><span>UX리서치</span></a>
@@ -1805,15 +1806,15 @@
           <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:8px;">
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">1. 3초, 고객이 지갑을 닫고 떠나는 시간.</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">첫 3초가 전환율의 80%를 결정합니다. 3초 안에 고객이 무엇을 눌러야 할지 가장 직관적인 경험을 설계합니다.</p>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">첫 3초가 전환율의 80%를 결정합니다.<br>3초 안에 고객이 무엇을 눌러야 할지<br>가장 직관적인 경험을 설계합니다.</p>
             </div>
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다.<br>불필요한 수식어를 덜어내고,<br>명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
             </div>
             <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
               <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">3. 더 적게 하지만 더 좋게.</h4>
-              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. 'Less but better'</p>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌<br>'무엇을 덜어낼까' 고민해야 합니다.<br>'Less but better'</p>
             </div>
           </div>
 
@@ -2228,6 +2229,7 @@
         windows[key].el.style.display = 'none';
         windows[key].minimized = true;
         updatePreview(key, false);
+        var spbP = document.getElementById('prev-' + key); if (spbP) spbP.classList.add('is-closed');
         updateScrollHeight();
       }
     }
@@ -2243,13 +2245,23 @@
       if (windows[key]) {
         windows[key].el.remove();
         delete windows[key];
-        removePreview(key);
+        spbMarkClosed(key);
         updateScrollHeight();
       }
     }
 
+    function spbMarkClosed(key) {
+      var pill = document.getElementById('prev-' + key); if (!pill) return;
+      pill.classList.remove('active'); pill.classList.add('is-closed'); pill.title = '닫힌 창 — 누르면 다시 열립니다';
+      pill.onclick = function () {
+        var ref = pill.nextSibling, box = pill.parentNode; pill.remove(); openWindow(key);
+        var np = document.getElementById('prev-' + key); if (np && ref && box) box.insertBefore(np, ref);
+        if (typeof spbDesk === 'function') spbDesk();
+      };
+    }
     function addPreview(key, title) {
       const container = document.getElementById('taskPreviews');
+      var spbOld = document.getElementById('prev-' + key), spbRef = null; if (spbOld) { spbRef = spbOld.nextSibling; spbOld.remove(); }
       const pill = document.createElement('div');
       pill.className = 'task-preview active';
       pill.id = 'prev-' + key;
@@ -2258,6 +2270,7 @@
         if (windows[key].el.style.display === 'none') {
           windows[key].el.style.display = 'flex';
           windows[key].el.style.zIndex = getNextZIndex();
+          pill.classList.remove('is-closed');
           updatePreview(key, true);
           windows[key].el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
@@ -2265,12 +2278,12 @@
         }
         updateScrollHeight();
       };
-      container.appendChild(pill);
+      if (spbRef && spbRef.parentNode === container) container.insertBefore(pill, spbRef); else container.appendChild(pill);
     }
     function updatePreview(key, active) {
       const pill = document.getElementById('prev-' + key);
       if (pill) {
-        if (active) pill.classList.add('active');
+        if (active) { pill.classList.add('active'); pill.classList.remove('is-closed'); }
         else pill.classList.remove('active');
       }
     }
