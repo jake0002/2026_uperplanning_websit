@@ -1017,3 +1017,19 @@ html.sp-b .win[data-key="services"] .card-grid .info-card { transition: transfor
 html.sp-b .win[data-key="services"] .card-grid .info-card.sp-tr:hover { transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { html.sp-b .sp-trace { display: none; } }
 html.sp-b #skyscraper a[href*="open.kakao.com"] svg.sp-trace { width: 100% !important; height: 100% !important; left: 0 !important; top: 0 !important; margin: 0 !important; }
+/* ── 11-23 18:41 ── */
+/* ① 슈퍼플래닝 창 하단 여백 축소 + ③ 배너 아래 뉴모피즘 오브제(인디케이터·오목 홈·볼록 노브) */
+html.sp-b .win[data-key="about"] .w-body { padding-bottom: 20px !important; }
+html.sp-b .win[data-key="about"] .hero-banner-box { margin-bottom: 0 !important; }
+html.sp-b .sp-about-deco { display: flex; align-items: center; gap: 8px; margin: 20px 2px 0; height: 16px; }
+html.sp-b .sp-about-deco i { flex: none; width: 6px; height: 6px; border-radius: 3px; background: var(--sp-inset); box-shadow: inset 1.5px 1.5px 2px rgba(26,31,36,.18), inset -1.5px -1.5px 2px rgba(255,255,255,.9); }
+html.sp-b .sp-about-deco i.on { width: 22px; background: #3A3F45; box-shadow: 1.5px 1.5px 3px rgba(26,31,36,.2), -1.5px -1.5px 3px rgba(255,255,255,.9); }
+html.sp-b .sp-about-deco .g { flex: 1; height: 4px; margin-left: 8px; border-radius: 2px; background: var(--sp-inset); box-shadow: inset 1.5px 1.5px 2.5px rgba(26,31,36,.16), inset -1.5px -1.5px 2.5px rgba(255,255,255,.95); }
+html.sp-b .sp-about-deco .n { flex: none; position: relative; width: 16px; height: 16px; border-radius: 50%; background: var(--sp-surface); box-shadow: 2px 2px 4px rgba(26,31,36,.16), -2px -2px 4px rgba(255,255,255,.95); }
+html.sp-b .sp-about-deco .n::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: #3A3F45; }
+@media (prefers-reduced-motion: no-preference) {
+  html.sp-b .sp-about-deco i.on { animation: spbDeco 9.5s infinite; }
+}
+@keyframes spbDeco { 0%, 14% { width: 6px; background: var(--sp-inset); } 20%, 100% { width: 22px; background: #3A3F45; } }
+/* ② 테두리 선 = 짙은 회색 */
+html.sp-b .sp-trace rect { stroke: #3A3F45 !important; }

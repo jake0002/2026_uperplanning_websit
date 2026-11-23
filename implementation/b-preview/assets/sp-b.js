@@ -47,11 +47,11 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 /* 마이크로 인터랙션(사용자 11-23 18:28): 마우스를 올리면 버튼·카드 테두리를 따라 얇은 검정 선이 한 바퀴 그려지고, 떼면 되감긴다.
-   대상: UX 서비스 카드, 바탕화면 아이콘(네모 버튼), 카카오톡 상담 버튼, GNB 포트폴리오 보기·인재채용. 터치 기기·동작 줄이기 설정에서는 동작 안 함. */
+   대상: UX 서비스 카드, 바탕화면 아이콘(네모 버튼), 카카오톡 상담 버튼, GNB 메뉴 전체(홈 포함)·포트폴리오 보기·인재채용. 선 색 = 짙은 회색(11-23 18:41). 터치 기기·동작 줄이기 설정에서는 동작 안 함. */
 (function () {
   if (!document.documentElement.classList.contains('sp-b')) return;
   if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn';
+  var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn, #gnb .gnb-link, #brandLogo';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
