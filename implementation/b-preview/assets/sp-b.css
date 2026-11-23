@@ -1358,3 +1358,64 @@ html.sp-b a.desktop-icon { text-decoration: none !important; color: inherit; }
 html.sp-b #spbObj { display: none !important; }
 /* 전체 메뉴 바로가기 버튼 = 메뉴 타일과 같이 왼쪽 정렬 */
 html.sp-b #startMenu .start-item.spm2-q { justify-content: flex-start !important; align-items: center !important; text-align: left !important; padding: 0 18px !important; }
+
+/* =====================================================================
+   157 — UX기획/디자인 = 피그마 28:626 구성(사용자 11-23 20:45)
+   ===================================================================== */
+html.sp-b .sp-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* 고객사 로고: 고정 흰 타일 */
+html.sp-b figure.sp-logos { margin-top: 26px !important; margin-bottom: 8px !important; padding: 14px !important; background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s); border-radius: var(--sp-r-l); }
+html.sp-b figure.sp-logos ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+html.sp-b figure.sp-logos li { height: 58px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 14px; box-shadow: 4px 4px 10px rgba(26,31,36,.08), -4px -4px 10px rgba(255,255,255,.9); }
+html.sp-b figure.sp-logos img { max-width: 72%; max-height: 30px; width: auto !important; height: auto !important; object-fit: contain; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+/* 카드 묶음(정보 = 선+면) + 오목 번호 배지 */
+html.sp-b .sp-cards { display: grid; gap: 16px; margin-top: 22px !important; margin-bottom: 22px !important; }
+html.sp-b .sp-cols2 { grid-template-columns: repeat(2, 1fr); } html.sp-b .sp-cols3 { grid-template-columns: repeat(3, 1fr); }
+html.sp-b .sp-cols4 { grid-template-columns: repeat(4, 1fr); } html.sp-b .sp-cols5 { grid-template-columns: repeat(5, 1fr); }
+html.sp-b .sp-card { background: var(--sp-surface); border: 1px solid var(--sp-line); border-radius: var(--sp-r-m); padding: 20px 20px 22px; display: flex; flex-direction: column; }
+html.sp-b .sp-card .sp-num { align-self: flex-start; display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); font: 500 11px/1 var(--sp-mono); letter-spacing: .04em; color: var(--sp-text-2); margin-bottom: 12px; }
+html.sp-b .main-content-pane .sp-card h3 { margin: 0 0 8px !important; font: 700 15px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; }
+html.sp-b .main-content-pane .sp-card p { margin: 0 !important; font-size: 13.5px !important; line-height: 1.65 !important; color: var(--sp-text-2) !important; word-break: keep-all; max-width: none !important; }
+html.sp-b .sp-mini .sp-card { padding: 16px 18px; } html.sp-b .sp-mini .sp-card h3 { font-size: 14px !important; margin-bottom: 4px !important; }
+html.sp-b .sp-card .sp-out { margin-top: auto; padding: 10px 12px; border-radius: 10px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); font: 500 12.5px/1.55 var(--sp-font); color: var(--sp-text); }
+html.sp-b .sp-card p + .sp-out { margin-top: 14px; }
+html.sp-b .sp-card .sp-out small { display: block; font: 500 11px/1.4 var(--sp-font); color: var(--sp-text-3); margin-bottom: 2px; }
+html.sp-b ul.sp-check { list-style: none; margin: 0 !important; padding: 0 !important; display: grid; gap: 6px; }
+html.sp-b ul.sp-check li { position: relative; padding-left: 22px; font-size: 13.5px; line-height: 1.6; color: var(--sp-text-2); }
+html.sp-b ul.sp-check li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 10px; height: 5px; border-left: 1.5px solid var(--sp-ink); border-bottom: 1.5px solid var(--sp-ink); transform: rotate(-45deg); }
+html.sp-b ul.sp-chips { list-style: none; margin: 4px 0 0 !important; padding: 0 !important; display: flex; flex-direction: column; gap: 8px; }
+html.sp-b ul.sp-chips li { background: var(--sp-inset); box-shadow: var(--sp-inset-s); border-radius: 10px; padding: 8px 12px; font-size: 13px; line-height: 1.4; color: var(--sp-text); }
+/* 사례 링크 카드: 태그 + 제목 + 설명 */
+html.sp-b ul.sp-caselinks a { justify-content: flex-start; gap: 14px; }
+html.sp-b ul.sp-caselinks a b { font-weight: 700; } html.sp-b ul.sp-caselinks a small { color: var(--sp-text-3); font-size: 12.5px; font-weight: 500; flex: 1; }
+html.sp-b .sp-tag { flex: none; height: 22px; padding: 0 9px; display: inline-flex; align-items: center; border-radius: 999px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); font: 500 11px/1 var(--sp-font); color: var(--sp-text-2); }
+/* AI 진단 = 검정 강조 박스(가로: 글 + 흰 버튼) */
+html.sp-b .sp-aibox { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 24px !important; margin-bottom: 8px !important; }
+html.sp-b .sp-aibox h3 { margin: 0 0 8px !important; font: 700 16px/1.45 var(--sp-font) !important; color: #fff !important; }
+html.sp-b .sp-aibox p { margin: 0 !important; font-size: 13px !important; line-height: 1.7 !important; color: #C9CDD2 !important; }
+html.sp-b .sp-aibox a.sp-aibtn { flex: none; display: inline-flex; align-items: center; height: 44px; padding: 0 20px !important; border-radius: 999px; background: #fff !important; color: var(--sp-ink) !important; font: 600 13px/1 var(--sp-font) !important; text-decoration: none !important; }
+html.sp-b .sp-aibox a.sp-aibtn * { color: var(--sp-ink) !important; }
+/* 04 특허 상자 */
+html.sp-b .sp-box { background: var(--sp-surface); border: 1px solid var(--sp-line); border-radius: var(--sp-r-l); padding: 26px 28px; margin-top: 22px !important; margin-bottom: 22px !important; }
+html.sp-b .sp-badge { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; background: var(--sp-ink); color: #fff; font: 600 11px/1 var(--sp-font); }
+html.sp-b .main-content-pane .sp-box h3 { margin: 12px 0 14px !important; font: 700 17px/1.4 var(--sp-font) !important; }
+html.sp-b ul.sp-prows { list-style: none; margin: 0 0 16px !important; padding: 0 !important; display: grid; gap: 10px; }
+html.sp-b ul.sp-prows li { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--sp-inset); box-shadow: var(--sp-inset-s); border-radius: 10px; padding: 11px 16px; font-size: 13.5px; }
+html.sp-b ul.sp-prows li span { font: 500 12.5px/1.4 var(--sp-mono); color: var(--sp-text-2); } html.sp-b ul.sp-prows li b { font-weight: 600; color: var(--sp-text); }
+html.sp-b .main-content-pane .sp-box p { margin: 0 !important; max-width: none !important; }
+/* 06 후기 = 검정 인용(피그마) */
+html.sp-b .main-content-pane blockquote.sp-quote { background: var(--sp-ink) !important; border: 0 !important; border-radius: var(--sp-r-m) !important; padding: 22px 26px !important; margin-top: 18px !important; margin-bottom: 8px !important; }
+html.sp-b blockquote.sp-quote p { margin: 0 !important; color: #C9CDD2 !important; font-size: 13px !important; line-height: 1.75 !important; max-width: none !important; }
+html.sp-b blockquote.sp-quote strong { color: #fff !important; font-size: 15px; } html.sp-b blockquote.sp-quote a { color: #fff !important; }
+/* 07 견적 오목 상자 */
+html.sp-b .main-content-pane .sp-traybox { background: var(--sp-inset); box-shadow: var(--sp-inset-s); border-radius: var(--sp-r-m); padding: 20px 22px; margin-top: 18px !important; margin-bottom: 18px !important; }
+html.sp-b .main-content-pane .sp-traybox h3 { margin: 0 0 6px !important; font: 700 15px/1.4 var(--sp-font) !important; }
+html.sp-b .main-content-pane .sp-traybox p { margin: 0 !important; max-width: none !important; }
+@media (max-width: 768px) {
+  html.sp-b .sp-cols3, html.sp-b .sp-cols4, html.sp-b .sp-cols5 { grid-template-columns: 1fr 1fr; } html.sp-b .sp-cols2 { grid-template-columns: 1fr; }
+  html.sp-b figure.sp-logos ul { grid-template-columns: repeat(3, 1fr); }
+  html.sp-b .sp-aibox { flex-direction: column; align-items: flex-start; }
+  html.sp-b ul.sp-prows li { grid-template-columns: 1fr; gap: 4px; }
+  html.sp-b ul.sp-caselinks a { flex-wrap: wrap; }
+}
+html.sp-b ul.sp-caselinks a b { flex: none; } html.sp-b ul.sp-caselinks a small { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
