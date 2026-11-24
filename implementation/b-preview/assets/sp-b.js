@@ -152,6 +152,18 @@
     root.querySelector('.sp-rv-next').addEventListener('click', function () { go(1); });
     /* 159: 자동 넘김·일시정지 제거(사용자 11-23 21:22) — 이전/다음 버튼·가로 스와이프로만 이동 */
     tr.addEventListener('scroll', function () { requestAnimationFrame(upd); }, { passive: true }); window.addEventListener('resize', upd); upd();
+    /* 165: data-autoplay 가 있는 보드(AI-UX강의, 피그마 49:838)만 자동 넘김 + 일시정지 버튼. 마우스 올림·포커스·동작 줄이기·화면 밖이면 멈춤 */
+    var ms = +root.getAttribute('data-autoplay'), pb = root.querySelector('.sp-rv-pause');
+    if (ms && pb) {
+      var off = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, hold = false, seen = true;
+      var setp = function (v) { off = v; pb.setAttribute('aria-pressed', v ? 'true' : 'false'); pb.textContent = v ? '재생' : '일시정지'; };
+      setp(off);
+      pb.addEventListener('click', function () { setp(!off); });
+      root.addEventListener('mouseenter', function () { hold = true; }); root.addEventListener('mouseleave', function () { hold = false; });
+      root.addEventListener('focusin', function () { hold = true; }); root.addEventListener('focusout', function () { hold = false; });
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { seen = e[0].isIntersecting; }).observe(root);
+      setInterval(function () { if (!off && !hold && seen && !document.hidden) go(1); }, ms);
+    }
   }
   function boot() { [].forEach.call(document.querySelectorAll('.sp-rv'), init); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
