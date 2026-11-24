@@ -2401,3 +2401,26 @@ html.sp-b .sp-pin-pulse2 { animation-delay: 1.3s; }
   html.sp-b .main-content-pane .sp-aphotos.sp-ap2 .photo-frame:first-child img { aspect-ratio: 820 / 433 !important; }
 }
 @media (max-width: 768px) { html.sp-b .main-content-pane ul.sp-caselinks a small, html.sp-b .main-content-pane ul.sp-caselinks a b { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; max-width: none !important; display: block !important; } }
+/* 176 (사용자 11-24 19:19) ① 문의하기 진행 단계 01 빨간 숫자 → 레드 규칙(필수 *·지도 핀만)에 맞게 짙은 글자 */
+html.sp-b .sp-kproc li:first-child .n { color: #111; font-weight: 600; }
+/* 176 ② 문의하기 '방문상담 가능 시간' 타이핑 문장 유지 — 본문 안 강조 = 오목 트레이 글자(검정 상자 아님, 규칙 13) */
+html.sp-b .main-content-pane p.sp-kvisit { margin-top: 14px !important; margin-bottom: 22px !important; }
+html.sp-b .main-content-pane p.sp-kvisit .typewriter-quote { display: inline !important; padding: 5px 12px 6px !important; background: var(--sp-inset) !important; color: #111 !important; border: 0; border-right: 2px solid transparent; border-radius: 8px; box-shadow: var(--sp-inset-s); font: 600 14px/1.9 var(--sp-font) !important; box-decoration-break: clone; -webkit-box-decoration-break: clone; word-break: keep-all; }
+html.sp-b .main-content-pane p.sp-kvisit .typewriter-quote.is-typing { animation: spTypeCaretB .8s step-end infinite !important; }
+/* 176 ③ 블로그 글 왼쪽: 분류(피그마) + 아래 '전체 글 목록' 접기(라이브 목차의 글 24개 내부 링크 유지) */
+html.sp-b .tree-sidebar .sp-postside { position: sticky; top: 84px; }
+html.sp-b .tree-sidebar .sp-postside:has(details[open]) { position: static; }
+html.sp-b .tree-sidebar .sp-postside > .sp-toc-cap, html.sp-b .tree-sidebar .sp-postside > .tree-list.toc { position: static !important; top: auto !important; }
+html.sp-b .sp-postall { margin: 18px 0 0 8px; border-top: 1px solid #D3D8DE; padding-top: 14px; }
+html.sp-b .sp-postall > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 38px; padding: 0 14px; border-radius: 999px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); font: 600 13px/1 var(--sp-font); color: #3A3F45; }
+html.sp-b .sp-postall > summary::-webkit-details-marker { display: none; }
+html.sp-b .sp-postall > summary span { margin-right: auto; color: #7C828A; font-weight: 500; }
+html.sp-b .sp-postall > summary::after { content: ""; width: 7px; height: 7px; border-right: 1.4px solid #3A3F45; border-bottom: 1.4px solid #3A3F45; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+html.sp-b .sp-postall[open] > summary { background: var(--sp-inset); box-shadow: var(--sp-inset-s); }
+html.sp-b .sp-postall[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+html.sp-b ul.sp-postlist { list-style: none; margin: 12px 0 0 !important; padding: 0 !important; }
+html.sp-b ul.sp-postlist li { margin: 0 !important; padding: 0 !important; }
+html.sp-b ul.sp-postlist a { display: block; padding: 7px 10px; border-radius: 8px; font: 400 12.5px/1.5 var(--sp-font); color: #4A4F55; text-decoration: none; word-break: keep-all; text-wrap: balance; }
+html.sp-b ul.sp-postlist a:hover { color: #111; background: rgba(255,255,255,.45); }
+html.sp-b ul.sp-postlist a[aria-current] { color: #111; font-weight: 700; background: var(--sp-inset); box-shadow: var(--sp-inset-s); }
+@media (max-width: 768px) { html.sp-b .tree-sidebar .sp-postside { position: static; } html.sp-b .sp-postall { margin-left: 0; } }
