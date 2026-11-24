@@ -61,7 +61,9 @@
     /* 167: 블로그 글 상세 — 메타 줄 즐겨찾기·공유, 목록보기, 글 안 CTA 버튼 */
     ', .sp-post .sp-meta .icon-action-btn, a.sp-listbtn, .sp-post .sp-blog-cta a' +
     /* 168: UX블로그 목록 글 카드 전체(카드에 마우스를 올리면 카드 테두리를 따라 선) */
-    ', .postit-grid > .postit-card';
+    ', .postit-grid > .postit-card' +
+    /* 169: 회사소개 — 언론 보도 줄, 이메일 복사 */
+    ', ul.sp-press a, button.sp-ccopy';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
