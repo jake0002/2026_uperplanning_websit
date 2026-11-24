@@ -246,3 +246,17 @@
   function start() { scan(); mo.observe(document.body, { childList: true }); setTimeout(function () { mo.disconnect(); }, 8000); }
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
 })();
+
+/* 173(사용자 11-24 16:32 '모바일 약도 글자가 너무 작다'): 모바일에선 약도(문의하기·홈 찾아오시는 길 팝업)를 빨간 점 주변으로 확대(viewBox 만 바꿈, 그림·문구 동일) */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b') || !window.matchMedia) return;
+  var mq = window.matchMedia('(max-width: 768px)'), ZOOM = '318 178 320 222';
+  function apply() {
+    [].forEach.call(document.querySelectorAll('svg.sp-map'), function (svg) {
+      if (!svg.getAttribute('data-vb')) svg.setAttribute('data-vb', svg.getAttribute('viewBox'));
+      svg.setAttribute('viewBox', mq.matches ? ZOOM : svg.getAttribute('data-vb'));
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply); else apply();
+  if (mq.addEventListener) mq.addEventListener('change', apply);
+})();

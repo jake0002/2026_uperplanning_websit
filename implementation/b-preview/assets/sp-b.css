@@ -2320,3 +2320,13 @@ html.sp-b .sp-pin-pulse { transform-box: fill-box; transform-origin: center; opa
 html.sp-b .sp-pin-pulse2 { animation-delay: 1.3s; }
 @keyframes spPinPulse { 0% { transform: scale(.3); opacity: .55; } 70% { opacity: .12; } 100% { transform: scale(1.9); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { html.sp-b .sp-pin-pulse { animation: none; } }
+
+/* ===== 173(11-24 16:32): 모바일 = 전체보기 '정리 안 된 생각도 가볍게' 말풍선 흰색 뉴모피즘 · 히어로 타이핑 = PC 와 같이 검정 바탕이 글자와 함께 늘어남 ===== */
+@media (max-width: 768px) {
+  html.sp-b #spMnavSheet .spm-cta a.i::before { background: #F3F5F7 !important; color: var(--sp-text) !important; border: 1px solid #fff !important; border-radius: 999px !important; padding: 6px 12px !important; font-weight: 600 !important;
+    box-shadow: -4px -4px 9px rgba(255,255,255,.95), 4px 4px 10px rgba(26,31,36,.16) !important; width: auto !important; margin-left: 0 !important; left: auto !important; right: 8px; }
+  html.sp-b #spMnavSheet .spm-cta a.i::after { border-top-color: #F3F5F7 !important; margin-left: 0 !important; left: auto !important; right: 34px; filter: drop-shadow(1px 2px 1px rgba(26,31,36,.08)); }
+  html.sp-b .main-content-pane .hero-intro .sp-type-box { display: block !important; background: none !important; padding: 0 !important; border-radius: 0 !important; margin-top: 16px !important; }
+  html.sp-b .main-content-pane .hero-intro .sp-type-box .sp-type { display: inline-block !important; background: #111 !important; color: #fff !important; border: 0 !important; padding: 14px 16px !important; border-radius: 14px !important; font-size: 14px !important; line-height: 1.6 !important; }
+  html.sp-b .main-content-pane .hero-intro .sp-type-box .sp-type.is-waiting { visibility: hidden; }
+}
