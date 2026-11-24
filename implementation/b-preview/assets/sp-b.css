@@ -1533,3 +1533,82 @@ html.sp-b .sp-books figure:first-child { background: #EBEFF3 !important; }
 html.sp-b .sp-pop-ico { display: block; width: 60px; height: 60px; border-radius: 16px; background: var(--sp-surface) center / 30px 30px no-repeat; box-shadow: 3px 3px 8px rgba(26,31,36,.18), -3px -3px 8px rgba(255,255,255,.8); }
 html.sp-b .sp-pop-ico[data-ico="linkedin"] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='4'/%3E%3Cpath d='M8 10.5V16.5M12 16.5V10.5M12 13.3c0-1.6 1-2.8 2.5-2.8s2.5 1.2 2.5 2.8v3.2'/%3E%3Ccircle cx='8' cy='7.6' r='.6' fill='%23111'/%3E%3C/svg%3E"); }
 html.sp-b .sp-pop-ico[data-ico="blog"] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4.5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.5L9 20.5v-3H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z'/%3E%3Cpath d='M8.5 8v5.5'/%3E%3Ccircle cx='10.6' cy='11.4' r='2.1'/%3E%3Cpath d='M15 9.2v4.3'/%3E%3C/svg%3E"); }
+/* 163 웹/앱 개발 = 피그마 41:1366 수치 보정(사용자 11-24 09:17). 이 페이지에만(NUGU 카드가 있는 문서) 적용 */
+html.sp-b:has(figure.sp-nugu) .main-content-pane .hero-intro.sp-hero-pill { font-size: 22px !important; font-weight: 700 !important; line-height: 1.45 !important; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .hero-intro.sp-hero-pill .sp-type-box { margin-top: 28px; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .hero-intro.sp-hero-pill .sp-type { padding: 12px 18px !important; border-radius: 12px !important; font-size: 15px !important; font-weight: 600 !important; line-height: 1.3 !important; background: #111 !important; }
+html.sp-b .sp-photos.sp-wad-hero { gap: 20px !important; margin-top: 28px !important; }
+html.sp-b .sp-photos.sp-wad-hero img { aspect-ratio: 581 / 330 !important; }
+html.sp-b:has(figure.sp-nugu) .sp-cards { gap: 20px !important; }
+html.sp-b:has(figure.sp-nugu) .sp-card { padding: 22px !important; gap: 0; border: 0 !important; box-shadow: var(--sp-raised-m); }
+html.sp-b:has(figure.sp-nugu) .sp-card .sp-num { height: 27px; padding: 0 10px; font: 500 12px/1 var(--sp-mono); color: #4A4F55; margin-bottom: 10px; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .sp-card h3 { margin: 0 0 10px !important; font: 600 15px/1.45 var(--sp-font) !important; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .sp-card p { font-size: 13.5px !important; line-height: 1.65 !important; }
+/* 05 단계 카드: 간격 14 · 안쪽 20/18 · 설명 13 · 산출물 12 */
+html.sp-b:has(figure.sp-nugu) .sp-cards.sp-cols4:not(.sp-lines) { gap: 14px !important; }
+html.sp-b:has(figure.sp-nugu) .sp-cards.sp-cols4:not(.sp-lines) .sp-card { padding: 20px 18px !important; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .sp-cards.sp-cols4:not(.sp-lines) .sp-card p { font-size: 13px !important; }
+html.sp-b:has(figure.sp-nugu) .sp-card .sp-out { padding: 10px 12px; font: 500 12px/1.5 var(--sp-font); }
+html.sp-b:has(figure.sp-nugu) .sp-card p + .sp-out { margin-top: 10px; }
+html.sp-b:has(figure.sp-nugu) .sp-card .sp-out small { font-size: 11px; }
+/* 06 오목 미니 카드: 간격 12 · r14 · 안쪽 16 · 제목 13 · 본문 12.5 */
+html.sp-b:has(figure.sp-nugu) .sp-cards.sp-inset { gap: 12px !important; }
+html.sp-b:has(figure.sp-nugu) .sp-inset .sp-card { padding: 16px !important; border-radius: 14px; box-shadow: var(--sp-inset-m) !important; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .sp-inset .sp-card h3 { margin: 0 0 6px !important; font: 600 13px/1.3 var(--sp-font) !important; }
+html.sp-b:has(figure.sp-nugu) .main-content-pane .sp-inset .sp-card p { font-size: 12.5px !important; font-weight: 500; line-height: 1.5 !important; }
+/* 검정 안내 상자 */
+html.sp-b .main-content-pane .sp-blackbox { border-radius: 16px !important; padding: 22px 26px !important; }
+html.sp-b .main-content-pane .sp-blackbox h3 { margin: 0 0 6px !important; font: 600 17px/1.45 var(--sp-font) !important; }
+html.sp-b .main-content-pane .sp-blackbox p { font-size: 14px !important; line-height: 1.65 !important; }
+/* 표: 머리 41(안쪽 12/22) · 행 55(16/22) · 첫 열 240 / 300 */
+html.sp-b:has(figure.sp-nugu) table.compare-table th { padding: 12px 22px !important; font-size: 13px !important; line-height: 1.3 !important; }
+html.sp-b:has(figure.sp-nugu) table.compare-table td { padding: 16px 22px !important; }
+html.sp-b:has(figure.sp-nugu) table.compare-table td strong { font-weight: 600; font-size: 13px; }
+html.sp-b:has(figure.sp-nugu) table.compare-table.sp-tb-nw th:first-child { width: 240px; }
+html.sp-b:has(figure.sp-nugu) table.compare-table:not(.sp-tb-nw) th:first-child { width: 300px; }
+/* NUGU 공식 에이전시 카드 740×237: 안쪽 32/36 · 간격 36 · 타일 132 r24(볼록) · 로고 잘림 수정(공통 figure img 둥근 모서리 해제) */
+html.sp-b .main-content-pane figure.sp-nugu, html.sp-b .main-content-pane figure.sp-hconv { width: 740px !important; max-width: 100% !important; }
+html.sp-b .main-content-pane .sp-nugu-card { padding: 32px 36px; gap: 36px; border-radius: 20px; box-shadow: var(--sp-raised-m); }
+html.sp-b .main-content-pane .sp-nugu-logos { gap: 14px; }
+html.sp-b .main-content-pane .sp-nugu-logos > i { font: 700 20px/1 var(--sp-font); color: #7C828A; }
+html.sp-b .main-content-pane .sp-nugu-tile { width: 132px; height: 132px; border-radius: 24px; box-shadow: var(--sp-raised-m) !important; }
+html.sp-b .main-content-pane .sp-nugu-tile.is-dark { box-shadow: var(--sp-raised-m) !important; }
+html.sp-b .main-content-pane figure.sp-nugu .sp-nugu-tile img { border-radius: 0 !important; box-shadow: none !important; width: 96px !important; height: auto !important; max-width: none !important; }
+html.sp-b .main-content-pane figure.sp-nugu .sp-nugu-tile:not(.is-dark) img { width: 100px !important; }
+html.sp-b .main-content-pane .sp-nugu-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+html.sp-b .main-content-pane .sp-nugu-badge { height: 25px; padding: 0 10px; font: 600 13px/1 var(--sp-font); letter-spacing: 0; }
+html.sp-b .main-content-pane .sp-nugu-txt h3 { margin: 0 !important; font: 700 20px/1.35 var(--sp-font) !important; }
+html.sp-b .main-content-pane .sp-nugu-txt p { font-size: 14px !important; line-height: 1.65 !important; color: #4A4F55 !important; }
+html.sp-b .main-content-pane .sp-nugu-txt p.sp-nugu-case { margin-top: 0 !important; font: 500 12px/1.5 var(--sp-font) !important; color: #111 !important; }
+/* 상세페이지 HTML 변환 도식 740×319: 안쪽 28 · 간격 16 · 왼쪽 290(오목) · 화살표 56 · 오른쪽 290(검정) */
+html.sp-b .main-content-pane .sp-hc-card { padding: 28px; gap: 16px; border-radius: 20px; box-shadow: var(--sp-raised-m); align-items: center; }
+html.sp-b .main-content-pane .sp-hc-l { flex: 0 0 290px; background: var(--sp-inset); box-shadow: var(--sp-inset-m); border-radius: 14px; padding: 16px; }
+html.sp-b .main-content-pane .sp-hc-l b { font: 600 13px/1.3 var(--sp-font); margin: 0 0 8px; }
+html.sp-b .main-content-pane .sp-hc-l ul { gap: 8px; }
+html.sp-b .main-content-pane .sp-hc-l li { gap: 10px; padding: 8px 10px; border-radius: 10px; background: var(--sp-surface); box-shadow: -5px -5px 10px rgba(255,255,255,.95), 5px 5px 10px rgba(26,31,36,.14); font: 500 12px/1.5 var(--sp-font); color: var(--sp-text-2); }
+html.sp-b .main-content-pane .sp-hc-l li em { width: 40px; box-sizing: border-box; text-align: center; padding: 2px 0; border-radius: 4px; font: 500 10px/1.4 var(--sp-font); background: transparent; border: 1px solid #D3D8DE; color: var(--sp-text-3); }
+html.sp-b .main-content-pane .sp-hc-l li.is-t { color: var(--sp-text); }
+html.sp-b .main-content-pane .sp-hc-l li.is-t em { background: #111; border-color: #111; color: #fff; }
+html.sp-b .main-content-pane .sp-hc-arr { flex: 0 0 56px; gap: 6px; }
+html.sp-b .main-content-pane .sp-hc-arr i.sp-arr { width: 56px; }
+html.sp-b .main-content-pane .sp-hc-arr small { font: 500 10px/1.4 var(--sp-font); }
+html.sp-b .main-content-pane .sp-hc-code { flex: 0 0 290px; box-sizing: border-box; border-radius: 14px; padding: 16px; }
+html.sp-b .main-content-pane .sp-hc-bar { gap: 6px; font: 500 10px/1.4 var(--sp-font); margin-bottom: 6px; }
+html.sp-b .main-content-pane .sp-hc-bar i { width: 6px; height: 6px; }
+html.sp-b .main-content-pane .sp-hc-code ol { gap: 5px; }
+html.sp-b .main-content-pane .sp-hc-code li { padding: 3px 6px; border-radius: 4px; line-height: 15px; }
+html.sp-b .main-content-pane .sp-hc-code li code { font: 500 11px/15px var(--sp-font); color: rgba(255,255,255,.55); }
+html.sp-b .main-content-pane .sp-hc-code li.is-hl { background: rgba(255,255,255,.12); } html.sp-b .main-content-pane .sp-hc-code li.is-hl code { color: #fff; font-weight: 500; }
+html.sp-b .main-content-pane .sp-hc-code small { margin-top: 6px; font: 500 10px/1.5 var(--sp-font); color: #fff; }
+html.sp-b .main-content-pane figure.sp-hconv figcaption { white-space: nowrap; }
+@media (max-width: 768px) {
+  html.sp-b .main-content-pane figure.sp-nugu, html.sp-b .main-content-pane figure.sp-hconv { width: auto !important; }
+  html.sp-b .main-content-pane .sp-nugu-card { padding: 22px; gap: 20px; }
+  html.sp-b .main-content-pane .sp-nugu-tile { width: 96px; height: 96px; border-radius: 20px; }
+  html.sp-b .main-content-pane figure.sp-nugu .sp-nugu-tile img { width: 76px !important; } html.sp-b .main-content-pane figure.sp-nugu .sp-nugu-tile:not(.is-dark) img { width: 78px !important; }
+  html.sp-b .main-content-pane .sp-hc-card { padding: 16px; }
+  html.sp-b .main-content-pane .sp-hc-l, html.sp-b .main-content-pane .sp-hc-code { flex: none; width: 100%; }
+  html.sp-b .main-content-pane .sp-hc-arr { flex: none; }
+  html.sp-b .main-content-pane figure.sp-hconv figcaption { white-space: normal; }
+  html.sp-b:has(figure.sp-nugu) table.compare-table th:first-child { width: auto !important; } }
+@media (max-width: 768px) { html.sp-b:has(figure.sp-nugu) table.compare-table th, html.sp-b:has(figure.sp-nugu) table.compare-table td { padding: 12px 14px !important; } }
