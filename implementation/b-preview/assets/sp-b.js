@@ -63,7 +63,9 @@
     /* 168: UX블로그 목록 글 카드 전체(카드에 마우스를 올리면 카드 테두리를 따라 선) */
     ', .postit-grid > .postit-card' +
     /* 169: 회사소개 — 언론 보도 줄, 이메일 복사 */
-    ', ul.sp-press a, button.sp-ccopy';
+    ', ul.sp-press a, button.sp-ccopy' +
+    /* 170: 문의하기 — 등록 버튼, 갤러리 이전/다음, 지도 앱 버튼 */
+    ', button.sp-ksubmit, button.sp-kgal-btn, a.sp-kmap-a';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
@@ -191,4 +193,37 @@
   }
   function boot() { [].forEach.call(document.querySelectorAll('.sp-rv'), init); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
+/* 171(11-24 14:11 '모바일이 피그마 시안처럼'): ① 첫 진입 스와이프 안내 = 피그마 99:1684 뉴모피즘(오목 트랙 + 볼록 손가락 노브 + 좌우 긴 화살표)
+   ② 전체보기 시트에 Language 그룹(피그마 93:1713: 한국어(KO) = 현재 오목, English(EN) = 볼록 링크) — 기존 sp-mnav.js 가 만든 요소에 덧붙임 */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  var HAND = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>';
+  var ARR = function (l) { return '<svg class="a' + (l ? ' l' : ' r') + '" width="36" height="8" viewBox="0 0 36 8" fill="none" aria-hidden="true"><path d="' + (l ? 'M36 7.3H1L8 .7' : 'M0 7.3H35L28 .7') + '" stroke="#111" stroke-width="1.5"/></svg>'; };
+  function toast(t) { if (t.getAttribute('data-b')) return; t.setAttribute('data-b', '1'); t.innerHTML = '<div class="spsw-track">' + ARR(true) + '<span class="spsw-knob">' + HAND + '</span>' + ARR(false) + '</div>'; }
+  function lang(sheet) {
+    if (sheet.querySelector('.spm-lang')) return;
+    var en = document.querySelector('.sp-lang a[hreflang="en"]'), ko = document.querySelector('.sp-lang a[hreflang="ko"]');
+    var isEn = document.documentElement.lang === 'en';
+    var cur = function (t) { return '<a class="is-on" aria-current="true" href="' + location.pathname + '">' + t + '</a>'; };
+    var html = '<h4>Language</h4><div class="spm-g spm-lang">' + (isEn ? (ko ? '<a href="' + ko.getAttribute('href') + '" hreflang="ko" lang="ko">한국어 (KO)</a>' : '') + cur('English (EN)')
+      : cur('한국어 (KO)') + (en ? '<a href="' + en.getAttribute('href') + '" hreflang="en" lang="en">English (EN)</a>' : '')) + '</div>';
+    var cta = sheet.querySelector('.spm-cta'); if (!cta) return;
+    cta.insertAdjacentHTML('beforebegin', html);
+  }
+  function scan() {
+    var t = document.getElementById('spSwipeToast'); if (t) toast(t);
+    var s = document.getElementById('spMnavSheet'); if (s) lang(s);
+  }
+  /* 미리보기 경로(/b-preview/)에선 sp-mnav.js 가 '/' 만 보고 토스트를 안 띄우므로 같은 규칙(모바일·세션 1회·1.5초)으로 대신 띄움. 정식 전환 후엔 sp-mnav.js 가 띄우고 위 toast()가 모양만 바꿈 */
+  if (location.pathname === '/b-preview/' && window.matchMedia('(max-width: 768px)').matches) {
+    var shown = false; try { shown = !!sessionStorage.getItem('sp_swipe_tip'); if (!shown) sessionStorage.setItem('sp_swipe_tip', '1'); } catch (e) {}
+    if (!shown) {
+      var pv = function () { var t = document.createElement('div'); t.id = 'spSwipeToast'; t.setAttribute('role', 'img'); t.setAttribute('aria-label', '화면을 좌우로 넘기면 다른 메뉴로 이동합니다'); toast(t); document.body.appendChild(t); setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1500); };
+      if (document.body) pv(); else document.addEventListener('DOMContentLoaded', pv);
+    }
+  }
+  var mo = new MutationObserver(scan);
+  function start() { scan(); mo.observe(document.body, { childList: true }); setTimeout(function () { mo.disconnect(); }, 8000); }
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
 })();
