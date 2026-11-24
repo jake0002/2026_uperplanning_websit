@@ -98,6 +98,7 @@
     '.spq-btns .spq-b2{flex:0 0 140px;height:51px;}',
     '.spq-btns .spq-b1{flex:1;}',
     '.spq-dnote{display:none;}',
+    '#spqD1 > .spq-btns{margin-top:14px;}',   // 181: 선택지(또는 입력칸)와 버튼 사이 28px
     '.spq-done .spq-b1[data-close]{width:auto;padding:0 48px;align-self:center;}',
     /* 167: 희망 일정 달력(뉴모피즘) — 입력란 오른쪽 볼록 달력 버튼, 눌러서 여는 달력 창(선택한 날 = 오목) */
     '.spq-dwrap{position:relative;}',
