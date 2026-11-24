@@ -260,3 +260,21 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply); else apply();
   if (mq.addEventListener) mq.addEventListener('change', apply);
 })();
+/* 175(사용자 11-24 17:25 '모바일 전체 최적화'): 모바일에서 3열 이상 표 = 행마다 카드로 쌓기(셀마다 머리글 라벨). 표 HTML·문구는 그대로, 보이는 방식만 바꿈 */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  function run() {
+    [].forEach.call(document.querySelectorAll('.main-content-pane table'), function (t) {
+      if (t.closest('.sp-atable-wrap') || t.classList.contains('ux-writing-table') || !t.rows.length) return;
+      var head = t.tHead && t.tHead.rows[0] ? t.tHead.rows[0] : (t.rows[0].querySelector('td') ? null : t.rows[0]);
+      if (!head || head.cells.length < 3) return;
+      var labels = [].map.call(head.cells, function (c) { return c.textContent.trim(); });
+      t.classList.add('sp-stk');
+      [].forEach.call(t.rows, function (r) {
+        if (r === head) { r.classList.add('sp-stk-h'); return; }
+        [].forEach.call(r.cells, function (c, i) { if (labels[i]) c.setAttribute('data-l', labels[i]); });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
