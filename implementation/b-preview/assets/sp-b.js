@@ -57,7 +57,9 @@
     /* 166(11-24 10:14 '모든 버튼'): 수강신청 배너 탭·카카오·신청, 후기 보드 버튼, 페이지 안 알약 버튼, 문의·강의 신청·접수 완료 창의 버튼·선택지, 팝업 버튼 */
     ', #stickyCourseBanner button, .sp-rv-ctl button, .sp-rv-more a, .sp-rvsum a, a.sp-aorg-btn, a.sp-aibtn, a.sp-pill-link, .sp-pop-btn, .sp-pop-cta, .spq-ov button, .spq-ov a.spq-kakao, .spq-ov .spq-chip, .spq-ov .spq-opt, .sp-sns a' +
     /* 167: UX블로그 목록 — 검색하기, 카드 즐겨찾기·공유, 달력 버튼 */
-    ', .blog-header-row .search-btn, .postit-card .icon-action-btn, #tagFilterBanner button, .no-results .w95-btn';
+    ', .blog-header-row .search-btn, .postit-card .icon-action-btn, #tagFilterBanner button, .no-results .w95-btn' +
+    /* 167: 블로그 글 상세 — 메타 줄 즐겨찾기·공유, 목록보기, 글 안 CTA 버튼 */
+    ', .sp-post .sp-meta .icon-action-btn, a.sp-listbtn, .sp-post .sp-blog-cta a';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
