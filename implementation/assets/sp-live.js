@@ -98,7 +98,7 @@
   }
 
   var DOW = ['일', '월', '화', '수', '목', '금', '토'];
-  var NAMES = ['대표', '기획팀', '디자인팀', '개발팀'];
+  var NAMES = ['임원진', '기획팀', '디자인팀', '개발팀'];
   /* 구조는 한 번만 만들고 이후에는 글자·클래스·투명도만 바꿈(터치 중 요소 교체로 스와이프가 끊기지 않도록) */
   function build(el) {
     el.innerHTML =
@@ -119,7 +119,7 @@
     el.querySelector('.spl-day').textContent = (t.mo + 1) + '월 ' + t.da + '일 ' + DOW[t.dow] + '요일';
     var clk = el.querySelector('.spl-clock'), svgs = clk.querySelectorAll('svg'), ds = hh + mm;
     for (var i = 0; i < 4; i++) setDigit(svgs[i], +ds[i]);
-    clk.setAttribute('aria-label', '현재 시각 ' + hh + '시 ' + mm + '분');
+    clk.setAttribute('aria-label', '현재 시각 ' + hh + '시 ' + mm + '분'); clk.setAttribute('data-hm', hh + ':' + mm);
     el.querySelector('.spl-colon').classList.toggle('blink', t.s % 2 === 1);
     el.querySelectorAll('.spl-b').forEach(function (b, i) { b.classList.toggle('on', on[i]); });
   }

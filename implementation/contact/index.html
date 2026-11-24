@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="sp-b">
 
 <head>
   <meta charset="UTF-8">
@@ -1472,7 +1472,9 @@
   .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
 }
 </style>
-<link rel="stylesheet" href="/assets/sp-mnav.css?v=99"><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=178" defer></script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
 </head>
 
 <body>
@@ -1488,6 +1490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
@@ -1520,6 +1523,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           보기</span></button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;"
         onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1582,7 +1586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Toolbar & Address Bar -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+          <button class="tool-btn" onclick="history.back();"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>뒤로</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
@@ -1595,17 +1599,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Left Explorer Tree Sidebar (Exact Attached Image Match) -->
         <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
-          <div class="tree-root">
-            <span class="tree-toggle">日</span>
-            <span class="folder-icon">📂</span>
-            <span>슈퍼플래닝 &gt; 문의하기</span>
-          </div>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <ul class="tree-list toc">
             <li class="tree-item"><a href="#contact" class="tree-link active"><span class="doc-icon">📄</span> <span>1. 빠른 문의 및 견적 상담</span></a></li>
-            <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는
-                  길</span></a></li>
+            <li class="tree-item"><a href="#location" class="tree-link"><span class="doc-icon">📄</span> <span>2. 찾아오시는 길</span></a></li>
           </ul>
 
         </aside>
@@ -1613,294 +1611,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Right Main Content View Pane (Exact Attached Image Match) -->
         <main class="main-content-pane">
 
-          <h1>문의하기</h1>
-          <p class="hero-intro" style="margin-bottom:10px;">UX컨설팅·UI/UX디자인·앱개발 견적과 기업출강 문의를 받습니다. 보통 10분 이내에 응답합니다.</p>
-          <p class="hero-intro" style="margin-top:10px; margin-bottom:28px; display:flex; flex-direction:column; gap:10px; align-items:flex-start;">
-            <span class="typewriter-quote" data-text="친절하고 경험 많은 슈퍼플래닝의 실무진이 직접 빠르게 상담해 드립니다." style="display:inline; padding:4px 9px 5px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-weight:700; font-size:14.5px; line-height:1.6;"></span>
-           
-          </p>
+          <div class="sp-title-row"><h1>문의하기</h1><nav class="sp-crumb" aria-label="현재 위치"><a href="/">홈</a><i>›</i><span aria-current="page">문의하기</span></nav></div>
+          <div class="sp-chero sp-khero"><p class="hero-intro sp-chero-t"><span class="sp-nw">UX컨설팅·</span><span class="sp-nw">UI/UX디자인·</span>앱개발 견적부터 기업출강까지, 편하게 상담해 보세요. <br>보통 10분 이내에 응답합니다.</p></div>
+          <h2 id="contact"><span class="sp-h2n" data-n="01">1.</span> 빠른 문의 및 견적 상담 </h2>
+          <div class="sp-kgrid"><div class="sp-kleft"><div class="sp-kinfo"><p class="sp-kname">슈퍼플래닝</p><div class="r"><span class="k">이메일</span><span class="v">jake@superplanning.co.kr</span><button type="button" class="w95-btn sp-ccopy" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소');">복사</button></div><div class="r"><span class="k">전화</span><span class="v">031-699-3298</span><button type="button" class="w95-btn sp-ccopy" onclick="copyToClipboard('031-699-3298', '전화번호');">복사</button></div><div class="r"><span class="k">주소</span><span class="v">(12912) 경기 하남시 미사강변동로 72, <br>SB비즈타워 1116호</span><button type="button" class="w95-btn sp-ccopy" onclick="copyToClipboard('(12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호', '주소');">복사</button></div></div><div class="sp-kben"><span class="n">01</span><div><p class="t">무료 견적상담</p><p class="d">합리적인 UX 기획, 디자인, 개발 업무 별 <br>견적을 산정해 드립니다.</p></div></div><div class="sp-kben"><span class="n">02</span><div><p class="t">비밀 유지(NDA) 보장</p><p class="d">접수된 모든 아이디어 및 기획 자료는 <br>철저한 비밀 유지와 NDA 체결을 지원합니다.</p></div></div><div class="sp-kben"><span class="n">03</span><div><p class="t">보통 10분 이내 응답</p><p class="d">슈퍼플래닝은 문의 회신 속도가 정말 빠릅니다. <br>언제든지 문의 주시기 바랍니다.</p></div></div></div><div class="sp-kform"><form id="projectInquiryForm" onsubmit="handleProjectInquiry(event);"><div class="sp-kform-h"><div class="h"><h3>온라인 문의 접수</h3><span><b class="sp-req">*</b> 표시는 필수 입력</span></div><p>친절하고 경험 많은 슈퍼플래닝의 실무진이 직접 빠르게 상담해 드립니다.</p></div><div class="sp-krow"><div class="sp-kf"><label for="inqName">이름 / 직책 <b class="sp-req" aria-hidden="true">*</b></label><input type="text" id="inqName" required placeholder="예: 김슈플 팀장"></div><div class="sp-kf"><label for="inqPhone">연락처 <span>(선택)</span></label><input type="tel" id="inqPhone" placeholder="예: 010-1234-5678"></div></div><div class="sp-krow"><div class="sp-kf"><label for="inqCompany">회사명 / 소속 <span>(선택)</span></label><input type="text" id="inqCompany" placeholder="예: 슈퍼플래닝 / UX기획팀"></div><div class="sp-kf"><label for="inqEmail">이메일 주소 <b class="sp-req" aria-hidden="true">*</b></label><input type="email" id="inqEmail" required placeholder="example@domain.com"></div></div><div class="sp-kf"><label for="inqMessage">문의내용 <b class="sp-req" aria-hidden="true">*</b></label><textarea id="inqMessage" required rows="4" placeholder="상담하고 싶은 내용을 간단히 남겨주세요.&#10;프로젝트 내용 및 예산이나 일정이 아직 정해져 있지 않아도 괜찮습니다.&#10;예시: 앱 리뉴얼 전 UX진단 컨설팅, UX교육 상담, 웹/앱 개발 등"></textarea></div><label class="sp-kagree"><input type="checkbox" id="inqPrivacy" required checked><span class="cb" aria-hidden="true"></span><span><strong>개인정보 수집 및 이용 동의 (필수):</strong> 프로젝트 상담 및 견적 안내 목적 이용에 동의합니다.</span></label><button type="submit" class="w95-btn sp-ksubmit">문의 등록하고 빠른 답변 받기</button></form></div></div>
+          <div id="process" class="sp-kproc"><h2>문의부터 계약·결제까지, 이렇게 진행합니다</h2><ol><li><span class="n">01</span><strong>문의 접수</strong><p>문의 폼, 카카오톡, 전화, <br>메일 중 편한 방법으로 <br>남겨 주세요.</p></li><li><span class="n">02</span><strong>담당자 회신</strong><p>보통 10분 이내에 <br>담당 실무자가 <br>직접 회신합니다.</p></li><li><span class="n">03</span><strong>무료 상담</strong><p><span class="sp-nw">목적·</span><span class="sp-nw">범위·</span>일정을 <br>확인합니다. <br><span class="sp-nw">전화·</span><span class="sp-nw">화상·</span>방문 상담이 <br>가능하며, 필요하면 <br>NDA를 먼저 체결합니다.</p></li><li><span class="n">04</span><strong>견적서 제공</strong><p>상담 내용을 바탕으로 <br><span class="sp-nw">범위·</span><span class="sp-nw">기간·</span>비용을 <br>항목별로 정리한 <br>견적서를 보내 드립니다.</p></li><li><span class="n">05</span><strong><span class="sp-nw">계약·</span>결제</strong><p>정부지원사업 서류 일체를 <br>발급합니다. <br>계좌이체 또는 <br>문자 결제 링크 <br><span class="sp-nw">(선불카드·</span>신용카드)로 <br>결제합니다.</p></li></ol></div>
+          <section class="sp-rv sp-kgal2" aria-label="슈퍼플래닝 사무실 사진 6장"><div class="sp-rv-top"><div><p class="sp-kgal2-t">UX프로젝트의 새로운 경험</p><p>슈퍼플래닝은 언제나 열려 있습니다.</p></div><div class="sp-rv-ctl"><button type="button" class="sp-rv-prev" aria-label="이전 사진"></button><span class="sp-rv-count">01–03 / 06</span><button type="button" class="sp-rv-next" aria-label="다음 사진"></button></div></div><ul class="sp-rv-track" tabindex="0"><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_3.jpg" alt="슈퍼플래닝 이미지 1 - UX 디렉터 인터뷰" width="800" height="600" loading="lazy" decoding="async"></li><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_1.jpg" alt="슈퍼플래닝 이미지 2 - 외관 간판" width="800" height="600" loading="lazy" decoding="async"></li><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_6.jpg" alt="슈퍼플래닝 이미지 3 - 오피스 실내 전경" width="800" height="600" loading="lazy" decoding="async"></li><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_2.jpg" alt="슈퍼플래닝 이미지 4 - 내부 조명 및 로고" width="800" height="600" loading="lazy" decoding="async"></li><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_4.jpg" alt="슈퍼플래닝 이미지 5 - 기획 및 리서치 회의" width="800" height="600" loading="lazy" decoding="async"></li><li class="sp-rv-card sp-kph"><img src="/images/superplanning_office_5.jpg" alt="슈퍼플래닝 이미지 6 - 와이어프레임 설계 검토" width="800" height="600" loading="lazy" decoding="async"></li></ul><div class="sp-rv-prog" aria-hidden="true"></div></section>
+          <h2 id="location"><span class="sp-h2n" data-n="02">2.</span> 찾아오시는 길</h2>
+          <p class="sp-cwide">슈퍼플래닝 사무실은 <strong>지하철 5호선 미사역 8번 출구</strong>에서 도보 1분 거리에 위치해 있습니다. <br>티맵, 카카오 네비게이션에서 "슈퍼플래닝"을 검색하세요. <br>차량 방문 시 지하주차장 무료 주차 가능합니다. 주차공간 넉넉합니다. <br>언제라도 편하게 방문해 주세요.</p>
+          <p class="sp-kvisit"><span class="typewriter-quote" data-text="슈퍼플래닝은 평일 야간(아침8시~밤10시), 주말(아침10시~저녁7시)에도 방문상담 가능합니다."></span></p>
+          <div class="sp-kloc"><div class="sp-kmap"><svg class="sp-map" viewBox="0 0 700 420" role="img" aria-label="슈퍼플래닝 약도: 미사역 8번 출구에서 도보 1분, SB비즈타워 1116호"><defs><filter id="spMapR" x="-30%" y="-60%" width="160%" height="220%"><feDropShadow dx="-4" dy="-4" stdDeviation="4" flood-color="#fff" flood-opacity=".95"/><feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="#1a1f24" flood-opacity=".14"/></filter><filter id="spMapI" x="-10%" y="-10%" width="120%" height="120%"><feOffset dx="3" dy="3" in="SourceAlpha"/><feGaussianBlur stdDeviation="3"/><feComposite operator="out" in="SourceAlpha"/><feComponentTransfer><feFuncA type="linear" slope=".18"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter><clipPath id="spMapC"><rect width="700" height="420" rx="20"/></clipPath></defs><g clip-path="url(#spMapC)"><rect width="700" height="420" fill="#e4e7eb"/><rect x="-40" y="360" width="800" height="46" fill="#d3d8de" opacity=".6"/><rect x="-20" y="250" width="760" height="18" rx="9" fill="#eef1f4"/><rect x="-20" y="120" width="760" height="10" rx="5" fill="#eef1f4"/><rect x="420" y="-20" width="16" height="480" rx="8" fill="#eef1f4"/><rect x="160" y="-20" width="10" height="480" rx="5" fill="#eef1f4"/><rect x="560" y="-20" width="10" height="480" rx="5" fill="#eef1f4"/><rect x="471" y="199" width="96" height="28" rx="14" fill="#eef1f4" filter="url(#spMapR)"/><text x="519" y="217.5" text-anchor="middle" font-size="12" font-weight="500" fill="#4a4f55">미사역 8번 출구</text><circle cx="443" cy="213" r="20" fill="#eef1f4" filter="url(#spMapR)"/><circle cx="443" cy="213" r="15" fill="#e4e7eb" filter="url(#spMapI)"/><rect x="436" y="204" width="14" height="14" rx="3" fill="#111"/><rect x="438" y="207" width="10" height="4" rx="1.5" fill="#fff"/><circle cx="440.5" cy="215.5" r="1.5" fill="#fff"/><circle cx="447.5" cy="215.5" r="1.5" fill="#fff"/><path d="M437.5 218.5 435.5 222M448.5 218.5 450.5 222" stroke="#111" stroke-width="1.6" stroke-linecap="round"/><path d="M443 239V297" stroke="#111" stroke-width="2.5" stroke-dasharray="0.1 7" stroke-linecap="round"/><rect x="343" y="254" width="88" height="28" rx="14" fill="#111"/><text x="387" y="272.5" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">도보 1분 거리</text><circle cx="443" cy="314" r="32" fill="#d6342c" opacity=".14"/><circle class="sp-pin-pulse" cx="443" cy="314" r="32" fill="none" stroke="#d6342c" stroke-width="2"/><circle class="sp-pin-pulse sp-pin-pulse2" cx="443" cy="314" r="32" fill="none" stroke="#d6342c" stroke-width="2"/><circle cx="443" cy="314" r="11" fill="#d6342c" stroke="#eef1f4" stroke-width="4"/><rect x="428" y="348" width="196" height="33" rx="16.5" fill="#eef1f4" filter="url(#spMapR)"/><text x="526" y="369.5" text-anchor="middle" font-size="13" font-weight="600" fill="#111">슈퍼플래닝 · SB비즈타워 1116호</text></g></svg></div><div class="sp-kloc-c"><h3>슈퍼플래닝은 여기에 있습니다.</h3><div class="a"><span>(12912) 경기 하남시 미사강변동로 72, <br>SB비즈타워 1116호</span><button type="button" class="w95-btn sp-ccopy" onclick="copyToClipboard('(12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호', '주소');">복사</button></div><div class="l"><a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn sp-kmap-a"><span>네이버 지도에서 보기</span><i class="sp-arr" aria-hidden="true"></i></a><a href="https://map.kakao.com/?urlX=542837.9999999974&urlY=1128400.0000000023&urlLevel=3&itemId=520500165&q=%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D&srcid=520500165&map_type=TYPE_MAP" target="_blank" rel="noopener noreferrer" class="w95-btn sp-kmap-a"><span>카카오 맵에서 보기</span><i class="sp-arr" aria-hidden="true"></i></a><a href="https://www.google.com/maps/place/%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D/data=!3m1!4b1!4m6!3m5!1s0x357cb166ade634c1:0xf7537f3932633d61!8m2!3d37.563118!4d127.192932!16s%2Fg%2F11kmz0rppp?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w95-btn sp-kmap-a"><span>구글지도에서 보기</span><i class="sp-arr" aria-hidden="true"></i></a></div></div></div>
+          <div class="sp-ktr"><h4>대중교통</h4><div class="c"><span class="tag">지하철</span><p>5호선 미사역 8번 출구 앞 <br>서브웨이 바로 옆 건물 (SB비즈타워 1116호)</p></div><div class="c"><span class="tag">버스</span><div class="bus"><div><span>잠실 방면</span><b>직행좌석 9302번</b></div><div><span><span class="sp-nw">강남·</span>테헤란로 방면</span><b>직행좌석 9303번</b></div><div><span><span class="sp-nw">종로·</span>도심 방면</span><b>간선 370번, 광역 9301번</b></div><div><span><span class="sp-nw">판교·</span>성남 방면</span><b>직행좌석 3000번</b></div></div></div></div>
 
-
-          <!-- 1. 문의하기 -->
-          <h2 id="contact">1. 빠른 문의 및 견적 상담 </h2>
-          <!-- Fast Contact Cards with Copy Buttons (Strict B&W) -->
-          <div style="padding:16px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:20px;">
-
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
-                <div style="font-size:12.5px;"><strong>회사명:</strong> <span style="font-weight:700;">슈퍼플래닝</span></div>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
-                <div style="font-size:12.5px;"><strong>이메일:</strong> jake@superplanning.co.kr</div>
-                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소');">복사</button>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-bottom:1px solid #eee; padding-bottom:6px;">
-                <div style="font-size:12.5px;"><strong>전화:</strong> 031-699-3298</div>
-                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호');">복사</button>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
-                <div style="font-size:12.5px;"><strong>주소:</strong> (12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호</div>
-                <button class="w95-btn" style="padding:2px 8px; font-size:11px; flex-shrink:0;" onclick="copyToClipboard('(12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호', '주소');">복사</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Main Interactive Project Inquiry Form (Strict B&W) -->
-          <div style="padding:20px; background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); margin-bottom:24px;">
-            <form id="projectInquiryForm" onsubmit="handleProjectInquiry(event);">
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; background:#000000; margin:-20px -20px 18px; padding:11px 20px;">
-                <h3 style="margin:0; font-size:16px; font-weight:800; color:#ffffff;">
-                  온라인 문의 접수
-                </h3>
-                <span style="font-size:11.5px; color:#d9d9d9; font-weight:600; white-space:nowrap;">* 표시는 필수 입력</span>
-              </div>
-
-              <!-- Contact Info Row 1: Name & Phone -->
-              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqName">
-                    이름 / 직책 *
-                  </label>
-                  <input type="text" id="inqName" required placeholder="예: 김슈플 팀장" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                </div>
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqPhone">
-                    연락처 <span style="font-weight:normal; color:#666666;">(선택)</span>
-                  </label>
-                  <input type="tel" id="inqPhone" placeholder="예: 010-1234-5678" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                </div>
-              </div>
-
-              <!-- Contact Info Row 2: Company & Email (Same Horizontal Line) -->
-              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqCompany">
-                    회사명 / 소속 <span style="font-weight:normal; color:#666666;">(선택)</span>
-                  </label>
-                  <input type="text" id="inqCompany" placeholder="예: 슈퍼플래닝 / UX기획팀" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                </div>
-                <div>
-                  <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqEmail">
-                    이메일 주소 *
-                  </label>
-                  <input type="email" id="inqEmail" required placeholder="example@domain.com" style="width:100%; padding:7px; font-size:12.5px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box;">
-                </div>
-              </div>
-
-              <!-- Details Textarea -->
-              <div style="margin-bottom:14px;">
-                <label style="display:block; font-size:12px; font-weight:700; color:#000000; margin-bottom:4px;" for="inqMessage">
-                  문의내용 *
-                </label>
-                <textarea id="inqMessage" required rows="4" placeholder="상담하고 싶은 내용을 간단히 남겨주세요.&#10;프로젝트 내용 및 예산이나 일정이 아직 정해져 있지 않아도 괜찮습니다.&#10;예시: 앱 리뉴얼 전 UX진단 컨설팅, UX교육 상담, 웹/앱 개발 등" style="width:100%; padding:8px 10px; font-size:12.5px; line-height:1.5; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #808080; box-sizing:border-box; resize:vertical;"></textarea>
-              </div>
-
-              <!-- Terms & Privacy Agreement (Clean Text Only, No Box) -->
-              <div style="margin-bottom:18px;">
-                <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#222222; cursor:pointer; user-select:none;">
-                  <input type="checkbox" id="inqPrivacy" required checked style="width:13px; height:13px; margin:0; flex-shrink:0; accent-color:#000;">
-                  <span><strong>개인정보 수집 및 이용 동의 (필수):</strong> 프로젝트 상담 및 견적 안내 목적 이용에 동의합니다.</span>
-                </label>
-              </div>
-
-              <!-- Submit Button (Center Aligned & Wider Width with Tooltip) -->
-              <div style="display:flex; justify-content:center; margin-top:36px;">
-                <div style="position:relative; display:inline-block;">
-                  <!-- Response Time Tooltip (말풍선 툴팁) -->
-                  <div class="inquiry-tooltip">
-                    보통 10분 이내 응답
-                  </div>
-                  <button type="submit" class="w95-btn" style="padding:12px 30px; min-width:220px; font-size:13.5px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000; cursor:pointer; text-align:center; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
-                    문의 등록하고 빠른 답변 받기
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <!-- Trust & Service Highlights Box (Strict B&W) -->
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
-            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-              <div style="font-size:13px; font-weight:800; color:#000000; margin-bottom:2px;">무료 견적상담</div>
-              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333333;">합리적인 UX 기획, 디자인, 개발 업무 별 견적을 산정해 드립니다.</p>
-            </div>
-            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-              <div style="font-size:13px; font-weight:800; color:#000000; margin-bottom:2px;">비밀 유지(NDA) 보장</div>
-              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333333;">접수된 모든 아이디어 및 기획 자료는 철저한 비밀 유지와 NDA 체결을 지원합니다.</p>
-            </div>
-            <div style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-              <div style="font-size:13px; font-weight:800; color:#000000; margin-bottom:2px;">보통 10분 이내 응답</div>
-              <p style="font-size:11.5px; margin:0; line-height:1.4; color:#333333;">슈퍼플래닝은 문의 회신 속도가 정말 빠릅니다. 언제든지 문의 주시기 바랍니다.</p>
-            </div>
-          </div>
-
-          <!-- 114: 문의부터 견적서까지 4단계 -->
-          <div id="process" style="margin-bottom:20px;">
-            <h2 style="font-size:14px; font-weight:800; color:#000000; margin:0 0 8px 0;">문의부터 계약·결제까지, 이렇게 진행합니다</h2>
-            <ol style="list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:10px;">
-              <li style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; background:#000000; color:#ffffff; font-size:11.5px; font-weight:800;">1</span><strong style="font-size:13px; color:#000000;">문의 접수</strong></div>
-                <p style="font-size:11.5px; margin:0; line-height:1.45; color:#333333; word-break:keep-all;">문의 폼, 카카오톡, 전화, 메일 중 편한 방법으로 남겨 주세요.</p>
-              </li>
-              <li style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; background:#000000; color:#ffffff; font-size:11.5px; font-weight:800;">2</span><strong style="font-size:13px; color:#000000;">담당자 회신</strong></div>
-                <p style="font-size:11.5px; margin:0; line-height:1.45; color:#333333; word-break:keep-all;">보통 10분 이내에 담당 실무자가 직접 회신합니다.</p>
-              </li>
-              <li style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; background:#000000; color:#ffffff; font-size:11.5px; font-weight:800;">3</span><strong style="font-size:13px; color:#000000;">무료 상담</strong></div>
-                <p style="font-size:11.5px; margin:0; line-height:1.45; color:#333333; word-break:keep-all;">목적·범위·일정을 확인합니다.<br>전화·화상·방문 상담이 가능하며, 필요하면 NDA를 먼저 체결합니다.</p>
-              </li>
-              <li style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; background:#000000; color:#ffffff; font-size:11.5px; font-weight:800;">4</span><strong style="font-size:13px; color:#000000;">견적서 제공</strong></div>
-                <p style="font-size:11.5px; margin:0; line-height:1.45; color:#333333; word-break:keep-all;">상담 내용을 바탕으로 범위·기간·비용을 항목별로 정리한 견적서를 보내 드립니다.</p>
-              </li>
-              <li style="padding:10px 12px; background:#f9f9f9; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; background:#000000; color:#ffffff; font-size:11.5px; font-weight:800;">5</span><strong style="font-size:13px; color:#000000;">계약·결제</strong></div>
-                <p style="font-size:11.5px; margin:0; line-height:1.45; color:#333333; word-break:keep-all;">정부지원사업 서류 일체를 발급합니다.<br>계좌이체 또는 문자 결제 링크(선불카드·신용카드)로 결제합니다.</p>
-              </li>
-            </ol>
-          </div>
-
-          <!-- Superplanning Office Image Gallery Viewer (Strict B&W Win95 Retro Style, 6 Images) -->
-          <div style="padding:14px; background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); margin-top:28px; margin-bottom:24px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000000; padding-bottom:8px; margin-bottom:12px;">
-              <div style="font-size:13.5px; font-weight:800; color:#000000;">슈퍼플래닝 이미지</div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span id="officeGalleryCounter" style="font-size:11.5px; font-weight:800; font-family:var(--font-mono, monospace); color:#333333;">1 / 6</span>
-                <div style="display:flex; gap:3px;">
-                  <button class="w95-btn" onclick="changeOfficeGallery(-1);" style="padding:2px 8px; font-size:11px; font-weight:bold; cursor:pointer;" title="이전 이미지">◀ 이전</button>
-                  <button class="w95-btn" onclick="changeOfficeGallery(1);" style="padding:2px 8px; font-size:11px; font-weight:bold; cursor:pointer;" title="다음 이미지">다음 ▶</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Square / Scaled Image Display Frame -->
-            <div style="width:100%; height:440px; max-height:65vh; background:#111111; border:2px solid #000000; box-shadow:inset 1px 1px 0 #000000; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;">
-              <img id="officeGalleryImg" src="/images/superplanning_office_3.jpg" alt="슈퍼플래닝 이미지 1" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/superplanning_office_3.jpg';}">
-            </div>
-
-            <!-- Thumbnail Indicators Bar (6 Dots) -->
-            <div style="display:flex; justify-content:center; gap:6px; margin-top:10px;" id="officeGalleryDots">
-              <button class="w95-btn gallery-dot active" onclick="setOfficeGallery(0);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#000; color:#fff;">1</button>
-              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(1);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">2</button>
-              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(2);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">3</button>
-              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(3);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">4</button>
-              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(4);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">5</button>
-              <button class="w95-btn gallery-dot" onclick="setOfficeGallery(5);" style="padding:2px 10px; font-size:11px; font-weight:800; background:#fff; color:#000;">6</button>
-            </div>
-          </div>
-
-          <script>
-            const officeImages = [
-              { src: '/images/superplanning_office_3.jpg', alt: '슈퍼플래닝 이미지 1 - UX 디렉터 인터뷰' },
-              { src: '/images/superplanning_office_1.jpg', alt: '슈퍼플래닝 이미지 2 - 외관 간판' },
-              { src: '/images/superplanning_office_6.jpg', alt: '슈퍼플래닝 이미지 3 - 오피스 실내 전경' },
-              { src: '/images/superplanning_office_2.jpg', alt: '슈퍼플래닝 이미지 4 - 내부 조명 및 로고' },
-              { src: '/images/superplanning_office_4.jpg', alt: '슈퍼플래닝 이미지 5 - 기획 및 리서치 회의' },
-              { src: '/images/superplanning_office_5.jpg', alt: '슈퍼플래닝 이미지 6 - 와이어프레임 설계 검토' }
-            ];
-            let currentOfficeIdx = 0;
-
-            function updateOfficeGalleryDisplay() {
-              const imgEl = document.getElementById('officeGalleryImg');
-              const counterEl = document.getElementById('officeGalleryCounter');
-              const dots = document.querySelectorAll('#officeGalleryDots .gallery-dot');
-
-              if (imgEl && officeImages[currentOfficeIdx]) {
-                imgEl.src = officeImages[currentOfficeIdx].src;
-                imgEl.alt = officeImages[currentOfficeIdx].alt;
-                imgEl.dataset.tried = '';
-              }
-              if (counterEl) {
-                counterEl.textContent = `${currentOfficeIdx + 1} / ${officeImages.length}`;
-              }
-              dots.forEach((dot, idx) => {
-                if (idx === currentOfficeIdx) {
-                  dot.style.background = '#000000';
-                  dot.style.color = '#ffffff';
-                } else {
-                  dot.style.background = '#ffffff';
-                  dot.style.color = '#000000';
-                }
-              });
-            }
-
-            function changeOfficeGallery(delta) {
-              currentOfficeIdx = (currentOfficeIdx + delta + officeImages.length) % officeImages.length;
-              updateOfficeGalleryDisplay();
-            }
-
-            function setOfficeGallery(idx) {
-              currentOfficeIdx = idx;
-              updateOfficeGalleryDisplay();
-            }
-          </script>
-
-          <!-- 2. 찾아오시는 길 (Strict B&W) -->
-          <h2 id="location">2. 찾아오시는 길</h2>
-          <p style="margin-bottom:12px;">슈퍼플래닝 사무실은 <strong>지하철 5호선 미사역 8번 출구</strong>에서 도보 1분 거리에 위치해 있습니다. <Br> 티맵, 카카오 네비게이션에서 "슈퍼플래닝"을 검색하세요. <Br> 차량 방문 시 지하주차장 무료 주차 가능합니다. 주차공간 넉넉합니다. <br> 맛좋은 커피와 쿠키도 항상 준비되어있습니다. 언제라도 편하게 방문해 주세요.</p>
-          <div style="margin-bottom:18px;">
-            <span class="typewriter-quote" data-text="슈퍼플래닝은 평일 야간(아침8시~밤10시), 주말(아침10시~저녁7시)에도 방문상담 가능합니다." style="display:inline; padding:4px 9px 5px; color:#fff; background:#000; border:2px solid #000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-weight:700; font-size:14px; line-height:1.6;"></span>
-          </div>
-
-          <!-- Interactive Map Container (Strict B&W) -->
-          <div style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.15); padding:12px; margin-bottom:18px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000000; padding-bottom:8px; margin-bottom:12px;">
-              <h3 style="margin:0; font-size:14.5px; font-weight:800; color:#000000;">
-                슈퍼플래닝은 여기에 있습니다.
-              </h3>
-              <span style="font-size:11.5px; color:#555555; font-weight:600;">(12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호</span>
-            </div>
-
-            <!-- Google Map Interactive Iframe Embed -->
-            <div style="width:100%; height:360px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#e5e5e5; position:relative; overflow:hidden; margin-bottom:10px;">
-              <iframe 
-                src="https://maps.google.com/maps?q=%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                width="100%" 
-                height="100%" 
-                style="border:0; display:block;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="UX디자인 에이전시 슈퍼플래닝 본사 구글지도 위치">
-              </iframe>
-            </div>
-
-            <!-- Map Link Shortcuts (Strict B&W) -->
-            <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-              <a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:6px 14px; font-size:12px; text-decoration:none; font-weight:bold; background:#ffffff; color:#000000; border:1px solid #000000;">
-                네이버 지도에서 보기 ↗
-              </a>
-              <a href="https://map.kakao.com/?urlX=542837.9999999974&urlY=1128400.0000000023&urlLevel=3&itemId=520500165&q=%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D&srcid=520500165&map_type=TYPE_MAP" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:6px 14px; font-size:12px; text-decoration:none; font-weight:bold; background:#ffffff; color:#000000; border:1px solid #000000;">
-                카카오 맵에서 보기 ↗
-              </a>
-              <a href="https://www.google.com/maps/place/%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D/data=!3m1!4b1!4m6!3m5!1s0x357cb166ade634c1:0xf7537f3932633d61!8m2!3d37.563118!4d127.192932!16s%2Fg%2F11kmz0rppp?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:6px 14px; font-size:12px; text-decoration:none; font-weight:bold; background:#ffffff; color:#000000; border:1px solid #000000;">
-                구글지도에서 보기 ↗
-              </a>
-            </div>
-          </div>
-
-          <!-- Transport Info (Full Width, Strict B&W) -->
-          <div style="padding:14px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:24px;">
-            <h4 style="color:#000000; font-size:13px; margin:0 0 8px 0; font-weight:800; border-bottom:1px solid #eee; padding-bottom:4px;">대중교통</h4>
-            <ul style="margin:0 0 6px 0; padding-left:18px; font-size:12px; line-height:1.6; color:#222222;">
-              <li style="margin-bottom:4px;"><strong>지하철:</strong> 5호선 미사역 8번 출구 앞 서브웨이 바로 옆 건물 (SB비즈타워 1116호)</li>
-              <li style="margin-bottom:4px;"><strong>버스:</strong></li>
-            </ul>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:6px 16px; padding-left:18px; font-size:12px; line-height:1.6; color:#222222;">
-              <div>• <strong>잠실 방면:</strong> 직행좌석 9302번</div>
-              <div>• <strong>강남·테헤란로 방면:</strong> 직행좌석 9303번</div>
-              <div>• <strong>종로·도심 방면:</strong> 간선 370번, 광역 9301번</div>
-              <div>• <strong>판교·성남 방면:</strong> 직행좌석 3000번</div>
-            </div>
-          </div>
-
-          <div class="bottom-nav">
-            <p>이전 단계: <a href="/company/">회사소개</a> &nbsp;|&nbsp; 추천 다음단계: <a href="/ux-design/">UX기획/디자인</a></p>
-          </div>
+          <div class="bottom-nav"><nav class="sp-pn" aria-label="이전·다음 단계"><a class="prev" href="/ux-company/"><span><small>이전 단계</small><b>회사소개</b></span></a><a class="next" href="/"><span><small>다음 단계</small><b>홈</b></span></a></nav></div>
         </main>
       </div>
 
@@ -1924,22 +1647,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
     <!-- START MENU -->
-  <div id="startMenu">
-    <div class="start-banner">SUPERPLANNING</div>
-    <div class="start-items">
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
-      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
-      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
-      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
-      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><span>유튜브</span></div></div>
   </div>
 
   <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
@@ -1955,9 +1666,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="taskbar-right">
-      <span id="taskWeather"
-        style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍
-        서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
     </div>
   </div>
@@ -1996,11 +1704,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'blog': { w: 600, h: 420, title: '• UX 블로그' },
       'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
       'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
-      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 스레드' },
       'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
-      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
-      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' }
     };
 
     function openWindow(key) {
@@ -2074,7 +1781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </h2>
 
             <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
-              이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
             </p>
           </div>
 
@@ -2282,7 +1989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <div>
                 <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
-                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
                 <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
                   최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
                 </p>
@@ -2299,7 +2006,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
                 @ux_superplanning
               </span>
-              <span>슈퍼플래닝 공식 쓰레드</span>
+              <span>슈퍼플래닝 공식 스레드</span>
             </div>
           </div>
         `;
@@ -2337,24 +2044,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
         `;
-      } else if (key === 'tweaks') {
-        return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
-            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(typeof setTheme==='function') setTheme(this.value)">
-              <option value="light">Teal Classic (기본 1995)</option>
-              <option value="dark">Dark Slate (다크 모드)</option>
-              <option value="matrix">Matrix Green (이스터에그 테마)</option>
-            </select>
-          </div>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="if(typeof toggleSound==='function') toggleSound();">사운드: ON 🔊</button>
-          </div>
-          <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">팀장님, 갑자기 PC가 고장났어요! (블루스크린 띄우기)</button>
-        `;
+      
       }
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
@@ -2600,20 +2290,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
     <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
       <span>💬</span>
-      <span>실시간 상담</span>
+      <span>UX프로젝트 문의</span>
     </div>
     <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
-      <div data-sp-live="mini"></div>
-      <div>
+      <div data-sp-live class="sp-live-q"></div>
+      <div class="sp-qb-contact">
         <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">신속한 문의답변 (보통 10분 이내 응답)</h4>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
-          <span>문의전화: 031-699-3298</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
-        </div>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
-          <span style="letter-spacing:-0.02em;">이메일: jake@superplanning.co.kr</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button>
-        </div>
+        <div class="sp-qb-row"><span class="sp-qb-k">문의전화</span><b class="sp-qb-v">031-699-3298</b><button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button></div>
+        <div class="sp-qb-row"><span class="sp-qb-k">이메일</span><b class="sp-qb-v">jake@superplanning.co.kr</b><button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button></div>
       </div>
       <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn sp-qb-kakao" onclick="window.spQB && spQB('kakao', 'pc');" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#ffffff; color:#000000;"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담하기</span></a>
       <a href="#projectInquiryForm" class="w95-btn sp-qb-inquiry" onclick="window.spQB && spQB('inquiry', 'pc'); var f=document.getElementById('projectInquiryForm'); if(f){window.scrollTo({top:f.getBoundingClientRect().top+window.pageYOffset-90,behavior:'smooth'}); var i=f.querySelector('input,textarea'); if(i){setTimeout(function(){i.focus({preventScroll:true});},600);} return false;} return true;" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#000000; color:#ffffff;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의하기</span></a>
@@ -3056,7 +2740,8 @@ window.spQB = function (btn, pos) {
 };
 </script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
-<script src="/assets/sp-live.js?v=108" defer></script>
+<script src="/assets/sp-live.js?v=178" defer></script>
+<script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
 </body>
 
 </html>

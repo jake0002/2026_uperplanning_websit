@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="sp-b">
 <head>
   <meta charset="UTF-8">
   <!-- Google Tag Manager -->
@@ -990,7 +990,9 @@
   body { padding-bottom: 64px; }
 }
 </style>
-<link rel="stylesheet" href="/assets/sp-mnav.css?v=99"><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=178" defer></script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1005,6 +1007,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 4. GNB HEADER (EXACT COPY FROM UX-RESEARCH) -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
@@ -1035,6 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1095,7 +1099,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Toolbar Area (Exact UX-Research Match) -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="location.href='/ux-blog/';">⬅ 뒤로</button>
+          <button class="tool-btn" onclick="location.href='/ux-blog/';"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>뒤로</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
@@ -1106,167 +1110,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 4. Explorer Split Pane -->
       <div class="explorer-split">
         <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
-          <div class="tree-root">
-            <span class="tree-toggle">日</span>
-            <span class="folder-icon">📂</span>
-            <span>슈퍼플래닝 &gt; UX블로그</span>
-          </div>
 
-          <ul class="tree-list toc">
-            <li class="tree-item"><a href="/ux-blog/" class="tree-link"><span class="doc-icon">📄</span> <span>▣ 전체글 목록</span></a></li>
-              <li class="tree-item">
-                <a href="/ux-blog/button-copy-clarity-conversion/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>전환율보다 먼저 봐야 하는 버튼 문구의 명확성</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/interview-question-design-mistakes/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>인터뷰 질문 설계에서 자주 생기는 초보 실수</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ux-spec-document-developer-confusion/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>화면정의서가 예쁜데도 개발이 헷갈리는 이유</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ai-wireframe-ux-criteria/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/startup-ux-consulting-reasons/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/corporate-ux-training-planning/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>사내 UX교육을 기획할 때 먼저 정해야 할 5가지</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/app-development-cost-quote-difference/" class="tree-link active">
-                  <span class="doc-icon">📄</span> <span>앱 개발 견적 비교: 업체마다 몇 배 차이 나는 이유와 견적서 체크리스트</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ai-voice-service-vui-planning-guide/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/product-designer-hiring-external-interviewer/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ui-ux-agency-ranking-selection-criteria/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>UI/UX 에이전시 순위 2026: 순위표보다 정확한 7가지 비교 기준과 체크리스트</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ui-design-outsourcing-for-dev-team/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/app-development-cost-by-type-timeline/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>앱 개발 비용 2026: 어플 유형별 견적표·개발 기간 한눈에 비교</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/osstem-implant-dental-software-ux-research-case-study/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/startup-government-fund-ux-consulting-app-development/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/product-detail-page-html-conversion-seo/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/fgi-focus-group-interview-guide/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>FGI(표적집단면접) 인터뷰 진행 방법: 인원·진행 순서·사례비 10~20만 원 기준</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ai-era-ui-ux-importance/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>AI 시대, UI/UX가 더 중요해지는 이유: AI 서비스 성공을 가르는 사용자 경험 5가지</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/ai-service-planning-training-instructor-guide/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/user-interview-participant-recruiting-agency/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/foreign-resident-interview-usability-test-agency/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>국내 거주 외국인 인터뷰·사용성 테스트 대행: 다국적 섭외부터 통역·영문 보고서까지</span>
-                </a>
-              </li>
-
-              <li class="tree-item">
-                <a href="/ux-blog/overseas-shopify-store-usability-test-agency/" class="tree-link ">
-                  <span class="doc-icon">📄</span> <span>해외 자사몰 사용성 테스트(UT) 대행: 쇼피파이 해외몰 현지 사용자 섭외부터 영문 보고서까지</span>
-                </a>
-              </li>
+          <div class="sp-postside"><p class="sp-toc-cap" aria-hidden="true">UX 블로그</p>
+          <ul class="tree-list toc sp-postcats" aria-label="UX블로그 분류">
+            <li class="tree-item"><a href="/ux-blog/" class="tree-link"><span class="doc-icon">📄</span> <span>전체글 보기</span> <span class="badge-count">24</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=bookmark" class="tree-link"><span class="doc-icon">📄</span> <span>★ 즐겨찾기 보기</span> <span class="badge-count" id="spCountFav">0</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=%EC%BC%80%EC%9D%B4%EC%8A%A4%20%EC%8A%A4%ED%84%B0%EB%94%94" class="tree-link"><span class="doc-icon">📄</span> <span>1. 케이스 스터디</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UX%EC%BB%A8%EC%84%A4%ED%8C%85" class="tree-link"><span class="doc-icon">📄</span> <span>2. UX컨설팅</span> <span class="badge-count">5</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UX%EB%A6%AC%EC%84%9C%EC%B9%98" class="tree-link"><span class="doc-icon">📄</span> <span>3. UX리서치</span> <span class="badge-count">5</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UX%EA%B8%B0%ED%9A%8D" class="tree-link"><span class="doc-icon">📄</span> <span>4. UX기획</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UX%EB%9D%BC%EC%9D%B4%ED%8C%85" class="tree-link"><span class="doc-icon">📄</span> <span>5. UX라이팅</span> <span class="badge-count">1</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UI%EB%94%94%EC%9E%90%EC%9D%B8" class="tree-link"><span class="doc-icon">📄</span> <span>6. UI디자인</span> <span class="badge-count">1</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=%EC%9B%B9%2F%EC%95%B1%20%EA%B0%9C%EB%B0%9C" class="tree-link active" aria-current="true"><span class="doc-icon">📄</span> <span>7. 웹/앱 개발</span> <span class="badge-count">3</span></a></li>
+            <li class="tree-item"><a href="/ux-blog/?category=UX%EA%B0%95%EC%9D%98" class="tree-link"><span class="doc-icon">📄</span> <span>8. UX강의</span> <span class="badge-count">3</span></a></li>
           </ul>
+          <details class="sp-postall"><summary>전체 글 목록 <span>(24)</span></summary>
+            <ul class="sp-postlist" aria-label="UX블로그 전체 글"><li><a href="/ux-blog/button-copy-clarity-conversion/">전환율보다 먼저 봐야 하는 버튼 문구의 명확성</a></li><li><a href="/ux-blog/interview-question-design-mistakes/">인터뷰 질문 설계에서 자주 생기는 초보 실수</a></li><li><a href="/ux-blog/ux-spec-document-developer-confusion/">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a></li><li><a href="/ux-blog/ai-wireframe-ux-criteria/">AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</a></li><li><a href="/ux-blog/startup-ux-consulting-reasons/">스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</a></li><li><a href="/ux-blog/corporate-ux-training-planning/">사내 UX교육을 기획할 때 먼저 정해야 할 5가지</a></li><li><a href="/ux-blog/app-development-cost-quote-difference/" aria-current="page">앱 개발 견적 비교: 업체마다 몇 배 차이 나는 이유와 견적서 체크리스트</a></li><li><a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</a></li><li><a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강: 기능정의서·화면설계서 5시간 과정</a></li><li><a href="/ux-blog/ai-voice-service-vui-planning-guide/">AI 음성 서비스 UX 기획 가이드: VUI 대화 시나리오 설계 5단계</a></li><li><a href="/ux-blog/product-designer-hiring-external-interviewer/">프로덕트 디자이너 채용 면접 대행: UX포트폴리오 검증부터 IT스타트업 심사·멘토링까지</a></li><li><a href="/ux-blog/ui-ux-agency-ranking-selection-criteria/">UI/UX 에이전시 순위 2026: 순위표보다 정확한 7가지 비교 기준과 체크리스트</a></li><li><a href="/ux-blog/ui-design-outsourcing-for-dev-team/">개발팀은 있는데 UI디자이너가 없다면: UI디자인 외주 비용·기간·산출물 정리</a></li><li><a href="/ux-blog/app-development-cost-by-type-timeline/">앱 개발 비용 2026: 어플 유형별 견적표·개발 기간 한눈에 비교</a></li><li><a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">AI 보이스뱅킹 UX 사례: SK텔레콤 NUGU 공식 에이전시가 설계한 KB국민은행 ZERO UI</a></li><li><a href="/ux-blog/osstem-implant-dental-software-ux-research-case-study/">오스템임플란트 치과 소프트웨어 UX리서치 사례: 현직 치과의사 사용성 테스트에서 UI/UX 개선까지</a></li><li><a href="/ux-blog/startup-government-fund-ux-consulting-app-development/">스타트업·예비창업자 앱 외주 가이드: K-스타트업·모두의 창업 지원금으로 UX진단·UX디자인·앱개발 맡기는 법</a></li><li><a href="/ux-blog/product-detail-page-html-conversion-seo/">상세페이지 HTML 변환·퍼블리싱: 이미지 상세페이지를 검색·AI에 노출되는 텍스트로 바꾸는 방법</a></li><li><a href="/ux-blog/fgi-focus-group-interview-guide/">FGI(표적집단면접) 인터뷰 진행 방법: 인원·진행 순서·사례비 10~20만 원 기준</a></li><li><a href="/ux-blog/ai-era-ui-ux-importance/">AI 시대, UI/UX가 더 중요해지는 이유: AI 서비스 성공을 가르는 사용자 경험 5가지</a></li><li><a href="/ux-blog/ai-service-planning-training-instructor-guide/">AI 서비스기획 교육 강사 출강: AI 활용 창업 교육부터 AI기반 UX/UI 콘텐츠 디자인 과정까지, 현업 UX에이전시가 직접 강의합니다</a></li><li><a href="/ux-blog/user-interview-participant-recruiting-agency/">사용자 인터뷰 대상자 섭외 대행: 섭외·사례비 지급만 따로 맡기는 법</a></li><li><a href="/ux-blog/foreign-resident-interview-usability-test-agency/">국내 거주 외국인 인터뷰·사용성 테스트 대행: 다국적 섭외부터 통역·영문 보고서까지</a></li><li><a href="/ux-blog/overseas-shopify-store-usability-test-agency/">해외 자사몰 사용성 테스트(UT) 대행: 쇼피파이 해외몰 현지 사용자 섭외부터 영문 보고서까지</a></li></ul></details></div>
         </aside>
 
         <main class="main-content-pane">
-          <article>
-            <div class="article-meta-bar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <nav class="sp-crumb sp-post-crumb" aria-label="현재 위치"><a href="/">홈</a><i>›</i><a href="/ux-blog/">UX블로그</a><i>›</i><a href="/ux-blog/?category=%EC%9B%B9%2F%EC%95%B1%20%EA%B0%9C%EB%B0%9C" aria-current="page">웹/앱 개발</a></nav>
+          <article class="sp-post">
+            <div class="article-meta-bar sp-meta" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                 <span class="category-badge">웹/앱 개발</span>
                 <span class="read-time-pill">60초 만에 읽기</span>
-                <span style="font-size:12px; color:#777;">| 작성자: 슈퍼플래닝 웹/앱 개발팀<time class="sr-only" datetime="2026-09-25"> · 2026-09-25 게시</time></span>
+                <span class="sp-meta-by"><i class="sp-bar" aria-hidden="true">|</i> 작성자: 슈퍼플래닝 웹/앱 개발팀<time class="sr-only" datetime="2026-09-25"> · 2026-09-25 게시</time></span>
               </div>
               <div style="display:flex; align-items:center; gap:6px;">
                 <button class="icon-action-btn" id="postBookmarkBtn" onclick="togglePostBookmark(21);" title="즐겨찾기 추가/제거">
@@ -1279,7 +1148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
 
-            <h1 style="word-break:keep-all; overflow-wrap:break-word;">앱 개발 견적 비교: 업체마다 몇 배 차이 나는 이유와 견적서 체크리스트</h1>
+            <h1 class="sp-post-h1">앱 개발 견적 비교: 업체마다 몇 배 차이 나는 이유와 견적서 체크리스트</h1>
             <div class="hero-excerpt"><span class="type-text" id="heroTypeText">같은 앱도 견적이 90만 원부터 수천만 원까지 벌어지는 이유는 견적서의 개발 범위가 다르기 때문입니다. 비용 차이를 만드는 6가지 범위, 자주 빠지는 비용, 앱개발업체 견적 비교 체크리스트를 정리했습니다.</span></div>
 
             <div class="article-body">
@@ -1289,7 +1158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>앱 개발 비용을 검색하면 숫자부터 제각각입니다.<br>프리랜서 마켓 크몽은 <a href="https://kmong.com/prices/%EC%95%B1-%EA%B0%9C%EB%B0%9C" target="_blank" rel="noopener">간단한 앱은 평균 90만 원 수준, 고급 기능이 추가되면 300만 원 이상</a>이라고 안내합니다.<br>반면 외주 플랫폼 위시켓은 2025년부터 2026년 3월까지 의뢰된 앱 개발 프로젝트 73,213건을 분석해 <a href="https://blog.wishket.com/blog/app-development-cost-data-guide" target="_blank" rel="noopener">평균 3,270만 원, 최소 250만 원에서 최대 2억 원 이상</a>이라고 정리했습니다.</p>
       <p>두 숫자는 수십 배 차이가 나지만 둘 다 틀린 말은 아닙니다.<br>같은 "앱개발"이라는 말 안에 템플릿으로 만드는 간단한 앱부터 서버와 관리자 페이지를 갖춘 플랫폼 서비스까지 섞여 있기 때문입니다.<br>그래서 앱 개발 견적을 비교할 때는 금액보다 <strong>견적서에 무엇이 포함됐는지</strong>를 먼저 봐야 합니다.<br>앱 유형별 평균 비용과 기간은 <a href="/ux-blog/app-development-cost-by-type-timeline/">앱 개발 비용 2026: 어플 유형별 견적표·개발 기간 한눈에 비교</a>에서 확인할 수 있습니다.</p>
 
-      <figure style="margin:20px 0 24px 0; padding:0;">
+      <figure class="sp-pfig is-wide" style="--fw:1200px; margin:20px 0 24px 0; padding:0;">
         <img src="/images/ux-blog/app-cost/app-quote-cover.webp" alt="앱 개발 견적 비교 체크리스트 6 — 기획·설계, UI디자인, iOS·안드로이드·웹, 서버·관리자 페이지, 테스트(QA), 유지보수 기간을 확인해 같은 기준으로 견적을 비교하는 방법, 슈퍼플래닝 웹/앱 개발팀" width="1200" height="630" decoding="async" style="display:block; width:100%; height:auto; border:2px solid #000000;">
       </figure>
 
@@ -1320,18 +1189,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sp-blog-cta" style="margin:22px 0 26px 0; padding:16px 18px; background:#000000; color:#ffffff; border:2px solid #000000; box-shadow:3px 3px 0 rgba(0,0,0,0.25);">
         <p style="margin:0 0 6px 0; font-size:16px; font-weight:800; color:#ffffff; line-height:1.45;">받은 견적서, 같은 기준으로 다시 비교해 보세요.</p>
         <p style="margin:0 0 12px 0; font-size:13.5px; color:#dddddd; line-height:1.6; word-break:keep-all;">슈퍼플래닝 UX기획팀이 화면과 기능 범위를 먼저 정리해, 다른 업체 견적과 나란히 비교할 수 있는 견적서를 드립니다.</p>
-        <a href="/contact/" onclick="window.spQB && spQB('blog_cta_quote', 'inline'); return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:#ffffff; color:#000000; font-size:13.5px; font-weight:800; text-decoration:none; border:2px solid #ffffff; box-shadow:2px 2px 0 rgba(255,255,255,0.25);">견적서 비교 상담 →</a>
+        <a href="/contact/" onclick="window.spQB && spQB('blog_cta_quote', 'inline'); return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:#ffffff; color:#000000; font-size:13.5px; font-weight:800; text-decoration:none; border:2px solid #ffffff; box-shadow:2px 2px 0 rgba(255,255,255,0.25);">견적서 비교 상담<i class="sp-arr" aria-hidden="true"></i></a>
       </div>
       <p>여기에 기술 스택이 더해집니다.<br>iOS와 안드로이드를 각각 네이티브로 만들지, Flutter나 React Native 같은 크로스플랫폼으로 하나의 코드에서 만들지에 따라 개발 인력과 기간이 달라집니다.<br>결국 모바일앱개발 견적이 싸다는 것은 대개 이 표의 왼쪽 칸이 많다는 뜻입니다.</p>
 
       <h2>앱 개발 외주 비용에서 견적서에 자주 빠지는 비용은 무엇인가요?</h2>
       <p>계약 금액만 보고 예산을 잡으면 출시 직전이나 출시 후에 비용이 추가됩니다.<br>견적서에 아래 항목이 적혀 있는지 확인해 보세요.</p>
-      <ul>
-        <li><strong>앱 마켓 등록비</strong> — <a href="https://developer.apple.com/kr/programs/" target="_blank" rel="noopener">Apple Developer Program</a>은 연 99달러, <a href="https://support.google.com/googleplay/android-developer/answer/6112435?hl=ko" target="_blank" rel="noopener">Google Play 개발자 계정</a>은 1회 25달러가 듭니다.</li>
-        <li><strong>서버·호스팅 운영비</strong> — 사용자 수와 데이터 양에 따라 매달 달라지는 비용입니다.</li>
-        <li><strong>외부 서비스 이용료</strong> — 결제(PG) 수수료, 지도, 문자·푸시 알림, AI API처럼 사용량만큼 내는 비용입니다.</li>
-        <li><strong>유지보수</strong> — OS 업데이트 대응, 오류 수정, 작은 기능 변경을 누가 어떤 조건으로 맡는지가 빠져 있으면 매번 별도 견적이 됩니다.</li>
-        <li><strong>수정 범위 초과</strong> — 디자인·기능 수정 횟수와 검수 기준이 없으면 추가 비용 분쟁이 생기기 쉽습니다.</li>
+      <ul class="sp-lab">
+        <li><strong>앱 마켓 등록비</strong><span class="sp-dash"> — </span><span class="sp-li-t"><a href="https://developer.apple.com/kr/programs/" target="_blank" rel="noopener">Apple Developer Program</a>은 연 99달러, <a href="https://support.google.com/googleplay/android-developer/answer/6112435?hl=ko" target="_blank" rel="noopener">Google Play 개발자 계정</a>은 1회 25달러가 듭니다.</span></li>
+        <li><strong>서버·호스팅 운영비</strong><span class="sp-dash"> — </span><span class="sp-li-t">사용자 수와 데이터 양에 따라 매달 달라지는 비용입니다.</span></li>
+        <li><strong>외부 서비스 이용료</strong><span class="sp-dash"> — </span><span class="sp-li-t">결제(PG) 수수료, 지도, 문자·푸시 알림, AI API처럼 사용량만큼 내는 비용입니다.</span></li>
+        <li><strong>유지보수</strong><span class="sp-dash"> — </span><span class="sp-li-t">OS 업데이트 대응, 오류 수정, 작은 기능 변경을 누가 어떤 조건으로 맡는지가 빠져 있으면 매번 별도 견적이 됩니다.</span></li>
+        <li><strong>수정 범위 초과</strong><span class="sp-dash"> — </span><span class="sp-li-t">디자인·기능 수정 횟수와 검수 기준이 없으면 추가 비용 분쟁이 생기기 쉽습니다.</span></li>
       </ul>
 
       <h2>앱개발 AI 도구를 쓰면 앱 개발 비용이 줄어드나요?</h2>
@@ -1339,12 +1208,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>그래서 AI를 앞세워 "무조건 싸게"를 약속하는 견적보다, AI로 줄일 수 있는 구간과 줄일 수 없는 구간을 구분해서 설명하는 업체가 더 믿을 만합니다.</p>
 
       <h2>앱개발업체 견적을 비교할 때 무엇을 요청해야 하나요?</h2>
-      <ol>
-        <li><strong>같은 요구사항으로 요청합니다</strong> — 기능 목록, 예상 화면 수, 플랫폼, 참고 앱을 한 문서로 정리해 모든 업체에 똑같이 보냅니다. 화면설계를 문서로 전달하는 기준은 <a href="/ux-blog/ux-spec-document-developer-confusion/">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a>에서 다뤘습니다.</li>
-        <li><strong>항목별 견적을 받습니다</strong> — 기획, 디자인, 프론트엔드, 백엔드, 테스트를 나눠 받아야 어느 부분에서 차이가 나는지 보입니다.</li>
-        <li><strong>기술 스택과 소스코드 소유권을 확인합니다</strong> — 나중에 다른 업체로 옮기거나 내부 개발팀이 이어받을 수 있는지가 여기서 결정됩니다.</li>
-        <li><strong>검수 기준과 수정 범위를 적습니다</strong> — "무엇이 되면 완료인지"가 계약서에 있어야 일정과 비용이 흔들리지 않습니다.</li>
-        <li><strong>출시 후 유지보수 조건을 받습니다</strong> — 무상 유지보수 기간, 이후 월 비용, 대응 범위를 견적 단계에서 함께 확인합니다.</li>
+      <ol class="sp-steps sp-lab">
+        <li><strong>같은 요구사항으로 요청합니다</strong><span class="sp-dash"> — </span><span class="sp-li-t">기능 목록, 예상 화면 수, 플랫폼, 참고 앱을 한 문서로 정리해 모든 업체에 똑같이 보냅니다. 화면설계를 문서로 전달하는 기준은 <a href="/ux-blog/ux-spec-document-developer-confusion/">화면정의서가 예쁜데도 개발이 헷갈리는 이유</a>에서 다뤘습니다.</span></li>
+        <li><strong>항목별 견적을 받습니다</strong><span class="sp-dash"> — </span><span class="sp-li-t">기획, 디자인, 프론트엔드, 백엔드, 테스트를 나눠 받아야 어느 부분에서 차이가 나는지 보입니다.</span></li>
+        <li><strong>기술 스택과 소스코드 소유권을 확인합니다</strong><span class="sp-dash"> — </span><span class="sp-li-t">나중에 다른 업체로 옮기거나 내부 개발팀이 이어받을 수 있는지가 여기서 결정됩니다.</span></li>
+        <li><strong>검수 기준과 수정 범위를 적습니다</strong><span class="sp-dash"> — </span><span class="sp-li-t">"무엇이 되면 완료인지"가 계약서에 있어야 일정과 비용이 흔들리지 않습니다.</span></li>
+        <li><strong>출시 후 유지보수 조건을 받습니다</strong><span class="sp-dash"> — </span><span class="sp-li-t">무상 유지보수 기간, 이후 월 비용, 대응 범위를 견적 단계에서 함께 확인합니다.</span></li>
       </ol>
 
       <h2>앱 개발 업체 선정 기준은 무엇인가요?</h2>
@@ -1372,16 +1241,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <blockquote><span class="type-text" id="quoteTypeText2">가장 비싼 견적은 금액이 높은 견적이 아니라, 계약한 뒤에 범위가 계속 늘어나는 견적입니다.</span></blockquote>
 
       <h2>앱 개발 비용, 자주 묻는 질문</h2>
-      <h3>앱 개발 견적은 보통 얼마 정도 나오나요?</h3>
-      <p>범위에 따라 수십만 원부터 억 단위까지 차이가 납니다.<br>크몽은 간단한 앱을 평균 90만 원 수준으로, 위시켓은 의뢰된 앱 개발 프로젝트의 평균을 3,270만 원으로 안내합니다.<br>정확한 금액은 기능 목록, 플랫폼 수, 서버와 관리자 페이지 포함 여부를 정한 뒤에야 비교할 수 있습니다.</p>
-      <h3>iOS와 안드로이드를 함께 만들면 비용이 두 배가 되나요?</h3>
-      <p>꼭 그렇지는 않습니다.<br>Flutter나 React Native 같은 크로스플랫폼 방식은 하나의 코드로 두 OS용 앱을 만들 수 있어 두 배까지 늘지 않는 경우가 많습니다.<br>다만 카메라, 블루투스처럼 기기 기능을 깊게 쓰거나 OS별 디자인을 따로 가져가야 한다면 네이티브 개발이 필요해 비용이 늘어납니다.</p>
-      <h3>견적이 가장 낮은 업체를 골라도 괜찮을까요?</h3>
-      <p>낮은 견적 자체가 문제는 아닙니다.<br>다만 기획·디자인·테스트·유지보수 중 무엇이 빠져서 낮은지 확인해야 합니다.<br>빠진 항목을 나중에 따로 발주하면 처음에 높았던 견적보다 총비용이 커질 수 있습니다.</p>
-      <h3>앱 개발 업체는 어떤 기준으로 선정해야 하나요?</h3>
-      <p>견적 금액보다 먼저 비슷한 유형의 출시 이력, 기획·디자인을 직접 수행하는지, 직무별 투입 인력과 기간을 확인하세요.<br>소스코드·피그마 원본 전달 여부와 정기 미팅 같은 소통 방식도 중요합니다.<br>같은 질문으로 여러 업체를 비교하면 견적 차이의 이유가 보입니다.</p>
+      <div class="sp-faql"><div class="sp-faqi"><h3>앱 개발 견적은 보통 얼마 정도 나오나요?</h3><div class="sp-faqa"><p>범위에 따라 수십만 원부터 억 단위까지 차이가 납니다.<br>크몽은 간단한 앱을 평균 90만 원 수준으로, 위시켓은 의뢰된 앱 개발 프로젝트의 평균을 3,270만 원으로 안내합니다.<br>정확한 금액은 기능 목록, 플랫폼 수, 서버와 관리자 페이지 포함 여부를 정한 뒤에야 비교할 수 있습니다.</p>
+      </div></div><div class="sp-faqi"><h3>iOS와 안드로이드를 함께 만들면 비용이 두 배가 되나요?</h3><div class="sp-faqa"><p>꼭 그렇지는 않습니다.<br>Flutter나 React Native 같은 크로스플랫폼 방식은 하나의 코드로 두 OS용 앱을 만들 수 있어 두 배까지 늘지 않는 경우가 많습니다.<br>다만 카메라, 블루투스처럼 기기 기능을 깊게 쓰거나 OS별 디자인을 따로 가져가야 한다면 네이티브 개발이 필요해 비용이 늘어납니다.</p>
+      </div></div><div class="sp-faqi"><h3>견적이 가장 낮은 업체를 골라도 괜찮을까요?</h3><div class="sp-faqa"><p>낮은 견적 자체가 문제는 아닙니다.<br>다만 기획·디자인·테스트·유지보수 중 무엇이 빠져서 낮은지 확인해야 합니다.<br>빠진 항목을 나중에 따로 발주하면 처음에 높았던 견적보다 총비용이 커질 수 있습니다.</p>
+      </div></div><div class="sp-faqi"><h3>앱 개발 업체는 어떤 기준으로 선정해야 하나요?</h3><div class="sp-faqa"><p>견적 금액보다 먼저 비슷한 유형의 출시 이력, 기획·디자인을 직접 수행하는지, 직무별 투입 인력과 기간을 확인하세요.<br>소스코드·피그마 원본 전달 여부와 정기 미팅 같은 소통 방식도 중요합니다.<br>같은 질문으로 여러 업체를 비교하면 견적 차이의 이유가 보입니다.</p>
 
-      <h2>슈퍼플래닝 웹/앱 개발팀은 어떻게 진행하나요?</h2>
+      </div></div></div>
+<h2>슈퍼플래닝 웹/앱 개발팀은 어떻게 진행하나요?</h2>
       <p>슈퍼플래닝은 UX에이전시로 출발해 UX리서치, UX기획, UI디자인, 웹/앱 개발을 한 회사 안에서 진행합니다.<br>웹/앱 개발팀은 기획, 설계, 개발, 테스트·배포, 운영까지 단계를 나눠 진행하며, 네이티브·하이브리드 앱과 백오피스, AI 기능 연동 개발을 맡고 있습니다.<br>개발 전에 사용자경험 연구소와 UX기획팀이 범위와 화면을 먼저 정리하기 때문에, 견적 단계에서 무엇을 만들고 무엇을 만들지 않을지를 함께 정할 수 있습니다.</p>
 
       <p>실제 프로젝트로 보면 범위와 기간, 인원이 어떻게 연결되는지 알 수 있습니다.<br>슈퍼플래닝은 LG유플러스 인증앱의 헬스케어 서비스 프로젝트에서 UX리서치부터 UX기획, UI디자인, 개발까지 수행했습니다.</p>
@@ -1444,39 +1310,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             </div>
 
-            <!-- 63: 글 하단 문의하기 버튼(/ux-design/ FAQ 하단 버튼과 같은 윈도우 스타일) -->
-            <div class="post-inquiry-cta" style="margin:52px 0 26px 0;">
-              <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
-              <a href="/contact/" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background-color:#c0c0c0; color:#000000; text-decoration:none; font-weight:bold; font-size:13.5px; border-top:2px solid #ffffff; border-left:2px solid #ffffff; border-right:2px solid #404040; border-bottom:2px solid #404040; box-shadow:inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor:pointer;">
-                <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span>
-              </a></span>
-            </div>
-
             <div class="tag-container">
               <a href="/ux-blog/?tag=%23%EC%95%B1%EA%B0%9C%EB%B0%9C%EB%B9%84%EC%9A%A9" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#앱개발비용 태그 포스팅 모아보기">#앱개발비용</a><a href="/ux-blog/?tag=%23%EC%95%B1%EA%B0%9C%EB%B0%9C%EA%B2%AC%EC%A0%81" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#앱개발견적 태그 포스팅 모아보기">#앱개발견적</a><a href="/ux-blog/?tag=%23%EC%95%B1%EA%B0%9C%EB%B0%9C%EC%99%B8%EC%A3%BC" class="tag-pill" style="cursor:pointer; text-decoration:none; display:inline-block; margin-right:4px;" title="#앱개발외주 태그 포스팅 모아보기">#앱개발외주</a>
             </div>
           </article>
 
-          <!-- BOTTOM NAV WITH PREV/NEXT POST & LIST VIEW BUTTON -->
-          <!-- BOTTOM NAV WITH PREV & NEXT POST ON THE EXACT SAME HORIZONTAL ROW -->
-          <section class="post-nav-section" style="margin-top:36px; padding-top:20px; border-top:2px solid #000000; display:flex; flex-direction:column; gap:14px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:13.5px; font-weight:700;">
-              <!-- Prev Post (Left) -->
-              <div style="flex:1; min-width:0; text-align:left;">
-                <a href="/ux-blog/corporate-ux-training-planning/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; gap:6px; max-width:100%;"><span style="white-space:nowrap; font-weight:800; color:#444;">⬅ 이전글:</span> <span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">사내 UX교육을 기획할 때 먼저 정해야 할 5가지</span></a>
-              </div>
-
-              <!-- Next Post (Right) -->
-              <div style="flex:1; min-width:0; text-align:right;">
-                <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" style="color:#000000; text-decoration:none; display:inline-flex; align-items:center; justify-content:flex-end; gap:6px; max-width:100%;"><span style="text-decoration:underline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</span> <span style="white-space:nowrap; font-weight:800; color:#444;">:다음글 ➡</span></a>
-              </div>
-            </div>
-
-            <!-- 목록보기 Button at Far Right -->
-            <div style="display:flex; justify-content:flex-end; border-top:1px dashed #e0e0e0; padding-top:12px;">
-              <a href="/ux-blog/" class="w95-btn" style="padding:6px 20px; font-size:12.5px;">목록보기</a>
-            </div>
-          </section>
+          <div class="sp-faq-cta sp-post-cta"><div class="sp-cta-band"><div><strong>정리 안 된 생각도 가볍게 문의 남겨 주세요.</strong></div><a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;">문의하기</a></div></div>
+          <div class="bottom-nav sp-post-nav"><nav class="sp-pn" aria-label="이전글·다음글"><a class="prev" href="/ux-blog/corporate-ux-training-planning/" title="사내 UX교육을 기획할 때 먼저 정해야 할 5가지"><span><small>이전글</small><b>사내 UX교육을 기획할 때 먼저 정해야 할 5가지</b></span></a><a class="next" href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/" title="헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유"><span><small>다음글</small><b>헬스케어 앱 UX개선 사례</b></span></a></nav></div>
+          <div class="sp-listrow"><a href="/ux-blog/" class="sp-listbtn">목록보기</a></div>
         </main>
       </div>
 
@@ -1569,6 +1410,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     setTimeout(updateGnbScrollProgress, 300);
     setTimeout(updateGnbScrollProgress, 1000);
   </script>
+  <!-- 167: B안 작업표시줄(목록 페이지와 동일 구성) -->
+  <style>/* 167: 글 페이지 원본 CSS 에 없는 작업표시줄 배치 규칙(목록 페이지 원본과 동일) */#taskbar{justify-content:space-between;align-items:center}.taskbar-left{display:flex;align-items:center;gap:6px;height:100%}.taskbar-right{display:flex;align-items:center;gap:8px;height:100%}#startBtn{display:flex;align-items:center;gap:6px}#taskPreviews{display:flex;align-items:center;gap:4px}.task-preview{display:flex;align-items:center;gap:4px;height:28px;padding:0 8px}</style>
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu(event);">
+        <span>💻</span> <strong>전체 메뉴보기</strong>
+      </button>
+      <div id="taskPreviews">
+        <div class="task-preview active">
+          <span>📁</span> <span>서비스 탐색기</span>
+        </div>
+      </div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="window.open('https://www.instagram.com/ux_superplanning/','_blank');; closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="window.open('https://www.threads.com/@ux_superplanning','_blank');; closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');; closeStart();"><span>유튜브</span></div></div>
+  </div>
+<script>/* 167: 작업표시줄 시계·즐겨찾기 개수 */(function(){function t(){var e=document.getElementById('taskClock');if(e)e.textContent=new Date().toLocaleTimeString('en-US');}t();setInterval(t,1000);
+try{var b=JSON.parse(localStorage.getItem('sp_blog_bookmarks')||'[]');var c=document.getElementById('spCountFav');if(c&&Array.isArray(b))c.textContent=b.length;}catch(e){}})();</script>
   <div class="toast-msg" id="toast">링크가 클립보드에 복사되었습니다!</div>
 <!-- RETRO BACK TO TOP ANCHOR BUTTON (EXACT UX-RESEARCH MATCH) -->
   <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
@@ -1949,7 +1814,7 @@ function showCopySuccess(text, label, btn) {
       if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
     })();
   </script>
-  <script src="/assets/sp-inquiry.js?v=64" defer></script>
+  <script src="/assets/sp-inquiry-b.js?v=178" defer></script>
 <script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
 (function () {
   function place() {
@@ -1970,20 +1835,14 @@ function showCopySuccess(text, label, btn) {
   <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
     <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
       <span>💬</span>
-      <span>실시간 상담</span>
+      <span>UX프로젝트 문의</span>
     </div>
     <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
-      <div data-sp-live="mini"></div>
-      <div>
+      <div data-sp-live class="sp-live-q"></div>
+      <div class="sp-qb-contact">
         <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">신속한 문의답변 (보통 10분 이내 응답)</h4>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
-          <span>문의전화: 031-699-3298</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
-        </div>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
-          <span style="letter-spacing:-0.02em;">이메일: jake@superplanning.co.kr</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button>
-        </div>
+        <div class="sp-qb-row"><span class="sp-qb-k">문의전화</span><b class="sp-qb-v">031-699-3298</b><button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button></div>
+        <div class="sp-qb-row"><span class="sp-qb-k">이메일</span><b class="sp-qb-v">jake@superplanning.co.kr</b><button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button></div>
       </div>
       <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn sp-qb-kakao" onclick="window.spQB && spQB('kakao', 'pc');" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#ffffff; color:#000000;"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담하기</span></a>
       <a href="/contact/" class="w95-btn sp-qb-inquiry" onclick="window.spQB && spQB('inquiry', 'pc'); return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#000000; color:#ffffff;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의하기</span></a>
@@ -2015,6 +1874,7 @@ window.spQB = function (btn, pos) {
 };
 </script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
-<script src="/assets/sp-live.js?v=108" defer></script>
+<script src="/assets/sp-live.js?v=178" defer></script>
+<script>/* 167: 글 FAQ 카드 — 처음엔 모두 펼침(피그마), 질문 줄을 눌러 접기/펼치기 */(function(){document.querySelectorAll(".sp-faqi").forEach(function(it){var q=it.querySelector("h3");if(!q)return;q.setAttribute("tabindex","0");q.setAttribute("role","button");q.setAttribute("aria-expanded","true");var t=function(){var c=it.classList.toggle("is-closed");q.setAttribute("aria-expanded",!c);};q.addEventListener("click",t);q.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});})();</script>
 </body>
 </html>

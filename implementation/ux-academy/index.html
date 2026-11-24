@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="sp-b">
 <head>
   <meta charset="UTF-8">
   <!-- Google Tag Manager -->
@@ -2719,7 +2719,9 @@
   .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
 }
 </style>
-<link rel="stylesheet" href="/assets/sp-mnav.css?v=99"><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=178" defer></script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2734,6 +2736,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
@@ -2764,6 +2767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers'); blip(660, 0.04);"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -2827,7 +2831,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Toolbar & Address Bar -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+          <button class="tool-btn" onclick="history.back();"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>뒤로</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
@@ -2840,18 +2844,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Left Explorer Tree Sidebar (Exact Attached Image Match) -->
         <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
-          <div class="tree-root">
-            <span class="tree-toggle">日</span>
-            <span class="folder-icon">📂</span>
-            <span>UX서비스 &gt; UX강의</span>
-          </div>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
           <ul class="tree-list toc">
             <li class="tree-item"><a href="#intro" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX강의 소개</span></a></li>
-            <li class="tree-item"><a href="#org-training" class="tree-link"><span class="doc-icon">📄</span> <span>2. 공공기관·기업 AI 서비스기획 교육</span></a></li>
-            <li class="tree-item"><a href="#reviews" class="tree-link"><span class="doc-icon">📄</span> <span>3. 수강후기</span></a></li>
+            <li class="tree-item"><a href="#reviews" class="tree-link"><span class="doc-icon">📄</span> <span>2. 수강후기</span></a></li>
+            <li class="tree-item"><a href="#org-training" class="tree-link"><span class="doc-icon">📄</span> <span>3. AI 서비스기획 교육</span></a></li>
             <li class="tree-item"><a href="#history" class="tree-link"><span class="doc-icon">📄</span> <span>4. 기업 출강 및 강의 이력</span></a></li>
             <li class="tree-item"><a href="#curriculum" class="tree-link"><span class="doc-icon">📄</span> <span>5. 핵심 커리큘럼</span></a></li>
             <li class="tree-item"><a href="#pricing" class="tree-link"><span class="doc-icon">📄</span> <span>6. 코스 별 강의비용</span></a></li>
@@ -2864,676 +2863,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Right Main Content View Pane (Exact Attached Image Match) -->
                 <main class="main-content-pane">
 
-          <h1>AI활용 UX강의</h1>
+          <div class="sp-title-row"><h1>AI활용 UX강의</h1><nav class="sp-crumb" aria-label="현재 위치"><a href="/">홈</a><i>›</i><span aria-current="page">UX서비스</span><i>›</i><span aria-current="page">AI-UX강의</span></nav></div>
 
-          <p class="page-answer-summary" style="margin:0 0 18px 0; font-size:15px; line-height:1.8; color:#000000; word-break:keep-all;">공공기관·기업 맞춤 AI 서비스기획 교육부터 1:1 UX강의·UX포트폴리오 코칭까지,<br>현업 UX에이전시가 직접 설계하고 강의합니다.<br><strong>슈퍼플래닝 UX강의는 현업 UX에이전시가 직접 운영하는 실무형 UX교육입니다.</strong><br>현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, BC카드 등 기업 출강과<br>세종대·순천향대·서울여대 등 대학 특강을 진행해 왔고, 300건 이상의 수강후기를 보유하고 있습니다.<br>1:1 강의(2·5·8·12시간 코스), 실시간 온라인 강의, 기업·기관 맞춤 출강으로<br>UX리서치, UX라이팅, IA설계, 앱 화면기획, 피그마, AI 활용 UX기획, 바이브코딩 등을 강의합니다.</p>
-
-          <!-- 1. AI-UX강의소개 -->
-          <h2 id="intro">1. UX강의 소개</h2>
-
-          <p class="lead-typewriter-wrap" style="margin: 18px 0 20px 0;">
-            <span class="typewriter-quote" data-text="슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다." style="display:inline; padding:6px 10px 7px 10px; color:#ffffff; background:#000000; border:2px solid #000000; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-size:14.5px; line-height:1.7; font-weight:600; word-break:keep-all;">슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다.</span>
-          </p>
-    
-          <figure class="client-marquee" id="client-marquee" aria-label="슈퍼플래닝 UX강의·컨설팅 고객사">
-          <div class="client-marquee-row">
-            <ul class="client-marquee-track">
-              <li><img src="/images/ux-academy/clients/gs-caltex.webp" width="127" height="44" alt="GS칼텍스" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/bccard.webp" width="117" height="34" alt="비씨카드" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/cj-olivenetworks.webp" width="161" height="55" alt="CJ올리브네트웍스" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/gjf.webp" width="120" height="66" alt="경기도일자리재단" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/sejong-univ.webp" width="127" height="38" alt="세종대학교" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/sch-univ.webp" width="88" height="63" alt="순천향대학교" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/swu.webp" width="143" height="45" alt="서울여자대학교" loading="lazy" decoding="async"/></li>
-            </ul>
-          </div>
-          <div class="client-marquee-row client-marquee-row--2">
-            <ul class="client-marquee-track">
-              <li><img src="/images/ux-academy/clients/sk-telecom.webp" width="118" height="51" alt="SK텔레콤" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/lotte.webp" width="117" height="43" alt="롯데" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/lg-uplus.webp" width="135" height="35" alt="LG유플러스" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/asiana.webp" width="127" height="41" alt="아시아나항공" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/hyundai.webp" width="154" height="28" alt="현대자동차" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/shinhan-bank.webp" width="108" height="33" alt="신한은행" loading="lazy" decoding="async"/></li>
-              <li><img src="/images/ux-academy/clients/kb-bank.webp" width="134" height="29" alt="KB국민은행" loading="lazy" decoding="async"/></li>
-            </ul>
-          </div>
-          </figure>
-          
-          <ul class="lead-points">
-          <li><strong>왕초보도 따라올 수 있는 후기로 검증된 강의:</strong><span class="lead-detail">IT를 잘 모르는 입문자도 1:1 맞춤상담을 중심으로 이해할 수 있도록 강의합니다. (후기 300개 이상 보유)</span></li>
-          <li><strong>UX취준생,기업 실무자, 스타트업 예비창업자 맞춤:</strong><span class="lead-detail">포트폴리오, 아이디어 구체화, 외주 협업, 프로젝트 리딩처럼 서로 다른 목적에 맞춰 강의 포인트를 조정합니다.</span></li>
-          <li><strong>이론보다 당장 내일부터 생존형 실무 중심:</strong><span class="lead-detail">UX리서치부터 화면기획, 피그마, AI 활용, 바이브코딩까지 즉시 실무에 적용 가능한 실습형으로 진행합니다.</span></li>
-          </ul>
-          </section><figure class="top-hero-photo">
-          <img width="640" height="380" decoding="async" loading="lazy" alt="슈퍼플래닝 UX강의 오프라인 강의 현장 사진" src="/images/ux-academy/ux-lecture-classroom.webp"/>
-          <figcaption>[현장사진] 슈퍼플래닝 오프라인 UX강의 장면</figcaption>
-          </figure>
-          <div aria-label="강의 핵심 요약" class="summary-intro">
-          <div class="summary-grid">
-          <section class="summary-card">
-          <div class="summary-card-inner">
-            <h2 id="audience" class="summary-title">대상자</h2>
-<ul class="summary-list">
-<li>IT는 모르지만 당장 급하게 오프라인 1:1과외가 필요한 UX왕초보</li>
-<li>정부지원사업, 앱개발을 하고 싶은데 뭐부터? 스타트업 예비창업자</li>
-<li>최신 AI활용 UX기획 실무, 바이브코딩을 알고 싶은 기업 담당자</li>
-<li>UX포트폴리오 부터 면접코칭까지 UX취준생, 이직러</li>
-</ul>
-</div>
-</section>
-<section class="summary-card">
-<div class="summary-card-inner">
-<h2 id="strengths" class="summary-title">특장점</h2>
-<ul class="summary-list">
-<li>UX리서치, UX라이팅, 앱기획, 피그마, 바이브코딩 까지 올인원!</li>
-<li>IT를 전혀 몰라도 OK! 오프라인에서 UX실무자 변신 1:1케어!</li>
-<li>14년차 현직 실무자가 알려주는 진짜 AI-UX강의!</li>
-<li>UX역사? UX이론? 교과서 같은 내용 말고, 진짜 생존형 UX강의!</li>
-</ul>
-</div>
-</section>
-<section class="summary-card">
-<div class="summary-card-inner">
-<h2 id="instructors" class="summary-title">주요 강사진 소개</h2>
-<ul class="summary-list">
-<li>대표강사 <a href="/ux-company/#ceo">김휘수(UX기획자 제이크)</a> 포함 4~5명의 강사진 (피그마·프로덕트 디자이너 과정 등 협업 강사)</li>
-<li>10년차 이상 현직 UX기획자, 피그마, AI, PO/PM 실무자</li>
-<li>크몽, 패캠 등 최다후기, 평점 5.0 수강후기 1위!</li>
-<li>UX 관련 특허 4건과 디자인등록을 보유한 전문가!</li>
-</ul>
-</div>
-</section>
-<section class="summary-card">
-<div class="summary-card-inner">
-<h2 id="materials" class="summary-title">준비물</h2>
-<ul class="summary-list">
-<li>실습용 개인노트북</li>
-<li>진행 중인 웹/앱 프로젝트 질문 리스트</li>
-<li>제미나이, 클로드 등 1개 이상 유료 AI계정</li><li>메이즈, 피그마, 안티그래비티 회원가입 (<a href="https://maze.co/" target="_blank" rel="noopener noreferrer">maze.co</a> · <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">figma.com</a> · <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">antigravity.google</a>)</li>
-</ul>
-</div>
-</section>
-</div>
-</div>
-
-<section class="section" id="org-training">
-          <!-- 2. 공공기관·기업 AI 서비스기획 교육 (122) -->
-          <h2 id="org-training-title">2. 공공기관·기업 AI 서비스기획 교육</h2>
-<style>
-.org-lead{font-size:14.5px;line-height:1.8;word-break:keep-all;margin:0 0 16px 0;color:#111}
-.org-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 6px 0}
-.org-photos img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid #dcdcdc}
-.org-photo-cap{font-size:12.5px;color:#555;margin:0 0 20px 0;line-height:1.6;word-break:keep-all}
-.org-h3{font-size:15px;font-weight:700;margin:22px 0 10px 0;color:#111}
-.org-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;line-height:1.6;margin:0 0 6px 0}
-.org-table th,.org-table td{border:1px solid #dcdcdc;padding:8px 10px;text-align:left;vertical-align:top;word-break:keep-all}
-.org-table th{background:#f2f2f2;font-weight:700}
-.org-table td:first-child{font-weight:700;background:#fafafa}
-@media (min-width:769px){.org-nw{white-space:nowrap}}
-.org-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.org-grid .box{margin-bottom:0}
-.org-grid ol{margin:0;padding-left:20px}
-.org-grid ol li{font-size:13px;line-height:1.6;margin-bottom:5px;color:#333}
-.org-inst{display:grid;grid-template-columns:1fr;gap:12px}
-.org-inst .box{margin-bottom:0}
-.org-inst p{font-size:13px;line-height:1.65;margin:0;color:#333;word-break:keep-all}
-.org-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:20px 0 4px 0}
-.org-cta p{margin:0;font-size:14px;line-height:1.7;word-break:keep-all;color:#111}
-.org-related{font-size:13px;line-height:1.7;margin:14px 0 0 0;color:#333;word-break:keep-all}
-.org-related a{color:#000;text-decoration:underline}
-@media (max-width:768px){.org-grid{grid-template-columns:1fr}.org-photos{gap:6px}.org-table{font-size:12.5px}.org-table th,.org-table td{padding:7px 8px}}
-</style>
-<p class="org-lead"><strong>슈퍼플래닝 AI-UX교육팀은<br>여성인력개발센터·청년 취업 기관·KDT 교육기업·대학·기업을 위한 AI 서비스기획 교육을 운영합니다.</strong><br>생성형 AI 활용 교육을 UX리서치·PRD·화면기획서 같은 서비스기획 실무와<br>피그마·바이브코딩 실습으로 연결하는 것이 특징입니다.<br>원데이 5시간 특강부터 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정까지<br>기관의 일정과 교육 목표에 맞춰 커리큘럼을 설계합니다.</p>
-<figure class="org-photos-fig" style="margin:0;">
-<div class="org-photos">
-<img src="/images/ux-academy/org/ai-planning-fastcampus-kdt.webp" width="800" height="450" loading="lazy" decoding="async" alt="패스트캠퍼스 커널아카데미 KDT 과정 AI 서비스기획 강의 출강 현장 간판">
-<img src="/images/ux-academy/org/ai-planning-seongnam-center.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터 AI 서비스기획 과정 출강 기관 현판">
-<img src="/images/ux-academy/org/ai-planning-seongnam-class.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터에서 수강생들이 PC로 AI 서비스기획 실습을 하는 강의 현장">
-<img src="/images/ux-academy/org/ai-planning-tukorea-oneday.webp" width="800" height="450" loading="lazy" decoding="async" alt="한국공학대학교 AI서비스기획 디지털 리터러시 UI/UX디자인 피그마 원데이 클래스 배너, 김휘수 대표 강사">
-</div>
-<figcaption class="org-photo-cap">[현장사진] 슈퍼플래닝 AI 서비스기획 교육 출강 현장 — 패스트캠퍼스 커널아카데미 KDT 과정, 성남여성인력개발센터, 한국공학대학교 AI서비스기획 원데이 클래스</figcaption>
-</figure>
-
-<h3 class="org-h3">주요 출강 기관</h3>
-<table class="org-table">
-<colgroup><col style="width:24%"><col></colgroup>
-<tbody>
-<tr><td>청년 취업</td><td>SBA 청년취업사관학교 새싹캠퍼스, 마포구청 청년나루, <span class="org-nw">서초구청 UX취업 과정 등</span></td></tr>
-<tr><td>창업 지원</td><td>경기스타트업캠퍼스, <span class="org-nw">패스트캠퍼스 커널아카데미 AX 창업 과정(KDT) 등</span></td></tr>
-<tr><td>여성 취업 지원</td><td>동작여성인력개발센터, 관악여성인력개발센터, <span class="org-nw">성남여성인력개발센터 등</span></td></tr>
-<tr><td>교육기업</td><td>패스트캠퍼스 커널아카데미 KDT 과정 등</td></tr>
-<tr><td>대학</td><td>세종대학교, 서울여자대학교, 순천향대학교, 한국교통대학교, <span class="org-nw">한국공학대학교 등</span></td></tr>
-<tr><td>기업</td><td>현대자동차, 신한금융그룹, GS그룹, <span class="org-nw">IBK기업은행 등</span></td></tr>
-</tbody>
-</table>
-<p class="org-photo-cap">※ KDT: 고용노동부 주관 직업훈련 K-Digital Training 사업</p>
-
-<h3 class="org-h3">과정 구성</h3>
-<table class="org-table">
-<colgroup><col style="width:24%"><col style="width:26%"><col></colgroup>
-<thead><tr><th>과정</th><th>교육 시간</th><th>이런 기관에 맞습니다</th></tr></thead>
-<tbody>
-<tr><td>원데이 특강</td><td>5시간</td><td>대학 특강, 기관 입문 교육, 직무 체험</td></tr>
-<tr><td>집중 과정</td><td>2~3일, 16시간</td><td>기업 직무교육, 단기 부트캠프</td></tr>
-<tr><td>장기 과정</td><td>2~3개월, 250시간</td><td>KDT·국비지원 과정, 여성인력개발센터 취업 과정</td></tr>
-</tbody>
-</table>
-<p class="org-photo-cap">교육 시간과 실습 비중은 기관의 목표와 수강생 수준에 맞춰 협의해 조정합니다.</p>
-
-<h3 class="org-h3">커리큘럼</h3>
-<div class="org-grid">
-<article class="box"><h3>서비스기획 파트</h3><ol>
-<li>AI 활용 서비스 기획 및 현업 UX프로세스</li>
-<li>UX리서치(데스크리서치·1:1 인터뷰·FGI·UT 사용성 평가)</li>
-<li>제품 요구사항 정의(PRD) 및 정보구조(IA) 설계</li>
-<li>UX라이팅 및 가이드 제작</li>
-<li>피그마 기반 화면기획서 작성(프론트·어드민)</li>
-<li>UX 포트폴리오 완성 및 최종 발표</li>
-</ol></article>
-<article class="box"><h3>피그마 파트</h3><ol>
-<li>피그마 기초 및 UI 디자인 기본(그리드·컬러·타이포그래피)</li>
-<li>피그마 핵심 기능(오토레이아웃·컴포넌트)</li>
-<li>AI 활용 디자인 시스템 구축(토큰·베리어블·컴포넌트)</li>
-<li>화면 디자인 및 프로토타입·모션 제작</li>
-<li>피그마 AI 기능 활용 및 협업</li>
-<li>바이브 디자인 기반 프로덕트 제작 및 배포</li>
-</ol></article>
-</div>
-
-<h3 class="org-h3">주요 강사진</h3>
-<div class="org-inst">
-<article class="box"><h3><a href="/ux-company/#ceo" style="color:#111;">김휘수 강사</a></h3><p>UX디자인 에이전시 슈퍼플래닝 대표이자 14년 차 UX컨설턴트입니다.<br>UI/UX 관련 특허를 보유하고 KB국민은행·LG유플러스·오스템임플란트 등 다수 UX 프로젝트를 수행했습니다.<br>현대자동차·신한금융그룹·GS그룹 등 기업과 세종대·서울여대 등 대학, 여성인력개발센터·청년 취업 기관에서 AI 활용 서비스기획·UX 실무 교육을 진행하고 있습니다.</p></article>
-<article class="box"><h3>김대일 강사</h3><p>『된다! 피그마 디자인 10분 레시피』 저자인 8년 차 프로덕트 디자이너입니다.<br>홍익대·카카오엔터·넥슨 등에서 피그마·바이브코딩 교육을 진행하고 있습니다.</p></article>
-<article class="box"><h3>하주영 강사</h3><p>UI/UX 디자인 리드 출신입니다.<br>부천일드림센터·양재 AI 허브·한양대학교 등에서 UI/UX·AI 디자인 교육을 진행하고 있습니다.</p></article>
-</div>
-
-<h3 class="org-h3">운영 안내</h3>
-<table class="org-table">
-<colgroup><col style="width:24%"><col></colgroup>
-<tbody>
-<tr><td>출강 지역</td><td>서울·경기·인천 전 지역, 광주·대구·부산 등 전국 출강</td></tr>
-<tr><td>진행 방식</td><td>오프라인 출강, 실시간 온라인 강의</td></tr>
-<tr><td>강사 구성</td><td>서비스기획, UI/UX디자인, 피그마, AI 바이브코딩 등 각 분야별 전문 강사진으로 구성</td></tr>
-<tr><td>교육 비용</td><td>교육 시간·인원·실습 범위에 따라 맞춤 견적</td></tr>
-</tbody>
-</table>
-
-<div class="box org-cta">
-<p><strong>교육 일정과 인원, 희망하는 강의 주제를 알려주세요.</strong><br>기관 목표에 맞는 커리큘럼과 견적을 제안드립니다.</p>
-<a href="/contact/" class="sp-faq-cta-btn" onclick="window.spQB &amp;&amp; spQB('academy_org', 'inline'); return window.spOpenLecture ? spOpenLecture() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>교육 문의하기</span></a>
-</div>
-<p class="org-related">기업 출강 5시간 커리큘럼 예시는 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a>에서,<br>AI 서비스에서 UX가 중요한 이유는 <a href="/ux-blog/ai-era-ui-ux-importance/">AI 시대 UI/UX 차별화</a> 글에서 확인할 수 있습니다.</p>
-</section>
-
-<section class="section" id="reviews">
-          <!-- 3. 수강후기 -->
-          <h2 id="reviews">3. 수강후기</h2>
-          
-          <p class="typewriter-review-wrap" style="margin: 16px 0 20px 0;">
-            <span class="typewriter-quote" data-text="IT를 몰라도 UX는 누구나 할 수 있습니다. 입문자들이 가장 많이 선택한 UX강의 1위!&#10;UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다." style="display:inline-block; padding:8px 12px; color:#ffffff; background:#000000; border:2px solid #000000; border-radius:4px; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-size:14px; line-height:1.7; font-weight:600; word-break:keep-all;">IT를 몰라도 UX는 누구나 할 수 있습니다. 입문자들이 가장 많이 선택한 UX강의 1위!
-UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</span>
-          </p>
-          <div class="review-ai-summary-wrap">
-            <article class="box review-ai-summary"><h3>전체 후기요약 (300건 이상)</h3><p>수강생들은 단순 이론 설명보다 현재 본인 상황에 맞춘 실무형 피드백과 방향 정리가 큰 도움이 됐다고 평가합니다.</p><p>취준생, 예비창업자, 실무자 모두 각자 필요한 지점을 빠르게 짚어주는 맞춤형 강의라는 후기가 반복적으로 나타납니다.</p><p><a href="https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC" target="_blank" rel="noopener noreferrer" title="크몽 수강후기 페이지 (새 창)" aria-label="실제 후기 보기 — 크몽 수강후기 페이지, 새 창에서 열림" style="color:#000000; font-weight:700; text-decoration:underline;">실제 후기 보기 ↗</a></p></article>
-          </div>
-            
-            <div class="review-text-archive" id="review-text" style="margin:20px 0 0 0;">
-              <div class="review-roll" id="review-roll" role="region" aria-label="수강후기 22건, 자동 스크롤" tabindex="0">
-              <ul class="review-text-list" id="review-roll-list" style="list-style:none; padding:0; margin:0;">
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;스타트업 앱 개발 하려고 하는 분은 시작 단계에서 듣고 시작하기를 강력 추천합니다.<br>기본 앱 서비스 기획을 어떻게 해야하는지 와꾸 잡고 시작하세요.<br>그래야 개발비 낭비 안합니다.<br>제이크님 서비스 컨설팅을 동시에 하면서 수업 총 10시간이 넘게 해주셔서 감사합니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 이*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;저는 앱개발 전 아이디어만 갖고 있는 상황에서 제이크 대표님의 앱기획 UX교육을 들을 수 있게 되었습니다.<br>이 교육을 듣지 않고 아이디어만 갖고 개발자 만나러 갔다간 설계도 없이 건물 지으러 가는 거랑 똑같아요.<br>뜬구름 잡는 내용이나 원론적인 얘기가 아닌, 앱사업에서 꼭 필요한, 당장 써먹을 수 있는 내용이었습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 추*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;저는 인터넷 관련된 사업을 20년 정도 했는데요.<br>웹기획에 대해 조금 들어볼까 하는 마음으로 신청했습니다.<br>제이크 선생님은 의뢰자가 어떤 부분이 필요하신지 통찰하시고 거기에 대한 파악이 빠르십니다.<br>정말 레슨명 그대로 바로 써먹을 수 있는 자료를 주십니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · K44*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;필수적으로 알아야 할 것을 쉽고, 명확하게 전달하는 핵심 교육입니다.<br>'IT 기획'에 발을 들여놓고서 많은 서적과 강의를 들었지만 이렇게 명쾌하고 속시원한 교육은 받아본 적이 없어요.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · mon*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;서비스 기획자로서 시작부터 끝까지 모든 과정을 어떻게 체계적으로 진행할 수 있을지, 그리고 프로젝트를 리딩하기 위해 필요한 것들이 무엇인지 세세하게 알 수 있었습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 황*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;강의의 모든 내용이 실무와 밀접하게 연관되어 있습니다.<br>풍부한 예시 덕에 이해도 쉬워요.<br>강의 들으면서 동시에 저의 프로덕트를 수정보완할 수 있는 방안이 떠올랐습니다.<br>매번 뜬구름 잡는 강의들만 들어왔는데 제이크님의 강의는 한결 다릅니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · kle*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;지금까지 앱개발을 잘못된 방향으로 진행해왔다는 것을 깨달았습니다.<br>어떤 순서로 어떻게 진행해야 앱개발자에게 효율적으로 업무를 지시할 수 있는지를 배웠습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · K94*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;앱을 기획하거나 개발 전에 선택이 아닌 필수로 들어야 할 강의네요.<br>수업 분위기가 딱딱하지 않아서 재밌게 들을 수 있었고, 하나하나 꼼꼼히, 누구나 이해할 수 있게 강의해 주셔서 감사합니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · K12*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;만약 이 교육을 안 들었다면 상권분석 없이 가게를 오픈한 것과 같았겠다는 생각이 들었습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · K66*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;저희 자사앱으로 비교하며 수업해주셔서 더욱 이해가 쉬웠고, 길다면 긴 4시간의 수업시간 동안 중요하지 않은 게 하나 없던 알찬 수업이었습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 준*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;기획은커녕 IT에 대해 1도 모르던 제가 업무 시작한 지 반년 만에 제이크님 만난 덕에 생각지도 못한 인사이트를 배우고 갑니다.<br>차근차근 그리고 핵심을 잘 집어 알려주셔서 개념정리가 쏙쏙 되네요.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · sim*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;친절하고 이해하기 쉽게 알려주시고 제가 진행하는 프로젝트에 대해서도 꼼꼼히 피드백을 주셔서 큰 도움이 되었어요.<br>시간도 총 6시간 넘게 해주시고, 확실한 애프터서비스까지 받았습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 알*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;처음 만남부터 친근하게 대해주시면서도 진행하려는 계획에 대해 냉철하게 판단해서 좋은 방향을 제시해주셔서 정말 감사했습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · Hwi*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;정말 5시간이 넘게 시간 가는 줄 모르게 강의가 진행되었습니다.<br>속 시원하게 정리가 된 것 같아 너무너무 감사드립니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · K99*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;앱기획에 대해 어떻게 해야 할지 막막했었는데, 내주신 과제를 하면서 사용자에 대한 이해를 좀 더 깊이 할 수 있었고, 교육 내용을 들으며 앱의 방향을 잡는 귀한 시간이었습니다.<br>앱을 만들기 위해 꼭 거쳐야 할 과정으로 강추합니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · Kws*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;분위기도 너무 좋고 정말 아무것도 몰랐던 앱/웹기획 과정을 실무에 바로 쓸 수 있게, 그리고 앞으로 어떻게 해야 하는지까지 알려주셨어요.<br>정말 추천드려요.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 앗*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;장시간 동안 액기스만 쏙쏙 뽑아서 성심성의껏 잘 가르쳐주셔서 감사합니다.<br>정말 막막했었는데 이제 이거 듣고 나니까 알 수 없는 자신감도 생겼습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · con*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;입사해서 업무를 배우던 중에 수강을 신청하게 되었습니다.<br>회사에서는 배우지 못했던 기초적인 부분부터 꼼꼼하게 배울 수 있어 좋았습니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 도*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;정말 유익한 수업이었습니다.<br>1차분 수업만 들었는데 나머지 2, 3차 수업도 수강할 예정입니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 씰*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;UX에 대한 새로운 부분을 많이 알게 되어 좋았습니다.<br>제가 부족한 부분이 많았음에도 잘 알려주셔서 감사합니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 피*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;예정된 시간을 많이 초과하여 강의를 해 주신 열정에 감탄했으며, 감사드립니다.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · 내*****</span></li>
-                <li style="border:2px solid #000000; background:#ffffff; padding:10px 12px; margin:0 0 8px 0;"><p style="margin:0 0 4px 0; font-size:14px; line-height:1.7; word-break:keep-all;">&ldquo;엄청난 인사이트를 가지고 계신 분을 여기에서 만나뵙게 되네요.<br>최고의 선택이었다는 생각이 드네요.&rdquo;</p><span style="font-size:12px; color:#555555;">★★★★★ · s31*****</span></li>
-              </ul>
-              </div>
-              <div class="review-roll-controls"><button type="button" class="review-roll-toggle" id="review-roll-toggle" aria-controls="review-roll" aria-pressed="false">❚❚ 일시정지</button></div>
-            </div>
-            
-            </section>
-            <section class="section" id="cases">
-
-          <!-- 4. 기업 출강 및 강의 이력 -->
-          <h2 id="history">4. 기업 출강 및 강의 이력</h2>
-<p>슈퍼플래닝의 UX강의는 개인 대상 1:1 맞춤형 강의뿐 아니라 기업 출강, 대학 특강, 스타트업 멘토링, 단체 심화교육까지 확장 가능한 형태로 운영됩니다.<br>1:1 오프라인 대면 강의를 기본으로 합니다.<br>실시간 온라인 강의와 5명 이상 단체 강의도 가능하며, 기업·학교·기관의 경우 1시간, 2시간 단위의 짧은 특강부터 1주~4주 이상의 심화교육까지 운영할 수 있습니다.</p>
-<figure class="cases-photo-figure">
-<img width="640" height="380" decoding="async" loading="lazy" src="/images/ux-academy/ux-lecture-corporate-training.webp" alt="슈퍼플래닝 기업 출강 및 1대1 강의 현장 사진"/>
-</figure>
-<div class="cases-history-grid">
-  <article class="box cases-history-box">
-    <h3>UX강의/강연 이력</h3>
-    <ul>
-      <li>현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, BC카드, 금호아시아나 등 실무자 대상 기업출강 다수 진행</li>
-      <li>세종대, 순천향대, 서울여대, 충북대 등 대학교 특강 다수</li>
-      <li>삼성 멀티캠퍼스, 패스트캠퍼스 기업 교육전문 UX강사</li>
-      <li>경북콘텐츠코리아랩 모바일앱 창업캠프 강연</li>
-      <li>마포구청 청년나루, 스타트업 대상 앱 창업 UX강연</li>
-      <li>경기도 일자리 재단 온라인 플랫폼 창업 클래스 강연</li>
-      <li>크몽 주관 스타트업 대상 온라인 웨비나 강연</li>
-      <li>모바일앱 스타트업 대상 UX강의 및 창업 멘토링 다수 진행</li>
-      <li>스타트업 대표, 예비창업자, 정부지원합격자 대상 강의 전문</li>
-      <li>국립문화재단 공모전 앱 심사위원 (문화체육장관 대상)</li>
-      <li>각종 스타트업 앱 창업 경진대회 심사위원/자문위원</li>
-    </ul>
-  </article>
-  <article class="box cases-history-box">
-    <h3>UX컨설팅, 사내 스타트업 UX멘토링 이력</h3>
-    <p>제일기획, LG유플러스, KB국민카드, CJ올리브네트웍스, 현대이노션, KT파워텔, 불스원, 서민금융진흥원, 모아저축은행 등 다수</p>
-  </article>
-</div>
-<article class="box cases-history-box" id="custom-training">
-  <h3>차세대 시스템·SI 프로젝트 맞춤 UI/UX기획 기업출강</h3>
-  <p>차세대 시스템 구축이나 SI 프로젝트 착수를 앞둔 조직을 위한 맞춤 UI/UX기획 출강도 진행합니다.<br>IT 비전공 현업 담당자와 개발자가 화면정의서(화면설계서)·기능정의서·IA설계·사용자 플로우·QA체크리스트를 같은 기준으로 작성할 수 있도록 실습 중심으로 설계합니다.</p>
-  <p>5시간 출강 커리큘럼 예시와 실무 문서별 역할은 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a> 글에서 확인할 수 있습니다.</p>
-</article>
-<figure class="cases-photo-figure">
-<div style="display:flex; flex-wrap:wrap; gap:12px;">
-<img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-1.webp" alt="슈퍼플래닝 UI/UX기획 기업출강 현장, 화면에 UX UI가 띄워진 강의실에서 노트북으로 실습하는 참석자들" style="flex:1 1 240px; min-width:0; width:100%; height:auto;"/>
-<img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-2.webp" alt="슈퍼플래닝 강사가 화면기획 사례를 설명하고 참석자들이 노트북으로 문서를 작성하는 UX기획 강의 현장" style="flex:1 1 240px; min-width:0; width:100%; height:auto;"/>
-</div>
-<figcaption>[현장사진] 슈퍼플래닝 UX·UI 실무 교육 현장. AI활용 실습 위주 UX기획 강의 진행</figcaption>
-</figure>
-</section>
-<section class="section" id="curriculum">
-
-          <!-- 5. 핵심 커리큘럼 -->
-          <h2 id="curriculum">5. 핵심 커리큘럼</h2>
-<p class="curriculum-intro">IT비전공자부터 기업 실무자까지, 누구나 단기간에 AI활용 UX기획부터 피그마, 바이브코딩까지 마스터할 수 있는 맞춤형 실무 과정입니다.</p>
-<div class="curriculum-wrap">
-<div class="curriculum-item">
-<h3 class="curriculum-step">1회차 (AI활용 UX)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>온/오프라인 맞춤상담</li>
-<li>스타트업 예비창업자 → 준비 중인 웹/앱 UX컨설팅</li>
-<li>취준생/이직러 → UX·AI서비스기획자·프로덕트 디자이너 포트폴리오 1:1코칭, 모의 면접PT</li>
-<li>IT를 몰라도 디자이너, 개발자, 개발사와 원활한 소통방법</li>
-<li>웹/앱 UX개선 성공/실패 사례 소개</li>
-<li>최신 AI를 활용한 UX프로젝트 전체 단계 별 프로세스</li>
-<li>AI 에이전트 시대 UX기획자의 역할 변화: 기획·디자인·개발의 경계가 줄어드는 실무 흐름</li>
-<li>AI서비스기획자·프로덕트 디자이너 직무 이해: 하는 일, 필요 역량, 채용 공고가 요구하는 경험</li>
-<li>AI기반 UX자동화 툴 활용 및 프롬프트 기획 방법</li>
-<li>클로드, 제미나이, GPT, 매니패스트, 어피니티버블 등을 활용한 개발 요구사항 PRD 정의 (실습)</li>
-<li>바이브코딩을 활용한 프로토타입 앱 개발 (실습)</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">2회차 (UX리서치)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>UX기획/디자이너가 꼭 알아야 하는 UX리서치 기초</li>
-<li>메이즈(maze)를 활용한 UT 리서치 (실습)</li>
-<li>어피니티버블 활용 데스크 리서치, 경쟁사 조사 방법</li>
-<li>FGI조사, IDI조사, UT조사 실무 노하우</li>
-<li>AI활용 UX리서치 프롬프트 (실습)</li>
-<li>사용자 인터뷰 시나리오 작성 (실습)</li>
-<li>인터뷰 결과보고, 인사이트 도출 (실습)</li>
-<li>어피니티 다이어그램 작성 (실습)</li>
-<li>실제 앱 사용자 1:1 인터뷰 해보기 (실습)</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">3회차 (AARRR)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>데스크리서치 기반 페르소나/유저 저니맵 (실습)</li>
-<li>최소한의 앱 마케팅 퍼널 AARRR 설계 실무</li>
-<li>아하 모먼트/아하지표 AI설정 (실습)</li>
-<li>AI 기능이 들어간 서비스의 핵심 지표 설계: 재사용률·답변 만족도·작업 완료율</li>
-<li>사용자 이탈방지를 위한 메인페이지 UI기획 (실습)</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">4회차 (UX라이팅)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>AI활용 사용자 관점의 UX라이팅 실무 (실습)</li>
-<li>3초 만에 마이크로카피 CTA 작성 노하우 (실습)</li>
-<li>UX라이팅 보이스톤 및 가이드 AI봇 자동화 설계 (실습)</li>
-<li>AI 챗봇·에이전트의 대화형 UX라이팅: 답변 톤, 오류·거절 메시지, 다음 행동 안내 (실습)</li>
-<li>생성형 AI로 UX라이팅 검수봇 만들기: 가이드 기준 문구 자동 점검 (실습)</li>
-<li>디자인 퀄리티를 높이는 실무 팁</li>
-<li>(디자인을 몰라도) UI디자이너와 일하는 방법</li>
-<li>디자인 컨셉 정의서 작성 (실습)</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">5회차 (IA설계)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>사용자 서비스 플로우 설계 (실습)</li>
-<li>피그잼 AI로 IA·사용자 플로우 초안을 만들고 검증하는 방법 (실습)</li>
-<li>AI 기능 플로우 설계: 사람의 확인 단계와 오류 회복 경로 넣기</li>
-<li>피그잼 FigJam을 이용한 IA 메뉴구조 설계 (실습)</li>
-<li>앱 메뉴구조 긴급 심폐소생 실무 개선 노하우 (실습)</li>
-<li>메뉴 별 기능정의서 작성 (실습)</li>
-<li>화면 흐름도, 앱 와이어프레임 작성</li>
-<li>프로토타입 제작 및 사용성 테스트</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">6회차 (앱 화면기획)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>UX기획자로서 딱 필요한 만큼만 배우는 피그마 기초실습 (실습)</li>
-<li>개발자가 좋아하는 디스크립션 작성 방법 (실습)</li>
-<li>AI로 화면 디스크립션 초안을 만들고 기획자가 검수하는 방법 (실습)</li>
-<li>생성형 AI 기능 화면 기획: 입력창·생성 중 상태·답변·근거 표시·피드백 버튼 UI 패턴 (실습)</li>
-<li>피그마를 이용한 UI스토리보드 작성 (실습)</li>
-<li>페이퍼보드(UX 특허 기반 자체 제작 도구)를 활용한 화면 드로잉 (실습)</li>
-<li>금융회사 등 보안 상 피그마를 못쓰는 경우 PPT 실습 대체 가능</li>
-<li>사용자 화면 프론트 UI스토리보드 설계 (실습)</li>
-<li>관리자 화면 백엔드 UI스토리보드 설계 (실습)</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">7회차 (프로젝트 관리)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>(갑의 입장) 개발사 선정방법, 불리하지 않게 계약하기</li>
-<li>(갑의 입장) 개발 산출물 관리</li>
-<li>(을의 입장) 프로젝트 매니징, WBS 일정관리</li>
-<li>(을의 입장) AI활용 QA 검수 시나리오 기획</li>
-<li>AI로 WBS 초안·이슈 정리를 자동화하는 PM 업무 실습</li>
-<li>AI 도입 프로젝트의 요구사항 정의와 산출물 검수 기준 정리</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">8회차 (바이브코딩·AI 코딩 에이전트)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>바이브코딩(리플릿, 구글 안티그래비티 등) 왕초보 실습 — IT를 전혀 몰라도 가능한 입문 구성</li>
-<li>클로드 코드(Claude Code)·코덱스(Codex) 등 AI 코딩 에이전트 기본 세팅과 활용법</li>
-<li>기획서(PRD)를 AI가 이해하는 작업 지시서로 바꾸는 프롬프트 설계 실습</li>
-<li>피그마 MCP 연동: 피그마 화면을 클로드 코드·코덱스로 불러와 실제 동작하는 웹/앱 화면으로 구현</li>
-<li>코드로 만든 화면을 다시 피그마로 가져와 디자이너와 함께 다듬는 양방향 디자인-개발 워크플로우</li>
-<li>DESIGN.md 디자인 레퍼런스 파일 작성: 컬러·타이포·간격 규칙을 정리해 AI 디자인 일관성 유지</li>
-<li>CLAUDE.md·AGENTS.md 등 프로젝트 규칙 파일로 팀의 기획·디자인 기준 공유하기</li>
-<li>구글 안티그래비티를 활용한 앱 개발 실습: 직장인을 위한 AI명상앱 만들어보기</li>
-<li>깃허브(Git) 기본 세팅과 수파베이스(Supabase) 구글 간편로그인 붙이기 실습</li>
-<li>버셀(Vercel)·클라우드플레어 페이지를 활용한 무료 배포와 홍보용 랜딩 페이지 제작</li>
-<li>제미나이 API를 활용한 AI 자동 상담사 기능 개발 실습</li>
-<li>AI가 만든 결과물을 기획서 기준으로 검수하는 UX QA 체크리스트</li>
-</ul>
-</div>
-</div>
-<div class="curriculum-item">
-<h3 class="curriculum-step">9회차 (피그마 심화·피그마 AI)</h3>
-<div class="curriculum-panel">
-<ul class="curriculum-list">
-<li>실무에서 바로 쓰는 피그마 협업 환경 구축: 파일 구조, 공유 방식, 권한 설정 정리</li>
-<li>커서챗, 코멘트, 히스토리, 옵저빙 기능을 활용한 피그마 협업 워크플로우 이해</li>
-<li>반응형 화면 설계를 위한 오토레이아웃 원리와 리사이징 심화 실습</li>
-<li>재사용성과 유지보수를 높이는 컴포넌트 설계, 스왑 인스턴스, 프로퍼티 구조 이해</li>
-<li>디자인 시스템 관점의 스타일과 베리어블 관리, 모드 전환 실무 포인트</li>
-<li>프로토타이핑 기본 셋팅부터 스마트 애니메이션·인터랙티브 컴포넌트까지 핵심 인터랙션 실습</li>
-<li>피그마 AI 에이전트(Figma Agent): 프롬프트로 화면 초안 생성, 여러 화면 일괄 수정, 레이어 이름 자동 정리</li>
-<li>피그마 메이크(Figma Make): 텍스트 프롬프트로 실제 동작하는 프로토타입 만들기와 코드 내보내기</li>
-<li>피그마 AI 이미지 생성·편집과 피그마 위브(Weave)를 활용한 화면용 비주얼 제작</li>
-<li>피그마 모션(Figma Motion)으로 타임라인 기반 마이크로 인터랙션 애니메이션 만들기</li>
-<li>Dev Mode 개발 핸드오프와 피그마 MCP로 AI 코딩 에이전트에 디자인 맥락 전달하기(8회차 연계)</li>
-<li>AI가 만든 디자인을 디자인 시스템 기준으로 점검하고 다듬는 실무 피드백</li>
-</ul>
-</div>
-</div><div class="curriculum-note">
-  <h3 class="curriculum-note-title">커리큘럼 추가 혜택 &amp; 안내</h3>
-  <ul class="curriculum-note-list">
-    <li><strong>UX실무 요약 비밀자료 제공</strong></li>
-    <li><strong>1:1 맞춤형 과제 출제 및 과제 피드백 포함</strong></li>
-    <li>커리큘럼에 적히지 않은 세부 내용은 실제 질문과 프로젝트 상황에 따라 추가로 다룹니다.</li>
-  </ul>
-</div>
-</div>
-<p>이 커리큘럼은 회차를 많이 나열하기 위한 구성이 아니라, 수강자의 현재 수준에 따라 어디까지 필요한지 조정할 수 있도록 만든 구조입니다.<br>취준생은 포트폴리오와 실무 감각을, 예비창업자는 서비스 구조화와 외주 대응력을, 기업 실무자는 협업 기준과 문서화 역량을 중심으로 가져갈 수 있습니다.</p>
-</section>
-<section class="section" id="courses">
-          <!-- 6. 코스 별 강의비용 -->
-          <h2 id="pricing">6. 코스 별 강의비용</h2>
-
-          <div class="course-feature-box">
-            <h3>코스 선택 전 확인 포인트</h3>
-            <ul>
-              <li>모든 1:1 코스는 오프라인 대면을 기본으로 하며, 온라인으로도 진행할 수 있습니다.</li>
-              <li>모든 커리큘럼은 실무형 실습방식으로 진행 됩니다.</li>
-              <li>상담은 무료이며, 결제는 상담 후 진행됩니다.</li>
-              <li>A코스 수강 후 B·C·D코스 신청 시 A코스 수강료 <strong>전액 차감</strong>.</li>
-            </ul>
-          </div>
-
-          <div class="course-pricing-container">
-            <!-- Top 3 Pricing Cards -->
-            <div class="course-cards-grid">
-              <article class="course-card-item">
-                <span class="course-reco-badge" style="background:#ffffff !important; color:#0f172a !important; border:1.5px solid #0f172a !important;">실속 추천</span>
-                <h3>A타입 코스</h3>
-                <p class="course-origin-price">290,000원</p>
-                <p class="course-sale-price">220,000원</p>
-                <span class="course-tag-pill">2시간 / 실속형</span>
-              </article>
-
-              <article class="course-card-item">
-                <h3>B타입 코스</h3>
-                <p class="course-origin-price">660,000원</p>
-                <p class="course-sale-price">550,000원</p>
-                <span class="course-tag-pill">5시간 / 입문형</span>
-              </article>
-
-              <article class="course-card-item">
-                <span class="course-reco-badge">가장 많이 선택</span>
-                <h3>C타입 코스</h3>
-                <p class="course-origin-price">950,000원</p>
-                <p class="course-sale-price">790,000원</p>
-                <span class="course-tag-pill">8시간 / 심화형</span>
-              </article>
-
-              <article class="course-card-item">
-                <h3>D타입 코스</h3>
-                <p class="course-origin-price">1,350,000원</p>
-                <p class="course-sale-price">1,080,000원</p>
-                <span class="course-tag-pill">12시간 / 확장형</span>
-              </article>
-            </div>
-
-            <!-- Comparison Table (Box Grid) -->
-            <table class="course-compare-table" style="table-layout:fixed !important;">
-              <colgroup><col style="width:13%;"><col style="width:21.75%;"><col style="width:21.75%;"><col style="width:21.75%;"><col style="width:21.75%;"></colgroup>
-              <tbody>
-                <tr>
-                  <th scope="row" class="row-label">패키지 설명</th>
-                  <td class="cell-box">
-                    <strong>1:1 UX강의 A코스</strong>
-                    <span class="cell-desc">UX기초 · 현재 수준 점검 · 피드백 리포트 · UX포트폴리오 작성 등</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>1:1 UX강의 B코스</strong>
-                    <span class="cell-desc">UX리서치 · UX라이팅 · 서비스기획 · 바이브코딩 등 </span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>1:1 UX강의 C코스</strong>
-                    <span class="cell-desc">UX리서치 · UX라이팅 · IA설계 · 피그마 · 바이브코딩 등</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>1:1 UX강의 D코스</strong>
-                    <span class="cell-desc">UX리서치 · UX라이팅 · PRD · 피그마 · 성과지표 · 바이브코딩 등</span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row" class="row-label">추천 대상</th>
-                  <td class="cell-box">
-                    <strong>UX강의를 처음 알아보는 분</strong>
-                    <span class="cell-desc">내게 맞는 학습 방향과 코스를 먼저 확인하고 싶은 경우</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>UX왕초보 · 취준생</strong>
-                    <span class="cell-desc">빠르게 UX기초와 실무 흐름을 잡고 싶은 경우</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>주니어 실무자 · PM/PO</strong>
-                    <span class="cell-desc">IA, 화면기획, 피그마까지 깊게 연결하고 싶은 경우</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>예비창업자 · 신사업 담당자</strong>
-                    <span class="cell-desc">PRD, 협업, AI활용 UX실무까지 폭넓게 다루고 싶은 경우</span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row" class="row-label">총 강의시간</th>
-                  <td class="cell-box"><span style="font-size:13.5px; font-weight:600; color:#111;">2시간</span></td>
-                  <td class="cell-box"><span style="font-size:13.5px; font-weight:600; color:#111;">5시간</span></td>
-                  <td class="cell-box"><span style="font-size:13.5px; font-weight:600; color:#111;">8시간</span></td>
-                  <td class="cell-box"><span style="font-size:13.5px; font-weight:600; color:#111;">12시간</span></td>
-                </tr>
-
-                <tr>
-                  <th scope="row" class="row-label">장소</th>
-                  <td class="cell-box"><span style="font-size:13px; color:#111;">온/오프라인(협의가능)</span></td>
-                  <td class="cell-box"><span style="font-size:13px; color:#111;">온/오프라인(협의가능)</span></td>
-                  <td class="cell-box"><span style="font-size:13px; color:#111;">온/오프라인(협의가능)</span></td>
-                  <td class="cell-box"><span style="font-size:13px; color:#111;">온/오프라인(협의가능)</span></td>
-                </tr>
-
-                <tr>
-                  <th scope="row" class="row-label">강의실 제공</th>
-                  <td class="cell-box"><span style="font-size:14px; font-weight:bold; color:#111;">✓</span></td>
-                  <td class="cell-box"><span style="font-size:14px; font-weight:bold; color:#111;">✓</span></td>
-                  <td class="cell-box"><span style="font-size:14px; font-weight:bold; color:#111;">✓</span></td>
-                  <td class="cell-box"><span style="font-size:14px; font-weight:bold; color:#111;">✓</span></td>
-                </tr>
-
-                <tr>
-                  <th scope="row" class="row-label">제공 자료</th>
-                  <td class="cell-box">
-                    <strong>UX 비밀자료 A세트</strong>
-                    <span class="cell-desc">피드백 리포트 · UX포트폴리오 작성 등 맞춤 자료</span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>UX 비밀자료 B세트</strong>
-                    <span class="cell-desc">핵심 실무템플릿 등 입문자료 </span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>UX 비밀자료 C세트</strong>
-                    <span class="cell-desc">피그마 · IA · 화면기획 등 심화 자료 </span>
-                  </td>
-                  <td class="cell-box">
-                    <strong>UX 비밀자료 D세트</strong>
-                    <span class="cell-desc">PRD · 피그마 · 성과지표 · 바이브코딩 등 풀버전 자료</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div style="margin-top:22px; padding:18px; background:#ffffff; border:1.5px solid #0f172a; border-radius:10px;">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
-                <div>
-                  <span style="display:inline-block; font-size:11px; font-weight:800; color:#0f172a; border:1px solid #0f172a; border-radius:10px; padding:2px 10px; margin-bottom:6px;">기업·기관 출강 (10~50명)</span>
-                  <h3 style="margin:0 0 4px; font-size:16px; font-weight:800; color:#111;">단체 맞춤형 UX강의</h3>
-                  <p style="margin:0; font-size:12.5px; line-height:1.6; color:#475569;">교육 인원·시간·맞춤 범위에 따라 견적을 산정합니다.<br>강의계획서·강사 이력·세금계산서를 함께 제공합니다.</p>
-                </div>
-                <div style="text-align:right;">
-                  <p style="margin:0; font-size:12px; color:#64748b;">일정, 장소 협의가능</p>
-                  <p style="margin:0; font-size:18px; font-weight:800; color:#111;">협의 후 견적 산정</p>
-                </div>
-              </div>
-              <table style="width:100%; margin-top:12px; border-collapse:collapse; font-size:12.5px;">
-                <tr><th style="text-align:left; padding:6px 8px; background:#f1f5f9; border:1px solid #e2e8f0; width:26%;">교육 인원</th><td style="padding:6px 8px; border:1px solid #e2e8f0;">10명~50명</td></tr>
-                <tr><th style="text-align:left; padding:6px 8px; background:#f1f5f9; border:1px solid #e2e8f0;">총 시간</th><td style="padding:6px 8px; border:1px solid #e2e8f0;">2시간 특강 ~ 다회차 정규 과정</td></tr>
-                <tr><th style="text-align:left; padding:6px 8px; background:#f1f5f9; border:1px solid #e2e8f0;">맞춤 범위</th><td style="padding:6px 8px; border:1px solid #e2e8f0;">사내 업무·문서 양식 반영, 실습 자료 제작 수준</td></tr>
-                <tr><th style="text-align:left; padding:6px 8px; background:#f1f5f9; border:1px solid #e2e8f0;">장소</th><td style="padding:6px 8px; border:1px solid #e2e8f0;">서울·수도권·지방 출강, 온라인 가능</td></tr>
-              </table>
-            </div>
-          </div>
-        </section>
-<section class="section" id="audiences">
-
-          <!-- 7. 수강 대상자 -->
-          <h2 id="target">7. 수강 대상자</h2>
-<p>슈퍼플래닝의 UX강의는 모두에게 같은 방식으로 진행하지 않습니다.<br>현재 수준, 프로젝트 상황, 수강 목적에 따라 질문이 완전히 다르기 때문에 취준생, 예비창업자, 기업 실무자, UX입문자를 구분해서 설명하는 방식으로 진행합니다.</p>
-<div class="grid-boxes two">
-<article class="box"><h3>UX 취준생 · 이직러</h3><p>UX포트폴리오 정리, 면접 PT, 실무 문서 감각, 화면기획과 피그마 흐름을 빠르게 익히고 싶은 분에게 적합합니다.</p></article>
-<article class="box"><h3>스타트업 예비창업자</h3><p>정부지원사업, 앱개발, 외주 협업을 준비 중인데 무엇부터 정리해야 할지 막막한 분에게 실질적인 기준을 잡아드립니다.</p></article>
-<article class="box"><h3>기업 실무자 · PM · PO</h3><p>최신 AI활용 UX기획 실무, 바이브코딩, 리서치, 문서화, 화면기획을 실제 프로젝트 기준으로 연결하고 싶은 분에게 맞습니다.</p></article>
-<article class="box"><h3>UX 왕초보 · 비전공자</h3><p>IT를 잘 모르더라도 개인 노트북을 활용한 실습형 강의로 현재 상황과 질문을 중심으로 따라올 수 있게 진행합니다.</p></article>
-</div>
-<p>이 강의는 단순히 툴 기능만 배우는 수업이 아니라, 각 수강자가 지금 당장 부딪히는 문제를 실무 언어와 문서, 화면 구조로 바꾸는 데 초점을 둔 실무형 UX강의입니다.</p>
-</section>
-<section class="section" id="benefits">
-          <!-- 8. 수강생 혜택 -->
-          <h2 id="benefits">8. 수강생 혜택</h2>
+          <p class="hero-intro sp-hero-pill" style="word-break:keep-all;">기관·기업 맞춤 AI 서비스기획 교육부터 1:1 UX강의·UX포트폴리오 코칭까지,<br>현업 UX에이전시가 직접 설계하고 강의합니다.<span class="sp-type-box"><span class="sp-type">슈퍼플래닝 UX강의는 현업 UX에이전시가 직접 운영하는 실무형 UX교육입니다.</span></span></p>
+          <p class="sp-hero-lead">현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, BC카드 등 기업 출강과<br>세종대·순천향대·서울여대 등 대학 특강을 진행해 왔고, 300건 이상의 수강후기를 보유하고 있습니다.<br>1:1 강의(2·5·8·12시간 코스), 실시간 온라인 강의, 기업·기관 맞춤 출강으로<br>UX리서치, UX라이팅, IA설계, 앱 화면기획, 피그마, AI 활용 UX기획, 바이브코딩 등을 강의합니다.</p>
+          <h2 id="intro"><span class="sp-h2n" data-n="01">1.</span> UX강의 소개</h2>
+          <p>슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다.</p>
+          <figure class="sp-alogos" id="client-marquee" aria-label="슈퍼플래닝 UX강의·컨설팅 고객사"><ul><li><img src="/images/ux-academy/clients/gs-caltex.webp" width="127" height="44" alt="GS칼텍스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/bccard.webp" width="117" height="34" alt="비씨카드" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/cj-olivenetworks.webp" width="161" height="55" alt="CJ올리브네트웍스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/gjf.webp" width="120" height="66" alt="경기도일자리재단" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sejong-univ.webp" width="127" height="38" alt="세종대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sch-univ.webp" width="88" height="63" alt="순천향대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/swu.webp" width="143" height="45" alt="서울여자대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sk-telecom.webp" width="118" height="51" alt="SK텔레콤" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/lotte.webp" width="117" height="43" alt="롯데" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/lg-uplus.webp" width="135" height="35" alt="LG유플러스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/asiana.webp" width="127" height="41" alt="아시아나항공" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/hyundai.webp" width="154" height="28" alt="현대자동차" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/shinhan-bank.webp" width="108" height="33" alt="신한은행" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/kb-bank.webp" width="134" height="29" alt="KB국민은행" loading="lazy" decoding="async"/></li></ul></figure>
+          <ul class="lead-points sp-apoints"><li><strong>왕초보도 따라올 수 있는 후기로 검증된 강의:</strong><span class="lead-detail">IT를 잘 모르는 입문자도 1:1 맞춤상담을 중심으로 이해할 수 있도록 강의합니다. (후기 300개 이상 보유)</span></li><li><strong>UX취준생,기업 실무자, 스타트업 예비창업자 맞춤:</strong><span class="lead-detail">포트폴리오, 아이디어 구체화, 외주 협업, 프로젝트 리딩처럼 서로 다른 목적에 맞춰 강의 포인트를 조정합니다.</span></li><li><strong>이론보다 당장 내일부터 생존형 실무 중심:</strong><span class="lead-detail">UX리서치부터 화면기획, 피그마, AI 활용, 바이브코딩까지 즉시 실무에 적용 가능한 실습형으로 진행합니다.</span></li></ul>
+          <div class="sp-aphotos sp-ap2"><figure class="photo-frame"><img width="640" height="380" decoding="async" loading="lazy" alt="슈퍼플래닝 UX강의 오프라인 강의 현장 사진" src="/images/ux-academy/ux-lecture-classroom.webp"/><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 오프라인 UX강의 장면</figcaption></figure><figure class="photo-frame"><img src="/images/ux-academy/ux-lecture-group.webp" width="333" height="423" loading="lazy" decoding="async" alt="슈퍼플래닝 단체 UX강의 현장 — 강의장 스크린 앞에서 수강생들이 노트북으로 실습하는 모습"><figcaption class="photo-caption">[현장사진] 단체 UX강의 현장</figcaption></figure></div>
+          <div class="sp-agrid2"><div class="sp-acard"><h2 id="audience" class="summary-title">대상자</h2><ul class="sp-dots"><li>IT는 모르지만 당장 급하게 오프라인 1:1과외가 필요한 UX왕초보</li><li>정부지원사업, 앱개발을 하고 싶은데 뭐부터? 스타트업 예비창업자</li><li>최신 AI활용 UX기획 실무, 바이브코딩을 알고 싶은 기업 담당자</li><li>UX포트폴리오 부터 면접코칭까지 UX취준생, 이직러</li></ul></div><div class="sp-acard"><h2 id="strengths" class="summary-title">특장점</h2><ul class="sp-dots"><li>UX리서치, UX라이팅, 앱기획, 피그마, 바이브코딩 까지 올인원!</li><li>IT를 전혀 몰라도 OK! 오프라인에서 UX실무자 변신 1:1케어!</li><li>14년차 현직 실무자가 알려주는 진짜 AI-UX강의!</li><li>UX역사? UX이론? 교과서 같은 내용 말고, 진짜 생존형 UX강의!</li></ul></div><div class="sp-acard"><h2 id="instructors" class="summary-title">주요 강사진 소개</h2><ul class="sp-dots"><li>대표강사 <a href="/ux-company/#ceo">김휘수(UX기획자 제이크)</a><br>포함 4~5명의 강사진 (피그마·프로덕트 디자이너 과정 등 협업 강사)</li><li>10년차 이상 현직 UX기획자, 피그마, AI, PO/PM 실무자</li><li>크몽, 패캠 등 최다후기, 평점 5.0 수강후기 1위!</li><li>UX 관련 특허 4건과 디자인등록을 보유한 전문가!</li></ul></div><div class="sp-acard"><h2 id="materials" class="summary-title">준비물</h2><ul class="sp-dots"><li>실습용 개인노트북</li><li>진행 중인 웹/앱 프로젝트 질문 리스트</li><li>제미나이, 클로드 등 1개 이상 유료 AI계정</li><li>메이즈, 피그마, 안티그래비티 회원가입<br>(<a href="https://maze.co/" target="_blank" rel="noopener noreferrer">maze.co</a> · <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">figma.com</a> · <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">antigravity.google</a>)</li></ul></div></div>
+          <span id="review-text" class="sp-anchor"></span>
+          <h2 id="reviews"><span class="sp-h2n" data-n="02">2.</span> 수강후기</h2>
+          <p>IT를 몰라도 UX는 누구나 할 수 있습니다. 입문자들이 가장 많이 선택한 UX강의 1위!<br>UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</p>
+          <div class="sp-traybox sp-rvsum"><div><h3>전체 후기요약 (300건 이상)</h3><p>수강생들은 단순 이론 설명보다 현재 본인 상황에 맞춘 실무형 피드백과 방향 정리가 큰 도움이 됐다고 평가합니다.<br>취준생, 예비창업자, 실무자 모두 각자 필요한 지점을 빠르게 짚어주는 맞춤형 강의라는 후기가 반복적으로 나타납니다.</p></div><a href="https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC" target="_blank" rel="noopener noreferrer" title="크몽 수강후기 페이지 (새 창)" aria-label="실제 후기 보기 — 크몽 수강후기 페이지, 새 창에서 열림">실제 후기 보기<i class="sp-arr" aria-hidden="true"></i></a></div>
+          <section class="sp-rv sp-rv-auto" aria-label="수강후기 22건" data-autoplay="5000"><div class="sp-rv-top"><div><div class="sp-rv-stars" aria-hidden="true">★★★★★</div><p>수강생이 직접 남긴 실제 후기입니다.</p></div><div class="sp-rv-ctl"><button type="button" class="sp-rv-prev" aria-label="이전 후기"></button><span class="sp-rv-count">01–03 / 22</span><button type="button" class="sp-rv-next" aria-label="다음 후기"></button><button type="button" class="sp-rv-pause" aria-pressed="false">일시정지</button></div></div><ul class="sp-rv-track" tabindex="0"><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;스타트업 앱 개발 하려고 하는 분은 시작 단계에서 듣고 시작하기를 강력 추천합니다.<br>기본 앱 서비스 기획을 어떻게 해야하는지 와꾸 잡고 시작하세요.<br>그래야 개발비 낭비 안합니다.<br>제이크님 서비스 컨설팅을 동시에 하면서 수업 총 10시간이 넘게 해주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">이*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저는 앱개발 전 아이디어만 갖고 있는 상황에서 제이크 대표님의 앱기획 UX교육을 들을 수 있게 되었습니다.<br>이 교육을 듣지 않고 아이디어만 갖고 개발자 만나러 갔다간 설계도 없이 건물 지으러 가는 거랑 똑같아요.<br>뜬구름 잡는 내용이나 원론적인 얘기가 아닌, 앱사업에서 꼭 필요한, 당장 써먹을 수 있는 내용이었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">추*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저는 인터넷 관련된 사업을 20년 정도 했는데요.<br>웹기획에 대해 조금 들어볼까 하는 마음으로 신청했습니다.<br>제이크 선생님은 의뢰자가 어떤 부분이 필요하신지 통찰하시고 거기에 대한 파악이 빠르십니다.<br>정말 레슨명 그대로 바로 써먹을 수 있는 자료를 주십니다.&rdquo;</p></blockquote><div class="sp-rv-who">K44*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;필수적으로 알아야 할 것을 쉽고, 명확하게 전달하는 핵심 교육입니다.<br>'IT 기획'에 발을 들여놓고서 많은 서적과 강의를 들었지만 이렇게 명쾌하고 속시원한 교육은 받아본 적이 없어요.&rdquo;</p></blockquote><div class="sp-rv-who">mon*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;서비스 기획자로서 시작부터 끝까지 모든 과정을 어떻게 체계적으로 진행할 수 있을지, 그리고 프로젝트를 리딩하기 위해 필요한 것들이 무엇인지 세세하게 알 수 있었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">황*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;강의의 모든 내용이 실무와 밀접하게 연관되어 있습니다.<br>풍부한 예시 덕에 이해도 쉬워요.<br>강의 들으면서 동시에 저의 프로덕트를 수정보완할 수 있는 방안이 떠올랐습니다.<br>매번 뜬구름 잡는 강의들만 들어왔는데 제이크님의 강의는 한결 다릅니다.&rdquo;</p></blockquote><div class="sp-rv-who">kle*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;지금까지 앱개발을 잘못된 방향으로 진행해왔다는 것을 깨달았습니다.<br>어떤 순서로 어떻게 진행해야 앱개발자에게 효율적으로 업무를 지시할 수 있는지를 배웠습니다.&rdquo;</p></blockquote><div class="sp-rv-who">K94*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;앱을 기획하거나 개발 전에 선택이 아닌 필수로 들어야 할 강의네요.<br>수업 분위기가 딱딱하지 않아서 재밌게 들을 수 있었고, 하나하나 꼼꼼히, 누구나 이해할 수 있게 강의해 주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">K12*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;만약 이 교육을 안 들었다면 상권분석 없이 가게를 오픈한 것과 같았겠다는 생각이 들었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">K66*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저희 자사앱으로 비교하며 수업해주셔서 더욱 이해가 쉬웠고, 길다면 긴 4시간의 수업시간 동안 중요하지 않은 게 하나 없던 알찬 수업이었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">준*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;기획은커녕 IT에 대해 1도 모르던 제가 업무 시작한 지 반년 만에 제이크님 만난 덕에 생각지도 못한 인사이트를 배우고 갑니다.<br>차근차근 그리고 핵심을 잘 집어 알려주셔서 개념정리가 쏙쏙 되네요.&rdquo;</p></blockquote><div class="sp-rv-who">sim*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;친절하고 이해하기 쉽게 알려주시고 제가 진행하는 프로젝트에 대해서도 꼼꼼히 피드백을 주셔서 큰 도움이 되었어요.<br>시간도 총 6시간 넘게 해주시고, 확실한 애프터서비스까지 받았습니다.&rdquo;</p></blockquote><div class="sp-rv-who">알*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;처음 만남부터 친근하게 대해주시면서도 진행하려는 계획에 대해 냉철하게 판단해서 좋은 방향을 제시해주셔서 정말 감사했습니다.&rdquo;</p></blockquote><div class="sp-rv-who">Hwi*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;정말 5시간이 넘게 시간 가는 줄 모르게 강의가 진행되었습니다.<br>속 시원하게 정리가 된 것 같아 너무너무 감사드립니다.&rdquo;</p></blockquote><div class="sp-rv-who">K99*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;앱기획에 대해 어떻게 해야 할지 막막했었는데, 내주신 과제를 하면서 사용자에 대한 이해를 좀 더 깊이 할 수 있었고, 교육 내용을 들으며 앱의 방향을 잡는 귀한 시간이었습니다.<br>앱을 만들기 위해 꼭 거쳐야 할 과정으로 강추합니다.&rdquo;</p></blockquote><div class="sp-rv-who">Kws*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;분위기도 너무 좋고 정말 아무것도 몰랐던 앱/웹기획 과정을 실무에 바로 쓸 수 있게, 그리고 앞으로 어떻게 해야 하는지까지 알려주셨어요.<br>정말 추천드려요.&rdquo;</p></blockquote><div class="sp-rv-who">앗*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;장시간 동안 액기스만 쏙쏙 뽑아서 성심성의껏 잘 가르쳐주셔서 감사합니다.<br>정말 막막했었는데 이제 이거 듣고 나니까 알 수 없는 자신감도 생겼습니다.&rdquo;</p></blockquote><div class="sp-rv-who">con*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;입사해서 업무를 배우던 중에 수강을 신청하게 되었습니다.<br>회사에서는 배우지 못했던 기초적인 부분부터 꼼꼼하게 배울 수 있어 좋았습니다.&rdquo;</p></blockquote><div class="sp-rv-who">도*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;정말 유익한 수업이었습니다.<br>1차분 수업만 들었는데 나머지 2, 3차 수업도 수강할 예정입니다.&rdquo;</p></blockquote><div class="sp-rv-who">씰*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;UX에 대한 새로운 부분을 많이 알게 되어 좋았습니다.<br>제가 부족한 부분이 많았음에도 잘 알려주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">피*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;예정된 시간을 많이 초과하여 강의를 해 주신 열정에 감탄했으며, 감사드립니다.&rdquo;</p></blockquote><div class="sp-rv-who">내*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;엄청난 인사이트를 가지고 계신 분을 여기에서 만나뵙게 되네요.<br>최고의 선택이었다는 생각이 드네요.&rdquo;</p></blockquote><div class="sp-rv-who">s31*****</div></li></ul><div class="sp-rv-prog" aria-hidden="true"></div></section>
+          <span id="org-training" class="sp-anchor"></span>
+          <h2 id="org-training-title"><span class="sp-h2n" data-n="03">3.</span> 공공기관·기업 AI 서비스기획 교육</h2>
+          <p>슈퍼플래닝 AI-UX교육팀은<br>여성인력개발센터·청년 취업 기관·KDT 교육기업·대학·기업을 위한 AI 서비스기획 교육을 운영합니다.<br>생성형 AI 활용 교육을 UX리서치·PRD·화면기획서 같은 서비스기획 실무와<br>피그마·바이브코딩 실습으로 연결하는 것이 특징입니다.<br>원데이 5시간 특강부터 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정까지<br>기관의 일정과 교육 목표에 맞춰 커리큘럼을 설계합니다.</p>
+          <figure class="sp-aphotos sp-ap4"><div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-fastcampus-kdt.webp" width="800" height="450" loading="lazy" decoding="async" alt="패스트캠퍼스 커널아카데미 KDT 과정 AI 서비스기획 강의 출강 현장 간판"></div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-seongnam-center.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터 AI 서비스기획 과정 출강 기관 현판"></div><div class="photo-frame"><img src="/images/ux-academy/ai-planning-ksd.webp" width="800" height="450" loading="lazy" decoding="async" alt="한국예탁결제원(KSD) 기업 강의 출강 현장 — KSD 로고와 한국예탁결제원 간판"></div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-seongnam-class.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터에서 수강생들이 PC로 AI 서비스기획 실습을 하는 강의 현장"></div></div><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 AI 서비스기획 교육 출강 현장 — 패스트캠퍼스 커널아카데미 KDT 과정, 성남여성인력개발센터, 한국예탁결제원</figcaption></figure>
+          <h3 class="sp-alabel">주요 출강 기관</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">분야</th><th scope="col">기관</th></tr></thead><tbody><tr><th scope="row">청년 취업</th><td>SBA 청년취업사관학교 새싹캠퍼스, 마포구청 청년나루, 서초구청 UX취업 과정 등</td></tr><tr><th scope="row">창업 지원</th><td>경기스타트업캠퍼스, 패스트캠퍼스 커널아카데미 AX 창업 과정(KDT) 등</td></tr><tr><th scope="row">여성 취업 지원</th><td>동작여성인력개발센터, 관악여성인력개발센터, 성남여성인력개발센터 등</td></tr><tr><th scope="row">교육기업</th><td>패스트캠퍼스 커널아카데미 KDT 과정 등</td></tr><tr><th scope="row">대학</th><td>세종대학교, 서울여자대학교, 순천향대학교, 한국교통대학교, 한국공학대학교 등</td></tr><tr><th scope="row">기업</th><td>현대자동차, 신한금융그룹, GS그룹, IBK기업은행 등</td></tr></tbody></table></div>
+          <p class="sp-anote">※ KDT: 고용노동부 주관 직업훈련 K-Digital Training 사업</p>
+          <h3 class="sp-alabel">과정 구성</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:21%"><col style="width:auto"></colgroup><thead><tr><th scope="col">과정</th><th scope="col">교육 시간</th><th scope="col">이런 기관에 맞습니다</th></tr></thead><tbody><tr><th scope="row">원데이 특강</th><td>5시간</td><td>대학 특강, 기관 입문 교육, 직무 체험</td></tr><tr><th scope="row">집중 과정</th><td>2~3일, 16시간</td><td>기업 직무교육, 단기 부트캠프</td></tr><tr><th scope="row">장기 과정</th><td>2~3개월, 250시간</td><td>KDT·국비지원 과정, 여성인력개발센터 취업 과정</td></tr></tbody></table></div>
+          <p class="sp-anote">교육 시간과 실습 비중은 기관의 목표와 수강생 수준에 맞춰 협의해 조정합니다.</p>
+          <h3 class="sp-alabel">커리큘럼</h3>
+          <div class="sp-agrid2"><div class="sp-acard"><h3>서비스기획 파트</h3><ol class="sp-anum"><li>AI 활용 서비스 기획 및 현업 UX프로세스</li><li>UX리서치(데스크리서치·1:1 인터뷰·FGI·UT 사용성 평가)</li><li>제품 요구사항 정의(PRD) 및 정보구조(IA) 설계</li><li>UX라이팅 및 가이드 제작</li><li>피그마 기반 화면기획서 작성(프론트·어드민)</li><li>UX 포트폴리오 완성 및 최종 발표</li></ol></div><div class="sp-acard"><h3>피그마 파트</h3><ol class="sp-anum"><li>피그마 기초 및 UI 디자인 기본(그리드·컬러·타이포그래피)</li><li>피그마 핵심 기능(오토레이아웃·컴포넌트)</li><li>AI 활용 디자인 시스템 구축(토큰·베리어블·컴포넌트)</li><li>화면 디자인 및 프로토타입·모션 제작</li><li>피그마 AI 기능 활용 및 협업</li><li>바이브 디자인 기반 프로덕트 제작 및 배포</li></ol></div></div>
+          <h3 class="sp-alabel">주요 강사진</h3>
+          <div class="sp-ainst"><div class="sp-acard"><h3><a href="/ux-company/#ceo">김휘수 강사</a></h3><p>UX디자인 에이전시 슈퍼플래닝 대표이자 14년 차 UX컨설턴트입니다.<br>UI/UX 관련 특허를 보유하고 KB국민은행·LG유플러스·오스템임플란트 등 다수 UX 프로젝트를 수행했습니다.<br>현대자동차·신한금융그룹·GS그룹 등 기업과 세종대·서울여대 등 대학,<br>여성인력개발센터·청년 취업 기관에서 AI 활용 서비스기획·UX 실무 교육을 진행하고 있습니다.</p></div><div class="sp-acard"><h3>김대일 강사</h3><p>『된다! 피그마 디자인 10분 레시피』 저자인 8년 차 프로덕트 디자이너입니다.<br>홍익대·카카오엔터·넥슨 등에서 피그마·바이브코딩 교육을 진행하고 있습니다.</p></div><div class="sp-acard"><h3>하주영 강사</h3><p>UI/UX 디자인 리드 출신입니다.<br>부천일드림센터·양재 AI 허브·한양대학교 등에서 UI/UX·AI 디자인 교육을 진행하고 있습니다.</p></div></div>
+          <h3 class="sp-alabel">운영 안내</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">항목</th><th scope="col">내용</th></tr></thead><tbody><tr><th scope="row">출강 지역</th><td>서울·경기·인천 전 지역, 광주·대구·부산 등 전국 출강</td></tr><tr><th scope="row">진행 방식</th><td>오프라인 출강, 실시간 온라인 강의</td></tr><tr><th scope="row">강사 구성</th><td>서비스기획, UI/UX디자인, 피그마, AI 바이브코딩 등 각 분야별 전문 강사진으로 구성</td></tr><tr><th scope="row">교육 비용</th><td>교육 시간·인원·실습 범위에 따라 맞춤 견적</td></tr></tbody></table></div>
+          <div class="sp-traybox sp-aorgcta"><p>교육 일정과 인원, 희망하는 강의 주제를 알려주세요.<br>기관 목표에 맞는 커리큘럼과 견적을 제안드립니다.</p><a href="/contact/" class="sp-aorg-btn" onclick="window.spQB &amp;&amp; spQB('academy_org', 'inline'); return window.spOpenLecture ? spOpenLecture() : true;">교육 문의하기</a></div>
+          <p>기업 출강 5시간 커리큘럼 예시는 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a>에서,<br>AI 서비스에서 UX가 중요한 이유는 <a href="/ux-blog/ai-era-ui-ux-importance/">AI 시대 UI/UX 차별화</a> 글에서 확인할 수 있습니다.</p>
+          <span id="cases" class="sp-anchor"></span>
+          <h2 id="history"><span class="sp-h2n" data-n="04">4.</span> 기업 출강 및 강의 이력</h2>
+          <p>슈퍼플래닝의 UX강의는 개인 대상 1:1 맞춤형 강의뿐 아니라 기업 출강, 대학 특강, 스타트업 멘토링, 단체 심화교육까지 확장 가능한 형태로 운영됩니다.<br>1:1 오프라인 대면 강의를 기본으로 합니다.<br>실시간 온라인 강의와 5명 이상 단체 강의도 가능하며,<br>기업·학교·기관의 경우 1시간, 2시간 단위의 짧은 특강부터 1주~4주 이상의 심화교육까지 운영할 수 있습니다.</p>
+          <figure class="sp-awide photo-frame"><img width="640" height="380" decoding="async" loading="lazy" src="/images/ux-academy/ux-lecture-corporate-training.webp" alt="슈퍼플래닝 기업 출강 및 1대1 강의 현장 사진"/></figure>
+          <div class="sp-acard sp-awcard"><h3>UX강의/강연 이력</h3><ul class="sp-dots"><li>현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, BC카드, 금호아시아나 등 실무자 대상 기업출강 다수 진행</li><li>세종대, 순천향대, 서울여대, 충북대 등 대학교 특강 다수</li><li>삼성 멀티캠퍼스, 패스트캠퍼스 기업 교육전문 UX강사</li><li>경북콘텐츠코리아랩 모바일앱 창업캠프 강연</li><li>마포구청 청년나루, 스타트업 대상 앱 창업 UX강연</li><li>경기도 일자리 재단 온라인 플랫폼 창업 클래스 강연</li><li>크몽 주관 스타트업 대상 온라인 웨비나 강연</li><li>모바일앱 스타트업 대상 UX강의 및 창업 멘토링 다수 진행</li><li>스타트업 대표, 예비창업자, 정부지원합격자 대상 강의 전문</li><li>국립문화재단 공모전 앱 심사위원 (문화체육장관 대상)</li><li>각종 스타트업 앱 창업 경진대회 심사위원/자문위원</li></ul></div>
+          <div class="sp-acard sp-awcard"><h3>UX컨설팅, 사내 스타트업 UX멘토링 이력</h3><p>제일기획, LG유플러스, KB국민카드, CJ올리브네트웍스, 현대이노션, KT파워텔, 불스원, 서민금융진흥원, 모아저축은행 등 다수</p></div>
+          <h3 class="sp-alabel" id="custom-training">차세대 시스템·SI 프로젝트 맞춤 UI/UX기획 기업출강</h3>
+          <p>차세대 시스템 구축이나 SI 프로젝트 착수를 앞둔 조직을 위한 맞춤 UI/UX기획 출강도 진행합니다.<br>IT 비전공 현업 담당자와 개발자가 화면정의서(화면설계서)·기능정의서·IA설계·사용자 플로우·QA체크리스트를<br>같은 기준으로 작성할 수 있도록 실습 중심으로 설계합니다.<br>5시간 출강 커리큘럼 예시와 실무 문서별 역할은 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a> 글에서 확인할 수 있습니다.</p>
+          <figure class="sp-aphotos sp-ap2e"><div><div class="photo-frame"><img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-1.webp" alt="슈퍼플래닝 UI/UX기획 기업출강 현장, 화면에 UX UI가 띄워진 강의실에서 노트북으로 실습하는 참석자들"/></div><div class="photo-frame"><img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-2.webp" alt="슈퍼플래닝 강사가 화면기획 사례를 설명하고 참석자들이 노트북으로 문서를 작성하는 UX기획 강의 현장"/></div></div><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 UX·UI 실무 교육 현장. AI활용 실습 위주 UX기획 강의 진행</figcaption></figure>
+          <h2 id="curriculum"><span class="sp-h2n" data-n="05">5.</span> 핵심 커리큘럼</h2>
+          <p>IT비전공자부터 기업 실무자까지, 누구나 단기간에 AI활용 UX기획부터 피그마, 바이브코딩까지 마스터할 수 있는 맞춤형 실무 과정입니다.</p>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">1회차</span> <span class="sp-actit"><span class="sp-paren">(</span>AI활용 UX<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>온/오프라인 맞춤상담</li><li>스타트업 예비창업자 → 준비 중인 웹/앱 UX컨설팅</li><li>취준생/이직러 → UX·AI서비스기획자·프로덕트 디자이너 포트폴리오 1:1코칭, 모의 면접PT</li><li>IT를 몰라도 디자이너, 개발자, 개발사와 원활한 소통방법</li><li>웹/앱 UX개선 성공/실패 사례 소개</li><li>최신 AI를 활용한 UX프로젝트 전체 단계 별 프로세스</li><li>AI 에이전트 시대 UX기획자의 역할 변화: 기획·디자인·개발의 경계가 줄어드는 실무 흐름</li><li>AI서비스기획자·프로덕트 디자이너 직무 이해: 하는 일, 필요 역량, 채용 공고가 요구하는 경험</li><li>AI기반 UX자동화 툴 활용 및 프롬프트 기획 방법</li><li>클로드, 제미나이, GPT, 매니패스트, 어피니티버블 등을 활용한 개발 요구사항 PRD 정의 (실습)</li><li>바이브코딩을 활용한 프로토타입 앱 개발 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">2회차</span> <span class="sp-actit"><span class="sp-paren">(</span>UX리서치<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>UX기획/디자이너가 꼭 알아야 하는 UX리서치 기초</li><li>메이즈(maze)를 활용한 UT 리서치 (실습)</li><li>어피니티버블 활용 데스크 리서치, 경쟁사 조사 방법</li><li>FGI조사, IDI조사, UT조사 실무 노하우</li><li>AI활용 UX리서치 프롬프트 (실습)</li><li>사용자 인터뷰 시나리오 작성 (실습)</li><li>인터뷰 결과보고, 인사이트 도출 (실습)</li><li>어피니티 다이어그램 작성 (실습)</li><li>실제 앱 사용자 1:1 인터뷰 해보기 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">3회차</span> <span class="sp-actit"><span class="sp-paren">(</span>AARRR<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>데스크리서치 기반 페르소나/유저 저니맵 (실습)</li><li>최소한의 앱 마케팅 퍼널 AARRR 설계 실무</li><li>아하 모먼트/아하지표 AI설정 (실습)</li><li>AI 기능이 들어간 서비스의 핵심 지표 설계: 재사용률·답변 만족도·작업 완료율</li><li>사용자 이탈방지를 위한 메인페이지 UI기획 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">4회차</span> <span class="sp-actit"><span class="sp-paren">(</span>UX라이팅<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>AI활용 사용자 관점의 UX라이팅 실무 (실습)</li><li>3초 만에 마이크로카피 CTA 작성 노하우 (실습)</li><li>UX라이팅 보이스톤 및 가이드 AI봇 자동화 설계 (실습)</li><li>AI 챗봇·에이전트의 대화형 UX라이팅: 답변 톤, 오류·거절 메시지, 다음 행동 안내 (실습)</li><li>생성형 AI로 UX라이팅 검수봇 만들기: 가이드 기준 문구 자동 점검 (실습)</li><li>디자인 퀄리티를 높이는 실무 팁</li><li>(디자인을 몰라도) UI디자이너와 일하는 방법</li><li>디자인 컨셉 정의서 작성 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">5회차</span> <span class="sp-actit"><span class="sp-paren">(</span>IA설계<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>사용자 서비스 플로우 설계 (실습)</li><li>피그잼 AI로 IA·사용자 플로우 초안을 만들고 검증하는 방법 (실습)</li><li>AI 기능 플로우 설계: 사람의 확인 단계와 오류 회복 경로 넣기</li><li>피그잼 FigJam을 이용한 IA 메뉴구조 설계 (실습)</li><li>앱 메뉴구조 긴급 심폐소생 실무 개선 노하우 (실습)</li><li>메뉴 별 기능정의서 작성 (실습)</li><li>화면 흐름도, 앱 와이어프레임 작성</li><li>프로토타입 제작 및 사용성 테스트</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">6회차</span> <span class="sp-actit"><span class="sp-paren">(</span>앱 화면기획<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>UX기획자로서 딱 필요한 만큼만 배우는 피그마 기초실습 (실습)</li><li>개발자가 좋아하는 디스크립션 작성 방법 (실습)</li><li>AI로 화면 디스크립션 초안을 만들고 기획자가 검수하는 방법 (실습)</li><li>생성형 AI 기능 화면 기획: 입력창·생성 중 상태·답변·근거 표시·피드백 버튼 UI 패턴 (실습)</li><li>피그마를 이용한 UI스토리보드 작성 (실습)</li><li>페이퍼보드(UX 특허 기반 자체 제작 도구)를 활용한 화면 드로잉 (실습)</li><li>금융회사 등 보안 상 피그마를 못쓰는 경우 PPT 실습 대체 가능</li><li>사용자 화면 프론트 UI스토리보드 설계 (실습)</li><li>관리자 화면 백엔드 UI스토리보드 설계 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">7회차</span> <span class="sp-actit"><span class="sp-paren">(</span>프로젝트 관리<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>(갑의 입장) 개발사 선정방법, 불리하지 않게 계약하기</li><li>(갑의 입장) 개발 산출물 관리</li><li>(을의 입장) 프로젝트 매니징, WBS 일정관리</li><li>(을의 입장) AI활용 QA 검수 시나리오 기획</li><li>AI로 WBS 초안·이슈 정리를 자동화하는 PM 업무 실습</li><li>AI 도입 프로젝트의 요구사항 정의와 산출물 검수 기준 정리</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">8회차</span> <span class="sp-actit"><span class="sp-paren">(</span>바이브코딩·AI 코딩 에이전트<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>바이브코딩(리플릿, 구글 안티그래비티 등) 왕초보 실습 — IT를 전혀 몰라도 가능한 입문 구성</li><li>클로드 코드(Claude Code)·코덱스(Codex) 등 AI 코딩 에이전트 기본 세팅과 활용법</li><li>기획서(PRD)를 AI가 이해하는 작업 지시서로 바꾸는 프롬프트 설계 실습</li><li>피그마 MCP 연동: 피그마 화면을 클로드 코드·코덱스로 불러와 실제 동작하는 웹/앱 화면으로 구현</li><li>코드로 만든 화면을 다시 피그마로 가져와 디자이너와 함께 다듬는 양방향 디자인-개발 워크플로우</li><li>DESIGN.md 디자인 레퍼런스 파일 작성: 컬러·타이포·간격 규칙을 정리해 AI 디자인 일관성 유지</li><li>CLAUDE.md·AGENTS.md 등 프로젝트 규칙 파일로 팀의 기획·디자인 기준 공유하기</li><li>구글 안티그래비티를 활용한 앱 개발 실습: 직장인을 위한 AI명상앱 만들어보기</li><li>깃허브(Git) 기본 세팅과 수파베이스(Supabase) 구글 간편로그인 붙이기 실습</li><li>버셀(Vercel)·클라우드플레어 페이지를 활용한 무료 배포와 홍보용 랜딩 페이지 제작</li><li>제미나이 API를 활용한 AI 자동 상담사 기능 개발 실습</li><li>AI가 만든 결과물을 기획서 기준으로 검수하는 UX QA 체크리스트</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">9회차</span> <span class="sp-actit"><span class="sp-paren">(</span>피그마 심화·피그마 AI<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>실무에서 바로 쓰는 피그마 협업 환경 구축: 파일 구조, 공유 방식, 권한 설정 정리</li><li>커서챗, 코멘트, 히스토리, 옵저빙 기능을 활용한 피그마 협업 워크플로우 이해</li><li>반응형 화면 설계를 위한 오토레이아웃 원리와 리사이징 심화 실습</li><li>재사용성과 유지보수를 높이는 컴포넌트 설계, 스왑 인스턴스, 프로퍼티 구조 이해</li><li>디자인 시스템 관점의 스타일과 베리어블 관리, 모드 전환 실무 포인트</li><li>프로토타이핑 기본 셋팅부터 스마트 애니메이션·인터랙티브 컴포넌트까지 핵심 인터랙션 실습</li><li>피그마 AI 에이전트(Figma Agent): 프롬프트로 화면 초안 생성, 여러 화면 일괄 수정, 레이어 이름 자동 정리</li><li>피그마 메이크(Figma Make): 텍스트 프롬프트로 실제 동작하는 프로토타입 만들기와 코드 내보내기</li><li>피그마 AI 이미지 생성·편집과 피그마 위브(Weave)를 활용한 화면용 비주얼 제작</li><li>피그마 모션(Figma Motion)으로 타임라인 기반 마이크로 인터랙션 애니메이션 만들기</li><li>Dev Mode 개발 핸드오프와 피그마 MCP로 AI 코딩 에이전트에 디자인 맥락 전달하기(8회차 연계)</li><li>AI가 만든 디자인을 디자인 시스템 기준으로 점검하고 다듬는 실무 피드백</li></ul></div>
+          <div class="sp-traybox sp-anotebox"><h3>커리큘럼 추가 혜택 &amp; 안내</h3><ul class="sp-dots"><li>UX실무 요약 비밀자료 제공</li><li>1:1 맞춤형 과제 출제 및 과제 피드백 포함</li><li>커리큘럼에 적히지 않은 세부 내용은 실제 질문과 프로젝트 상황에 따라 추가로 다룹니다.</li></ul></div>
+          <p>이 커리큘럼은 회차를 많이 나열하기 위한 구성이 아니라, 수강자의 현재 수준에 따라 어디까지 필요한지 조정할 수 있도록 만든 구조입니다.<br>취준생은 포트폴리오와 실무 감각을, 예비창업자는 서비스 구조화와 외주 대응력을,<br>기업 실무자는 협업 기준과 문서화 역량을 중심으로 가져갈 수 있습니다.</p>
+          <span id="courses" class="sp-anchor"></span>
+          <h2 id="pricing"><span class="sp-h2n" data-n="06">6.</span> 코스 별 강의비용</h2>
+          <div class="sp-traybox sp-anotebox"><h3>코스 선택 전 확인 포인트</h3><ul class="sp-dots"><li>모든 1:1 코스는 오프라인 대면을 기본으로 하며, 온라인으로도 진행할 수 있습니다.</li><li>모든 커리큘럼은 실무형 실습방식으로 진행 됩니다.</li><li>상담은 무료이며, 결제는 상담 후 진행됩니다.</li><li>A코스 수강 후 B·C·D코스 신청 시 A코스 수강료 전액 차감.</li></ul></div>
+          <div class="sp-acourses"><div class="sp-acourse"><span class=sp-acbadge>실속 추천</span><h3>A타입 코스</h3><p class="sp-ac-o"><s>290,000원</s></p><p class="sp-ac-s">220,000원</p><p class="sp-ac-t">2시간 / 실속형</p></div><div class="sp-acourse"><span class=sp-acbadge-sp></span><h3>B타입 코스</h3><p class="sp-ac-o"><s>660,000원</s></p><p class="sp-ac-s">550,000원</p><p class="sp-ac-t">5시간 / 입문형</p></div><div class="sp-acourse"><span class=sp-acbadge>가장 많이 선택</span><h3>C타입 코스</h3><p class="sp-ac-o"><s>950,000원</s></p><p class="sp-ac-s">790,000원</p><p class="sp-ac-t">8시간 / 심화형</p></div><div class="sp-acourse"><span class=sp-acbadge-sp></span><h3>D타입 코스</h3><p class="sp-ac-o"><s>1,350,000원</s></p><p class="sp-ac-s">1,080,000원</p><p class="sp-ac-t">12시간 / 확장형</p></div></div>
+          <div class="sp-atable-wrap"><table class="sp-atable sp-acmp"><colgroup><col style="width:14.4%"><col style="width:21.4%"><col style="width:21.4%"><col style="width:21.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">구분</th><th scope="col">A코스</th><th scope="col">B코스</th><th scope="col">C코스</th><th scope="col">D코스</th></tr></thead><tbody><tr><th scope="row">패키지 설명</th><td>1:1 UX강의 A코스<br>UX기초 · 현재 수준 점검<br>· 피드백 리포트<br>· UX포트폴리오 작성 등</td><td>1:1 UX강의 B코스<br>UX리서치 · UX라이팅<br>· 서비스기획 · 바이브코딩 등</td><td>1:1 UX강의 C코스<br>UX리서치 · UX라이팅<br>· IA설계 · 피그마<br>· 바이브코딩 등</td><td>1:1 UX강의 D코스<br>UX리서치 · UX라이팅 · PRD<br>· 피그마 · 성과지표<br>· 바이브코딩 등</td></tr><tr><th scope="row">추천 대상</th><td>UX강의를 처음 알아보는 분<br>내게 맞는 학습 방향과 코스를<br>먼저 확인하고 싶은 경우</td><td>UX왕초보 · 취준생<br>빠르게 UX기초와 실무 흐름을<br>잡고 싶은 경우</td><td>주니어 실무자 · PM/PO<br>IA, 화면기획, 피그마까지<br>깊게 연결하고 싶은 경우</td><td>예비창업자 · 신사업 담당자<br>PRD, 협업, AI활용 UX실무까지<br>폭넓게 다루고 싶은 경우</td></tr><tr><th scope="row">총 강의시간</th><td>2시간</td><td>5시간</td><td>8시간</td><td>12시간</td></tr><tr><th scope="row">장소</th><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td></tr><tr><th scope="row">강의실 제공</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">제공 자료</th><td>UX 비밀자료 A세트<br>피드백 리포트 · UX포트폴리오<br>작성 등 맞춤 자료</td><td>UX 비밀자료 B세트<br>핵심 실무템플릿 등 입문자료</td><td>UX 비밀자료 C세트<br>피그마 · IA · 화면기획 등<br>심화 자료</td><td>UX 비밀자료 D세트<br>PRD · 피그마 · 성과지표 ·<br>바이브코딩 등 풀버전 자료</td></tr></tbody></table></div>
+          <div class="sp-agroup"><div class="sp-agroup-l"><span class="sp-acbadge">기업·기관 출강 (10~50명)</span><h3>단체 맞춤형 UX강의</h3><p>교육 인원·시간·맞춤 범위에 따라 견적을 산정합니다.<br>강의계획서·강사 이력·세금계산서를 함께 제공합니다.</p><p class="sp-ag-s">일정, 장소 협의가능</p><p class="sp-ag-b">협의 후 견적 산정</p></div><div class="sp-agroup-r"><div><b class="sp-agk">교육 인원</b><span class="sp-agv">10명~50명</span></div><div><b class="sp-agk">총 시간</b><span class="sp-agv">2시간 특강 ~ 다회차 정규 과정</span></div><div><b class="sp-agk">맞춤 범위</b><span class="sp-agv">사내 업무·문서 양식 반영, 실습 자료 제작 수준</span></div><div><b class="sp-agk">장소</b><span class="sp-agv">서울·수도권·지방 출강, 온라인 가능</span></div></div></div>
+          <span id="audiences" class="sp-anchor"></span>
+          <h2 id="target"><span class="sp-h2n" data-n="07">7.</span> 수강 대상자</h2>
+          <p>슈퍼플래닝의 UX강의는 모두에게 같은 방식으로 진행하지 않습니다.<br>현재 수준, 프로젝트 상황, 수강 목적에 따라 질문이 완전히 다르기 때문에<br>취준생, 예비창업자, 기업 실무자, UX입문자를 구분해서 설명하는 방식으로 진행합니다.</p>
+          <div class="sp-agrid2"><div class="sp-acard"><h3>UX 취준생 · 이직러</h3><p>UX포트폴리오 정리, 면접 PT, 실무 문서 감각,<br>화면기획과 피그마 흐름을 빠르게 익히고 싶은 분에게 적합합니다.</p></div><div class="sp-acard"><h3>스타트업 예비창업자</h3><p>정부지원사업, 앱개발, 외주 협업을 준비 중인데<br>무엇부터 정리해야 할지 막막한 분에게 실질적인 기준을 잡아드립니다.</p></div><div class="sp-acard"><h3>기업 실무자 · PM · PO</h3><p>최신 AI활용 UX기획 실무, 바이브코딩, 리서치,<br>문서화, 화면기획을 실제 프로젝트 기준으로<br>연결하고 싶은 분에게 맞습니다.</p></div><div class="sp-acard"><h3>UX 왕초보 · 비전공자</h3><p>IT를 잘 모르더라도 개인 노트북을 활용한 실습형 강의로<br>현재 상황과 질문을 중심으로 따라올 수 있게 진행합니다.</p></div></div>
+          <p>이 강의는 단순히 툴 기능만 배우는 수업이 아니라,<br>각 수강자가 지금 당장 부딪히는 문제를 실무 언어와 문서, 화면 구조로 바꾸는 데 초점을 둔 실무형 UX강의입니다.</p>
+          <h2 id="benefits"><span class="sp-h2n" data-n="08">8.</span> 수강생 혜택</h2>
           <p>강의를 듣는 것으로 끝나지 않고, 바로 실무와 포트폴리오에 연결할 수 있도록 아래 혜택을 함께 제공합니다.</p>
+          <div class="sp-agrid2"><div class="sp-acard"><span class="sp-abchip">혜택 1</span><h3>실제 현업에서 사용하는 UX 비밀 실무자료(예제포함)</h3><ul class="sp-dots"><li>UX리서치, UX라이팅, UX모델링, IA설계, PRD, 플로우차트</li><li>기능정의서, 와이어프레임, UI스토리보드 템플릿</li><li>100% 실무 개발자가 좋아하는 웹기획 설계문서 올인원 세트</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 2</span><h3>평생 멤버십 등록</h3><ul class="sp-dots"><li>한번만 강의를 수강하셨어도 평생 멤버십 자동가입 무제한 AS</li><li>1:1개별 과제 피드백 보장</li><li>실제 5~6년 전 수강하셨던 분들도 아직까지 케어해드리고 있습니다.</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 3</span><h3>무료 커피챗, 1:1상담</h3><ul class="sp-dots"><li>스타트업 예비창업자 컨설팅</li><li>진행 중인 프로젝트 고민상담</li><li>취준생, 이직러 대상 UX커리어 컨설팅</li><li>UX포트폴리오 템플릿 제공 및 모의면접 코칭</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 4</span><h3>참석자 전원 증정</h3><ul class="sp-dots"><li>자체제작 와이어프레임 드로잉 굿즈 증정</li><li>어디에도 없는 자체제작 UX포트폴리오 템플릿 증정</li><li>AI-UX기획 프롬프트 자료모음집 증정</li></ul></div></div>
 
-          <div class="benefit-cards-grid">
-            <article class="benefit-card-item">
-              <span class="benefit-chip">혜택 1</span>
-              <h3>실제 현업에서 사용하는 UX 비밀 실무자료(예제포함)</h3>
-              <ul>
-                <li>UX리서치, UX라이팅, UX모델링, IA설계, PRD, 플로우차트</li>
-                <li>기능정의서, 와이어프레임, UI스토리보드 템플릿</li>
-                <li>100% 실무 개발자가 좋아하는 웹기획 설계문서 올인원 세트</li>
-              </ul>
-            </article>
-
-            <article class="benefit-card-item">
-              <span class="benefit-chip">혜택 2</span>
-              <h3>평생 멤버십 등록</h3>
-              <ul>
-                <li>한번만 강의를 수강하셨어도 평생 멤버십 자동가입 무제한 AS</li>
-                <li>1:1개별 과제 피드백 보장</li>
-                <li>실제 5~6년 전 수강하셨던 분들도 아직까지 케어해드리고 있습니다.</li>
-              </ul>
-            </article>
-
-            <article class="benefit-card-item">
-              <span class="benefit-chip">혜택 3</span>
-              <h3>무료 커피챗, 1:1상담</h3>
-              <ul>
-                <li>스타트업 예비창업자 컨설팅</li>
-                <li>진행 중인 프로젝트 고민상담</li>
-                <li>취준생, 이직러 대상 UX커리어 컨설팅</li>
-                <li>UX포트폴리오 템플릿 제공 및 모의면접 코칭</li>
-              </ul>
-            </article>
-
-            <article class="benefit-card-item">
-              <span class="benefit-chip">혜택 4</span>
-              <h3>참석자 전원 증정</h3>
-              <ul>
-                <li>자체제작 와이어프레임 드로잉 굿즈 증정</li>
-                <li>어디에도 없는 자체제작 UX포트폴리오 템플릿 증정</li>
-                <li>AI-UX기획 프롬프트 자료모음집 증정</li>
-              </ul>
-            </article>
-          </div>
-        </section>
 <section class="section" id="faq">
 
           <!-- 9. 자주 묻는 질문 (FAQ) -->
-          <h2 id="faq">9. 자주 묻는 질문 (FAQ)</h2>
+          <h2 id="faq"><span class="sp-h2n" data-n="09">9.</span> 자주 묻는 질문 (FAQ)</h2>
 <dl class="faq">
 <div><dt>강의는 누가 진행하나요?</dt><dd>슈퍼플래닝 UX강의는 대표강사 김휘수(UX기획자 제이크)를 포함한 4~5명의 강사들이 함께 진행합니다.<br>대표강사가 커리큘럼을 설계하고, 피그마 전문 강사와 프로덕트 디자이너 과정 강사 등 10년차 이상 현직 실무자 협업 강사들이 과정 주제와 기업 요청에 맞춰 함께 강의합니다.<br>기업 출강은 교육 목표와 직무 구성에 맞춰 강사진을 구성합니다.</dd></div>
 <div><dt>공공기관·기업 대상 AI 서비스기획 교육도 가능한가요?</dt><dd>네, 가능합니다.<br>슈퍼플래닝은 SBA 청년취업사관학교 새싹캠퍼스, 패스트캠퍼스 커널아카데미 KDT 과정, 동작·관악·성남여성인력개발센터, 세종대·서울여대 등 대학에서 AI 서비스기획 교육을 진행해 왔습니다.<br>원데이 5시간 특강, 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정 중 기관 목표에 맞춰 설계합니다.</dd></div>
@@ -3551,14 +2954,8 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
 <div><dt>수강 코스는 어떻게 나뉘나요?</dt><dd>수준과 목적에 따라 압축형, 심화형, 전체 프로세스형으로 나누어 운영합니다.<br>빠르게 핵심만 잡아야 하는 입문자, 피그마와 화면기획까지 깊게 다루고 싶은 실무자, PRD·성과지표·바이브코딩까지 전체 흐름을 익히고 싶은 대표나 담당자에게 적합한 방식이 서로 다릅니다.</dd></div>
 <div><dt>강의가 끝난 뒤에도 질문이나 피드백을 받을 수 있나요?</dt><dd>과정안 기준으로는 강의 후속 과제관리, 맞춤형 과제 피드백, 추가 질문 대응이 포함되어 있습니다.<br>그래서 수업 당일 이해에서 끝나는 것이 아니라, 실제 적용 단계에서 막히는 부분까지 이어서 점검하기 좋은 구조입니다.</dd></div>
 </dl>
-          <div class="sp-faq-cta">
-            <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
-            <a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenLecture ? spOpenLecture() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span></a></span>
-          </div>
-          <div class="bottom-nav">
-            <p>이전 단계: <a href="/web-app-development/">웹/앱 개발</a> &nbsp;|&nbsp; 다음 단계: <a href="/company/">UX블로그</a></p>
-            
-          </div>
+          <div class="sp-faq-cta"><div class="sp-cta-band"><div><strong>정리 안 된 생각도 가볍게 문의 남겨 주세요.</strong></div><a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenLecture ? spOpenLecture() : true;">문의하기</a></div></div>
+          <div class="bottom-nav"><nav class="sp-pn" aria-label="이전·다음 단계"><a class="prev" href="/web-app-development/"><span><small>이전 단계</small><b>웹/앱 개발</b></span></a><a class="next" href="/ux-blog/"><span><small>다음 단계</small><b>UX블로그</b></span></a></nav></div>
         </main>
       </div>
 
@@ -3578,6 +2975,9 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
       </style>
 
     </div>
+
+  </div>
+
 
     <!-- Sticky Course Banner Sidebar (Exact Attached Image Match) -->
     <aside class="sticky-course-banner-wrap" id="stickyCourseBanner" aria-label="UX강의 수강신청 스티키 배너">
@@ -3633,26 +3033,11 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
       </div>
     </aside>
 
-  </div>
-
     <!-- START MENU -->
-  <div id="startMenu">
-    <div class="start-banner">SUPERPLANNING</div>
-    <div class="start-items">
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
-      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
-      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
-      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
-      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
-      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><span>유튜브</span></div></div>
   </div>
 
   <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
@@ -3668,7 +3053,6 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
       </div>
     </div>
     <div class="taskbar-right">
-      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
     </div>
   </div>
@@ -3707,11 +3091,10 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
       'blog': { w: 600, h: 420, title: '• UX 블로그' },
       'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
       'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
-      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 스레드' },
       'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
-      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
-      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' }
     };
 
     function openWindow(key) {
@@ -3789,7 +3172,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
             </h2>
 
             <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
-              이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
             </p>
           </div>
 
@@ -4000,7 +3383,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
 
               <div>
                 <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
-                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
                 <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
                   최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
                 </p>
@@ -4017,7 +3400,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
                 <img width="14" height="14" decoding="async" loading="lazy" src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
                 @ux_superplanning
               </span>
-              <span>슈퍼플래닝 공식 쓰레드</span>
+              <span>슈퍼플래닝 공식 스레드</span>
             </div>
           </div>
         `;      } else if (key === 'intro-video') {
@@ -4052,24 +3435,7 @@ UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</
             <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
-        `;      } else if (key === 'tweaks') {
-        return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
-            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(typeof setTheme==='function') setTheme(this.value)">
-              <option value="light">Teal Classic (기본 1995)</option>
-              <option value="dark">Dark Slate (다크 모드)</option>
-              <option value="matrix">Matrix Green (이스터에그 테마)</option>
-            </select>
-          </div>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="if(typeof toggleSound==='function') toggleSound();">사운드: ON 🔊</button>
-          </div>
-          <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">팀장님, 갑자기 PC가 고장났어요! (블루스크린 띄우기)</button>
-        `;
+        `;      
       }
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
@@ -4793,7 +4159,7 @@ function showCopySuccess(text, label, btn) {
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
     })();
   </script>
-  <script src="/assets/sp-inquiry.js?v=122" defer></script>
+  <script src="/assets/sp-inquiry-b.js?v=178" defer></script>
 <script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
 (function () {
   function place() {
@@ -4821,5 +4187,6 @@ window.spQB = function (btn, pos) {
 };
 </script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
+<script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
 </body>
 </html>
