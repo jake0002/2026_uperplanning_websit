@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sp-b">
 <head>
   <meta charset="UTF-8">
   <!-- Google Tag Manager -->
@@ -1382,7 +1382,10 @@
   .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
 }
 </style>
-<link rel="stylesheet" href="/assets/sp-mnav.css?v=99"><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=178" defer></script>
+  <script>(function(){var d=document.documentElement,W=window.innerWidth,k=W<=768?1:Math.max(0.6,Math.min(0.82,W/1920*0.82)),x=W<=768?0:Math.max(0,(W-1920*k)/2);d.style.setProperty('--k',k);d.style.setProperty('--x0v',(x/k)+'px');})();</script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1397,6 +1400,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link active" href="/ux-research/"><span>UX리서치</span></a>
@@ -1427,6 +1431,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="/ux-research/" hreflang="ko" lang="ko">KO</a><b aria-current="true">EN</b></div>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1490,7 +1495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Toolbar & Address Bar -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="history.back();">⬅ Back</button>
+          <button class="tool-btn" onclick="history.back();"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>Back</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">Address:</span>
@@ -1503,11 +1508,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Left Explorer Tree Sidebar (Exact Attached Image Match) -->
         <aside class="tree-sidebar" aria-label="Table of contents">
-          <div class="tree-root">
-            <span class="tree-toggle">日</span>
-            <span class="folder-icon">📂</span>
-            <span>Services &gt; UX Research</span>
-          </div>
 
           <!-- Tree List TOC (ul.toc) -->
           
@@ -1532,7 +1532,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <main class="main-content-pane">
 
           <nav class="sp-lang-row" aria-label="Language"><span class="sp-lang-label"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style="display:block;"><circle cx="8" cy="8" r="6.5" fill="none" stroke="#000" stroke-width="1.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5" fill="none" stroke="#000" stroke-width="1.2"/><line x1="1.5" y1="8" x2="14.5" y2="8" stroke="#000" stroke-width="1.2"/></svg>Language</span><span class="sp-lang-group"><a class="sp-lang-btn" href="/ux-research/" hreflang="ko" lang="ko">한국어<span class="sp-lang-arrow">→</span></a><span class="sp-lang-btn is-active" aria-current="page">English</span></span></nav>
-          <h1>UX Research Agency in Korea</h1>
+          <div class="sp-title-row"><h1>UX Research Agency in Korea</h1><nav class="sp-crumb" aria-label="Breadcrumb"><a href="/">Home</a><i>›</i><span aria-current="page">Services</span><i>›</i><span aria-current="page">UX Research</span></nav></div>
           <p class="hero-intro"><strong>SUPERPLANNING recruits Korean users, runs interviews and usability tests, and delivers research reports in English.</strong><br>From study design and participant recruiting to moderation and actionable UI/UX recommendations,<br>one experienced team handles your entire UX research project in Korea.</p>
 
           <div style="width:100%; overflow-x:auto; margin:0 0 8px;">
@@ -1548,6 +1548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </tbody>
             </table>
           </div>
+          <div class="sp-media2">
           <!-- 136: UT session video -->
           <figure class="photo-frame sp-ut-video" style="text-align:left; margin:16px 0 18px 0; max-width:560px;">
             <video src="/images/ux-research/ut-healthcare-app.mp4" poster="/images/ux-research/ut-healthcare-app-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Usability test session for a mobile app UX renewal" style="display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#000000; border:2px solid #000000;"></video>
@@ -1555,8 +1556,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <script>(function(){var v=document.currentScript.parentNode.querySelector("video");if(!v)return;v.muted=true;v.defaultMuted=true;var go=function(){var p=v.play();if(p&&p.catch)p.catch(function(){});};v.addEventListener("loadedmetadata",go);v.addEventListener("pause",function(){if(!document.hidden&&!v.ended)setTimeout(go,300);});v.addEventListener("ended",function(){v.currentTime=0;go();});document.addEventListener("visibilitychange",function(){if(!document.hidden)go();});["touchstart","scroll"].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});go();})();</script>
           </figure>
 
+          <div class="photo-frame" style="text-align:left;">
+            <img src="/images/fgi_session_3.png" alt="SUPERPLANNING UX hypothesis validation session — the team reviewing mobile screens and wireframes" loading="lazy" decoding="async">
+            <div class="photo-caption" style="text-align:left;">[On-site photo] UX hypothesis validation session — reviewing mobile prototypes and wireframes</div>
+          </div>
+          </div>
 
-          <h2 id="who">1. Who We Help</h2>
+
+          <h2 id="who"><span class="sp-h2n" data-n="01">1.</span> Who We Help</h2>
           <p>We work with teams that need reliable user insights from Korea,<br>delivered in a format their global team can use right away.</p>
           <ul class="section-list">
             <li><strong>Global brands entering Korea</strong> — validate your app, website, or store with real Korean users before or after launch.</li>
@@ -1565,7 +1572,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Brands running global stores</strong> — compare your Korean store and overseas store (Shopify, Cafe24, etc.) country by country.</li>
           </ul>
 
-          <h2 id="services">2. Research Services</h2>
+          <h2 id="services"><span class="sp-h2n" data-n="02">2.</span> Research Services</h2>
           <p>We design each study around the decision you need to make,<br>then choose the right method for it.</p>
           <table class="compare-table" style="table-layout:fixed; word-break:keep-all;">
             <caption>UX research methods at SUPERPLANNING</caption>
@@ -1580,7 +1587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </tbody>
           </table>
 
-          <h2 id="recruiting">3. Participant Recruiting in Korea</h2>
+          <h2 id="recruiting"><span class="sp-h2n" data-n="03">3.</span> Participant Recruiting in Korea</h2>
           <p>We recruit participants who match your study criteria, using screening surveys.<br>Recruiting usually takes 5–10 days.</p>
           <table class="compare-table" style="table-layout:fixed; word-break:keep-all;">
             <caption>Participants we recruit in Korea</caption>
@@ -1598,7 +1605,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </table>
           <p>You can ask us to recruit participants only, or to handle incentive payments only.<br>SUPERPLANNING pays each participant directly.<br>For focus groups, incentives are usually KRW 100,000–200,000 per person, and higher for specialists.</p>
 
-          <h2 id="english">4. Research in English</h2>
+          <h2 id="english"><span class="sp-h2n" data-n="04">4.</span> Research in English</h2>
           <p>Language should not be a barrier to good research.<br>We support English at every stage of the study.</p>
           <table class="compare-table" style="table-layout:fixed; word-break:keep-all;">
             <caption>English support for UX research in Korea</caption>
@@ -1612,7 +1619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </tbody>
           </table>
 
-          <h2 id="global">5. Global &amp; Cross-border Research</h2>
+          <h2 id="global"><span class="sp-h2n" data-n="05">5.</span> Global &amp; Cross-border Research</h2>
           <p>We also help you test with users outside Korea,<br>and with foreign users living in Korea.</p>
           <ul class="section-list">
             <li><strong>Overseas users</strong> — we recruit local users in the U.S., Japan, and other countries and run remote usability tests.</li>
@@ -1632,7 +1639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </tbody>
           </table>
           <p>For other nationalities, we check availability based on your study criteria.</p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:16px 0 8px 0; max-width:820px;">
+          <div class="sp-photos sp-c2">
             <div class="photo-frame" style="margin:0; max-width:none;">
               <img src="/images/ux-research/foreign-ut-observation-01.webp" alt="Usability test with a foreign participant in Seoul — two observation room monitors show the participant's hands and mobile app screen in real time while the participant completes tasks with a moderator behind the glass" width="612" height="461" loading="lazy" decoding="async" style="width:100%; height:auto; max-height:none; aspect-ratio:4/3; object-fit:cover; border:2px solid #000000;">
               <div class="photo-caption">[Real UT session] Mobile app usability test with a foreign participant</div>
@@ -1643,7 +1650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
 
-          <h2 id="process">6. Process &amp; Timeline</h2>
+          <h2 id="process"><span class="sp-h2n" data-n="06">6.</span> Process &amp; Timeline</h2>
           <ol class="section-list">
             <li><strong>Kickoff</strong> — we define goals, target users, method, and schedule with you.</li>
             <li><strong>Study design</strong> — we write the screener, discussion guide, and test tasks.</li>
@@ -1654,10 +1661,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ol>
           <p>A typical project takes 2–3 weeks from design to final report.<br>Tight deadlines can be discussed.</p>
 
-          <h2 id="facility">7. Research Lab in Seoul</h2>
+          <h2 id="facility"><span class="sp-h2n" data-n="07">7.</span> Research Lab in Seoul</h2>
           <p>In-person sessions are held at a dedicated UX research lab in Nonhyeon-dong, Gangnam-gu, Seoul.<br>Your team can watch participants from the observation room monitor.<br>The lab rental fee is included in the quote.</p>
 
-          <h2 id="clients">8. Selected Clients &amp; Credentials</h2>
+          <h2 id="clients"><span class="sp-h2n" data-n="08">8.</span> Selected Clients &amp; Credentials</h2>
           <p>SUPERPLANNING has completed more than 100 UX projects since 2019.</p>
           <ul class="section-list">
             <li><strong>Osstem Implant</strong> — UX research for dental software, including usability tests with practicing dentists</li>
@@ -1669,7 +1676,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Official partner agency</strong> of SK Telecom NUGU Developers</li>
           </ul>
 
-          <h2 id="faq">9. Frequently Asked Questions</h2>
+          <h2 id="faq"><span class="sp-h2n" data-n="09">9.</span> Frequently Asked Questions</h2>
           <dl class="faq">
             <dt>Can you run user research in English?</dt>
             <dd>Yes, we can.<br>Our moderator can run interviews and usability tests in English.<br>For other languages, we arrange a live interpreter, and we can deliver the final report in English.</dd>
@@ -1696,7 +1703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <dd>Pricing depends on the number of groups, participant conditions, and study scope.<br>After a short consultation, we send a detailed quote right away.</dd>
           </dl>
 
-          <h2 id="contact">10. Contact Us</h2>
+          <h2 id="contact"><span class="sp-h2n" data-n="10">10.</span> Contact Us</h2>
           <p><strong>Tell us your target users, number of participants, and timeline.</strong><br>We usually reply within the same business day with a proposed approach and quote.</p>
           <ul class="section-list">
             <li><strong>Email</strong> — <a href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry">jake@superplanning.co.kr</a></li>
@@ -1704,13 +1711,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Hours (KST)</strong> — Weekdays 08:00–22:00, weekends 10:00–19:00</li>
             <li><strong>Inquiry form</strong> — <a href="/contact/">superplanning.co.kr/contact</a> (in Korean)</li>
           </ul>
-          <div class="sp-faq-cta">
-            <a href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry" class="sp-faq-cta-btn"><span>Email us about your project</span></a>
-          </div>
+          <div class="sp-faq-cta"><div class="sp-cta-band"><div><strong>Not sure where to start? Send us a short note — we will help you scope it.</strong></div><a href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry" class="sp-faq-cta-btn">Email us about your project</a></div></div>
 
-          <div class="bottom-nav">
-            <p>Korean version: <a href="/ux-research/" hreflang="ko">UX리서치</a></p>
-          </div>
+          <div class="bottom-nav"><nav class="sp-pn" aria-label="Previous and next pages"><a class="prev" href="/ux-research/" hreflang="ko"><span><small>Korean version</small><b>UX리서치</b></span></a><a class="next" href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry"><span><small>Contact</small><b>Email us</b></span></a></nav></div>
         </main>
       </div>
 
@@ -1734,12 +1737,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 78: PC 퀵배너 (실시간 상담 · 카카오톡 상담하기 · 프로젝트 문의하기) -->
   <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff;">
-    <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; user-select:none;">✉ Contact</div>
-    <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px; font-size:10.5px; color:#333;">
-      <div style="font-weight:800; color:#000;">Fast replies in English</div>
-      <div>jake@superplanning.co.kr</div>
-      <div>+82-31-699-3298</div>
-      <a href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry" class="w95-btn" onclick="window.spQB && spQB('email', 'pc');" style="display:block; text-align:center; padding:5px 6px; font-weight:bold; color:#ffffff; background:#000000; text-decoration:none;">Email us</a>
+    <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
+      <span>💬</span>
+      <span>UX Project Inquiry</span>
+    </div>
+    <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
+      <div class="sp-qb-contact">
+        <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000;">Fast replies in English</h4>
+        <div class="sp-qb-row"><span class="sp-qb-k">Phone</span><b class="sp-qb-v">+82-31-699-3298</b><button type="button" class="w95-btn" onclick="copyToClipboard('+82-31-699-3298', 'Phone number', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">Copy</button></div>
+        <div class="sp-qb-row"><span class="sp-qb-k">Email</span><b class="sp-qb-v">jake@superplanning.co.kr</b><button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', 'Email address', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">Copy</button></div>
+      </div>
+      <a href="mailto:jake@superplanning.co.kr?subject=UX%20Research%20Inquiry" class="w95-btn sp-qb-inquiry" onclick="window.spQB && spQB('email', 'pc');" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; background:#000000; color:#ffffff;">Email us</a>
     </div>
   </div>
   <style>
@@ -1795,23 +1803,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
     <!-- START MENU -->
-  <div id="startMenu">
-    <div class="start-banner">SUPERPLANNING</div>
-    <div class="start-items">
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
-      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
-      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
-      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
-      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
-      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><span>유튜브</span></div></div>
   </div>
 
   <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
@@ -1827,7 +1822,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="taskbar-right">
-      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
     </div>
   </div>
@@ -1866,11 +1860,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'blog': { w: 600, h: 420, title: '• UX 블로그' },
       'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
       'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
-      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 스레드' },
       'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
-      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
-      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' }
     };
 
     function openWindow(key) {
@@ -1944,7 +1937,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </h2>
 
             <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
-              이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
             </p>
           </div>
 
@@ -2155,7 +2148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <div>
                 <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
-                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
                 <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
                   최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
                 </p>
@@ -2172,7 +2165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
                 @ux_superplanning
               </span>
-              <span>슈퍼플래닝 공식 쓰레드</span>
+              <span>슈퍼플래닝 공식 스레드</span>
             </div>
           </div>
         `;      } else if (key === 'intro-video') {
@@ -2207,24 +2200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
-        `;      } else if (key === 'tweaks') {
-        return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
-            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(typeof setTheme==='function') setTheme(this.value)">
-              <option value="light">Teal Classic (기본 1995)</option>
-              <option value="dark">Dark Slate (다크 모드)</option>
-              <option value="matrix">Matrix Green (이스터에그 테마)</option>
-            </select>
-          </div>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="if(typeof toggleSound==='function') toggleSound();">사운드: ON 🔊</button>
-          </div>
-          <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">팀장님, 갑자기 PC가 고장났어요! (블루스크린 띄우기)</button>
-        `;
+        `;      
       }
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
@@ -2514,7 +2490,7 @@ function fallbackCopyText(text, label, btn) {
 function showCopySuccess(text, label, btn) {
   if (btn) {
     var origText = btn.textContent;
-    btn.textContent = '완료!';
+    btn.textContent = 'Copied!';
     btn.style.background = '#000000';
     btn.style.color = '#ffffff';
     setTimeout(function() {
@@ -2523,7 +2499,7 @@ function showCopySuccess(text, label, btn) {
       btn.style.color = '';
     }, 1500);
   }
-  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+  alert((label || 'Text') + ' copied to clipboard:\n' + text);
 }
 </script>
 
@@ -2554,7 +2530,7 @@ function showCopySuccess(text, label, btn) {
   els.forEach(function (el) { io.observe(el.parentNode); });
 })();
 </script>
-  <script src="/assets/sp-inquiry.js?v=64" defer></script>
+  <script src="/assets/sp-inquiry-b.js?v=178" defer></script>
 <script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
 (function () {
   function place() {
@@ -2582,6 +2558,7 @@ window.spQB = function (btn, pos) {
 };
 </script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
-<script src="/assets/sp-live.js?v=108" defer></script>
+<script src="/assets/sp-live.js?v=178" defer></script>
+<script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
 </body>
 </html>
