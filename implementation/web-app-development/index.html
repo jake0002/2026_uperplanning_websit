@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="sp-b">
 <head>
   <meta charset="UTF-8">
   <!-- Google Tag Manager -->
@@ -1283,7 +1283,10 @@
   .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
 }
 </style>
-<link rel="stylesheet" href="/assets/sp-mnav.css?v=99"><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=178" defer></script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+<style>/* 179: 되살린 원문(.sp-more) — 페이지 안 스타일(공통 sp-b.css 는 178 그대로 유지해 다른 페이지 재배포 없음) */html.sp-b .main-content-pane .sp-more { margin-top: 36px !important; padding-top: 28px; border-top: 1px solid #D3D8DE; } html.sp-b .main-content-pane .sp-more > h3:first-child, html.sp-b .main-content-pane .sp-more > :first-child { margin-top: 0 !important; } html.sp-b .main-content-pane .sp-more h3 { font: 700 18px/1.4 var(--sp-font) !important; color: #111 !important; margin-top: 32px !important; margin-bottom: 12px !important; } html.sp-b .main-content-pane .sp-more p, html.sp-b .main-content-pane .sp-more li { color: #3A3F45; } html.sp-b .main-content-pane .sp-more blockquote { margin: 0 0 12px !important; padding: 16px 20px !important; border-radius: 16px !important; background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s) !important; border: 0 !important; }</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1298,6 +1301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
   <div id="gnb">
+    <a class="sp-logo" href="/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
     <ul class="gnb-menu">
       <li class="gnb-item">
         <a class="gnb-link" href="/ux-research/"><span>UX리서치</span></a>
@@ -1328,6 +1332,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gnb-right">
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
       <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="location.href='/ux-company/#careers';"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
     </div>
 
     <!-- MOBILE HAMBURGER BUTTON -->
@@ -1391,7 +1396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Toolbar & Address Bar -->
       <div class="toolbar-area">
         <div class="nav-buttons">
-          <button class="tool-btn" onclick="history.back();">⬅ 뒤로</button>
+          <button class="tool-btn" onclick="history.back();"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>뒤로</button>
         </div>
         <div class="address-bar">
           <span class="addr-label">주소(D):</span>
@@ -1404,11 +1409,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Left Explorer Tree Sidebar (Exact Attached Image Match) -->
         <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
-          <div class="tree-root">
-            <span class="tree-toggle">日</span>
-            <span class="folder-icon">📂</span>
-            <span>UX서비스 &gt; 웹/앱 개발</span>
-          </div>
 
           <!-- Tree List TOC (ul.tree-list.toc) -->
           <nav aria-label="페이지 목차">
@@ -1417,7 +1417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li class="tree-item"><a href="#optimization" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX디자인에 최적화된 개발</span></a></li>
               <li class="tree-item"><a href="#ai-dev" class="tree-link"><span class="doc-icon">📄</span> <span>2. AI기반 모바일앱 개발</span></a></li>
               <li class="tree-item"><a href="#diff" class="tree-link"><span class="doc-icon">📄</span> <span>3. 슈퍼플래닝만의 차별점</span></a></li>
-              <li class="tree-item"><a href="#publishing" class="tree-link"><span class="doc-icon">📄</span> <span>4. 퍼블리싱·상세페이지 HTML 변환</span></a></li>
+              <li class="tree-item"><a href="#publishing" class="tree-link"><span class="doc-icon">📄</span> <span>4. 퍼블리싱 작업</span></a></li>
               <li class="tree-item"><a href="#process" class="tree-link"><span class="doc-icon">📄</span> <span>5. 개발 진행 프로세스</span></a></li>
               <li class="tree-item"><a href="#maintenance" class="tree-link"><span class="doc-icon">📄</span> <span>6. 연간 IT유지보수</span></a></li>
               <li class="tree-item"><a href="#faq" class="tree-link"><span class="doc-icon">📄</span> <span>7. 자주 묻는 질문 (FAQ)</span></a></li>
@@ -1429,174 +1429,164 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Right Main Content View Pane (Exact Attached Image Match) -->
         <main class="main-content-pane">
 
-          <h1>웹/앱 개발</h1>
+          <div class="sp-title-row"><h1>웹/앱 개발</h1><nav class="sp-crumb" aria-label="현재 위치"><a href="/">홈</a><i>›</i><span aria-current="page">UX서비스</span><i>›</i><span aria-current="page">웹/앱 개발</span></nav></div>
 
-          <div class="title-rule"></div>
-          <p class="lead"><span class="sp-type-box"><span class="sp-type">슈퍼플래닝은 UX기획·디자인과 앱개발·웹개발을 한 팀에서 진행하는 웹/앱 개발 전문 에이전시입니다.</span></span>10년 차 이상 개발자가 네이티브·하이브리드 앱, 관리자 페이지, AI 연동, 리뉴얼·고도화를 직접 개발하고,<br>파견·상주근무와 유지보수까지 지원합니다.</p>
-          <p class="nugu-agency" style="margin:12px 0 0 0;">슈퍼플래닝은 <strong>SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시</strong>로 선정되어 AI기술력을 인정받았습니다.<br>NUGU와 연동한 <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">KB국민은행 리브 Next AI 보이스뱅킹</a> 프로젝트에서 UX컨설팅과 UX기획을 맡았습니다.<br><a href="https://developers.nugu.co.kr/#/partners/agency" target="_blank" rel="noopener noreferrer">NUGU developers 공식 AI파트너 에이전시 보기 ↗</a></p>
-          <figure style="margin:12px 0 16px 0;">
-            <img src="/images/ux-company/nugu-x-superplanning.webp" width="1100" height="430" loading="lazy" decoding="async" alt="SK텔레콤 NUGU × 슈퍼플래닝 — 슈퍼플래닝은 SK텔레콤 AI 플랫폼 NUGU 공식 에이전시입니다" style="display:block; width:100%; height:auto; border:1px solid #c0c0c0;">
-          </figure>
-          <ul class="lead-points">
-            <li>
-              <strong>UX디자인에 최적화된 개발(퍼블리싱 포함)</strong>
+          <p class="hero-intro sp-hero-pill" style="word-break:keep-all;">UX기획·디자인부터 앱·웹 개발, 유지보수까지<br>모두 한 팀에서 끝까지 책임집니다.<span class="sp-type-box"><span class="sp-type">10년 차 이상 개발자가 네이티브·하이브리드 앱, 관리자 페이지, AI 연동을 직접 개발합니다.</span></span></p>
+          <div class="sp-photos sp-c2 sp-wad-hero"><div class="photo-frame"><img src="../images/webapp_native_development.jpg" onerror="this.onerror=null;this.src='../images/webapp_native_development.png';" alt="슈퍼플래닝 네이티브 모바일앱 신규개발" width="640" height="380" loading="lazy" decoding="async"><div class="photo-caption">[현장 사진]<br>네이티브 모바일앱 신규개발 및 UX디자인 업무 환경</div></div><div class="photo-frame"><img src="/images/webapp_ux_optimized_dev.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='../images/webapp_ux_optimized_dev.png';}" alt="슈퍼플래닝 UX디자인에 최적화된 웹/앱 개발 환경" width="640" height="380" loading="lazy" decoding="async"><div class="photo-caption">[현장 사진]<br>UX디자인에 최적화된 웹/앱 개발 및 설계 환경</div></div></div>
+
+          
+          <div class="sp-more">
+            <p><strong><strong>슈퍼플래닝은 UX기획·디자인과 앱개발·웹개발을 한 팀에서 진행하는 웹/앱 개발 전문 에이전시입니다.</strong></strong>10년 차 이상 개발자가 네이티브·하이브리드 앱, 관리자 페이지, AI 연동, 리뉴얼·고도화를 직접 개발하고,<br/>파견·상주근무와 유지보수까지 지원합니다.</p>
+            <p>슈퍼플래닝은 <strong>SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시</strong>로 선정되어 AI기술력을 인정받았습니다.<br/>NUGU와 연동한 <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">KB국민은행 리브 Next AI 보이스뱅킹</a> 프로젝트에서 UX컨설팅과 UX기획을 맡았습니다.<br/><a href="https://developers.nugu.co.kr/#/partners/agency" rel="noopener noreferrer" target="_blank">NUGU developers 공식 AI파트너 에이전시 보기 ↗</a></p>
+            <ul>
+<li>
+<strong>UX디자인에 최적화된 개발(퍼블리싱 포함)</strong>
               기획 의도와 화면 구조를 이해한 상태에서 웹/앱 개발을 진행해 사용성과 구현 완성도를 함께 높입니다.
             </li>
-            <li>
-              <strong>원스톱 구축 체계</strong>
+<li>
+<strong>원스톱 구축 체계</strong>
               네이티브 앱, 하이브리드 앱, 웹서비스, 관리자 시스템, 서버·DB 설계까지 한 팀 안에서 연결합니다.
             </li>
-            <li>
-              <strong>운영까지 이어지는 실무 대응</strong>
+<li>
+<strong>운영까지 이어지는 실무 대응</strong>
               앱개발 비용과 외주비용만이 아니라 배포 이후 AI 연동, 기능 고도화, 연간 유지보수까지 고려해 구축합니다.
             </li>
-          </ul>
-          
-          <section class="section" id="overview">
-          <div class="photo-frame photo-wide" style="margin:20px 0;">
-            <img src="../images/webapp_native_development.jpg" onerror="this.onerror=null;this.src='../images/webapp_native_development.png';" alt="슈퍼플래닝 네이티브 모바일앱 신규개발" width="640" height="380" loading="lazy" decoding="async" style="max-height: none; aspect-ratio: 16/9; object-fit: cover; object-position: center;">
-            <div class="photo-caption">슈퍼플래닝 네이티브 모바일앱 신규개발 및 UX디자인 업무 환경</div>
-          </div>
-          <p class="photo-note">슈퍼플래닝은 UX디자인, 퍼블리싱, 프론트엔드·백엔드 개발이 끊기지 않도록 연결해 웹개발과 모바일앱 개발의 실제 구현 완성도를 높입니다.</p>
-         
-          <h2 id="optimization">1. UX디자인에 최적화된 웹/앱 개발</h2>
-          <p class="ai-answer-first">"UX디자인에 최적화된 웹·앱개발은 화면 흐름과 예외 상황을 초기 단계에 함께 고려해<br>재작업을 줄이고 배포 후 운영 비용까지 낮추는 방식입니다."</p>
-          
-          <p>웹/앱 개발은 기능만 구현한다고 끝나지 않습니다.<br>사용자가 실제로 이해하고 사용할 수 있는 구조, 화면 흐름, 입력 방식, 예외 처리까지 함께 설계되어야<br>서비스가 제대로 작동합니다.<br>특히 모바일앱 개발이나 웹서비스 구축에서는 기획과 디자인, 개발이 분리될수록 수정 비용이 커지고<br>일정이 흔들리기 쉽습니다.<br>슈퍼플래닝은 바로 이 지점을 줄이기 위해 UX디자인에 최적화된 웹/앱 개발 방식을 기본으로 삼고 있습니다.</p>
-          <p>많은 기업이 앱개발업체를 찾을 때 구현 가능 여부만 먼저 비교하지만, 실제 프로젝트의 성패는 사용성과 구조 완성도에서 갈리는 경우가 많습니다.<br>같은 기능을 만들더라도 UX 관점이 반영된 서비스는 고객의 이해 속도와 전환율, 재방문율이 달라집니다.<br>슈퍼플래닝은 화면 기획, GUI디자인, HTML 퍼블리싱, 프론트엔드·백엔드 개발을 끊기지 않게 연결해 기획서와 실제 결과물 사이의 간극을 줄입니다.</p>
-          <p>예비창업자와 스타트업이 자주 검색하는 앱개발방법도 결국 이 구조에서 결정됩니다.<br>처음부터 기능만 빠르게 붙이는 방식은 단기적으로는 빨라 보일 수 있지만, 운영 단계에서 수정 범위와 비용이 불어나기 쉽습니다.<br>반대로 UX디자인에 최적화된 웹/앱 개발은 초기 구조를 더 탄탄하게 잡는 대신, 이후 기능 확장, 앱개발 비용 관리, 유지보수 안정성 측면에서 훨씬 유리합니다.</p>
-          <div class="photo-frame photo-wide" style="margin:20px 0;">
-            <img src="/images/webapp_ux_optimized_dev.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='../images/webapp_ux_optimized_dev.png';}" alt="슈퍼플래닝 UX디자인에 최적화된 웹/앱 개발 환경" width="640" height="380" loading="lazy" decoding="async" style="max-height: none; aspect-ratio: 16/9; object-fit: cover; object-position: center;">
-            <div class="photo-caption">슈퍼플래닝 UX디자인에 최적화된 웹/앱 개발 및 설계 환경</div>
-          </div>
-          <div class="grid-boxes">
-          <article class="box"><h3>사용성과 구조를 함께 설계</h3><p>사용자 흐름, 화면 목적, 예외 상황을 함께 고려해 모바일앱 개발과 웹개발의 방향을 초기에 안정적으로 잡습니다.</p></article>
-          <article class="box"><h3>디자인과 개발의 간극 최소화</h3><p>UX디자인, 퍼블리싱, 프론트엔드·백엔드 구현을 연결해 앱개발 외주비용이 불필요하게 커지는 재작업을 줄입니다.</p></article>
-          <article class="box"><h3>운영 가능한 결과물 중심</h3><p>단순 시연용 결과가 아니라 실제 배포와 운영, 고도화까지 이어질 수 있는 웹/앱 개발 구조를 지향합니다.</p></article>
-          </div>
-          </section>
-          <section class="section" id="core-services">
-            <h2 id="ai-dev">2. 핵심 서비스: AI기반 모바일앱 개발</h2>
-          <p class="ai-answer-first">"AI 기반 모바일앱 개발은 챗봇·추천·자동화 등 AI 기능을 서비스 목적에 맞게 웹·앱에 연동하고 단순 유행이 아닌 운영 효율 관점에서 설계하는 방식입니다."</p>
-          <p>슈퍼플래닝은 iOS와 안드로이드를 포함한 네이티브 앱 개발, 그리고 효율적인 운영이 가능한 하이브리드 앱 개발을 모두 지원합니다.<br>서비스 목적, 예산, 운영 인력, 기능 복잡도에 따라 적합한 방식이 다르기 때문에 특정 기술만 일방적으로 권하지 않고 프로젝트 상황에 맞는 구조를 제안합니다.<br>앱개발업체를 찾는 고객이 실제로 궁금해하는 것은 무엇을 만들 수 있는가보다 어떤 방식이 우리 서비스에 더 적합한가이기 때문에, 초기 판단부터 실무적으로 안내합니다.</p>
-          <div class="section-title-box">웹/앱 개발 제공 범위</div>
-          <h3>1. 네이티브 앱 개발</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>iOS 앱 신규개발</li><li>안드로이드 앱 신규개발</li><li>디바이스 기능 연동형 모바일앱 개발</li><li>고성능 화면 및 인터랙션 구현</li></ul></article>
-</div>
-<p><strong>네이티브 앱 개발</strong>은 운영체제별 사용자 경험과 성능 최적화가 중요한 프로젝트에 적합합니다.<br>푸시, 카메라, 위치, 생체인증, 고해상도 인터랙션 같은 기능이 핵심이라면 네이티브 방식이 더 유리할 수 있습니다.<br>슈퍼플래닝은 UX디자인과 연결된 상태에서 모바일앱 개발을 진행해 기능 구현과 사용성 사이의 균형을 맞춥니다.</p>
-<h3>2. 하이브리드 앱 개발</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>공통 코드 기반 앱 구축</li><li>빠른 출시를 위한 앱개발방법 제안</li><li>운영 효율 중심의 기능 설계</li><li>웹과 앱의 연동 구조 최적화</li></ul></article>
-</div>
-<p><strong>하이브리드 앱 개발</strong>은 빠른 출시와 예산 효율을 중시하는 서비스에서 강점이 있습니다.<br>예비 고객이 자주 검색하는 앱개발 비용이나 앱개발 외주비용 관점에서도, 핵심 기능을 우선 구축하고 단계적으로 확장해야 하는 경우 실용적인 선택이 될 수 있습니다.</p>
-<h3>3. 퍼블리싱 및 관리자 시스템 개발</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>웹퍼블리싱 및 CSS 디자인 시스템 구축</li><li>반응형 웹사이트 및 웹서비스 개발</li><li>백오피스·관리자 페이지 구축</li><li>회원, 결제, 데이터 관리 기능 개발</li><li>Spring·AWS 기반 운영 구조 설계</li></ul></article>
-</div>
-<p><strong>웹서비스 및 관리자 시스템 개발</strong>은 단순히 기능만 구현하는 일이 아닙니다. <Br> 기획의 의도를 100화하는 정교한 <strong>웹퍼블리싱과 CSS 디자인 시스템 구축</strong>을 바탕으로, 화면의 완성도와 일관성을 높여야 비로소 뛰어난 사용자 경험이 완성됩니다.<br>또한 실제 운영자가 데이터를 관리하고, 고객 문의를 처리하고, 콘텐츠와 권한을 통제할 수 있어야 서비스가 안정적으로 운영됩니다.<br>슈퍼플래닝은 웹개발과 앱개발, 퍼블리싱 영역을 분리하지 않고 함께 설계해 사용자 화면과 운영 화면이 따로 놀지 않도록 유기적으로 연결합니다.</p>
-<h3>4. 기존 개발물 리뉴얼 및 기능 고도화</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>기존 앱·웹 서비스 구조 개선</li><li>UI 리뉴얼 및 기능 추가</li><li>속도·안정성 개선</li><li>배포 이후 단계적 확장 지원</li></ul></article>
-</div>
-<p><strong>기존 개발물 리뉴얼 및 기능 고도화</strong> 프로젝트도 주요 서비스 범위에 포함됩니다.<br>신규 구축만 가능한 팀이 아니라, 이미 운영 중인 서비스의 문제를 분석하고 필요한 범위만 재정비하는 방식으로도 협업할 수 있습니다.<br>이는 앱개발업체를 새로 찾는 고객뿐 아니라 기존 외주 프로젝트를 이어받아 안정화하려는 기업에게도 중요한 장점입니다.</p>
-</section>
-<section class="section" id="strengths">
-
-<h2 id="diff">3. 슈퍼플래닝만의 차별점: 풀스택 IT개발팀 보유(파견/상주 가능)</h2>
-          <p class="ai-answer-first">"슈퍼플래닝의 차별점은 UI/UX 기획부터 QA·배포·연간 유지보수까지<br>한 팀이 책임지는 구조로, 파견·상주 모두 가능한 풀스택 IT개발팀 보유입니다."</p>
-<p>슈퍼플래닝의 강점은 기획만 하는 조직도, 개발만 하는 조직도 아니라는 점입니다.<br>DB설계, 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지 연결 가능한 10년 차 이상 풀스택 전문팀이 상주 인력 체계로 협업하고 있어, 요구사항과 실제 구현 사이에서 발생하는 해석 오류를 줄일 수 있습니다.<br>많은 기업이 앱개발업체를 선정할 때 포트폴리오만 비교하지만, 실제 프로젝트에서는 누가 요구사항을 정리하고 누가 책임 있게 연결하는지가 훨씬 중요합니다.<Br> <strong>슈퍼플래닝은 공공기관, 금융 프로젝트와 같이 보안이 중요한 경우 개발팀 파견, 상주근무도 가능합니다. </strong></p>
-<article class="box">
-<h3>슈퍼플래닝 IT개발팀 핵심 기술 스택</h3> <Br>
-<ul>
-<li><strong>DB 및 데이터 파이프라인:</strong> <Br> PostgreSQL, Supabase (BaaS), MongoDB, Pinecone/Milvus (AI 연동용 벡터 데이터베이스)</li>
-<li><strong>서버·백엔드:</strong> <Br> Node.js, NestJS, Python (FastAPI/Django - AI 모델 및 API 연동 최적화), Serverless 구조 설계</li>
-<li><strong>프론트엔드:</strong> <Br> Next.js (SEO 및 서버 사이드 렌더링 최적화), React, TypeScript, Tailwind CSS</li>
-<li><strong>모바일앱:</strong> <Br> Flutter 기반 크로스 플랫폼 앱, Swift (iOS), Kotlin (Android), React Native iOS/Android 및 <Br> 하이브리드앱 최적화 구현</li>
-<li><strong>인프라 및 배포 환경:</strong> <Br> AWS(EC2, S3, RDS) 인프라 구축, 무중단 배포 설계</li>
-<li><strong>주요 개발 범위:</strong> <Br> 생성형 AI(LLM) 서비스 결합 개발, 고성능 프론트엔드 구축(Next.js), UX/UI디자인, 웹 표준 퍼블리싱, 레거시 시스템 리뉴얼, 금융/플랫폼 수준의 백엔드 고도화 및 연간 IT 유지보수</li>
 </ul>
-</article>
-
-<p class="photo-note">슈퍼플래닝은 DB설계, 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지 연결 가능한 상주형 협업 체계를 바탕으로 웹개발, 모바일앱 개발, AI 연동, 유지보수까지 실무 중심으로 수행합니다.</p>
-<p>특히 고객이 많이 검색하는 조건 중 하나가 앱개발자 상주근무 가능 여부입니다.<br>프로젝트 성격에 따라 정기 미팅, 밀착 커뮤니케이션, 운영 대응 체계가 중요하기 때문입니다.<br>슈퍼플래닝은 상주형에 준하는 협업 밀도와 실무 대응 중심의 커뮤니케이션 경험을 갖추고 있어, 외주라고 해서 요청사항 전달이 끊기거나 개발 방향이 어긋나는 문제를 줄이는 데 강점이 있습니다.</p>
-<p>기술 역량만 나열하는 방식으로 끝나지 않는 것도 차별점입니다.<br>앱개발 비용이나 웹개발 외주비용은 초기 제작비만으로 판단하기 어렵고, 이후 수정, 운영, 재개발 비용까지 함께 보아야 합니다.<br>슈퍼플래닝은 처음부터 운영 가능한 구조를 전제로 설계하기 때문에 장기적으로 더 효율적인 방향을 제시할 수 있습니다.</p>
-</section>
-<section class="section" id="publishing">
-
-          <h2 id="publishing">4. 퍼블리싱: 웹 퍼블리싱부터 상세페이지 HTML 변환까지</h2>
-          <p class="sp-type-box"><span class="sp-type">슈퍼플래닝은 전문 퍼블리셔가 함께하는 웹/앱 개발 에이전시로, 웹 표준 퍼블리싱과 제품 상세페이지 HTML 변환을 진행하고 웹사이트와 온라인몰에 바로 적용할 수 있는 HTML 소스까지 제공합니다.</span></p>
-          <p>퍼블리싱은 디자인 시안을 실제로 동작하는 화면 코드로 옮기는 단계입니다.<br>슈퍼플래닝은 UX기획·UI디자인 이후 퍼블리싱까지 이어서 진행하고, 이미 디자인이 있다면 퍼블리싱만 따로 맡길 수도 있습니다.</p>
-          <div class="section-title-box">퍼블리싱 제공 범위</div>
-          <h3>1. 웹 퍼블리싱</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>피그마 디자인 기반 웹 표준 퍼블리싱</li><li>반응형 웹·모바일 웹 퍼블리싱</li><li>관리자 화면·대시보드·데이터 그리드 마크업</li><li>CSS 디자인 시스템·공통 컴포넌트 구축</li></ul></article>
-</div>
-<h3>2. 제품 상세페이지 HTML 변환</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>JPG·PNG 이미지 상세페이지를 HTML 텍스트로 변환</li><li>오픈마켓·종합몰·자사몰 규격에 맞춘 HTML 소스 제공</li><li>대표 상세페이지 2~3개 테스트 후 전체 제품으로 확대</li><li>변환 문구의 오탈자·표기 교정</li></ul></article>
-</div>
-<p><strong>제품 상세페이지 HTML 변환</strong>은 이미지 안에 갇혀 있던 제품명, 성분, 용량, 사용법을 텍스트로 바꿔 검색엔진과 생성형 AI가 읽을 수 있게 만드는 작업입니다.<br>제품 사진과 연출 이미지는 그대로 두고 정보성 문구만 텍스트로 분리하므로, 기존 상세페이지의 디자인 톤을 유지할 수 있습니다.<br>자세한 진행 방법은 <a href="/ux-blog/product-detail-page-html-conversion-seo/">상세페이지 HTML 변환·퍼블리싱 가이드</a>에서 확인할 수 있습니다.</p>
-<figure style="margin:20px 0 24px 0; padding:0;">
-  <img src="/images/ux-blog/product-detail-html/html-conversion-text-split.webp" alt="제품 상세페이지 HTML 변환 구조 — 제품 컷과 연출 사진은 이미지로 유지하고 제품명·전성분·용량·사용 방법은 온라인몰 제출용 HTML 텍스트로 퍼블리싱" width="1200" height="560" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border:2px solid #000000;">
-  <figcaption style="font-size:12px; color:#777777; margin-top:6px; line-height:1.5;">슈퍼플래닝 상세페이지 HTML 변환 구조 예시</figcaption>
-</figure>
-<h3>3. 퍼블리싱 단독 의뢰</h3>
-<div class="cases-stack">
-<article class="box"><h3>서비스 범위</h3><ul><li>디자인 시안·피그마 파일만 있는 프로젝트의 퍼블리싱</li><li>기존 화면의 퍼블리싱 개선·웹 표준 정비</li><li>개발팀에 전달할 HTML·CSS 소스 제작</li><li>퍼블리싱 이후 프론트엔드·백엔드 개발 연계</li></ul></article>
-</div>
-          <div class="section-title-box">주요 퍼블리싱 프로젝트</div>
-          <table class="process-table sp-pub-table" style="table-layout:fixed;">
-          <colgroup><col style="width:38%;"><col style="width:62%;"></colgroup>
-          <thead><tr><th scope="col">고객사 · 프로젝트</th><th scope="col">퍼블리싱 특징</th></tr></thead>
-          <tbody>
-          <tr><td><strong>국토교통부</strong><br>공간 빅데이터 체계</td><td>Ext JS 기반 융합데이터 대시보드·목록 화면</td></tr>
-          <tr><td><strong>KT</strong><br>KT OneBox</td><td>Natural-JS 기반 본사·지사 네트워크 토폴로지 맵과 운영 관리 화면</td></tr>
-          <tr><td><strong>CJ대한통운</strong><br>FC 입문포탈</td><td>RealGrid 데이터 그리드 기반 업무 포털 화면</td></tr>
-          <tr><td><strong>HD현대인프라코어</strong><br>엔진BG GEPS (구 두산인프라코어)</td><td>엔진 사업부 업무 시스템 화면</td></tr>
-          <tr><td><strong>한국비씨피솔루션즈</strong><br>대시보드</td><td>데이터를 한눈에 보여 주는 대시보드 화면</td></tr>
-          </tbody>
-          </table>
-<style>/* 101: 퍼블리싱 프로젝트 표 모바일 */ @media (max-width: 768px) { .sp-pub-table td, .sp-pub-table th { font-size: 13.5px; padding: 8px 10px; overflow-wrap: anywhere; } }</style>
-<p>공공 빅데이터 시스템부터 통신사 네트워크 관리 화면까지, 정보량이 많고 복잡한 화면을 Ext JS·Natural-JS·RealGrid 등 다양한 UI 프레임워크로 구현해 온 퍼블리셔들이 웹사이트와 상세페이지 작업도 같은 기준으로 진행합니다.<br>웹 퍼블리싱이나 상세페이지 HTML 변환이 필요하다면 <a href="/contact/" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;">문의하기</a>로 디자인 파일이나 상세페이지 예시를 보내 주세요.<br>담당 실무진이 진행 가능 여부와 기간, 견적을 빠르게 안내해 드립니다.</p>
-</section>
-<section class="section" id="process">
-
-          <h2 id="process">5. 개발 진행 프로세스: UI/UX기획 부터 QA, 배포까지 </h2>
-          <p class="ai-answer-first">"개발 진행 프로세스는 기획→디자인→요구사항 정의→퍼블리싱·구현→QA→배포→운영의 6단계로, 단계별 산출물과 검증 기준을 사전에 합의합니다."</p>
-          <p>웹/앱 프로젝트가 지연되거나 예산이 불필요하게 커지는 가장 큰 이유 중 하나는 기획, 디자인, 개발, 테스트, 배포가 서로 분리되어 움직이기 때문입니다.<br>슈퍼플래닝은 이 비효율을 줄이기 위해 기획부터 디자인, 퍼블리싱, 개발, 검수, 배포까지 이어지는 원스톱 개발 프로세스로 프로젝트를 운영합니다.<br>앱개발방법을 처음 검토하는 고객도 무엇부터 준비해야 하는지 이해하기 쉽도록 단계별 흐름을 분명하게 안내합니다.</p>
-          <table class="process-table">
-          <thead><tr><th scope="col">단계</th><th scope="col">핵심 업무내용</th><th scope="col">주요 산출물</th></tr></thead>
-          <tbody>
-          <tr><td><strong>1st 기획<br>Plan</strong></td><td>프로젝트 목표, 사용자 요구사항, 핵심 기능 범위, 우선순위를 정리합니다. 아이디어 단계라면 앱개발방법과 구축 방향을 구체화하고, 기존 서비스가 있다면 문제 구간과 리뉴얼 범위를 확인합니다.</td><td>요구사항 정리, 기능 범위표, 우선순위 정의, 개발 방향 제안</td></tr>
-          <tr><td><strong>2nd 설계<br>Architect</strong></td><td>서비스 구조, 화면 흐름, DB설계, 서버·백엔드 구조, 프론트엔드 구성, 관리자 페이지와 외부 연동 방식을 정리합니다. 개발 이후 수정 비용을 줄이기 위해 운영 구조까지 함께 검토합니다.</td><td>서비스 구조도, 화면 흐름, DB설계안, API·관리자 기능 정의</td></tr>
-          <tr><td><strong>3rd 개발<br>Build</strong></td><td>GUI디자인과 HTML 퍼블리싱 결과를 바탕으로 프론트엔드·백엔드 개발을 진행합니다. 프로젝트 성격에 따라 네이티브 앱 개발, 하이브리드 앱 개발, 웹서비스 구축을 병행하고, 실제 사용성과 구현 완성도를 함께 점검합니다.</td><td>프론트엔드 구현, 백엔드 개발, 네이티브/하이브리드 앱 개발, 웹서비스 개발</td></tr>
-          <tr><td><strong>4th 테스트·배포<br>Operate</strong></td><td>기능 테스트, 오류 수정, 성능 점검, 배포 준비를 거쳐 실제 운영 가능한 상태로 마무리합니다. 이후 앱스토어·배포 대응, 운영 안정화, 유지보수와 기능 고도화까지 연결합니다.</td><td>QA 결과, 수정 반영, 배포본, 운영 체크리스트, 유지보수 계획</td></tr>
-          </tbody>
-          </table>
-          <p>이 프로세스의 장점은 단순히 순서가 깔끔하다는 점이 아닙니다.<br>앱개발업체와 협업할 때 가장 많이 생기는 문제인 해석 차이, 기능 누락, 예산 초과를 줄이는 구조라는 점이 중요합니다.<br>그래서 신규 서비스 구축뿐 아니라 기존 서비스 리뉴얼, 기능 추가, 운영 안정화 프로젝트에도 유연하게 적용할 수 있습니다.</p>
-          </section>
-          <section class="section" id="maintenance">
-
-          <h2 id="maintenance">6. 연간 유지보수: 고도화 및 안정화 작업 </h2>
-          <p class="ai-answer-first">"연간 유지보수는 오류 수정·기능 개선·성능 점검·보안 보완·운영 대응 체계를 지속적으로 관리해 초기 구축 이후 필요한 리뉴얼과 구조 개선까지 이어서 대응합니다."</p>
-          
-          <section class="section" id="maintenance">
-          
-          <p>최근에는 단순한 웹개발이나 앱개발을 넘어, AI 기능을 실제 서비스에 어떻게 연결할 수 있는지에 대한 문의가 크게 늘고 있습니다.<br>예를 들어 챗봇, 추천 기능, 자동 분류, 텍스트 생성, 요약, 데이터 분석, 운영 자동화 같은 기능은 이제 많은 기업이 검토하는 기본 옵션에 가깝습니다.<br>슈퍼플래닝은 이러한 흐름에 맞춰 AI 서비스 개발과 기존 웹/앱 서비스의 AI 연동 고도화를 함께 지원합니다.</p>
-          
-          <div class="cases-stack">
-          <article class="box"><h3>AI 연동 개발</h3><p>챗봇, 추천, 자동화, 텍스트 처리, 요약, 데이터 분석 등 서비스 목적에 맞는 AI 기능을 웹/앱에 연동합니다.<br>앱개발ai를 단순 유행이 아니라 실제 운영 효율과 사용자 경험 개선 관점에서 설계합니다.</p></article>
-          <article class="box"><h3>기능 고도화 및 안정화</h3><p>배포 이후 발견되는 이슈, 속도 저하, 운영 불편, 관리자 기능 부족 문제를 점검하고 단계적으로 보완합니다.<br>초기 구축 이후 필요한 리뉴얼과 구조 개선까지 이어서 대응합니다.</p></article>
-          <article class="box"><h3>연간 유지보수 운영</h3><p>오류 수정, 기능 개선, 성능 점검, 보안 보완, 운영 대응 체계를 지속적으로 관리합니다.<br>앱개발 비용은 제작만이 아니라 운영 단계까지 함께 봐야 한다는 점에서 중요한 영역입니다.</p></article>
+            <p>슈퍼플래닝은 UX디자인, 퍼블리싱, 프론트엔드·백엔드 개발이 끊기지 않도록 연결해 웹개발과 모바일앱 개발의 실제 구현 완성도를 높입니다.</p>
           </div>
-          <p>검색 사용자가 많이 찾는 표현으로 말하면, 앱개발 AI 연동은 더 이상 일부 대기업만의 영역이 아닙니다.<br>스타트업, 중소기업, 플랫폼 서비스도 예산 범위 안에서 필요한 기능만 단계적으로 도입할 수 있습니다.<br>중요한 것은 화려한 AI 기능을 많이 넣는 것이 아니라, 서비스 목적과 실제 사용자 행동에 맞게 어떤 자동화와 추천, 응답 기능이 필요한지 판단하는 것입니다.</p>
-          <p>또 하나 중요한 영역은 유지보수입니다.<br>많은 고객이 앱개발 비용만 먼저 검색하지만, 실제로는 배포 이후의 안정화와 운영 대응이 서비스 완성도를 좌우합니다.<br>슈퍼플래닝은 기존 개발물 리뉴얼, 장애 대응, 기능 개선, 성능 점검, 보안 보완, 연간 운영 유지보수까지 장기 관점에서 지원할 수 있는 체계를 갖추고 있습니다.</p>
-          </section>
+          <h2 id="optimization"><span class="sp-h2n" data-n="01">1.</span> UX디자인에 최적화된 웹/앱 개발</h2>
+          <p>웹/앱 개발은 기능만 구현한다고 끝나지 않습니다.<br>사용자가 이해하고 쓸 수 있는 구조, 화면 흐름, 예외 처리까지 함께 설계해야 합니다.</p>
+          <p>기획·디자인·개발이 분리될수록 수정 비용이 커지고 일정이 흔들립니다.<br>슈퍼플래닝은 화면 기획, GUI디자인, 퍼블리싱, 프론트엔드·백엔드 개발을<br>끊기지 않게 연결해 기획서와 결과물 사이의 간극을 줄입니다.</p>
+          <p class="sp-tray"><strong>UX디자인에 최적화된 개발은 재작업을 줄입니다.</strong><br>화면 흐름과 예외 상황을 초기에 함께 고려해<br>배포 후 운영 비용까지 낮추는 방식입니다.</p>
+          <p>처음부터 구조를 탄탄하게 잡으면 기능 확장, 개발 비용 관리,<br>유지보수 안정성 측면에서 훨씬 유리합니다.</p>
+          <div class="sp-cards sp-cols3 sp-m1"><div class="sp-card"><span class="sp-num">01</span><h3>사용성과 구조를 함께 설계</h3><p>사용자 흐름, 화면 목적, 예외 상황을<br>개발 초기에 함께 설계합니다.</p></div><div class="sp-card"><span class="sp-num">02</span><h3>디자인과 개발의 간극 최소화</h3><p>UX디자인·퍼블리싱·개발을 연결해<br>불필요한 재작업을 줄입니다.</p></div><div class="sp-card"><span class="sp-num">03</span><h3>운영 가능한 결과물 중심</h3><p>시연용이 아니라 배포·운영·고도화까지<br>이어지는 구조를 만듭니다.</p></div></div>
           
+          <div class="sp-more">
+            <p>"UX디자인에 최적화된 웹·앱개발은 화면 흐름과 예외 상황을 초기 단계에 함께 고려해<br/>재작업을 줄이고 배포 후 운영 비용까지 낮추는 방식입니다."</p>
+            <p>웹/앱 개발은 기능만 구현한다고 끝나지 않습니다.<br/>사용자가 실제로 이해하고 사용할 수 있는 구조, 화면 흐름, 입력 방식, 예외 처리까지 함께 설계되어야<br/>서비스가 제대로 작동합니다.<br/>특히 모바일앱 개발이나 웹서비스 구축에서는 기획과 디자인, 개발이 분리될수록 수정 비용이 커지고<br/>일정이 흔들리기 쉽습니다.<br/>슈퍼플래닝은 바로 이 지점을 줄이기 위해 UX디자인에 최적화된 웹/앱 개발 방식을 기본으로 삼고 있습니다.</p>
+            <p>많은 기업이 앱개발업체를 찾을 때 구현 가능 여부만 먼저 비교하지만, 실제 프로젝트의 성패는 사용성과 구조 완성도에서 갈리는 경우가 많습니다.<br/>같은 기능을 만들더라도 UX 관점이 반영된 서비스는 고객의 이해 속도와 전환율, 재방문율이 달라집니다.<br/>슈퍼플래닝은 화면 기획, GUI디자인, HTML 퍼블리싱, 프론트엔드·백엔드 개발을 끊기지 않게 연결해 기획서와 실제 결과물 사이의 간극을 줄입니다.</p>
+            <p>예비창업자와 스타트업이 자주 검색하는 앱개발방법도 결국 이 구조에서 결정됩니다.<br/>처음부터 기능만 빠르게 붙이는 방식은 단기적으로는 빨라 보일 수 있지만, 운영 단계에서 수정 범위와 비용이 불어나기 쉽습니다.<br/>반대로 UX디자인에 최적화된 웹/앱 개발은 초기 구조를 더 탄탄하게 잡는 대신, 이후 기능 확장, 앱개발 비용 관리, 유지보수 안정성 측면에서 훨씬 유리합니다.</p>
+            <div>
+<div><h3>사용성과 구조를 함께 설계</h3><p>사용자 흐름, 화면 목적, 예외 상황을 함께 고려해 모바일앱 개발과 웹개발의 방향을 초기에 안정적으로 잡습니다.</p></div>
+<div><h3>디자인과 개발의 간극 최소화</h3><p>UX디자인, 퍼블리싱, 프론트엔드·백엔드 구현을 연결해 앱개발 외주비용이 불필요하게 커지는 재작업을 줄입니다.</p></div>
+<div><h3>운영 가능한 결과물 중심</h3><p>단순 시연용 결과가 아니라 실제 배포와 운영, 고도화까지 이어질 수 있는 웹/앱 개발 구조를 지향합니다.</p></div>
+</div>
+          </div>
+          <h2 id="ai-dev"><span class="sp-h2n" data-n="02">2.</span> 핵심 서비스: AI기반 모바일앱 개발</h2>
+          <p>네이티브 앱과 하이브리드 앱 개발을 모두 지원합니다.<br>특정 기술을 일방적으로 권하지 않고, 서비스 목적·예산·운영 인력에 맞는 구조를 제안합니다.</p>
+          <div class="sp-cards sp-cols4 sp-lines sp-m1"><div class="sp-card"><span class="sp-num">01</span><h3>네이티브 앱 개발</h3><p>iOS·안드로이드 신규개발<br>푸시·카메라·위치·생체인증<br>고성능 화면·인터랙션 구현</p></div><div class="sp-card"><span class="sp-num">02</span><h3>하이브리드 앱 개발</h3><p>Flutter·React Native<br>공통 코드 기반 빠른 출시<br>웹·앱 연동 구조 최적화</p></div><div class="sp-card"><span class="sp-num">03</span><h3>퍼블리싱·관리자 시스템</h3><p>반응형 웹서비스 개발<br>백오피스·관리자 페이지<br>회원·결제·데이터 관리</p></div><div class="sp-card"><span class="sp-num">04</span><h3>리뉴얼·기능 고도화</h3><p>기존 앱·웹 구조 개선<br>UI 리뉴얼·기능 추가<br>속도·안정성 개선</p></div></div>
+          <div class="sp-emph-box sp-blackbox"><h3>AI 기능은 유행이 아니라 운영 효율 관점에서 설계합니다.</h3><p>챗봇·추천·요약·자동화 같은 AI 기능을 서비스 목적에 맞게 웹·앱에 연동합니다.<br>슈퍼플래닝은 SK텔레콤 AI 플랫폼 NUGU의 공식 에이전시입니다.</p></div>
+          <figure class="sp-nugu" aria-label="SK텔레콤 NUGU × 슈퍼플래닝 — 슈퍼플래닝은 SK텔레콤 AI 플랫폼 NUGU 공식 에이전시입니다"><div class="sp-nugu-card"><div class="sp-nugu-logos"><span class="sp-nugu-tile is-dark"><img src="/images/web-app-development/nugu-logo.png" alt="NUGU" width="96" height="23" loading="lazy" decoding="async"></span><i aria-hidden="true">×</i><span class="sp-nugu-tile"><img src="/images/web-app-development/superplanning-logo-2line.png" alt="SUPERPLANNING" width="100" height="33" loading="lazy" decoding="async"></span></div><div class="sp-nugu-txt"><span class="sp-nugu-badge">OFFICIAL AI PARTNER</span><h3>SK텔레콤 AI 플랫폼 NUGU<br>공식 에이전시</h3><p><a href="https://developers.nugu.co.kr/#/partners/agency" target="_blank" rel="noopener noreferrer">NUGU developers</a> 공식 제휴 에이전시로<br>AI서비스·앱 기획/개발과 UI 컨설팅을 수행합니다.</p><p class="sp-nugu-case">대표 사례 · <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">KB국민은행 리브 Next AI보이스뱅킹</a></p></div></div><figcaption class="photo-caption">[공식 에이전시]<br>SK텔레콤 AI 플랫폼 NUGU × 슈퍼플래닝</figcaption></figure>
+          
+          <div class="sp-more">
+            <p>"AI 기반 모바일앱 개발은 챗봇·추천·자동화 등 AI 기능을 서비스 목적에 맞게 웹·앱에 연동하고 단순 유행이 아닌 운영 효율 관점에서 설계하는 방식입니다."</p>
+            <p>슈퍼플래닝은 iOS와 안드로이드를 포함한 네이티브 앱 개발, 그리고 효율적인 운영이 가능한 하이브리드 앱 개발을 모두 지원합니다.<br/>서비스 목적, 예산, 운영 인력, 기능 복잡도에 따라 적합한 방식이 다르기 때문에 특정 기술만 일방적으로 권하지 않고 프로젝트 상황에 맞는 구조를 제안합니다.<br/>앱개발업체를 찾는 고객이 실제로 궁금해하는 것은 무엇을 만들 수 있는가보다 어떤 방식이 우리 서비스에 더 적합한가이기 때문에, 초기 판단부터 실무적으로 안내합니다.</p>
+            <h3>1. 네이티브 앱 개발</h3><div>
+<div><h3>서비스 범위</h3><ul><li>iOS 앱 신규개발</li><li>안드로이드 앱 신규개발</li><li>디바이스 기능 연동형 모바일앱 개발</li><li>고성능 화면 및 인터랙션 구현</li></ul></div>
+</div><p><strong>네이티브 앱 개발</strong>은 운영체제별 사용자 경험과 성능 최적화가 중요한 프로젝트에 적합합니다.<br/>푸시, 카메라, 위치, 생체인증, 고해상도 인터랙션 같은 기능이 핵심이라면 네이티브 방식이 더 유리할 수 있습니다.<br/>슈퍼플래닝은 UX디자인과 연결된 상태에서 모바일앱 개발을 진행해 기능 구현과 사용성 사이의 균형을 맞춥니다.</p>
+            <h3>2. 하이브리드 앱 개발</h3><div>
+<div><h3>서비스 범위</h3><ul><li>공통 코드 기반 앱 구축</li><li>빠른 출시를 위한 앱개발방법 제안</li><li>운영 효율 중심의 기능 설계</li><li>웹과 앱의 연동 구조 최적화</li></ul></div>
+</div><p><strong>하이브리드 앱 개발</strong>은 빠른 출시와 예산 효율을 중시하는 서비스에서 강점이 있습니다.<br/>예비 고객이 자주 검색하는 앱개발 비용이나 앱개발 외주비용 관점에서도, 핵심 기능을 우선 구축하고 단계적으로 확장해야 하는 경우 실용적인 선택이 될 수 있습니다.</p>
+            <h3>3. 퍼블리싱 및 관리자 시스템 개발</h3><div>
+<div><h3>서비스 범위</h3><ul><li>웹퍼블리싱 및 CSS 디자인 시스템 구축</li><li>반응형 웹사이트 및 웹서비스 개발</li><li>백오피스·관리자 페이지 구축</li><li>회원, 결제, 데이터 관리 기능 개발</li><li>Spring·AWS 기반 운영 구조 설계</li></ul></div>
+</div><p><strong>웹서비스 및 관리자 시스템 개발</strong>은 단순히 기능만 구현하는 일이 아닙니다. <br/> 기획의 의도를 100화하는 정교한 <strong>웹퍼블리싱과 CSS 디자인 시스템 구축</strong>을 바탕으로, 화면의 완성도와 일관성을 높여야 비로소 뛰어난 사용자 경험이 완성됩니다.<br/>또한 실제 운영자가 데이터를 관리하고, 고객 문의를 처리하고, 콘텐츠와 권한을 통제할 수 있어야 서비스가 안정적으로 운영됩니다.<br/>슈퍼플래닝은 웹개발과 앱개발, 퍼블리싱 영역을 분리하지 않고 함께 설계해 사용자 화면과 운영 화면이 따로 놀지 않도록 유기적으로 연결합니다.</p>
+            <h3>4. 기존 개발물 리뉴얼 및 기능 고도화</h3><div>
+<div><h3>서비스 범위</h3><ul><li>기존 앱·웹 서비스 구조 개선</li><li>UI 리뉴얼 및 기능 추가</li><li>배포 이후 단계적 확장 지원</li></ul></div>
+</div><p><strong>기존 개발물 리뉴얼 및 기능 고도화</strong> 프로젝트도 주요 서비스 범위에 포함됩니다.<br/>신규 구축만 가능한 팀이 아니라, 이미 운영 중인 서비스의 문제를 분석하고 필요한 범위만 재정비하는 방식으로도 협업할 수 있습니다.<br/>이는 앱개발업체를 새로 찾는 고객뿐 아니라 기존 외주 프로젝트를 이어받아 안정화하려는 기업에게도 중요한 장점입니다.</p>
+          </div>
+          <h2 id="diff"><span class="sp-h2n" data-n="03">3.</span> 슈퍼플래닝만의 차별점: 풀스택 IT개발팀 보유(파견/상주 가능)</h2>
+          <p>슈퍼플래닝은 기획만 하는 조직도, 개발만 하는 조직도 아닙니다.<br>DB설계부터 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지<br>10년 차 이상 풀스택 전문팀이 상주 인력 체계로 협업합니다.</p>
+          <div style="width:100%; overflow-x:auto; margin:0 0 8px;"><table class="compare-table sp-tb-nw"><caption>표 1. 슈퍼플래닝 IT개발팀 핵심 기술 스택</caption><thead><tr><th scope="col">구분</th><th scope="col">기술 스택</th></tr></thead><tbody><tr><td><strong>DB·데이터</strong></td><td>PostgreSQL, Supabase, MongoDB, Pinecone·Milvus(AI 연동용 벡터 DB)</td></tr><tr><td><strong>서버·백엔드</strong></td><td>Node.js, NestJS, Python(FastAPI·Django), Serverless 구조 설계</td></tr><tr><td><strong>프론트엔드</strong></td><td>Next.js, React, TypeScript, Tailwind CSS</td></tr><tr><td><strong>모바일앱</strong></td><td>Flutter, Swift(iOS), Kotlin(Android), React Native</td></tr><tr><td><strong>인프라·배포</strong></td><td>AWS(EC2·S3·RDS) 인프라 구축, 무중단 배포 설계</td></tr><tr><td><strong>주요 개발 범위</strong></td><td>생성형 AI(LLM) 결합 개발, 레거시 리뉴얼, 백엔드 고도화, 연간 유지보수</td></tr></tbody></table></div>
+          <p class="sp-tray"><strong>보안이 중요한 프로젝트는 파견·상주도 가능합니다.</strong><br>공공기관·금융 프로젝트처럼 보안이 중요한 경우,<br>개발팀 파견과 상주근무로 밀착 대응합니다.</p>
+          
+          <div class="sp-more">
+            <p>"슈퍼플래닝의 차별점은 UI/UX 기획부터 QA·배포·연간 유지보수까지<br/>한 팀이 책임지는 구조로, 파견·상주 모두 가능한 풀스택 IT개발팀 보유입니다."</p>
+            <p>슈퍼플래닝의 강점은 기획만 하는 조직도, 개발만 하는 조직도 아니라는 점입니다.<br/>DB설계, 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지 연결 가능한 10년 차 이상 풀스택 전문팀이 상주 인력 체계로 협업하고 있어, 요구사항과 실제 구현 사이에서 발생하는 해석 오류를 줄일 수 있습니다.<br/>많은 기업이 앱개발업체를 선정할 때 포트폴리오만 비교하지만, 실제 프로젝트에서는 누가 요구사항을 정리하고 누가 책임 있게 연결하는지가 훨씬 중요합니다.<br/> <strong>슈퍼플래닝은 공공기관, 금융 프로젝트와 같이 보안이 중요한 경우 개발팀 파견, 상주근무도 가능합니다. </strong></p>
+            <div>
+<h3>슈퍼플래닝 IT개발팀 핵심 기술 스택</h3> <br/>
+<ul>
+<li><strong>DB 및 데이터 파이프라인:</strong> <br/> PostgreSQL, Supabase (BaaS), MongoDB, Pinecone/Milvus (AI 연동용 벡터 데이터베이스)</li>
+<li><strong>서버·백엔드:</strong> <br/> Node.js, NestJS, Python (FastAPI/Django - AI 모델 및 API 연동 최적화), Serverless 구조 설계</li>
+<li><strong>프론트엔드:</strong> <br/> Next.js (SEO 및 서버 사이드 렌더링 최적화), React, TypeScript, Tailwind CSS</li>
+<li><strong>모바일앱:</strong> <br/> Flutter 기반 크로스 플랫폼 앱, Swift (iOS), Kotlin (Android), React Native iOS/Android 및 <br/> 하이브리드앱 최적화 구현</li>
+<li><strong>인프라 및 배포 환경:</strong> <br/> AWS(EC2, S3, RDS) 인프라 구축, 무중단 배포 설계</li>
+<li><strong>주요 개발 범위:</strong> <br/> 생성형 AI(LLM) 서비스 결합 개발, 고성능 프론트엔드 구축(Next.js), UX/UI디자인, 웹 표준 퍼블리싱, 레거시 시스템 리뉴얼, 금융/플랫폼 수준의 백엔드 고도화 및 연간 IT 유지보수</li>
+</ul>
+</div>
+            <p>슈퍼플래닝은 DB설계, 서버·백엔드, 프론트엔드, 퍼블리싱, GUI디자인까지 연결 가능한 상주형 협업 체계를 바탕으로 웹개발, 모바일앱 개발, AI 연동, 유지보수까지 실무 중심으로 수행합니다.</p>
+            <p>특히 고객이 많이 검색하는 조건 중 하나가 앱개발자 상주근무 가능 여부입니다.<br/>프로젝트 성격에 따라 정기 미팅, 밀착 커뮤니케이션, 운영 대응 체계가 중요하기 때문입니다.<br/>슈퍼플래닝은 상주형에 준하는 협업 밀도와 실무 대응 중심의 커뮤니케이션 경험을 갖추고 있어, 외주라고 해서 요청사항 전달이 끊기거나 개발 방향이 어긋나는 문제를 줄이는 데 강점이 있습니다.</p>
+            <p>기술 역량만 나열하는 방식으로 끝나지 않는 것도 차별점입니다.<br/>앱개발 비용이나 웹개발 외주비용은 초기 제작비만으로 판단하기 어렵고, 이후 수정, 운영, 재개발 비용까지 함께 보아야 합니다.<br/>슈퍼플래닝은 처음부터 운영 가능한 구조를 전제로 설계하기 때문에 장기적으로 더 효율적인 방향을 제시할 수 있습니다.</p>
+          </div>
+          <h2 id="publishing"><span class="sp-h2n" data-n="04">4.</span> 퍼블리싱: 웹 퍼블리싱부터 상세페이지 HTML 변환까지</h2>
+          <p>전문 퍼블리셔가 함께하며, 디자인 이후 퍼블리싱까지 이어서 진행합니다.<br>이미 디자인이 있다면 퍼블리싱만 따로 맡기실 수도 있습니다.</p>
+          <div class="sp-cards sp-cols3 sp-lines sp-m1"><div class="sp-card"><span class="sp-num">01</span><h3>웹 퍼블리싱</h3><p>피그마 기반 웹 표준 퍼블리싱<br>반응형 웹·모바일 웹<br>관리자 화면·데이터 그리드</p></div><div class="sp-card"><span class="sp-num">02</span><h3>상세페이지 HTML 변환</h3><p>이미지 상세페이지를 HTML 텍스트로<br>오픈마켓·자사몰 규격 소스 제공<br>대표 2~3개 테스트 후 확대</p></div><div class="sp-card"><span class="sp-num">03</span><h3>퍼블리싱 단독 의뢰</h3><p>시안·피그마만 있는 프로젝트<br>기존 화면 웹 표준 정비<br>이후 프론트·백엔드 개발 연계</p></div></div>
+          <figure class="sp-hconv" aria-label="제품 상세페이지 HTML 변환 구조 — 제품 컷과 연출 사진은 이미지로 유지하고 제품명·전성분·용량·사용 방법은 온라인몰 제출용 HTML 텍스트로 퍼블리싱"><div class="sp-hc-card"><div class="sp-hc-l"><b>이미지 상세페이지 (JPG)</b><ul><li class="is-i"><em>IMG</em>제품 컷 · 패키지</li><li class="is-t"><em>TEXT</em>제품명 · 핵심 효능 문구</li><li class="is-i"><em>IMG</em>모델 · 연출 사진</li><li class="is-t"><em>TEXT</em>전성분 · 용량 · 규격</li><li class="is-t"><em>TEXT</em>사용 방법 · 주의사항 · FAQ</li></ul></div><div class="sp-hc-arr" aria-hidden="true"><i class="sp-arr"></i><small>HTML 변환</small></div><div class="sp-hc-code"><div class="sp-hc-bar"><i></i><i></i><i></i>product-detail.html</div><ol><li><code>&lt;center&gt;</code></li><li><code>&lt;img src="product.jpg"&gt;</code></li><li class=is-hl><code>&lt;p&gt;제품명 · 핵심 효능&lt;/p&gt;</code></li><li><code>&lt;img src="visual.jpg"&gt;</code></li><li class=is-hl><code>&lt;p&gt;전성분 · 용량 · 규격&lt;/p&gt;</code></li><li class=is-hl><code>&lt;p&gt;사용 방법 · FAQ&lt;/p&gt;</code></li><li><code>&lt;/center&gt;</code></li></ol><small>밝은 줄 = 검색·AI가 읽는 HTML 텍스트</small></div></div><figcaption class="photo-caption">[예시] 상세페이지 HTML 변환 구조 — 제품 사진은 이미지로 유지하고, 정보성 문구는 HTML 텍스트로 변환합니다.</figcaption></figure>
+          <div style="width:100%; overflow-x:auto; margin:0 0 8px;"><table class="compare-table"><caption>표 2. 주요 퍼블리싱 프로젝트</caption><thead><tr><th scope="col">고객사 · 프로젝트</th><th scope="col">퍼블리싱 특징</th></tr></thead><tbody><tr><td><strong>국토교통부 공간 빅데이터 체계</strong></td><td>Ext JS 기반 융합데이터 대시보드·목록 화면</td></tr><tr><td><strong>KT OneBox</strong></td><td>Natural-JS 기반 네트워크 토폴로지 맵·운영 관리 화면</td></tr><tr><td><strong>CJ대한통운 FC 입문포탈</strong></td><td>RealGrid 데이터 그리드 기반 업무 포털 화면</td></tr><tr><td><strong>HD현대인프라코어 엔진BG GEPS</strong></td><td>엔진 사업부 업무 시스템 화면 (구 두산인프라코어)</td></tr><tr><td><strong>한국비씨피솔루션즈</strong></td><td>데이터를 한눈에 보여 주는 대시보드 화면</td></tr></tbody></table></div>
+          <ul class="sp-linkcards"><li><a href="/ux-blog/product-detail-page-html-conversion-seo/">상세페이지 HTML 변환·퍼블리싱 가이드</a></li></ul>
+          
+          <div class="sp-more">
+            <p><strong>슈퍼플래닝은 전문 퍼블리셔가 함께하는 웹/앱 개발 에이전시로, 웹 표준 퍼블리싱과 제품 상세페이지 HTML 변환을 진행하고 웹사이트와 온라인몰에 바로 적용할 수 있는 HTML 소스까지 제공합니다.</strong></p>
+            <p>퍼블리싱은 디자인 시안을 실제로 동작하는 화면 코드로 옮기는 단계입니다.<br/>슈퍼플래닝은 UX기획·UI디자인 이후 퍼블리싱까지 이어서 진행하고, 이미 디자인이 있다면 퍼블리싱만 따로 맡길 수도 있습니다.</p>
+            <h3>1. 웹 퍼블리싱</h3><div>
+<div><h3>서비스 범위</h3><ul><li>피그마 디자인 기반 웹 표준 퍼블리싱</li><li>반응형 웹·모바일 웹 퍼블리싱</li><li>관리자 화면·대시보드·데이터 그리드 마크업</li><li>CSS 디자인 시스템·공통 컴포넌트 구축</li></ul></div>
+</div>
+            <h3>2. 제품 상세페이지 HTML 변환</h3><div>
+<div><h3>서비스 범위</h3><ul><li>JPG·PNG 이미지 상세페이지를 HTML 텍스트로 변환</li><li>오픈마켓·종합몰·자사몰 규격에 맞춘 HTML 소스 제공</li><li>대표 상세페이지 2~3개 테스트 후 전체 제품으로 확대</li><li>변환 문구의 오탈자·표기 교정</li></ul></div>
+</div><p><strong>제품 상세페이지 HTML 변환</strong>은 이미지 안에 갇혀 있던 제품명, 성분, 용량, 사용법을 텍스트로 바꿔 검색엔진과 생성형 AI가 읽을 수 있게 만드는 작업입니다.<br/>제품 사진과 연출 이미지는 그대로 두고 정보성 문구만 텍스트로 분리하므로, 기존 상세페이지의 디자인 톤을 유지할 수 있습니다.<br/>자세한 진행 방법은 <a href="/ux-blog/product-detail-page-html-conversion-seo/">상세페이지 HTML 변환·퍼블리싱 가이드</a>에서 확인할 수 있습니다.</p>
+            <h3>3. 퍼블리싱 단독 의뢰</h3><div>
+<div><h3>서비스 범위</h3><ul><li>디자인 시안·피그마 파일만 있는 프로젝트의 퍼블리싱</li><li>기존 화면의 퍼블리싱 개선·웹 표준 정비</li><li>개발팀에 전달할 HTML·CSS 소스 제작</li><li>퍼블리싱 이후 프론트엔드·백엔드 개발 연계</li></ul></div>
+</div><div>주요 퍼블리싱 프로젝트</div><table class="process-table">
+<colgroup><col/><col/></colgroup>
+<thead><tr><th scope="col">고객사 · 프로젝트</th><th scope="col">퍼블리싱 특징</th></tr></thead>
+<tbody>
+<tr><td><strong>국토교통부</strong><br/>공간 빅데이터 체계</td><td>Ext JS 기반 융합데이터 대시보드·목록 화면</td></tr>
+<tr><td><strong>KT</strong><br/>KT OneBox</td><td>Natural-JS 기반 본사·지사 네트워크 토폴로지 맵과 운영 관리 화면</td></tr>
+<tr><td><strong>CJ대한통운</strong><br/>FC 입문포탈</td><td>RealGrid 데이터 그리드 기반 업무 포털 화면</td></tr>
+<tr><td><strong>HD현대인프라코어</strong><br/>엔진BG GEPS (구 두산인프라코어)</td><td>엔진 사업부 업무 시스템 화면</td></tr>
+<tr><td><strong>한국비씨피솔루션즈</strong><br/>대시보드</td><td>데이터를 한눈에 보여 주는 대시보드 화면</td></tr>
+</tbody>
+</table><p>공공 빅데이터 시스템부터 통신사 네트워크 관리 화면까지, 정보량이 많고 복잡한 화면을 Ext JS·Natural-JS·RealGrid 등 다양한 UI 프레임워크로 구현해 온 퍼블리셔들이 웹사이트와 상세페이지 작업도 같은 기준으로 진행합니다.<br/>웹 퍼블리싱이나 상세페이지 HTML 변환이 필요하다면 <a href="/contact/">문의하기</a>로 디자인 파일이나 상세페이지 예시를 보내 주세요.<br/>담당 실무진이 진행 가능 여부와 기간, 견적을 빠르게 안내해 드립니다.</p>
+          </div>
+          <h2 id="process"><span class="sp-h2n" data-n="05">5.</span> 개발 진행 프로세스: UI/UX기획 부터 QA, 배포까지 </h2>
+          <p>기획, 디자인, 개발, 테스트, 배포가 따로 움직이면 일정과 예산이 흔들립니다.<br>슈퍼플래닝은 단계별 산출물과 검증 기준을 미리 합의하고 한 흐름으로 진행합니다.</p>
+          <div class="sp-cards sp-cols4 "><div class="sp-card"><span class="sp-num">01</span><h3>기획 Plan</h3><p>목표, 요구사항, 핵심 기능 범위와<br>우선순위를 정리합니다.</p><div class="sp-out"><small>산출물</small>요구사항 정리, 기능 범위표,<br>우선순위, 개발 방향 제안</div></div><div class="sp-card"><span class="sp-num">02</span><h3>설계 Architect</h3><p>서비스 구조, DB·서버 구조,<br>관리자·외부 연동을 설계합니다.</p><div class="sp-out"><small>산출물</small>서비스 구조도, 화면 흐름,<br>DB설계안, API·관리자 기능 정의</div></div><div class="sp-card"><span class="sp-num">03</span><h3>개발 Build</h3><p>디자인·퍼블리싱 결과로<br>프론트엔드·백엔드를 개발합니다.</p><div class="sp-out"><small>산출물</small>프론트엔드·백엔드 구현,<br>네이티브·하이브리드 앱, 웹서비스</div></div><div class="sp-card"><span class="sp-num">04</span><h3>테스트·배포 Operate</h3><p>QA와 오류 수정, 성능 점검을 거쳐<br>배포·운영까지 연결합니다.</p><div class="sp-out"><small>산출물</small>QA 결과, 배포본,<br>운영 체크리스트, 유지보수 계획</div></div></div>
+          <p class="sp-tray"><strong>앱 개발 기간은 QA 포함 보통 2~3개월입니다.</strong><br>앱 개발 견적에는 UI/UX디자인이 포함되며,<br>피그마 원본 소스까지 산출물로 제공합니다.</p>
+          
+          <div class="sp-more">
+            <p>"개발 진행 프로세스는 기획→디자인→요구사항 정의→퍼블리싱·구현→QA→배포→운영의 6단계로, 단계별 산출물과 검증 기준을 사전에 합의합니다."</p>
+            <p>웹/앱 프로젝트가 지연되거나 예산이 불필요하게 커지는 가장 큰 이유 중 하나는 기획, 디자인, 개발, 테스트, 배포가 서로 분리되어 움직이기 때문입니다.<br/>슈퍼플래닝은 이 비효율을 줄이기 위해 기획부터 디자인, 퍼블리싱, 개발, 검수, 배포까지 이어지는 원스톱 개발 프로세스로 프로젝트를 운영합니다.<br/>앱개발방법을 처음 검토하는 고객도 무엇부터 준비해야 하는지 이해하기 쉽도록 단계별 흐름을 분명하게 안내합니다.</p>
+            <table class="process-table">
+<thead><tr><th scope="col">단계</th><th scope="col">핵심 업무내용</th><th scope="col">주요 산출물</th></tr></thead>
+<tbody>
+<tr><td><strong>1st 기획<br/>Plan</strong></td><td>프로젝트 목표, 사용자 요구사항, 핵심 기능 범위, 우선순위를 정리합니다. 아이디어 단계라면 앱개발방법과 구축 방향을 구체화하고, 기존 서비스가 있다면 문제 구간과 리뉴얼 범위를 확인합니다.</td><td>요구사항 정리, 기능 범위표, 우선순위 정의, 개발 방향 제안</td></tr>
+<tr><td><strong>2nd 설계<br/>Architect</strong></td><td>서비스 구조, 화면 흐름, DB설계, 서버·백엔드 구조, 프론트엔드 구성, 관리자 페이지와 외부 연동 방식을 정리합니다. 개발 이후 수정 비용을 줄이기 위해 운영 구조까지 함께 검토합니다.</td><td>서비스 구조도, 화면 흐름, DB설계안, API·관리자 기능 정의</td></tr>
+<tr><td><strong>3rd 개발<br/>Build</strong></td><td>GUI디자인과 HTML 퍼블리싱 결과를 바탕으로 프론트엔드·백엔드 개발을 진행합니다. 프로젝트 성격에 따라 네이티브 앱 개발, 하이브리드 앱 개발, 웹서비스 구축을 병행하고, 실제 사용성과 구현 완성도를 함께 점검합니다.</td><td>프론트엔드 구현, 백엔드 개발, 네이티브/하이브리드 앱 개발, 웹서비스 개발</td></tr>
+<tr><td><strong>4th 테스트·배포<br/>Operate</strong></td><td>기능 테스트, 오류 수정, 성능 점검, 배포 준비를 거쳐 실제 운영 가능한 상태로 마무리합니다. 이후 앱스토어·배포 대응, 운영 안정화, 유지보수와 기능 고도화까지 연결합니다.</td><td>QA 결과, 수정 반영, 배포본, 운영 체크리스트, 유지보수 계획</td></tr>
+</tbody>
+</table>
+            <p>이 프로세스의 장점은 단순히 순서가 깔끔하다는 점이 아닙니다.<br/>앱개발업체와 협업할 때 가장 많이 생기는 문제인 해석 차이, 기능 누락, 예산 초과를 줄이는 구조라는 점이 중요합니다.<br/>그래서 신규 서비스 구축뿐 아니라 기존 서비스 리뉴얼, 기능 추가, 운영 안정화 프로젝트에도 유연하게 적용할 수 있습니다.</p>
+          </div>
+          <h2 id="maintenance"><span class="sp-h2n" data-n="06">6.</span> 연간 유지보수: 고도화 및 안정화 작업 </h2>
+          <p>개발 비용은 제작비만이 아니라 운영 단계까지 함께 봐야 합니다.<br>장애 대응, 기능 개선, 성능 점검, 보안 보완까지 장기 관점에서 지원합니다.</p>
+          <div class="sp-cards sp-cols3 sp-nonum sp-mini sp-inset"><div class="sp-card"><h3>AI 연동 개발</h3><p>챗봇·추천·요약·자동화 기능을<br>서비스 목적에 맞게 연동합니다.</p></div><div class="sp-card"><h3>기능 고도화·안정화</h3><p>배포 후 이슈·속도·관리자 기능을<br>단계적으로 보완합니다.</p></div><div class="sp-card"><h3>연간 유지보수 운영</h3><p>오류 수정·성능 점검·보안 보완을<br>지속적으로 관리합니다.</p></div></div>
+
+          
+          <div class="sp-more">
+            <p>"연간 유지보수는 오류 수정·기능 개선·성능 점검·보안 보완·운영 대응 체계를 지속적으로 관리해 초기 구축 이후 필요한 리뉴얼과 구조 개선까지 이어서 대응합니다."</p>
+            <div>
+<p>최근에는 단순한 웹개발이나 앱개발을 넘어, AI 기능을 실제 서비스에 어떻게 연결할 수 있는지에 대한 문의가 크게 늘고 있습니다.<br/>예를 들어 챗봇, 추천 기능, 자동 분류, 텍스트 생성, 요약, 데이터 분석, 운영 자동화 같은 기능은 이제 많은 기업이 검토하는 기본 옵션에 가깝습니다.<br/>슈퍼플래닝은 이러한 흐름에 맞춰 AI 서비스 개발과 기존 웹/앱 서비스의 AI 연동 고도화를 함께 지원합니다.</p>
+<div>
+<div><h3>AI 연동 개발</h3><p>챗봇, 추천, 자동화, 텍스트 처리, 요약, 데이터 분석 등 서비스 목적에 맞는 AI 기능을 웹/앱에 연동합니다.<br/>앱개발ai를 단순 유행이 아니라 실제 운영 효율과 사용자 경험 개선 관점에서 설계합니다.</p></div>
+<div><h3>기능 고도화 및 안정화</h3><p>배포 이후 발견되는 이슈, 속도 저하, 운영 불편, 관리자 기능 부족 문제를 점검하고 단계적으로 보완합니다.<br/>초기 구축 이후 필요한 리뉴얼과 구조 개선까지 이어서 대응합니다.</p></div>
+<div><h3>연간 유지보수 운영</h3><p>오류 수정, 기능 개선, 성능 점검, 보안 보완, 운영 대응 체계를 지속적으로 관리합니다.<br/>앱개발 비용은 제작만이 아니라 운영 단계까지 함께 봐야 한다는 점에서 중요한 영역입니다.</p></div>
+</div>
+<p>검색 사용자가 많이 찾는 표현으로 말하면, 앱개발 AI 연동은 더 이상 일부 대기업만의 영역이 아닙니다.<br/>스타트업, 중소기업, 플랫폼 서비스도 예산 범위 안에서 필요한 기능만 단계적으로 도입할 수 있습니다.<br/>중요한 것은 화려한 AI 기능을 많이 넣는 것이 아니라, 서비스 목적과 실제 사용자 행동에 맞게 어떤 자동화와 추천, 응답 기능이 필요한지 판단하는 것입니다.</p>
+<p>또 하나 중요한 영역은 유지보수입니다.<br/>많은 고객이 앱개발 비용만 먼저 검색하지만, 실제로는 배포 이후의 안정화와 운영 대응이 서비스 완성도를 좌우합니다.<br/>슈퍼플래닝은 기존 개발물 리뉴얼, 장애 대응, 기능 개선, 성능 점검, 보안 보완, 연간 운영 유지보수까지 장기 관점에서 지원할 수 있는 체계를 갖추고 있습니다.</p>
+</div>
+          </div>
           <section class="section" id="faq">
 
-          <h2 id="faq">7. 자주 묻는 질문 (FAQ)</h2>
+          <h2 id="faq"><span class="sp-h2n" data-n="07">7.</span> 자주 묻는 질문 (FAQ)</h2>
           <p class="ai-answer-first">"아래에서 자주 묻는 질문과 답변을 확인하시거나, 문의하기로 직접 연락하실 수 있습니다."</p>
 <dl class="faq">
 <div><dt>웹개발과 앱개발을 함께 의뢰할 수 있나요?</dt><dd>네, 가능합니다.<br>슈퍼플래닝은 웹사이트, 관리자 페이지, 백오피스, 모바일앱 개발을 하나의 흐름 안에서 설계하고 구축할 수 있습니다.<br>그래서 사용자용 앱과 운영용 웹 시스템이 따로 놀지 않도록 일관성 있게 개발할 수 있습니다.</dd></div>
@@ -1612,14 +1602,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div><dt>퍼블리싱만 따로 의뢰할 수 있나요?</dt><dd>네, 가능합니다.<br>슈퍼플래닝에는 전문 퍼블리셔들이 함께하고 있어, 피그마 디자인이나 시안만 있는 경우에도 웹 표준 퍼블리싱만 별도로 진행할 수 있습니다.<br>퍼블리싱 이후 프론트엔드·백엔드 개발까지 이어서 맡길 수도 있습니다.</dd></div>
 <div><dt>이미지로 된 제품 상세페이지를 HTML로 변환해 줄 수 있나요?</dt><dd>네, 가능합니다.<br>제품명, 성분, 용량, 사용법 같은 정보성 문구를 HTML 텍스트로 변환하고, 각 온라인몰에 바로 적용할 수 있는 형태의 HTML 소스까지 제공합니다.<br>대표 상세페이지 2~3개로 테스트한 뒤 전체 제품으로 확대할 수 있습니다.</dd></div>
 </dl>
-          <div class="sp-faq-cta">
-            <span class="sp-faq-cta-wrap"><span class="sp-faq-tip">정리 안 된 생각도 가볍게</span>
-            <a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg> <span>문의하기</span></a></span>
-          </div>
-          <div class="bottom-nav">
-            <p>이전 단계: <a href="/ux-design/">UX기획/디자인</a> &nbsp;|&nbsp; 다음 단계: <a href="/ux-academy/">AI-UX강의</a></p>
-            
-          </div>
+          <div class="sp-faq-cta"><div class="sp-cta-band"><div><strong>정리 안 된 생각도 가볍게 문의 남겨 주세요.</strong></div><a href="/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenInquiry ? spOpenInquiry() : true;">웹/앱 개발 문의하기</a></div></div>
+          <div class="bottom-nav"><nav class="sp-pn" aria-label="이전·다음 단계"><a class="prev" href="/ux-design/"><span><small>이전 단계</small><b>UX기획/디자인</b></span></a><a class="next" href="/ux-academy/"><span><small>다음 단계</small><b>AI-UX강의</b></span></a></nav></div>
         </main>
       </div>
 
@@ -2031,23 +2015,10 @@ table.process-table tbody td strong {
   </div>
 
     <!-- START MENU -->
-  <div id="startMenu">
-    <div class="start-banner">SUPERPLANNING</div>
-    <div class="start-items">
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();">• 포트폴리오 보기</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();">• 인스타그램</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();">• 쓰레드</div>
-      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();">• 유튜브</div>
-      <hr style="margin:4px 0; border:0; border-top:1px solid #7b7b7b;">
-      <div class="start-item" onclick="location.href='/ux-research/'; closeStart();">• UX리서치</div>
-      <div class="start-item" onclick="location.href='/ux-writing/'; closeStart();">• UX라이팅</div>
-      <div class="start-item" onclick="location.href='/ux-design/'; closeStart();">• UX기획/디자인</div>
-      <div class="start-item" onclick="location.href='/web-app-development/'; closeStart();">• 웹/앱 개발</div>
-      <div class="start-item" onclick="location.href='/ux-academy/'; closeStart();">• AI-UX강의</div>
-      <div class="start-item" onclick="location.href='/ux-blog/'; closeStart();">• UX블로그</div>
-      <div class="start-item" onclick="location.href='/ux-company/'; closeStart();">• 회사소개</div>
-      <div class="start-item" onclick="location.href='/contact/'; closeStart();">• 문의하기</div>
-    </div>
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><span>유튜브</span></div></div>
   </div>
 
   <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
@@ -2063,7 +2034,6 @@ table.process-table tbody td strong {
       </div>
     </div>
     <div class="taskbar-right">
-      <span id="taskWeather" style="font-size:11px; font-weight:normal; opacity:0.95; display:inline-flex; align-items:center; gap:3px;">📍 서울 ☀️ 24°C</span>
       <span id="taskClock">12:00:00 PM</span>
     </div>
   </div>
@@ -2102,11 +2072,10 @@ table.process-table tbody td strong {
       'blog': { w: 600, h: 420, title: '• UX 블로그' },
       'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
       'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
-      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 쓰레드' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 스레드' },
       'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
       'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
-      'careers': { w: 580, h: 400, title: '🤝 인재 채용' },
-      'tweaks': { w: 480, h: 265, title: '⚙️ 환경 설정' }
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' }
     };
 
     function openWindow(key) {
@@ -2180,7 +2149,7 @@ table.process-table tbody td strong {
             </h2>
 
             <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
-              이탈은 줄이고 전환은 높이는 사용자 경험을 설계 합니다.
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
             </p>
           </div>
 
@@ -2391,7 +2360,7 @@ table.process-table tbody td strong {
 
               <div>
                 <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
-                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 쓰레드</p>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
                 <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
                   최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
                 </p>
@@ -2408,7 +2377,7 @@ table.process-table tbody td strong {
                 <img src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
                 @ux_superplanning
               </span>
-              <span>슈퍼플래닝 공식 쓰레드</span>
+              <span>슈퍼플래닝 공식 스레드</span>
             </div>
           </div>
         `;      } else if (key === 'intro-video') {
@@ -2443,24 +2412,7 @@ table.process-table tbody td strong {
             <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
           </div>
           <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
-        `;      } else if (key === 'tweaks') {
-        return `
-          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">시스템 환경 설정 (Tweaks)</h3>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">데스크톱 테마 선택:</label>
-            <select class="w95-box-sunken" style="padding:4px; font-size:12px; width:100%;" onchange="if(typeof setTheme==='function') setTheme(this.value)">
-              <option value="light">Teal Classic (기본 1995)</option>
-              <option value="dark">Dark Slate (다크 모드)</option>
-              <option value="matrix">Matrix Green (이스터에그 테마)</option>
-            </select>
-          </div>
-          <div style="margin-bottom:12px;">
-            <label style="font-weight:700; display:block; margin-bottom:4px;">사운드 효과:</label>
-            <button class="w95-btn" id="tweakSoundBtn" onclick="if(typeof toggleSound==='function') toggleSound();">사운드: ON 🔊</button>
-          </div>
-          <hr style="margin:10px 0;">
-          <button class="w95-btn" style="background:#cc0000; color:#fff;" onclick="if(typeof triggerBSOD==='function') triggerBSOD();">팀장님, 갑자기 PC가 고장났어요! (블루스크린 띄우기)</button>
-        `;
+        `;      
       }
       return '<div>내용을 불러올 수 없습니다.</div>';
     }
@@ -2609,20 +2561,14 @@ table.process-table tbody td strong {
   <div id="stickyKakaoBanner" style="position:fixed; top:68px; left:calc(24px + 1100px + 12px); z-index:999998; width:215px; background:#c0c0c0; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35); font-family:var(--font, sans-serif);">
     <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:11px; font-weight:bold; display:flex; align-items:center; gap:4px; user-select:none;">
       <span>💬</span>
-      <span>실시간 상담</span>
+      <span>UX프로젝트 문의</span>
     </div>
     <div style="padding:8px 10px 10px; background:#ffffff; border-top:1px solid #000000; display:flex; flex-direction:column; gap:6px;">
-      <div data-sp-live="mini"></div>
-      <div>
+      <div data-sp-live class="sp-live-q"></div>
+      <div class="sp-qb-contact">
         <h4 style="margin:0 0 5px 0; font-size:10.5px; font-weight:800; color:#000000; letter-spacing:-0.03em; word-break:keep-all; white-space:nowrap;">신속한 문의답변 (보통 10분 이내 응답)</h4>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between;">
-          <span>문의전화: 031-699-3298</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button>
-        </div>
-        <div style="font-size:10.5px; color:#555555; font-weight:500; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
-          <span style="letter-spacing:-0.02em;">이메일: jake@superplanning.co.kr</span>
-          <button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button>
-        </div>
+        <div class="sp-qb-row"><span class="sp-qb-k">문의전화</span><b class="sp-qb-v">031-699-3298</b><button type="button" class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0;">복사</button></div>
+        <div class="sp-qb-row"><span class="sp-qb-k">이메일</span><b class="sp-qb-v">jake@superplanning.co.kr</b><button type="button" class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)" style="padding:1px 5px; font-size:9.5px; font-weight:bold; cursor:pointer; flex-shrink:0; margin-left:2px;">복사</button></div>
       </div>
       <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="w95-btn sp-qb-kakao" onclick="window.spQB && spQB('kakao', 'pc');" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#ffffff; color:#000000;"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담하기</span></a>
       <a href="/contact/" class="w95-btn sp-qb-inquiry" onclick="window.spQB && spQB('inquiry', 'pc'); return window.spOpenInquiry ? spOpenInquiry() : true;" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 8px; font-size:12.5px; font-weight:800; border:1px solid #000000; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.3); background:#000000; color:#ffffff;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의하기</span></a>
@@ -2872,7 +2818,7 @@ function showCopySuccess(text, label, btn) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
 })();
 </script>
-<script src="/assets/sp-inquiry.js?v=68" defer></script>
+<script src="/assets/sp-inquiry-b.js?v=178" defer></script>
   <!-- 78: 모바일 하단 고정 바 (카카오톡 상담 · 프로젝트 문의) -->
   <div id="spMobileCtaBar" role="navigation" aria-label="상담·문의 바로가기">
     <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="sp-mcb-kakao" onclick="window.spQB && spQB('kakao', 'mobile');"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담</span></a>
@@ -2884,6 +2830,7 @@ window.spQB = function (btn, pos) {
 };
 </script>
 <script src="/assets/sp-mnav.js?v=99" defer></script>
-<script src="/assets/sp-live.js?v=108" defer></script>
+<script src="/assets/sp-live.js?v=178" defer></script>
+<script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
 </body>
 </html>
