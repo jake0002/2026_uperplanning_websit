@@ -1780,3 +1780,12 @@ html.sp-b .sp-paren { display: none; } /* 회차 제목 괄호: 문서 글자(H3
 @media (max-width: 768px) { html.sp-b:has(#stickyCourseBanner) .main-content-pane :is(p, li, td, th, h2, h3) { text-wrap: pretty; } }
 @media (max-width: 768px) { html.sp-b .main-content-pane .hero-intro.sp-hero-pill { font-size: 18px !important; } html.sp-b .main-content-pane .hero-intro.sp-hero-pill br { display: none; } }
 @media (max-width: 768px) { html.sp-b figure.sp-alogos { padding: 12px !important; } html.sp-b figure.sp-alogos li { min-width: 0; height: 52px; padding: 0 8px; } html.sp-b .main-content-pane figure.sp-alogos img { max-width: 100% !important; max-height: 28px !important; } }
+/* 166 수강신청 배너: A~D코스 탭 = 볼록 버튼(카카오 상담 버튼과 같은 결), 선택 = 검정 / 기간한정 할인 = 오목 */
+html.sp-b #stickyCourseBanner .sticky-tabs-header { gap: 6px !important; padding: 4px 2px 6px !important; }
+html.sp-b #stickyCourseBanner .sticky-tab-btn { background: var(--sp-surface) !important; box-shadow: var(--sp-raised-s) !important; border-radius: 999px !important; position: relative; }
+html.sp-b #stickyCourseBanner .sticky-tab-btn.is-active { background: #111 !important; box-shadow: 3px 3px 7px rgba(26,31,36,.25) !important; }
+html.sp-b #stickyCourseBanner .sticky-badge-sale { background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s) !important; }
+html.sp-b #stickyCourseBanner .sticky-btn-kakao, html.sp-b #stickyCourseBanner .sticky-btn-apply { position: relative; }
+/* 166 모든 버튼 마우스오버 선 마이크로인터랙션: 모달 버튼·선택지 포함 */
+html.sp-b .spq-ov svg.sp-trace, html.sp-b #stickyCourseBanner svg.sp-trace, html.sp-b .sp-rv svg.sp-trace { width: 100% !important; height: 100% !important; left: 0 !important; top: 0 !important; margin: 0 !important; }
+html.sp-b .sp-rv.sp-rv-roll ul.sp-rv-track { scroll-snap-type: none !important; scroll-behavior: auto !important; }

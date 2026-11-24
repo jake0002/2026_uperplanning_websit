@@ -53,7 +53,9 @@
   if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   var SEL = '.win[data-key="services"] .card-grid .info-card, .desktop-icon, #skyscraper a[href*="open.kakao.com"], .gnb-right > .w95-btn, #gnb .gnb-link, #brandLogo' +
     /* 152(11-23 19:18): 서브페이지 — 이전/다음 단계, 퀵배너 카카오·문의·복사, 뒤로, CTA 띠 버튼, FAQ 질문, 링크 카드 */
-    ', .sp-pn a, #stickyKakaoBanner a, #stickyKakaoBanner .sp-qb-row button, .toolbar-area .tool-btn, .sp-cta-band .sp-faq-cta-btn, .faq dt, ul.sp-linkcards a';
+    ', .sp-pn a, #stickyKakaoBanner a, #stickyKakaoBanner .sp-qb-row button, .toolbar-area .tool-btn, .sp-cta-band .sp-faq-cta-btn, .faq dt, ul.sp-linkcards a' +
+    /* 166(11-24 10:14 '모든 버튼'): 수강신청 배너 탭·카카오·신청, 후기 보드 버튼, 페이지 안 알약 버튼, 문의·강의 신청·접수 완료 창의 버튼·선택지, 팝업 버튼 */
+    ', #stickyCourseBanner button, .sp-rv-ctl button, .sp-rv-more a, .sp-rvsum a, a.sp-aorg-btn, a.sp-aibtn, a.sp-pill-link, .sp-pop-btn, .sp-pop-cta, .spq-ov button, .spq-ov a.spq-kakao, .spq-ov .spq-chip, .spq-ov .spq-opt, .sp-sns a';
   var NS = 'http://www.w3.org/2000/svg';
   function prep(el) {
     if (el.querySelector(':scope > .sp-trace')) return;
@@ -140,10 +142,10 @@
         }
       });
     });
-    function idx() { var w = cards[0].offsetWidth + 16, max = tr.scrollWidth - tr.clientWidth; return tr.scrollLeft >= max - 2 && max > 0 ? Math.ceil(max / w) : Math.round(tr.scrollLeft / w); }
+    function idx() { var w = cards[0].offsetWidth + 16, max = tr.scrollWidth - tr.clientWidth; if (root.classList.contains('sp-rv-roll')) return Math.round(tr.scrollLeft / w) % cards.length; return tr.scrollLeft >= max - 2 && max > 0 ? Math.ceil(max / w) : Math.round(tr.scrollLeft / w); }
     function upd() {
       var i = idx(), vis = Math.max(1, Math.floor(tr.clientWidth / (cards[0].offsetWidth + 8)));
-      cnt.textContent = pad(Math.min(n, i + 1)) + '–' + pad(Math.min(n, i + vis)) + ' / ' + pad(n);
+      cnt.textContent = root.classList.contains('sp-rv-roll') ? pad(i + 1) + '–' + pad((i + vis - 1) % n + 1) + ' / ' + pad(n) : pad(Math.min(n, i + 1)) + '–' + pad(Math.min(n, i + vis)) + ' / ' + pad(n);
       [].forEach.call(prog.children, function (d, k) { d.classList.toggle('on', k === i); });
     }
     function go(d) { var w = cards[0].offsetWidth + 16, max = tr.scrollWidth - tr.clientWidth;
@@ -152,17 +154,31 @@
     root.querySelector('.sp-rv-next').addEventListener('click', function () { go(1); });
     /* 159: 자동 넘김·일시정지 제거(사용자 11-23 21:22) — 이전/다음 버튼·가로 스와이프로만 이동 */
     tr.addEventListener('scroll', function () { requestAnimationFrame(upd); }, { passive: true }); window.addEventListener('resize', upd); upd();
-    /* 165: data-autoplay 가 있는 보드(AI-UX강의, 피그마 49:838)만 자동 넘김 + 일시정지 버튼. 마우스 올림·포커스·동작 줄이기·화면 밖이면 멈춤 */
-    var ms = +root.getAttribute('data-autoplay'), pb = root.querySelector('.sp-rv-pause');
-    if (ms && pb) {
-      var off = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, hold = false, seen = true;
+    /* 166: data-autoplay 보드(AI-UX강의) = 끊김 없이 흐르는 자동 롤링(라이브와 같은 방식, 카드 복제로 무한 반복) + 일시정지/재생.
+       마우스 올림·포커스·손가락 조작 중·화면 밖·동작 줄이기 설정이면 멈춤. 이전/다음 버튼은 카드 1장씩 이동 */
+    var pb = root.querySelector('.sp-rv-pause');
+    if (root.hasAttribute('data-autoplay') && pb) {
+      root.classList.add('sp-rv-roll');
+      cards.forEach(function (c) { var k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('sp-rv-clone'); [].forEach.call(k.querySelectorAll('a,button'), function (x) { x.tabIndex = -1; }); tr.appendChild(k); });
+      var off = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches), hold = false, seen = true, pos = tr.scrollLeft, ours = false, holdT = null;
+      var loopW = function () { var c0 = tr.querySelector('.sp-rv-clone'); return c0 ? c0.offsetLeft - cards[0].offsetLeft : 0; };
       var setp = function (v) { off = v; pb.setAttribute('aria-pressed', v ? 'true' : 'false'); pb.textContent = v ? '재생' : '일시정지'; };
       setp(off);
       pb.addEventListener('click', function () { setp(!off); });
-      root.addEventListener('mouseenter', function () { hold = true; }); root.addEventListener('mouseleave', function () { hold = false; });
-      root.addEventListener('focusin', function () { hold = true; }); root.addEventListener('focusout', function () { hold = false; });
+      var pause = function (ms) { hold = true; clearTimeout(holdT); if (ms) holdT = setTimeout(function () { hold = false; pos = tr.scrollLeft; }, ms); };
+      root.addEventListener('mouseenter', function () { pause(0); }); root.addEventListener('mouseleave', function () { hold = false; pos = tr.scrollLeft; });
+      root.addEventListener('focusin', function () { pause(0); }); root.addEventListener('focusout', function () { hold = false; pos = tr.scrollLeft; });
+      tr.addEventListener('touchstart', function () { pause(0); }, { passive: true }); tr.addEventListener('touchend', function () { pause(2500); }, { passive: true });
+      [root.querySelector('.sp-rv-prev'), root.querySelector('.sp-rv-next')].forEach(function (b) { b.addEventListener('click', function () { pause(2500); }); });
+      tr.addEventListener('scroll', function () { if (!ours) pos = tr.scrollLeft; ours = false; }, { passive: true });
       if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { seen = e[0].isIntersecting; }).observe(root);
-      setInterval(function () { if (!off && !hold && seen && !document.hidden) go(1); }, ms);
+      (function step() {
+        if (!off && !hold && seen && !document.hidden) {
+          var w = loopW(); pos += 0.45; if (w > 0 && pos >= w) pos -= w;
+          ours = true; tr.scrollLeft = pos;
+        }
+        requestAnimationFrame(step);
+      })();
     }
   }
   function boot() { [].forEach.call(document.querySelectorAll('.sp-rv'), init); }
