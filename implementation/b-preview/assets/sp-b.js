@@ -211,9 +211,28 @@
     var cta = sheet.querySelector('.spm-cta'); if (!cta) return;
     cta.insertAdjacentHTML('beforebegin', html);
   }
+  /* 172(사용자 16:19 '모바일에서 프로젝트 문의 → 예전 입력폼'): ① 미리보기에선 모바일 메뉴·시트 링크를 미리보기 페이지로(라이브 옛 페이지로 나가지 않게)
+     ② 시트의 '프로젝트 문의하기' = 하단 바와 같은 B안 문의 모달(문의하기 페이지에선 페이지 폼으로 이동) */
+  var PV = location.pathname.indexOf('/b-preview/') === 0, PVP = ['/ux-research/', '/ux-writing/', '/ux-design/', '/web-app-development/', '/ux-academy/', '/ux-blog/', '/ux-company/', '/contact/'];
+  function links(root) {
+    if (root.getAttribute('data-bl')) return; root.setAttribute('data-bl', '1');
+    if (PV) [].forEach.call(root.querySelectorAll('a[href^="/"]'), function (a) {
+      var h = a.getAttribute('href'); if (h.indexOf('/b-preview/') === 0) return;
+      var base = h.replace(/#.*$/, ''), hash = h.slice(base.length);
+      if (base === '/' || PVP.indexOf(base) >= 0) a.setAttribute('href', '/b-preview' + base + hash);
+    });
+    var inq = root.querySelector('.spm-cta a[data-spm="inq"]');
+    if (inq) inq.addEventListener('click', function (e) {
+      var f = document.getElementById('projectInquiryForm'), sh = document.getElementById('spMnavSheet'), btn = document.querySelector('#spMnav .spm-all');
+      var close = function () { if (sh && sh.classList.contains('is-open') && btn) btn.click(); };
+      if (f && f.closest('.sp-kform')) { e.preventDefault(); close(); setTimeout(function () { f.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60); return; }
+      if (window.spOpenInquiry) { e.preventDefault(); close(); setTimeout(function () { window.spOpenInquiry(); }, 60); }
+    });
+  }
   function scan() {
     var t = document.getElementById('spSwipeToast'); if (t) toast(t);
-    var s = document.getElementById('spMnavSheet'); if (s) lang(s);
+    var s = document.getElementById('spMnavSheet'); if (s) { lang(s); links(s); }
+    var m = document.getElementById('spMnav'); if (m) links(m);
   }
   /* 미리보기 경로(/b-preview/)에선 sp-mnav.js 가 '/' 만 보고 토스트를 안 띄우므로 같은 규칙(모바일·세션 1회·1.5초)으로 대신 띄움. 정식 전환 후엔 sp-mnav.js 가 띄우고 위 toast()가 모양만 바꿈 */
   if (location.pathname === '/b-preview/' && window.matchMedia('(max-width: 768px)').matches) {

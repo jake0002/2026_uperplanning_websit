@@ -2298,3 +2298,25 @@ html.sp-b .main-content-pane figure.sp-pan .sp-pan-w img { position: absolute; i
 @keyframes spPanY { 0%, 8% { object-position: 50% 0%; } 92%, 100% { object-position: 50% 100%; } }
 @media (prefers-reduced-motion: reduce) { html.sp-b .main-content-pane figure.sp-pan .sp-pan-w img { animation: none; object-position: 50% 30%; } }
 @media (max-width: 768px) { html.sp-b .main-content-pane figure.sp-pan .sp-pan-w { aspect-ratio: 16 / 9; } }
+
+/* ===== 172(11-24 16:19): 문의하기 사진 보드 = 밝은 뉴모피즘 · 간판 루프 더 빠르게·낮게 · 약도 빨간 점 퍼지는 원 ===== */
+html.sp-b .main-content-pane section.sp-rv.sp-kgal2 { background: var(--sp-bg) !important; color: var(--sp-text); box-shadow: -10px -10px 22px rgba(255,255,255,.9), 10px 10px 22px rgba(26,31,36,.12) !important; border: 1px solid rgba(255,255,255,.7); }
+html.sp-b .main-content-pane .sp-kgal2 .sp-rv-top p.sp-kgal2-t { color: var(--sp-text) !important; }
+html.sp-b .main-content-pane .sp-kgal2 .sp-rv-top p { color: var(--sp-text-2) !important; }
+html.sp-b .sp-kgal2 .sp-rv-prev, html.sp-b .sp-kgal2 .sp-rv-next { width: 56px; height: 36px; border-radius: 999px !important; background-color: var(--sp-surface) !important; box-shadow: var(--sp-raised-s) !important; background-size: 28px 6px !important; }
+html.sp-b .sp-kgal2 .sp-rv-prev, html.sp-b .sp-kgal2 .sp-rv-next { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='7' viewBox='0 0 40 7'%3E%3Cpath d='M0 6.4H39L31 .6' fill='none' stroke='%23111' stroke-width='1.4'/%3E%3C/svg%3E") !important; }
+html.sp-b .sp-kgal2 .sp-rv-prev:active, html.sp-b .sp-kgal2 .sp-rv-next:active { box-shadow: var(--sp-inset-s) !important; background-color: var(--sp-inset) !important; }
+html.sp-b .sp-kgal2 .sp-rv-count { color: var(--sp-text) !important; }
+html.sp-b .sp-kgal2 ul.sp-rv-track { padding: 8px 8px 18px !important; margin: -8px -8px 0 !important; scroll-padding-inline: 8px; }
+html.sp-b .sp-kgal2 .sp-rv-card.sp-kph { background: var(--sp-surface); padding: 10px; border: 1px solid rgba(255,255,255,.8); box-shadow: -6px -6px 14px rgba(255,255,255,.9), 6px 6px 14px rgba(26,31,36,.11); }
+html.sp-b .sp-kgal2 .sp-rv-prog i { background: #C9CED4; } html.sp-b .sp-kgal2 .sp-rv-prog i.on { background: var(--sp-ink); }
+html.sp-b .sp-kgal2 .sp-rv-prog { margin-top: 6px; }
+
+html.sp-b .main-content-pane figure.sp-pan .sp-pan-w { aspect-ratio: 1183 / 320; }
+html.sp-b .main-content-pane figure.sp-pan .sp-pan-w img { animation-duration: 8s; }
+@media (max-width: 768px) { html.sp-b .main-content-pane figure.sp-pan .sp-pan-w { aspect-ratio: 2 / 1; } }
+
+html.sp-b .sp-pin-pulse { transform-box: fill-box; transform-origin: center; opacity: 0; animation: spPinPulse 2.6s cubic-bezier(.22,.61,.36,1) infinite; }
+html.sp-b .sp-pin-pulse2 { animation-delay: 1.3s; }
+@keyframes spPinPulse { 0% { transform: scale(.3); opacity: .55; } 70% { opacity: .12; } 100% { transform: scale(1.9); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { html.sp-b .sp-pin-pulse { animation: none; } }
