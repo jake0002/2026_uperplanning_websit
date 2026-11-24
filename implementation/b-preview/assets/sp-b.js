@@ -278,3 +278,31 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+/* 177(사용자 11-24 19:31 '5-B'): AI-UX강의 코스 비교표(머리글 5칸 이상) → 모바일 코스별 카드. 표 HTML·문구는 그대로 두고(PC·검색엔진), 카드는 표에서 복사해 모바일에서만 보임(CSS) */
+(function () {
+  if (!document.documentElement.classList.contains('sp-b')) return;
+  function run() {
+    [].forEach.call(document.querySelectorAll('.main-content-pane .sp-atable-wrap'), function (w) {
+      var t = w.querySelector('table'); if (!t || !t.tHead || !t.tHead.rows[0] || w.classList.contains('sp-has-cards')) return;
+      var hc = t.tHead.rows[0].cells; if (hc.length < 5) return;
+      var rows = [].slice.call(t.tBodies[0] ? t.tBodies[0].rows : []); if (!rows.length) return;
+      var box = document.createElement('div'); box.className = 'sp-ccards'; box.setAttribute('role', 'list');
+      for (var c = 1; c < hc.length; c++) {
+        var card = document.createElement('div'); card.className = 'sp-ccard'; card.setAttribute('role', 'listitem');
+        var h = document.createElement('div'); h.className = 'sp-ccard-h';
+        var b = document.createElement('b'); b.textContent = hc[c].textContent.trim(); h.appendChild(b);
+        var dl = document.createElement('dl');
+        rows.forEach(function (r) {
+          var lab = r.cells[0] ? r.cells[0].textContent.trim() : '', cell = r.cells[c]; if (!cell) return;
+          if (/강의시간/.test(lab)) { var s = document.createElement('span'); s.textContent = cell.textContent.trim(); h.appendChild(s); return; }
+          var dt = document.createElement('dt'); dt.textContent = lab;
+          var dd = document.createElement('dd'); dd.innerHTML = cell.innerHTML;
+          dl.appendChild(dt); dl.appendChild(dd);
+        });
+        card.appendChild(h); card.appendChild(dl); box.appendChild(card);
+      }
+      w.classList.add('sp-has-cards'); w.parentNode.insertBefore(box, w.nextSibling);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();

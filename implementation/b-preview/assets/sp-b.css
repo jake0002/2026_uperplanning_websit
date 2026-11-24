@@ -2424,3 +2424,28 @@ html.sp-b ul.sp-postlist a { display: block; padding: 7px 10px; border-radius: 8
 html.sp-b ul.sp-postlist a:hover { color: #111; background: rgba(255,255,255,.45); }
 html.sp-b ul.sp-postlist a[aria-current] { color: #111; font-weight: 700; background: var(--sp-inset); box-shadow: var(--sp-inset-s); }
 @media (max-width: 768px) { html.sp-b .tree-sidebar .sp-postside { position: static; } html.sp-b .sp-postall { margin-left: 0; } }
+/* 177 (사용자 11-24 19:31 '4-A·5-B') */
+html.sp-b br.sp-mbr { display: none; }
+@media (max-width: 768px) {
+  /* 4-A② 홈 모바일 UX 서비스 카드 특허 배지(피그마 16:361) — PC 는 사용자 결정대로 계속 숨김 */
+  html.sp-b .card-grid .info-card h4 span[title] { display: inline-flex !important; }
+  /* 4-A③ NUGU 배너 = 로고 위 · 문장 2줄 · 긴 화살표 오른쪽 아래(피그마 16:361) */
+  html.sp-b .nugu-partner-banner { display: grid !important; grid-template-columns: 1fr auto; grid-template-areas: "logo ." "txt arr"; row-gap: 10px !important; column-gap: 14px !important; align-items: end; padding: 16px 20px !important; border-radius: var(--sp-r-m) !important; }
+  html.sp-b .nugu-partner-banner > img { grid-area: logo; height: 15px !important; }
+  html.sp-b .nugu-partner-banner > span:first-of-type { display: none !important; }
+  html.sp-b .nugu-partner-banner > span:last-of-type { grid-area: txt; font-size: 14px !important; line-height: 1.45 !important; }
+  html.sp-b .nugu-partner-banner br.sp-mbr { display: inline; }
+  html.sp-b .nugu-partner-banner::after { grid-area: arr; margin-bottom: 6px; }
+  /* 5-B AI-UX강의 코스 비교표(5열) → 코스별 카드(sp-b.js 가 표에서 만든 카드, 표 HTML 은 그대로 두고 모바일에서만 가림) */
+  html.sp-b .main-content-pane .sp-atable-wrap.sp-has-cards { display: none !important; }
+  html.sp-b .main-content-pane .sp-ccards { display: grid !important; gap: 14px; margin: 18px 0 8px; }
+  html.sp-b .sp-ccard { padding: 18px 20px; border-radius: 16px; background: var(--sp-surface); border: 1px solid #D3D8DE; }
+  html.sp-b .sp-ccard-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #D3D8DE; }
+  html.sp-b .sp-ccard-h b { font: 700 17px/1.3 var(--sp-font); color: #111; }
+  html.sp-b .sp-ccard-h span { font: 600 12px/1 var(--sp-font); color: #3A3F45; padding: 6px 10px; border-radius: 999px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); white-space: nowrap; }
+  html.sp-b .main-content-pane .sp-ccard dl { margin: 0 !important; padding: 0 !important; display: block; }
+  html.sp-b .main-content-pane .sp-ccard dt { font: 600 11.5px/1.3 var(--sp-font) !important; color: #7C828A !important; margin: 16px 0 4px !important; padding: 0 !important; }
+  html.sp-b .main-content-pane .sp-ccard dt:first-child { margin-top: 0 !important; }
+  html.sp-b .main-content-pane .sp-ccard dd { margin: 0 !important; padding: 0 !important; font: 400 14px/1.6 var(--sp-font) !important; color: #3A3F45 !important; word-break: keep-all; }
+}
+html.sp-b .sp-ccards { display: none; }
