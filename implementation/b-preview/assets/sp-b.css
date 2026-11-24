@@ -2283,3 +2283,18 @@ html.sp-b .main-content-pane .sp-kproc h2 { text-wrap: balance; word-break: keep
   html.sp-b .main-content-pane .hero-intro .sp-type-box { display: block !important; margin-top: 16px !important; padding: 16px 18px !important; border-radius: 14px !important; background: #111 !important; box-shadow: none !important; }
   html.sp-b .main-content-pane .hero-intro .sp-type-box .sp-type { display: inline !important; background: none !important; box-shadow: none !important; border: 0 !important; text-decoration: none !important; padding: 0 !important; color: #fff !important; font-size: 14px !important; line-height: 1.6 !important; -webkit-box-decoration-break: initial; box-decoration-break: initial; }
 }
+
+/* ===== 171b(11-24 15:49): 문의하기 사무실 사진 = 카드 보드(AI-UX강의 후기 보드와 같은 틀) · 회사소개 간판 = 위아래 루프 모션 ===== */
+html.sp-b .main-content-pane section.sp-kgal2 { margin-top: 40px !important; }
+html.sp-b .main-content-pane .sp-kgal2 .sp-rv-top p.sp-kgal2-t { margin: 0 !important; font: 700 20px/1.3 var(--sp-font) !important; color: #fff !important; }
+html.sp-b .sp-kgal2 ul.sp-rv-track { grid-auto-columns: calc((100% - 32px) / 3.25); }
+html.sp-b .sp-kgal2 .sp-rv-card.sp-kph { min-height: 0; padding: 10px 10px 14px; }
+html.sp-b .main-content-pane .sp-kgal2 .sp-kph img { display: block; width: 100% !important; height: auto !important; aspect-ratio: 4 / 3 !important; object-fit: cover; border-radius: 12px !important; margin: 0 !important; box-shadow: none !important; border: 0 !important; max-width: none !important; }
+html.sp-b .main-content-pane .sp-kgal2 .sp-kph p.c { margin: 12px 4px 0 !important; font: 600 13px/1.4 var(--sp-font) !important; color: var(--sp-text) !important; }
+@media (max-width: 768px) { html.sp-b .sp-kgal2 ul.sp-rv-track { grid-auto-columns: 78%; } html.sp-b .main-content-pane section.sp-kgal2 { padding: 22px 18px 20px !important; } }
+
+html.sp-b .main-content-pane figure.sp-pan .sp-pan-w { position: relative; overflow: hidden; border-radius: var(--sp-r-l); aspect-ratio: 1183 / 440; box-shadow: var(--sp-raised-s); }
+html.sp-b .main-content-pane figure.sp-pan .sp-pan-w img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; max-width: none !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; object-fit: cover; object-position: 50% 0%; animation: spPanY 18s ease-in-out infinite alternate; }
+@keyframes spPanY { 0%, 8% { object-position: 50% 0%; } 92%, 100% { object-position: 50% 100%; } }
+@media (prefers-reduced-motion: reduce) { html.sp-b .main-content-pane figure.sp-pan .sp-pan-w img { animation: none; object-position: 50% 30%; } }
+@media (max-width: 768px) { html.sp-b .main-content-pane figure.sp-pan .sp-pan-w { aspect-ratio: 16 / 9; } }
