@@ -1,4 +1,4 @@
-/* B안 165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
+/* B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
 (function () {
   'use strict';
   if (window.spOpenInquiry) return;
@@ -6,6 +6,9 @@
   var IC_MAIL = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#111" stroke-width="1.4"/><path d="M4 6.5l6 4.2 6-4.2" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var IC_BOOK = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 6.2C8.4 5 6.2 4.6 3 4.8v10c3.2-.2 5.4.2 7 1.4 1.6-1.2 3.8-1.6 7-1.4v-10c-3.2-.2-5.4.2-7 1.4zM10 6.2v10" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var IC_KAKAO = '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2.5c-3.9 0-7 2.5-7 5.6 0 2 1.3 3.7 3.3 4.7l-.7 2.6c-.1.3.2.5.4.3l3-2c.3 0 .7.1 1 .1 3.9 0 7-2.5 7-5.6S12.9 2.5 9 2.5z" fill="#111"/></svg>';
+  var IC_CAL = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="12" rx="2.5" stroke="#111" stroke-width="1.4"/><path d="M2.5 7.5h13M6 2v3M12 2v3" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg>';
+  var ARR_L = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var ARR_R = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function tbar(t, idt) { return '<div class="spq-tb"><span class="spq-tt"' + (idt ? ' id="' + idt + '"' : '') + '>' + t + '</span><span class="spq-wc"><i aria-hidden="true"></i><i aria-hidden="true"></i><button type="button" class="spq-x" data-close aria-label="닫기">✕</button></span></div>'; }
   var FS = 'https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a';
   /* B안(165·피그마 91:1461 문의 / 91:1507 접수 완료 / 102:1817 강의 신청): 뉴모피즘 창, 라벨 위 입력란(오목), 선택지 = 볼록 카드(선택 시 오목), 창 안 스크롤 없음 */
@@ -96,8 +99,32 @@
     '.spq-btns .spq-b1{flex:1;}',
     '.spq-dnote{display:none;}',
     '.spq-done .spq-b1[data-close]{width:auto;padding:0 48px;align-self:center;}',
+    /* 167: 희망 일정 달력(뉴모피즘) — 입력란 오른쪽 볼록 달력 버튼, 눌러서 여는 달력 창(선택한 날 = 오목) */
+    '.spq-dwrap{position:relative;}',
+    '.spq-dwrap .spq-in{padding-right:56px;}',
+    '.spq-calbtn{position:absolute;right:6px;top:5px;width:34px;height:34px;border:0;padding:0;border-radius:9px;background:#EEF1F4;box-shadow:-3px -3px 6px rgba(255,255,255,.95),3px 3px 6px rgba(26,31,36,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#111;}',
+    '.spq-calbtn[aria-expanded="true"]{background:#E4E7EB;box-shadow:inset 2px 2px 5px rgba(26,31,36,.16),inset -2px -2px 5px rgba(255,255,255,.95);}',
+    '.spq-calbtn:focus-visible,.spq-cal button:focus-visible{outline:2px solid #A3AAB3;outline-offset:2px;}',
+    '.spq-cal{position:absolute;right:0;top:calc(100% + 12px);z-index:5;width:308px;box-sizing:border-box;padding:18px 18px 16px;border-radius:18px;background:#EEF1F4;box-shadow:-8px -8px 18px rgba(255,255,255,.9),10px 12px 28px rgba(26,31,36,.22);color:#3A3F45;}',
+    '.spq-cal[hidden]{display:none;}',
+    '.spq-calh{display:flex;align-items:center;justify-content:space-between;margin:0 0 14px;}',
+    '.spq-calh b{font:700 15px/1.3 Pretendard,sans-serif;color:#111;}',
+    '.spq-calnav{width:32px;height:32px;border:0;padding:0;border-radius:50%;background:#EEF1F4;box-shadow:-3px -3px 6px rgba(255,255,255,.95),3px 3px 6px rgba(26,31,36,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#111;}',
+    '.spq-calnav[disabled]{opacity:.35;cursor:default;box-shadow:none;}',
+    '.spq-calw,.spq-cald{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}',
+    '.spq-calw{margin:0 0 6px;}',
+    '.spq-calw span{font:600 11.5px/24px Pretendard,sans-serif;color:#7C828A;}',
+    '.spq-cald button,.spq-cald span{height:34px;border:0;padding:0;border-radius:10px;background:transparent;font:500 13px/34px Pretendard,sans-serif;color:#3A3F45;cursor:pointer;position:relative;}',
+    '.spq-cald button:hover{background:#EEF1F4;box-shadow:-3px -3px 6px rgba(255,255,255,.95),3px 3px 6px rgba(26,31,36,.14);color:#111;}',
+    '.spq-cald button.sun,.spq-cald button.sat{color:#7C828A;}',
+    '.spq-cald button.today:after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#111;}',
+    '.spq-cald button.on{background:#E4E7EB;box-shadow:inset 3px 3px 6px rgba(26,31,36,.16),inset -3px -3px 6px rgba(255,255,255,.95);color:#111;font-weight:700;}',
+    '.spq-cald button[disabled]{color:#C3C8CE;cursor:default;background:transparent;box-shadow:none;}',
+    '.spq-calf{display:flex;gap:8px;margin:14px 0 0;padding:14px 0 0;border-top:1px solid #D3D8DE;}',
+    '.spq-calf button{flex:1;height:36px;border:0;border-radius:999px;background:#EEF1F4;box-shadow:-3px -3px 6px rgba(255,255,255,.95),3px 3px 6px rgba(26,31,36,.14);font:600 12.5px/1 Pretendard,sans-serif;color:#111;cursor:pointer;}',
+    '.spq-calf button.k{background:#111;color:#fff;box-shadow:3px 3px 8px rgba(26,31,36,.25);}',
     '@media (min-width:769px){.spq-box{zoom:var(--k,1);}}',
-    '@media (max-width:600px){.spq-ov{padding:16px 10px;}.spq-bd,.spq-done{padding:22px 18px 24px;}.spq-row,.spq-grid,.spq-chips,.spq-chips.c3{grid-template-columns:1fr;}.spq-btns .spq-b2{flex-basis:110px;}}',
+    '@media (max-width:600px){.spq-cal{left:0;right:auto;width:100%;max-width:308px;}.spq-ov{padding:16px 10px;}.spq-bd,.spq-done{padding:22px 18px 24px;}.spq-row,.spq-grid,.spq-chips,.spq-chips.c3{grid-template-columns:1fr;}.spq-btns .spq-b2{flex-basis:110px;}}',
     '@media (prefers-reduced-motion:reduce){.spq-ov *{transition:none !important;}}'
   ].join('\n');
 
@@ -146,7 +173,9 @@
       '<div class="spq-sec"><p class="spq-lb">3. 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">4. 희망 강의내용 <small>여러 개 선택 가능</small></p><div class="spq-chips c3">' + topics + '</div></div>' +
       '<div class="spq-row"><div class="spq-sec"><label class="spq-lb" for="splPeople">5. 예상 인원 <b>*</b></label><select class="spq-in" id="splPeople"><option selected>1명~5명</option><option>5명~10명</option><option>10명~30명</option><option>30명~50명</option><option>50명 이상</option></select></div>' +
-      '<div class="spq-sec"><label class="spq-lb" for="splDate">6. 희망 일정 <b>*</b></label>' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)', 'text', ' value="상담 후 결정"') + '</div></div>' +
+      '<div class="spq-sec"><label class="spq-lb" for="splDate">6. 희망 일정 <b>*</b></label><div class="spq-dwrap">' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)', 'text', ' value="상담 후 결정"') +
+      '<button type="button" class="spq-calbtn" id="splCalBtn" aria-label="달력에서 희망 날짜 선택" aria-haspopup="dialog" aria-expanded="false" aria-controls="splCal">' + IC_CAL + '</button>' +
+      '<div class="spq-cal" id="splCal" role="dialog" aria-label="희망 일정 달력" hidden></div></div></div></div>' +
       '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 <b>*</b></p><div class="spq-chips c3">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장') + '</div></div>' +
       '<div class="spq-sec"><p class="spq-lb">8. 신청자 정보</p><div class="spq-row">' + lf('splName', '이름', true, '홍길동') + lf('splCompany', '회사·학교명 (선택)', false, '회사·기관·학교명') +
       lf('splEmail', '이메일', true, 'name@company.com', 'email') + lf('splPhone', '연락처 (일정 조율용, 선택)', false, '010-0000-0000', 'tel') + '</div>' +
@@ -168,7 +197,8 @@
       var ov = $(id);
       ov.addEventListener('click', function (e) { if (e.target === ov || (e.target.closest && e.target.closest('[data-close]'))) close(id); });
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { ['spqDone', 'spqLec', 'spqInq'].some(function (id) { if ($(id).classList.contains('open')) { close(id); return true; } }); } });
+    calInit();
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && calOpen()) { calClose(true); return; } if (e.key === 'Escape') { ['spqDone', 'spqLec', 'spqInq'].some(function (id) { if ($(id).classList.contains('open')) { close(id); return true; } }); } });
     document.querySelectorAll('#spqLec .spq-chip input').forEach(function (inp) {
       inp.addEventListener('change', function () {
         var grp = document.querySelectorAll('#spqLec input[name="' + inp.name + '"]');
@@ -188,8 +218,62 @@
     $('spqSkip').addEventListener('click', function () { showD2(); });
   }
 
+  /* 167: 희망 일정 달력 — 오늘 이후 날짜 선택, 고르면 '2026년 12월 3일(목)' 형식으로 입력란에 들어감(직접 입력도 그대로 가능) */
+  var WD = ['일', '월', '화', '수', '목', '금', '토'];
+  var calSel = null, calView = null;
+  function ymd(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function calOpen() { var c = $('splCal'); return !!(c && !c.hidden); }
+  function calRender() {
+    var c = $('splCal'), t = ymd(new Date()), y = calView.getFullYear(), m = calView.getMonth();
+    var first = new Date(y, m, 1).getDay(), days = new Date(y, m + 1, 0).getDate();
+    var atMin = y === t.getFullYear() && m === t.getMonth();
+    var h = '<div class="spq-calh"><button type="button" class="spq-calnav" data-cal="-1" aria-label="이전 달"' + (atMin ? ' disabled' : '') + '>' + ARR_L + '</button><b aria-live="polite">' + y + '년 ' + (m + 1) + '월</b><button type="button" class="spq-calnav" data-cal="1" aria-label="다음 달">' + ARR_R + '</button></div>';
+    h += '<div class="spq-calw" aria-hidden="true">' + WD.map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div><div class="spq-cald">';
+    for (var i = 0; i < first; i++) h += '<span aria-hidden="true"></span>';
+    for (var d = 1; d <= days; d++) {
+      var dt = new Date(y, m, d), wd = dt.getDay(), past = dt < t;
+      var on = calSel && +calSel === +dt, cls = (wd === 0 ? 'sun' : wd === 6 ? 'sat' : '') + (+dt === +t ? ' today' : '') + (on ? ' on' : '');
+      h += '<button type="button" data-d="' + d + '" class="' + cls.trim() + '" aria-label="' + (m + 1) + '월 ' + d + '일 ' + WD[wd] + '요일' + (+dt === +t ? ' (오늘)' : '') + '"' + (on ? ' aria-pressed="true"' : '') + (past ? ' disabled' : '') + '>' + d + '</button>';
+    }
+    h += '</div><div class="spq-calf"><button type="button" data-cal="tbd">상담 후 결정</button><button type="button" class="k" data-cal="close">닫기</button></div>';
+    c.innerHTML = h;
+  }
+  function calShow() {
+    var t = ymd(new Date());
+    calView = new Date((calSel || t).getFullYear(), (calSel || t).getMonth(), 1);
+    calRender(); $('splCal').hidden = false; $('splCalBtn').setAttribute('aria-expanded', 'true');
+    var f = $('splCal').querySelector('.spq-cald button.on') || $('splCal').querySelector('.spq-cald button.today') || $('splCal').querySelector('.spq-cald button:not([disabled])');
+    try { if (f) f.focus({ preventScroll: true }); } catch (e) {}
+  }
+  function calClose(focusBtn) { var c = $('splCal'); if (!c || c.hidden) return; c.hidden = true; $('splCalBtn').setAttribute('aria-expanded', 'false'); if (focusBtn) try { $('splCalBtn').focus({ preventScroll: true }); } catch (e) {} }
+  function calInit() {
+    var btn = $('splCalBtn'), c = $('splCal'), inp = $('splDate');
+    btn.addEventListener('click', function (e) { e.stopPropagation(); if (calOpen()) calClose(); else calShow(); });
+    c.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var b = e.target.closest ? e.target.closest('button') : null; if (!b || b.disabled) return;
+      var a = b.getAttribute('data-cal');
+      if (a === '-1' || a === '1') { calView = new Date(calView.getFullYear(), calView.getMonth() + (+a), 1); calRender(); var nb = c.querySelector('[data-cal="' + a + '"]'); try { (nb && !nb.disabled ? nb : c.querySelector('[data-cal="1"]')).focus({ preventScroll: true }); } catch (x) {} return; }
+      if (a === 'tbd') { calSel = null; inp.value = '상담 후 결정'; calClose(true); return; }
+      if (a === 'close') { calClose(true); return; }
+      var d = b.getAttribute('data-d');
+      if (d) { calSel = new Date(calView.getFullYear(), calView.getMonth(), +d); inp.value = calSel.getFullYear() + '년 ' + (calSel.getMonth() + 1) + '월 ' + calSel.getDate() + '일(' + WD[calSel.getDay()] + ')'; calClose(true); }
+    });
+    c.addEventListener('keydown', function (e) {
+      var b = document.activeElement; if (!b || !b.getAttribute || !b.getAttribute('data-d')) return;
+      var k = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key]; if (!k) return;
+      e.preventDefault();
+      var all = Array.prototype.slice.call(c.querySelectorAll('.spq-cald button:not([disabled])')), i = all.indexOf(b) + k;
+      if (all[i]) all[i].focus();
+    });
+    document.getElementById('spqLec').addEventListener('click', function (e) { if (calOpen() && !(e.target.closest && e.target.closest('.spq-dwrap'))) calClose(); });
+    inp.addEventListener('focus', function () { if (inp.value === '상담 후 결정') try { inp.select(); } catch (e) {} });
+    inp.addEventListener('input', function () { calSel = null; });
+  }
+
   function open(id) { $(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
   function close(id) {
+    if (id === 'spqLec') calClose();
     $(id).classList.remove('open');
     if (!document.querySelector('.spq-ov.open')) document.body.style.overflow = '';
   }
@@ -259,7 +343,7 @@
       dl({ event: 'inquiry_submit', form_page: location.pathname, form_type: 'lecture' });
       btn.disabled = false; btn.textContent = '강의 신청하고 빠른 답변 받기';
       var sum = [['코스', course], ['수강 형태', type ? type + ' · ' + people : people], ['희망 일정', date], ['진행 방식', methodTxt]];
-      ['splPlace', 'splName', 'splCompany', 'splEmail', 'splPhone', 'splReq'].forEach(function (id) { $(id).value = ''; }); $('splDate').value = '상담 후 결정';
+      ['splPlace', 'splName', 'splCompany', 'splEmail', 'splPhone', 'splReq'].forEach(function (id) { $(id).value = ''; }); $('splDate').value = '상담 후 결정'; calSel = null;
       close('spqLec'); showDone('lecture', name, email, sum);
     });
   }
