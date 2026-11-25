@@ -237,11 +237,26 @@
     var bar = document.getElementById('spMobileCtaBar'), qb = document.querySelector('.sp-qb-inquiry');
     if (isMobile()) {
       if (bar && bar.offsetHeight) { t.classList.add('to-bar'); t.style.setProperty('--tail', Math.max(14, (window.innerWidth - 36) / 4 - 10) + 'px'); }
-    } else if (qb && qb.offsetWidth) {
-      var r = qb.getBoundingClientRect();
-      t.classList.add('to-qb');
-      t.style.left = Math.max(8, r.right - t.offsetWidth) + 'px';
-      t.style.top = (r.bottom + 16) + 'px';
+    } else {
+      /* 191: PC = 오른쪽 퀵배너(문의하기 / 강의페이지는 강의신청 배너) 카드 바로 아래, 카드와 같은 폭·오른쪽 끝 맞춤. 스크롤·창 크기 변화에도 따라감 */
+      var anc = [document.querySelector('#stickyCourseBanner .sticky-banner-card'), document.getElementById('stickyKakaoBanner'), qb]
+        .filter(function (e) { return e && e.offsetWidth && e.offsetHeight; })[0];
+      if (anc) {
+        t.classList.add('to-qb');
+        var place = function () {
+          var r = anc.getBoundingClientRect(), w = Math.max(200, Math.round(r.width));
+          t.style.setProperty('width', w + 'px', 'important');
+          t.style.setProperty('left', Math.max(8, Math.round(r.right - w)) + 'px', 'important');
+          t.style.setProperty('right', 'auto', 'important');
+          t.style.setProperty('margin-top', '0', 'important');
+          t.style.setProperty('white-space', 'normal', 'important');
+          t.style.setProperty('top', Math.min(Math.round(r.bottom + 16), window.innerHeight - t.offsetHeight - 8) + 'px', 'important');
+          t.style.setProperty('bottom', 'auto', 'important');
+        };
+        place();
+        window.addEventListener('scroll', place, { passive: true }); window.addEventListener('resize', place);
+        setTimeout(function () { window.removeEventListener('scroll', place); window.removeEventListener('resize', place); }, 5200);
+      }
     }
     track('toast_view', 'pv_toast_' + n);
     setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 5000);  /* 99: 3초 → 5초 */
