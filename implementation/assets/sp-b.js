@@ -306,3 +306,70 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+/* 187(사용자 11-25 11:38): 서브페이지 '포트폴리오 보기'·'인재채용' = 메인과 같은 B안 창(제목줄·뉴모피즘 본문). 다른 창은 기존 그대로 */
+(function () {
+  var de = document.documentElement;
+  if (!de.classList.contains('sp-b') || de.classList.contains('sp-b-home')) return;
+  var ARW = '<i class="sp-arw" aria-hidden="true"></i>', PDF = '/Superplanning_Company_Brochure.pdf';
+  var POP = {
+    brochure: { w: 1000, title: '포트폴리오 보기', body:
+      '<div class="sp-pop sp-pop-media"><div class="sp-pop-bar"><span class="sp-pop-file">슈퍼플래닝_회사소개서.pdf</span><div class="sp-pop-actions">' +
+      '<a href="' + PDF + '" download="Superplanning_Company_Brochure.pdf" class="w95-btn sp-pop-btn">파일 다운로드</a>' +
+      '<a href="' + PDF + '" target="_blank" rel="noopener" class="w95-btn sp-pop-btn">새 창에서 열기' + ARW + '</a></div></div>' +
+      '<iframe class="sp-pop-frame sp-pop-doc sp-pop-pdf" src="' + PDF + '#toolbar=1&navpanes=0&scrollbar=1" title="슈퍼플래닝 포트폴리오 보기"></iframe></div>' },
+    careers: { w: 580, title: '인재 채용', body:
+      '<div class="sp-pop"><div class="sp-pop-head"><h3 class="sp-pop-h">인재를 채용합니다 (상시 모집)</h3><p class="sp-pop-lead">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p></div>' +
+      '<div class="sp-pop-card"><div class="sp-pop-sec"><div class="sp-pop-sub">지원 자격</div><ul class="sp-pop-list"><li>신입, 경력 / 연령 / 학력 / 국적 무관</li><li>이력서 자유양식</li></ul></div>' +
+      '<div class="sp-pop-sec"><div class="sp-pop-sub">모집분야</div><div class="sp-pop-chips"><span>서비스 기획자</span><span>프로덕트 디자이너</span><span>AI-UX강사</span><span>UI디자이너</span><span>프론트/백엔드 개발자</span></div></div>' +
+      '<div class="sp-pop-sec"><div class="sp-pop-sub">우대조건</div><p class="sp-pop-p">자신의 실무에 대해 원데이클래스 강의 가능하신 분!</p></div></div>' +
+      '<div class="sp-pop-row"><div><span class="sp-pop-k">이메일 접수</span><b class="sp-pop-v">jake@superplanning.co.kr</b></div>' +
+      '<button type="button" class="w95-btn" data-spb-copy="jake@superplanning.co.kr">복사</button></div>' +
+      '<p class="sp-pop-note">서류전형 합격자에 한해 개별통보를 드리며, 지원서 허위 작성시 합격이 취소 될 수 있습니다.</p></div>' }
+  };
+  var css = '#spbPopOv{position:fixed;inset:0;z-index:9999999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(17,17,17,.45)}' +
+    '#spbPopOv .win{position:relative;display:flex;flex-direction:column;max-width:calc((100vw - 32px) / var(--k,1));max-height:calc((100vh - 32px) / var(--k,1))}' +
+    '#spbPopOv .w-title{display:flex;align-items:center;justify-content:space-between;flex:none}' +
+    '#spbPopOv .t-actions{display:flex}#spbPopOv .w-body{flex:1;min-height:0;overflow:auto}' +
+    '#spbPopOv .win.is-max{width:calc((100vw - 32px) / var(--k,1)) !important}' +
+    '@media (min-width:769px){#spbPopOv .win{zoom:var(--k,1)}}' +
+    '@media (max-width:768px){#spbPopOv{padding:10px}#spbPopOv .win{width:100% !important}#spbPopOv .sp-pop-pdf{height:62vh}#spbPopOv .sp-pop-bar{flex-wrap:wrap}}';
+  var last = null;
+  function close() { var o = document.getElementById('spbPopOv'); if (o) o.remove(); document.removeEventListener('keydown', esc); if (last && last.focus) try { last.focus(); } catch (e) {} }
+  function esc(e) { if (e.key === 'Escape') close(); }
+  function open(key) {
+    var d = POP[key]; if (!d) return false;
+    if (!document.getElementById('spbPopCss')) { var st = document.createElement('style'); st.id = 'spbPopCss'; st.textContent = css; document.head.appendChild(st); }
+    if (typeof window.closeSubpageWindow === 'function') try { window.closeSubpageWindow(); } catch (e) {}
+    if (typeof window.closeStart === 'function') try { window.closeStart(); } catch (e) {}
+    close(); last = document.activeElement;
+    var ov = document.createElement('div'); ov.id = 'spbPopOv';
+    ov.innerHTML = '<div class="win" role="dialog" aria-modal="true" aria-label="' + d.title + '" data-key="' + key + '" style="width:' + d.w + 'px">' +
+      '<div class="w-title"><span class="t-text">' + d.title + '</span><div class="t-actions">' +
+      '<button type="button" class="w95-btn t-btn" title="최소화" data-a="x">_</button><button type="button" class="w95-btn t-btn" title="최대화" data-a="m">▢</button>' +
+      '<button type="button" class="w95-btn t-btn" title="닫기" data-a="x">✕</button></div></div><div class="w-body">' + d.body + '</div></div>';
+    ov.addEventListener('click', function (e) {
+      if (e.target === ov) return close();
+      var b = e.target.closest && e.target.closest('button'); if (!b) return;
+      if (b.dataset.a === 'x') close();
+      else if (b.dataset.a === 'm') ov.querySelector('.win').classList.toggle('is-max');
+      else if (b.dataset.spbCopy) {
+        var t = b.dataset.spbCopy;
+        if (typeof window.copyToClipboard === 'function') window.copyToClipboard(t, '지원서 이메일 주소', b);
+        else if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = '완료!'; setTimeout(function () { b.textContent = '복사'; }, 1500); });
+      }
+    });
+    document.body.appendChild(ov); document.addEventListener('keydown', esc);
+    var c = ov.querySelector('[title="닫기"]'); if (c) c.focus();
+    return true;
+  }
+  window.spbOpenPop = open;
+  function hook() {
+    var orig = window.openWindow;
+    window.openWindow = function (key) { if (POP[key]) return open(key); if (typeof orig === 'function') return orig.apply(this, arguments); };
+    /* GNB '인재채용' 버튼(페이지마다 회사소개 이동·홈 이동 등으로 달랐음) → 인재 채용 창 */
+    [].forEach.call(document.querySelectorAll('#gnb button'), function (b) {
+      if (b.textContent.trim() === '인재채용') { b.removeAttribute('onclick'); b.onclick = function (e) { e.preventDefault(); open('careers'); }; }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook); else hook();
+})();

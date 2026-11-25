@@ -10,7 +10,7 @@
   var path = location.pathname.replace(/index\.html$/, '');
   function isOn(href) { return href === '/' ? path === '/' : path.indexOf(href) === 0; }
   function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-  var PDF = '/Superplanning_Company_Brochure.pdf', PAGES = 31;
+  var PDF = '/Superplanning_Company_Brochure.pdf', PAGES = 32;
   function isMobile() { return window.innerWidth <= 768; }
   function track(btn, pos) {
     if (typeof window.spQB === 'function') { window.spQB(btn, pos); return; }
@@ -94,7 +94,7 @@
       setOpen(false);
     });
 
-    /* 87: 모바일 회사소개서 보기 — PDF 대신 페이지 이미지(/images/brochure/brochure-01~31.webp)를 세로로 보여 줌. PC는 기존 PDF 창 그대로 */
+    /* 87·187: 모바일 회사소개서 보기 — PDF 대신 페이지 이미지(/images/brochure/brochure-01~32.webp, 187 뉴모피즘 회사소개서)를 세로로 보여 줌. PC는 기존 PDF 창 그대로 */
     var pdf = null;
     function closePdf() { if (pdf) { pdf.classList.remove('is-open'); document.body.classList.remove('spm-lock'); } }
     function openPdf() {
@@ -103,7 +103,7 @@
         var imgs = '';
         for (var i = 1; i <= PAGES; i++) {
           var n = (i < 10 ? '0' : '') + i;
-          imgs += '<div class="spp-pg"><img src="/images/brochure/brochure-' + n + '.webp?v=87" width="900" height="506" loading="lazy" decoding="async" alt="슈퍼플래닝 회사소개서 및 포트폴리오 ' + i + '쪽"><i>' + i + ' / ' + PAGES + '</i></div>';
+          imgs += '<div class="spp-pg"><img src="/images/brochure/brochure-' + n + '.webp?v=187" width="1200" height="675" loading="lazy" decoding="async" alt="슈퍼플래닝 회사소개서 및 포트폴리오 ' + i + '쪽"><i>' + i + ' / ' + PAGES + '</i></div>';
         }
         pdf = document.createElement('div');
         pdf.id = 'spPdf';
@@ -111,7 +111,7 @@
         pdf.setAttribute('aria-label', '회사소개서 및 포트폴리오');
         pdf.innerHTML =
           '<div class="spp-wt"><span>회사소개서 및 포트폴리오</span><button type="button" class="spp-x" aria-label="닫기">✕</button></div>' +
-          '<div class="spp-info"><b>슈퍼플래닝 회사소개서 및 포트폴리오</b><small>PDF · ' + PAGES + '쪽 · 약 3.9MB</small></div>' +
+          '<div class="spp-info"><b>슈퍼플래닝 회사소개서 및 포트폴리오</b><small>PDF · ' + PAGES + '쪽 · 약 15MB</small></div>' +
           '<div class="spp-btns"><a href="' + PDF + '" download="Superplanning_Company_Brochure.pdf" data-spp="dl">PDF 다운로드</a><a href="' + PDF + '" target="_blank" rel="noopener" data-spp="open">새 창에서 열기</a></div>' +
           '<p class="spp-tip">▼ 아래로 내려 바로 보기</p>' +
           '<div class="spp-pages">' + imgs + '</div>' +
