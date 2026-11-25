@@ -94,7 +94,14 @@
     for (var i = 2; i > 0; i--) { var j = Math.floor(rnd(seed + i * 13) * (i + 1)); var tmp = order[i]; order[i] = order[j]; order[j] = tmp; }
     var teams = [false, false, false];
     for (var k = 0; k < n; k++) teams[order[k]] = true;
-    return { wk: wk, open: open, teams: teams };
+    return { wk: wk, open: open, teams: teams, hm: hm, key: key };
+  }
+  /* 184: 영업 종료 시 다음 영업 시작 시각(평일 08:00 / 주말·공휴일 10:00) */
+  function isWk(ms) { var d = new Date(ms), k = d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2); return d.getUTCDay() === 0 || d.getUTCDay() === 6 || HOL.indexOf(' ' + k + ' ') > -1; }
+  function nextOpen(st) {
+    var now = Date.now() + 9 * 3600 * 1000, start = st.wk ? 10 : 8;
+    if (st.hm < start) return start;          /* 오늘 영업 전 */
+    return isWk(now + 864e5) ? 10 : 8;        /* 오늘 영업 끝 → 내일 */
   }
 
   var DOW = ['일', '월', '화', '수', '목', '금', '토'];
@@ -115,7 +122,7 @@
     var t = kst(), st = state(t);
     el.classList.toggle('is-off', !st.open);
     var hh = ('0' + t.h).slice(-2), mm = ('0' + t.m).slice(-2), on = [true].concat(st.teams);
-    el.querySelector('.spl-stt').textContent = st.open ? '현재 영업중' : '영업 준비중';
+    el.querySelector('.spl-stt').textContent = st.open ? '현재 영업중' : '영업종료 · ' + ('0' + nextOpen(st)).slice(-2) + ':00에 영업시작';
     el.querySelector('.spl-day').textContent = (t.mo + 1) + '월 ' + t.da + '일 ' + DOW[t.dow] + '요일';
     var clk = el.querySelector('.spl-clock'), svgs = clk.querySelectorAll('svg'), ds = hh + mm;
     for (var i = 0; i < 4; i++) setDigit(svgs[i], +ds[i]);
