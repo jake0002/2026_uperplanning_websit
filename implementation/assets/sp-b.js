@@ -373,3 +373,16 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook); else hook();
 })();
+/* 188(사용자 11-25): PC '포트폴리오 보기' PDF 오른쪽 잘림 — 크롬 PDF 뷰어는 화면 비율 축소(zoom) 안에서 폭을 잘못 계산함.
+   PDF 창(메인 .w-body / 서브 #spbPopOv .win)만 축소하지 않고 같은 크기를 실제 px 로 지정. 모바일·다른 창은 그대로 */
+(function () {
+  var de = document.documentElement;
+  if (!de.classList.contains('sp-b') || document.getElementById('spbPdfFix')) return;
+  var st = document.createElement('style'); st.id = 'spbPdfFix';
+  st.textContent = '@media (min-width:769px){' +
+    'html.sp-b-home .win[data-key="brochure"] .w-body{zoom:1 !important}' +
+    'html.sp-b-home .win[data-key="brochure"] .sp-pop-pdf{height:calc(640px * var(--k,1)) !important}' +
+    '#spbPopOv .win[data-key="brochure"]{zoom:1 !important;width:min(calc(1000px * var(--k,1)),calc(100vw - 32px)) !important;max-width:none !important;max-height:calc(100vh - 32px) !important}' +
+    '#spbPopOv .win[data-key="brochure"] .sp-pop-pdf{height:min(calc(640px * var(--k,1) + 80px),calc(100vh - 200px)) !important}}';
+  (document.head || de).appendChild(st);
+})();
