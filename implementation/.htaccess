@@ -27,3 +27,16 @@ Redirect 301 /ux-blog/post-3/ /ux-blog/ux-spec-document-developer-confusion/
 Redirect 301 /ux-blog/post-4/ /ux-blog/ai-wireframe-ux-criteria/
 Redirect 301 /ux-blog/post-5/ /ux-blog/startup-ux-consulting-reasons/
 RedirectMatch gone "^/ux-blog/post-([6-9]|1[0-9])/?(index\.html)?$"
+
+# ---- 196 cache rules (start): versioned (?v=) assets 30 days, unversioned js/css/pdf/docs revalidate, unversioned images/fonts 1 day ----
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|mjs|pdf|txt|md|xml|json)$">
+        Header set Cache-Control "no-cache"
+        Header set Cache-Control "public, max-age=2592000" "expr=%{QUERY_STRING} =~ /(^|&)v=/"
+    </FilesMatch>
+    <FilesMatch "\.(webp|png|jpe?g|gif|svg|ico|woff2?|ttf|mp4)$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Cache-Control "public, max-age=2592000" "expr=%{QUERY_STRING} =~ /(^|&)v=/"
+    </FilesMatch>
+</IfModule>
+# ---- 196 cache rules (end) ----
