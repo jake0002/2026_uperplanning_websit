@@ -1448,6 +1448,7 @@
   <link rel="stylesheet" href="/assets/sp-b.css?v=178">
   <script src="/assets/sp-b.js?v=178" defer></script>
   <script>(function(){var d=document.documentElement,W=window.innerWidth,k=W<=768?1:Math.max(0.6,Math.min(0.82,W/1920*0.82)),x=W<=768?0:Math.max(0,(W-1920*k)/2);d.style.setProperty('--k',k);d.style.setProperty('--x0v',(x/k)+'px');})();</script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+  <style id="sp193-gnbprog">html.sp-b .gnb-progress-track{width:auto !important;}</style>
 <style>/* 179: 되살린 원문(.sp-more) — 페이지 안 스타일(공통 sp-b.css 는 178 그대로 유지해 다른 페이지 재배포 없음) */html.sp-b .main-content-pane .sp-more { margin-top: 36px !important; padding-top: 28px; border-top: 1px solid #D3D8DE; } html.sp-b .main-content-pane .sp-more > h3:first-child, html.sp-b .main-content-pane .sp-more > :first-child { margin-top: 0 !important; } html.sp-b .main-content-pane .sp-more h3 { font: 700 18px/1.4 var(--sp-font) !important; color: #111 !important; margin-top: 32px !important; margin-bottom: 12px !important; } html.sp-b .main-content-pane .sp-more p, html.sp-b .main-content-pane .sp-more li { color: #3A3F45; } html.sp-b .main-content-pane .sp-more blockquote { margin: 0 0 12px !important; padding: 16px 20px !important; border-radius: 16px !important; background: var(--sp-inset) !important; box-shadow: var(--sp-inset-s) !important; border: 0 !important; }</style>
 </head>
 <body>
@@ -2038,7 +2039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="startMenu" role="menu" aria-label="전체 메뉴">
     <div class="spm2-head"><b>전체 메뉴</b></div>
     <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
-    <div class="spm2-cap">바로가기</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div><div class="start-item spm2-q" data-q="instagram" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('instagram');}else{window.open('https://www.instagram.com/ux_superplanning/','_blank');} closeStart();"><span>인스타그램</span></div><div class="start-item spm2-q" data-q="threads" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('threads');}else{window.open('https://www.threads.com/@ux_superplanning','_blank');} closeStart();"><span>스레드</span></div><div class="start-item spm2-q" data-q="intro-video" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('intro-video');}else{window.open('https://youtu.be/dHwu6Zdt1Pw','_blank');} closeStart();"><span>유튜브</span></div></div>
+    <div class="spm2-cap">회사소개서</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" style="grid-column:1 / -1" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div></div>
   </div>
 
   <div id="taskbar">
@@ -2879,7 +2880,7 @@ window.spQB = function (btn, pos) {
   try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
 };
 </script>
-<script src="/assets/sp-mnav.js?v=192" defer></script>
+<script src="/assets/sp-mnav.js?v=193" defer></script>
 <script src="/assets/sp-live.js?v=178" defer></script>
 <script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
 </body>

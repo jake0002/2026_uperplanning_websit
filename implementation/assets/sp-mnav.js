@@ -103,7 +103,7 @@
         var imgs = '';
         for (var i = 1; i <= PAGES; i++) {
           var n = (i < 10 ? '0' : '') + i;
-          imgs += '<div class="spp-pg"><img src="/images/brochure/brochure-' + n + '.webp?v=187" width="1200" height="675" loading="lazy" decoding="async" alt="슈퍼플래닝 회사소개서 및 포트폴리오 ' + i + '쪽"><i>' + i + ' / ' + PAGES + '</i></div>';
+          imgs += '<div class="spp-pg"><img src="/images/brochure/brochure-' + n + '.webp?v=193" width="1200" height="675" loading="lazy" decoding="async" alt="슈퍼플래닝 회사소개서 및 포트폴리오 ' + i + '쪽"><i>' + i + ' / ' + PAGES + '</i></div>';
         }
         pdf = document.createElement('div');
         pdf.id = 'spPdf';
