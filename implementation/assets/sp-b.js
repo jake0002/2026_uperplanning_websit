@@ -310,7 +310,7 @@
 (function () {
   var de = document.documentElement;
   if (!de.classList.contains('sp-b') || de.classList.contains('sp-b-home')) return;
-  var ARW = '<i class="sp-arw" aria-hidden="true"></i>', PDF = '/Superplanning_Company_Brochure.pdf';
+  var ARW = '<i class="sp-arw" aria-hidden="true"></i>', PDF = '/Superplanning_Company_Brochure.pdf?v=194';
   var POP = {
     brochure: { w: 1000, title: '포트폴리오 보기', body:
       '<div class="sp-pop sp-pop-media"><div class="sp-pop-bar"><span class="sp-pop-file">슈퍼플래닝_회사소개서.pdf</span><div class="sp-pop-actions">' +

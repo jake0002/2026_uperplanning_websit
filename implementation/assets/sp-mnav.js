@@ -10,7 +10,7 @@
   var path = location.pathname.replace(/index\.html$/, '');
   function isOn(href) { return href === '/' ? path === '/' : path.indexOf(href) === 0; }
   function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-  var PDF = '/Superplanning_Company_Brochure.pdf', PAGES = 32;
+  var PDF = '/Superplanning_Company_Brochure.pdf?v=194', PAGES = 32;
   function isMobile() { return window.innerWidth <= 768; }
   function track(btn, pos) {
     if (typeof window.spQB === 'function') { window.spQB(btn, pos); return; }
@@ -111,7 +111,7 @@
         pdf.setAttribute('aria-label', '회사소개서 및 포트폴리오');
         pdf.innerHTML =
           '<div class="spp-wt"><span>회사소개서 및 포트폴리오</span><button type="button" class="spp-x" aria-label="닫기">✕</button></div>' +
-          '<div class="spp-info"><b>슈퍼플래닝 회사소개서 및 포트폴리오</b><small>PDF · ' + PAGES + '쪽 · 약 15MB</small></div>' +
+          '<div class="spp-info"><b>슈퍼플래닝 회사소개서 및 포트폴리오</b><small>PDF · ' + PAGES + '쪽 · 약 19MB</small></div>' +
           '<div class="spp-btns"><a href="' + PDF + '" download="Superplanning_Company_Brochure.pdf" data-spp="dl">PDF 다운로드</a><a href="' + PDF + '" target="_blank" rel="noopener" data-spp="open">새 창에서 열기</a></div>' +
           '<p class="spp-tip">▼ 아래로 내려 바로 보기</p>' +
           '<div class="spp-pages">' + imgs + '</div>' +
