@@ -1,0 +1,4220 @@
+<!DOCTYPE html>
+<html lang="ko" class="sp-b">
+<head>
+<script>/* 205 모바일 테스트: 문의 전송 차단 */(function(){var f=window.fetch;window.fetch=function(u,o){var x=String(u);if(x.indexOf("formsubmit.co")>-1||x.indexOf("send_inquiry")>-1){console.log("[m-preview] 전송 차단:",x);return Promise.resolve(new Response(JSON.stringify({success:"true",ok:true}),{status:200,headers:{"Content-Type":"application/json"}}));}return f.apply(this,arguments);};})();</script>
+<style>#spbPrev{position:fixed;left:50%;top:4px;transform:translateX(-50%);z-index:2147483647;padding:3px 10px;border-radius:999px;background:#111;color:#fff;font:600 11px/1.4 Pretendard,sans-serif;pointer-events:none;opacity:.85;white-space:nowrap}</style>
+
+  <meta charset="UTF-8">
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://www.superplanning.co.kr | SECONDARY: https://superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://www.superplanning.co.kr">
+
+  <!-- OPEN GRAPH & KAKAOTALK / NAVER / FACEBOOK SHARE THUMBNAIL (CACHE BUSTING: ?v=20260818) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="AI활용 UX강의·AI 서비스기획 교육 | 기업출강·KDT 맞춤 과정 슈퍼플래닝">
+  <meta property="og:description" content="AI 서비스기획 교육·AI활용 UX강의. SBA 새싹캠퍼스·패스트캠퍼스 KDT·여성인력개발센터·대학 출강, 원데이 5시간부터 250시간 장기 과정까지 기관 맞춤 설계. 서비스기획·피그마·바이브코딩 실습 중심.">
+  <meta property="og:url" content="https://www.superplanning.co.kr/ux-academy/">
+  <meta property="og:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:secure_url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="슈퍼플래닝 AI-UX 강의 — 9회차 실무 중심 커리큘럼 썸네일">
+  <meta property="og:image:url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <link rel="image_src" href="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI활용 UX강의·AI 서비스기획 교육 | 기업출강·KDT 맞춤 과정 슈퍼플래닝">
+  <meta name="twitter:description" content="AI 서비스기획 교육·AI활용 UX강의. SBA 새싹캠퍼스·패스트캠퍼스 KDT·여성인력개발센터·대학 출강, 원데이 5시간부터 250시간 장기 과정까지 기관 맞춤 설계. 서비스기획·피그마·바이브코딩 실습 중심.">
+  <meta name="twitter:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta name="twitter:domain" content="www.superplanning.co.kr">
+  <meta name="twitter:url" content="https://www.superplanning.co.kr/ux-academy/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <title>AI활용 UX강의·AI 서비스기획 교육 | 기업출강·KDT 맞춤 과정 슈퍼플래닝</title>
+  <meta name="description" content="AI 서비스기획 교육·AI활용 UX강의. SBA 새싹캠퍼스·패스트캠퍼스 KDT·여성인력개발센터·대학 출강, 원데이 5시간부터 250시간 장기 과정까지 기관 맞춤 설계. 서비스기획·피그마·바이브코딩 실습 중심.">
+  <meta name="keywords" content="AI 서비스기획 교육, AI 서비스기획 강의, AI활용교육, 생성형AI교육, AI기업교육, 클로드 코드 강의, 피그마 MCP, DESIGN.md, 피그마 AI, 피그마 메이크, KDT 강사, 서비스기획 강사, UX강사, 기업출강, UX강의, UX교육, 기업 UX교육, UX기업출강, AI UX강의, UX리서치 강의, UX라이팅 강의, 바이브코딩 강의, 피그마 강의, UIUX강의, UX학원, 강사파견, 슈퍼플래닝">
+  <meta name="author" content="슈퍼플래닝 (Superplanning)">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="canonical" href="https://www.superplanning.co.kr/ux-academy/">
+  <link rel="alternate" hreflang="ko" href="https://www.superplanning.co.kr/ux-academy/" />
+  <link rel="describedby" type="text/plain" title="AI 색인 (llms.txt) - UX 강의" href="https://www.superplanning.co.kr/llms.txt">
+  <link rel="alternate" type="text/markdown" title="마크다운 미러 (AI 로봇용)" href="https://www.superplanning.co.kr/services/ux-academy.md">
+
+  <!-- JSON-LD Structured Data (@graph) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.superplanning.co.kr/#organization",
+      "name": "슈퍼플래닝 (Superplanning)",
+      "alternateName": [
+        "슈퍼플래닝",
+        "Superplanning"
+      ],
+      "url": "https://www.superplanning.co.kr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.superplanning.co.kr/images/superplanning_brand_logo.png"
+      },
+      "image": "https://www.superplanning.co.kr/og-thumbnail.png?v=20260818",
+      "email": "jake@superplanning.co.kr",
+      "telephone": "+82-31-699-3298",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+82-31-699-3298",
+          "contactType": "customer service",
+          "areaServed": "KR",
+          "availableLanguage": [
+            "ko-KR"
+          ]
+        }
+      ],
+      "foundingDate": "2019-07-07",
+      "award": "2021 대한민국 국가사회산업 공헌대상 IT부문 대상 (헤럴드경제·코리아헤럴드 주최, 2021년 12월)",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.superplanning.co.kr/#founder",
+        "name": "김휘수",
+        "alternateName": [
+          "제이크",
+          "Jake",
+          "UX기획자 제이크"
+        ],
+        "jobTitle": "슈퍼플래닝 대표 · UX기획자 · UX컨설턴트",
+        "description": "UX기획자 제이크라는 활동명으로 활동하는 14년 차 UX기획 실무자이자 UX컨설턴트입니다. 2019년 UX 전문 에이전시 슈퍼플래닝을 설립했으며, 현대자동차·IBK기업은행·신한금융그룹·GS그룹 등 기업 실무자 UX강의와 대학 UX 특강을 진행하고 있습니다.",
+        "image": "https://www.superplanning.co.kr/images/ux-academy/ux-instructor-jake.webp",
+        "url": "https://www.superplanning.co.kr/ux-company/#ceo",
+        "worksFor": {
+          "@id": "https://www.superplanning.co.kr/#organization"
+        },
+        "knowsAbout": [
+          "UX기획",
+          "UX라이팅",
+          "UX리서치",
+          "UX컨설팅",
+          "AI-UX",
+          "UX강의",
+          "IA설계",
+          "기능정의서",
+          "피그마",
+          "바이브코딩",
+          "프로덕트 오너 교육"
+        ],
+        "sameAs": [
+          "https://www.instagram.com/ux_superplanning/",
+          "https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "미사강변동로 72, SB비즈타워 1116호",
+        "addressLocality": "하남시",
+        "addressRegion": "경기도",
+        "postalCode": "12912",
+        "addressCountry": "KR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/ux_superplanning/",
+        "https://www.threads.com/@ux_superplanning",
+        "https://www.youtube.com/@TV-ve4hc",
+        "https://blog.naver.com/ux_superplanning"
+      ],
+      "knowsAbout": [
+        "UX강의",
+        "기업 UX교육",
+        "AI-UX강의",
+        "UX리서치",
+        "UX라이팅",
+        "UX컨설팅",
+        "UX기획",
+        "IA설계",
+        "피그마",
+        "바이브코딩",
+        "웹/앱 개발"
+      ],
+      "department": [
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 사용자경험 연구소"
+        },
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 UX기획팀"
+        },
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 비주얼 디자인팀"
+        },
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 웹/앱 개발팀"
+        },
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 AI-UX교육팀"
+        },
+        {
+          "@type": "Organization",
+          "name": "슈퍼플래닝 경영전략팀"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.superplanning.co.kr/#website",
+      "url": "https://www.superplanning.co.kr/",
+      "name": "슈퍼플래닝",
+      "inLanguage": "ko-KR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.superplanning.co.kr/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#webpage",
+      "dateModified": "2026-11-23",
+      "url": "https://www.superplanning.co.kr/ux-academy/",
+      "name": "AI활용 UX강의·AI 서비스기획 교육 | 기업출강·KDT 맞춤 과정 슈퍼플래닝",
+      "description": "AI 서비스기획 교육·AI활용 UX강의. SBA 새싹캠퍼스·패스트캠퍼스 KDT·여성인력개발센터·대학 출강, 원데이 5시간부터 250시간 장기 과정까지 기관 맞춤 설계. 서비스기획·피그마·바이브코딩 실습 중심.",
+      "isPartOf": {
+        "@id": "https://www.superplanning.co.kr/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.superplanning.co.kr/ux-academy/#breadcrumb"
+      },
+      "inLanguage": "ko-KR",
+      "about": {
+        "@id": "https://www.superplanning.co.kr/ux-academy/#course"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://www.superplanning.co.kr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "서비스",
+          "item": "https://www.superplanning.co.kr/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "UX강의",
+          "item": "https://www.superplanning.co.kr/ux-academy/"
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course",
+      "name": "슈퍼플래닝 AI활용 UX강의 (9회차 실무 커리큘럼)",
+      "description": "현업 UX에이전시가 직접 운영하는 실무형 UX교육. AI활용 UX, UX리서치, AARRR, UX라이팅, IA설계, 앱 화면기획, 프로젝트 관리, 바이브코딩, 피그마 심화까지 9회차로 구성되며 1:1 오프라인 강의, 실시간 온라인 강의, 기업·대학·기관 출강 형태로 진행합니다.",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "url": "https://www.superplanning.co.kr/ux-academy/",
+      "inLanguage": "ko-KR",
+      "teaches": [
+        "AI활용 UX기획",
+        "UX리서치",
+        "AARRR 퍼널 설계",
+        "UX라이팅",
+        "IA(정보구조) 설계",
+        "앱 화면기획",
+        "프로젝트 관리",
+        "바이브코딩",
+        "AI 코딩 에이전트(Claude Code·Codex)",
+        "피그마 MCP 연동",
+        "DESIGN.md 디자인 레퍼런스",
+        "피그마",
+        "피그마 AI(Figma Agent·Figma Make)"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "UX 취준생·이직러, 스타트업 예비창업자, 기업 실무자·PM·PO, UX 입문자·비전공자"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Paid",
+        "priceCurrency": "KRW",
+        "lowPrice": 220000,
+        "highPrice": 1080000,
+        "offerCount": 4,
+        "url": "https://www.superplanning.co.kr/ux-academy/#pricing"
+      },
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Onsite",
+          "location": "서울/수도권/지방 협의, 기업·학교 출강 가능",
+          "courseWorkload": "PT5H"
+        },
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Online",
+          "courseWorkload": "PT5H"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.superplanning.co.kr/ux-academy/#course-a"
+        },
+        {
+          "@id": "https://www.superplanning.co.kr/ux-academy/#course-b"
+        },
+        {
+          "@id": "https://www.superplanning.co.kr/ux-academy/#course-c"
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course-org",
+      "name": "AI 서비스기획 교육 (공공기관·기업 맞춤 과정)",
+      "description": "여성인력개발센터·청년 취업 기관·KDT 교육기업·대학·기업을 위한 AI 서비스기획 교육. 원데이 5시간, 2~3일 16시간, 2~3개월 250시간 과정으로 서비스기획(UX리서치·PRD·IA·UX라이팅·화면기획서·포트폴리오)과 피그마(UI 기본·오토레이아웃·디자인 시스템·프로토타입·바이브 디자인)를 실습 중심으로 교육합니다.",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "url": "https://www.superplanning.co.kr/ux-academy/#org-training",
+      "instructor": [
+        {"@id": "https://www.superplanning.co.kr/#founder"},
+        {"@id": "https://www.superplanning.co.kr/ux-academy/#instructor-kim-daeil"},
+        {"@id": "https://www.superplanning.co.kr/ux-academy/#instructor-ha-juyoung"}
+      ],
+      "inLanguage": "ko-KR",
+      "teaches": [
+        "AI 활용 서비스기획",
+        "UX리서치",
+        "PRD 요구사항 정의",
+        "IA 정보구조 설계",
+        "UX라이팅",
+        "화면기획서",
+        "피그마",
+        "디자인 시스템",
+        "바이브 디자인"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "여성인력개발센터·청년 취업 기관·KDT 교육기업·대학·기업 교육 담당자"
+      },
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Onsite",
+          "location": "서울·경기·인천 및 광주·대구·부산 등 전국 출강",
+          "courseWorkload": "PT5H"
+        },
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Onsite",
+          "courseWorkload": "PT16H"
+        },
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Blended",
+          "courseWorkload": "PT250H"
+        },
+        {
+          "@type": "CourseInstance",
+          "courseMode": "Online",
+          "courseWorkload": "PT5H"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#instructor-kim-daeil",
+      "name": "김대일",
+      "jobTitle": "프로덕트 디자이너·피그마 강사",
+      "description": "『된다! 피그마 디자인 10분 레시피』 저자인 8년 차 프로덕트 디자이너. 홍익대·카카오엔터·넥슨 등에서 피그마·바이브코딩 교육 진행.",
+      "knowsAbout": [
+        "피그마",
+        "프로덕트 디자인",
+        "바이브코딩",
+        "디자인 시스템"
+      ],
+      "affiliation": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#instructor-ha-juyoung",
+      "name": "하주영",
+      "jobTitle": "UI/UX 디자인 강사",
+      "description": "UI/UX 디자인 리드 출신. 부천일드림센터·양재 AI 허브·한양대학교 등에서 UI/UX·AI 디자인 교육 진행.",
+      "knowsAbout": [
+        "UI/UX 디자인",
+        "AI 디자인"
+      ],
+      "affiliation": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "강의는 누가 진행하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "슈퍼플래닝 UX강의는 대표강사 김휘수(UX기획자 제이크)를 포함한 4~5명의 강사들이 함께 진행합니다. 대표강사가 커리큘럼을 설계하고, 피그마 전문 강사와 프로덕트 디자이너 과정 강사 등 10년차 이상 현직 실무자 협업 강사들이 과정 주제와 기업 요청에 맞춰 함께 강의합니다. 기업 출강은 교육 목표와 직무 구성에 맞춰 강사진을 구성합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "공공기관·기업 대상 AI 서비스기획 교육도 가능한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 슈퍼플래닝은 SBA 청년취업사관학교 새싹캠퍼스, 패스트캠퍼스 커널아카데미 KDT 과정, 동작·관악·성남여성인력개발센터, 세종대·서울여대 등 대학에서 AI 서비스기획 교육을 진행해 왔습니다. 원데이 5시간 특강, 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정 중 기관 목표에 맞춰 설계합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "KDT·국비지원 과정처럼 장기 과정도 운영할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "운영할 수 있습니다. 슈퍼플래닝의 250시간 장기 과정은 서비스기획 파트(UX리서치·PRD·IA·UX라이팅·화면기획서·포트폴리오)와 피그마 파트(UI 기본·오토레이아웃·디자인 시스템·프로토타입·바이브 디자인)로 구성합니다. 김휘수(서비스기획)·김대일(피그마)·하주영(UI/UX·AI 디자인) 강사가 파트를 나눠 진행하고, 마지막에는 수강생 포트폴리오 발표로 마무리합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "지방이나 온라인으로도 강의할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 슈퍼플래닝은 서울·경기·인천 전 지역과 광주·대구·부산 등 전국 출강이 가능하며, 실시간 온라인 강의로도 진행합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "UX강의는 IT나 UX를 전혀 몰라도 들을 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 본 과정은 IT 비전공자와 UX 입문자를 주요 대상으로 설계되어 있습니다. 선행 학습 없이도 따라올 수 있도록 설명하되, 실제 프로젝트와 연결되는 실습 중심으로 진행해 이해만 하고 끝나지 않도록 돕습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "UX 취준생에게는 어떤 도움이 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "취준생에게는 UX리서치, UX라이팅, IA설계, 화면기획, 피그마, 프로토타이핑을 개별 기능이 아니라 하나의 서비스 흐름으로 이해하는 데 도움이 됩니다. 포트폴리오 문서 정리, 발표 논리, 실무 문서 감각을 함께 잡고 싶은 경우 특히 적합합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스타트업 예비창업자나 신사업 담당자에게도 맞나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "잘 맞습니다. 아이디어는 있지만 무엇부터 정리해야 하는지 모를 때, 개발 외주를 맡기기 전에 어떤 요구사항과 문서가 필요한지 알고 싶을 때, 그리고 비용·일정·우선순위를 현실적으로 판단하고 싶을 때 도움이 됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "기업 UX강의나 사내 UX교육 형태로도 진행할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 1:1 오프라인 대면 강의를 기본으로 합니다. 기업·학교·기관 대상 특강, 단체 심화교육, 실시간 온라인 교육도 진행할 수 있습니다. 조직의 직무 구성과 프로젝트 상황에 맞춰 리서치, 기획, 피그마, 협업, AI 활용 등 필요한 주제로 조정합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IT 비전공 현업 담당자도 화면정의서·기능정의서 교육을 받을 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 차세대 시스템 구축이나 웹/앱 개발 사업 착수 전, 기존 시스템을 사용해 온 현업 담당자가 화면정의서(화면설계서)와 기능정의서에 무엇을 담아야 하는지 이해하고 직접 작성해 보는 실습형 기업출강으로 진행합니다. 개발 용어보다 실제 업무 화면을 기준으로 설명하며, 참석 인원과 일정에 맞춰 커리큘럼을 조정합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "피그마 교육은 디자이너만 위한 수업인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그렇지 않습니다. 협업 기능, 오토레이아웃, 컴포넌트, 베리어블, 프로토타이핑처럼 기획자와 PM도 실무에서 알아두면 좋은 범위를 중심으로 조정할 수 있습니다. 보안상 피그마 사용이 어려운 조직은 PPT 기반 화면기획 방식으로 대체할 수도 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "최신 AI 활용과 바이브코딩도 배울 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가능합니다. 생성형 AI를 활용한 UX리서치, 문서화, 프롬프트 설계뿐 아니라, 바이브코딩 기반 프로토타입 제작과 간단한 배포 실습까지 연결할 수 있습니다. 클로드 코드(Claude Code)·코덱스(Codex) 같은 AI 코딩 에이전트에 피그마 MCP를 연동해 피그마 화면을 실제 동작하는 화면으로 구현하고, DESIGN.md 디자인 레퍼런스 파일로 AI가 일관된 디자인을 유지하게 하는 최신 워크플로우도 실습합니다. 목적은 툴 이름을 많이 아는 것이 아니라, 실제 UX업무와 서비스 준비 과정에 AI를 어떻게 연결할지 이해하는 데 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "강의는 온라인인가요, 오프라인인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "기본은 오프라인 1:1 대면 강의입니다. 다만 실시간 온라인 강의, 기업 출강, 학교 특강, 단체 심화교육 형태로도 운영할 수 있으며, 원데이형·분할형·단기 집중형으로 조정 가능합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "어떤 준비물을 가져가면 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "실습용 개인 노트북, 진행 중인 웹·앱 프로젝트 질문 리스트, 제미나이·클로드 등 1개 이상 유료 AI계정, 메이즈·피그마·안티그래비티 회원가입을 준비해 오면 좋습니다. 메이즈(https://maze.co/), 피그마(https://www.figma.com/), 안티그래비티(https://antigravity.google/)를 미리 가입해 두면 실습 진행이 더 수월합니다. 별도의 선행 학습은 필수가 아니며, 현재 상황을 솔직하게 공유할수록 맞춤형으로 더 구체적인 도움을 받을 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "수강 코스는 어떻게 나뉘나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "수준과 목적에 따라 압축형, 심화형, 전체 프로세스형으로 나누어 운영합니다. 빠르게 핵심만 잡아야 하는 입문자, 피그마와 화면기획까지 깊게 다루고 싶은 실무자, PRD·성과지표·바이브코딩까지 전체 흐름을 익히고 싶은 대표나 담당자에게 적합한 방식이 서로 다릅니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "강의가 끝난 뒤에도 질문이나 피드백을 받을 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "과정안 기준으로는 강의 후속 과제관리, 맞춤형 과제 피드백, 추가 질문 대응이 포함되어 있습니다. 그래서 수업 당일 이해에서 끝나는 것이 아니라, 실제 적용 단계에서 막히는 부분까지 이어서 점검하기 좋은 구조입니다."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course-a",
+      "name": "슈퍼플래닝 UX강의 A코스 (실속형, 2시간 1:1 UX강의)",
+      "description": "UX기초와 현재 수준 점검, 피드백 리포트·UX포트폴리오 작성 등 맞춤 자료를 제공하는 실속형 1:1 UX강의. A코스 수강 후 B·C·D코스 신청 시 A코스 수강료 전액 차감.",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "inLanguage": "ko-KR",
+      "educationalLevel": "Beginner",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": 220000,
+        "priceCurrency": "KRW",
+        "url": "https://www.superplanning.co.kr/ux-academy/#pricing"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "location": "온/오프라인(협의가능), 기업·학교 출강 가능",
+        "courseWorkload": "PT2H"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course-b",
+      "name": "슈퍼플래닝 UX강의 B코스 (입문형, 5시간 1:1 UX강의)",
+      "description": "UX리서치·UX라이팅·서비스기획·바이브코딩 등을 빠르게 익히는 1:1 입문형 UX강의",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "inLanguage": "ko-KR",
+      "educationalLevel": "Beginner",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": 550000,
+        "priceCurrency": "KRW",
+        "url": "https://www.superplanning.co.kr/ux-academy/#pricing"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "location": "온/오프라인(협의가능), 기업·학교 출강 가능",
+        "courseWorkload": "PT5H"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course-c",
+      "name": "슈퍼플래닝 UX강의 C코스 (심화형, 8시간 1:1 UX강의)",
+      "description": "UX리서치·UX라이팅·IA설계·피그마·바이브코딩 등을 화면기획까지 깊게 연결하는 1:1 심화형 UX강의",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "inLanguage": "ko-KR",
+      "educationalLevel": "Intermediate",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": 790000,
+        "priceCurrency": "KRW",
+        "url": "https://www.superplanning.co.kr/ux-academy/#pricing"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "location": "온/오프라인(협의가능), 기업·학교 출강 가능",
+        "courseWorkload": "PT8H"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.superplanning.co.kr/ux-academy/#course-d",
+      "name": "슈퍼플래닝 UX강의 D코스 (확장형, 12시간 1:1 UX강의)",
+      "description": "UX리서치·UX라이팅·PRD·피그마·성과지표·바이브코딩까지 다루는 1:1 확장형 UX강의",
+      "provider": {
+        "@id": "https://www.superplanning.co.kr/#organization"
+      },
+      "inLanguage": "ko-KR",
+      "educationalLevel": "Advanced",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": 1080000,
+        "priceCurrency": "KRW",
+        "url": "https://www.superplanning.co.kr/ux-academy/#pricing"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "location": "온/오프라인(협의가능), 기업·학교 출강 가능",
+        "courseWorkload": "PT12H"
+      }
+    }
+  ]
+}
+</script>
+
+  <style>
+    /* CSS Variables & Core Styling (Main Page Compatibility) */
+    :root {
+      --bg: #ffffff;
+      --win-bg: #c0c0c0;
+      --win-fg: #000000;
+      --win-fg-dark: #0a0a0a;
+      --bevel-hi: #ffffff;
+      --bevel-lo: #7b7b7b;
+      --bevel-shadow: #3b3b3b;
+      --accent: #ffd43b;
+      --gnb-bg: rgba(0, 0, 0, 0.45);
+      --gnb-fg: #ffffff;
+      --gnb-bd: rgba(255, 255, 255, 0.2);
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      letter-spacing: -0.01em;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--win-fg);
+      padding-bottom: calc(var(--taskbar-h) + 16px);
+      user-select: text;
+    }
+
+    a {
+      color: #111111;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #555555;
+    }
+
+    /* Win95 Button Utility */
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) */
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      justify-content: center;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none !important;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo span, #brandLogoText {
+      color: #ffffff !important;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+
+    /* 4. GNB HEADER BAR (EXACT COPY FROM MAIN PAGE) */
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      user-select: none !important;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (HIGH-CONTRAST NEON ACCENT LINE) */
+        /* GNB SCROLL PROGRESS GAUGE BAR (EXACT MAIN PAGE COPY) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1;
+    }
+    .gnb-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .gnb-item {
+      position: relative;
+    }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      user-select: none !important;
+    }
+        .gnb-link:hover,
+    .gnb-link:active,
+    .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span,
+    .gnb-link:active span,
+    .gnb-link.active span {
+      color: #ffffff !important;
+    }
+    .gnb-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Mobile Hamburger & Drawer */
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 10px;
+    }
+    #mobileNavDrawer.show {
+      display: block !important;
+    }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    /* Outer Wrapper for Left Alignment */
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 24px 24px 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* ==================================================== */
+    /* WINDOWS 95 EXPLORER CONTAINER WINDOW (EXACT ATTACHED IMAGE MATCH) */
+    /* ==================================================== */
+    .explorer-window {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0; /* Left Alignment */
+      background: #c0c0c0;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.35);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 1. Dark Blue Titlebar (#000080 - Exact Match) */
+    .titlebar {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid #000000;
+      user-select: none;
+    }
+    .titlebar-text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .titlebar-controls {
+      display: flex;
+      gap: 3px;
+    }
+    .win-btn {
+      width: 18px;
+      height: 18px;
+      background: #c0c0c0;
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+
+    /* 2. Menu Bar (#c0c0c0) */
+    .menubar {
+      background: #c0c0c0;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #808080;
+      display: flex;
+      gap: 18px;
+      user-select: none;
+    }
+    .menubar span {
+      cursor: default;
+    }
+    .menubar u {
+      text-decoration: underline;
+    }
+
+    /* 3. Toolbar & Address Bar Area */
+    .toolbar-area {
+      background: #c0c0c0;
+      padding: 4px 8px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .tool-btn {
+      background: #c0c0c0;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tool-btn:active {
+      box-shadow: inset 1px 1px 0 #808080;
+    }
+
+    /* Address Bar Input */
+    .address-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .addr-label {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .addr-input {
+      flex: 1;
+      background: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #808080;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #000000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /* 4. Explorer Split Pane (Left Sidebar + Right Main Pane) */
+    .explorer-split {
+      display: flex;
+      background: #ffffff;
+      min-height: 600px;
+    }
+
+    /* Left Explorer Tree View Sidebar (Exact Attached Image Layout) */
+    .tree-sidebar {
+      width: 260px;
+      min-width: 240px;
+      background: #ffffff;
+      border-right: 2px solid #808080;
+      box-shadow: inset -1px 0 0 #d0d0d0;
+      padding: 16px 12px;
+      user-select: none;
+      overflow-y: auto;
+    }
+    .tree-root {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tree-toggle {
+      font-size: 11px;
+      font-weight: bold;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      line-height: 1;
+    }
+
+    /* Tree Navigation List (ul.toc) */
+    ul.tree-list {
+      list-style-type: none;
+      padding-left: 8px;
+      margin: 0;
+      position: relative;
+    }
+    ul.tree-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 12px;
+      left: 18px;
+      border-left: 1px dotted #808080;
+    }
+
+    .tree-item {
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .tree-item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -10px;
+      width: 10px;
+      border-top: 1px dotted #808080;
+    }
+
+    .tree-item a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      color: #000000;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+    .tree-item a:hover, .tree-item a.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    .tree-item a:hover .doc-icon, .tree-item a.active .doc-icon {
+      filter: brightness(2);
+    }
+
+    /* Right Main Content View Pane (Exact Attached Image Layout) */
+    .main-content-pane {
+      flex: 1;
+      background: #ffffff;
+      padding: 36px 48px;
+      overflow-y: auto;
+    }
+
+    /* Header H1 (Pure, Unadorned Notepad Document Title) */
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .hero-intro {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    /* Header H2 (Raw, Clean Notepad Heading - No Background Box, No Left Colored Bar) */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 38px;
+      margin-bottom: 14px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      color: #000000;
+      scroll-margin-top: 70px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Header H3 (Raw, Clean Subheading) */
+    h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #111111;
+    }
+    h3::before {
+      content: "";
+      display: none;
+    }
+
+    /* Raw Body Paragraphs (Clean Notepad Readability) */
+    p {
+      margin-bottom: 14px;
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #111111;
+    }
+
+    /* Raw Quote Styling (Pure Notepad Text Quotation - No Box, No Side Line) */
+    blockquote {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      font-size: 15.5px;
+      font-weight: 700;
+      margin: 20px 0 6px 0;
+      color: #111111;
+    }
+    .sub-quote {
+      font-size: 13.5px;
+      color: #444444;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 0;
+      border-left: none;
+    }
+
+    /* ==========================================================================
+       UX-RESEARCH UNIFIED DESIGN SYSTEM (Typography, Bullets, Boxes, & Cards)
+       ========================================================================== */
+
+    /* Global Typography & Font Setup */
+    * {
+      letter-spacing: -0.01em;
+    }
+    main.main-content-pane {
+      font-family: var(--font, sans-serif);
+      color: #222222;
+      line-height: 1.6;
+    }
+
+    /* Headings (H1, H2, H3, H4) */
+    .main-content-pane h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
+    }
+    .main-content-pane h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      scroll-margin-top: 70px;
+      letter-spacing: -0.01em;
+    }
+    .main-content-pane h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #111111;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Lead Paragraph & Hero Subtitle */
+    .lead, .hero-intro {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #333333;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Paragraphs & Text */
+    .main-content-pane p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #222222;
+      margin-bottom: 14px;
+    }
+
+    /* Bullet Lists & List Items */
+    .main-content-pane ul,
+    .main-content-pane ol {
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+    .main-content-pane li {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #222222;
+      margin-bottom: 7px;
+    }
+    .main-content-pane li strong {
+      color: #111111;
+      font-weight: 700;
+    }
+
+    /* Custom Lead Points & Detailed Lists */
+    ul.lead-points {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 16px 0 24px 0;
+    }
+    ul.lead-points li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #222222;
+    }
+    ul.lead-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #000000;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .lead-detail {
+      display: block;
+      color: #555555;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    /* Unified Box & Card Container Styling (Matching UX-Research) */
+    .box,
+    .summary-card,
+    .curriculum-item,
+    .course-card,
+    .course-feature-box,
+    .cases-history-box,
+    .review-ai-summary {
+      background: #f9f9f9;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      box-sizing: border-box;
+    }
+
+    /* Box Titles & Inner List Styles */
+    .box h3,
+    .summary-title,
+    .curriculum-step,
+    .cases-history-box h3,
+    .course-card h3,
+    .course-feature-box h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #111111;
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .summary-list,
+    .curriculum-list,
+    .cases-history-box ul,
+    .course-card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .summary-list li,
+    .curriculum-list li,
+    .cases-history-box li,
+    .course-card li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #333333;
+    }
+    .summary-list li::before,
+    .curriculum-list li::before,
+    .cases-history-box li::before,
+    .course-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #333333;
+      font-size: 13px;
+    }
+
+    /* Summary & Curriculum Grid Layouts */
+    .summary-grid,
+    .grid-boxes.two,
+    .benefit-grid,
+    .course-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 768px) {
+      .summary-grid,
+      .grid-boxes.two,
+      .benefit-grid,
+      .course-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Curriculum Wrap */
+    .curriculum-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .curriculum-intro {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #333333;
+      margin-bottom: 16px;
+    }
+
+    /* Course Sales & Pricing Styling */
+    .course-sales-layout {
+      margin: 24px 0;
+    }
+    .course-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111111;
+      margin: 8px 0;
+    }
+    .course-origin {
+      font-size: 12.5px;
+      color: #888888;
+      text-decoration: line-through;
+      margin-right: 6px;
+    }
+    .course-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      background: #000000;
+      color: #ffffff;
+      padding: 2px 6px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+
+    /* FAQ List (Matching UX-Research Monochrome Q&A) */
+    .faq {
+      margin-top: 20px;
+    }
+    .faq dt {
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 18px;
+      color: #111111;
+    }
+    .faq dt::before {
+      content: "Q. ";
+      color: #111111;
+      font-weight: 700;
+    }
+    .faq dd {
+      margin-left: 0;
+      margin-top: 4px;
+      padding-left: 26px;
+      margin-bottom: 16px;
+      position: relative;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #222222;
+    }
+    .faq dd::before {
+      content: "A. ";
+      position: absolute;
+      left: 0;
+      color: #444444;
+      font-weight: 700;
+    }
+
+    /* Left-Aligned Clean Photo Frame & Captions (No Borders, Left Aligned) */
+    .photo-frame {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 24px 0;
+      max-width: 640px;
+    }
+    .photo-frame img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      border: none;
+    }
+
+    /* Section 1 2nd Image (.top-hero-photo) Left Aligned & Comfortably Sized (Matching UX-Research max-width: 640px) */
+    .top-hero-photo {
+      width: 100%;
+      max-width: 640px;
+      margin: 20px auto 20px 0 !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      box-sizing: border-box;
+    }
+    .top-hero-photo img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 380px;
+      height: auto;
+      object-fit: contain;
+      object-position: left center !important;
+      display: block;
+      margin: 0 !important;
+      border: none;
+      box-sizing: border-box;
+    }
+    .top-hero-photo figcaption,
+    .photo-caption,
+    figcaption {
+      font-family: var(--font, sans-serif) !important;
+      font-size: 13px !important;
+      color: #555555 !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      margin-top: 8px !important;
+      text-align: left !important;
+      background: transparent !important;
+      padding: 0 !important;
+      border: none !important;
+      width: 100% !important;
+    }
+
+    /* Section 1 Summary Grid: 1 Box Per Row Compact Layout */
+    .summary-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      margin: 10px 0 !important;
+      width: 100% !important;
+    }
+    .summary-card {
+      width: 100% !important;
+      margin-bottom: 0 !important;
+      padding: 8px 12px !important;
+      box-sizing: border-box !important;
+    }
+    .summary-card .summary-title {
+      font-size: 13.5px !important;
+      margin-top: 0 !important;
+      margin-bottom: 4px !important;
+      padding-bottom: 3px !important;
+    }
+    .summary-card .summary-list li {
+      margin-bottom: 2px !important;
+      line-height: 1.35 !important;
+      font-size: 12.5px !important;
+    }
+    .summary-card .summary-list li:last-child {
+      margin-bottom: 0 !important;
+    }
+    
+    /* Review Image Viewer (Fixed Container Height, No Image Clipping) */
+    .review-inline-viewer {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 20px 16px 16px 16px !important;
+      margin: 24px auto !important;
+      max-width: 880px !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+      box-sizing: border-box !important;
+    }
+    .review-inline-stage {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 480px !important;
+    }
+    .review-inline-arrow {
+      position: absolute !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      z-index: 10 !important;
+      width: 34px !important;
+      height: 38px !important;
+      background: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+      color: #334155 !important;
+      font-size: 18px !important;
+      font-weight: bold !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.15s ease !important;
+      outline: none !important;
+    }
+    .review-inline-arrow:hover {
+      background: #f8fafc !important;
+      border-color: #94a3b8 !important;
+      color: #0f172a !important;
+    }
+    .review-inline-arrow.prev {
+      left: 6px !important;
+    }
+    .review-inline-arrow.next {
+      right: 6px !important;
+    }
+    .review-inline-viewport {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 46px !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      overflow: hidden !important;
+    }
+    .review-inline-slide {
+      display: none;
+      width: 100% !important;
+      height: 100% !important;
+      text-align: center !important;
+    }
+    .review-inline-slide.is-active {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      animation: reviewFadeIn 0.25s ease-in-out !important;
+    }
+    @keyframes reviewFadeIn {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+    .review-inline-slide img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      width: auto !important;
+      height: auto !important;
+      display: block !important;
+      margin: 0 auto !important;
+      border-radius: 6px !important;
+      object-fit: contain !important;
+    }
+    @media (max-width: 640px) {
+      .review-inline-stage {
+        height: 340px !important;
+      }
+    }
+    .review-inline-controls {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      margin-top: 16px !important;
+    }
+    .review-inline-pagination {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+    .review-inline-page {
+      width: 24px !important;
+      height: 24px !important;
+      border-radius: 3px !important;
+      border: none !important;
+      background: #94a3b8 !important;
+      color: #ffffff !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      line-height: 24px !important;
+      padding: 0 !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      transition: background 0.15s ease !important;
+      outline: none !important;
+    }
+    .review-inline-page:hover {
+      background: #64748b !important;
+    }
+    .review-inline-page.is-active {
+      background: #334155 !important;
+      font-weight: 800 !important;
+    }
+    .review-inline-toggle {
+      width: 26px !important;
+      height: 26px !important;
+      border-radius: 50% !important;
+      border: 1.5px solid #475569 !important;
+      background: #ffffff !important;
+      color: #334155 !important;
+      font-size: 11px !important;
+      font-weight: bold !important;
+      padding: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      outline: none !important;
+    }
+    .review-inline-toggle:hover {
+      background: #f1f5f9 !important;
+      border-color: #1e293b !important;
+      color: #0f172a !important;
+    }
+
+    /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
+    figure {
+      margin: 20px 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure,
+    .top-hero-photo,
+    .cases-photo-figure {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .cases-logo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure img,
+    .cases-logo-stack img,
+    .top-hero-photo img,
+    .cases-photo-figure img,
+    .main-content-pane figure img,
+    .main-content-pane img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-sizing: border-box;
+    }
+    /* Figure & Responsive Image Sizing to Prevent Horizontal Scroll */
+    figure {
+      margin: 20px 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure,
+    .top-hero-photo,
+    .cases-photo-figure {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .cases-logo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .cases-logo-figure img,
+    .cases-logo-stack img,
+    .top-hero-photo img,
+    .cases-photo-figure img,
+    .main-content-pane figure img,
+    .main-content-pane img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-sizing: border-box;
+    }
+    .photo-caption {
+      margin-top: 8px;
+      font-size: 12.5px;
+      font-weight: bold;
+      color: #555555;
+      text-align: left;
+      background: transparent;
+      padding: 4px 0;
+      border: none;
+    }
+
+    /* List items */
+    ul.section-list {
+      margin-left: 22px;
+      margin-bottom: 18px;
+    }
+    ul.section-list li {
+      margin-bottom: 7px;
+      font-size: 13.5px;
+    }
+
+    /* Comparison Table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 13px;
+      border: 2px solid #000;
+    }
+    .compare-table caption {
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      color: #111111;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid #7b7b7b;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .compare-table thead th {
+      background: #dcdcdc;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 2px solid #000;
+    }
+    .compare-table tbody th {
+      background: #f0f0f0;
+      font-weight: bold;
+      width: 22%;
+    }
+
+    /* FAQ Description List (Clean Monochrome Q & A) */
+    .faq {
+      margin-top: 18px;
+    }
+    .faq dt {
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 16px;
+      color: #111111;
+    }
+    .faq dt::before {
+      content: "Q. ";
+      color: #111111;
+      font-weight: bold;
+    }
+    .faq dd {
+      margin-left: 0;
+      margin-top: 4px;
+      padding-left: 26px;
+      margin-bottom: 16px;
+      position: relative;
+      font-size: 13.5px;
+      color: #222222;
+    }
+    .faq dd::before {
+      content: "A. ";
+      position: absolute;
+      left: 0;
+      color: #444444;
+      font-weight: bold;
+    }
+
+    /* Bottom Inline Navigation Footer */
+    .bottom-nav {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #000000;
+      font-size: 13px;
+    }
+    .bottom-nav p {
+      margin-bottom: 8px;
+    }
+
+    /* 5. Gray Status Bar (#dcdcdc) */
+    .statusbar {
+      background: #dcdcdc;
+      border-top: 2px solid #ffffff;
+      padding: 4px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      color: #333333;
+      user-select: none;
+    }
+
+    /* 9. TASKBAR (EXACT COPY FROM MAIN PAGE) */
+    #taskbar {
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--taskbar-h);
+      background: var(--taskbar);
+      border-top: 2px solid #fff;
+      box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 6px;
+      user-select: none !important;
+    }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+
+    /* Start Menu (z-index: 999999 !important) */
+    #startMenu {
+      position: fixed !important;
+      bottom: var(--taskbar-h, 36px);
+      left: 4px;
+      width: 220px;
+      background: var(--win-bg, #c0c0c0);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi, #fff), inset -1px -1px 0 var(--bevel-shadow, #808080), 3px 3px 0 rgba(0,0,0,0.4);
+      z-index: 999999 !important;
+      display: none;
+      padding: 4px;
+    }
+    #startMenu.show { display: flex !important; }
+    .start-banner {
+      width: 28px;
+      background: #000000;
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      max-width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #dfdfdf;
+      font-weight: bold;
+    }
+
+    /* Responsive Adjustments for Mobile Explorer Split */
+    @media (max-width: 980px) {
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+      .tree-sidebar { width: 220px; min-width: 200px; }
+      .main-content-pane { padding: 24px 28px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 8px;
+        font-size: 11px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      .page-wrapper {
+        padding: calc(var(--logo-top) + var(--gnb-h) + 10px) 8px 16px 8px;
+      }
+      .explorer-split {
+        flex-direction: column;
+      }
+      .tree-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #808080;
+        padding: 12px;
+      }
+      .main-content-pane {
+        padding: 20px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+    }
+  
+    /* BACK TO TOP ANCHOR BUTTON (RETRO WINDOWS STYLE) */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 50px;
+      right: 20px !important; left: auto !important;
+      z-index: 999999;
+      background: var(--win-bg);
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35);
+      padding: 5px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 4px;
+      user-select: none !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b;
+      transform: translate(1px, 1px);
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn { display: none !important;  right: 20px !important; left: auto !important;}
+      #taskbar, .bottom-gnb { display: none !important; }
+      body { padding-bottom: 0 !important; }
+    }
+
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: none;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+
+    /* Typewriter Quote Styling (Matching UX-Company) */
+    .typewriter-quote {
+      border-right: 2px solid #ffffff;
+      white-space: pre-line;
+      word-break: keep-all;
+    }
+    .typewriter-quote.is-typing {
+      animation: spCaretBlink 0.8s step-end infinite;
+    }
+    .typewriter-quote.is-done {
+      border-right-color: transparent;
+      animation: none;
+    }
+    @keyframes spCaretBlink {
+      0%, 49% { border-right-color: #ffffff; }
+      50%, 100% { border-right-color: transparent; }
+    }
+
+    /* Section 3 Cases History Grid: 1 Box Per Row Layout */
+    .cases-history-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+      margin: 16px 0 !important;
+      width: 100% !important;
+    }
+    .cases-history-box {
+      width: 100% !important;
+      margin-bottom: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Curriculum Note Box Styling */
+    .curriculum-note {
+      background: #f9f9f9 !important;
+      border: 1px solid #dcdcdc !important;
+      border-radius: 6px !important;
+      padding: 16px 20px !important;
+      margin: 20px 0 16px 0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+      box-sizing: border-box !important;
+    }
+    .curriculum-note-title {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      padding-bottom: 6px !important;
+      border-bottom: 1px solid #ebebeb !important;
+    }
+    .curriculum-note-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin: 0 !important;
+    }
+    .curriculum-note-list li {
+      position: relative !important;
+      padding-left: 16px !important;
+      margin-bottom: 6px !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+      color: #333333 !important;
+    }
+    .curriculum-note-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #111111;
+      font-size: 13px;
+    }
+    .curriculum-note-list li:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Section 5 Pricing Layout (Matching User Reference Image Exactly) */
+    .course-pricing-container {
+      width: 100% !important;
+      margin: 20px 0 !important;
+    }
+    .course-cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 14px !important;
+      margin-bottom: 16px !important;
+    }
+    .course-card-item {
+      position: relative !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+      padding: 20px 14px 16px 14px !important;
+      text-align: center !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+      box-sizing: border-box !important;
+    }
+    .course-card-item .course-reco-badge {
+      position: absolute !important;
+      top: -11px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border-radius: 12px !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      padding: 3px 12px !important;
+      white-space: nowrap !important;
+      z-index: 2 !important;
+    }
+    .course-card-item h3 {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #111111 !important;
+      margin: 0 0 6px 0 !important;
+      letter-spacing: 0.02em !important;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+    .course-card-item .course-origin-price {
+      font-size: 13px !important;
+      color: #888888 !important;
+      text-decoration: line-through !important;
+      margin: 2px 0 !important;
+    }
+    .course-card-item .course-sale-price {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #111111 !important;
+      margin: 4px 0 10px 0 !important;
+    }
+    .course-card-item .course-tag-pill {
+      display: inline-block !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 16px !important;
+      padding: 4px 14px !important;
+      font-size: 12px !important;
+      color: #334155 !important;
+      font-weight: 600 !important;
+      background: #ffffff !important;
+    }
+    .course-compare-table {
+      width: 100% !important;
+      border-collapse: separate !important;
+      border-spacing: 12px 10px !important;
+      margin-left: -12px !important;
+      margin-right: -12px !important;
+    }
+    .course-compare-table th.row-label {
+      width: 110px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      text-align: left !important;
+      vertical-align: middle !important;
+      padding: 8px 4px !important;
+      white-space: nowrap !important;
+    }
+    .course-compare-table td.cell-box {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 8px !important;
+      padding: 12px 14px !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
+      box-sizing: border-box !important;
+      width: 30% !important;
+    }
+    .course-compare-table td.cell-box strong {
+      display: block !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      margin-bottom: 4px !important;
+    }
+    .course-compare-table td.cell-box span.cell-desc {
+      display: block !important;
+      font-size: 12px !important;
+      color: #666666 !important;
+      line-height: 1.4 !important;
+    }
+    @media (max-width: 768px) {
+      .course-cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 89: 모바일 2×2 — 4열 인라인 스타일이 모바일 규칙을 덮어 본문이 가로로 넘치던 문제 수정 */
+      }
+      .course-compare-table {
+        display: block !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* Section 7 Benefit Cards Grid (Matching Reference Screenshot) */
+    .benefit-cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+      margin: 20px 0 !important;
+      width: 100% !important;
+    }
+    @media (max-width: 640px) {
+      .benefit-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .benefit-card-item {
+      background: #ffffff !important;
+      border: 1px solid #dcdcdc !important;
+      border-radius: 6px !important;
+      padding: 20px 22px 18px 22px !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .benefit-card-item .benefit-chip {
+      display: inline-block !important;
+      align-self: flex-start !important;
+      border: 1px solid #717171 !important;
+      border-radius: 3px !important;
+      padding: 2px 10px !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      background: #ffffff !important;
+      margin-bottom: 12px !important;
+    }
+    .benefit-card-item h3 {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #111111 !important;
+      margin-top: 0 !important;
+      margin-bottom: 12px !important;
+      line-height: 1.35 !important;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+    .benefit-card-item ul {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin: 0 !important;
+    }
+    .benefit-card-item ul li {
+      position: relative !important;
+      padding-left: 16px !important;
+      margin-bottom: 8px !important;
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+      color: #222222 !important;
+      word-break: keep-all !important;
+    }
+    .benefit-card-item ul li::before {
+      content: "•" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      color: #111111 !important;
+      font-size: 13.5px !important;
+      font-weight: bold !important;
+    }
+    .benefit-card-item ul li:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Right Sticky Course Banner (Comfortable Vertical Spacing) */
+    .page-wrapper {
+      padding: calc(var(--logo-top) + var(--gnb-h) + 20px) 20px 24px 20px;
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+      width: 100% !important;
+      max-width: 1420px !important;
+      box-sizing: border-box !important;
+    }
+    .explorer-window {
+      flex: 1 1 auto !important;
+      max-width: 1080px !important;
+      min-width: 0 !important;
+    }
+    .sticky-course-banner-wrap {
+      position: sticky !important;
+      top: 80px !important;
+      width: 275px !important;
+      flex: 0 0 275px !important;
+      align-self: flex-start !important;
+      z-index: 990 !important;
+    }
+    @media (max-width: 1100px) {
+      .page-wrapper {
+        flex-direction: column !important;
+      }
+      .explorer-window {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .sticky-course-banner-wrap {
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+        margin-top: 20px !important;
+      }
+    }
+
+    .sticky-banner-card {
+      background: #ffffff !important;
+      border: 1.5px solid #0f172a !important;
+      border-radius: 4px !important;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07), 2px 2px 0 rgba(0, 0, 0, 0.12) !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      font-family: var(--font, sans-serif) !important;
+    }
+    .sticky-tabs-header {
+      display: flex !important;
+      background: #f8fafc !important;
+      border-bottom: 1.5px solid #0f172a !important;
+    }
+    .sticky-tab-btn {
+      flex: 1 !important;
+      padding: 10px 2px !important;
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: #64748b !important;
+      background: #f1f5f9 !important;
+      border: none !important;
+      border-right: 1px solid #cbd5e1 !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      outline: none !important;
+      text-align: center !important;
+    }
+    .sticky-tab-btn:last-child {
+      border-right: none !important;
+    }
+    .sticky-tab-btn.is-active {
+      background: #ffffff !important;
+      color: #0f172a !important;
+      font-weight: 800 !important;
+      border-bottom: 2.5px solid #0f172a !important;
+      margin-bottom: -1px !important;
+    }
+    .sticky-banner-body {
+      padding: 18px 16px 16px 16px !important;
+    }
+    .sticky-timer-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-bottom: 12px !important;
+    }
+    .sticky-badge-sale {
+      display: inline-block !important;
+      border: 1px solid #f43f5e !important;
+      color: #e11d48 !important;
+      background: #fff1f2 !important;
+      padding: 2px 8px !important;
+      border-radius: 12px !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+    }
+    .sticky-badge-normal {
+      display: inline-block !important;
+      border: 1px solid #475569 !important;
+      color: #334155 !important;
+      background: #f8fafc !important;
+      padding: 2px 8px !important;
+      border-radius: 12px !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+    }
+    .sticky-timer-clock {
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      color: #9f1239 !important;
+      letter-spacing: -0.01em !important;
+    }
+    .sticky-price-row {
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 6px !important;
+      margin-top: 4px !important;
+    }
+    .sticky-price-origin {
+      font-size: 13.5px !important;
+      color: #94a3b8 !important;
+      text-decoration: line-through !important;
+      font-weight: 500 !important;
+    }
+    .sticky-price-sale {
+      font-size: 19px !important;
+      font-weight: 900 !important;
+      color: #0f172a !important;
+    }
+    .sticky-price-sub {
+      font-size: 11.5px !important;
+      color: #64748b !important;
+      margin-top: 3px !important;
+      margin-bottom: 14px !important;
+    }
+    .sticky-course-title {
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      margin: 0 0 6px 0 !important;
+      line-height: 1.35 !important;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+    .sticky-course-desc {
+      font-size: 12px !important;
+      color: #475569 !important;
+      line-height: 1.45 !important;
+      margin: 0 0 14px 0 !important;
+    }
+    .sticky-details-list {
+      border-top: 1px solid #e2e8f0 !important;
+      margin-bottom: 16px !important;
+    }
+    .sticky-detail-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 9px 0 !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      font-size: 12.5px !important;
+    }
+    .sticky-detail-label {
+      font-weight: 700 !important;
+      color: #0f172a !important;
+    }
+    .sticky-detail-val {
+      color: #1e293b !important;
+      font-weight: 500 !important;
+    }
+    .sticky-btn-kakao {
+      width: 100% !important;
+      background: #ffffff !important;
+      border: 1.5px solid #0f172a !important;
+      border-radius: 4px !important;
+      padding: 10px 0 !important;
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      outline: none !important;
+      margin-bottom: 8px !important;
+      display: block !important;
+      text-align: center !important;
+    }
+    .sticky-btn-kakao:hover {
+      background: #f8fafc !important;
+    }
+    .sticky-btn-apply {
+      width: 100% !important;
+      background: #0f172a !important;
+      border: 1.5px solid #0f172a !important;
+      border-radius: 4px !important;
+      padding: 10px 0 !important;
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      outline: none !important;
+      display: block !important;
+      text-align: center !important;
+    }
+    .sticky-btn-apply:hover {
+      background: #1e293b !important;
+    }
+
+    /* SCROLLTOPBTN LEFT POSITION OVERRIDE */
+    #scrollTopBtn {
+      right: 20px !important; left: auto !important;
+      bottom: 48px !important;
+    }
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS (STRICT ROW FLEX FOR BANNER) */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu {
+      display: none;
+      position: fixed !important;
+      bottom: 32px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET RESPONSIVE SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    /* 고객사 로고 흐르는 띠 (우→좌, 마우스 올리면 멈춤, 동작 줄이기 설정이면 정지 그리드) */
+    .client-marquee { margin: 20px 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+    .client-marquee-row { overflow: hidden; padding: 14px 0; border-top: 1px solid #e0e0e0; }
+    .client-marquee-row:last-of-type { border-bottom: 1px solid #e0e0e0; }
+    .client-marquee-track { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 14px; }
+    .client-marquee-track li { flex: 0 0 auto; margin: 0 28px; height: 68px; display: flex; align-items: center; }
+    .main-content-pane .client-marquee-track img, .client-marquee-track img { width: auto; height: auto; max-width: 170px; max-height: 64px; display: block; object-fit: contain; }
+    .client-marquee.is-ready .client-marquee-track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; animation: client-marquee-rtl var(--marquee-dur, 40s) linear infinite; }
+    .client-marquee.is-ready .client-marquee-track li { margin: 0 56px 0 0; }
+    .client-marquee-row:hover .client-marquee-track { animation-play-state: paused; }
+    @keyframes client-marquee-rtl { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (max-width: 768px) {
+      .client-marquee-row { padding: 10px 0; }
+      .client-marquee-track li { height: 52px; margin: 0 16px; }
+      .client-marquee.is-ready .client-marquee-track li { margin: 0 36px 0 0; }
+      .main-content-pane .client-marquee-track img, .client-marquee-track img { max-width: 140px; max-height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .client-marquee.is-ready .client-marquee-track { animation: none; }
+    }
+
+    /* 수강후기 자동 세로 스크롤 (고정 높이, 마우스·터치·포커스 시 멈춤, 동작 줄이기 설정 존중) */
+    .review-roll {
+      height: 600px;
+      overflow-y: auto;
+      border: 2px solid #000000;
+      background: #f4f4f4;
+      box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #ffffff;
+      padding: 8px;
+      scrollbar-width: thin;
+      overscroll-behavior: contain;
+    }
+    .review-roll:focus { outline: 2px dashed #000000; outline-offset: 2px; }
+    @media (max-width: 768px) { .review-roll { height: 480px; } }
+    .review-roll-controls { display: flex; justify-content: flex-end; margin-top: 6px; }
+    .review-roll-toggle {
+      font-size: 12px; font-weight: 700; color: #000000; cursor: pointer;
+      padding: 3px 10px; background: #c0c0c0; border: 2px solid #000000;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+    }
+    .review-roll-toggle:active { box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080; }
+  </style>
+<style>
+
+    /* RETRO WIN95 BACK TO TOP ANCHOR BUTTON (FIXED AT BOTTOM RIGHT TEAL DESKTOP) */
+    #scrollTopBtn {
+      position: fixed !important;
+      bottom: 48px !important;
+      right: 20px !important; left: auto !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      color: #000000 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 2px 2px 0 rgba(0,0,0,0.35) !important;
+      padding: 6px 14px !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      font-family: var(--font, sans-serif) !important;
+      cursor: pointer !important;
+      display: inline-flex;
+      align-items: center !important;
+      gap: 5px !important;
+      user-select: none !important;
+    }
+    #scrollTopBtn:hover {
+      background: #dfdfdf !important;
+    }
+    #scrollTopBtn:active {
+      box-shadow: inset 1px 1px 0 #7b7b7b !important;
+      transform: translate(1px, 1px) !important;
+    }
+    @media (max-width: 900px) {
+      #scrollTopBtn {
+        display: none !important;
+       right: 20px !important; left: auto !important;}
+    }
+
+</style>
+  
+<style>/* 55: 본문 가독성 — 단어 중간 줄바꿈 방지 */ .main-content-pane { word-break: keep-all; overflow-wrap: break-word; }</style>
+<style>/* 71: FAQ 하단 문의하기 버튼 + 둥실둥실 말풍선 */
+.sp-faq-cta { margin: 28px 0 8px 0; padding-top: 40px; }
+.sp-faq-cta-wrap { position: relative; display: inline-block; }
+.sp-faq-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background-color: #c0c0c0; color: #000000; text-decoration: none; font-weight: bold; font-size: 13.5px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #404040; border-bottom: 2px solid #404040; box-shadow: inset -1px -1px #000000, inset 1px 1px #dfdfdf; cursor: pointer; }
+.sp-faq-cta-btn:active { transform: translate(1px, 1px); }
+.sp-faq-tip { position: absolute; bottom: calc(100% + 9px); left: 0; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0,0,0,0.25); pointer-events: none; letter-spacing: -0.2px; animation: spFaqFloat 2.6s ease-in-out infinite; }
+.sp-faq-tip::after { content: ""; position: absolute; bottom: -5px; left: 18px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+@keyframes spFaqFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .sp-faq-tip { animation: none; } }
+</style>
+<style>/* 78: 모바일 하단 고정 바 + 모바일 목차 접기 */
+#spMobileCtaBar { display: none; }
+.sp-toc-toggle { display: none; }
+@media (max-width: 900px) {
+  #spMobileCtaBar { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 999997; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #c0c0c0; border-top: 2px solid #000000; box-shadow: inset 0 1px 0 #ffffff; }
+  #spMobileCtaBar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; height: 40px; font-size: 14px; font-weight: 800; text-decoration: none; border: 2px solid #000000; box-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+  #spMobileCtaBar .sp-mcb-inq { background: #000000; color: #ffffff; }
+  #spMobileCtaBar .sp-mcb-kakao { background: #ffffff; color: #000000; }
+  body { padding-bottom: 64px; }
+  .sp-toc-toggle { display: block; width: 100%; margin: 6px 0 2px; padding: 6px 10px; font-size: 13px; font-weight: 800; text-align: left; color: #000000; background: #c0c0c0; border: 2px solid #000000; box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080; cursor: pointer; }
+  .tree-sidebar ul.tree-list.toc { display: none; }
+  .tree-sidebar.sp-toc-open ul.tree-list.toc { display: block; }
+}
+</style>
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=194" defer></script>
+  <script>(function(){var d=document.documentElement,W=window.innerWidth,k=W<=768?1:Math.max(0.6,Math.min(0.82,W/1920*0.82)),x=W<=768?0:Math.max(0,(W-1920*k)/2);d.style.setProperty('--k',k);d.style.setProperty('--x0v',(x/k)+'px');})();</script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+  <style id="sp193-gnbprog">html.sp-b .gnb-progress-track{width:auto !important;}</style>
+<style>/* 46: 검정 바탕 문구 (회사소개 미션과 같은 모션: 글자와 함께 검정 바탕이 늘어남) */ .sp-type-box { display: block; margin: 12px 0; font-size: 15px; font-weight: 700; line-height: 1.75; color: #000000; word-break: keep-all; letter-spacing: -0.01em; } .hero-intro .sp-type-box { margin: 10px 0 0 0; } h3.sp-type-box { margin: 0 0 14px 0; } .sp-type { display: inline; padding: 3px 8px 4px; color: #ffffff; background: #000000; border: 2px solid #000000; box-decoration-break: clone; -webkit-box-decoration-break: clone; } .sp-type.is-waiting { visibility: hidden; } .sp-type.is-typing { animation: spTypeCaret 0.8s step-end infinite; } @keyframes spTypeCaret { 0%, 49% { border-right-color: #ffffff; } 50%, 100% { border-right-color: #000000; } }</style>
+  <link rel="stylesheet" href="/m-preview/assets/sp-m.css?v=205">
+  <script src="/m-preview/assets/sp-m.js?v=205" defer></script>
+</head>
+<body>
+<div id="spbPrev">모바일 적응형 테스트 · 검색 제외 · 문의는 전송되지 않습니다</div>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- 3. HOME BUTTON AT FAR LEFT (EXACT COPY FROM MAIN PAGE) -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="location.href='https://www.superplanning.co.kr/';">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER (STARTS AT LEFT: 95px, EXACT COPY FROM MAIN PAGE WITH FLOATING TOP MARGIN GAP) -->
+  <div id="gnb">
+    <a class="sp-logo" href="/m-preview/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-research/"><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-writing/"><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-design/"><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/web-app-development/"><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link active" href="/m-preview/ux-academy/"><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-blog/"><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-company/"><span>회사소개</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/contact/"><span>문의하기</span></a>
+      </li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers'); blip(660, 0.04);"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
+    </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;" id="mobileDrawerTitle">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
+    </div>
+  <!-- Main Left-Aligned Page Wrapper -->
+  </div>
+  <div class="page-wrapper">
+
+    <!-- WINDOWS 95 EXPLORER WINDOW CONTAINER -->
+    <div class="explorer-window">
+
+      <!-- 1. Dark Blue Title Bar (#000080 - Exact Match) -->
+      <div class="titlebar">
+        <div class="titlebar-text">
+          <span>📁</span>
+          <span>슈퍼플래닝 서비스 탐색기 — AI-UX 강의</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-btn">−</div>
+          <div class="win-btn">▢</div>
+          <div class="win-btn">✕</div>
+        </div>
+      </div>
+
+      <!-- 2. Menu Bar -->
+      <div class="menubar">
+        <span><u>File</u></span>
+        <span><u>Edit</u></span>
+        <span><u>View</u></span>
+        <span><u>Help</u></span>
+      </div>
+
+      <!-- 3. Toolbar & Address Bar -->
+      <div class="toolbar-area">
+        <div class="nav-buttons">
+          <button class="tool-btn" onclick="history.back();"><i class="sp-arr sp-arr-l" aria-hidden="true"></i>뒤로</button>
+        </div>
+        <div class="address-bar">
+          <span class="addr-label">주소(D):</span>
+          <div class="addr-input">C:\SUPERPLANNING\UX_서비스\UX_강의</div>
+        </div>
+      </div>
+
+      <!-- 4. Explorer Split Pane (Left Sidebar + Right Main Content) -->
+      <div class="explorer-split">
+
+        <!-- Left Explorer Tree Sidebar (Exact Attached Image Match) -->
+        <aside class="tree-sidebar" aria-label="탐색기 목차 트리">
+
+          <!-- Tree List TOC (ul.tree-list.toc) -->
+          <button type="button" class="sp-toc-toggle" aria-expanded="false" onclick="var a=this.parentNode; a.classList.toggle('sp-toc-open'); var o=a.classList.contains('sp-toc-open'); this.setAttribute('aria-expanded', o); this.textContent = o ? '목차 닫기 ▴' : '목차 보기 ▾';">목차 보기 ▾</button>
+          <ul class="tree-list toc">
+            <li class="tree-item"><a href="#intro" class="tree-link active"><span class="doc-icon">📄</span> <span>1. UX강의 소개</span></a></li>
+            <li class="tree-item"><a href="#reviews" class="tree-link"><span class="doc-icon">📄</span> <span>2. 수강후기</span></a></li>
+            <li class="tree-item"><a href="#org-training" class="tree-link"><span class="doc-icon">📄</span> <span>3. AI 서비스기획 교육</span></a></li>
+            <li class="tree-item"><a href="#history" class="tree-link"><span class="doc-icon">📄</span> <span>4. 기업 출강 및 강의 이력</span></a></li>
+            <li class="tree-item"><a href="#curriculum" class="tree-link"><span class="doc-icon">📄</span> <span>5. 핵심 커리큘럼</span></a></li>
+            <li class="tree-item"><a href="#pricing" class="tree-link"><span class="doc-icon">📄</span> <span>6. 코스 별 강의비용</span></a></li>
+            <li class="tree-item"><a href="#target" class="tree-link"><span class="doc-icon">📄</span> <span>7. 수강 대상자</span></a></li>
+            <li class="tree-item"><a href="#benefits" class="tree-link"><span class="doc-icon">📄</span> <span>8. 수강생 혜택</span></a></li>
+            <li class="tree-item"><a href="#faq" class="tree-link"><span class="doc-icon">📄</span> <span>9. 자주 묻는 질문 (FAQ)</span></a></li>
+          </ul>
+        </aside>
+
+        <!-- Right Main Content View Pane (Exact Attached Image Match) -->
+                <main class="main-content-pane">
+
+          <div class="sp-title-row"><h1>AI활용 UX강의</h1><nav class="sp-crumb" aria-label="현재 위치"><a href="/m-preview/">홈</a><i>›</i><span aria-current="page">UX서비스</span><i>›</i><span aria-current="page">AI-UX강의</span></nav></div>
+
+          <p class="hero-intro sp-hero-pill" style="word-break:keep-all;">공공기관·대학교·기업 출강부터 1:1 맞춤 UX강의, UX포트폴리오·취업 코칭까지,<br>현업 UX에이전시가 직접 커리큘럼을 설계하고 강의합니다.<span class="sp-type-box"><span class="sp-type">AI 서비스기획, UX리서치, UX라이팅, 화면기획, 피그마, 바이브코딩을 강의합니다.</span></span></p>
+          <p class="sp-hero-lead">현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, BC카드 등 기업 출강과<br>세종대·순천향대·서울여대 등 대학교 특강을 진행해 왔으며, 300건 이상의 수강후기를 보유하고 있습니다.<br>1:1 강의(2·5·8·12시간 코스)와 원데이 클래스, 실시간 온라인 강의, 공공기관·기업 출강 등 맞춤형 커리큘럼으로<br>오늘 당장 쓸 수 있는 UX 실무 역량을 완성합니다.</p>
+          <h2 id="intro"><span class="sp-h2n" data-n="01">1.</span> UX강의 소개</h2>
+          <p>슈퍼플래닝의 UX강의는 UX리서치, UX라이팅, 서비스기획, 피그마, AI 활용 UX실무, 바이브코딩까지 올인원 교육입니다.</p>
+          <figure class="sp-alogos" id="client-marquee" aria-label="슈퍼플래닝 UX강의·컨설팅 고객사"><ul><li><img src="/images/ux-academy/clients/gs-caltex.webp" width="127" height="44" alt="GS칼텍스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/bccard.webp" width="117" height="34" alt="비씨카드" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/cj-olivenetworks.webp" width="161" height="55" alt="CJ올리브네트웍스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/gjf.webp" width="120" height="66" alt="경기도일자리재단" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sejong-univ.webp" width="127" height="38" alt="세종대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sch-univ.webp" width="88" height="63" alt="순천향대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/swu.webp" width="143" height="45" alt="서울여자대학교" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/sk-telecom.webp" width="118" height="51" alt="SK텔레콤" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/lotte.webp" width="117" height="43" alt="롯데" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/lg-uplus.webp" width="135" height="35" alt="LG유플러스" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/asiana.webp" width="127" height="41" alt="아시아나항공" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/hyundai.webp" width="154" height="28" alt="현대자동차" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/shinhan-bank.webp" width="108" height="33" alt="신한은행" loading="lazy" decoding="async"/></li><li><img src="/images/ux-academy/clients/kb-bank.webp" width="134" height="29" alt="KB국민은행" loading="lazy" decoding="async"/></li></ul></figure>
+          <ul class="lead-points sp-apoints"><li><strong>왕초보도 따라올 수 있는 후기로 검증된 강의:</strong><span class="lead-detail">IT를 잘 모르는 입문자도 1:1 맞춤상담을 중심으로 이해할 수 있도록 강의합니다. (후기 300개 이상 보유)</span></li><li><strong>UX취준생,기업 실무자, 스타트업 예비창업자 맞춤:</strong><span class="lead-detail">포트폴리오, 아이디어 구체화, 외주 협업, 프로젝트 리딩처럼 서로 다른 목적에 맞춰 강의 포인트를 조정합니다.</span></li><li><strong>이론보다 당장 내일부터 생존형 실무 중심:</strong><span class="lead-detail">UX리서치부터 화면기획, 피그마, AI 활용, 바이브코딩까지 즉시 실무에 적용 가능한 실습형으로 진행합니다.</span></li></ul>
+          <div class="sp-aphotos sp-ap2"><figure class="photo-frame"><img width="640" height="380" decoding="async" loading="lazy" alt="슈퍼플래닝 UX강의 오프라인 강의 현장 사진" src="/images/ux-academy/ux-lecture-classroom.webp"/><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 오프라인 UX강의 장면</figcaption></figure><figure class="photo-frame"><img src="/images/ux-academy/ux-lecture-group.webp" width="333" height="423" loading="lazy" decoding="async" alt="슈퍼플래닝 단체 UX강의 현장 — 강의장 스크린 앞에서 수강생들이 노트북으로 실습하는 모습"><figcaption class="photo-caption">[현장사진] 단체 UX강의 현장</figcaption></figure></div>
+          <div class="sp-agrid2"><div class="sp-acard"><h2 id="audience" class="summary-title">대상자</h2><ul class="sp-dots"><li>IT는 모르지만 당장 급하게 오프라인 1:1과외가 필요한 UX왕초보</li><li>정부지원사업, 앱개발을 하고 싶은데 뭐부터? 스타트업 예비창업자</li><li>최신 AI활용 UX기획 실무, 바이브코딩을 알고 싶은 기업 담당자</li><li>UX포트폴리오 부터 면접코칭까지 UX취준생, 이직러</li></ul></div><div class="sp-acard"><h2 id="strengths" class="summary-title">특장점</h2><ul class="sp-dots"><li>UX리서치, UX라이팅, 앱기획, 피그마, 바이브코딩 까지 올인원!</li><li>IT를 전혀 몰라도 OK! 오프라인에서 UX실무자 변신 1:1케어!</li><li>14년차 현직 실무자가 알려주는 진짜 AI-UX강의!</li><li>UX역사? UX이론? 교과서 같은 내용 말고, 진짜 생존형 UX강의!</li></ul></div><div class="sp-acard"><h2 id="instructors" class="summary-title">주요 강사진 소개</h2><ul class="sp-dots"><li>대표강사 <a href="/m-preview/ux-company/#ceo">김휘수(UX기획자 제이크)</a><br>포함 4~5명의 강사진 (피그마·프로덕트 디자이너 과정 등 협업 강사)</li><li>10년차 이상 현직 UX기획자, 피그마, AI, PO/PM 실무자</li><li>크몽, 패캠 등 최다후기, 평점 5.0 수강후기 1위!</li><li>UX 관련 특허 4건과 디자인등록을 보유한 전문가!</li></ul></div><div class="sp-acard"><h2 id="materials" class="summary-title">준비물</h2><ul class="sp-dots"><li>실습용 개인노트북</li><li>진행 중인 웹/앱 프로젝트 질문 리스트</li><li>제미나이, 클로드 등 1개 이상 유료 AI계정</li><li>메이즈, 피그마, 안티그래비티 회원가입<br>(<a href="https://maze.co/" target="_blank" rel="noopener noreferrer">maze.co</a> · <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">figma.com</a> · <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">antigravity.google</a>)</li></ul></div></div>
+          <span id="review-text" class="sp-anchor"></span>
+          <h2 id="reviews"><span class="sp-h2n" data-n="02">2.</span> 수강후기</h2>
+          <p>IT를 몰라도 UX는 누구나 할 수 있습니다. 입문자들이 가장 많이 선택한 UX강의 1위!<br>UX교육 최다 후기 달성! 오직 강의 후기만으로 검증 합니다.</p>
+          <div class="sp-traybox sp-rvsum"><div><h3>전체 후기요약 (300건 이상)</h3><p>수강생들은 단순 이론 설명보다 현재 본인 상황에 맞춘 실무형 피드백과 방향 정리가 큰 도움이 됐다고 평가합니다.<br>취준생, 예비창업자, 실무자 모두 각자 필요한 지점을 빠르게 짚어주는 맞춤형 강의라는 후기가 반복적으로 나타납니다.</p></div><a href="https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC" target="_blank" rel="noopener noreferrer" title="크몽 수강후기 페이지 (새 창)" aria-label="실제 후기 보기 — 크몽 수강후기 페이지, 새 창에서 열림">실제 후기 보기<i class="sp-arr" aria-hidden="true"></i></a></div>
+          <section class="sp-rv sp-rv-auto" aria-label="수강후기 22건" data-autoplay="5000"><div class="sp-rv-top"><div><div class="sp-rv-stars" aria-hidden="true">★★★★★</div><p>수강생이 직접 남긴 실제 후기입니다.</p></div><div class="sp-rv-ctl"><button type="button" class="sp-rv-prev" aria-label="이전 후기"></button><span class="sp-rv-count">01–03 / 22</span><button type="button" class="sp-rv-next" aria-label="다음 후기"></button><button type="button" class="sp-rv-pause" aria-pressed="false">일시정지</button></div></div><ul class="sp-rv-track" tabindex="0"><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;스타트업 앱 개발 하려고 하는 분은 시작 단계에서 듣고 시작하기를 강력 추천합니다.<br>기본 앱 서비스 기획을 어떻게 해야하는지 와꾸 잡고 시작하세요.<br>그래야 개발비 낭비 안합니다.<br>제이크님 서비스 컨설팅을 동시에 하면서 수업 총 10시간이 넘게 해주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">이*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저는 앱개발 전 아이디어만 갖고 있는 상황에서 제이크 대표님의 앱기획 UX교육을 들을 수 있게 되었습니다.<br>이 교육을 듣지 않고 아이디어만 갖고 개발자 만나러 갔다간 설계도 없이 건물 지으러 가는 거랑 똑같아요.<br>뜬구름 잡는 내용이나 원론적인 얘기가 아닌, 앱사업에서 꼭 필요한, 당장 써먹을 수 있는 내용이었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">추*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저는 인터넷 관련된 사업을 20년 정도 했는데요.<br>웹기획에 대해 조금 들어볼까 하는 마음으로 신청했습니다.<br>제이크 선생님은 의뢰자가 어떤 부분이 필요하신지 통찰하시고 거기에 대한 파악이 빠르십니다.<br>정말 레슨명 그대로 바로 써먹을 수 있는 자료를 주십니다.&rdquo;</p></blockquote><div class="sp-rv-who">K44*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;필수적으로 알아야 할 것을 쉽고, 명확하게 전달하는 핵심 교육입니다.<br>'IT 기획'에 발을 들여놓고서 많은 서적과 강의를 들었지만 이렇게 명쾌하고 속시원한 교육은 받아본 적이 없어요.&rdquo;</p></blockquote><div class="sp-rv-who">mon*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;서비스 기획자로서 시작부터 끝까지 모든 과정을 어떻게 체계적으로 진행할 수 있을지, 그리고 프로젝트를 리딩하기 위해 필요한 것들이 무엇인지 세세하게 알 수 있었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">황*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;강의의 모든 내용이 실무와 밀접하게 연관되어 있습니다.<br>풍부한 예시 덕에 이해도 쉬워요.<br>강의 들으면서 동시에 저의 프로덕트를 수정보완할 수 있는 방안이 떠올랐습니다.<br>매번 뜬구름 잡는 강의들만 들어왔는데 제이크님의 강의는 한결 다릅니다.&rdquo;</p></blockquote><div class="sp-rv-who">kle*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;지금까지 앱개발을 잘못된 방향으로 진행해왔다는 것을 깨달았습니다.<br>어떤 순서로 어떻게 진행해야 앱개발자에게 효율적으로 업무를 지시할 수 있는지를 배웠습니다.&rdquo;</p></blockquote><div class="sp-rv-who">K94*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;앱을 기획하거나 개발 전에 선택이 아닌 필수로 들어야 할 강의네요.<br>수업 분위기가 딱딱하지 않아서 재밌게 들을 수 있었고, 하나하나 꼼꼼히, 누구나 이해할 수 있게 강의해 주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">K12*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;만약 이 교육을 안 들었다면 상권분석 없이 가게를 오픈한 것과 같았겠다는 생각이 들었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">K66*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;저희 자사앱으로 비교하며 수업해주셔서 더욱 이해가 쉬웠고, 길다면 긴 4시간의 수업시간 동안 중요하지 않은 게 하나 없던 알찬 수업이었습니다.&rdquo;</p></blockquote><div class="sp-rv-who">준*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;기획은커녕 IT에 대해 1도 모르던 제가 업무 시작한 지 반년 만에 제이크님 만난 덕에 생각지도 못한 인사이트를 배우고 갑니다.<br>차근차근 그리고 핵심을 잘 집어 알려주셔서 개념정리가 쏙쏙 되네요.&rdquo;</p></blockquote><div class="sp-rv-who">sim*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;친절하고 이해하기 쉽게 알려주시고 제가 진행하는 프로젝트에 대해서도 꼼꼼히 피드백을 주셔서 큰 도움이 되었어요.<br>시간도 총 6시간 넘게 해주시고, 확실한 애프터서비스까지 받았습니다.&rdquo;</p></blockquote><div class="sp-rv-who">알*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;처음 만남부터 친근하게 대해주시면서도 진행하려는 계획에 대해 냉철하게 판단해서 좋은 방향을 제시해주셔서 정말 감사했습니다.&rdquo;</p></blockquote><div class="sp-rv-who">Hwi*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;정말 5시간이 넘게 시간 가는 줄 모르게 강의가 진행되었습니다.<br>속 시원하게 정리가 된 것 같아 너무너무 감사드립니다.&rdquo;</p></blockquote><div class="sp-rv-who">K99*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;앱기획에 대해 어떻게 해야 할지 막막했었는데, 내주신 과제를 하면서 사용자에 대한 이해를 좀 더 깊이 할 수 있었고, 교육 내용을 들으며 앱의 방향을 잡는 귀한 시간이었습니다.<br>앱을 만들기 위해 꼭 거쳐야 할 과정으로 강추합니다.&rdquo;</p></blockquote><div class="sp-rv-who">Kws*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;분위기도 너무 좋고 정말 아무것도 몰랐던 앱/웹기획 과정을 실무에 바로 쓸 수 있게, 그리고 앞으로 어떻게 해야 하는지까지 알려주셨어요.<br>정말 추천드려요.&rdquo;</p></blockquote><div class="sp-rv-who">앗*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;장시간 동안 액기스만 쏙쏙 뽑아서 성심성의껏 잘 가르쳐주셔서 감사합니다.<br>정말 막막했었는데 이제 이거 듣고 나니까 알 수 없는 자신감도 생겼습니다.&rdquo;</p></blockquote><div class="sp-rv-who">con*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;입사해서 업무를 배우던 중에 수강을 신청하게 되었습니다.<br>회사에서는 배우지 못했던 기초적인 부분부터 꼼꼼하게 배울 수 있어 좋았습니다.&rdquo;</p></blockquote><div class="sp-rv-who">도*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;정말 유익한 수업이었습니다.<br>1차분 수업만 들었는데 나머지 2, 3차 수업도 수강할 예정입니다.&rdquo;</p></blockquote><div class="sp-rv-who">씰*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;UX에 대한 새로운 부분을 많이 알게 되어 좋았습니다.<br>제가 부족한 부분이 많았음에도 잘 알려주셔서 감사합니다.&rdquo;</p></blockquote><div class="sp-rv-who">피*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;예정된 시간을 많이 초과하여 강의를 해 주신 열정에 감탄했으며, 감사드립니다.&rdquo;</p></blockquote><div class="sp-rv-who">내*****</div></li><li class="sp-rv-card"><div class="sp-rv-star" aria-label="별점 5점">★★★★★</div><blockquote><p>&ldquo;엄청난 인사이트를 가지고 계신 분을 여기에서 만나뵙게 되네요.<br>최고의 선택이었다는 생각이 드네요.&rdquo;</p></blockquote><div class="sp-rv-who">s31*****</div></li></ul><div class="sp-rv-prog" aria-hidden="true"></div></section>
+          <span id="org-training" class="sp-anchor"></span>
+          <h2 id="org-training-title"><span class="sp-h2n" data-n="03">3.</span> 공공기관·기업 AI 서비스기획 교육</h2>
+          <p>슈퍼플래닝 AI-UX교육팀은<br>여성인력개발센터·청년 취업 기관·KDT 교육기업·대학·기업을 위한 AI 서비스기획 교육을 운영합니다.<br>생성형 AI 활용 교육을 UX리서치·PRD·화면기획서 같은 서비스기획 실무와<br>피그마·바이브코딩 실습으로 연결하는 것이 특징입니다.<br>원데이 5시간 특강부터 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정까지<br>기관의 일정과 교육 목표에 맞춰 커리큘럼을 설계합니다.</p>
+          <figure class="sp-aphotos sp-ap4"><div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-fastcampus-kdt.webp" width="800" height="450" loading="lazy" decoding="async" alt="패스트캠퍼스 커널아카데미 KDT 과정 AI 서비스기획 강의 출강 현장 간판"></div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-seongnam-center.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터 AI 서비스기획 과정 출강 기관 현판"></div><div class="photo-frame"><img src="/images/ux-academy/ai-planning-ksd.webp" width="800" height="450" loading="lazy" decoding="async" alt="한국예탁결제원(KSD) 기업 강의 출강 현장 — KSD 로고와 한국예탁결제원 간판"></div><div class="photo-frame"><img src="/images/ux-academy/org/ai-planning-seongnam-class.webp" width="800" height="450" loading="lazy" decoding="async" alt="성남여성인력개발센터에서 수강생들이 PC로 AI 서비스기획 실습을 하는 강의 현장"></div></div><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 AI 서비스기획 교육 출강 현장 — 패스트캠퍼스 커널아카데미 KDT 과정, 성남여성인력개발센터, 한국예탁결제원</figcaption></figure>
+          <h3 class="sp-alabel">주요 출강 기관</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">분야</th><th scope="col">기관</th></tr></thead><tbody><tr><th scope="row">청년 취업</th><td>SBA 청년취업사관학교 새싹캠퍼스, 마포구청 청년나루, 서초구청 UX취업 과정 등</td></tr><tr><th scope="row">창업 지원</th><td>경기스타트업캠퍼스, 패스트캠퍼스 커널아카데미 AX 창업 과정(KDT) 등</td></tr><tr><th scope="row">여성 취업 지원</th><td>동작여성인력개발센터, 관악여성인력개발센터, 성남여성인력개발센터 등</td></tr><tr><th scope="row">교육기업</th><td>패스트캠퍼스 커널아카데미 KDT 과정 등</td></tr><tr><th scope="row">대학</th><td>세종대학교, 서울여자대학교, 순천향대학교, 한국교통대학교, 한국공학대학교 등</td></tr><tr><th scope="row">기업</th><td>현대자동차, 신한금융그룹, GS그룹, IBK기업은행 등</td></tr></tbody></table></div>
+          <p class="sp-anote">※ KDT: 고용노동부 주관 직업훈련 K-Digital Training 사업</p>
+          <h3 class="sp-alabel">과정 구성</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:21%"><col style="width:auto"></colgroup><thead><tr><th scope="col">과정</th><th scope="col">교육 시간</th><th scope="col">이런 기관에 맞습니다</th></tr></thead><tbody><tr><th scope="row">원데이 특강</th><td>5시간</td><td>대학 특강, 기관 입문 교육, 직무 체험</td></tr><tr><th scope="row">집중 과정</th><td>2~3일, 16시간</td><td>기업 직무교육, 단기 부트캠프</td></tr><tr><th scope="row">장기 과정</th><td>2~3개월, 250시간</td><td>KDT·국비지원 과정, 여성인력개발센터 취업 과정</td></tr></tbody></table></div>
+          <p class="sp-anote">교육 시간과 실습 비중은 기관의 목표와 수강생 수준에 맞춰 협의해 조정합니다.</p>
+          <h3 class="sp-alabel">커리큘럼</h3>
+          <div class="sp-agrid2"><div class="sp-acard"><h3>서비스기획 파트</h3><ol class="sp-anum"><li>AI 활용 서비스 기획 및 현업 UX프로세스</li><li>UX리서치(데스크리서치·1:1 인터뷰·FGI·UT 사용성 평가)</li><li>제품 요구사항 정의(PRD) 및 정보구조(IA) 설계</li><li>UX라이팅 및 가이드 제작</li><li>피그마 기반 화면기획서 작성(프론트·어드민)</li><li>UX 포트폴리오 완성 및 최종 발표</li></ol></div><div class="sp-acard"><h3>피그마 파트</h3><ol class="sp-anum"><li>피그마 기초 및 UI 디자인 기본(그리드·컬러·타이포그래피)</li><li>피그마 핵심 기능(오토레이아웃·컴포넌트)</li><li>AI 활용 디자인 시스템 구축(토큰·베리어블·컴포넌트)</li><li>화면 디자인 및 프로토타입·모션 제작</li><li>피그마 AI 기능 활용 및 협업</li><li>바이브 디자인 기반 프로덕트 제작 및 배포</li></ol></div></div>
+          <h3 class="sp-alabel">주요 강사진</h3>
+          <div class="sp-ainst"><div class="sp-acard"><h3><a href="/m-preview/ux-company/#ceo">김휘수 강사</a></h3><p>UX디자인 에이전시 슈퍼플래닝 대표이자 14년 차 UX컨설턴트입니다.<br>UI/UX 관련 특허를 보유하고 KB국민은행·LG유플러스·오스템임플란트 등 다수 UX 프로젝트를 수행했습니다.<br>현대자동차·신한금융그룹·GS그룹 등 기업과 세종대·서울여대 등 대학,<br>여성인력개발센터·청년 취업 기관에서 AI 활용 서비스기획·UX 실무 교육을 진행하고 있습니다.</p></div><div class="sp-acard"><h3>김대일 강사</h3><p>『된다! 피그마 디자인 10분 레시피』 저자인 8년 차 프로덕트 디자이너입니다.<br>홍익대·카카오엔터·넥슨 등에서 피그마·바이브코딩 교육을 진행하고 있습니다.</p></div><div class="sp-acard"><h3>하주영 강사</h3><p>UI/UX 디자인 리드 출신입니다.<br>부천일드림센터·양재 AI 허브·한양대학교 등에서 UI/UX·AI 디자인 교육을 진행하고 있습니다.</p></div></div>
+          <h3 class="sp-alabel">운영 안내</h3>
+          <div class="sp-atable-wrap"><table class="sp-atable "><colgroup><col style="width:19.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">항목</th><th scope="col">내용</th></tr></thead><tbody><tr><th scope="row">출강 지역</th><td>서울·경기·인천 전 지역, 광주·대구·부산 등 전국 출강</td></tr><tr><th scope="row">진행 방식</th><td>오프라인 출강, 실시간 온라인 강의</td></tr><tr><th scope="row">강사 구성</th><td>서비스기획, UI/UX디자인, 피그마, AI 바이브코딩 등 각 분야별 전문 강사진으로 구성</td></tr><tr><th scope="row">교육 비용</th><td>교육 시간·인원·실습 범위에 따라 맞춤 견적</td></tr></tbody></table></div>
+          <div class="sp-traybox sp-aorgcta"><p>교육 일정과 인원, 희망하는 강의 주제를 알려주세요.<br>기관 목표에 맞는 커리큘럼과 견적을 제안드립니다.</p><a href="/m-preview/contact/" class="sp-aorg-btn" onclick="window.spQB &amp;&amp; spQB('academy_org', 'inline'); return window.spOpenLecture ? spOpenLecture() : true;">교육 문의하기</a></div>
+          <p>기업 출강 5시간 커리큘럼 예시는 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a>에서,<br>AI 서비스에서 UX가 중요한 이유는 <a href="/ux-blog/ai-era-ui-ux-importance/">AI 시대 UI/UX 차별화</a> 글에서 확인할 수 있습니다.</p>
+          <span id="cases" class="sp-anchor"></span>
+          <h2 id="history"><span class="sp-h2n" data-n="04">4.</span> 기업 출강 및 강의 이력</h2>
+          <p>슈퍼플래닝의 UX강의는 개인 대상 1:1 맞춤형 강의뿐 아니라 기업 출강, 대학 특강, 스타트업 멘토링, 단체 심화교육까지 확장 가능한 형태로 운영됩니다.<br>1:1 오프라인 대면 강의를 기본으로 합니다.<br>실시간 온라인 강의와 5명 이상 단체 강의도 가능하며,<br>기업·학교·기관의 경우 1시간, 2시간 단위의 짧은 특강부터 1주~4주 이상의 심화교육까지 운영할 수 있습니다.</p>
+          <figure class="sp-awide photo-frame"><img width="640" height="380" decoding="async" loading="lazy" src="/images/ux-academy/ux-lecture-corporate-training.webp" alt="슈퍼플래닝 기업 출강 및 1대1 강의 현장 사진"/></figure>
+          <div class="sp-acard sp-awcard"><h3>UX강의/강연 이력</h3><ul class="sp-dots"><li>현대자동차, GS그룹, 기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, BC카드, 금호아시아나 등 실무자 대상 기업출강 다수 진행</li><li>세종대, 순천향대, 서울여대, 충북대 등 대학교 특강 다수</li><li>삼성 멀티캠퍼스, 패스트캠퍼스 기업 교육전문 UX강사</li><li>경북콘텐츠코리아랩 모바일앱 창업캠프 강연</li><li>마포구청 청년나루, 스타트업 대상 앱 창업 UX강연</li><li>경기도 일자리 재단 온라인 플랫폼 창업 클래스 강연</li><li>크몽 주관 스타트업 대상 온라인 웨비나 강연</li><li>모바일앱 스타트업 대상 UX강의 및 창업 멘토링 다수 진행</li><li>스타트업 대표, 예비창업자, 정부지원합격자 대상 강의 전문</li><li>국립문화재단 공모전 앱 심사위원 (문화체육장관 대상)</li><li>각종 스타트업 앱 창업 경진대회 심사위원/자문위원</li></ul></div>
+          <div class="sp-acard sp-awcard"><h3>UX컨설팅, 사내 스타트업 UX멘토링 이력</h3><p>제일기획, LG유플러스, KB국민카드, CJ올리브네트웍스, 현대이노션, KT파워텔, 불스원, 서민금융진흥원, 모아저축은행 등 다수</p></div>
+          <h3 class="sp-alabel" id="custom-training">차세대 시스템·SI 프로젝트 맞춤 UI/UX기획 기업출강</h3>
+          <p>차세대 시스템 구축이나 SI 프로젝트 착수를 앞둔 조직을 위한 맞춤 UI/UX기획 출강도 진행합니다.<br>IT 비전공 현업 담당자와 개발자가 화면정의서(화면설계서)·기능정의서·IA설계·사용자 플로우·QA체크리스트를<br>같은 기준으로 작성할 수 있도록 실습 중심으로 설계합니다.<br>5시간 출강 커리큘럼 예시와 실무 문서별 역할은 <a href="/ux-blog/si-developer-ui-ux-planning-corporate-training/">SI 개발자를 위한 UI/UX기획 기업출강</a> 글에서 확인할 수 있습니다.</p>
+          <figure class="sp-aphotos sp-ap2e"><div><div class="photo-frame"><img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-1.webp" alt="슈퍼플래닝 UI/UX기획 기업출강 현장, 화면에 UX UI가 띄워진 강의실에서 노트북으로 실습하는 참석자들"/></div><div class="photo-frame"><img width="600" height="600" decoding="async" loading="lazy" src="/images/ux-blog/si-ui-ux-training/ux-ui-training-class-2.webp" alt="슈퍼플래닝 강사가 화면기획 사례를 설명하고 참석자들이 노트북으로 문서를 작성하는 UX기획 강의 현장"/></div></div><figcaption class="photo-caption">[현장사진] 슈퍼플래닝 UX·UI 실무 교육 현장. AI활용 실습 위주 UX기획 강의 진행</figcaption></figure>
+          <h2 id="curriculum"><span class="sp-h2n" data-n="05">5.</span> 핵심 커리큘럼</h2>
+          <p>IT비전공자부터 기업 실무자까지, 누구나 단기간에 AI활용 UX기획부터 피그마, 바이브코딩까지 마스터할 수 있는 맞춤형 실무 과정입니다.</p>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">1회차</span> <span class="sp-actit"><span class="sp-paren">(</span>AI활용 UX<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>온/오프라인 맞춤상담</li><li>스타트업 예비창업자 → 준비 중인 웹/앱 UX컨설팅</li><li>취준생/이직러 → UX·AI서비스기획자·프로덕트 디자이너 포트폴리오 1:1코칭, 모의 면접PT</li><li>IT를 몰라도 디자이너, 개발자, 개발사와 원활한 소통방법</li><li>웹/앱 UX개선 성공/실패 사례 소개</li><li>최신 AI를 활용한 UX프로젝트 전체 단계 별 프로세스</li><li>AI 에이전트 시대 UX기획자의 역할 변화: 기획·디자인·개발의 경계가 줄어드는 실무 흐름</li><li>AI서비스기획자·프로덕트 디자이너 직무 이해: 하는 일, 필요 역량, 채용 공고가 요구하는 경험</li><li>AI기반 UX자동화 툴 활용 및 프롬프트 기획 방법</li><li>클로드, 제미나이, GPT, 매니패스트, 어피니티버블 등을 활용한 개발 요구사항 PRD 정의 (실습)</li><li>바이브코딩을 활용한 프로토타입 앱 개발 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">2회차</span> <span class="sp-actit"><span class="sp-paren">(</span>UX리서치<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>UX기획/디자이너가 꼭 알아야 하는 UX리서치 기초</li><li>메이즈(maze)를 활용한 UT 리서치 (실습)</li><li>어피니티버블 활용 데스크 리서치, 경쟁사 조사 방법</li><li>FGI조사, IDI조사, UT조사 실무 노하우</li><li>AI활용 UX리서치 프롬프트 (실습)</li><li>사용자 인터뷰 시나리오 작성 (실습)</li><li>인터뷰 결과보고, 인사이트 도출 (실습)</li><li>어피니티 다이어그램 작성 (실습)</li><li>실제 앱 사용자 1:1 인터뷰 해보기 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">3회차</span> <span class="sp-actit"><span class="sp-paren">(</span>AARRR<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>데스크리서치 기반 페르소나/유저 저니맵 (실습)</li><li>최소한의 앱 마케팅 퍼널 AARRR 설계 실무</li><li>아하 모먼트/아하지표 AI설정 (실습)</li><li>AI 기능이 들어간 서비스의 핵심 지표 설계: 재사용률·답변 만족도·작업 완료율</li><li>사용자 이탈방지를 위한 메인페이지 UI기획 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">4회차</span> <span class="sp-actit"><span class="sp-paren">(</span>UX라이팅<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>AI활용 사용자 관점의 UX라이팅 실무 (실습)</li><li>3초 만에 마이크로카피 CTA 작성 노하우 (실습)</li><li>UX라이팅 보이스톤 및 가이드 AI봇 자동화 설계 (실습)</li><li>AI 챗봇·에이전트의 대화형 UX라이팅: 답변 톤, 오류·거절 메시지, 다음 행동 안내 (실습)</li><li>생성형 AI로 UX라이팅 검수봇 만들기: 가이드 기준 문구 자동 점검 (실습)</li><li>디자인 퀄리티를 높이는 실무 팁</li><li>(디자인을 몰라도) UI디자이너와 일하는 방법</li><li>디자인 컨셉 정의서 작성 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">5회차</span> <span class="sp-actit"><span class="sp-paren">(</span>IA설계<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>사용자 서비스 플로우 설계 (실습)</li><li>피그잼 AI로 IA·사용자 플로우 초안을 만들고 검증하는 방법 (실습)</li><li>AI 기능 플로우 설계: 사람의 확인 단계와 오류 회복 경로 넣기</li><li>피그잼 FigJam을 이용한 IA 메뉴구조 설계 (실습)</li><li>앱 메뉴구조 긴급 심폐소생 실무 개선 노하우 (실습)</li><li>메뉴 별 기능정의서 작성 (실습)</li><li>화면 흐름도, 앱 와이어프레임 작성</li><li>프로토타입 제작 및 사용성 테스트</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">6회차</span> <span class="sp-actit"><span class="sp-paren">(</span>앱 화면기획<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>UX기획자로서 딱 필요한 만큼만 배우는 피그마 기초실습 (실습)</li><li>개발자가 좋아하는 디스크립션 작성 방법 (실습)</li><li>AI로 화면 디스크립션 초안을 만들고 기획자가 검수하는 방법 (실습)</li><li>생성형 AI 기능 화면 기획: 입력창·생성 중 상태·답변·근거 표시·피드백 버튼 UI 패턴 (실습)</li><li>피그마를 이용한 UI스토리보드 작성 (실습)</li><li>페이퍼보드(UX 특허 기반 자체 제작 도구)를 활용한 화면 드로잉 (실습)</li><li>금융회사 등 보안 상 피그마를 못쓰는 경우 PPT 실습 대체 가능</li><li>사용자 화면 프론트 UI스토리보드 설계 (실습)</li><li>관리자 화면 백엔드 UI스토리보드 설계 (실습)</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">7회차</span> <span class="sp-actit"><span class="sp-paren">(</span>프로젝트 관리<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>(갑의 입장) 개발사 선정방법, 불리하지 않게 계약하기</li><li>(갑의 입장) 개발 산출물 관리</li><li>(을의 입장) 프로젝트 매니징, WBS 일정관리</li><li>(을의 입장) AI활용 QA 검수 시나리오 기획</li><li>AI로 WBS 초안·이슈 정리를 자동화하는 PM 업무 실습</li><li>AI 도입 프로젝트의 요구사항 정의와 산출물 검수 기준 정리</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">8회차</span> <span class="sp-actit"><span class="sp-paren">(</span>바이브코딩·AI 코딩 에이전트<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>바이브코딩(리플릿, 구글 안티그래비티 등) 왕초보 실습 — IT를 전혀 몰라도 가능한 입문 구성</li><li>클로드 코드(Claude Code)·코덱스(Codex) 등 AI 코딩 에이전트 기본 세팅과 활용법</li><li>기획서(PRD)를 AI가 이해하는 작업 지시서로 바꾸는 프롬프트 설계 실습</li><li>피그마 MCP 연동: 피그마 화면을 클로드 코드·코덱스로 불러와 실제 동작하는 웹/앱 화면으로 구현</li><li>코드로 만든 화면을 다시 피그마로 가져와 디자이너와 함께 다듬는 양방향 디자인-개발 워크플로우</li><li>DESIGN.md 디자인 레퍼런스 파일 작성: 컬러·타이포·간격 규칙을 정리해 AI 디자인 일관성 유지</li><li>CLAUDE.md·AGENTS.md 등 프로젝트 규칙 파일로 팀의 기획·디자인 기준 공유하기</li><li>구글 안티그래비티를 활용한 앱 개발 실습: 직장인을 위한 AI명상앱 만들어보기</li><li>깃허브(Git) 기본 세팅과 수파베이스(Supabase) 구글 간편로그인 붙이기 실습</li><li>버셀(Vercel)·클라우드플레어 페이지를 활용한 무료 배포와 홍보용 랜딩 페이지 제작</li><li>제미나이 API를 활용한 AI 자동 상담사 기능 개발 실습</li><li>AI가 만든 결과물을 기획서 기준으로 검수하는 UX QA 체크리스트</li></ul></div>
+          <div class="sp-acur"><h3 class="curriculum-step"><span class="sp-acchip">9회차</span> <span class="sp-actit"><span class="sp-paren">(</span>피그마 심화·피그마 AI<span class="sp-paren">)</span></span></h3><ul class="sp-dots"><li>실무에서 바로 쓰는 피그마 협업 환경 구축: 파일 구조, 공유 방식, 권한 설정 정리</li><li>커서챗, 코멘트, 히스토리, 옵저빙 기능을 활용한 피그마 협업 워크플로우 이해</li><li>반응형 화면 설계를 위한 오토레이아웃 원리와 리사이징 심화 실습</li><li>재사용성과 유지보수를 높이는 컴포넌트 설계, 스왑 인스턴스, 프로퍼티 구조 이해</li><li>디자인 시스템 관점의 스타일과 베리어블 관리, 모드 전환 실무 포인트</li><li>프로토타이핑 기본 셋팅부터 스마트 애니메이션·인터랙티브 컴포넌트까지 핵심 인터랙션 실습</li><li>피그마 AI 에이전트(Figma Agent): 프롬프트로 화면 초안 생성, 여러 화면 일괄 수정, 레이어 이름 자동 정리</li><li>피그마 메이크(Figma Make): 텍스트 프롬프트로 실제 동작하는 프로토타입 만들기와 코드 내보내기</li><li>피그마 AI 이미지 생성·편집과 피그마 위브(Weave)를 활용한 화면용 비주얼 제작</li><li>피그마 모션(Figma Motion)으로 타임라인 기반 마이크로 인터랙션 애니메이션 만들기</li><li>Dev Mode 개발 핸드오프와 피그마 MCP로 AI 코딩 에이전트에 디자인 맥락 전달하기(8회차 연계)</li><li>AI가 만든 디자인을 디자인 시스템 기준으로 점검하고 다듬는 실무 피드백</li></ul></div>
+          <div class="sp-traybox sp-anotebox"><h3>커리큘럼 추가 혜택 &amp; 안내</h3><ul class="sp-dots"><li>UX실무 요약 비밀자료 제공</li><li>1:1 맞춤형 과제 출제 및 과제 피드백 포함</li><li>커리큘럼에 적히지 않은 세부 내용은 실제 질문과 프로젝트 상황에 따라 추가로 다룹니다.</li></ul></div>
+          <p>이 커리큘럼은 회차를 많이 나열하기 위한 구성이 아니라, 수강자의 현재 수준에 따라 어디까지 필요한지 조정할 수 있도록 만든 구조입니다.<br>취준생은 포트폴리오와 실무 감각을, 예비창업자는 서비스 구조화와 외주 대응력을,<br>기업 실무자는 협업 기준과 문서화 역량을 중심으로 가져갈 수 있습니다.</p>
+          <span id="courses" class="sp-anchor"></span>
+          <h2 id="pricing"><span class="sp-h2n" data-n="06">6.</span> 코스 별 강의비용</h2>
+          <div class="sp-traybox sp-anotebox"><h3>코스 선택 전 확인 포인트</h3><ul class="sp-dots"><li>모든 1:1 코스는 오프라인 대면을 기본으로 하며, 온라인으로도 진행할 수 있습니다.</li><li>모든 커리큘럼은 실무형 실습방식으로 진행 됩니다.</li><li>상담은 무료이며, 결제는 상담 후 진행됩니다.</li><li>A코스 수강 후 B·C·D코스 신청 시 A코스 수강료 전액 차감.</li></ul></div>
+          <div class="sp-acourses"><div class="sp-acourse"><span class=sp-acbadge>실속 추천</span><h3>A타입 코스</h3><p class="sp-ac-o"><s>290,000원</s></p><p class="sp-ac-s">220,000원</p><p class="sp-ac-t">2시간 / 실속형</p></div><div class="sp-acourse"><span class=sp-acbadge-sp></span><h3>B타입 코스</h3><p class="sp-ac-o"><s>660,000원</s></p><p class="sp-ac-s">550,000원</p><p class="sp-ac-t">5시간 / 입문형</p></div><div class="sp-acourse"><span class=sp-acbadge>가장 많이 선택</span><h3>C타입 코스</h3><p class="sp-ac-o"><s>950,000원</s></p><p class="sp-ac-s">790,000원</p><p class="sp-ac-t">8시간 / 심화형</p></div><div class="sp-acourse"><span class=sp-acbadge-sp></span><h3>D타입 코스</h3><p class="sp-ac-o"><s>1,350,000원</s></p><p class="sp-ac-s">1,080,000원</p><p class="sp-ac-t">12시간 / 확장형</p></div></div>
+          <div class="sp-atable-wrap"><table class="sp-atable sp-acmp"><colgroup><col style="width:14.4%"><col style="width:21.4%"><col style="width:21.4%"><col style="width:21.4%"><col style="width:auto"></colgroup><thead><tr><th scope="col">구분</th><th scope="col">A코스</th><th scope="col">B코스</th><th scope="col">C코스</th><th scope="col">D코스</th></tr></thead><tbody><tr><th scope="row">패키지 설명</th><td>1:1 UX강의 A코스<br>UX기초 · 현재 수준 점검<br>· 피드백 리포트<br>· UX포트폴리오 작성 등</td><td>1:1 UX강의 B코스<br>UX리서치 · UX라이팅<br>· 서비스기획 · 바이브코딩 등</td><td>1:1 UX강의 C코스<br>UX리서치 · UX라이팅<br>· IA설계 · 피그마<br>· 바이브코딩 등</td><td>1:1 UX강의 D코스<br>UX리서치 · UX라이팅 · PRD<br>· 피그마 · 성과지표<br>· 바이브코딩 등</td></tr><tr><th scope="row">추천 대상</th><td>UX강의를 처음 알아보는 분<br>내게 맞는 학습 방향과 코스를<br>먼저 확인하고 싶은 경우</td><td>UX왕초보 · 취준생<br>빠르게 UX기초와 실무 흐름을<br>잡고 싶은 경우</td><td>주니어 실무자 · PM/PO<br>IA, 화면기획, 피그마까지<br>깊게 연결하고 싶은 경우</td><td>예비창업자 · 신사업 담당자<br>PRD, 협업, AI활용 UX실무까지<br>폭넓게 다루고 싶은 경우</td></tr><tr><th scope="row">총 강의시간</th><td>2시간</td><td>5시간</td><td>8시간</td><td>12시간</td></tr><tr><th scope="row">장소</th><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td><td>온/오프라인(협의가능)</td></tr><tr><th scope="row">강의실 제공</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">제공 자료</th><td>UX 비밀자료 A세트<br>피드백 리포트 · UX포트폴리오<br>작성 등 맞춤 자료</td><td>UX 비밀자료 B세트<br>핵심 실무템플릿 등 입문자료</td><td>UX 비밀자료 C세트<br>피그마 · IA · 화면기획 등<br>심화 자료</td><td>UX 비밀자료 D세트<br>PRD · 피그마 · 성과지표 ·<br>바이브코딩 등 풀버전 자료</td></tr></tbody></table></div>
+          <div class="sp-agroup"><div class="sp-agroup-l"><span class="sp-acbadge">기업·기관 출강 (10~50명)</span><h3>단체 맞춤형 UX강의</h3><p>교육 인원·시간·맞춤 범위에 따라 견적을 산정합니다.<br>강의계획서·강사 이력·세금계산서를 함께 제공합니다.</p><p class="sp-ag-s">일정, 장소 협의가능</p><p class="sp-ag-b">협의 후 견적 산정</p></div><div class="sp-agroup-r"><div><b class="sp-agk">교육 인원</b><span class="sp-agv">10명~50명</span></div><div><b class="sp-agk">총 시간</b><span class="sp-agv">2시간 특강 ~ 다회차 정규 과정</span></div><div><b class="sp-agk">맞춤 범위</b><span class="sp-agv">사내 업무·문서 양식 반영, 실습 자료 제작 수준</span></div><div><b class="sp-agk">장소</b><span class="sp-agv">서울·수도권·지방 출강, 온라인 가능</span></div></div></div>
+          <span id="audiences" class="sp-anchor"></span>
+          <h2 id="target"><span class="sp-h2n" data-n="07">7.</span> 수강 대상자</h2>
+          <p>슈퍼플래닝의 UX강의는 모두에게 같은 방식으로 진행하지 않습니다.<br>현재 수준, 프로젝트 상황, 수강 목적에 따라 질문이 완전히 다르기 때문에<br>취준생, 예비창업자, 기업 실무자, UX입문자를 구분해서 설명하는 방식으로 진행합니다.</p>
+          <div class="sp-agrid2"><div class="sp-acard"><h3>UX 취준생 · 이직러</h3><p>UX포트폴리오 정리, 면접 PT, 실무 문서 감각,<br>화면기획과 피그마 흐름을 빠르게 익히고 싶은 분에게 적합합니다.</p></div><div class="sp-acard"><h3>스타트업 예비창업자</h3><p>정부지원사업, 앱개발, 외주 협업을 준비 중인데<br>무엇부터 정리해야 할지 막막한 분에게 실질적인 기준을 잡아드립니다.</p></div><div class="sp-acard"><h3>기업 실무자 · PM · PO</h3><p>최신 AI활용 UX기획 실무, 바이브코딩, 리서치,<br>문서화, 화면기획을 실제 프로젝트 기준으로<br>연결하고 싶은 분에게 맞습니다.</p></div><div class="sp-acard"><h3>UX 왕초보 · 비전공자</h3><p>IT를 잘 모르더라도 개인 노트북을 활용한 실습형 강의로<br>현재 상황과 질문을 중심으로 따라올 수 있게 진행합니다.</p></div></div>
+          <p>이 강의는 단순히 툴 기능만 배우는 수업이 아니라,<br>각 수강자가 지금 당장 부딪히는 문제를 실무 언어와 문서, 화면 구조로 바꾸는 데 초점을 둔 실무형 UX강의입니다.</p>
+          <h2 id="benefits"><span class="sp-h2n" data-n="08">8.</span> 수강생 혜택</h2>
+          <p>강의를 듣는 것으로 끝나지 않고, 바로 실무와 포트폴리오에 연결할 수 있도록 아래 혜택을 함께 제공합니다.</p>
+          <div class="sp-agrid2"><div class="sp-acard"><span class="sp-abchip">혜택 1</span><h3>실제 현업에서 사용하는 UX 비밀 실무자료(예제포함)</h3><ul class="sp-dots"><li>UX리서치, UX라이팅, UX모델링, IA설계, PRD, 플로우차트</li><li>기능정의서, 와이어프레임, UI스토리보드 템플릿</li><li>100% 실무 개발자가 좋아하는 웹기획 설계문서 올인원 세트</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 2</span><h3>평생 멤버십 등록</h3><ul class="sp-dots"><li>한번만 강의를 수강하셨어도 평생 멤버십 자동가입 무제한 AS</li><li>1:1개별 과제 피드백 보장</li><li>실제 5~6년 전 수강하셨던 분들도 아직까지 케어해드리고 있습니다.</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 3</span><h3>무료 커피챗, 1:1상담</h3><ul class="sp-dots"><li>스타트업 예비창업자 컨설팅</li><li>진행 중인 프로젝트 고민상담</li><li>취준생, 이직러 대상 UX커리어 컨설팅</li><li>UX포트폴리오 템플릿 제공 및 모의면접 코칭</li></ul></div><div class="sp-acard"><span class="sp-abchip">혜택 4</span><h3>참석자 전원 증정</h3><ul class="sp-dots"><li>자체제작 와이어프레임 드로잉 굿즈 증정</li><li>어디에도 없는 자체제작 UX포트폴리오 템플릿 증정</li><li>AI-UX기획 프롬프트 자료모음집 증정</li></ul></div></div>
+
+<section class="section" id="faq">
+
+          <!-- 9. 자주 묻는 질문 (FAQ) -->
+          <h2 id="faq"><span class="sp-h2n" data-n="09">9.</span> 자주 묻는 질문 (FAQ)</h2>
+<dl class="faq">
+<div><dt>강의는 누가 진행하나요?</dt><dd>슈퍼플래닝 UX강의는 대표강사 김휘수(UX기획자 제이크)를 포함한 4~5명의 강사들이 함께 진행합니다.<br>대표강사가 커리큘럼을 설계하고, 피그마 전문 강사와 프로덕트 디자이너 과정 강사 등 10년차 이상 현직 실무자 협업 강사들이 과정 주제와 기업 요청에 맞춰 함께 강의합니다.<br>기업 출강은 교육 목표와 직무 구성에 맞춰 강사진을 구성합니다.</dd></div>
+<div><dt>공공기관·기업 대상 AI 서비스기획 교육도 가능한가요?</dt><dd>네, 가능합니다.<br>슈퍼플래닝은 SBA 청년취업사관학교 새싹캠퍼스, 패스트캠퍼스 커널아카데미 KDT 과정, 동작·관악·성남여성인력개발센터, 세종대·서울여대 등 대학에서 AI 서비스기획 교육을 진행해 왔습니다.<br>원데이 5시간 특강, 2~3일 16시간 집중 과정, 2~3개월 250시간 장기 과정 중 기관 목표에 맞춰 설계합니다.</dd></div>
+<div><dt>KDT·국비지원 과정처럼 장기 과정도 운영할 수 있나요?</dt><dd>운영할 수 있습니다.<br>슈퍼플래닝의 250시간 장기 과정은 서비스기획 파트(UX리서치·PRD·IA·UX라이팅·화면기획서·포트폴리오)와 피그마 파트(UI 기본·오토레이아웃·디자인 시스템·프로토타입·바이브 디자인)로 구성합니다.<br>김휘수(서비스기획)·김대일(피그마)·하주영(UI/UX·AI 디자인) 강사가 파트를 나눠 진행하고, 마지막에는 수강생 포트폴리오 발표로 마무리합니다.</dd></div>
+<div><dt>지방이나 온라인으로도 강의할 수 있나요?</dt><dd>네, 가능합니다.<br>슈퍼플래닝은 서울·경기·인천 전 지역과 광주·대구·부산 등 전국 출강이 가능하며, 실시간 온라인 강의로도 진행합니다.</dd></div>
+<div><dt>UX강의는 IT나 UX를 전혀 몰라도 들을 수 있나요?</dt><dd>네, 가능합니다.<br>본 과정은 IT 비전공자와 UX 입문자를 주요 대상으로 설계되어 있습니다.<br>선행 학습 없이도 따라올 수 있도록 설명하되, 실제 프로젝트와 연결되는 실습 중심으로 진행해 이해만 하고 끝나지 않도록 돕습니다.</dd></div>
+<div><dt>UX 취준생에게는 어떤 도움이 되나요?</dt><dd>취준생에게는 UX리서치, UX라이팅, IA설계, 화면기획, 피그마, 프로토타이핑을 개별 기능이 아니라 하나의 서비스 흐름으로 이해하는 데 도움이 됩니다.<br>포트폴리오 문서 정리, 발표 논리, 실무 문서 감각을 함께 잡고 싶은 경우 특히 적합합니다.</dd></div>
+<div><dt>스타트업 예비창업자나 신사업 담당자에게도 맞나요?</dt><dd>잘 맞습니다.<br>아이디어는 있지만 무엇부터 정리해야 하는지 모를 때, 개발 외주를 맡기기 전에 어떤 요구사항과 문서가 필요한지 알고 싶을 때, 그리고 비용·일정·우선순위를 현실적으로 판단하고 싶을 때 도움이 됩니다.</dd></div>
+<div><dt>기업 UX강의나 사내 UX교육 형태로도 진행할 수 있나요?</dt><dd>네, 가능합니다.<br>1:1 오프라인 대면 강의를 기본으로 합니다.<br>기업·학교·기관 대상 특강, 단체 심화교육, 실시간 온라인 교육도 진행할 수 있습니다.<br>조직의 직무 구성과 프로젝트 상황에 맞춰 리서치, 기획, 피그마, 협업, AI 활용 등 필요한 주제로 조정합니다.</dd></div>
+<div><dt>IT 비전공 현업 담당자도 화면정의서·기능정의서 교육을 받을 수 있나요?</dt><dd>네, 가능합니다.<br>차세대 시스템 구축이나 웹/앱 개발 사업 착수 전, 기존 시스템을 사용해 온 현업 담당자가 화면정의서(화면설계서)와 기능정의서에 무엇을 담아야 하는지 이해하고 직접 작성해 보는 실습형 기업출강으로 진행합니다.<br>개발 용어보다 실제 업무 화면을 기준으로 설명하며, 참석 인원과 일정에 맞춰 커리큘럼을 조정합니다.</dd></div>
+<div><dt>피그마 교육은 디자이너만 위한 수업인가요?</dt><dd>그렇지 않습니다.<br>협업 기능, 오토레이아웃, 컴포넌트, 베리어블, 프로토타이핑처럼 기획자와 PM도 실무에서 알아두면 좋은 범위를 중심으로 조정할 수 있습니다.<br>보안상 피그마 사용이 어려운 조직은 PPT 기반 화면기획 방식으로 대체할 수도 있습니다.</dd></div>
+<div><dt>최신 AI 활용과 바이브코딩도 배울 수 있나요?</dt><dd>네, 가능합니다.<br>생성형 AI를 활용한 UX리서치, 문서화, 프롬프트 설계뿐 아니라, 바이브코딩 기반 프로토타입 제작과 간단한 배포 실습까지 연결할 수 있습니다.<br>클로드 코드(Claude Code)·코덱스(Codex) 같은 AI 코딩 에이전트에 피그마 MCP를 연동해 피그마 화면을 실제 동작하는 화면으로 구현하고, DESIGN.md 디자인 레퍼런스 파일로 AI가 일관된 디자인을 유지하게 하는 최신 워크플로우도 실습합니다.<br>목적은 툴 이름을 많이 아는 것이 아니라, 실제 UX업무와 서비스 준비 과정에 AI를 어떻게 연결할지 이해하는 데 있습니다.</dd></div>
+<div><dt>강의는 온라인인가요, 오프라인인가요?</dt><dd>기본은 오프라인 1:1 대면 강의입니다.<br>다만 실시간 온라인 강의, 기업 출강, 학교 특강, 단체 심화교육 형태로도 운영할 수 있으며, 원데이형·분할형·단기 집중형으로 조정 가능합니다.</dd></div>
+<div><dt>어떤 준비물을 가져가면 되나요?</dt><dd>실습용 개인 노트북, 진행 중인 웹·앱 프로젝트 질문 리스트, 제미나이·클로드 등 1개 이상 유료 AI계정, 메이즈·피그마·안티그래비티 회원가입을 준비해 오면 좋습니다.<br>메이즈(https://maze.co/), 피그마(https://www.figma.com/), 안티그래비티(https://antigravity.google/)를 미리 가입해 두면 실습 진행이 더 수월합니다.<br>별도의 선행 학습은 필수가 아니며, 현재 상황을 솔직하게 공유할수록 맞춤형으로 더 구체적인 도움을 받을 수 있습니다.</dd></div>
+<div><dt>수강 코스는 어떻게 나뉘나요?</dt><dd>수준과 목적에 따라 압축형, 심화형, 전체 프로세스형으로 나누어 운영합니다.<br>빠르게 핵심만 잡아야 하는 입문자, 피그마와 화면기획까지 깊게 다루고 싶은 실무자, PRD·성과지표·바이브코딩까지 전체 흐름을 익히고 싶은 대표나 담당자에게 적합한 방식이 서로 다릅니다.</dd></div>
+<div><dt>강의가 끝난 뒤에도 질문이나 피드백을 받을 수 있나요?</dt><dd>과정안 기준으로는 강의 후속 과제관리, 맞춤형 과제 피드백, 추가 질문 대응이 포함되어 있습니다.<br>그래서 수업 당일 이해에서 끝나는 것이 아니라, 실제 적용 단계에서 막히는 부분까지 이어서 점검하기 좋은 구조입니다.</dd></div>
+</dl>
+          <div class="sp-faq-cta"><div class="sp-cta-band"><div><strong>정리 안 된 생각도 가볍게 문의 남겨 주세요.</strong></div><a href="/m-preview/contact/" class="sp-faq-cta-btn" onclick="return window.spOpenLecture ? spOpenLecture() : true;">문의하기</a></div></div>
+          <div class="bottom-nav"><nav class="sp-pn" aria-label="이전·다음 단계"><a class="prev" href="/m-preview/web-app-development/"><span><small>이전 단계</small><b>웹/앱 개발</b></span></a><a class="next" href="/m-preview/ux-blog/"><span><small>다음 단계</small><b>UX블로그</b></span></a></nav></div>
+        </main>
+      </div>
+
+      <!-- 5. Gray Status Bar -->
+      <div class="statusbar">
+        <div>9개 개체</div>
+        <div>C:\SUPERPLANNING\UX_서비스\UX_강의</div>
+        <div>내 컴퓨터</div>
+
+      </div>
+      <style>
+        .tree-item a:hover, .tree-item a.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+      </style>
+
+    </div>
+
+  </div>
+
+
+    <!-- Sticky Course Banner Sidebar (Exact Attached Image Match) -->
+    <aside class="sticky-course-banner-wrap" id="stickyCourseBanner" aria-label="UX강의 수강신청 스티키 배너">
+      <div class="sticky-banner-card">
+        <!-- Top 3 Course Tabs -->
+        <div class="sticky-tabs-header">
+          <button class="sticky-tab-btn is-active" type="button" onclick="switchStickyTab('A')" id="stickyTabA">A코스</button>
+          <button class="sticky-tab-btn" type="button" onclick="switchStickyTab('B')" id="stickyTabB">B코스</button>
+          <button class="sticky-tab-btn" type="button" onclick="switchStickyTab('C')" id="stickyTabC">C코스</button>
+          <button class="sticky-tab-btn" type="button" onclick="switchStickyTab('D')" id="stickyTabD">D코스</button>
+        </div>
+
+        <!-- Banner Content Body -->
+        <div class="sticky-banner-body">
+          <!-- Countdown Header -->
+          <div class="sticky-timer-header">
+            <span class="sticky-badge-sale" id="stickyTimerBadge">기간한정 할인</span>
+            <span class="sticky-timer-clock" id="stickyTimerText">48시간00분00초</span>
+          </div>
+
+          <!-- Price Display -->
+          <div class="sticky-price-row">
+            <span class="sticky-price-origin" id="stickyPriceOrigin">290,000원</span>
+            <span class="sticky-price-sale" id="stickyPriceSale">220,000원</span>
+          </div>
+          <div class="sticky-price-sub">세금계산서 · 수료증 발급 가능</div>
+
+          <!-- Course Title & Description -->
+          <h3 class="sticky-course-title" id="stickyCourseTitle">실속형 A코스 - 2시간 1:1 UX강의</h3>
+          <p class="sticky-course-desc" id="stickyCourseDesc">UX기초와 현재 수준 점검, 피드백 리포트·UX포트폴리오 작성 등 맞춤 자료를 제공하는 실속형 코스. B·C·D코스 신청 시 A코스 수강료 <strong>전액 차감</strong>.</p>
+
+          <!-- Details List -->
+          <div class="sticky-details-list">
+            <div class="sticky-detail-row">
+              <span class="sticky-detail-label">장소</span>
+              <span class="sticky-detail-val" id="stickyDetailLocation">온/오프라인(협의가능)</span>
+            </div>
+            <div class="sticky-detail-row">
+              <span class="sticky-detail-label">총 강의시간</span>
+              <span class="sticky-detail-val" id="stickyDetailDuration">2시간(협의가능)</span>
+            </div>
+            <div class="sticky-detail-row">
+              <span class="sticky-detail-label">제공 자료</span>
+              <span class="sticky-detail-val" id="stickyDetailMaterials">A코스 UX비밀자료 제공</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <button class="sticky-btn-kakao" type="button" onclick="window.open('https://open.kakao.com/o/sovRKoMi', '_blank');">카카오톡 1:1 상담하기</button>
+          <button class="sticky-btn-apply" type="button" onclick="if (window.spOpenLecture) { spOpenLecture(window.currentStickyCourse); } else { location.href='/contact/'; }">UX강의 신청하기</button>
+          <p class="sticky-apply-note" style="margin:10px 0 0; font-size:12px; line-height:1.55; color:#555555; text-align:center; word-break:keep-all;">신청하시면 담당자가 일정을 확인하고<br>연락드립니다. 결제는 상담 후 진행됩니다.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- START MENU -->
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m is-current" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">회사소개서</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" style="grid-column:1 / -1" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div></div>
+  </div>
+
+  <!-- 9. TASKBAR (EXACT COPY FROM MAIN PAGE) -->
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu();">
+        <span>💻</span> <strong>전체 메뉴보기</strong>
+      </button>
+      <div id="taskPreviews">
+        <div class="task-preview active">
+          <span>📁</span> <span>서비스 탐색기</span>
+        </div>
+      </div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+
+  <script>
+    function toggleStartMenu() {
+      var m = document.getElementById('startMenu');
+      if (m) m.classList.toggle('show');
+    }
+    function closeStart() {
+      var m = document.getElementById('startMenu');
+      if (m) m.classList.remove('show');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
+      if (typeof closeStart === 'function') {
+        closeStart();
+      }
+    }
+
+    // Subpage Win95 Retro Popup Window Engine
+    const WINDOW_DEFS = {
+      'about': { w: 640, h: 480, title: '• 슈퍼플래닝 소개' },
+      'clients': { w: 600, h: 380, title: '• 주요 고객사' },
+      'services': { w: 620, h: 500, title: '• UX 서비스' },
+      'classes': { w: 640, h: 420, title: '• AI-UX 강의' },
+      'blog': { w: 600, h: 420, title: '• UX 블로그' },
+      'contact': { w: 620, h: 600, title: '📍 프로젝트 문의 & 오시는길' },
+      'instagram': { w: 600, h: 520, title: '📷 슈퍼플래닝 인스타그램' },
+      'threads': { w: 600, h: 460, title: '🧵 슈퍼플래닝 스레드' },
+      'intro-video': { w: 640, h: 430, title: '🎬 슈퍼플래닝 소개영상' },
+      'brochure': { w: 780, h: 560, title: '📄 포트폴리오 보기' },
+      'careers': { w: 580, h: 400, title: '🤝 인재 채용' }
+    };
+
+    function openWindow(key) {
+      if (key === 'kakao') {
+        window.open('https://open.kakao.com/o/sovRKoMi', '_blank');
+        return;
+      }
+      closeStart();
+      var def = WINDOW_DEFS[key] || { w: 600, h: 480, title: '📁 슈퍼플래닝 서비스 탐색기 — AI-UX 강의' };
+      var titleText = def.title;
+
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+
+      var isMobile = window.innerWidth <= 768;
+
+      var overlay = document.createElement('div');
+      overlay.id = 'subpageModalOverlay';
+      overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999999; display:flex; align-items:center; justify-content:center; padding:12px;';
+
+      var win = document.createElement('div');
+      var winW = isMobile ? '94vw' : def.w + 'px';
+      var winH = isMobile ? 'min(' + def.h + 'px, 85vh)' : def.h + 'px';
+
+      win.style.cssText = 'width:' + winW + '; height:' + winH + '; max-width:96vw; max-height:90vh; background:#c0c0c0; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080, 4px 4px 0 rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; font-family:sans-serif; color:#000;';
+
+      win.innerHTML = `
+        <div style="background:#000000; color:#ffffff; padding:4px 8px; font-size:12px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none; flex-shrink:0;">
+          <span>${titleText}</span>
+          <button class="w95-btn" onclick="closeSubpageWindow()" style="padding:1px 6px; font-size:11px; height:18px; line-height:1; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:14px; overflow-y:auto; flex:1; background:#c0c0c0; font-size:12px; line-height:1.5;">
+          ${getSubpageWindowBody(key)}
+        </div>
+      `;
+
+      overlay.appendChild(win);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSubpageWindow();
+      });
+    }
+
+    function closeSubpageWindow() {
+      var existing = document.getElementById('subpageModalOverlay');
+      if (existing) existing.remove();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSubpageWindow();
+    });
+
+    function getSubpageWindowBody(key) {
+            if (key === 'about') {
+        return `
+          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px; display:flex; gap:12px; background:#c0c0c0; padding:2px 6px; border-bottom:1px solid #808080; font-size:11px;">
+            <div><span style="text-decoration:underline;">F</span>ile</div>
+            <div><span style="text-decoration:underline;">E</span>dit</div>
+            <div><span style="text-decoration:underline;">V</span>iew</div>
+            <div><span style="text-decoration:underline;">H</span>elp</div>
+          </div>
+          
+          <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
+            <img width="600" height="60" decoding="async" src="/images/superplanning_brand_logo.png" alt="SUPERPLANNING" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='/ux-academy/images/superplanning_brand_logo.png';}">
+          </div>
+
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:12px 14px; margin-bottom:8px; border-radius:3px;">
+            <div class="cmd-prompt" style="font-family:monospace; font-size:12.5px; color:#ffffff; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+              <span>C:\\SUPERPLANNING&gt; <span>HELLO</span></span><span class="blink-cursor" style="height:13px; width:6px; background:#ffffff; display:inline-block;"></span>
+            </div>
+
+            <h2 style="font-size:21px; font-weight:900; margin:0 0 4px 0; line-height:1.3; color:#ffffff; letter-spacing:-0.02em; min-height:28px; word-break:keep-all;">
+              UX디자인 에이전시, <span style="color:#ffffff; font-weight:900;">슈퍼플래닝입니다.</span>
+            </h2>
+
+            <p style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
+            </p>
+          </div>
+
+          <div style="margin-top:8px; margin-bottom:6px;">
+            <h4 style="font-weight:900; font-size:12.5px; margin:0; color:#000000; letter-spacing:-0.01em;">UX프로젝트 수행원칙</h4>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:8px;">
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">1. 3초, 고객이 지갑을 닫고 떠나는 시간.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">첫 3초가 전환율의 80%를 결정합니다. 3초 안에 고객이 무엇을 눌러야 할지 가장 직관적인 경험을 설계합니다.</p>
+            </div>
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">2. 그렇게 쓰면 아무도 안읽습니다.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, 명확한 UX라이팅으로 다음 행동을 유도합니다.</p>
+            </div>
+            <div class="info-card" style="padding:5px 8px; background:#ffffff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+              <h4 style="font-size:11.5px; font-weight:800; color:#000000; margin-bottom:2px;">3. 더 적게 하지만 더 좋게.</h4>
+              <p style="font-size:11px; line-height:1.35; color:#222; margin:0;">디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. 'Less but better'</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:6px; margin-bottom:0; padding-top:0; flex-wrap:wrap;">
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('brochure');">포트폴리오 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('intro-video');">소개영상 보기</button>
+            <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact');">찾아오시는 길</button>
+          </div>
+        `;} else if (key === 'brochure') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:6px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px; flex-shrink:0;">
+              <span style="font-weight:bold; color:#000;">📄 슈퍼플래닝_회사소개서.pdf</span>
+              <div style="display:flex; gap:6px;">
+                <a href="/Superplanning_Company_Brochure.pdf?v=194" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+                <a href="/Superplanning_Company_Brochure.pdf?v=194" download="Superplanning_Company_Brochure.pdf" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">파일 다운로드</a>
+              </div>
+            </div>
+            <div style="flex:1; min-height:430px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#525659; position:relative; overflow:hidden;">
+              <iframe 
+                src="/Superplanning_Company_Brochure.pdf?v=194#toolbar=1&navpanes=0&scrollbar=1" 
+                style="width:100%; height:100%; border:0; display:block;" 
+                title="슈퍼플래닝 포트폴리오 보기">
+              </iframe>
+            </div>
+          </div>
+        `;
+            } else if (key === 'clients') {
+        return `
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:12px; font-weight:600;">국내 주요 대기업, 공공기관, 스타트업의 UX리서치, UX라이팅, 앱기획, IT개발 프로젝트를 수행했습니다.</p>
+
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">SK텔레콤</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">현대자동차</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">롯데그룹</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">LG유플러스</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">비씨카드</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">KB국민은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">NH농협은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">서민금융진흥원</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">제일기획</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">IBK기업은행</div>
+            <div class="info-card" style="padding:10px 4px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">경기도일자리재단</div>
+          </div>
+        `;} else if (key === 'services') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
+          <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-research/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 리서치</h4>
+                <a href="/m-preview/ux-research/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">FGI조사, 사용자 인터뷰, 사용성테스트(UT)를 통해 고객의 진짜 속마음과 핵심 문제를 찾아냅니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 라이팅</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+              </div>
+              <p style="margin:0; font-size:11px;">보이스앤톤과 UX라이팅 가이드를 통해 일관된 브랜드 경험을 제공하고 구매전환을 유도 합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 기획 / 디자인</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+              </div>
+              <p style="margin:0; font-size:11px;">사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">웹 / 앱 개발</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+              </div>
+              <p style="margin:0; font-size:11px;">React와 Vue 등을 활용, 최적의 사용자경험을 제공하는 하이브리드 앱과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="openWindow('contact');">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">UX 컨설팅</h4>
+                <button class="w95-btn" style="padding:1px 6px; font-size:10px; pointer-events:none;">상세보기 →</button>
+              </div>
+              <p style="margin:0; font-size:11px;">비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;" onclick="location.href='/ux-academy/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; font-size:12px; font-weight:bold;">AI-UX 강의</h4>
+                <a href="/m-preview/ux-academy/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; font-size:11px;">최신 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
+            </div>
+          </div>
+        `;} else if (key === 'contact') {
+        return `
+
+          <h3 style="font-size:13.5px; font-weight:700; margin-bottom:8px;">📬 UX프로젝트 신규 문의 등록</h3>
+          <p style="font-size:11px; line-height:1.4; margin-bottom:10px; color:#333;">아래 문의 폼을 작성해 주시면 실무 PM이 <strong>jake@superplanning.co.kr</strong> 로 실시간 메일을 수신하여 10분 이내 회신드립니다.</p>
+
+          <form id="popupInquiryForm" onsubmit="handlePopupInquiry(event);" style="padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080; margin-bottom:10px;">
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">성함 / 담당자명 *</label>
+              <input type="text" id="popName" required placeholder="예: 홍길동 팀장" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">연락처 <span style="font-weight:normal; color:#666666;">(선택)</span></label>
+              <input type="tel" id="popPhone" placeholder="예: 010-1234-5678" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">회사명 / 소속 (선택)</label>
+              <input type="text" id="popCompany" placeholder="예: (주)슈퍼플래닝" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:6px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">이메일 주소 (선택)</label>
+              <input type="email" id="popEmail" placeholder="example@domain.com" style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="display:block; font-size:11px; font-weight:700; margin-bottom:2px;">프로젝트 내용 및 문의사항 *</label>
+              <textarea id="popMessage" required rows="3" placeholder="프로젝트 일정, 범위, 요구사항을 자유롭게 입력해 주세요." style="width:100%; padding:5px 6px; font-size:11.5px; border:1px solid #000; box-sizing:border-box; resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="w95-btn" style="width:100%; padding:7px; font-size:12px; font-weight:bold; background:#000; color:#fff; cursor:pointer;">
+              ✉️ jake@superplanning.co.kr 로 문의 전송
+            </button>
+          </form>
+
+          <div class="info-card" style="margin-bottom:8px; padding:8px 10px; background:#f9f9f9; border:1px solid #000;">
+            <div style="font-size:11.5px;"><strong>대표 이메일:</strong> jake@superplanning.co.kr</div>
+            <div style="font-size:11.5px;"><strong>대표 전화:</strong> 031-699-3298</div>
+          </div>
+        `;} else if (key === 'classes') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:6px;">🎓 실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="font-size:11.5px; margin-bottom:10px;">최신 AI 도구를 활용한 UX기획, 와이어프레임 설계, 바이브코딩 실무 교육을 제공합니다.</p>
+          <div style="padding:8px 10px; background:#fff; border:2px solid #000; margin-bottom:8px;">
+            <h4 style="font-size:12px; margin:0 0 3px 0;">수강 대상</h4>
+            <p style="font-size:11px; margin:0;">기획자, UX디자이너, 프론트엔드 개발자, 스타트업 대표</p>
+          </div>
+          <button class="w95-btn" style="padding:4px 10px; font-size:11px;" onclick="openWindow('contact')">강의 수강 문의하기</button>
+        `;
+      } else if (key === 'blog') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">📝 UX 인사이트 아카이브</h3>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">버튼 문구 하나로 이탈률 18% 줄인 방법</h4><p style="margin:0; font-size:11px;">명확한 UX라이팅과 사용자 심리 설계 접근법</p></div>
+            <div style="padding:8px; background:#fff; border:2px solid #000;"><h4 style="margin:0 0 2px 0; font-size:12px;">AI 시대의 UX 기획자가 일하는 방법</h4><p style="margin:0; font-size:11px;">Figma & AI 프로토타이핑 연동 실습 및 바이브코딩</p></div>
+          </div>
+        `;
+            } else if (key === 'instagram') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold;">Address:</span>
+              <input type="text" readonly value="https://www.instagram.com/ux_superplanning/" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000;">
+              <a href="https://www.instagram.com/ux_superplanning/" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">새 창에서 열기 ↗</a>
+            </div>
+
+            <div style="flex:1; min-height:400px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#fafafa; position:relative; overflow:hidden;">
+              <iframe 
+                src="https://www.instagram.com/ux_superplanning/embed" 
+                style="width:100%; height:100%; border:0; background:#fff;" 
+                allowtransparency="true"
+                frameborder="0"
+                title="Superplanning Instagram">
+              </iframe>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000000;">@ux_superplanning</span>
+              <span>슈퍼플래닝 공식 인스타그램</span>
+            </div>
+          </div>
+        `;      } else if (key === 'threads') {
+        return `
+          <div style="display:flex; flex-direction:column; height:100%; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; background:#dfdfdf; padding:4px 8px; border:2px solid #000; box-shadow:inset -1px -1px #fff, inset 1px 1px #7b7b7b; font-size:11px;">
+              <span style="font-weight:bold; color:#000;">Address:</span>
+              <input type="text" readonly value="https://www.threads.com/@ux_superplanning" style="flex:1; padding:2px 6px; font-family:var(--font-mono, monospace); font-size:11px; background:#fff; border:1px solid #7b7b7b; box-shadow:inset 1px 1px 0 #000; color:#000;">
+              <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000; font-weight:bold;">새 창에서 열기 ↗</a>
+            </div>
+
+            <div style="flex:1; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#101010; color:#fff; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:12px; position:relative; overflow:hidden;">
+              <div style="width:64px; height:64px; border-radius:50%; background:#000; border:2px solid #444; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.5);">
+                <img width="32" height="32" decoding="async" loading="lazy" src="/images/threads-logo.jpg" alt="Threads Logo" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+
+              <div>
+                <h3 style="font-size:18px; font-weight:800; margin:0 0 4px 0; color:#ffffff;">@ux_superplanning</h3>
+                <p style="font-size:12.5px; color:#aaa; margin:0 0 6px 0; font-weight:600;">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
+                <p style="font-size:11px; color:#888; max-width:400px; margin:0 auto; line-height:1.5;">
+                  최신 UX 인사이트, UX 라이팅 노하우, 사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.
+                </p>
+              </div>
+
+              <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn" style="padding:8px 18px; background:#ffffff; color:#000000; font-weight:bold; font-size:12px; border:2px solid #ffffff; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border-radius:4px; box-shadow:2px 2px 0 #000;">
+                <img width="16" height="16" decoding="async" loading="lazy" src="/images/threads-logo.jpg" alt="Threads Icon" style="width:16px; height:16px; border-radius:50%; display:block;">
+                Threads 프로필 방문하기 (@ux_superplanning) ↗
+              </a>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; padding:2px 4px;">
+              <span style="font-weight:bold; color:#000; display:flex; align-items:center; gap:4px;">
+                <img width="14" height="14" decoding="async" loading="lazy" src="/images/threads-logo.jpg" alt="Threads Icon" style="width:14px; height:14px; border-radius:50%; display:block;">
+                @ux_superplanning
+              </span>
+              <span>슈퍼플래닝 공식 스레드</span>
+            </div>
+          </div>
+        `;      } else if (key === 'intro-video') {
+        return `
+          <div style="width:100%; height:100%; display:flex; flex-direction:column; gap:6px;">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1" 
+              title="슈퍼플래닝 소개영상" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              style="width:100%; flex:1; min-height:345px; height:345px; border:2px solid #000; box-shadow:inset 1px 1px 0 #7b7b7b; background:#000; display:block; flex-shrink:0;">
+            </iframe>
+            <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:2px;">
+              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" class="w95-btn" style="padding:2px 8px; font-size:11px; text-decoration:none; color:#000;">유튜브에서 크게 보기 ↗</a>
+            </div>
+          </div>
+        `;      } else if (key === 'careers') {
+        return `
+          <h3 style="font-size:15px; font-weight:800; margin-bottom:4px; color:#000080;">인재를 채용합니다 (상시 모집)</h3>
+          <p style="font-size:12px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
+          <div class="info-card" style="margin-bottom:8px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">1. UX/UI 디자이너 (경력 3년 이상)</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">모바일 앱/웹 UX 기획, 디자인 시스템 구축, 피그마 Pro 사용 우대</p>
+          </div>
+          <div class="info-card" style="margin-bottom:8px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">2. 프론트엔드 개발자 (경력 2년 이상)</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">React, Vue.js, TypeScript 기반 모바일 웹/앱 인터페이스 구축 경험자</p>
+          </div>
+          <div class="info-card" style="margin-bottom:12px; padding:10px; background:#fff; border:2px solid #000; box-shadow:inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;">
+            <h4 style="font-size:12.5px; font-weight:800; margin-bottom:4px;">3. 지원 방법</h4>
+            <p style="font-size:11px; line-height:1.4; margin:0;">이력서 및 포트폴리오(PDF/URL)를 <strong>jake@superplanning.co.kr</strong> 로 제출해주세요.</p>
+          </div>
+          <button class="w95-btn" style="padding:4px 12px; font-size:11px;" onclick="openWindow('contact');">채용 관련 문의하기</button>
+        `;      
+      }
+      return '<div>내용을 불러올 수 없습니다.</div>';
+    }
+
+        // Highlight active tree item on scroll & click
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('main h2[id]');
+      const navLinks = document.querySelectorAll('.tree-link');
+
+      function updateActiveToc() {
+        if (!sections.length || !navLinks.length) return;
+
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+
+        let current = '';
+
+        if (scrollPosition + windowHeight >= fullHeight - 50) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec) current = lastSec.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+            if (scrollPosition >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!current && sections.length > 0) {
+          current = sections[0].getAttribute('id');
+        }
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + current) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      window.addEventListener('resize', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
+
+    // GNB Scroll Progress Gauge Handler (Exact Main Page Copy)
+    let scrollTimer = null;
+    function updateGnbScrollProgress() {
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      if (!progressBar) return;
+
+      // 1. Window scroll calculation
+      const winScroll = Math.max(0, window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+      const winDocHeight = Math.max(
+        document.body.scrollHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.offsetHeight || 0
+      );
+      const winViewport = window.innerHeight || document.documentElement.clientHeight || 0;
+      const winMaxScroll = Math.max(0, winDocHeight - winViewport);
+      const winRatio = winMaxScroll > 5 ? (winScroll / winMaxScroll) : 0;
+
+      // 2. Main content pane scroll calculation
+      const mainPane = document.querySelector('.main-content-pane');
+      let paneRatio = 0;
+      let paneScroll = 0;
+      if (mainPane) {
+        paneScroll = mainPane.scrollTop || 0;
+        const paneMaxScroll = Math.max(0, mainPane.scrollHeight - mainPane.clientHeight);
+        if (paneMaxScroll > 5) {
+          paneRatio = paneScroll / paneMaxScroll;
+        }
+      }
+
+      // 3. Take active max scroll ratio & current scroll
+      const activeRatio = Math.max(winRatio, paneRatio);
+      const activeScroll = Math.max(winScroll, paneScroll);
+
+      // 4. Compute final percentage
+      const scrolled = Math.min(100, Math.max(0, activeRatio * 100));
+
+      // 5. Update DOM
+      progressBar.style.width = scrolled + '%';
+      if (progressBadge) {
+        progressBadge.textContent = Math.round(scrolled) + '%';
+      }
+
+      // 6. Active scrolling badge visibility timer (1200ms auto-fade, identical to main page)
+      if (activeScroll > 10) {
+        document.body.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          document.body.classList.remove('is-scrolling');
+        }, 1200);
+      } else {
+        document.body.classList.remove('is-scrolling');
+      }
+    }
+
+    // Attach listeners to window, document, and main pane
+    window.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+    window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateGnbScrollProgress, { passive: true, capture: true });
+
+    const mainPaneEl = document.querySelector('.main-content-pane');
+    if (mainPaneEl) {
+      mainPaneEl.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+    }
+
+    // Fire initial update and heartbeat timer fallback
+    updateGnbScrollProgress();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateGnbScrollProgress);
+    }
+    window.addEventListener('load', updateGnbScrollProgress);
+    setTimeout(updateGnbScrollProgress, 200);
+    setTimeout(updateGnbScrollProgress, 800);
+    setInterval(updateGnbScrollProgress, 250);
+
+    setInterval(() => {
+      const d = new Date();
+      const clockEl = document.getElementById('taskClock');
+      if (clockEl) {
+        clockEl.textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+    }, 1000);
+  </script>
+
+  <!-- RETRO BACK TO TOP ANCHOR BUTTON -->
+  <button id="scrollTopBtn" title="페이지 최상단으로 이동" aria-label="위로 가기" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+    <span>▲</span> <span>TOP</span>
+  </button>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        const updateVisibility = () => {
+          if (window.innerWidth > 900) {
+            scrollTopBtn.style.display = (window.scrollY > 80) ? 'inline-flex' : 'none';
+          } else {
+            scrollTopBtn.style.display = 'none';
+          }
+        };
+        window.addEventListener('scroll', updateVisibility);
+        window.addEventListener('resize', updateVisibility);
+        updateVisibility();
+      }
+    });
+  </script>
+
+  <!-- REVIEW VIEWER AUTO-ROLLING SCRIPT (1 SECOND INTERVAL) -->
+  <script>
+    (function initReviewViewer() {
+      function setup() {
+        const viewer = document.getElementById('review-inline-viewer');
+        if (!viewer) return;
+
+        const slides = viewer.querySelectorAll('.review-inline-slide');
+        const pages = viewer.querySelectorAll('.review-inline-page');
+        const prevBtn = document.getElementById('review-inline-prev');
+        const nextBtn = document.getElementById('review-inline-next');
+        const toggleBtn = document.getElementById('review-inline-toggle');
+
+        if (!slides.length) return;
+
+        let currentIndex = 0;
+        let isPlaying = true;
+        let timerId = null;
+
+        function showSlide(index) {
+          currentIndex = (index + slides.length) % slides.length;
+          
+          slides.forEach((slide, idx) => {
+            if (idx === currentIndex) {
+              slide.classList.add('is-active');
+            } else {
+              slide.classList.remove('is-active');
+            }
+          });
+
+          pages.forEach((page, idx) => {
+            if (idx === currentIndex) {
+              page.classList.add('is-active');
+            } else {
+              page.classList.remove('is-active');
+            }
+          });
+        }
+
+        function startTimer() {
+          stopTimer();
+          isPlaying = true;
+          if (toggleBtn) {
+            toggleBtn.classList.remove('is-paused');
+            toggleBtn.classList.add('is-playing');
+            toggleBtn.innerHTML = '❚❚';
+            toggleBtn.setAttribute('aria-label', '일시정지');
+          }
+          timerId = setInterval(() => {
+            showSlide(currentIndex + 1);
+          }, 1000); // 1초 마다 자동 롤링
+        }
+
+        function stopTimer() {
+          if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+          }
+          isPlaying = false;
+          if (toggleBtn) {
+            toggleBtn.classList.remove('is-playing');
+            toggleBtn.classList.add('is-paused');
+            toggleBtn.innerHTML = '▶';
+            toggleBtn.setAttribute('aria-label', '시작');
+          }
+        }
+
+        function togglePlay() {
+          if (isPlaying) {
+            stopTimer();
+          } else {
+            startTimer();
+          }
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+            if (isPlaying) startTimer();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+            if (isPlaying) startTimer();
+          });
+        }
+
+        pages.forEach((page, idx) => {
+          page.addEventListener('click', () => {
+            showSlide(idx);
+            if (isPlaying) startTimer();
+          });
+        });
+
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', togglePlay);
+        }
+
+        showSlide(0);
+        startTimer();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+      } else {
+        setup();
+      }
+    })();
+  </script>
+
+  <!-- TYPEWRITER ANIMATION SCRIPT (MATCHING UX-COMPANY) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function runTypewriter(el, startDelay) {
+        if (!el || el.dataset.typed === 'done' || el.dataset.typed === 'running') return;
+
+        const fullText = el.dataset.text || '';
+        el.dataset.typed = 'running';
+        el.textContent = '';
+        el.classList.remove('is-done');
+        el.classList.add('is-typing');
+
+        let i = 0;
+        const speed = 35;
+
+        setTimeout(function typeNext() {
+          if (i < fullText.length) {
+            el.textContent += fullText.charAt(i);
+            i += 1;
+            setTimeout(typeNext, speed);
+          } else {
+            el.classList.remove('is-typing');
+            el.classList.add('is-done');
+            el.dataset.typed = 'done';
+          }
+        }, startDelay || 0);
+      }
+
+      const quotes = document.querySelectorAll('.typewriter-quote');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runTypewriter(entry.target, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        quotes.forEach(el => observer.observe(el));
+      } else {
+        quotes.forEach((el, idx) => runTypewriter(el, idx * 350));
+      }
+    });
+  </script>
+
+<script>
+/* ==================================================== */
+/* STICKY COURSE BANNER TAB & COUNTDOWN LOOP LOGIC      */
+/* ==================================================== */
+var STICKY_COURSE_DATA = {
+  A: {
+    tabName: "A코스",
+    originPrice: "290,000원",
+    salePrice: "220,000원",
+    title: "실속형 A코스 - 2시간 1:1 UX강의",
+    desc: "UX기초와 현재 수준 점검, 피드백 리포트·UX포트폴리오 작성 등 맞춤 자료를 제공하는 실속형 코스. B·C·D코스 신청 시 A코스 수강료 <strong>전액 차감</strong>.",
+    location: "온/오프라인(협의가능)",
+    duration: "2시간(협의가능)",
+    materials: "A코스 UX비밀자료 제공"
+  },
+  B: {
+    tabName: "B코스",
+    originPrice: "660,000원",
+    salePrice: "550,000원",
+    title: "입문형 B코스 - 5시간 1:1 UX강의",
+    desc: "UX리서치, UX라이팅, 서비스기획, 바이브코딩까지 빠르게 익히고 싶은 입문형 코스",
+    location: "온/오프라인(협의가능)",
+    duration: "5시간(협의가능)",
+    materials: "B코스 UX비밀자료 제공"
+  },
+  C: {
+    tabName: "C코스",
+    originPrice: "950,000원",
+    salePrice: "790,000원",
+    title: "심화형 C코스 - 8시간 1:1 UX강의",
+    desc: "IA, 화면기획, 피그마까지 깊게 연결하고 커리어 레벨업을 원하는 심화형 코스",
+    location: "온/오프라인(협의가능)",
+    duration: "8시간(협의가능)",
+    materials: "C코스 UX비밀자료 제공"
+  },
+  D: {
+    tabName: "D코스",
+    originPrice: "1,350,000원",
+    salePrice: "1,080,000원",
+    title: "확장형 D코스 - 12시간 1:1 UX강의",
+    desc: "PRD, 협업, AI활용 UX실무부터 바이브코딩까지 마스터하는 확장형 코스",
+    location: "온/오프라인(협의가능)",
+    duration: "12시간(협의가능)",
+    materials: "D코스 UX비밀자료 제공"
+  }
+};
+
+window.currentStickyCourse = 'A';
+
+function switchStickyTab(typeKey) {
+  if (!STICKY_COURSE_DATA[typeKey]) return;
+  window.currentStickyCourse = typeKey;
+
+  ['A', 'B', 'C', 'D'].forEach(function(k) {
+    var btn = document.getElementById('stickyTab' + k);
+    if (btn) {
+      if (k === typeKey) btn.classList.add('is-active');
+      else btn.classList.remove('is-active');
+    }
+  });
+
+  var data = STICKY_COURSE_DATA[typeKey];
+  var titleEl = document.getElementById('stickyCourseTitle');
+  var descEl = document.getElementById('stickyCourseDesc');
+  var locationEl = document.getElementById('stickyDetailLocation');
+  var durationEl = document.getElementById('stickyDetailDuration');
+  var materialsEl = document.getElementById('stickyDetailMaterials');
+
+  if (titleEl) titleEl.textContent = data.title;
+  if (descEl) descEl.innerHTML = data.desc;
+  if (locationEl) locationEl.textContent = data.location;
+  if (durationEl) durationEl.textContent = data.duration;
+  if (materialsEl) materialsEl.textContent = data.materials;
+
+  if (window.updateStickyTimerGlobal) window.updateStickyTimerGlobal();
+}
+
+function initStickyTimer() {
+  var CYCLE_MS = (48 * 3600 + 10 * 60) * 1000;
+  var DISCOUNT_MS = 48 * 3600 * 1000;
+
+  var startTime = localStorage.getItem('ux_academy_banner_timer');
+  if (!startTime) {
+    startTime = Date.now();
+    localStorage.setItem('ux_academy_banner_timer', startTime);
+  } else {
+    startTime = parseInt(startTime, 10);
+  }
+
+  window.updateStickyTimerGlobal = function updateTimer() {
+    var now = Date.now();
+    var elapsed = (now - startTime) % CYCLE_MS;
+    if (elapsed < 0) elapsed += CYCLE_MS;
+
+    var badgeEl = document.getElementById('stickyTimerBadge');
+    var timerTextEl = document.getElementById('stickyTimerText');
+    var priceOriginEl = document.getElementById('stickyPriceOrigin');
+    var priceSaleEl = document.getElementById('stickyPriceSale');
+
+    if (!badgeEl || !timerTextEl) return;
+
+    var activeCourseKey = window.currentStickyCourse || 'A';
+    var courseData = STICKY_COURSE_DATA[activeCourseKey];
+
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    if (elapsed < DISCOUNT_MS) {
+      var remainingMs = DISCOUNT_MS - elapsed;
+      var totalSec = Math.floor(remainingMs / 1000);
+      var hours = Math.floor(totalSec / 3600);
+      var mins = Math.floor((totalSec % 3600) / 60);
+      var secs = totalSec % 60;
+
+      badgeEl.className = 'sticky-badge-sale';
+      badgeEl.textContent = '기간한정 할인';
+
+      timerTextEl.textContent = hours + '시간' + pad(mins) + '분' + pad(secs) + '초';
+      timerTextEl.style.color = '#9f1239';
+
+      if (priceOriginEl) {
+        priceOriginEl.style.display = 'inline';
+        priceOriginEl.textContent = courseData.originPrice;
+      }
+      if (priceSaleEl) {
+        priceSaleEl.textContent = courseData.salePrice;
+      }
+    } else {
+      var remainingMs = CYCLE_MS - elapsed;
+      var totalSec = Math.floor(remainingMs / 1000);
+      var mins = Math.floor(totalSec / 60);
+      var secs = totalSec % 60;
+
+      badgeEl.className = 'sticky-badge-normal';
+      badgeEl.textContent = '정상가 판매 중';
+
+      timerTextEl.textContent = pad(mins) + '분' + pad(secs) + '초 후 할인가 재개';
+      timerTextEl.style.color = '#1e293b';
+
+      if (priceOriginEl) {
+        priceOriginEl.style.display = 'none';
+      }
+      if (priceSaleEl) {
+        priceSaleEl.textContent = courseData.originPrice;
+      }
+    }
+  };
+
+  window.updateStickyTimerGlobal();
+  setInterval(window.updateStickyTimerGlobal, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initStickyTimer();
+});
+</script>
+
+  <script>
+
+    async function handlePopupInquiry(e) {
+      if (e) e.preventDefault();
+      const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
+      const origText = submitBtn ? submitBtn.innerHTML : '';
+
+      const name = document.getElementById('popName') ? document.getElementById('popName').value.trim() : '';
+      const phone = document.getElementById('popPhone') ? document.getElementById('popPhone').value.trim() : '';
+      const company = document.getElementById('popCompany') ? document.getElementById('popCompany').value.trim() : '';
+      const email = document.getElementById('popEmail') ? document.getElementById('popEmail').value.trim() : '';
+      const message = document.getElementById('popMessage') ? document.getElementById('popMessage').value.trim() : '';
+
+      if (!name || !email) {
+        alert('성함과 이메일 주소를 입력해 주세요.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '✉️ 이메일 전송 중...';
+      }
+
+      const payload = {
+        name, phone, company, email, message,
+        _subject: `[슈퍼플래닝 팝업 문의] ${name} - ${company || '고객사'}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const p1 = fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const p2 = fetch('/api/send_inquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        await Promise.race([p1, p2, new Promise(resolve => setTimeout(resolve, 3000))]);
+      } catch (err) {
+        console.log('Popup inquiry error:', err);
+      }
+
+      showInquirySuccessModal(name);
+
+      const form = document.getElementById('popupInquiryForm');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+      }
+    }
+
+  </script>
+
+  <script>
+
+    // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    function showInquirySuccessModal(userName) {
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_submit', form_page: location.pathname }); } catch (e) {}
+      let modal = document.getElementById('inquirySuccessModal');
+      if (!modal) {
+        const modalHtml = `
+          <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
+            <div style="width:100%; max-width:380px; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); overflow:hidden;">
+              <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+                <span>[문의 접수 완료]</span>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;">✕</button>
+              </div>
+              <div style="padding:22px 20px; text-align:center; background:#ffffff;">
+                <div style="font-size:32px; margin-bottom:12px;">✉️</div>
+                <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:800; color:#000000;">[문의 접수 완료]</h3>
+                <div style="font-size:13px; line-height:1.65; color:#222222; font-weight:600; margin-bottom:20px; text-align:center; word-break:keep-all;">
+                  <span id="inquiryUserName" style="font-weight:800; color:#000000;"></span>님, 안녕하세요!<br>
+                  문의 주신 내용은 잘 받았습니다.<br>
+                  빠르게 회신드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:9px 36px; min-width:140px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; cursor:pointer; box-shadow:3px 3px 0 rgba(0,0,0,0.35);">
+                  감사합니다
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        modal = document.getElementById('inquirySuccessModal');
+      }
+
+      const nameEl = document.getElementById('inquiryUserName');
+      if (nameEl) nameEl.textContent = userName || '방문자';
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeInquirySuccessModal() {
+      const modal = document.getElementById('inquirySuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+  </script>
+
+<script>
+window.copyToClipboard = function(text, label, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopySuccess(text, label, btn);
+    }).catch(function() {
+      fallbackCopyText(text, label, btn);
+    });
+  } else {
+    fallbackCopyText(text, label, btn);
+  }
+};
+
+function fallbackCopyText(text, label, btn) {
+  try {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    var successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    if (successful) {
+      showCopySuccess(text, label, btn);
+    } else {
+      alert('복사 실패: ' + text);
+    }
+  } catch (err) {
+    alert('복사 실패: ' + text);
+  }
+}
+
+function showCopySuccess(text, label, btn) {
+  if (btn) {
+    var origText = btn.textContent;
+    btn.textContent = '완료!';
+    btn.style.background = '#000000';
+    btn.style.color = '#ffffff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 1500);
+  }
+  alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+}
+</script>
+
+  <!-- CLIENT LOGO MARQUEE (right to left) -->
+  <script>
+    (function initClientMarquee() {
+      function setup() {
+        var fig = document.getElementById('client-marquee');
+        if (!fig) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var rows = fig.querySelectorAll('.client-marquee-track');
+        Array.prototype.forEach.call(rows, function (track, idx) {
+          var items = Array.prototype.slice.call(track.children);
+          items.forEach(function (li) {
+            var c = li.cloneNode(true);
+            c.setAttribute('aria-hidden', 'true');
+            var img = c.querySelector('img'); if (img) img.alt = '';
+            track.appendChild(c);
+          });
+        });
+        fig.classList.add('is-ready');
+        function setDur() {
+          Array.prototype.forEach.call(rows, function (track, idx) {
+            var half = track.scrollWidth / 2;
+            var pxPerSec = idx === 0 ? 45 : 38;
+            track.style.setProperty('--marquee-dur', Math.max(15, Math.round(half / pxPerSec)) + 's');
+          });
+        }
+        setDur();
+        window.addEventListener('load', setDur);
+        Array.prototype.forEach.call(fig.querySelectorAll('img'), function (img) { if (!img.complete) img.addEventListener('load', setDur); });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
+    })();
+  </script>
+  <!-- REVIEW TEXT AUTO SCROLL -->
+  <script>
+    (function initReviewRoll() {
+      function setup() {
+        var box = document.getElementById('review-roll');
+        var list = document.getElementById('review-roll-list');
+        var btn = document.getElementById('review-roll-toggle');
+        if (!box || !list) return;
+        var clone = list.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.setAttribute('aria-hidden', 'true');
+        box.appendChild(clone);
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var paused = !!reduce, hold = false, visible = true, pos = 0, last = null, speed = 0.45, resumeTimer = null;
+        function label() {
+          if (!btn) return;
+          btn.textContent = paused ? '\u25B6 재생' : '\u275A\u275A 일시정지';
+          btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+        }
+        function loopLen() { return clone.offsetTop - list.offsetTop; }
+        function step(t) {
+          if (last === null) last = t;
+          var dt = Math.min(t - last, 64); last = t;
+          if (!paused && !hold && visible) {
+            pos += speed * dt / 16.67;
+            var L = loopLen();
+            if (L > 0 && pos >= L) pos -= L;
+            box.scrollTop = pos;
+          } else {
+            pos = box.scrollTop;
+            var L2 = loopLen();
+            if (L2 > 0 && pos >= L2) { pos -= L2; box.scrollTop = pos; }
+          }
+          requestAnimationFrame(step);
+        }
+        box.addEventListener('mouseenter', function () { hold = true; });
+        box.addEventListener('mouseleave', function () { hold = false; });
+        box.addEventListener('focusin', function () { hold = true; });
+        box.addEventListener('focusout', function () { hold = false; });
+        box.addEventListener('touchstart', function () { hold = true; clearTimeout(resumeTimer); }, { passive: true });
+        box.addEventListener('touchend', function () { clearTimeout(resumeTimer); resumeTimer = setTimeout(function () { hold = false; }, 2500); }, { passive: true });
+        if (btn) btn.addEventListener('click', function () { paused = !paused; label(); });
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(box);
+        }
+        label();
+        requestAnimationFrame(step);
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
+    })();
+  </script>
+  <script src="/assets/sp-inquiry-b.js?v=200" defer></script>
+<script>/* 69: TOP 버튼을 본문 창 바로 오른쪽 아래로 (PC). 공간이 부족하면 기존 위치(오른쪽 끝) 유지 */
+(function () {
+  function place() {
+    var b = document.getElementById('scrollTopBtn'), w = document.querySelector('.explorer-window');
+    if (!b || !w) return;
+    var r = w.getBoundingClientRect(), x = Math.round(r.right + 16), bw = b.offsetWidth || 80;
+    if (window.innerWidth > 900 && x + bw + 16 <= window.innerWidth) {
+      b.style.setProperty('left', x + 'px', 'important');
+      b.style.setProperty('right', 'auto', 'important');
+    } else { b.style.removeProperty('left'); b.style.removeProperty('right'); }
+  }
+  window.addEventListener('resize', place);
+  window.addEventListener('scroll', place, { passive: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', place); else place();
+})();
+</script>
+  <!-- 78: 모바일 하단 고정 바 (카카오톡 상담 · 강의 신청) -->
+  <div id="spMobileCtaBar" role="navigation" aria-label="상담·문의 바로가기">
+    <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="sp-mcb-kakao" onclick="window.spQB && spQB('kakao', 'mobile');"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담</span></a>
+    <a href="/m-preview/contact/" class="sp-mcb-inq" onclick="window.spQB && spQB('lecture', 'mobile'); return window.spOpenLecture ? spOpenLecture(window.currentStickyCourse) : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>강의 신청</span></a>
+  </div>
+<script>/* 78: 퀵배너·하단 바 클릭 측정 (버튼 종류·위치만 전송, 개인정보 없음) */
+window.spQB = function (btn, pos) {
+  try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
+};
+</script>
+<script src="/m-preview/assets/sp-mnav.js?v=205" defer></script>
+<script>/* 46: 검정 바탕 문구 한 글자씩 타이핑 — 회사소개 미션과 같은 방식(바탕이 글자와 함께 늘어남). 문구는 HTML에 그대로 있어 검색·AI가 읽음 */
+(function () {
+  var els = Array.prototype.slice.call(document.querySelectorAll(".sp-type"));
+  if (!els.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  els.forEach(function (el) {
+    var box = el.parentNode;
+    box.style.minHeight = box.offsetHeight + "px";
+    el.setAttribute("data-text", el.textContent);
+    el.textContent = "";
+    el.classList.add("is-waiting");
+  });
+  function typeIt(el) {
+    var chars = Array.from(el.getAttribute("data-text") || ""), i = 0;
+    el.classList.remove("is-waiting");
+    el.classList.add("is-typing");
+    (function step() {
+      if (i < chars.length) { el.textContent += chars[i++]; setTimeout(step, 38); }
+      else { el.classList.remove("is-typing"); el.classList.add("is-done"); }
+    })();
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); typeIt(e.target.querySelector(".sp-type")); } });
+  }, { threshold: 0.4 });
+  els.forEach(function (el) { io.observe(el.parentNode); });
+})();
+</script>
+<script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>
+</body>
+</html>

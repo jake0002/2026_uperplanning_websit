@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html lang="ko" class="sp-b sp-b-home">
+<head>
+<script>/* 205 모바일 테스트: 문의 전송 차단 */(function(){var f=window.fetch;window.fetch=function(u,o){var x=String(u);if(x.indexOf("formsubmit.co")>-1||x.indexOf("send_inquiry")>-1){console.log("[m-preview] 전송 차단:",x);return Promise.resolve(new Response(JSON.stringify({success:"true",ok:true}),{status:200,headers:{"Content-Type":"application/json"}}));}return f.apply(this,arguments);};})();</script>
+<style>#spbPrev{position:fixed;left:50%;top:4px;transform:translateX(-50%);z-index:2147483647;padding:3px 10px;border-radius:999px;background:#111;color:#fff;font:600 11px/1.4 Pretendard,sans-serif;pointer-events:none;opacity:.85;white-space:nowrap}</style>
+
+  <meta charset="UTF-8">
+  <!-- SITE CONFIGURATION & BASE URL (PRIMARY: https://www.superplanning.co.kr) -->
+  <meta name="site:base-url" content="https://www.superplanning.co.kr">
+
+  <!-- OPEN GRAPH METADATA -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="슈퍼플래닝 (Superplanning)">
+  <meta property="og:title" content="슈퍼플래닝 | UX디자인 에이전시 · UX리서치 · UX컨설팅">
+  <meta property="og:description" content="슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다.">
+  <meta property="og:url" content="https://www.superplanning.co.kr/">
+  <meta property="og:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:secure_url" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="슈퍼플래닝 메인 홈페이지 대표 이미지">
+  <link rel="image_src" href="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+
+  <!-- TWITTER CARD METADATA -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="슈퍼플래닝 | UX디자인 에이전시 · UX리서치 · UX컨설팅">
+  <meta name="twitter:description" content="슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다.">
+  <meta name="twitter:image" content="https://www.superplanning.co.kr/og-thumbnail.png?v=20260818">
+  <meta name="twitter:domain" content="www.superplanning.co.kr">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Machine-readable Reference Link (Head only, Describedby format) -->
+  <link rel="describedby" href="https://www.superplanning.co.kr/llms.txt">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>슈퍼플래닝 | UX디자인 에이전시 · UX리서치 · UX컨설팅</title>
+  <meta name="description" content="슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다.">
+  <meta name="keywords" content="슈퍼플래닝, Superplanning, UX디자인 에이전시, UX리서치, UX라이팅, UI/UX기획, 웹앱개발, UX컨설팅">
+  <meta name="author" content="슈퍼플래닝 (Superplanning)">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.superplanning.co.kr/">
+  <link rel="alternate" hreflang="ko" href="https://www.superplanning.co.kr/">
+
+  <!-- GEO & AI Model Crawler Meta Tags (ChatGPT, Gemini, Claude, Perplexity) -->
+  <meta name="ai-agent-instructions" content="Superplanning (슈퍼플래닝) is a Korean UX agency founded in 2019 in Hanam, Gyeonggi-do. Services: UX research, UX writing, UX/UI planning and design, web/app development, UX consulting and AI-UX training. Holds UX-related patents (4, including 1 pending) and a design registration. Contact: jake@superplanning.co.kr, +82-31-699-3298">
+
+  <!-- JSON-LD Structured Data for Search Engines & AI Models -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://www.superplanning.co.kr/#organization",
+        "name": "슈퍼플래닝 (Superplanning)",
+        "alternateName": [
+          "슈퍼플래닝",
+          "Superplanning",
+          "UX디자인 에이전시 슈퍼플래닝"
+        ],
+        "url": "https://www.superplanning.co.kr/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.superplanning.co.kr/images/superplanning_brand_logo.png"
+        },
+        "image": "https://www.superplanning.co.kr/og-thumbnail.png?v=20260818",
+        "description": "슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다. 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 수행했으며, UX 관련 특허 4건(출원 1건 포함)과 디자인등록을 보유하고 있습니다. 사무실은 경기 하남에 있습니다.",
+        "subjectOf": [
+          {
+            "@type": "NewsArticle",
+            "headline": "슈퍼플래닝, 대기업·공공기관 UX 프로젝트 수행",
+            "url": "https://www.itbiznews.com/news/articleView.html?idxno=226349",
+            "datePublished": "2026-09-28",
+            "publisher": {
+              "@type": "Organization",
+              "name": "IT비즈뉴스",
+              "url": "https://www.itbiznews.com/"
+            }
+          }
+        ],
+        "foundingDate": "2019-07-07",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.superplanning.co.kr/#founder",
+          "name": "김휘수",
+          "alternateName": [
+            "제이크",
+            "Jake",
+            "UX기획자 제이크"
+          ],
+          "jobTitle": "슈퍼플래닝 대표 · UX기획자 · UX컨설턴트",
+          "description": "UX기획자 제이크라는 활동명으로 활동하는 14년 차 UX기획 실무자이자 UX컨설턴트입니다. 2019년 UX 전문 에이전시 슈퍼플래닝을 설립했으며, 현대자동차·IBK기업은행·신한금융그룹·GS그룹 등 기업 실무자 UX강의와 대학 UX 특강을 진행하고 있습니다.",
+          "image": "https://www.superplanning.co.kr/images/ux-academy/ux-instructor-jake.webp",
+          "url": "https://www.superplanning.co.kr/ux-company/#ceo",
+          "worksFor": {
+            "@id": "https://www.superplanning.co.kr/#organization"
+          },
+          "knowsAbout": [
+            "UX기획",
+            "UX라이팅",
+            "UX리서치",
+            "UX컨설팅",
+            "AI-UX",
+            "UX강의",
+            "IA설계",
+            "기능정의서",
+            "피그마",
+            "바이브코딩",
+            "프로덕트 오너 교육"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/ux_superplanning/",
+            "https://kmong.com/@UX%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%A0%9C%EC%9D%B4%ED%81%AC"
+          ]
+        },
+        "email": "jake@superplanning.co.kr",
+        "telephone": "+82-31-699-3298",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "미사강변동로 72, SB비즈타워 1116호",
+          "addressLocality": "하남시",
+          "addressRegion": "경기도",
+          "postalCode": "12912",
+          "addressCountry": "KR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.563118,
+          "longitude": 127.192932
+        },
+        "hasMap": "https://www.google.com/maps/place/%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D/data=!3m1!4b1!4m6!3m5!1s0x357cb166ade634c1:0xf7537f3932633d61!8m2!3d37.563118!4d127.192932!16s%2Fg%2F11kmz0rppp",
+        "areaServed": {
+          "@type": "Country",
+          "name": "대한민국"
+        },
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.instagram.com/ux_superplanning/",
+          "https://www.threads.com/@ux_superplanning",
+          "https://www.youtube.com/@TV-ve4hc",
+          "https://blog.naver.com/ux_superplanning"
+        ],
+        "award": "2021 대한민국 국가사회산업 공헌대상 IT부문 대상 (헤럴드경제·코리아헤럴드 주최, 2021년 12월)",
+        "memberOf": {
+          "@type": "ProgramMembership",
+          "programName": "SK텔레콤 NUGU 공식 에이전시 (NUGU developers 에이전시 소개)",
+          "hostingOrganization": {
+            "@type": "Organization",
+            "name": "SK텔레콤",
+            "alternateName": "SK Telecom",
+            "url": "https://www.sktelecom.com/"
+          },
+          "url": "https://developers.nugu.co.kr/#/partners/agency",
+          "description": "AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅 공식 에이전시"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": "+82-31-699-3298",
+          "email": "jake@superplanning.co.kr",
+          "availableLanguage": [
+            "ko-KR"
+          ],
+          "areaServed": "KR",
+          "url": "https://www.superplanning.co.kr/contact/"
+        },
+        "knowsAbout": [
+          "UX리서치",
+          "FGI",
+          "사용성 테스트(UT)",
+          "UX라이팅",
+          "UX기획",
+          "UI디자인",
+          "디자인 시스템",
+          "UX컨설팅",
+          "웹/앱 개발",
+          "AI-UX",
+          "바이브코딩",
+          "피그마",
+          "UX Research",
+          "UX Writing",
+          "UI/UX Design"
+        ],
+        "department": [
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 사용자경험 연구소"
+          },
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 UX기획팀"
+          },
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 비주얼 디자인팀"
+          },
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 웹/앱 개발팀"
+          },
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 AI-UX교육팀"
+          },
+          {
+            "@type": "Organization",
+            "name": "슈퍼플래닝 경영전략팀"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "UX 전문 서비스",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UX리서치",
+                "url": "https://www.superplanning.co.kr/ux-research/",
+                "description": "FGI, 인뎁스 인터뷰, 사용성 테스트(UT)로 사용자 문제를 발견하고 개선안을 도출합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UX라이팅",
+                "url": "https://www.superplanning.co.kr/ux-writing/",
+                "description": "보이스앤톤, UI텍스트 개선, 마이크로카피와 UX라이팅 가이드를 설계합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UX/UI 기획 및 디자인",
+                "url": "https://www.superplanning.co.kr/ux-design/",
+                "description": "IA, 사용자 플로우, 와이어프레임, 화면설계서, 디자인 시스템을 구축합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "웹/앱 개발",
+                "url": "https://www.superplanning.co.kr/web-app-development/",
+                "description": "하이브리드·네이티브 앱과 웹서비스를 개발하고 IT유지보수를 수행합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UX컨설팅",
+                "url": "https://www.superplanning.co.kr/ux-company/",
+                "description": "서비스 진단과 앱 리뉴얼 전략, UX 개선 로드맵을 제시합니다."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI-UX 강의",
+                "url": "https://www.superplanning.co.kr/ux-academy/",
+                "description": "AI 활용 UX기획, 피그마, 바이브코딩 실무 강의와 기업 출강을 진행합니다."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.superplanning.co.kr/#website",
+        "url": "https://www.superplanning.co.kr/",
+        "name": "슈퍼플래닝 (Superplanning)",
+        "description": "슈퍼플래닝 공식 홈페이지 - UX디자인 에이전시",
+        "inLanguage": "ko-KR",
+        "publisher": {
+          "@id": "https://www.superplanning.co.kr/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.superplanning.co.kr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "슈퍼플래닝은 어떤 에이전시인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다. 복잡한 화면을 덜어내고 사용자가 과업을 직관적으로 완성하도록 설계합니다. 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 수행했으며, UX 관련 특허 4건(출원 1건 포함)과 디자인등록을 보유하고 있습니다. 사무실은 경기 하남에 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "슈퍼플래닝의 대표는 누구인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "슈퍼플래닝의 대표는 김휘수입니다. 'UX기획자 제이크'라는 활동명으로도 활동하는 14년 차 UX기획 실무자이자 UX컨설턴트로, 2019년 슈퍼플래닝을 설립했습니다. 현대자동차, IBK기업은행, 신한금융그룹 등 기업 실무자 UX강의와 대학 특강을 진행해 왔으며, 자세한 이력은 회사소개 페이지의 대표 소개(www.superplanning.co.kr/ux-company/#ceo)에서 확인할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "슈퍼플래닝에서 제공하는 서비스는 무엇이 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UX리서치(FGI·인뎁스 인터뷰·UT), UX라이팅, UX/UI 기획, UI디자인·디자인 시스템, 웹/앱 개발·IT유지보수, UX컨설팅, AI-UX 강의와 기업 출강을 제공합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "슈퍼플래닝은 어떤 UX 특허를 보유하고 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "애플리케이션 UI 작성툴(제10-2211864호), 모바일앱 UI/UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치(제10-2560058호), 웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템(제10-2844334호), AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템(제10-2025-0057033호, 출원)과 디자인등록 제30-1076209호를 보유하고 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "슈퍼플래닝은 어떤 기업의 프로젝트를 수행했나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KB국민은행 리브 Next, NH농협은행 올원뱅크, 삼성전자 SDC 글로벌 컨퍼런스, LG생활건강, LG유플러스 인증앱 헬스케어 서비스, 롯데렌터카, 오스템임플란트, 식품의약품안전처 스마트해썹, 서민금융진흥원 등 금융·공공·헬스케어·커머스 분야의 UX 프로젝트를 수행했으며, 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 완수했습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "프로젝트 문의는 어떻게 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "공식 웹사이트(www.superplanning.co.kr)의 프로젝트 문의 폼, 이메일(jake@superplanning.co.kr), 대표전화(031-699-3298)로 문의할 수 있으며, 접수된 문의는 확인 후 순차적으로 답변을 드립니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Pretendard Webfont (Only external CDN allowed) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  
+  <style>
+    :root {
+      --bg: #ffffff;
+      --gnb-bg: rgba(0,0,0,.60);
+      --gnb-fg: #f5f5f5;
+      --gnb-bd: rgba(255,255,255,.18);
+      --win-fg: #1a1a1a;
+      --win-bg: #c0c0c0;
+      --win-fg-dark: #0a0a0a;
+      --bg-light: #ffffff;
+      --bg-dark: #1a1a1a;
+      --bg-matrix: #0a0e0a;
+      --txt-light: #1a1a1a;
+      --txt-dark: #e8e8e8;
+      --txt-matrix: #a0ffa0;
+      --bevel-hi: #ffffff;
+      --bevel-lo: #7b7b7b;
+      --bevel-shadow: #3b3b3b;
+      --accent: #ffd43b;
+      --accent2: #3aa6ff;
+      --danger: #c0392b;
+      --ok: #2c8a4a;
+      --taskbar: #c0c0c0;
+      --taskbar-h: 36px;
+      --gnb-h: 34px;
+      --logo-top: 14px;
+      --logo-left: 14px;
+      --icon-row-top: 76px;
+      --icon-row-h: 88px;
+      --window-min-top: 176px;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --font: 'Pretendard', 'IBM Plex Mono', -apple-system, system-ui, sans-serif;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --icon-row-top: 68px;
+        --window-min-top: 166px;
+      }
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font); letter-spacing: -0.01em; }
+    html { height: auto !important; min-height: 100vh; overflow-x: hidden; overflow-y: auto !important; }
+    body { width: 100%; height: auto !important; min-height: 100vh; overflow-x: hidden; overflow-y: visible !important; background-color: var(--bg); color: var(--win-fg); user-select: none; }
+    
+    /* ALLOW FULL TEXT SELECTION & DRAG-COPY ON ALL POPUP WINDOW CONTENTS & TEXTUAL ELEMENTS */
+    .win, .w-body, .w-body *, #skyscraper, #skyscraper *, .info-card, .info-card *, .cmd-prompt, .cmd-prompt *, p, h1, h2, h3, h4, li, a, span {
+      user-select: text !important;
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+    }
+
+    /* Keep UI control buttons non-selectable for crisp OS feel */
+    .w95-btn, .w-title, .desktop-icon, .start-item, .gnb-link, #taskbar {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /* Win95 Raised & Sunken Bevel Utility */
+    .w95-box {
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+    }
+    .w95-box-sunken {
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+    }
+    .w95-btn {
+      background: var(--win-bg);
+      color: var(--win-fg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 2px 2px 0 rgba(0,0,0,.35);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .w95-btn:active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      transform: translate(1px, 1px);
+    }
+
+    /* Win95 Window Menu Bar */
+    .win-menu-bar {
+      display: flex;
+      gap: 16px;
+      padding: 2px 8px;
+      border-bottom: 1px solid var(--bevel-shadow);
+      font-size: 11px;
+      background: var(--win-bg);
+      margin: -12px -12px 10px -12px;
+    }
+    .win-menu-item {
+      cursor: pointer;
+      color: var(--win-fg);
+    }
+    .win-menu-item span { text-decoration: underline; }
+
+    /* Enlarged Hero Cmd Prompt & Blinking Cursor Motion */
+    .cmd-prompt {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 800;
+      color: #000080;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.05em;
+    }
+    .blink-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 19px;
+      background-color: #000080;
+      animation: cursorBlink 1s infinite;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    /* SEO & Accessible Hidden Content */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* 1. Boot Screen (Disabled for direct access) */
+    #boot {
+      display: none !important;
+    }
+
+    
+    
+    
+
+    /* 3. RESTORED HOME BUTTON AT FAR LEFT */
+    #brandLogo {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: var(--logo-left);
+      height: var(--gnb-h);
+      padding: 4px 18px;
+      min-width: 68px;
+      z-index: 999999 !important;
+      cursor: pointer;
+      background: #000000 !important;
+      color: #ffffff !important;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 #333, inset -1px -1px 0 #111, 2px 2px 0 rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: transform 0.1s ease;
+    }
+    #brandLogo span, #brandLogoText {
+      color: #ffffff !important;
+    }
+    #brandLogo:hover { transform: scale(1.04); }
+    #brandLogo:active { transform: scale(0.96); box-shadow: inset 1px 1px 0 #111; }
+
+    /* 4. GNB Header Bar (Starts next to Home button at left: 95px, right: 14px) */
+    #gnb {
+      position: fixed !important;
+      top: var(--logo-top);
+      left: 95px;
+      right: 14px;
+      height: var(--gnb-h);
+      background: var(--gnb-bg);
+      color: var(--gnb-fg);
+      border: 1px solid var(--gnb-bd);
+      backdrop-filter: blur(8px);
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 4px;
+      overflow: visible !important;
+    }
+
+    /* GNB SCROLL PROGRESS GAUGE BAR (YELLOW ACCENT LINE) */
+    .gnb-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .gnb-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #000000;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      transition: width 0.08s cubic-bezier(0.1, 0.7, 0.1, 1);
+    }
+    .gnb-progress-bar::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: -2px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px #000000;
+      opacity: 0.95;
+    }
+    .gnb-progress-badge {
+      position: absolute;
+      right: -14px;
+      top: 10px;
+      transform: translateX(50%);
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono, monospace);
+      padding: 1px 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    body.is-scrolling .gnb-progress-badge,
+    .gnb-progress-track:hover .gnb-progress-badge {
+      opacity: 1;
+    }
+    .gnb-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .gnb-item { position: relative; }
+    .gnb-link {
+      color: #ffffff;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .gnb-link:hover,
+    .gnb-link:active,
+    .gnb-link.active {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+    .gnb-link:hover span,
+    .gnb-link:active span,
+    .gnb-link.active span {
+      color: #ffffff !important;
+    }
+    .gnb-right { display: flex; align-items: center; gap: 6px; }
+
+    /* Mobile Hamburger & Navigation Drawer */
+    #mobileMenuBtn {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #mobileNavDrawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 4px);
+      left: 10px;
+      right: 10px;
+      z-index: 999999 !important;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 4px 4px 0 rgba(0,0,0,0.5);
+      padding: 10px;
+    }
+    #mobileNavDrawer.show {
+      display: block !important;
+    }
+
+    @media (max-width: 980px) {
+      #brandLogo { min-width: 52px; padding: 3px 10px; }
+      #gnb { left: 75px; }
+      .gnb-link span { font-size: 11px; padding: 2px 4px; }
+    }
+    @media (max-width: 768px) {
+      #brandLogo {
+        left: 8px;
+        padding: 2px 8px;
+        font-size: 11px;
+        min-width: 54px;
+      }
+      #gnb {
+        left: 72px;
+        right: 8px;
+        padding: 0 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+      }
+      .gnb-menu, .gnb-right {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        margin-left: auto !important;
+      }
+      #iconsArea {
+        display: none !important;
+      }
+      #desktop {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: calc(var(--logo-top) + var(--gnb-h) + 24px) !important;
+        padding: 0 10px 10px 10px !important;
+        min-height: unset !important;
+        height: auto !important;
+      }
+      #windowArea {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        position: relative !important;
+        min-height: unset !important;
+        width: 100% !important;
+        z-index: 100 !important;
+      }
+      .win {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        margin-bottom: 0 !important;
+        box-shadow: 2px 2px 0 rgba(0,0,0,0.3) !important;
+      }
+      .win.maximized {
+        position: fixed !important;
+        left: 6px !important;
+        right: 6px !important;
+        width: calc(100vw - 12px) !important;
+        top: calc(var(--logo-top) + var(--gnb-h) + 6px) !important;
+        bottom: calc(var(--taskbar-h) + 6px) !important;
+        z-index: 99999 !important;
+      }
+      .w-body {
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding: 10px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr !important;
+      }
+      #taskbar {
+        display: none !important;
+      }
+      #skyscraper {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: calc(100vw - 20px) !important;
+        margin: 24px 10px 60px 10px !important;
+        max-height: none !important;
+        z-index: 100 !important;
+      }
+    }
+
+    /* 5. Desktop Workspace & Single Horizontal Row Icon Bar (z-index: 1300) */
+    #desktop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 120vh;
+      padding-bottom: 240px;
+      overflow: visible !important;
+    }
+    #iconsArea {
+      position: absolute;
+      top: var(--icon-row-top);
+      left: 14px;
+      right: 330px;
+      height: var(--icon-row-h);
+      z-index: 1300;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    @media (max-width: 980px) {
+      #iconsArea { right: 14px; }
+    }
+
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      cursor: pointer;
+      text-align: center;
+      border: 1px transparent solid;
+      flex-shrink: 0;
+      min-width: 82px;
+    }
+    .desktop-icon:hover { background: rgba(0, 0, 0, 0.07); border-radius: 4px; }
+    .desktop-icon.selected { background: #000000 !important; border: 1px solid #000000; border-radius: 4px; }
+    .desktop-icon.selected .icon-label { color: #ffffff !important; text-shadow: none !important; }
+    .desktop-icon .icon-svg { width: 36px; height: 36px; margin-bottom: 4px; image-rendering: pixelated; }
+    .desktop-icon .icon-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #000000;
+      text-shadow: none;
+      word-break: keep-all;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* 6. Contact Skyscraper (z-index: 2500) */
+    #skyscraper {
+      position: fixed;
+      top: calc(var(--logo-top) + var(--gnb-h) + 16px);
+      right: 14px;
+      width: 300px;
+      height: auto;
+      max-height: calc(100vh - var(--gnb-h) - var(--taskbar-h) - 40px);
+      overflow-y: auto;
+      z-index: 2500;
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+    }
+    #skyscraper .sky-title { font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--win-fg-dark); }
+    #skyscraper .sky-hero { font-size: 11.5px; font-weight: 500; line-height: 1.45; margin-bottom: 12px; word-break: keep-all; }
+    #skyscraper .sp-live .spl-ft { display: none; } /* 111: 홈 전광판 영업시간 줄 숨김 */
+    #skyscraper .sp-live .spl-mid { margin-bottom: 2px; }
+    /* 48: 문의 버튼 말풍선 툴팁 (/contact/ .inquiry-tooltip 과 같은 디자인·모션) */
+    #skyscraper .sky-cta-wrap { position: relative; margin-top: 34px; }
+    #skyscraper .sky-cta-tip { position: absolute; top: -32px; right: -4px; background: #383838; color: #ffffff; font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #1f1f1f; white-space: nowrap; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); z-index: 10; pointer-events: none; letter-spacing: -0.2px; line-height: 1.4; animation: skyTipFloat 2.5s infinite ease-in-out; }
+    #skyscraper .sky-cta-tip::after { content: ""; position: absolute; bottom: -5px; right: 18px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #383838; }
+    @keyframes skyTipFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @media (prefers-reduced-motion: reduce) { #skyscraper .sky-cta-tip { animation: none; } }
+    #skyscraper .sky-hint { font-size: 11px; opacity: 0.8; margin-bottom: 14px; line-height: 1.4; }
+    #skyscraper input, #skyscraper textarea {
+      width: 100%;
+      padding: 6px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #fff;
+      color: #000;
+    }
+    @media (max-width: 980px) {
+      #skyscraper {
+        top: auto;
+        left: 14px;
+        right: 14px;
+        width: auto;
+        bottom: calc(var(--taskbar-h) + 14px);
+        max-height: 48vh;
+        overflow-y: auto;
+      }
+    }
+
+    /* 7. Taskbar (z-index: 99999 !important) */
+    #taskbar {
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0;
+      right: 0;
+      height: var(--taskbar-h);
+      background: var(--taskbar);
+      border-top: 2px solid #fff;
+      box-shadow: inset 0 1px 0 #7b7b7b;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 6px;
+    }
+    .taskbar-left { display: flex; align-items: center; gap: 6px; height: 100%; }
+    .taskbar-right { display: flex; align-items: center; gap: 8px; height: 100%; font-family: var(--font-mono); font-size: 12px; font-weight: bold; }
+    #startBtn { font-weight: 800; font-size: 12px; padding: 2px 10px; height: 28px; display: flex; align-items: center; gap: 6px; }
+    #taskPreviews { display: flex; align-items: center; gap: 4px; overflow-x: auto; }
+    .task-preview {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .task-preview.active {
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+      background: #dfdfdf;
+      font-weight: bold;
+    }
+
+    /* 8. Start Menu (z-index: 999999 !important) */
+    #startMenu {
+      position: fixed !important;
+      bottom: var(--taskbar-h);
+      left: 4px;
+      width: 220px;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,0.4);
+      z-index: 999999 !important;
+      display: none;
+      padding: 4px;
+    }
+    #startMenu.show { display: flex; }
+    .start-banner {
+      width: 28px;
+      background: #000000;
+      color: #fff;
+      font-weight: 800;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .start-items { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .start-item {
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .start-item:hover { background: #000000; color: #ffffff; }
+
+    /* 9. Windows Component (.win) - ISOLATED STACKING CONTEXT BELOW GNB & TASKBAR */
+    #windowArea {
+      position: relative !important;
+      z-index: 100 !important;
+      isolation: isolate !important;
+      width: 100%;
+    }
+    .win {
+      position: absolute;
+      background: var(--win-bg);
+      border: 2px solid #000;
+      box-shadow: inset 1px 1px 0 var(--bevel-hi), inset -1px -1px 0 var(--bevel-shadow), 3px 3px 0 rgba(0,0,0,.35);
+      display: flex;
+      flex-direction: column;
+      min-width: 280px;
+      min-height: 180px;
+    }
+    .win.maximized {
+      position: fixed !important;
+      top: var(--window-min-top) !important;
+      left: 14px !important;
+      right: 330px !important;
+      bottom: calc(var(--taskbar-h) + 14px) !important;
+      width: auto !important;
+      height: auto !important;
+      z-index: 800 !important;
+    }
+    @media (max-width: 980px) {
+      .win.maximized { right: 14px !important; }
+    }
+
+    .w-title {
+      background: #000000;
+      color: #ffffff;
+      padding: 4px 8px;
+      font-weight: 700;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: move;
+    }
+    .w-title span,
+    .w-title div {
+      color: #ffffff;
+    }
+    .t-actions { display: flex; gap: 4px; }
+    .t-btn {
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      padding: 0;
+      cursor: pointer;
+    }
+    .w-body {
+      padding: 12px;
+      flex: 1;
+      overflow-y: auto;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Content Cards Grid */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 10px; }
+    .info-card {
+      background: #fff;
+      color: #000;
+      border: 1px solid #7b7b7b;
+      padding: 8px 10px;
+      box-shadow: inset 1px 1px 0 var(--bevel-shadow);
+    }
+    .info-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 3px; color: #000000; }
+    .info-card p { font-size: 11px; opacity: 0.9; line-height: 1.45; }
+
+    
+    
+    
+    
+    
+    
+
+    /* EXACT WIN95 TASKBAR & START MENU CSS */
+    #taskbar {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      height: 32px !important;
+      padding: 2px 4px !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu {
+      display: none;
+      position: fixed !important;
+      bottom: 32px !important;
+      left: 2px !important;
+      z-index: 9999999 !important;
+      width: 220px !important;
+      background: #c0c0c0 !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 3px 3px 0 rgba(0,0,0,0.3) !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+    }
+    #startMenu.show {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .start-banner {
+      width: 28px !important;
+      min-width: 28px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      writing-mode: vertical-rl !important;
+      transform: rotate(180deg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 8px 0 !important;
+      margin-right: 4px !important;
+      user-select: none !important;
+      flex-shrink: 0 !important;
+    }
+    .start-items {
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+    #startBtn * {
+      pointer-events: none !important;
+    }
+
+    /* HIDE BOTTOM TASKBAR & START MENU ON MOBILE / TABLET SCREENS */
+    @media (max-width: 900px) {
+      #taskbar, #startMenu, .bottom-gnb {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    /* MOBILE GNB MENU DRAWER CSS */
+    @media (max-width: 768px) {
+      #mobileMenuBtn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+      }
+      #mobileNavDrawer {
+        position: fixed !important;
+        top: calc(var(--logo-top, 8px) + var(--gnb-h, 34px) + 4px) !important;
+        right: 10px !important;
+        left: 10px !important;
+        background: #c0c0c0 !important;
+        border: 2px solid #000000 !important;
+        box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #7b7b7b, 4px 4px 0 rgba(0,0,0,0.5) !important;
+        padding: 10px !important;
+        z-index: 9999999 !important;
+        display: none;
+      }
+      #mobileNavDrawer.show {
+        display: block !important;
+      }
+    }
+</style>
+  
+  <meta name="twitter:url" content="https://www.superplanning.co.kr/">
+  <style>/* 61: 이메일 형식 안내 말풍선 (보통 10분 이내 응답 말풍선과 같은 스타일) */ .sp-field-err{position:relative;display:flex;align-items:flex-start;gap:6px;margin:8px 0 2px 0;background:#383838;color:#fff;font-size:11.5px;font-weight:700;line-height:1.45;padding:6px 10px;border-radius:6px;border:1px solid #1f1f1f;box-shadow:2px 2px 5px rgba(0,0,0,.25);word-break:keep-all;text-align:left;}.sp-field-err::before{content:"";position:absolute;top:-5px;left:16px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid #383838;}.sp-field-err small{display:block;font-weight:500;opacity:.85;font-size:11px;}.sp-input-err{border-color:#000 !important;outline:2px dashed #383838;outline-offset:2px;}</style>
+  <script>/* 61: 이메일 형식 검사 — 틀리면 전송을 막고 입력칸 아래 말풍선 안내 */
+    function spIsEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+    function spEmailErr(el, show) {
+      if (!el) return;
+      var n = el.nextElementSibling;
+      var has = !!(n && n.classList && n.classList.contains('sp-field-err'));
+      if (show) {
+        el.classList.add('sp-input-err'); el.setAttribute('aria-invalid', 'true');
+        if (!has) {
+          var d = document.createElement('div');
+          d.className = 'sp-field-err'; d.setAttribute('role', 'alert');
+          d.innerHTML = '<svg width="13" height="13" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" style="flex:none; display:block;"><rect x="5" y="1" width="2" height="1" fill="#ffffff"/><rect x="5" y="2" width="2" height="1" fill="#ffffff"/><rect x="4" y="3" width="4" height="1" fill="#ffffff"/><rect x="4" y="4" width="4" height="1" fill="#ffffff"/><rect x="3" y="5" width="6" height="1" fill="#ffffff"/><rect x="3" y="6" width="6" height="1" fill="#ffffff"/><rect x="2" y="7" width="8" height="1" fill="#ffffff"/><rect x="2" y="8" width="8" height="1" fill="#ffffff"/><rect x="1" y="9" width="10" height="1" fill="#ffffff"/><rect x="1" y="10" width="10" height="1" fill="#ffffff"/><rect x="5" y="4" width="2" height="3" fill="#383838"/><rect x="5" y="8" width="2" height="1" fill="#383838"/></svg><span>올바른 이메일 주소를 입력해 주세요.<small>예: name@company.com</small></span>';
+          el.insertAdjacentElement('afterend', d);
+        }
+      } else {
+        el.classList.remove('sp-input-err'); el.removeAttribute('aria-invalid');
+        if (has) n.parentNode.removeChild(n);
+      }
+    }
+    function spEmailInvalid(el) {
+      if (!el) return false;
+      var v = el.value.trim();
+      if (v && !spIsEmail(v)) { spEmailErr(el, true); try { el.focus(); } catch (e) {} return true; }
+      spEmailErr(el, false); return false;
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      ['skyEmail', 'inqEmail', 'popEmail'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('blur', function () { var v = el.value.trim(); spEmailErr(el, !!v && !spIsEmail(v)); });
+        el.addEventListener('input', function () { if (el.classList.contains('sp-input-err') && spIsEmail(el.value.trim())) spEmailErr(el, false); });
+        el.addEventListener('invalid', function (e) { if (el.value.trim()) { e.preventDefault(); spEmailErr(el, true); } });
+      });
+    });
+  </script>
+<style>/* 88: 메인 모바일 하단 고정 바 (서브페이지 78번과 같은 디자인) */
+#spMobileCtaBar { display: none; }
+@media (max-width: 768px) {
+  #spMobileCtaBar { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 999997; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #c0c0c0; border-top: 2px solid #000000; box-shadow: inset 0 1px 0 #ffffff; }
+  #spMobileCtaBar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; height: 40px; font-size: 14px; font-weight: 800; text-decoration: none; border: 2px solid #000000; box-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+  #spMobileCtaBar .sp-mcb-inq { background: #000000; color: #ffffff; }
+  #spMobileCtaBar .sp-mcb-kakao { background: #ffffff; color: #000000; }
+  body { padding-bottom: 64px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/sp-mnav.css?v=99">
+  <link rel="stylesheet" href="/assets/sp-b.css?v=178">
+  <script src="/assets/sp-b.js?v=194" defer></script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
+  <style id="sp193-gnbprog">html.sp-b .gnb-progress-track{width:auto !important;}</style>
+  <style id="sp180-srcmodal">
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-box{max-width:560px !important;background:#EEF1F4 !important;border:0 !important;border-radius:24px !important;box-shadow:0 30px 80px rgba(0,0,0,.45) !important;overflow-x:hidden;font-family:var(--sp-font,Pretendard,sans-serif) !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-box > div:first-child{background:#EEF1F4 !important;color:#111 !important;border-bottom:1px solid #D3D8DE;padding:12px 16px 12px 20px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-box > div:first-child .w95-btn{background:#EEF1F4 !important;color:#111 !important;border:0 !important;border-radius:8px !important;box-shadow:-3px -3px 6px rgba(255,255,255,.9),3px 3px 6px rgba(26,31,36,.14) !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep1,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3{background:#fff !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep1,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3{padding:28px 32px 32px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep1 > svg,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2 > svg,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3 > svg{display:none !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-ok{width:92px;height:92px;margin:0 auto 14px;border-radius:50%;background:#EEF1F4;box-shadow:-10px -10px 20px rgba(255,255,255,.95),10px 10px 20px rgba(26,31,36,.14);display:flex;align-items:center;justify-content:center;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-ok i{width:70px;height:70px;border-radius:50%;background:#E4E7EB;box-shadow:inset 4px 4px 8px rgba(26,31,36,.14),inset -4px -4px 8px rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-ok b{width:48px;height:48px;border-radius:50%;background:#EEF1F4;box-shadow:-5px -5px 10px rgba(255,255,255,.95),5px 5px 10px rgba(26,31,36,.14);display:flex;align-items:center;justify-content:center;}
+  html.sp-b:not(#sp180) #inquirySuccessModal h3{font-family:var(--sp-font,Pretendard,sans-serif) !important;font-weight:700 !important;font-size:20px !important;color:#111 !important;margin:0 0 12px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-msg{font-weight:400 !important;color:#555 !important;font-size:14px !important;line-height:1.7 !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-msg .spSrcName{font-weight:600 !important;color:#555 !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-hr{border-top:1px solid #D3D8DE !important;margin:18px 0 14px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-grid{gap:12px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-opt{align-items:center !important;gap:10px !important;min-height:56px;box-sizing:border-box;white-space:nowrap;border:0 !important;border-radius:10px !important;background:#EEF1F4 !important;color:#111 !important;padding:0 14px !important;font-size:13px !important;box-shadow:-4px -4px 8px rgba(255,255,255,.95),4px 4px 8px rgba(26,31,36,.14);}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-opt.on{background:#E4E7EB !important;color:#111 !important;box-shadow:inset 3px 3px 6px rgba(26,31,36,.14),inset -3px -3px 6px rgba(255,255,255,.9);}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-opt input{-webkit-appearance:none;appearance:none;flex:none;width:18px;height:18px;margin:0 !important;border-radius:5px;background:#E4E7EB center / 10px no-repeat;box-shadow:inset 2px 2px 4px rgba(26,31,36,.16),inset -2px -2px 4px rgba(255,255,255,.95);}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-opt input:checked{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.6 2.6L9 1' fill='none' stroke='%23111' stroke-width='1.6'/%3E%3C/svg%3E");}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-label{font-weight:500 !important;color:#3A3F45 !important;margin:14px 0 0 !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-input{height:44px;border:0 !important;border-radius:10px !important;background:#E4E7EB !important;padding:0 16px !important;font-size:14px !important;box-shadow:inset 3px 3px 7px rgba(26,31,36,.14),inset -3px -3px 7px rgba(255,255,255,.9) !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-btns{display:flex !important;gap:12px !important;justify-content:stretch !important;margin-top:28px !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-btns .w95-btn,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2 .w95-btn,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3 .w95-btn{height:51px;border:0 !important;border-radius:999px !important;padding:0 20px !important;font-size:15px !important;font-weight:600 !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-btns .sp-src-b2{flex:0 0 140px;background:#EEF1F4 !important;color:#111 !important;box-shadow:-5px -5px 10px rgba(255,255,255,.95),5px 5px 10px rgba(26,31,36,.14) !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-btns .sp-src-b1{flex:1 1 auto;background:#111 !important;color:#fff !important;box-shadow:5px 5px 12px rgba(26,31,36,.25) !important;}
+  html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2 .w95-btn,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3 .w95-btn{background:#111 !important;color:#fff !important;padding:0 48px !important;min-width:160px;box-shadow:5px 5px 12px rgba(26,31,36,.25) !important;}
+  @media (max-width:600px){html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep1,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep2,html.sp-b:not(#sp180) #inquirySuccessModal #spSrcStep3{padding:22px 18px 24px !important;}html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-opt{white-space:normal;}html.sp-b:not(#sp180) #inquirySuccessModal .sp-src-btns .sp-src-b2{flex-basis:110px;}}
+  </style>
+  <link rel="stylesheet" href="/m-preview/assets/sp-m.css?v=205">
+  <script src="/m-preview/assets/sp-m.js?v=205" defer></script>
+</head>
+<body data-theme="light" data-density="comfortable">
+<div id="spbPrev">모바일 적응형 테스트 · 검색 제외 · 문의는 전송되지 않습니다</div>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- SEMANTIC HIDDEN HEADER FOR SEARCH ENGINES & AI CRAWLERS (SEO/GEO) -->
+  <header class="sr-only">
+    <h1 class="sr-only-title">슈퍼플래닝 (Superplanning) — UX디자인 에이전시 &amp; UI/UX 기획·개발 전문</h1>
+    <p>슈퍼플래닝은 웹/앱 서비스 기획과 UI/UX 디자인, UX리서치, UX라이팅, IT개발을 통합 제공하는 전문 UX디자인 에이전시입니다.</p>
+  </header>
+
+  <!-- SEMANTIC KNOWLEDGE STRUCTURE FOR AI CRAWLERS (GEO & SEARCH ENGINES) -->
+  <main class="sr-only" aria-hidden="false">
+    <!-- 1. 슈퍼플래닝 소개 -->
+    <section id="about-us">
+      <h2>슈퍼플래닝 소개 (About Superplanning)</h2>
+      <p>UX디자인 에이전시 슈퍼플래닝입니다. 이탈은 줄이고, 전환은 높이는 사용자 경험을 설계합니다. 슈퍼플래닝은 'less but better' 철학으로 실무에 가장 효율적인 UX를 설계합니다.</p>
+      <p>슈퍼플래닝은 2019년 7월 설립되어 경기도 하남시에 사무실을 두고 있으며(대표 김휘수 — 활동명 'UX기획자 제이크', 14년 차 UX기획 실무자·UX컨설턴트, <a href="/m-preview/ux-company/#ceo">대표 소개</a>), 사용자경험 연구소·UX기획팀·비주얼 디자인팀·웹/앱 개발팀·AI-UX교육팀·경영전략팀의 6개 조직이 리서치부터 개발까지 함께 수행합니다. SK텔레콤 NUGU AI개발 공식 에이전시, 제일기획 UX컨설팅 파트너사로 활동했습니다.</p>
+      <ul>
+        <li>1. less but better: 화려함보다 본질에 집중합니다.</li>
+        <li>2. 고객의 언어로 말하기: 전문 용어를 배제하고 직관적인 언어를 씁니다.</li>
+        <li>3. 끊김 없는 경험 설계: 리서치, 라이팅, 기획, 개발이 하나의 통합 워크플로우로 연결됩니다.</li>
+      </ul>
+    </section>
+
+    <!-- 2. 핵심 서비스 -->
+    <section id="services-list">
+      <h2>UX 전문 서비스</h2>
+      <article>
+        <h3>UX 리서치</h3>
+        <p>FGI와 인뎁스 인터뷰, UT조사를 거쳐 가설을 검증하고 실패 리스크를 줄이는 정량·정성적 근거를 만듭니다.</p>
+      </article>
+      <article>
+        <h3>UX 라이팅</h3>
+        <p>보이스앤톤 설정과 UX라이팅 가이드라인을 통해 일관되고 직관적인 브랜드 언어 경험을 전달합니다.</p>
+      </article>
+      <article>
+        <h3>UX/UI 기획 및 디자인</h3>
+        <p>사용자 인터뷰를 기반으로 핵심 문제를 해결하며, UI스토리보드와 디자인시스템 산출물을 구축합니다.</p>
+      </article>
+      <article>
+        <h3>웹 / 앱 개발</h3>
+        <p>React, Vue 등을 활용하여 최적의 사용자경험을 제공하는 하이브리드 웹과 iOS/안드로이드 네이티브 앱을 개발합니다.</p>
+      </article>
+      <article>
+        <h3>UX 컨설팅</h3>
+        <p>비즈니스 목표에 맞춘 앱 리뉴얼 전략을 수립하고, 근본적인 사용자 경험 개선 로드맵을 도출합니다.</p>
+      </article>
+      <article>
+        <h3>AI-UX 강의</h3>
+        <p>최신 생성형 AI를 활용한 서비스기획부터 피그마, 바이브코딩까지 실무에 즉시 적용 가능한 맞춤형 UX교육을 진행합니다.</p>
+      </article>
+    </section>
+
+    <!-- 3. 주요 고객사 및 신뢰 요소 -->
+    <section id="clients-trust">
+      <h2>주요 고객사 및 프로젝트 실적</h2>
+      <p>UX 프로젝트: KB국민은행 리브 Next, NH농협은행 올원뱅크·스마트뱅킹, 삼성전자 SDC 글로벌 컨퍼런스(제일기획), LG생활건강, LG유플러스 인증앱 헬스케어 서비스, SK텔레콤, 롯데렌터카, 오스템임플란트, 식품의약품안전처 스마트해썹, 서민금융진흥원, KB국민카드, 아이스크림에듀 등.</p>
+      <p>UX교육·출강: GS그룹, 현대자동차, IBK기업은행, 신한금융그룹, 롯데홈쇼핑, 롯데면세점, 아시아나항공, BC카드 등 기업 실무자 UX강의와 세종대·포항공대·서울여대·순천향대 등 대학 UX강의를 진행했습니다.</p>
+      <p>파트너: SK텔레콤 AI 플랫폼 NUGU 공식 에이전시(NUGU developers '에이전시 소개' 페이지 수록 — AI서비스 기획/개발, App 기획/개발 및 UI 컨설팅, NUGU 연동 <a href="/ux-blog/kb-liiv-next-ai-voice-banking-zero-ui-case-study/">KB국민은행 리브 Next AI 보이스뱅킹</a> UX컨설팅·UX기획 수행), 제일기획 UX컨설팅 파트너사 — <a href="/m-preview/ux-company/#partners">파트너 및 공식 에이전시</a></p>
+      <p>대표 사례: <a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">LG유플러스 인증앱 헬스케어 서비스 UX개선 케이스 스터디</a></p>
+      <p>언론 보도: <a href="https://www.itbiznews.com/news/articleView.html?idxno=226349">IT비즈뉴스 「슈퍼플래닝, 대기업·공공기관 UX 프로젝트 수행」(2026-09-28)</a> — 2019년 설립 이후 누적 100건 이상의 UX 프로젝트 수행</p>
+    </section>
+
+    <!-- 3-1. UX 특허 -->
+    <section id="patents">
+      <h2>UX 관련 특허 및 디자인등록</h2>
+      <ul>
+        <li>애플리케이션 UI 작성툴 — 특허 제10-2211864호</li>
+        <li>모바일앱 UI/UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치 — 특허 제10-2560058호</li>
+        <li>웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템 — 특허 제10-2844334호</li>
+        <li>AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템 — 제10-2025-0057033호(출원)</li>
+        <li>디자인등록 제30-1076209호</li>
+      </ul>
+    </section>
+
+    <!-- 3-2. UX 블로그 최신 글 -->
+    <section id="latest-posts">
+      <h2>UX 블로그</h2>
+      <ul>
+        <li><a href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</a></li>
+        <li><a href="/ux-blog/app-development-cost-quote-difference/">앱 개발 외주 비용, 왜 업체마다 몇 배씩 차이가 날까?</a></li>
+        <li><a href="/ux-blog/startup-ux-consulting-reasons/">스타트업이라면 반드시 UX컨설팅이 필요한 5가지 이유</a></li>
+      </ul>
+    </section>
+
+    <!-- 4. 문의 CTA -->
+    <section id="contact-info">
+      <h2>프로젝트 문의 및 찾아오시는 길</h2>
+      <p>이메일: jake@superplanning.co.kr | 대표전화: 031-699-3298 | 위치: 경기 하남시 미사강변동로72 SB비즈타워 1116호</p>
+    </section>
+
+    <!-- 5. 자주 묻는 질문 (FAQPage 스키마 매칭용) -->
+    <section id="faq-home">
+      <h2>자주 묻는 질문</h2>
+      <h3>슈퍼플래닝은 어떤 에이전시인가요?</h3>
+      <p>슈퍼플래닝은 '사용자 경험'을 '수익'으로 연결하는 UX디자인 에이전시입니다. UX 특허를 보유하고 UX리서치·UX라이팅·UX컨설팅·UI/UX디자인·웹/앱 개발·UX강의를 원스톱으로 제공합니다. 복잡한 화면을 덜어내고 사용자가 과업을 직관적으로 완성하도록 설계합니다. 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 수행했으며, UX 관련 특허 4건(출원 1건 포함)과 디자인등록을 보유하고 있습니다. 사무실은 경기 하남에 있습니다.</p>
+      <h3>슈퍼플래닝의 대표는 누구인가요?</h3>
+      <p>슈퍼플래닝의 대표는 김휘수입니다. 'UX기획자 제이크'라는 활동명으로도 활동하는 14년 차 UX기획 실무자이자 UX컨설턴트로, 2019년 슈퍼플래닝을 설립했습니다. 현대자동차, IBK기업은행, 신한금융그룹 등 기업 실무자 UX강의와 대학 특강을 진행해 왔으며, 자세한 이력은 회사소개 페이지의 대표 소개(www.superplanning.co.kr/ux-company/#ceo)에서 확인할 수 있습니다.</p>
+      <h3>슈퍼플래닝에서 제공하는 서비스는 무엇이 있나요?</h3>
+      <p>UX리서치(FGI·인뎁스 인터뷰·UT), UX라이팅, UX/UI 기획, UI디자인·디자인 시스템, 웹/앱 개발·IT유지보수, UX컨설팅, AI-UX 강의와 기업 출강을 제공합니다.</p>
+      <h3>슈퍼플래닝은 어떤 UX 특허를 보유하고 있나요?</h3>
+      <p>애플리케이션 UI 작성툴(제10-2211864호), 모바일앱 UI/UX 기획을 위한 와이어프레임 설계용 UI 프로젝트 관리 장치(제10-2560058호), 웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템(제10-2844334호), AI기반의 멀티모달 감정분석을 활용한 UX리서치 시스템(제10-2025-0057033호, 출원)과 디자인등록 제30-1076209호를 보유하고 있습니다.</p>
+      <h3>슈퍼플래닝은 어떤 기업의 프로젝트를 수행했나요?</h3>
+      <p>KB국민은행 리브 Next, NH농협은행 올원뱅크, 삼성전자 SDC 글로벌 컨퍼런스, LG생활건강, LG유플러스 인증앱 헬스케어 서비스, 롯데렌터카, 오스템임플란트, 식품의약품안전처 스마트해썹, 서민금융진흥원 등 금융·공공·헬스케어·커머스 분야의 UX 프로젝트를 수행했으며, 2019년 설립 이후 누적 100건 이상의 UX 프로젝트를 완수했습니다.</p>
+      <h3>프로젝트 문의는 어떻게 하나요?</h3>
+      <p>공식 웹사이트(www.superplanning.co.kr)의 프로젝트 문의 폼, 이메일(jake@superplanning.co.kr), 대표전화(031-699-3298)로 문의할 수 있으며, 접수된 문의는 확인 후 순차적으로 답변을 드립니다.</p>
+    </section>
+  </main>
+
+  <noscript>
+    <div style="padding:20px; background:#fff; color:#000;">
+      <h2>슈퍼플래닝 (Superplanning)</h2>
+      <p>자바스크립트가 비활성화되어 있습니다. 슈퍼플래닝은 UX 라이팅, UX 리서치, UI 디자인, AI-UX 강좌를 제공하는 전문 UX디자인 에이전시입니다. 문의: jake@superplanning.co.kr</p>
+    </div>
+  </noscript>
+
+  <!-- 1. BOOT SCREEN (Hidden) -->
+  <div id="boot"></div>
+
+  <!-- 3. RESTORED HOME BUTTON AT FAR LEFT -->
+  <div id="brandLogo" title="Superplanning OS95 — 홈으로 이동" onclick="goHome();">
+    <span id="brandLogoText">홈</span>
+  </div>
+
+  <!-- 4. GNB HEADER BAR -->
+  <div id="gnb">
+    <a class="sp-logo" href="/m-preview/" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png" alt="슈퍼플래닝" width="151" height="14"></a>
+    <ul class="gnb-menu">
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-research/" ><span>UX리서치</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-writing/" ><span>UX라이팅</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-design/" ><span>UX기획/디자인</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/web-app-development/" ><span>웹/앱개발</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-academy/" ><span>AI-UX강의</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-blog/" ><span>UX블로그</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/ux-company/" ><span>회사소개</span></a>
+      </li>
+      <li class="gnb-item">
+        <a class="gnb-link" href="/m-preview/contact/" ><span>문의하기</span></a>
+      </li>
+    </ul>
+
+    <div class="gnb-right">
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('brochure');"><span>포트폴리오 보기</span></button>
+      <button class="w95-btn" style="padding:2px 8px; font-size:11px;" onclick="openWindow('careers');"><span>인재채용</span></button>
+      <div class="sp-lang" role="group" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="#4A4F55" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><b aria-current="true">KO</b><a href="/en/ux-research/" hreflang="en" lang="en">EN</a></div>
+    </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button id="mobileMenuBtn" class="w95-btn" onclick="toggleMobileMenu();">
+      <span>☰</span> <span>메뉴</span>
+    </button>
+
+    <!-- SCROLL PROGRESS GAUGE BAR -->
+    <div id="gnbProgressBarTrack" class="gnb-progress-track" title="페이지 스크롤 진행률">
+      <div id="gnbProgressBar" class="gnb-progress-bar">
+        <span id="gnbProgressBadge" class="gnb-progress-badge">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE GNB NAVIGATION DRAWER -->
+  <div id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:6px; margin-bottom:8px;">
+      <strong style="font-size:13px; color:#000000;">GNB 전체 메뉴</strong>
+      <button class="w95-btn" style="padding:1px 8px; font-size:11px;" onclick="toggleMobileMenu();">✕ 닫기</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px;">
+      <div class="start-item" onclick="location.href='/ux-research/'; toggleMobileMenu();">• UX리서치</div>
+      <div class="start-item" onclick="location.href='/ux-writing/'; toggleMobileMenu();">• UX라이팅</div>
+      <div class="start-item" onclick="location.href='/ux-design/'; toggleMobileMenu();">• UX기획/디자인</div>
+      <div class="start-item" onclick="location.href='/web-app-development/'; toggleMobileMenu();">• 웹/앱개발</div>
+      <div class="start-item" onclick="location.href='/ux-academy/'; toggleMobileMenu();">• AI-UX강의</div>
+      <div class="start-item" onclick="location.href='/ux-blog/'; toggleMobileMenu();">• UX블로그</div>
+      <div class="start-item" onclick="location.href='/ux-company/'; toggleMobileMenu();">• 회사소개</div>
+      <div class="start-item" onclick="location.href='/contact/'; toggleMobileMenu();">• 문의하기</div>
+      <div class="start-item" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} toggleMobileMenu();">• 포트폴리오 보기</div>
+    </div>
+  </div>
+
+  <!-- 5. DESKTOP WORKSPACE & HORIZONTAL ICON BAR -->
+  <div id="desktop">
+    <div id="iconsArea">
+
+      <!-- 5. 인스타그램 -->
+      <div class="desktop-icon" data-ico="instagram" onclick="selectIcon(this); openWindow('instagram');">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000000" rx="4"/>
+          <rect x="7" y="7" width="22" height="22" rx="6" fill="#ffffff"/>
+          <rect x="10" y="10" width="16" height="16" rx="4" stroke="#000000" stroke-width="2" fill="none"/>
+          <circle cx="18" cy="18" r="4" stroke="#000000" stroke-width="2" fill="none"/>
+          <circle cx="22.5" cy="13.5" r="1.5" fill="#000000"/>
+        </svg>
+        <div class="icon-label">인스타그램</div>
+      </div>
+
+      <!-- 6. 스레드 -->
+      <div class="desktop-icon" data-ico="threads" onclick="selectIcon(this); openWindow('threads');">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000000" rx="4"/>
+          <rect x="8" y="8" width="20" height="20" fill="#ffffff"/>
+          <rect x="12" y="12" width="12" height="12" fill="#000000"/>
+          <rect x="16" y="16" width="4" height="4" fill="#ffffff"/>
+        </svg>
+        <div class="icon-label">스레드</div>
+      </div>
+
+      <!-- 7. 소개영상 -->
+      <div class="desktop-icon" data-ico="youtube" onclick="selectIcon(this); openWindow('intro-video');">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000000" rx="4"/>
+          <rect x="6" y="9" width="24" height="18" fill="#ffffff" rx="4"/>
+          <path d="M15 13.5l8 4.5-8 4.5z" fill="#000000"/>
+        </svg>
+        <div class="icon-label">유튜브</div>
+      </div>
+      <!-- 156. 링크드인 -->
+      <div class="desktop-icon" data-ico="linkedin" onclick="selectIcon(this); openWindow('linkedin');"><div class="icon-label">링크드인</div></div>
+
+      <!-- 156. 네이버 블로그 -->
+      <div class="desktop-icon" data-ico="blog" onclick="selectIcon(this); openWindow('naverblog');"><div class="icon-label">블로그</div></div>
+
+
+      <!-- 8. 찾아오시는 길 -->
+      <div class="desktop-icon" data-ico="map" onclick="selectIcon(this); openWindow('contact');">
+        <svg class="icon-svg" viewBox="0 0 36 36">
+          <rect width="36" height="36" fill="#000000" rx="4"/>
+          <path d="M18 6c-5.52 0-10 4.48-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#ffffff"/>
+          <circle cx="18" cy="16" r="2" fill="#000000"/>
+        </svg>
+        <div class="icon-label">찾아오시는 길</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. WINDOW AREA (POPUPS DISPLAY HERE FIRST) -->
+  <div id="windowArea"></div>
+
+  <!-- 7. CONTACT SKYSCRAPER -->
+  <div id="skyscraper" class="w95-box">
+    <div class="sky-title">UX프로젝트 문의</div>
+    <div class="sky-hero">친절한 실무진이 직접 빠르게 답변 드리겠습니다.</div>
+    <div data-sp-live></div>
+    <input type="text" placeholder="이름 *" id="skyName" required>
+    <input type="text" placeholder="회사명 (선택)" id="skyCompany">
+    <input type="email" placeholder="이메일 *" id="skyEmail" required>
+    <input type="tel" placeholder="연락처 (선택)" id="skyPhone">
+    <textarea rows="5" placeholder="문의내용 *&#10;예시: UX리서치, UX컨설팅, UX강의, 웹/앱 개발 등" id="skyMsg" style="word-break:keep-all;" required></textarea>
+    <div style="margin:5px 0 6px 0; font-size:10.5px; color:var(--win-fg); display:flex; align-items:flex-start; gap:4px; line-height:1.3;">
+      <input type="checkbox" id="skyPrivacy" required checked style="width:12px; height:12px; margin:2px 0 0 0; flex-shrink:0; accent-color:#000; cursor:pointer;">
+      <label for="skyPrivacy" id="skyPrivacyLabel" style="cursor:pointer; font-size:10.5px; user-select:none; word-break:keep-all;">개인정보 수집 및 이용 동의 (필수)</label>
+    </div>
+    <div class="sky-cta-wrap">
+      <span class="sky-cta-tip">보통 10분 이내 응답</span>
+      <button class="w95-btn" style="width:100%; min-height:35px; padding:7px 8px !important; background:#000000 !important; color:#ffffff !important; border:1px solid #000000; font-size:12.5px !important; font-weight:700; letter-spacing:-0.01em;" onclick="submitSkyscraper();">문의 등록하고 빠른 답변 받기</button>
+    </div>
+
+      <!-- KAKAO CHANNEL REALTIME CHAT BANNER CARD -->
+      <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none; margin-top:8px; background:#ffffff; border:2px solid #000000; padding:7px 8px; cursor:pointer; box-shadow:1px 1px 0 #000; border-radius:2px;" >
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="display:flex; align-items:center; gap:6px;">
+            <span style="line-height:1; display:inline-flex; align-items:center;"><svg width="20" height="18" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg></span>
+            <h4 id="skyKakaoTitle" style="color:#000000; font-size:11px; margin:0; font-weight:800; line-height:1.2; letter-spacing:-0.2px; white-space:nowrap;">카카오톡 실시간 상담하기</h4>
+          </div>
+          <span id="skyKakaoBtn" class="w95-btn" style="padding:2px 6px; background:#000000; color:#ffffff; font-weight:bold; font-size:9.5px; border:1px solid #000; flex-shrink:0; display:inline-flex; align-items:center; pointer-events:none; white-space:nowrap;">1:1상담하기 ↗</span>
+        </div>
+      </a>
+    <hr style="margin:10px 0 8px 0; border:0; border-top:1px solid var(--bevel-shadow);">
+    <div style="display:flex; flex-direction:column; gap:5px; font-size:10.5px; color:var(--win-fg);">
+      <div id="skyFooterCompName" style="font-weight:700; color:#000000;">슈퍼플래닝</div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+        <span id="skyFooterAddr" style="font-weight:normal; color:#000000; word-break:keep-all; line-height:1.3;">경기 하남시 미사강변동로72 SB비즈타워 1116호</span>
+        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard(document.getElementById('skyFooterAddr').textContent, '주소')">복사</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+        <span>T. 031-699-3298</span>
+        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('031-699-3298', '전화번호', this)">복사</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:4px;">
+        <span>E. jake@superplanning.co.kr</span>
+        <button class="w95-btn sky-copy-btn" style="padding:1px 6px; font-size:10px; flex-shrink:0;" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)">복사</button>
+      </div>
+
+      <p style="margin-top:6px; font-size:9.5px; opacity:0.75;">Copyright © 2019–2027 SUPERPLANNING. All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- 8. START MENU -->
+  <div id="startMenu" role="menu" aria-label="전체 메뉴">
+    <div class="spm2-head"><b>전체 메뉴</b></div>
+    <div class="spm2-cap">서비스</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-research/'; closeStart();">UX리서치</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-writing/'; closeStart();">UX라이팅</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-design/'; closeStart();">UX기획/디자인</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/web-app-development/'; closeStart();">웹/앱 개발</div></div><div class="spm2-cap">교육·인사이트·회사</div><div class="spm2-grid"><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-academy/'; closeStart();">AI-UX강의</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-blog/'; closeStart();">UX블로그</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/ux-company/'; closeStart();">회사소개</div><div class="start-item spm2-m" role="menuitem" tabindex="0" onclick="location.href='/contact/'; closeStart();">문의하기</div></div>
+    <div class="spm2-cap">회사소개서</div><div class="spm2-quick"><div class="start-item spm2-q" data-q="brochure" style="grid-column:1 / -1" role="menuitem" tabindex="0" onclick="if(typeof openWindow==='function'){openWindow('brochure');}else{location.href='/ux-company/#brochure';} closeStart();"><span>포트폴리오 보기</span></div></div>
+  </div>
+
+  <!-- 9. TASKBAR -->
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button class="w95-btn" id="startBtn" onclick="toggleStartMenu();">
+        <span>💻</span> <strong>전체 메뉴보기</strong>
+      </button>
+      <div id="taskPreviews"></div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskClock">12:00:00 PM</span>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    let zIndexSeed = 250;
+    function getNextZIndex() {
+      zIndexSeed++;
+      if (zIndexSeed > 800) zIndexSeed = 250;
+      return zIndexSeed;
+    }
+    function getStorage(key, fallback) {
+      try {
+        return localStorage.getItem(key) || fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+    function setStorage(key, val) {
+      try {
+        localStorage.setItem(key, val);
+      } catch (e) {}
+    }
+
+    let winSeq = 0;
+    const windows = {};
+
+    let audioCtx = null;
+
+
+    function downloadCompanyBrochure() {
+      openWindow('brochure');
+    }
+
+    function copyToClipboard(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('📋 ' + label + '이(가) 클립보드에 복사되었습니다!\n(' + text + ')');
+        }).catch(() => {
+          fallbackCopy(text, label);
+        });
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+    function fallbackCopy(text, label) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      alert('📋 ' + label + '이(가) 클립보드에 복사되었습니다!\n(' + text + ')');
+    }
+
+    const WINDOW_DEFS = {
+      'welcome': { w: 480, h: 280, title: '초기 안내' },
+      'services': { w: 848, h: 515, title: 'UX 서비스' },
+      'portfolio': { w: 760, h: 480, title: '포트폴리오' },
+      'classes': { w: 640, h: 420, title: 'AI-UX 강의 안내' },
+      'blog': { w: 600, h: 420, title: 'UX 블로그' },
+      'contact': { w: 660, h: 720, title: '찾아오시는 길' },
+      'about': { w: 560, h: 705, title: '슈퍼플래닝' },
+      'clients': { w: 848, h: 440, title: '주요 고객사' },
+      'careers': { w: 580, h: 400, title: '인재 채용' },
+      'intro-video': { w: 760, h: 540, title: '슈퍼플래닝 소개영상' },
+      'brochure': { w: 1000, h: 780, title: '포트폴리오 보기' },
+      'instagram': { w: 720, h: 800, title: '인스타그램' },
+      'threads': { w: 600, h: 460, title: '스레드' },
+      'naverblog': { w: 600, h: 460, title: '블로그' },
+      'linkedin': { w: 600, h: 460, title: '링크드인' },
+    };
+
+    function getMinWindowTop() {
+      if (window.innerWidth <= 768) return 60;
+      if (window.innerWidth <= 980) return 188;
+      return 200;
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
+    }
+
+    function getCenteredWindowPos(w, h) {
+      const minTop = getMinWindowTop();
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      let left = Math.floor((window.innerWidth - w) / 2);
+      left = Math.max(20, Math.min(window.innerWidth - w - 20, left));
+      
+      let top = Math.floor(scrollY + (window.innerHeight - h) / 2);
+      top = Math.max(scrollY + minTop, top);
+      
+      return { left, top };
+    }
+
+    function openWindow(key, customPos) {
+      const isMobile = window.innerWidth <= 768;
+      const def = WINDOW_DEFS[key] || { w: 480, h: 300, title: key };
+
+      if (windows[key]) {
+        const el = windows[key].el;
+        if (el.style.display === 'none') {
+          el.style.display = 'flex';
+        }
+        if (isMobile && !el.classList.contains('maximized')) {
+          el.style.position = 'relative';
+          el.style.top = 'auto';
+          el.style.left = 'auto';
+          el.style.width = '100%';
+          el.style.height = 'auto';
+        } else if (!isMobile) {
+          const centerPos = getCenteredWindowPos(def.w, def.h);
+          const targetLeft = (customPos && customPos.left !== undefined) ? customPos.left : centerPos.left;
+          const targetTop = (customPos && customPos.top !== undefined) ? customPos.top : centerPos.top;
+          el.style.left = targetLeft + 'px';
+          el.style.top = targetTop + 'px';
+        }
+        el.style.zIndex = getNextZIndex();
+
+        const winArea = document.getElementById('windowArea');
+        if (winArea && winArea.firstChild !== el) {
+          winArea.prepend(el);
+        }
+
+        updatePreview(key, true);
+        for (const k in windows) if (k !== key) updatePreview(k, false);
+        updateScrollHeight();
+        if (isMobile) {
+          setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        }
+        if (key === 'about') setTimeout(typeWriterHero, 60);
+        return;
+      }
+
+      winSeq++;
+      
+      let leftOffset, topOffset;
+      if (!isMobile) {
+        const centerPos = getCenteredWindowPos(def.w, def.h);
+        leftOffset = customPos && customPos.left !== undefined ? customPos.left : centerPos.left;
+        topOffset = customPos && customPos.top !== undefined ? customPos.top : centerPos.top;
+      }
+
+      const winEl = document.createElement('div');
+      winEl.className = 'win';
+      winEl.dataset.key = key;
+      if (isMobile) {
+        winEl.style.width = '100%';
+        winEl.style.height = 'auto';
+        winEl.style.position = 'relative';
+        winEl.style.top = 'auto';
+        winEl.style.left = 'auto';
+      } else {
+        winEl.style.width = Math.round(def.w * spbK()) + 'px';
+        winEl.style.height = Math.round(def.h * spbK()) + 'px';
+        winEl.style.left = leftOffset + 'px';
+        winEl.style.top = topOffset + 'px';
+      }
+      winEl.style.zIndex = getNextZIndex();
+
+      const titleText = def.title;
+
+      winEl.innerHTML = `
+        <div class="w-title">
+          <span class="t-text">${titleText}</span>
+          <div class="t-actions">
+            <button class="w95-btn t-btn" title="최소화" onclick="minimizeWindow('${key}', event)">_</button>
+            <button class="w95-btn t-btn" title="최대화" onclick="maximizeWindow('${key}', event)">▢</button>
+            <button class="w95-btn t-btn" title="닫기" onclick="closeWindow('${key}', event)">✕</button>
+          </div>
+        </div>
+        <div class="w-body">${getWindowBody(key)}</div>
+      `;
+
+      const winArea = document.getElementById('windowArea');
+      if (winArea) {
+        winArea.prepend(winEl);
+      } else {
+        document.body.appendChild(winEl);
+      }
+      makeDraggable(winEl);
+      /* 113·115·117: 슈퍼플래닝·찾아오시는 길·인재 채용·환경 설정 창은 내용 높이에 맞춰 하단 빈 공간 제거(PC) */
+      if (!isMobile && (key === 'about' || key === 'contact' || key === 'careers')) spFitWin(winEl);
+
+      winEl.addEventListener('mousedown', (e) => {
+        winEl.style.zIndex = getNextZIndex();
+        /* 85: 모바일에서 링크·버튼·카드를 누를 때 창을 맨 위로 옮기면 클릭이 취소되어 이동하지 않던 버그 수정 */
+        const spTapTarget = e && e.target && e.target.closest ? e.target.closest('a, button, input, textarea, select, label, [onclick]') : null;
+        if (isMobile && !spTapTarget && winArea && winArea.firstChild !== winEl) {
+          winArea.prepend(winEl);
+        }
+        updatePreview(key, true);
+        for (const k in windows) if (k !== key) updatePreview(k, false);
+      });
+
+      windows[key] = { el: winEl, minimized: false };
+      addPreview(key, titleText);
+      updateScrollHeight();
+      if (isMobile) {
+        setTimeout(() => winEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+      if (key === 'about') setTimeout(typeWriterHero, 60);
+    }
+
+    function spFitWin(el) {
+      const fit = () => {
+        if (window.innerWidth <= 768 || el.classList.contains('maximized')) return;
+        const body = el.querySelector('.w-body');
+        const kids = body ? Array.from(body.children).filter(c => c.offsetParent !== null) : [];
+        if (!kids.length) return;
+        const bottom = Math.max.apply(null, kids.map(c => c.getBoundingClientRect().bottom));
+        const need = bottom - el.getBoundingClientRect().top + parseFloat(getComputedStyle(body).paddingBottom) + parseFloat(getComputedStyle(el).borderBottomWidth);
+        if (need > 180) el.style.height = Math.ceil(need) + 'px';
+      };
+      requestAnimationFrame(fit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+      const body = el.querySelector('.w-body');
+      if (body && window.ResizeObserver) { const ro = new ResizeObserver(fit); Array.from(body.children).forEach(c => ro.observe(c)); }
+      window.addEventListener('resize', fit);
+    }
+
+    function getWindowBody(key) {
+      if (key === 'about') {
+        return `
+          <div class="win-menu-bar" style="margin: -12px -12px 10px -12px;">
+            <div class="win-menu-item"><span>F</span>ile</div>
+            <div class="win-menu-item"><span>E</span>dit</div>
+            <div class="win-menu-item"><span>V</span>iew</div>
+            <div class="win-menu-item"><span>H</span>elp</div>
+          </div>
+          
+          <div class="brand-logo-card" style="background:#ffffff; border:2px solid #000000; box-shadow:inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0,0,0,0.3); padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content: center; border-radius:2px;">
+            <img src="/images/superplanning_brand_logo.png" alt="슈퍼플래닝 로고" style="max-width:100%; height:auto; max-height:48px; object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='/images/superplanning_brand_logo.png';}">
+          </div>
+
+          <div class="hero-banner-box" style="background:#0a0f0d; border:2px solid #000; box-shadow:inset 2px 2px 0 #000, inset -1px -1px 0 #222; padding:12px 14px; margin-bottom:8px; border-radius:3px;">
+            <div class="cmd-prompt" style="font-family:var(--font-mono); font-size:12.5px; color:#ffffff; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+              <span>C:\\SUPERPLANNING&gt; <span id="cmdDynamicText">HELLO</span></span><span class="blink-cursor" style="height:13px; width:6px; background:#ffffff; display:inline-block;"></span>
+            </div>
+
+            <h2 id="heroTypingText" style="font-size:21px; font-weight:900; margin:0 0 4px 0; line-height:1.3; color:#ffffff; letter-spacing:-0.02em; min-height:28px; word-break:keep-all;">
+              UX디자인 에이전시, <span style="color:#ffffff; font-weight:900;">슈퍼플래닝입니다.</span>
+            </h2>
+
+            <p id="heroBody2Text" style="font-size:12.5px; font-weight:600; line-height:1.45; margin:0; color:#d8d8d8; min-height:18px; word-break:keep-all;">
+              이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.
+            </p>
+          </div>
+
+          <div class="sp-prin">
+            <h4 class="sp-prin-h">UX프로젝트 수행원칙</h4>
+            <div class="sp-prin-card"><h4>1. 3초, 고객이 지갑을 닫고 떠나는 시간.</h4><p>첫 화면의 사용자 경험이 이탈률 80%를 결정합니다. <br>단순한 기능(MVP)을 넘어, 전환을 만드는 최소 실행 경험(MVE)에 집중합니다.</p></div>
+            <div class="sp-prin-card"><h4>2. 그렇게 쓰면 아무도 안 읽습니다.</h4><p>사용자는 화면을 읽지 않고 '스캔'합니다. 불필요한 수식어를 덜어내고, <br>명확한 UX라이팅으로 다음 행동을 유도합니다.</p></div>
+            <div class="sp-prin-card"><h4>3. 더 적게 하지만 더 좋게.</h4><p>디자인에서는 '무엇을 추가할까'가 아닌 '무엇을 덜어낼까' 고민해야 합니다. <br><b>'Less but better'</b></p></div>
+          </div>
+        `;
+      } else if (key === 'services') {
+        return `
+          <h3 style="font-size:13px; font-weight:700; margin-bottom:8px;">이런 서비스를 제공합니다.</h3>
+          <div class="card-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:6px;">
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-research/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; white-space:nowrap;">UX 리서치<span title="AI기반 멀티모달 감정분석 UX리서치 시스템 특허" style="display:inline-flex; align-items:center; gap:3px; margin-left:6px; font-size:10px; font-weight:600; line-height:12px; color:#555; vertical-align:middle; letter-spacing:0;"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="display:block; flex:none; margin-top:-1px;"><polygon points="6.00,0.00 7.29,1.17 9.00,0.80 9.54,2.46 11.20,3.00 10.83,4.71 12.00,6.00 10.83,7.29 11.20,9.00 9.54,9.54 9.00,11.20 7.29,10.83 6.00,12.00 4.71,10.83 3.00,11.20 2.46,9.54 0.80,9.00 1.17,7.29 0.00,6.00 1.17,4.71 0.80,3.00 2.46,2.46 3.00,0.80 4.71,1.17" fill="#555"/><path d="M3.6 6.2l1.6 1.6 3.2-3.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="square"/></svg>특허</span></h4>
+                <a href="/m-preview/ux-research/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">전환율이 오르지 않는 진짜 이유, FGI·사용성테스트(UT)로 사용자에게 직접 확인하고 UI/UX 개선 근거를 찾습니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-writing/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; white-space:nowrap;">UX 라이팅<span title="웹/앱 UX 라이팅의 텍스트 톤 분석 및 추천 자동화 시스템 특허" style="display:inline-flex; align-items:center; gap:3px; margin-left:6px; font-size:10px; font-weight:600; line-height:12px; color:#555; vertical-align:middle; letter-spacing:0;"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="display:block; flex:none; margin-top:-1px;"><polygon points="6.00,0.00 7.29,1.17 9.00,0.80 9.54,2.46 11.20,3.00 10.83,4.71 12.00,6.00 10.83,7.29 11.20,9.00 9.54,9.54 9.00,11.20 7.29,10.83 6.00,12.00 4.71,10.83 3.00,11.20 2.46,9.54 0.80,9.00 1.17,7.29 0.00,6.00 1.17,4.71 0.80,3.00 2.46,2.46 3.00,0.80 4.71,1.17" fill="#555"/><path d="M3.6 6.2l1.6 1.6 3.2-3.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="square"/></svg>특허</span></h4>
+                <a href="/m-preview/ux-writing/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">버튼 문구 하나가 매출을 바꿉니다. 보이스앤톤, UX라이팅 가이드를 통해 목적 달성을 위한 사용자 행동을 유도합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-design/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0; white-space:nowrap;">UX 기획 / 디자인<span title="애플리케이션 UI 작성툴·와이어프레임 설계용 UI 프로젝트 관리 장치 특허" style="display:inline-flex; align-items:center; gap:3px; margin-left:6px; font-size:10px; font-weight:600; line-height:12px; color:#555; vertical-align:middle; letter-spacing:0;"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="display:block; flex:none; margin-top:-1px;"><polygon points="6.00,0.00 7.29,1.17 9.00,0.80 9.54,2.46 11.20,3.00 10.83,4.71 12.00,6.00 10.83,7.29 11.20,9.00 9.54,9.54 9.00,11.20 7.29,10.83 6.00,12.00 4.71,10.83 3.00,11.20 2.46,9.54 0.80,9.00 1.17,7.29 0.00,6.00 1.17,4.71 0.80,3.00 2.46,2.46 3.00,0.80 4.71,1.17" fill="#555"/><path d="M3.6 6.2l1.6 1.6 3.2-3.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="square"/></svg>특허</span></h4>
+                <a href="/m-preview/ux-design/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">UX리서치를 기반으로 서비스기획, 화면설계서, UI디자인까지 개발팀이 바로 구현할 수 있게 완성합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/web-app-development/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0;">웹 / 앱 개발</h4>
+                <a href="/m-preview/web-app-development/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">퍼블리싱부터 네이티브·하이브리드 앱 개발, 유지보수까지 한 팀이 진행하며, 개발자 상주, 파견도 지원 가능합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-design/#consulting';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0;">UX 컨설팅 / UX진단</h4>
+                <a href="/m-preview/ux-design/#consulting" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">운영 중인 앱·웹의 이탈 화면과 원인을 UX진단으로 찾고, UX디자인 개선안을 산출물로 제공합니다.</p>
+            </div>
+
+            <div class="info-card" style="padding:8px 10px; cursor:pointer;" onclick="location.href='/ux-academy/';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <h4 style="margin:0;">AI-UX 강의</h4>
+                <a href="/m-preview/ux-academy/" class="w95-btn" style="padding:1px 6px; font-size:10px; text-decoration:none; color:#000;" onclick="event.stopPropagation();">상세보기 →</a>
+              </div>
+              <p style="margin:0; word-break:keep-all;">신한금융그룹, IBK기업은행 등 기업출강부터 1:1 코칭까지,<br>AI 서비스기획·피그마·바이브코딩을 실습으로 교육합니다.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'clients') {
+        return `
+          <p style="font-size:12px; color:#1a1a1a; margin-bottom:8px; font-weight:600;">UX 프로젝트·컨설팅·기업 UX교육으로 함께한 주요 고객사입니다.</p>
+          <a href="/m-preview/ux-company/#partners" class="nugu-partner-banner" aria-label="SK텔레콤 AI 플랫폼 NUGU 공식 에이전시 슈퍼플래닝 — 파트너 및 공식 에이전시 보기" style="display:flex; align-items:center; gap:10px; margin:0 0 12px; padding:6px 12px; background:#000000; color:#ffffff; text-decoration:none; border:1px solid #000000; box-shadow:2px 2px 0 #808080;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#000000'"><img src="/images/ux-company/nugu-logo.webp" alt="NUGU" width="55" height="13" style="display:block; height:13px; width:auto; flex:none;"><span style="width:1px; height:12px; background:#5a5a5a; flex:none;"></span><span style="flex:1; font-size:12px; font-weight:600; letter-spacing:-0.2px; word-break:keep-all; line-height:1.4;">SK텔레콤 AI플랫폼 NUGU<br class="sp-mbr"> 공식 에이전시 슈퍼플래닝</span><svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" style="display:block; flex:none;"><path d="M6 3l5 5-5 5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square"/></svg></a>
+
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; font-size:12px; font-weight:bold; text-align:center;">
+            <div class="info-card" style="padding:10px 4px;">SK텔레콤</div>
+            <div class="info-card" style="padding:10px 4px;">현대자동차</div>
+            <div class="info-card" style="padding:10px 4px;">롯데그룹</div>
+            <div class="info-card" style="padding:10px 4px;">LG유플러스</div>
+            <div class="info-card" style="padding:10px 4px;">비씨카드</div>
+            <div class="info-card" style="padding:10px 4px;">CJ올리브네트웍스</div>
+            <div class="info-card" style="padding:10px 4px;">KB국민은행</div>
+            <div class="info-card" style="padding:10px 4px;">NH농협은행</div>
+            <div class="info-card" style="padding:10px 4px;">서민금융진흥원</div>
+            <div class="info-card" style="padding:10px 4px;">제일기획</div>
+            <div class="info-card" style="padding:10px 2px; font-size:11px; word-break:keep-all;">IBK기업은행</div>
+            <div class="info-card" style="padding:10px 4px;">경기도일자리재단</div>
+          </div>
+        `;
+      } else if (key === 'contact') {
+        return `
+          <div class="sp-pop">
+            <h3 class="sp-pop-h">슈퍼플래닝 오시는 길</h3>
+            <p class="sp-pop-p">슈퍼플래닝 사무실은 <strong>지하철 5호선 미사역 8번 출구</strong>에서 도보 1분 거리(SB비즈타워 1116호)에 위치해 있습니다.<br>티맵, 카카오 네비게이션에서 <strong>"슈퍼플래닝"</strong>을 검색하세요. 차량 방문 시 지하주차장 무료 주차 가능합니다.<br>커피와 디저트가 항상 준비되어 있으니 언제든지 편하게 방문해 주세요.</p>
+            <div class="sp-pop-tray">평일 야간 (08:00 ~ 22:00) &amp; 주말 (10:00 ~ 19:00) 방문 상담 가능</div>
+            <div class="sp-pop-sub">슈퍼플래닝 지도 위치 <span>(12912) 경기 하남시 미사강변동로 72, SB비즈타워 1116호</span></div>
+            <div class="sp-pop-mapwrap"><svg class="sp-map" viewBox="0 150 700 270" role="img" aria-label="슈퍼플래닝 약도: 미사역 8번 출구에서 도보 1분, SB비즈타워 1116호"><defs><filter id="spMapR" x="-30%" y="-60%" width="160%" height="220%"><feDropShadow dx="-4" dy="-4" stdDeviation="4" flood-color="#fff" flood-opacity=".95"/><feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="#1a1f24" flood-opacity=".14"/></filter><filter id="spMapI" x="-10%" y="-10%" width="120%" height="120%"><feOffset dx="3" dy="3" in="SourceAlpha"/><feGaussianBlur stdDeviation="3"/><feComposite operator="out" in="SourceAlpha"/><feComponentTransfer><feFuncA type="linear" slope=".18"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter><clipPath id="spMapC"><rect y="150" width="700" height="270" rx="20"/></clipPath></defs><g clip-path="url(#spMapC)"><rect width="700" height="420" fill="#e4e7eb"/><rect x="-40" y="360" width="800" height="46" fill="#d3d8de" opacity=".6"/><rect x="-20" y="250" width="760" height="18" rx="9" fill="#eef1f4"/><rect x="-20" y="120" width="760" height="10" rx="5" fill="#eef1f4"/><rect x="420" y="-20" width="16" height="480" rx="8" fill="#eef1f4"/><rect x="160" y="-20" width="10" height="480" rx="5" fill="#eef1f4"/><rect x="560" y="-20" width="10" height="480" rx="5" fill="#eef1f4"/><rect x="471" y="199" width="96" height="28" rx="14" fill="#eef1f4" filter="url(#spMapR)"/><text x="519" y="217.5" text-anchor="middle" font-size="12" font-weight="500" fill="#4a4f55">미사역 8번 출구</text><circle cx="443" cy="213" r="20" fill="#eef1f4" filter="url(#spMapR)"/><circle cx="443" cy="213" r="15" fill="#e4e7eb" filter="url(#spMapI)"/><rect x="436" y="204" width="14" height="14" rx="3" fill="#111"/><rect x="438" y="207" width="10" height="4" rx="1.5" fill="#fff"/><circle cx="440.5" cy="215.5" r="1.5" fill="#fff"/><circle cx="447.5" cy="215.5" r="1.5" fill="#fff"/><path d="M437.5 218.5 435.5 222M448.5 218.5 450.5 222" stroke="#111" stroke-width="1.6" stroke-linecap="round"/><path d="M443 239V297" stroke="#111" stroke-width="2.5" stroke-dasharray="0.1 7" stroke-linecap="round"/><rect x="343" y="254" width="88" height="28" rx="14" fill="#111"/><text x="387" y="272.5" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">도보 1분 거리</text><circle cx="443" cy="314" r="32" fill="#d6342c" opacity=".14"/><circle class="sp-pin-pulse" cx="443" cy="314" r="32" fill="none" stroke="#d6342c" stroke-width="2"/><circle class="sp-pin-pulse sp-pin-pulse2" cx="443" cy="314" r="32" fill="none" stroke="#d6342c" stroke-width="2"/><circle cx="443" cy="314" r="11" fill="#d6342c" stroke="#eef1f4" stroke-width="4"/><rect x="428" y="348" width="196" height="33" rx="16.5" fill="#eef1f4" filter="url(#spMapR)"/><text x="526" y="369.5" text-anchor="middle" font-size="13" font-weight="600" fill="#111">슈퍼플래닝 · SB비즈타워 1116호</text></g></svg></div>
+            <div class="sp-pop-actions sp-pop-3"><a href="https://naver.me/GmF8esjK" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">네이버 지도<i class="sp-arw" aria-hidden="true"></i></a><a href="https://map.kakao.com/?urlX=542837.9999999974&amp;urlY=1128400.0000000023&amp;urlLevel=3&amp;itemId=520500165&amp;q=%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D&amp;srcid=520500165&amp;map_type=TYPE_MAP" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">카카오 맵<i class="sp-arw" aria-hidden="true"></i></a><a href="https://www.google.com/maps/place/%EC%8A%88%ED%8D%BC%ED%94%8C%EB%9E%98%EB%8B%9D/data=!3m1!4b1!4m6!3m5!1s0x357cb166ade634c1:0xf7537f3932633d61!8m2!3d37.563118!4d127.192932!16s%2Fg%2F11kmz0rppp?entry=ttu&amp;g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">구글 지도<i class="sp-arw" aria-hidden="true"></i></a></div>
+            <div class="sp-pop-2">
+              <div class="sp-pop-card">
+                <div class="sp-pop-sub">대중교통 안내</div>
+                <ul class="sp-pop-list">
+                  <li><strong>지하철:</strong> 5호선 미사역 8번 출구 (도보 1분)</li>
+                  <li><strong>잠실:</strong> 9302번 | <strong>강남:</strong> 9303번</li>
+                  <li><strong>종로:</strong> 370번, 9301번 | <strong>판교:</strong> 3000번</li>
+                </ul>
+              </div>
+              <div class="sp-pop-card">
+                <div class="sp-pop-sub">직접 문의 연락처</div>
+                <div class="sp-pop-row"><div><span class="sp-pop-k">전화</span><b class="sp-pop-v">031-699-3298</b></div><button class="w95-btn" onclick="copyToClipboard('031-699-3298', '전화번호', this)">복사</button></div>
+                <div class="sp-pop-row"><div><span class="sp-pop-k">이메일</span><b class="sp-pop-v">jake@superplanning.co.kr</b></div><button class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '이메일 주소', this)">복사</button></div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (key === 'portfolio') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">대표 수행 프로젝트 (6건)</h3>
+          <div class="card-grid">
+            <div class="info-card">
+              <h4>KB국민은행 리브 Next</h4>
+              <p>AI 보이스뱅킹 UX/UI (국민은행 × SK텔레콤)</p>
+            </div>
+            <div class="info-card">
+              <h4>NH농협은행 올원뱅크</h4>
+              <p>올원뱅크·스마트뱅킹 앱 UX라이팅 가이드</p>
+            </div>
+            <div class="info-card">
+              <h4>삼성전자 SDC</h4>
+              <p>글로벌 컨퍼런스 UX/UI (제일기획)</p>
+            </div>
+            <div class="info-card">
+              <h4>LG유플러스 헬스케어</h4>
+              <p>인증앱 헬스케어 서비스 UX리서치·기획·디자인·개발 (<a style="color:#000000;" href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">케이스 스터디</a>)</p>
+            </div>
+            <div class="info-card">
+              <h4>롯데렌터카 신차장</h4>
+              <p>다이렉트 모바일앱·웹서비스 UX/UI (롯데렌탈)</p>
+            </div>
+            <div class="info-card">
+              <h4>식약처 스마트해썹</h4>
+              <p>HACCP 웹서비스 UX/UI (식품의약품안전처)</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'classes') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:6px;">실전 AI-UX 기획 & 라이팅 커리큘럼</h3>
+          <p style="margin-bottom:10px;">실무에 즉시 적용 가능한 AI 도구 활용 UX 디자인 기법 강좌입니다.</p>
+          <div class="info-card" style="margin-bottom:8px;">
+            <h4>수강 대상</h4>
+            <p>제품 기획자, UX 디자이너, 프론트엔드 개발자, 1인 창업가</p>
+          </div>
+          <div class="info-card">
+            <h4>주요 내용</h4>
+            <p>• LLM 기반 UX 라이팅 자동화 프롬프팅<br>• 사용자 여정 지도 빠른 생성 기법<br>• Figma & AI 프로토타이핑 연동 실습</p>
+          </div>
+          <button class="w95-btn" style="margin-top:12px;" onclick="openWindow('contact');">강의 수강 문의하기</button>
+        `;
+      } else if (key === 'blog') {
+        return `
+          <h3 style="font-size:14px; font-weight:700; margin-bottom:10px;">UX 인사이트 아카이브</h3>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div class="info-card">
+              <h4><a style="color:#000000;" href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/">헬스케어 앱 UX개선 사례: 리워드보다 기록이 쉬워야 하는 이유</a></h4>
+              <p>LG유플러스 인증앱 헬스케어 서비스를 UX리서치부터 개발까지 개선한 케이스 스터디.</p>
+            </div>
+            <div class="info-card">
+              <h4><a style="color:#000000;" href="/ux-blog/button-copy-clarity-conversion/">전환율보다 먼저 봐야 하는 버튼 문구의 명확성</a></h4>
+              <p>클릭 이후 무슨 일이 벌어지는지 바로 이해하게 만드는 버튼 카피 원칙.</p>
+            </div>
+            <div class="info-card">
+              <h4><a style="color:#000000;" href="/ux-blog/ai-wireframe-ux-criteria/">AI에게 와이어프레임을 맡기기 전에 먼저 정해야 하는 UX 기준</a></h4>
+              <p>목적·맥락·우선순위·성공 기준을 먼저 정해야 AI 초안이 서비스에 맞습니다.</p>
+            </div>
+          </div>
+        `;
+      } else if (key === 'intro-video') {
+        return `
+          <div class="sp-pop sp-pop-media">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://youtu.be/dHwu6Zdt1Pw</span>
+              <a href="https://youtu.be/dHwu6Zdt1Pw" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">유튜브에서 크게 보기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <iframe class="sp-pop-frame sp-pop-video"
+              src="https://www.youtube-nocookie.com/embed/dHwu6Zdt1Pw?autoplay=1&mute=1&controls=1"
+              title="슈퍼플래닝 소개영상"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        `;
+      } else if (key === 'brochure') {
+        return `
+          <div class="sp-pop sp-pop-media">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-file">슈퍼플래닝_회사소개서.pdf</span>
+              <div class="sp-pop-actions">
+                <a href="/Superplanning_Company_Brochure.pdf?v=194" download="Superplanning_Company_Brochure.pdf" class="w95-btn sp-pop-btn">파일 다운로드</a>
+                <a href="/Superplanning_Company_Brochure.pdf?v=194" target="_blank" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <iframe class="sp-pop-frame sp-pop-doc sp-pop-pdf" src="/Superplanning_Company_Brochure.pdf?v=194#toolbar=1&navpanes=0&scrollbar=1" title="슈퍼플래닝 포트폴리오 보기"></iframe>
+          </div>
+        `;
+      } else if (key === 'instagram') {
+        return `
+          <div class="sp-pop sp-pop-media">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://www.instagram.com/ux_superplanning/</span>
+              <a href="https://www.instagram.com/ux_superplanning/" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <iframe class="sp-pop-frame sp-pop-doc sp-pop-insta" src="https://www.instagram.com/ux_superplanning/embed" allowtransparency="true" frameborder="0" scrolling="no" title="Superplanning Instagram"></iframe>
+            <div class="sp-pop-foot"><b>@ux_superplanning</b><span>슈퍼플래닝 공식 인스타그램</span></div>
+          </div>
+        `;
+      } else if (key === 'linkedin') {
+        return `
+          <div class="sp-pop">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://www.linkedin.com/in/uxjake/</span>
+              <a href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <div class="sp-pop-card sp-pop-profile">
+              <div class="sp-pop-logo"><span class="sp-pop-ico" data-ico="linkedin" aria-hidden="true"></span></div>
+              <div class="sp-pop-who">
+                <h3 class="sp-pop-h">김휘수 (UX기획자 제이크)</h3>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 대표 · UX컨설턴트</p>
+                <p class="sp-pop-p">UX리서치·UX라이팅·UI/UX기획·디자인 프로젝트 이야기와<br>AI활용 UX강의 소식을 공유합니다.</p>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/uxjake/" target="_blank" rel="noopener noreferrer" class="sp-pop-cta">LinkedIn 프로필 방문하기 (uxjake)<i class="sp-arw w" aria-hidden="true"></i></a>
+            <p class="sp-pop-note c">LinkedIn 외부 보안 정책에 따라 버튼을 누르면 공식 프로필로 바로 연결됩니다.</p>
+          </div>
+        `;
+      } else if (key === 'naverblog') {
+        return `
+          <div class="sp-pop">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://blog.naver.com/ux_superplanning</span>
+              <a href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <div class="sp-pop-card sp-pop-profile">
+              <div class="sp-pop-logo"><span class="sp-pop-ico" data-ico="blog" aria-hidden="true"></span></div>
+              <div class="sp-pop-who">
+                <h3 class="sp-pop-h">ux_superplanning</h3>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 공식 네이버 블로그</p>
+                <p class="sp-pop-p">UX리서치·UX라이팅 실무 노하우와 프로젝트 사례,<br>에이전시 소식을 공유합니다.</p>
+              </div>
+            </div>
+            <a href="https://blog.naver.com/ux_superplanning" target="_blank" rel="noopener noreferrer" class="sp-pop-cta">네이버 블로그 방문하기 (ux_superplanning)<i class="sp-arw w" aria-hidden="true"></i></a>
+            <p class="sp-pop-note c">네이버 블로그 외부 보안 정책에 따라 버튼을 누르면 공식 블로그로 바로 연결됩니다.</p>
+          </div>
+        `;
+      } else if (key === 'threads') {
+        return `
+          <div class="sp-pop">
+            <div class="sp-pop-bar">
+              <span class="sp-pop-addr">https://www.threads.com/@ux_superplanning</span>
+              <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="w95-btn sp-pop-btn">새 창에서 열기<i class="sp-arw" aria-hidden="true"></i></a>
+            </div>
+            <div class="sp-pop-card sp-pop-profile">
+              <div class="sp-pop-logo"><img src="/images/threads-logo.jpg" alt="Threads Logo" width="64" height="64"></div>
+              <div class="sp-pop-who">
+                <h3 class="sp-pop-h">@ux_superplanning</h3>
+                <p class="sp-pop-lead">UX디자인 에이전시 슈퍼플래닝 공식 스레드</p>
+                <p class="sp-pop-p">최신 UX 인사이트, UX 라이팅 노하우,<br>사용자 리서치 사례 및 에이전시 소식을 실시간으로 공유합니다.</p>
+              </div>
+            </div>
+            <a href="https://www.threads.com/@ux_superplanning" target="_blank" rel="noopener noreferrer" class="sp-pop-cta">Threads 프로필 방문하기 (@ux_superplanning)<i class="sp-arw w" aria-hidden="true"></i></a>
+            <p class="sp-pop-note c">Threads 외부 보안 정책(X-Frame-Options)에 따라 버튼을 누르면 공식 프로필로 바로 연결됩니다.</p>
+          </div>
+        `;
+      } else if (key === 'careers') {
+        return `
+          <div class="sp-pop">
+            <div class="sp-pop-head">
+              <h3 class="sp-pop-h">인재를 채용합니다 (상시 모집)</h3>
+              <p class="sp-pop-lead">슈퍼플래닝과 함께 할 슈퍼크루를 모집합니다.</p>
+            </div>
+            <div class="sp-pop-card">
+              <div class="sp-pop-sec">
+                <div class="sp-pop-sub">지원 자격</div>
+                <ul class="sp-pop-list">
+                  <li>신입, 경력 / 연령 / 학력 / 국적 무관</li>
+                  <li>이력서 자유양식</li>
+                </ul>
+              </div>
+              <div class="sp-pop-sec">
+                <div class="sp-pop-sub">모집분야</div>
+                <div class="sp-pop-chips"><span>서비스 기획자</span><span>프로덕트 디자이너</span><span>AI-UX강사</span><span>UI디자이너</span><span>프론트/백엔드 개발자</span></div>
+              </div>
+              <div class="sp-pop-sec">
+                <div class="sp-pop-sub">우대조건</div>
+                <p class="sp-pop-p">자신의 실무에 대해 원데이클래스 강의 가능하신 분!</p>
+              </div>
+            </div>
+            <div class="sp-pop-row">
+              <div><span class="sp-pop-k">이메일 접수</span><b class="sp-pop-v">jake@superplanning.co.kr</b></div>
+              <button class="w95-btn" onclick="copyToClipboard('jake@superplanning.co.kr', '지원서 이메일 주소')">복사</button>
+            </div>
+            <p class="sp-pop-note">서류전형 합격자에 한해 개별통보를 드리며, 지원서 허위 작성시 합격이 취소 될 수 있습니다.</p>
+          </div>
+        `;
+      }
+      return `<p>${WINDOW_DEFS[key] ? WINDOW_DEFS[key].title : key} 본문 콘텐츠입니다.</p>`;
+    }
+
+    let cmdLoopTimer = null;
+    function startCmdPromptLoop() {
+      const el = document.getElementById('cmdDynamicText');
+      if (!el) return;
+
+      if (cmdLoopTimer) clearTimeout(cmdLoopTimer);
+
+      const phases = ['HELLO', 'AI & UI/UX'];
+      let phaseIndex = 0;
+      el.textContent = phases[0];
+
+      function doLoop() {
+        if (!document.getElementById('cmdDynamicText')) return;
+
+        cmdLoopTimer = setTimeout(() => {
+          if (!document.getElementById('cmdDynamicText')) return;
+          deleteText(() => {
+            if (!document.getElementById('cmdDynamicText')) return;
+            phaseIndex = (phaseIndex + 1) % phases.length;
+            const targetText = phases[phaseIndex];
+
+            cmdLoopTimer = setTimeout(() => {
+              if (!document.getElementById('cmdDynamicText')) return;
+              typeText(targetText, () => {
+                doLoop();
+              });
+            }, 350);
+          });
+        }, 1600);
+      }
+
+      function deleteText(onComplete) {
+        if (!document.getElementById('cmdDynamicText')) return;
+        const curEl = document.getElementById('cmdDynamicText');
+        if (curEl && curEl.textContent.length > 0) {
+          curEl.textContent = curEl.textContent.slice(0, -1);
+          cmdLoopTimer = setTimeout(() => deleteText(onComplete), 65);
+        } else {
+          if (onComplete) onComplete();
+        }
+      }
+
+      function typeText(target, onComplete) {
+        if (!document.getElementById('cmdDynamicText')) return;
+        const curEl = document.getElementById('cmdDynamicText');
+        if (curEl) {
+          const len = curEl.textContent.length;
+          if (len < target.length) {
+            curEl.textContent = target.slice(0, len + 1);
+            cmdLoopTimer = setTimeout(() => typeText(target, onComplete), 75);
+          } else {
+            if (onComplete) onComplete();
+          }
+        }
+      }
+
+      doLoop();
+    }
+
+    let typeWriterTimer = null;
+    function typeWriterHero() {
+      if (typeWriterTimer) clearTimeout(typeWriterTimer);
+      startCmdPromptLoop();
+      if (document.documentElement.classList.contains('sp-b')) return; /* B안: 서브카피는 정적 문구 + CSS 점등 모션 */
+      // SEO/GEO H1(heroTypingText)은 정적 텍스트로 100% 유지하고 타이핑 효과는 하단 설명 요소에만 적용
+      const bodyContainer = document.getElementById('heroBody2Text');
+      if (!bodyContainer) return;
+
+      const bodyText = "이탈은 줄이고, 전환은 높이는\n사용자 경험을 설계합니다.";
+      bodyContainer.innerHTML = '<span id="twBody"></span><span id="twCursor2" class="blink-cursor" style="height:16px; width:5px; background:#ffffff; margin-left:3px; display:inline-block; vertical-align:middle;"></span>';
+      const elBody = document.getElementById('twBody');
+
+      let k = 0;
+      function step() {
+        if (!document.getElementById('heroBody2Text')) return;
+        if (elBody && k < bodyText.length) {
+          elBody.textContent += bodyText[k];
+          k++;
+          typeWriterTimer = setTimeout(step, 30);
+        } else {
+          const cursor2 = document.getElementById('twCursor2');
+          if (cursor2) cursor2.remove();
+        }
+      }
+      step();
+    }
+
+    function updateScrollHeight() {
+      if (window.innerWidth <= 768) {
+        const desktop = document.getElementById('desktop');
+        const winArea = document.getElementById('windowArea');
+        if (desktop) desktop.style.minHeight = 'unset';
+        if (winArea) winArea.style.minHeight = 'unset';
+        document.body.style.minHeight = '100vh';
+        document.documentElement.style.minHeight = '100vh';
+        return;
+      }
+      let maxBottom = window.innerHeight;
+      for (const k in windows) {
+        const win = windows[k];
+        if (win && win.el && win.el.style.display !== 'none' && !win.el.classList.contains('maximized')) {
+          const top = parseInt(win.el.style.top, 10) || 0;
+          const height = win.el.offsetHeight || win.el.getBoundingClientRect().height || 300;
+          const bottom = top + height;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
+      }
+      const targetHeight = maxBottom + 200;
+      const desktop = document.getElementById('desktop');
+      const winArea = document.getElementById('windowArea');
+      if (desktop) desktop.style.minHeight = targetHeight + 'px';
+      if (winArea) winArea.style.minHeight = targetHeight + 'px';
+      document.body.style.minHeight = targetHeight + 'px';
+      document.documentElement.style.minHeight = targetHeight + 'px';
+    }
+
+    function makeDraggable(el) {
+      const head = el.querySelector('.w-title');
+      head.addEventListener('mousedown', () => { el.dataset.spbMoved = '1'; });
+      let sx = 0, sy = 0, ox = 0, oy = 0, dragging = false;
+      head.addEventListener('mousedown', e => {
+        if (e.target.tagName === 'BUTTON') return;
+        dragging = true; sx = e.clientX; sy = e.clientY;
+        const r = el.getBoundingClientRect(); ox = r.left; oy = r.top;
+        el.style.zIndex = getNextZIndex();
+        document.body.style.userSelect = 'none';
+      });
+      document.addEventListener('mousemove', e => {
+        if (!dragging) return;
+        const minTop = getMinWindowTop();
+        let nx = ox + (e.clientX - sx);
+        let ny = oy + (e.clientY - sy);
+        nx = Math.max(0, Math.min(window.innerWidth - 60, nx));
+        ny = Math.max(minTop, ny);
+        el.style.left = nx + 'px'; el.style.top = ny + 'px';
+        updateScrollHeight();
+      });
+      document.addEventListener('mouseup', () => {
+        if (dragging) {
+          dragging = false;
+          document.body.style.userSelect = '';
+          updateScrollHeight();
+        }
+      });
+    }
+
+    function minimizeWindow(key, e) {
+      if (e) e.stopPropagation();
+      if (windows[key]) {
+        windows[key].el.style.display = 'none';
+        windows[key].minimized = true;
+        updatePreview(key, false);
+        var spbP = document.getElementById('prev-' + key); if (spbP) spbP.classList.add('is-closed');
+        updateScrollHeight();
+      }
+    }
+    function maximizeWindow(key, e) {
+      if (e) e.stopPropagation();
+      if (windows[key]) {
+        windows[key].el.classList.toggle('maximized');
+        updateScrollHeight();
+      }
+    }
+    function closeWindow(key, e) {
+      if (e) e.stopPropagation();
+      if (windows[key]) {
+        windows[key].el.remove();
+        delete windows[key];
+        if ({ about: 1, services: 1, clients: 1 }[key]) spbMarkClosed(key); else removePreview(key);
+        updateScrollHeight();
+      }
+    }
+
+    function spbMarkClosed(key) {
+      var pill = document.getElementById('prev-' + key); if (!pill) return;
+      pill.classList.remove('active'); pill.classList.add('is-closed'); pill.title = '닫힌 창 — 누르면 다시 열립니다';
+      pill.onclick = function () {
+        var ref = pill.nextSibling, box = pill.parentNode; pill.remove(); openWindow(key);
+        var np = document.getElementById('prev-' + key); if (np && ref && box) box.insertBefore(np, ref);
+        if (typeof spbDesk === 'function') spbDesk();
+      };
+    }
+    function addPreview(key, title) {
+      const container = document.getElementById('taskPreviews');
+      var spbOld = document.getElementById('prev-' + key), spbRef = null; if (spbOld) { spbRef = spbOld.nextSibling; spbOld.remove(); }
+      const pill = document.createElement('div');
+      pill.className = 'task-preview active';
+      pill.id = 'prev-' + key;
+      pill.innerHTML = `<span>🗔</span> ${title}`;
+      pill.onclick = () => {
+        if (windows[key].el.style.display === 'none') {
+          windows[key].el.style.display = 'flex';
+          windows[key].el.style.zIndex = getNextZIndex();
+          pill.classList.remove('is-closed');
+          updatePreview(key, true);
+          windows[key].el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          minimizeWindow(key);
+        }
+        updateScrollHeight();
+      };
+      if (spbRef && spbRef.parentNode === container) container.insertBefore(pill, spbRef); else container.appendChild(pill);
+    }
+    function updatePreview(key, active) {
+      const pill = document.getElementById('prev-' + key);
+      if (pill) {
+        if (active) { pill.classList.add('active'); pill.classList.remove('is-closed'); }
+        else pill.classList.remove('active');
+      }
+    }
+    function removePreview(key) {
+      const pill = document.getElementById('prev-' + key);
+      if (pill) pill.remove();
+    }
+
+
+    /* B안 화면 비율(사용자 11-23 14:38: 피그마 4:9 와 같은 비례로): 1920 아트보드를 k 로 축소해 화면 가운데에 둔다.
+       k = W/1920 × 0.82 (최소 0.6, 최대 0.82). --k = 축소 비율, --x0v = 아트보드 왼쪽 여백(축소 전 단위 px) */
+    function spbK() { var W = window.innerWidth; return W <= 768 ? 1 : Math.max(0.6, Math.min(0.82, W / 1920 * 0.82)); }
+    function spbX0() { var W = window.innerWidth, k = spbK(); return W <= 768 ? 0 : Math.max(0, (W - 1920 * k) / 2); }
+    function spbApplyK() { var k = spbK(); document.documentElement.style.setProperty('--k', k); document.documentElement.style.setProperty('--x0v', (spbX0() / k) + 'px'); }
+    spbApplyK();
+    /* 기본 창 3개 = 피그마 4:9 위치·폭 그대로(슈퍼플래닝 x40 w560 / UX 서비스 x632 w848 / 주요 고객사 그 아래), 사용자가 옮긴 창은 제외 */
+    function spbDesk() {
+      if (window.innerWidth <= 980) return;
+      spbApplyK();
+      var k = spbK(), X = spbX0(), G = Math.round(32 * k), T = Math.round(248 * k);
+      var a = windows['about'], sv = windows['services'], c = windows['clients'];
+      function put(o, x, y, w) { if (!o || !o.el || o.el.dataset.spbMoved) return; o.el.style.left = Math.round(x) + 'px'; o.el.style.top = y + 'px'; o.el.style.width = Math.round(w) + 'px'; }
+      put(a, X + 40 * k, T, 560 * k);
+      put(sv, X + 632 * k, T, 848 * k);
+      if (c && sv) put(c, X + 632 * k, T + Math.round(sv.el.getBoundingClientRect().height) + G, 848 * k);
+      spbObj(a, X, k);
+      if (typeof updateScrollHeight === 'function') updateScrollHeight();
+    }
+    /* 바탕화면 오브제(사용자 11-23 18:50): 슈퍼플래닝 창 아래 빈 영역에 볼록 캡슐·원 + 얇은 흰 동심원 라인. 장식(aria-hidden), 창 아래층, 공간이 부족하면 숨김 */
+    function spbObj(a, X, k) {
+      var area = document.getElementById('windowArea'); if (!area) return;
+      var o = document.getElementById('spbObj');
+      if (!o) {
+        o = document.createElement('div'); o.id = 'spbObj'; o.setAttribute('aria-hidden', 'true');
+        o.innerHTML = '<div class="in"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i>'
+          + '<b class="p p1"></b><b class="d d1"></b><b class="p p2"></b><b class="d d2"></b><b class="p p3"></b><b class="p p4"></b></div>';
+        area.insertBefore(o, area.firstChild);
+      }
+      var tb = document.getElementById('taskbar');
+      if (!a || !a.el || a.el.style.display === 'none' || a.el.dataset.spbMoved || !tb) { o.style.display = 'none'; return; }
+      var wa = area.getBoundingClientRect(), ar = a.el.getBoundingClientRect();
+      var top = Math.round(ar.bottom - wa.top + 28 * k), bottom = Math.round(tb.getBoundingClientRect().top - wa.top - 20 * k), h = bottom - top;
+      if (h < 220 * k) { o.style.display = 'none'; return; }
+      o.style.display = 'block'; o.style.left = Math.round(X + 40 * k) + 'px'; o.style.top = top + 'px'; o.style.width = Math.round(560 * k) + 'px'; o.style.height = h + 'px';
+    }
+    window.addEventListener('resize', function () { spbApplyK(); spbDesk(); spbDimSync(); });
+    /* 팝업 = 모달(사용자 11-23 15:17): 기본 창 3개 외의 창이 열려 있으면 뒤 배경 딤. 딤 클릭·Esc = 맨 위 팝업 닫기. 모바일 제외 */
+    var SPB_BASE = { about: 1, services: 1, clients: 1 };
+    function spbTopPop() {
+      var best = null, bz = -1;
+      for (var k in windows) {
+        if (SPB_BASE[k] || !windows[k] || !windows[k].el || windows[k].el.style.display === 'none') continue;
+        var z = parseInt(windows[k].el.style.zIndex, 10) || 0; if (z > bz) { bz = z; best = k; }
+      }
+      return best;
+    }
+    function spbDimSync() {
+      var area = document.getElementById('windowArea'); if (!area) return;
+      var dim = document.getElementById('spbDim');
+      if (!dim) {
+        dim = document.createElement('div'); dim.id = 'spbDim'; dim.setAttribute('aria-hidden', 'true');
+        dim.addEventListener('click', function () { var k = spbTopPop(); if (k) closeWindow(k); spbDimSync(); });
+        area.appendChild(dim);
+      }
+      var k = window.innerWidth > 768 ? spbTopPop() : null;
+      var prevTop = document.querySelector('.win.spb-modal-top'); if (prevTop && (!k || prevTop !== windows[k].el)) prevTop.classList.remove('spb-modal-top');
+      if (k) windows[k].el.classList.add('spb-modal-top');
+      if (k) {
+        var mz = 0; for (var q in windows) { if (q !== k && windows[q] && windows[q].el) mz = Math.max(mz, parseInt(windows[q].el.style.zIndex, 10) || 0); }
+        if ((parseInt(windows[k].el.style.zIndex, 10) || 0) <= mz) windows[k].el.style.zIndex = mz + 1;
+        dim.style.zIndex = Math.max(1, (parseInt(windows[k].el.style.zIndex, 10) || 300) - 1); if (dim !== area.lastChild) area.appendChild(dim); dim.classList.add('on'); document.documentElement.classList.add('spb-modal'); }
+      else { dim.classList.remove('on'); document.documentElement.classList.remove('spb-modal'); }
+    }
+    document.addEventListener('click', function () { setTimeout(spbDimSync, 0); }, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && window.innerWidth > 768) { var k = spbTopPop(); if (k) { closeWindow(k); spbDimSync(); } } });
+
+    function initDirectAccess() {
+      const minTop = getMinWindowTop();
+      if (window.innerWidth <= 768) {
+        openWindow('clients');
+        openWindow('services');
+        openWindow('about');
+      } else if (window.innerWidth <= 980) {
+        openWindow('about', { left: 14, top: minTop });
+        openWindow('services', { left: 14, top: minTop + 480 });
+        openWindow('clients', { left: 14, top: minTop + 880 });
+      } else {
+        openWindow('about', { left: 40, top: Math.max(minTop, 248) });
+        openWindow('services', { left: 632, top: Math.max(minTop, 248) });
+        openWindow('clients', { left: 632, top: Math.max(minTop, 248) + 547 }); spbDesk(); spbDimSync(); requestAnimationFrame(spbDesk); setTimeout(spbDesk, 400); if (window.ResizeObserver && windows['services']) new ResizeObserver(spbDesk).observe(windows['services'].el);
+      }
+      updateScrollHeight();
+    }
+    window.addEventListener('resize', updateScrollHeight);
+
+    function toggleStartMenu() {
+      const m = document.getElementById('startMenu');
+      m.classList.toggle('show');
+    }
+    function closeStart() {
+      document.getElementById('startMenu').classList.remove('show');
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+        closeStart();
+      }
+    });
+
+    function goHome() {
+
+      for (const k in windows) {
+        if (windows[k] && windows[k].el) {
+          windows[k].el.remove();
+        }
+      }
+      for (const k in windows) delete windows[k];
+      const previews = document.getElementById('taskPreviews');
+      if (previews) previews.innerHTML = '';
+
+      initDirectAccess();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function selectIcon(el) {
+      document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    setInterval(() => {
+      const d = new Date();
+      document.getElementById('taskClock').textContent = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }, 1000);
+
+    async function submitSkyscraper() {
+      const privacyCb = document.getElementById('skyPrivacy');
+      if (privacyCb && !privacyCb.checked) {
+        alert('개인정보 수집 및 이용 동의(필수)에 체크해 주세요.');
+        return;
+      }
+      const name = document.getElementById('skyName') ? document.getElementById('skyName').value.trim() : '';
+      const company = document.getElementById('skyCompany') ? document.getElementById('skyCompany').value.trim() : '';
+      const email = document.getElementById('skyEmail') ? document.getElementById('skyEmail').value.trim() : '';
+      const phone = document.getElementById('skyPhone') ? document.getElementById('skyPhone').value.trim() : '';
+      const message = document.getElementById('skyMsg') ? document.getElementById('skyMsg').value.trim() : '';
+
+      if (!name || !email || !message) {
+        alert('이름, 이메일, 문의내용 등 필수 항목(*)을 모두 입력해 주세요.');
+        return;
+      }
+      if (spEmailInvalid(document.getElementById('skyEmail'))) return;
+
+      const skySubmit = document.querySelector('#skyscraper button.w95-btn');
+      const origText = skySubmit ? skySubmit.innerHTML : '보내기';
+      if (skySubmit) {
+        skySubmit.disabled = true;
+        skySubmit.innerHTML = '✉️ 전송 중...';
+      }
+
+      try {
+        if (typeof sendEmailInquiry === 'function') {
+          await sendEmailInquiry({ name, phone, company, email, message });
+        } else {
+          const payload = {
+            name, phone, company, email, message,
+            _subject: `[슈퍼플래닝 UX문의] ${name} - ${company || '고객사'}`,
+            _template: 'table',
+            _captcha: 'false'
+          };
+          await Promise.all([
+            fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(() => {}),
+            fetch('/api/send_inquiry.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(() => {})
+          ]);
+        }
+      } catch (err) {
+        console.log('Skyscraper email dispatch notice:', err);
+      }
+
+      if (typeof showInquirySuccessModal === 'function') {
+        showInquirySuccessModal(name);
+      } else {
+        alert(`[문의 접수 완료]\n${name}님, 안녕하세요!\n문의 주신 내용은 잘 받았습니다.\n빠르게 회신드리겠습니다.\n(보통 10분 이내 회신)`);
+      }
+
+      ['skyName', 'skyCompany', 'skyEmail', 'skyPhone', 'skyMsg'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+
+      if (skySubmit) {
+        skySubmit.disabled = false;
+        skySubmit.innerHTML = origText;
+      }
+    }
+
+    function initApp() {
+      initDirectAccess();
+
+      const skyEl = document.getElementById('skyscraper');
+      if (skyEl) {
+        skyEl.addEventListener('mousedown', () => {
+          skyEl.style.zIndex = Math.max(getNextZIndex(), 2500);
+        });
+      }
+
+      // GNB Scroll Progress Gauge Handler
+      const progressBar = document.getElementById('gnbProgressBar');
+      const progressBadge = document.getElementById('gnbProgressBadge');
+      let scrollTimer = null;
+
+      function updateGnbScrollProgress() {
+        if (!progressBar) return;
+        const winScroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const docHeight = Math.max(
+          document.documentElement.scrollHeight,
+          document.body.scrollHeight
+        );
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const totalScrollable = docHeight - winHeight;
+
+        let scrolled = 0;
+        if (totalScrollable > 0) {
+          scrolled = Math.min(100, Math.max(0, (winScroll / totalScrollable) * 100));
+        } else {
+          scrolled = 100;
+        }
+
+        progressBar.style.width = scrolled + '%';
+        if (progressBadge) {
+          progressBadge.textContent = Math.round(scrolled) + '%';
+        }
+
+        if (winScroll > 10) {
+          document.body.classList.add('is-scrolling');
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(() => {
+            document.body.classList.remove('is-scrolling');
+          }, 1200);
+        } else {
+          document.body.classList.remove('is-scrolling');
+        }
+      }
+
+      window.addEventListener('scroll', updateGnbScrollProgress, { passive: true });
+      window.addEventListener('resize', updateGnbScrollProgress, { passive: true });
+      updateGnbScrollProgress();
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+  </script>
+
+  <script>
+    async function handlePopupInquiry(e) {
+      if (e) e.preventDefault();
+      const submitBtn = e && e.target ? e.target.querySelector('button[type="submit"]') : null;
+      const origText = submitBtn ? submitBtn.innerHTML : '';
+
+      const name = document.getElementById('popName') ? document.getElementById('popName').value.trim() : '';
+      const phone = document.getElementById('popPhone') ? document.getElementById('popPhone').value.trim() : '';
+      const company = document.getElementById('popCompany') ? document.getElementById('popCompany').value.trim() : '';
+      const email = document.getElementById('popEmail') ? document.getElementById('popEmail').value.trim() : '';
+      const message = document.getElementById('popMessage') ? document.getElementById('popMessage').value.trim() : '';
+
+      if (!name || !email) {
+        alert('성함과 이메일 주소를 입력해 주세요.');
+        return;
+      }
+      if (spEmailInvalid(document.getElementById('popEmail'))) return;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '✉️ 이메일 전송 중...';
+      }
+
+      const payload = {
+        name, phone, company, email, message,
+        _subject: `[슈퍼플래닝 팝업 문의] ${name} - ${company || '고객사'}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const p1 = fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const p2 = fetch('/api/send_inquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        await Promise.race([p1, p2, new Promise(resolve => setTimeout(resolve, 3000))]);
+      } catch (err) {
+        console.log('Popup inquiry error:', err);
+      }
+
+      showInquirySuccessModal(name);
+
+      const form = document.getElementById('popupInquiryForm');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+      }
+    }
+  </script>
+
+  <script>
+    // B&W CUSTOM MODAL POPUP FOR INQUIRY SUCCESS
+    // 60: 문의 접수 완료 팝업 + "어떻게 알게 되셨나요?"(선택) — 문의는 이미 접수된 뒤 묻는 방식(문의 손실 없음)
+    var SP_SRC_OPTIONS = [
+      ['google', '구글 검색'], ['naver', '네이버 검색'],
+      ['ai', 'AI 추천<br>(챗GPT, 클로드 등)'], ['blog', '블로그 글'],
+      ['referral', '지인·고객사 소개'], ['sns', 'SNS<br>(인스타, 스레드 등)'],
+      ['press', '기사·언론 보도'], ['lecture', '강의·세미나 참석'],
+      ['existing', '이전 거래·재문의'], ['etc', '기타 (직접 입력)']
+    ];
+    var spSrcLast = { name: '', email: '' };
+
+    function showInquirySuccessModal(userName) {
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_submit', form_page: location.pathname }); } catch (e) {}
+      var email = '';
+      try {
+        var ems = document.querySelectorAll('input[type="email"]');
+        for (var i = 0; i < ems.length; i++) { if (ems[i].value && ems[i].value.trim()) { email = ems[i].value.trim(); break; } }
+      } catch (e) {}
+      spSrcLast = { name: userName || '방문자', email: email };
+
+      var modal = document.getElementById('inquirySuccessModal');
+      if (!modal) {
+        var opts = SP_SRC_OPTIONS.map(function (o) {
+          return '<label class="sp-src-opt" data-code="' + o[0] + '"><input type="checkbox" value="' + o[0] + '" onchange="spSrcToggle(this)"><span>' + o[1].replace('<br>', ' ').replace('인스타,', '인스타그램,') + '</span></label>';
+        }).join('');
+        var modalHtml = `
+          <div id="inquirySuccessModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999999; display:none; align-items:center; justify-content:center; padding:16px;">
+            <style>
+              #inquirySuccessModal .sp-src-box { width:100%; max-width:420px; max-height:92vh; overflow-y:auto; background:#ffffff; border:3px solid #000000; box-shadow:6px 6px 0 rgba(0,0,0,0.4); font-family:var(--font, sans-serif); }
+              #inquirySuccessModal .sp-src-msg { font-size:13px; line-height:1.65; color:#222222; font-weight:600; text-align:center; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-hr { border-top:2px dashed #000000; margin:18px 0 14px 0; }
+              #inquirySuccessModal .sp-src-q { text-align:left; }
+              #inquirySuccessModal .sp-src-q .t { font-size:14px; font-weight:800; color:#000000; margin:0 0 4px 0; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-q .s { font-size:12px; color:#444444; margin:0 0 10px 0; line-height:1.5; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 8px; }
+              #inquirySuccessModal .sp-src-opt { display:flex; align-items:flex-start; gap:6px; font-size:12.5px; font-weight:600; line-height:1.4; border:1px solid #000000; padding:6px 7px; background:#ffffff; color:#000000; cursor:pointer; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-opt.on { background:#000000; color:#ffffff; }
+              #inquirySuccessModal .sp-src-opt input { margin:2px 0 0 0; accent-color:#000000; flex:none; }
+              #inquirySuccessModal .sp-src-label { font-size:12.5px; font-weight:700; color:#000000; margin:10px 0 0 0; word-break:keep-all; }
+              #inquirySuccessModal .sp-src-input { width:100%; box-sizing:border-box; border:2px solid #000000; padding:7px 8px; font-size:12.5px; font-family:inherit; margin-top:6px; background:#ffffff; color:#000000; }
+              #inquirySuccessModal .sp-src-input::placeholder { color:#aaaaaa; opacity:1; }
+              #inquirySuccessModal .sp-src-btns { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+              #inquirySuccessModal .sp-src-b1 { padding:9px 26px; font-size:13px; font-weight:bold; background:#000000; color:#ffffff; border:2px solid #000000; box-shadow:3px 3px 0 #808080; cursor:pointer; }
+              #inquirySuccessModal .sp-src-b2 { padding:9px 18px; font-size:13px; font-weight:bold; background:#ffffff; color:#000000; border:2px solid #000000; box-shadow:3px 3px 0 #808080; cursor:pointer; }
+              #inquirySuccessModal .sp-src-note { font-size:11px; color:#666666; margin-top:10px; text-align:center; }
+            </style>
+            <div class="sp-src-box">
+              <div style="background:#000000; color:#ffffff; padding:8px 12px; font-size:13px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+                <span>[문의 접수 완료]</span>
+                <button class="w95-btn" onclick="closeInquirySuccessModal();" style="padding:1px 7px; font-size:11px; background:#ffffff; color:#000000; border:1px solid #ffffff; cursor:pointer; font-weight:bold;" aria-label="닫기">✕</button>
+              </div>
+              <div id="spSrcStep1" style="padding:20px 22px 22px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <div class="sp-src-ok" aria-hidden="true"><i><b><svg width="20" height="20" viewBox="0 0 20 20"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></b></i></div><h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">문의가 정상 접수되었습니다</h3>
+                <div class="sp-src-msg">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님, 문의해 주셔서 감사합니다.<br>
+                  담당 실무진이 내용을 확인한 뒤 빠르게 연락드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <div class="sp-src-hr"></div>
+                <div class="sp-src-q">
+                  <p class="t">슈퍼플래닝을 어떻게 알게 되셨나요? <span style="font-weight:600; color:#555555;">(선택)</span></p>
+                  <p class="s">더 정확한 상담 준비에 참고하겠습니다. 여러 개 선택할 수 있습니다.</p>
+                  <div class="sp-src-grid">${opts}</div>
+                  <div id="spSrcEtcWrap" style="display:none;">
+                    <input type="text" id="spSrcEtc" class="sp-src-input" maxlength="200" placeholder="어떻게 알게 되셨는지 자유롭게 적어 주세요">
+                  </div>
+                  <div id="spSrcKwWrap" style="display:none;">
+                    <p class="sp-src-label">검색어나 AI에 질문하신 내용이 기억나시면 적어 주세요 (선택)</p>
+                    <input type="text" id="spSrcKw" class="sp-src-input" maxlength="200" placeholder="예: UX리서치, UX라이팅, UX디자인 등">
+                  </div>
+                </div>
+                <div class="sp-src-btns">
+                  <button type="button" class="w95-btn sp-src-b2" onclick="spSrcSkip();">건너뛰기</button>
+                  <button type="button" class="w95-btn sp-src-b1" id="spSrcSend" onclick="spSrcSubmit();">답변 보내기</button>
+                </div>
+              </div>
+              <div id="spSrcStep2" style="display:none; padding:22px 20px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <div class="sp-src-ok" aria-hidden="true"><i><b><svg width="20" height="20" viewBox="0 0 20 20"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></b></i></div><h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">소중한 답변 감사합니다</h3>
+                <div class="sp-src-msg" style="margin-bottom:18px;">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님의 문의 내용을 확인한 뒤<br>
+                  담당 실무진이 빠르게 연락드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button type="button" class="w95-btn sp-src-b1" style="padding:9px 36px; min-width:120px;" onclick="closeInquirySuccessModal();">확인</button>
+              </div>
+              <div id="spSrcStep3" style="display:none; padding:22px 20px; text-align:center; background:#ffffff;">
+                <svg width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block; margin:0 auto 10px auto;"><rect x="2" y="13" width="14" height="1" fill="#808080"/><rect x="15" y="4" width="1" height="10" fill="#808080"/><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/><rect x="10" y="9" width="6" height="6" fill="#000"/><rect x="11" y="11" width="1" height="1" fill="#fff"/><rect x="12" y="12" width="1" height="1" fill="#fff"/><rect x="13" y="11" width="1" height="1" fill="#fff"/><rect x="14" y="10" width="1" height="1" fill="#fff"/></svg>
+                <div class="sp-src-ok" aria-hidden="true"><i><b><svg width="20" height="20" viewBox="0 0 20 20"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></b></i></div><h3 style="margin:0 0 10px 0; font-size:16px; font-weight:800; color:#000000;">문의 접수가 완료되었습니다</h3>
+                <div class="sp-src-msg" style="margin-bottom:18px;">
+                  <span class="spSrcName" style="font-weight:800; color:#000000;"></span>님, 문의해 주셔서 감사합니다.<br>
+                  담당 실무진이 내용을 확인한 뒤<br>
+                  빠르게 연락드리겠습니다.<br>
+                  (보통 10분 이내 회신)
+                </div>
+                <button type="button" class="w95-btn sp-src-b1" style="padding:9px 36px; min-width:120px;" onclick="closeInquirySuccessModal();">확인</button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        modal = document.getElementById('inquirySuccessModal');
+      }
+
+      var boxes = modal.querySelectorAll('.sp-src-opt input');
+      for (var j = 0; j < boxes.length; j++) { boxes[j].checked = false; boxes[j].parentNode.classList.remove('on'); }
+      ['spSrcEtc', 'spSrcKw'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
+      document.getElementById('spSrcEtcWrap').style.display = 'none';
+      document.getElementById('spSrcKwWrap').style.display = 'none';
+      document.getElementById('spSrcStep1').style.display = 'block';
+      document.getElementById('spSrcStep2').style.display = 'none';
+      document.getElementById('spSrcStep3').style.display = 'none';
+      var sendBtn = document.getElementById('spSrcSend');
+      if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = '답변 보내기'; }
+      var names = modal.querySelectorAll('.spSrcName');
+      for (var k = 0; k < names.length; k++) names[k].textContent = spSrcLast.name;
+      modal.style.display = 'flex';
+    }
+
+    function spSrcSkip() {
+      document.getElementById('spSrcStep1').style.display = 'none';
+      document.getElementById('spSrcStep3').style.display = 'block';
+    }
+
+    function spSrcChecked() {
+      var out = [];
+      var boxes = document.querySelectorAll('#inquirySuccessModal .sp-src-opt input');
+      for (var i = 0; i < boxes.length; i++) if (boxes[i].checked) out.push(boxes[i].value);
+      return out;
+    }
+
+    function spSrcToggle(cb) {
+      cb.parentNode.classList.toggle('on', cb.checked);
+      var codes = spSrcChecked();
+      var showKw = codes.indexOf('google') > -1 || codes.indexOf('naver') > -1 || codes.indexOf('ai') > -1;
+      var showEtc = codes.indexOf('etc') > -1;
+      document.getElementById('spSrcKwWrap').style.display = showKw ? 'block' : 'none';
+      document.getElementById('spSrcEtcWrap').style.display = showEtc ? 'block' : 'none';
+      if (!showKw) document.getElementById('spSrcKw').value = '';
+      if (!showEtc) document.getElementById('spSrcEtc').value = '';
+    }
+
+    function spSrcSubmit() {
+      var codes = spSrcChecked();
+      if (!codes.length) { alert('알게 되신 경로를 하나 이상 선택해 주세요.'); return; }
+      var labels = SP_SRC_OPTIONS.filter(function (o) { return codes.indexOf(o[0]) > -1; }).map(function (o) { return o[1].replace(/<br>/g, ' '); });
+      var kw = (document.getElementById('spSrcKw').value || '').trim();
+      var etc = (document.getElementById('spSrcEtc').value || '').trim();
+      var msg = '[알게 된 경로] ' + labels.join(', ');
+      if (kw) msg += '\n[검색어·AI 질문] ' + kw;
+      if (etc) msg += '\n[기타] ' + etc;
+      msg += '\n[문의 페이지] ' + location.pathname;
+      var payload = {
+        name: spSrcLast.name, email: spSrcLast.email, phone: '', company: '',
+        message: msg, inquiry_source: labels.join(', '), search_keyword: kw, source_etc: etc,
+        _subject: '[슈퍼플래닝 유입경로] ' + spSrcLast.name + ' - ' + labels.join(', '),
+        _template: 'table', _captcha: 'false'
+      };
+      var sendBtn = document.getElementById('spSrcSend');
+      if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = '보내는 중...'; }
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'inquiry_source', inquiry_source: codes.join('|'), form_page: location.pathname }); } catch (e) {}
+      try {
+        fetch('https://formsubmit.co/ajax/a9613d6a838a841f3946e77c76b9a18a', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload)
+        }).catch(function () {});
+        fetch('/api/send_inquiry.php', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        }).catch(function () {});
+      } catch (e) {}
+      document.getElementById('spSrcStep1').style.display = 'none';
+      document.getElementById('spSrcStep2').style.display = 'block';
+    }
+
+    function closeInquirySuccessModal() {
+      const modal = document.getElementById('inquirySuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+  </script>
+
+  <script>
+    // MOBILE GNB DRAWER TOGGLE HANDLER
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      if (drawer) {
+        drawer.classList.toggle('show');
+      }
+      if (typeof closeStart === 'function') {
+        closeStart();
+      }
+    }
+  </script>
+
+  <script>
+    window.copyToClipboard = function(text, label, btn) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopySuccess(text, label, btn);
+        }).catch(function() {
+          fallbackCopyText(text, label, btn);
+        });
+      } else {
+        fallbackCopyText(text, label, btn);
+      }
+    };
+
+    function fallbackCopyText(text, label, btn) {
+      try {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        var successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) {
+          showCopySuccess(text, label, btn);
+        } else {
+          alert('복사 실패: ' + text);
+        }
+      } catch (err) {
+        alert('복사 실패: ' + text);
+      }
+    }
+
+    function showCopySuccess(text, label, btn) {
+      if (btn) {
+        var origText = btn.textContent;
+        btn.textContent = '완료!';
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+        setTimeout(function() {
+          btn.textContent = origText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1500);
+      }
+      alert((label || '내용') + '가 클립보드에 복사되었습니다:\n' + text);
+    }
+  </script>
+
+  <!-- 88: 모바일 하단 고정 바 (카카오톡 상담 · 프로젝트 문의) -->
+  <div id="spMobileCtaBar" role="navigation" aria-label="상담·문의 바로가기">
+    <a href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer" class="sp-mcb-kakao" onclick="window.spQB && spQB('kakao', 'mobile');"><svg width="17" height="15" viewBox="0 0 24 22" aria-hidden="true" style="display:block;"><ellipse cx="12" cy="9.5" rx="11.5" ry="9" fill="#000000"/><path d="M4.6 14.8 L2.6 21.2 L10 17.4 Z" fill="#000000"/></svg><span>카카오톡 상담</span></a>
+    <a href="/m-preview/contact/" class="sp-mcb-inq" onclick="window.spQB && spQB('inquiry', 'mobile'); return window.spOpenInquiry ? spOpenInquiry() : true;"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" style="display:block;"><rect x="1" y="3" width="14" height="10" fill="#ffffff"/><rect x="2" y="11" width="12" height="1" fill="#c0c0c0"/><rect x="1" y="3" width="14" height="1" fill="#000"/><rect x="1" y="12" width="14" height="1" fill="#000"/><rect x="1" y="3" width="1" height="10" fill="#000"/><rect x="14" y="3" width="1" height="10" fill="#000"/><rect x="2" y="4" width="1" height="1" fill="#000"/><rect x="3" y="5" width="1" height="1" fill="#000"/><rect x="4" y="6" width="1" height="1" fill="#000"/><rect x="5" y="7" width="1" height="1" fill="#000"/><rect x="6" y="8" width="1" height="1" fill="#000"/><rect x="7" y="9" width="1" height="1" fill="#000"/><rect x="13" y="4" width="1" height="1" fill="#000"/><rect x="12" y="5" width="1" height="1" fill="#000"/><rect x="11" y="6" width="1" height="1" fill="#000"/><rect x="10" y="7" width="1" height="1" fill="#000"/><rect x="9" y="8" width="1" height="1" fill="#000"/><rect x="8" y="9" width="1" height="1" fill="#000"/></svg><span>프로젝트 문의</span></a>
+  </div>
+<script>/* 88: 하단 바 클릭 측정 (버튼 종류·위치만 전송, 개인정보 없음) */
+window.spQB = function (btn, pos) {
+  try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
+};
+</script>
+<script src="/assets/sp-inquiry-b.js?v=200" defer></script>
+<script src="/m-preview/assets/sp-mnav.js?v=205" defer></script>
+<script src="/assets/sp-live.js?v=178" defer></script>
+</body>
+</html>
