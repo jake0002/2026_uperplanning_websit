@@ -57,3 +57,8 @@ RedirectMatch 301 ^/ux-research/llms\.txt$ /llms.txt
     Require all denied
 </FilesMatch>
 # ---- 202 legacy cleanup (end) ----
+
+# ---- 203 b-preview cleanup (start): retired B-design preview folder -> 301 same live page (files kept on disk) ----
+RedirectMatch 301 ^/b-preview/(.*/)?index\.html$ /$1
+RedirectMatch 301 ^/b-preview(?:/(.*))?$ /$1
+# ---- 203 b-preview cleanup (end) ----
