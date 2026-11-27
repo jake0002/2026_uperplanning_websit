@@ -257,16 +257,55 @@
   }
 
 
-  /* 206: 히어로 모션 — 빛 방향이 천천히 도는 볼록 카드, 칩이 차례로 눌렸다 올라오는 물결, 지표 숫자 올라가기(움직임 줄이기 설정이면 끔) */
+  /* 206·208: 히어로 모션 — 빛 방향이 천천히 도는 볼록 카드, 지표 숫자 올라가기.
+     208: 칩 눌림 물결 제거 → 텍스트 스크램블 등장(히어로 즉시, 나머지 주요 문구는 스크롤로 화면에 들어올 때 한 번씩). 움직임 줄이기 설정이면 모두 끔 */
+  var GLY = { h: '가각간갈감갑강개객거건걸검게격견결경계고곡곤골공과관광괴교구국군굴궁권귀규균그극근글금기긴길김', l: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', s: 'abcdefghijklmnopqrstuvwxyz', d: '0123456789', p: '#%&*+=/<>?_' };
+  function glyph(c) {
+    var k = /[가-힣]/.test(c) ? 'h' : /[A-Z]/.test(c) ? 'l' : /[a-z]/.test(c) ? 's' : /[0-9]/.test(c) ? 'd' : /\s/.test(c) ? '' : 'p';
+    if (!k) return c; var g = GLY[k]; return g.charAt(Math.floor(Math.random() * g.length));
+  }
+  function scramble(el, dur) {
+    var nodes = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) if (n.nodeValue.trim()) nodes.push({ n: n, t: n.nodeValue, q: [] });
+    if (!nodes.length) return;
+    nodes.forEach(function (o) { for (var i = 0; i < o.t.length; i++) o.q.push(Math.random() * dur * 0.75 + dur * 0.15); });
+    var t0 = null, f = 0;
+    function step(t) {
+      if (!t0) t0 = t; var e = t - t0, done = true; f++;
+      nodes.forEach(function (o) {
+        var out = '';
+        for (var i = 0; i < o.t.length; i++) {
+          if (e >= o.q[i]) out += o.t.charAt(i);
+          else { done = false; out += (f % 2 && o.n.nodeValue.charAt(i)) ? o.n.nodeValue.charAt(i) : glyph(o.t.charAt(i)); }
+        }
+        o.n.nodeValue = out;
+      });
+      if (!done) requestAnimationFrame(step); else nodes.forEach(function (o) { o.n.nodeValue = o.t; });
+    }
+    requestAnimationFrame(step);
+  }
   function heroMotion(v) {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     v.querySelector('.spm-hero').classList.add('is-motion');
-    if (reduce) return;
-    var chips = v.querySelectorAll('.spm-chips a'), i = 0;
-    setInterval(function () {
-      var c = chips[i % chips.length]; c.classList.add('is-press');
-      setTimeout(function () { c.classList.remove('is-press'); }, 520); i++;
-    }, 900);
+    /* 히어로: 큰 제목·설명·명령줄 즉시 스크램블 등장 */
+    ['.spm-h', '.spm-lead', '.spm-cmd'].forEach(function (sel, i) {
+      var el = v.querySelector(sel); if (!el) return;
+      el.classList.add('spm-sc-wait');
+      setTimeout(function () { el.classList.remove('spm-sc-wait'); scramble(el, sel === '.spm-h' ? 1100 : 900); }, 150 + i * 220);
+    });
+    /* 스크롤: 주요 문구가 화면에 들어올 때 한 번 스크램블 */
+    var SEL = '.spm-sec .spm-sh p, .spm-sec .spm-sh strong, .spm-svc b, .spm-nugu span, .spm-case b, .spm-p, .spm-pr b, .spm-pt span, .spm-pt b, .spm-th b, .spm-bt b, .spm-ct b, .spm-faq summary b, .spm-stats span';
+    var targets = v.querySelectorAll(SEL);
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target; io.unobserve(el);
+        el.classList.remove('spm-sc-wait');
+        scramble(el, Math.min(1000, 380 + el.textContent.length * 14));
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.2 });
+    targets.forEach(function (el) { el.classList.add('spm-sc-wait'); io.observe(el); });
     v.querySelectorAll('[data-cnt]').forEach(function (b) {
       var to = +b.getAttribute('data-cnt'), suf = b.getAttribute('data-suf') || '', from = to > 1000 ? to - 30 : 0, t0 = null, D = 1400;
       function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(from + (to - from) * e) + suf; if (k < 1) requestAnimationFrame(step); }
