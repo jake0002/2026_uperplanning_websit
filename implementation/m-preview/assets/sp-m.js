@@ -257,59 +257,29 @@
   }
 
 
-  /* 206·208: 히어로 모션 — 빛 방향이 천천히 도는 볼록 카드, 지표 숫자 올라가기.
-     208: 칩 눌림 물결 제거 → 텍스트 스크램블 등장(히어로 즉시, 나머지 주요 문구는 스크롤로 화면에 들어올 때 한 번씩). 움직임 줄이기 설정이면 모두 끔 */
-  var GLY = { h: '가각간갈감갑강개객거건걸검게격견결경계고곡곤골공과관광괴교구국군굴궁권귀규균그극근글금기긴길김', l: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', s: 'abcdefghijklmnopqrstuvwxyz', d: '0123456789', p: '#%&*+=/<>?_' };
-  function glyph(c) {
-    var k = /[가-힣]/.test(c) ? 'h' : /[A-Z]/.test(c) ? 'l' : /[a-z]/.test(c) ? 's' : /[0-9]/.test(c) ? 'd' : /\s/.test(c) ? '' : 'p';
-    if (!k) return c; var g = GLY[k]; return g.charAt(Math.floor(Math.random() * g.length));
-  }
-  function scramble(el, dur) {
-    var nodes = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
-    while ((n = w.nextNode())) if (n.nodeValue.trim()) nodes.push({ n: n, t: n.nodeValue, q: [] });
-    if (!nodes.length) return;
-    nodes.forEach(function (o) { for (var i = 0; i < o.t.length; i++) o.q.push(Math.random() * dur * 0.75 + dur * 0.15); });
-    var t0 = null, f = 0;
-    function step(t) {
-      if (!t0) t0 = t; var e = t - t0, done = true; f++;
-      nodes.forEach(function (o) {
-        var out = '';
-        for (var i = 0; i < o.t.length; i++) {
-          if (e >= o.q[i]) out += o.t.charAt(i);
-          else { done = false; out += (f % 2 && o.n.nodeValue.charAt(i)) ? o.n.nodeValue.charAt(i) : glyph(o.t.charAt(i)); }
-        }
-        o.n.nodeValue = out;
-      });
-      if (!done) requestAnimationFrame(step); else nodes.forEach(function (o) { o.n.nodeValue = o.t; });
-    }
-    requestAnimationFrame(step);
-  }
+  /* 206·209: 히어로 모션 — 빛 방향이 천천히 도는 볼록 카드 + 지표 숫자 0부터 올라가기.
+     209: 텍스트 스크램블 제거(사용자: 뉴모피즘과 안 어울림) → 문구가 은은하게 떠오르며 나타남(히어로 즉시, 나머지는 스크롤로 화면에 들어올 때 한 번). 움직임 줄이기 설정이면 모두 끔 */
   function heroMotion(v) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     v.querySelector('.spm-hero').classList.add('is-motion');
-    /* 히어로: 큰 제목·설명·명령줄 즉시 스크램블 등장 */
-    ['.spm-h', '.spm-lead', '.spm-cmd'].forEach(function (sel, i) {
+    var hero = ['.spm-hero-top', '.spm-h', '.spm-lead', '.spm-chips', '.spm-stats'];
+    hero.forEach(function (sel, i) {
       var el = v.querySelector(sel); if (!el) return;
-      el.classList.add('spm-sc-wait');
-      setTimeout(function () { el.classList.remove('spm-sc-wait'); scramble(el, sel === '.spm-h' ? 1100 : 900); }, 150 + i * 220);
+      el.classList.add('spm-fade');
+      setTimeout(function () { el.classList.add('is-in'); }, 120 + i * 160);
     });
-    /* 스크롤: 주요 문구가 화면에 들어올 때 한 번 스크램블 */
-    var SEL = '.spm-sec .spm-sh p, .spm-sec .spm-sh strong, .spm-svc b, .spm-nugu span, .spm-case b, .spm-p, .spm-pr b, .spm-pt span, .spm-pt b, .spm-th b, .spm-bt b, .spm-ct b, .spm-faq summary b, .spm-stats span';
+    var SEL = '.spm-sec .spm-sh, .spm-svc a, .spm-nugu, .spm-cl, .spm-sec .spm-p, .spm-case, .spm-pr, .spm-pt, .spm-bl, .spm-ct, .spm-maps, .spm-faq details';
     var targets = v.querySelectorAll(SEL);
-    if (!('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var el = en.target; io.unobserve(el);
-        el.classList.remove('spm-sc-wait');
-        scramble(el, Math.min(1000, 380 + el.textContent.length * 14));
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.2 });
-    targets.forEach(function (el) { el.classList.add('spm-sc-wait'); io.observe(el); });
-    v.querySelectorAll('[data-cnt]').forEach(function (b) {
-      var to = +b.getAttribute('data-cnt'), suf = b.getAttribute('data-suf') || '', from = to > 1000 ? to - 30 : 0, t0 = null, D = 1400;
-      function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(from + (to - from) * e) + suf; if (k < 1) requestAnimationFrame(step); }
-      b.textContent = from + suf; setTimeout(function () { requestAnimationFrame(step); }, 300);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); en.target.classList.add('is-in'); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      targets.forEach(function (el) { el.classList.add('spm-fade'); io.observe(el); });
+    }
+    v.querySelectorAll('[data-cnt]').forEach(function (b, i) {
+      var to = +b.getAttribute('data-cnt'), suf = b.getAttribute('data-suf') || '', t0 = null, D = 1600;
+      function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); }
+      b.textContent = '0' + suf; setTimeout(function () { requestAnimationFrame(step); }, 900);
     });
   }
 

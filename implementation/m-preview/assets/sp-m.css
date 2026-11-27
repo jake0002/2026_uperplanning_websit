@@ -112,15 +112,13 @@
     50% { box-shadow: 10px 10px 20px rgba(255,255,255,.9), -10px -10px 20px rgba(26,31,36,.11); }
     75% { box-shadow: -10px 10px 20px rgba(255,255,255,.9), 10px -10px 20px rgba(26,31,36,.13); }
   }
-  /* 208 텍스트 스크램블: 화면에 들어오기 전엔 숨김(스크립트가 붙인 클래스라 스크립트가 없으면 그대로 보임) */
-  #spmHome .spm-sc-wait { opacity: 0; }
+  /* 209 은은한 등장: 스크립트가 붙인 클래스라 스크립트가 없으면 그대로 보임 */
+  #spmHome .spm-fade { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  #spmHome .spm-fade.is-in { opacity: 1; transform: none; }
+  #spmHome .spm-svc a.spm-fade:nth-child(2n) { transition-delay: .08s; }
   .spm-hero.is-motion .spm-tag b { animation: spmDot 2.4s ease-in-out infinite; }
   @keyframes spmDot { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
-  .spm-hero.is-motion .spm-stats div { animation: spmRise .7s cubic-bezier(.2,.8,.2,1) both; }
-  .spm-hero.is-motion .spm-stats div:nth-child(2) { animation-delay: .12s; }
-  .spm-hero.is-motion .spm-stats div:nth-child(3) { animation-delay: .24s; }
-  @keyframes spmRise { from { box-shadow: none; transform: translateY(6px); opacity: .4; } to { box-shadow: var(--sp-raised-s); transform: none; opacity: 1; } }
-  @media (prefers-reduced-motion: reduce) { .spm-hero.is-motion .spm-hero-c, .spm-hero.is-motion .spm-tag b, .spm-hero.is-motion .spm-stats div { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .spm-hero.is-motion .spm-hero-c, .spm-hero.is-motion .spm-tag b { animation: none; } }
   .spm-stats div { padding: 14px 12px; border-radius: 16px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); }
   .spm-stats b { display: block; font: 500 22px/1.1 var(--sp-mono); }
   .spm-stats span { display: block; margin-top: 6px; font-size: 11px; color: var(--sp-text-3); white-space: nowrap; }
