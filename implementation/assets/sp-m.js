@@ -13,7 +13,8 @@
     '/ux-company/': '회사소개', '/contact/': '문의하기'
   };
   var isHome = rel === '/';
-  var title = TITLES[rel] || '';
+  var isPost = /^\/ux-blog\/[^/]+\/$/.test(rel);   /* 213: 블로그 글 */
+  var title = TITLES[rel] || (isPost ? 'UX블로그' : '');
   function u(p) { return BASE + p; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function track(btn, pos) { try { if (typeof window.spQB === 'function') window.spQB(btn, pos); } catch (e) {} }
@@ -55,7 +56,7 @@
     h.id = 'spmApp'; h.setAttribute('aria-label', '모바일 상단 메뉴');
     var left = isHome
       ? '<a class="spm-logo" href="' + u('/') + '" aria-label="슈퍼플래닝 홈"><img src="/images/brand/superplanning-logo-m.png?v=86" alt="슈퍼플래닝" width="151" height="14"></a>'
-      : '<a class="spm-ib spm-back" href="' + u('/') + '" aria-label="뒤로가기">' + ic(I.back, 20) + '</a><span class="spm-ttl">' + esc(title) + '</span>';
+      : '<a class="spm-ib spm-back" href="' + u(isPost ? '/ux-blog/' : '/') + '" aria-label="뒤로가기">' + ic(I.back, 20) + '</a><span class="spm-ttl">' + esc(title) + '</span>';
     h.innerHTML = '<div class="spm-l">' + left + '</div><div class="spm-r">' +
       '<a class="spm-ib" href="' + KAKAO + '" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 상담" data-t="kakao">' + KK + '</a>' +
       '<a class="spm-ib" href="' + TEL + '" aria-label="대표전화 031-699-3298" data-t="call">' + ic(I.phone, 19) + '</a></div>';

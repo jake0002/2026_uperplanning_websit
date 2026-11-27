@@ -94,6 +94,7 @@
   html.sp-m .explorer-split, html.sp-m .main-content-pane, html.sp-m .tree-sidebar { min-width: 0 !important; max-width: 100% !important; }
   html.sp-m .explorer-window > .titlebar, html.sp-m .explorer-window > .toolbar-area { display: none !important; }
   html.sp-m .main-content-pane { padding-top: 4px !important; }
+  html.sp-m .main-content-pane { word-break: keep-all; overflow-wrap: break-word; }   /* 213: 한글 단어 중간 줄바꿈 방지(예: '남/겨 주세요') */
 
   /* ---------- 메인(홈) ---------- */
   html.sp-m #desktop, html.sp-m #windowArea, html.sp-m #skyscraper, html.sp-m #boot, html.sp-m #spbDim { display: none !important; }

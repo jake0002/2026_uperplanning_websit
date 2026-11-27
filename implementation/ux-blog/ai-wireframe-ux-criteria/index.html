@@ -995,6 +995,8 @@
   <script src="/assets/sp-b.js?v=194" defer></script>
   <script>(function(){var d=document.documentElement,W=window.innerWidth,k=W<=768?1:Math.max(0.6,Math.min(0.82,W/1920*0.82)),x=W<=768?0:Math.max(0,(W-1920*k)/2);d.style.setProperty('--k',k);d.style.setProperty('--x0v',(x/k)+'px');})();</script><!-- 86: 모바일 상단 헤더·메뉴 탭 -->
   <style id="sp193-gnbprog">html.sp-b .gnb-progress-track{width:auto !important;}</style>
+  <link rel="stylesheet" href="/assets/sp-m.css?v=213">
+  <script src="/assets/sp-m.js?v=213" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1753,7 +1755,7 @@ window.spQB = function (btn, pos) {
   try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
 };
 </script>
-<script src="/assets/sp-mnav.js?v=194" defer></script>
+<script src="/assets/sp-mnav.js?v=213" defer></script>
 <script src="/assets/sp-live.js?v=178" defer></script>
 <script>/* 167: 글 FAQ 카드 — 처음엔 모두 펼침(피그마), 질문 줄을 눌러 접기/펼치기 */(function(){document.querySelectorAll(".sp-faqi").forEach(function(it){var q=it.querySelector("h3");if(!q)return;q.setAttribute("tabindex","0");q.setAttribute("role","button");q.setAttribute("aria-expanded","true");var t=function(){var c=it.classList.toggle("is-closed");q.setAttribute("aria-expanded",!c);};q.addEventListener("click",t);q.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});})();</script>
 </body>
