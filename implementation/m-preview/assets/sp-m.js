@@ -82,9 +82,12 @@
       var a = e.target.closest('a'); if (!a) return;
       var k = a.getAttribute('data-k');
       track('tab_' + k, 'm_tabbar');
-      if (k === 'home' && isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-      if (k === 'cat') { e.preventDefault(); openSheet('spmCat'); }
-      if (k === 'pf') { e.preventDefault(); openViewer(); }
+      /* 210: 시트(카테고리·포트폴리오)가 열린 상태에서 다른 탭을 누르면 먼저 시트를 닫고 그 탭 동작을 실행(같은 탭을 다시 누르면 닫기만) */
+      var was = openId;
+      if (was) closeSheet();
+      if (k === 'home') { if (isHome) { e.preventDefault(); if (!was) window.scrollTo({ top: 0, behavior: 'smooth' }); } return; }
+      if (k === 'cat') { e.preventDefault(); if (was !== 'spmCat') openSheet('spmCat'); return; }
+      if (k === 'pf') { e.preventDefault(); if (was !== 'spmPf') openViewer(); return; }
       if (k === 'inq') {
         var f = document.getElementById('projectInquiryForm') || document.querySelector('#contact form, form');
         if (rel === '/contact/' && f) { e.preventDefault(); window.scrollTo({ top: f.getBoundingClientRect().top + pageYOffset - 80, behavior: 'smooth' }); return; }
