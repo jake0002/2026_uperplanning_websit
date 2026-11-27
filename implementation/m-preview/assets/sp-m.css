@@ -104,6 +104,23 @@
   .spm-cta { display: flex; align-items: center; justify-content: center; gap: 16px; height: 60px; margin-top: 18px; border-radius: 999px; background: var(--sp-ink); color: #fff !important; font-size: 17px; font-weight: 700; }
   .spm-cta .spm-arw { color: #fff; }
   .spm-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+  /* 206 히어로 모션 */
+  .spm-hero.is-motion .spm-hero-c { animation: spmLight 9s ease-in-out infinite; }
+  @keyframes spmLight {
+    0%, 100% { box-shadow: -10px -10px 20px rgba(255,255,255,.9), 10px 10px 20px rgba(26,31,36,.13); }
+    25% { box-shadow: 10px -10px 20px rgba(255,255,255,.9), -10px 10px 20px rgba(26,31,36,.13); }
+    50% { box-shadow: 10px 10px 20px rgba(255,255,255,.9), -10px -10px 20px rgba(26,31,36,.11); }
+    75% { box-shadow: -10px 10px 20px rgba(255,255,255,.9), 10px -10px 20px rgba(26,31,36,.13); }
+  }
+  .spm-chips a { transition: box-shadow .45s ease, transform .45s ease; }
+  .spm-chips a.is-press { box-shadow: var(--sp-inset-s); background: var(--sp-inset); transform: scale(.97); }
+  .spm-hero.is-motion .spm-tag b { animation: spmDot 2.4s ease-in-out infinite; }
+  @keyframes spmDot { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+  .spm-hero.is-motion .spm-stats div { animation: spmRise .7s cubic-bezier(.2,.8,.2,1) both; }
+  .spm-hero.is-motion .spm-stats div:nth-child(2) { animation-delay: .12s; }
+  .spm-hero.is-motion .spm-stats div:nth-child(3) { animation-delay: .24s; }
+  @keyframes spmRise { from { box-shadow: none; transform: translateY(6px); opacity: .4; } to { box-shadow: var(--sp-raised-s); transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .spm-hero.is-motion .spm-hero-c, .spm-hero.is-motion .spm-tag b, .spm-hero.is-motion .spm-stats div { animation: none; } }
   .spm-stats div { padding: 14px 12px; border-radius: 16px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); }
   .spm-stats b { display: block; font: 500 22px/1.1 var(--sp-mono); }
   .spm-stats span { display: block; margin-top: 6px; font-size: 11px; color: var(--sp-text-3); white-space: nowrap; }
@@ -122,10 +139,11 @@
   .spm-svc span { display: block; margin-top: 6px; font-size: 12.5px; line-height: 1.6; color: var(--sp-text-2); }
   .spm-svc .spm-arw { position: absolute; top: 24px; right: 16px; width: 26px; }
   .spm-svc b { padding-right: 36px; }
-  .spm-nugu { display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: 20px; background: var(--sp-ink); color: #fff !important; font-size: 13px; font-weight: 600; line-height: 1.5; }
-  .spm-nugu img { height: 13px; width: auto; box-sizing: content-box; padding: 8px 10px; border-radius: 999px; background: #fff; }
+  .spm-nugu { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 20px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); color: var(--sp-ink) !important; font-size: 13px; font-weight: 600; line-height: 1.5; }
+  .spm-nugu i { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 44px; border-radius: 14px; background: var(--sp-inset); box-shadow: var(--sp-inset-s); }
+  .spm-nugu img { display: block; height: 15px; width: auto; }
   .spm-nugu span { flex: 1; }
-  .spm-nugu .spm-arw { color: #fff; width: 30px; }
+  .spm-nugu .spm-arw { width: 28px; }
   .spm-cl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
   .spm-cl span { display: flex; align-items: center; justify-content: center; height: 44px; padding: 0 4px; border-radius: 12px; background: var(--sp-surface); box-shadow: var(--sp-raised-s); font-size: 12px; font-weight: 600; text-align: center; letter-spacing: -.02em; }
   .spm-p { margin: 18px 0 0; font-size: 13.5px; line-height: 1.75; color: var(--sp-text-2); }

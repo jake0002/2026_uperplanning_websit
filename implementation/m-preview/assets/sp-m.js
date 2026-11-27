@@ -211,13 +211,12 @@
       '<p class="spm-h">UX디자인 에이전시,<br>슈퍼플래닝입니다.</p><p class="spm-lead">이탈은 줄이고, 전환은 높이는<br>사용자 경험을 설계합니다.</p><div class="spm-chips">' +
       [['/ux-research/', 'UX리서치'], ['/ux-writing/', 'UX라이팅'], ['/ux-design/', 'UI/UX디자인'], ['/ux-design/', 'UX컨설팅'], ['/web-app-development/', '웹/앱 개발'], ['/ux-academy/', 'AI-UX강의']]
         .map(function (c) { return '<a href="' + u(c[0]) + '">' + c[1] + '</a>'; }).join('') + '</div></div>' +
-      '<a class="spm-cta" href="' + u('/contact/') + '" data-inq="1">UX프로젝트 문의하기' + ARW + '</a>' +
-      '<div class="spm-stats"><div><b>2019</b><span>설립</span></div><div><b>100+</b><span>누적 UX 프로젝트</span></div><div><b>98%</b><span>고객만족도</span></div></div></section>';
+      '<div class="spm-stats"><div><b data-cnt="2019">2019</b><span>설립</span></div><div><b data-cnt="100" data-suf="+">100+</b><span>누적 UX 프로젝트</span></div><div><b data-cnt="98" data-suf="%">98%</b><span>고객만족도</span></div></div></section>';
     h += sec('01', 'SERVICES', 'UX 전문 서비스', '<div class="spm-svc">' + SV.map(function (s) {
       return '<a href="' + u(s[0]) + '"><i>' + ic(s[1], 20) + '</i><div><b>' + s[2] + (s[3] ? '<em>특허</em>' : '') + '</b><span>' + s[4] + '</span></div>' + ARW + '</a>';
     }).join('') + '</div>');
     h += sec('02', 'CLIENTS', '주요 고객사 및 프로젝트 실적',
-      '<a class="spm-nugu" href="' + u('/ux-company/') + '#partners"><img src="/images/ux-company/nugu-logo.webp" alt="NUGU" width="55" height="13"><span>SK텔레콤 AI플랫폼 NUGU<br>공식 에이전시 슈퍼플래닝</span>' + ARW + '</a>' +
+      '<a class="spm-nugu" href="' + u('/ux-company/') + '#partners"><i><img src="/images/ux-company/nugu-logo.webp" alt="NUGU" width="55" height="13"></i><span>SK텔레콤 AI플랫폼 NUGU<br>공식 에이전시 슈퍼플래닝</span>' + ARW + '</a>' +
       '<div class="spm-cl">' + CL.map(function (c) { return '<span>' + c + '</span>'; }).join('') + '</div>' +
       '<p class="spm-p">KB국민은행 리브 Next, NH농협은행 올원뱅크,<br>삼성전자 SDC 글로벌 컨퍼런스(제일기획),<br>LG생활건강, 오스템임플란트 등<br>누적 100건 이상의 UX 프로젝트를 수행했습니다.</p>' +
       '<a class="spm-case" href="/ux-blog/lguplus-healthcare-ux-renewal-case-study/"><div><span>대표 사례</span><b>LG유플러스 인증앱 헬스케어 서비스<br>UX개선 케이스 스터디</b></div>' + ARW + '</a>');
@@ -239,6 +238,8 @@
     document.querySelectorAll('main.sr-only h3').forEach(function (q) {
       var a = q.nextElementSibling; if (a && /자주 묻는/.test((q.closest('section') || {}).textContent || '')) faq.push([q.textContent, a.textContent]);
     });
+    /* 206: '대표는 누구인가요?' → '필요한 서비스만 골라서 의뢰할 수 있나요?'(화면 표시 — 실제 적용 때 FAQPage·llms 함께 변경) */
+    faq = faq.map(function (f) { return /대표는 누구/.test(f[0]) ? ['필요한 서비스만 골라서 의뢰할 수 있나요?', '네, 가능합니다. UX리서치, UI디자인, 퍼블리싱처럼 필요한 항목만 골라 의뢰하실 수 있습니다. 상담으로 범위를 확인한 뒤 견적서를 드립니다.'] : f; });
     if (faq.length) h += sec('07', 'FAQ', '자주 묻는 질문', '<div class="spm-faq">' + faq.map(function (f, i) {
       return '<details' + (i === 0 ? ' open' : '') + '><summary><em>Q</em><b>' + esc(f[0]) + '</b><i></i></summary><p>' + esc(f[1]) + '</p></details>';
     }).join('') + '</div>');
@@ -246,11 +247,30 @@
     v.id = 'spmHome'; v.setAttribute('aria-hidden', 'true');
     v.innerHTML = h;
     document.body.insertBefore(v, document.body.firstChild);
+    heroMotion(v);
     v.addEventListener('click', function (e) {
       var c = e.target.closest('[data-copy]');
       if (c) { e.preventDefault(); try { navigator.clipboard.writeText(c.getAttribute('data-copy')); } catch (x) {} c.lastChild.textContent = '복사됨'; setTimeout(function () { c.lastChild.textContent = '복사'; }, 1500); }
       var q = e.target.closest('[data-inq]');
       if (q) { track('inquiry', 'm_home_hero'); if (typeof window.spOpenInquiry === 'function') { e.preventDefault(); window.spOpenInquiry(); } }
+    });
+  }
+
+
+  /* 206: 히어로 모션 — 빛 방향이 천천히 도는 볼록 카드, 칩이 차례로 눌렸다 올라오는 물결, 지표 숫자 올라가기(움직임 줄이기 설정이면 끔) */
+  function heroMotion(v) {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    v.querySelector('.spm-hero').classList.add('is-motion');
+    if (reduce) return;
+    var chips = v.querySelectorAll('.spm-chips a'), i = 0;
+    setInterval(function () {
+      var c = chips[i % chips.length]; c.classList.add('is-press');
+      setTimeout(function () { c.classList.remove('is-press'); }, 520); i++;
+    }, 900);
+    v.querySelectorAll('[data-cnt]').forEach(function (b) {
+      var to = +b.getAttribute('data-cnt'), suf = b.getAttribute('data-suf') || '', from = to > 1000 ? to - 30 : 0, t0 = null, D = 1400;
+      function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(from + (to - from) * e) + suf; if (k < 1) requestAnimationFrame(step); }
+      b.textContent = from + suf; setTimeout(function () { requestAnimationFrame(step); }, 300);
     });
   }
 
