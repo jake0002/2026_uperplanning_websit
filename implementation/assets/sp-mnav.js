@@ -139,7 +139,7 @@
         return origOpen.apply(this, arguments);
       };
     }
-    swipe();
+    if (!(isMobile() && document.querySelector('link[href*="/sp-m.css"]'))) swipe(); /* 212: 모바일 앱형 화면(sp-m.css)이 있는 페이지는 좌우 스와이프 이동 끔(카드·뷰어와 충돌 방지) */
   }
 
   /* 88: 좌우 스와이프로 메뉴 순서(상단 탭 순서)대로 이동 — 왼쪽으로 밀면 다음, 오른쪽으로 밀면 이전, 끝에서는 처음으로 순환. 화면 가장자리 24px는 브라우저 뒤로가기 제스처에 양보 */
