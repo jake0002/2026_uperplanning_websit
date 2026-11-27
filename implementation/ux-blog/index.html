@@ -3672,7 +3672,7 @@ window.spQB = function (btn, pos) {
   try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quick_banner_click', qb_button: btn, qb_position: pos, form_page: location.pathname }); } catch (e) {}
 };
 </script>
-<script src="/assets/sp-inquiry-b.js?v=178" defer></script>
+<script src="/assets/sp-inquiry-b.js?v=198" defer></script>
 <script src="/assets/sp-mnav.js?v=194" defer></script>
 <script src="/assets/sp-live.js?v=178" defer></script>
 <script>/* B안 FAQ 아코디언 */(function(){document.querySelectorAll(".faq").forEach(function(dl){dl.classList.add("sp-acc");dl.querySelectorAll("dt").forEach(function(dt,i){if(i<3)dt.classList.add("is-open");dt.setAttribute("tabindex","0");dt.setAttribute("role","button");var t=function(){dt.classList.toggle("is-open");dt.setAttribute("aria-expanded",dt.classList.contains("is-open"));};dt.setAttribute("aria-expanded",i<3);dt.addEventListener("click",t);dt.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t();}});});});})();</script>

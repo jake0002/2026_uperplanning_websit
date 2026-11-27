@@ -1,4 +1,4 @@
-/* B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
+/* 198: 강의 신청 5단계·제목 '맞춤형 UX강의 신청하기'·버튼 'UX강의 신청 접수하기'·희망 일정 자동 선택 제거. B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
 (function () {
   'use strict';
   if (window.spOpenInquiry) return;
@@ -124,8 +124,24 @@
     '.spq-calf{display:flex;gap:8px;margin:14px 0 0;padding:14px 0 0;border-top:1px solid #D3D8DE;}',
     '.spq-calf button{flex:1;height:36px;border:0;border-radius:999px;background:#EEF1F4;box-shadow:-3px -3px 6px rgba(255,255,255,.95),3px 3px 6px rgba(26,31,36,.14);font:600 12.5px/1 Pretendard,sans-serif;color:#111;cursor:pointer;}',
     '.spq-calf button.k{background:#111;color:#fff;box-shadow:3px 3px 8px rgba(26,31,36,.25);}',
+    /* 198: 강의 신청 5단계 — 진행 막대(오목 트랙 + 검정 채움), 단계별 섹션, 이전(볼록)·다음(검정) 버튼 */
+    '.spq-prog{display:flex;flex-direction:column;gap:10px;}',
+    '.spq-prog-t{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0;font:600 13px/1.4 Pretendard,sans-serif;color:#111;}',
+    '.spq-prog-t small{font:500 12px/1.4 Pretendard,sans-serif;color:#7C828A;}',
+    '.spq-bar{height:8px;border-radius:999px;background:#E4E7EB;box-shadow:inset 2px 2px 4px rgba(26,31,36,.16),inset -2px -2px 4px rgba(255,255,255,.95);overflow:hidden;}',
+    '.spq-bar i{display:block;height:100%;border-radius:999px;background:#111;transition:width .3s ease;}',
+    '.spq-step{display:flex;flex-direction:column;gap:22px;}',
+    '.spq-step[hidden]{display:none;}',
+    '.spq-nav{display:flex;gap:12px;}',
+    '.spq-nav .spq-b2{flex:0 0 140px;height:51px;}',
+    '.spq-nav .spq-b2[hidden],.spq-nav .spq-cta[hidden],#splNote[hidden]{display:none;}',
+    '.spq-nav .spq-cta{flex:1;width:auto;}',
+    '#spqLec .spq-in::selection{background:#C9CFD6;color:#111;}',
+    '#spqLecH:focus{outline:none;}',
+    '#spqLec .spq-box{margin:0 0 auto;}',   /* 단계가 바뀌어도 창 위치 고정(위쪽 기준) */
     '@media (min-width:769px){.spq-box{zoom:var(--k,1);}}',
-    '@media (max-width:600px){.spq-cal{left:0;right:auto;width:100%;max-width:308px;}.spq-ov{padding:16px 10px;}.spq-bd,.spq-done{padding:22px 18px 24px;}.spq-row,.spq-grid,.spq-chips,.spq-chips.c3{grid-template-columns:1fr;}.spq-btns .spq-b2{flex-basis:110px;}}',
+    '@media (max-width:600px){.spq-cal{left:0;right:auto;width:100%;max-width:308px;}.spq-ov{padding:16px 10px;}.spq-bd,.spq-done{padding:22px 18px 24px;}.spq-row,.spq-grid,.spq-chips,.spq-chips.c3{grid-template-columns:1fr;}.spq-btns .spq-b2{flex-basis:110px;}.spq-nav .spq-b2{flex-basis:104px;}}',
+    '@media (max-width:600px){#spqLec .spq-chips,#spqLec .spq-chips.c3{grid-template-columns:1fr 1fr;gap:10px;}#spqLec .spq-chip{padding:10px 10px 10px 12px;}#spqLec .spq-ct b,#spqLec .spq-sub{text-wrap:balance;}#spqLec .spq-sub br{display:none;}}',   /* 198: 모바일 강의 신청 선택지 2열(한 단계가 한 화면에) */
     '@media (prefers-reduced-motion:reduce){.spq-ov *{transition:none !important;}}'
   ].join('\n');
 
@@ -146,7 +162,7 @@
     return Promise.race([p1, p2, new Promise(function (r) { setTimeout(r, 3000); })]);
   }
   function chip(type, name, value, label, sub, checked) {
-    return '<label class="spq-chip' + (checked ? ' on' : '') + '"><input type="' + type + '" name="' + name + '" value="' + esc(value) + '"' + (checked ? ' checked' : '') + '><span class="spq-ind' + (type === 'checkbox' ? ' sq' : '') + '"></span><span class="spq-ct"><b>' + label + '</b>' + (sub ? '<small>' + sub + '</small>' : '') + '</span></label>';
+    return '<label class="spq-chip' + (checked ? ' on' : '') + '"><input type="' + type + '" name="' + name + '" value="' + esc(value) + '"' + (checked ? ' checked' : '') + '><span class="spq-ind' + (type === 'checkbox' ? ' sq' : '') + '"></span><span class="spq-ct"><b>' + String(label).replace(/([^\s·]+·)/g, '<span style="white-space:nowrap">$1</span>') + '</b>' + (sub ? '<small>' + sub + '</small>' : '') + '</span></label>';
   }
   function field(id, ph, type, extra) { return '<input class="spq-in" id="' + id + '" type="' + (type || 'text') + '" placeholder="' + ph + '"' + (extra || '') + '>'; }
   function lf(id, label, req, ph, type, extra) { return '<div class="spq-f"><label class="spq-l' + (req ? '' : ' opt') + '" for="' + id + '">' + label + (req ? ' <b>*</b>' : '') + '</label>' + field(id, ph, type, extra) + '</div>'; }
@@ -168,21 +184,28 @@
     var topics = TOPICS.map(function (t) { return chip('checkbox', 'splTopic', t, t, '', t === '맞춤설계 상담 후 결정'); }).join('');
     var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '오프라인'); }).join('');
     var lec = '<div class="spq-ov" id="spqLec"><div class="spq-box wide" role="dialog" aria-modal="true" aria-labelledby="spqLecH">' + tbar('강의 신청') +
-      '<div class="spq-bd"><div class="spq-head"><span class="spq-ico">' + IC_BOOK + '</span><div><h3 class="spq-h" id="spqLecH">AI활용 서비스기획 및 UX강의 신청</h3><p class="spq-sub">일정과 견적은 상담 후 확정됩니다.<br>선택하신 내용으로 맞춤 커리큘럼을 안내해 드립니다.</p></div></div>' +
+      '<div class="spq-bd"><div class="spq-head"><span class="spq-ico">' + IC_BOOK + '</span><div><h3 class="spq-h" id="spqLecH" tabindex="-1">맞춤형 UX강의 신청하기</h3><p class="spq-sub">일정과 견적은 상담 후 확정됩니다.<br> 선택하신 내용으로 맞춤 커리큘럼을 안내해 드립니다.</p></div></div>' +
+      '<div class="spq-prog"><p class="spq-prog-t"><span id="splStepT" aria-live="polite"></span><small id="splStepN"></small></p><div class="spq-bar" aria-hidden="true"><i id="splBar"></i></div></div>' +
+      '<div class="spq-step" data-step="1">' +
       '<div class="spq-sec"><p class="spq-lb">1. 수강 형태 <small>(선택)</small></p><div class="spq-chips">' + types + '</div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">2. 코스 선택 <b>*</b> <small>선택하신 코스가 미리 체크됩니다</small></p><div class="spq-chips c3">' + courses + '</div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">3. 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">4. 희망 강의내용 <small>여러 개 선택 가능</small></p><div class="spq-chips c3">' + topics + '</div></div>' +
+      '<div class="spq-sec"><p class="spq-lb">2. 코스 선택 <b>*</b> <small>선택하신 코스가 미리 체크됩니다</small></p><div class="spq-chips c3">' + courses + '</div></div></div>' +
+      '<div class="spq-step" data-step="2" hidden>' +
+      '<div class="spq-sec"><p class="spq-lb">3. 수강생 현재 직업 <small>(선택)</small></p><div class="spq-chips">' + jobs + '</div></div></div>' +
+      '<div class="spq-step" data-step="3" hidden>' +
+      '<div class="spq-sec"><p class="spq-lb">4. 희망 강의내용 <small>여러 개 선택 가능</small></p><div class="spq-chips c3">' + topics + '</div></div></div>' +
+      '<div class="spq-step" data-step="4" hidden>' +
       '<div class="spq-row"><div class="spq-sec"><label class="spq-lb" for="splPeople">5. 예상 인원 <b>*</b></label><select class="spq-in" id="splPeople"><option selected>1명~5명</option><option>5명~10명</option><option>10명~30명</option><option>30명~50명</option><option>50명 이상</option></select></div>' +
       '<div class="spq-sec"><label class="spq-lb" for="splDate">6. 희망 일정 <b>*</b></label><div class="spq-dwrap">' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)', 'text', ' value="상담 후 결정"') +
       '<button type="button" class="spq-calbtn" id="splCalBtn" aria-label="달력에서 희망 날짜 선택" aria-haspopup="dialog" aria-expanded="false" aria-controls="splCal">' + IC_CAL + '</button>' +
       '<div class="spq-cal" id="splCal" role="dialog" aria-label="희망 일정 달력" hidden></div></div></div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 <b>*</b></p><div class="spq-chips c3">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장') + '</div></div>' +
+      '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 <b>*</b></p><div class="spq-chips c3">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장') + '</div></div></div>' +
+      '<div class="spq-step" data-step="5" hidden>' +
       '<div class="spq-sec"><p class="spq-lb">8. 신청자 정보</p><div class="spq-row">' + lf('splName', '이름', true, '홍길동') + lf('splCompany', '회사·학교명 (선택)', false, '회사·기관·학교명') +
       lf('splEmail', '이메일', true, 'name@company.com', 'email') + lf('splPhone', '연락처 (일정 조율용, 선택)', false, '010-0000-0000', 'tel') + '</div>' +
       '<div class="spq-f"><label class="spq-l opt" for="splReq">요청사항 (선택)</label><textarea class="spq-in" id="splReq" rows="3" style="height:96px;" placeholder="수강 목적이나 현재 고민을 적어 주시면 커리큘럼에 반영합니다.&#10;예: 현업 기능정의서 작성법, 포트폴리오 완성"></textarea></div></div>' +
-      agree('splAgree') + ctaBlock('splSend', '강의 신청하고 빠른 답변 받기') +
-      '<p class="spq-note">신청하시면 담당자가 일정을 확인하고 연락드립니다.<br>결제는 상담 후 진행됩니다.</p></div></div></div>';
+      agree('splAgree') + '</div>' +
+      '<div class="spq-nav"><button type="button" class="spq-b2" id="splPrev" hidden>이전</button><button type="button" class="spq-cta" id="splNext">다음</button><button type="button" class="spq-cta" id="splSend" hidden>UX강의 신청 접수하기</button></div>' +
+      '<p class="spq-note" id="splNote" hidden>신청하시면 담당자가 일정을 확인하고 연락드립니다.<br>결제는 상담 후 진행됩니다.</p></div></div></div>';
     var opts = SRC.map(function (o) { return '<label class="spq-opt"><input type="checkbox" value="' + o[0] + '"><span class="spq-ind sq"></span><span>' + o[1].replace('<br>', ' ').replace('인스타,', '인스타그램,') + '</span></label>'; }).join('');
     var done = '<div class="spq-ov" id="spqDone"><div class="spq-box" role="dialog" aria-modal="true" aria-labelledby="spqD1H">' + tbar('문의 접수 완료', 'spqDoneTb') +
       '<div class="spq-done" id="spqD1">' + ENV + '<h3 id="spqD1H"></h3><div class="spq-msg" id="spqD1M"></div><div id="spqSum"></div>' +
@@ -215,6 +238,8 @@
     document.querySelectorAll('#spqDone .spq-opt input').forEach(function (cb) { cb.addEventListener('change', srcToggle); });
     $('spqSend').addEventListener('click', sendInquiry);
     $('splSend').addEventListener('click', sendLecture);
+    $('splNext').addEventListener('click', function () { if (stepOk(step)) goStep(step + 1); });
+    $('splPrev').addEventListener('click', function () { goStep(step - 1); });
     $('spqSrcSend').addEventListener('click', sendSource);
     $('spqSkip').addEventListener('click', function () { showD2(); });
   }
@@ -268,10 +293,32 @@
       if (all[i]) all[i].focus();
     });
     document.getElementById('spqLec').addEventListener('click', function (e) { if (calOpen() && !(e.target.closest && e.target.closest('.spq-dwrap'))) calClose(); });
-    inp.addEventListener('focus', function () { if (inp.value === '상담 후 결정') try { inp.select(); } catch (e) {} });
     inp.addEventListener('input', function () { calSel = null; });
   }
 
+  /* 198: 강의 신청 5단계 */
+  var STEPS = ['수강 형태·코스 선택', '수강생 현재 직업', '희망 강의내용', '인원·일정·진행 방식', '신청자 정보'];
+  var step = 1;
+  function goStep(n) {
+    n = Math.max(1, Math.min(5, n)); step = n; calClose();
+    document.querySelectorAll('#spqLec .spq-step').forEach(function (s) { s.hidden = +s.getAttribute('data-step') !== n; });
+    $('splStepT').textContent = n + '단계 · ' + STEPS[n - 1];
+    $('splStepN').textContent = n + ' / 5';
+    $('splBar').style.width = (n * 20) + '%';
+    $('splPrev').hidden = n === 1; $('splNext').hidden = n === 5; $('splSend').hidden = n !== 5; $('splNote').hidden = n !== 5;
+    var ov = $('spqLec'); if (ov) ov.scrollTop = 0;
+    try { $('spqLecH').focus({ preventScroll: true }); } catch (e) {}
+  }
+  function stepOk(n) {
+    var miss = [], first = null;
+    if (n === 1 && !val('splCourse')) miss.push('· 코스');
+    if (n === 4) {
+      if (!$('splDate').value.trim()) { miss.push('· 희망 일정'); first = 'splDate'; }
+      if (!val('splMethod')) miss.push('· 진행 방식');
+    }
+    if (miss.length) { alert('아래 필수 항목을 선택해 주세요.\n\n' + miss.join('\n')); if (first) { try { $(first).focus(); } catch (e) {} } return false; }
+    return true;
+  }
   function open(id) { $(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
   function close(id) {
     if (id === 'spqLec') calClose();
@@ -304,8 +351,7 @@
     var r = document.querySelector('#spqLec input[name="splCourse"][value="' + k + '"]');
     if (r) { r.checked = true; r.dispatchEvent(new Event('change')); }
     open('spqLec');
-    var bx = document.querySelector('#spqLec .spq-box'); if (bx) bx.scrollTop = 0;
-    setTimeout(function () { try { $('splDate').focus({ preventScroll: true }); } catch (e) {} }, 50);
+    goStep(1);   // 198: 항상 1단계부터(희망 일정 자동 포커스·전체 선택 제거 = 검정 선택 표시 오류 수정)
     return false;
   };
 
@@ -333,7 +379,7 @@
     if (!$('splAgree').checked) { alert('개인정보 수집 및 이용 동의(필수)에 체크해 주세요.'); return; }
     var miss = [], first = null;
     [[!courseK, '코스'], [!date, '희망 일정', 'splDate'], [!method, '진행 방식'], [!name, '이름', 'splName'], [!email, '이메일', 'splEmail']].forEach(function (m) { if (m[0]) { miss.push('· ' + m[1]); if (!first && m[2]) first = m[2]; } });
-    if (miss.length) { alert('아래 필수 항목을 입력해 주세요.\n\n' + miss.join('\n')); if (first) { try { $(first).focus(); } catch (e) {} } return; }
+    if (miss.length) { alert('아래 필수 항목을 입력해 주세요.\n\n' + miss.join('\n')); if (!courseK) goStep(1); else if (!date || !method) goStep(4); if (first) { try { $(first).focus(); } catch (e) {} } return; }
     if (needEmail($('splEmail'))) return;
     var course = COURSES[courseK][0] + ' · ' + COURSES[courseK][1];
     var methodTxt = method + (method === '오프라인' && place ? ' · ' + place : '');
@@ -342,10 +388,10 @@
     post({ name: name, phone: phone, company: company, email: email, message: lines.join('\n'), course: course, lecture_type: type, job: job, topics: topics.join(', '), people: people, schedule: date, method: methodTxt, form_page: location.pathname,
       _subject: '[슈퍼플래닝 강의 신청] ' + name + ' - ' + COURSES[courseK][0] + '·' + (type || '수강 형태 미선택'), _template: 'table', _captcha: 'false' }).then(function () {
       dl({ event: 'inquiry_submit', form_page: location.pathname, form_type: 'lecture' });
-      btn.disabled = false; btn.textContent = '강의 신청하고 빠른 답변 받기';
+      btn.disabled = false; btn.textContent = 'UX강의 신청 접수하기';
       var sum = [['코스', course], ['수강 형태', type ? type + ' · ' + people : people], ['희망 일정', date], ['진행 방식', methodTxt]];
       ['splPlace', 'splName', 'splCompany', 'splEmail', 'splPhone', 'splReq'].forEach(function (id) { $(id).value = ''; }); $('splDate').value = '상담 후 결정'; calSel = null;
-      close('spqLec'); showDone('lecture', name, email, sum);
+      close('spqLec'); goStep(1); showDone('lecture', name, email, sum);
     });
   }
 
