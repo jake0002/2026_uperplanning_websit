@@ -7,8 +7,10 @@
   /* 기존 모바일 틀 숨김(상단 헤더·탭 줄·하단 상담 바·스와이프·TOP) */
   html.sp-m #spMnav, html.sp-m #spMnavSheet, html.sp-m #spMobileCtaBar, html.sp-m #stickyKakaoBanner,
   html.sp-m #spSwipe, html.sp-m #spSwipeToast, html.sp-m #scrollTopBtn, html.sp-m #gnb, html.sp-m #brandLogo,
-  html.sp-m #taskbar, html.sp-m #startMenu, html.sp-m #mobileNavDrawer, html.sp-m #spPdf,
-  html.sp-m body #scrollTopBtn.sp-top, html.sp-m body #scrollTopBtn.sp-top.is-on { display: none !important; }
+  html.sp-m #taskbar, html.sp-m #startMenu, html.sp-m #mobileNavDrawer, html.sp-m #spPdf { display: none !important; }
+  /* 211: PC 와 같은 위로가기(TOP 진행 링) 버튼을 모바일에도 — 하단 탭바 위 오른쪽, 시트보다 아래 층 */
+  html.sp-m.sp-b body #scrollTopBtn.sp-top { right: 12px !important; bottom: calc(var(--m-tab) + 22px + var(--m-safe)) !important; z-index: 900 !important; }
+  html.sp-m.spm-lock body #scrollTopBtn.sp-top { opacity: 0 !important; visibility: hidden !important; }
   html.sp-m #spbPrev { top: auto; bottom: calc(var(--m-tab) + 22px + var(--m-safe)); transition: opacity .4s; }
 
   /* ---------- 앱바 ---------- */
@@ -81,6 +83,10 @@
   /* 210: 타이핑 문구의 커서 선(오른쪽 검정 세로선)이 모바일에서 줄마다 붙어 보임 → 모바일에선 커서 선 없이 글자만 나타남 */
   html.sp-m.sp-b body .typewriter-quote.typewriter-quote.typewriter-quote, html.sp-m.sp-b body .typewriter-quote.typewriter-quote.typewriter-quote.is-typing { border-right-color: transparent !important; animation: none !important; }
   html.sp-m.sp-b body .typewriter-quote.typewriter-quote::after { display: none !important; }
+
+  /* 211: 회사소개 파트너 타일 — 슈퍼플래닝 로고가 타일에 꽉 차 보임 → 여백 확보 */
+  html.sp-m.sp-b body .main-content-pane .sp-nugu-tile:not(.is-dark) img { max-width: 60px !important; width: 60px !important; }
+  html.sp-m.sp-b body .main-content-pane .sp-nugu-tile.is-dark img { max-width: 68px !important; }
 
   /* ---------- 서브페이지: 탐색기 창 틀 걷어내기 ---------- */
   html.sp-m .page-wrapper { padding: 0 !important; margin: 0 !important; }
