@@ -1,4 +1,4 @@
-/* 199: 필수값 토스트·기본값(B코스·기업 실무자)·접수 완료 체크 원 그림자 대칭·오프라인 장소 필수. 198: 강의 신청 5단계·제목 '맞춤형 UX강의 신청하기'·버튼 'UX강의 신청 접수하기'·희망 일정 자동 선택 제거. B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
+/* 200: 접수 완료 3단계 흐름(번호 원+화살표)·진행 방식 기본 '상담 후 결정'. 199: 필수값 토스트·기본값(B코스·기업 실무자)·접수 완료 체크 원 그림자 대칭·오프라인 장소 필수. 198: 강의 신청 5단계·제목 '맞춤형 UX강의 신청하기'·버튼 'UX강의 신청 접수하기'·희망 일정 자동 선택 제거. B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
 (function () {
   'use strict';
   if (window.spOpenInquiry) return;
@@ -85,9 +85,16 @@
     '.spq-sum td{padding:6px 0;font:400 13px/1.5 Pretendard,sans-serif;color:#4A4F55;vertical-align:top;border-top:1px solid #D3D8DE;}',
     '.spq-sum tr:first-child td{border-top:0;}',
     '.spq-sum td:first-child{width:76px;font-weight:600;color:#111;}',
-    '.spq-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px;}',
-    '.spq-steps span{text-align:center;padding:7px 4px;border-radius:999px;background:#EEF1F4;font:500 11.5px/1.3 Pretendard,sans-serif;color:#4A4F55;}',
-    '.spq-steps span.on{background:#111;color:#fff;}',
+    /* 200: 진행 3단계 = 번호 원(현재 단계만 오목 + 체크) + 이름 + 긴 한쪽 날개 화살표 — 버튼처럼 보이지 않게 검정 바탕 없음 */
+    '.spq-steps{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin:14px 0 2px;padding:14px 0 0;border-top:1px solid #D3D8DE;}',
+    '.spq-st{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;}',
+    '.spq-st i{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 12px/1 Pretendard,sans-serif;font-style:normal;color:#7C828A;background:transparent;border:1.2px solid #B9C0C8;box-sizing:border-box;}',
+    '.spq-st.on i{border:0;background:#E4E7EB;box-shadow:inset 2px 2px 5px rgba(26,31,36,.18),inset -2px -2px 5px rgba(255,255,255,.95);color:#111;}',
+    '.spq-st b{font:600 12.5px/1.35 Pretendard,sans-serif;color:#7C828A;word-break:keep-all;}',
+    '.spq-st.on b{color:#111;font-weight:700;}',
+    '.spq-st small{display:block;font:500 11px/1.3 Pretendard,sans-serif;color:#9AA1AA;margin-top:2px;}',
+    '.spq-st.on small{color:#4A4F55;}',
+    '.spq-sarr{flex:none;align-self:flex-start;margin-top:12px;color:#9AA1AA;}',
     '.spq-hr{height:1px;background:#D3D8DE;margin:0;}',
     '.spq-q{text-align:left;display:flex;flex-direction:column;gap:14px;}',
     '.spq-q .t{margin:0;font:600 15px/1.45 Pretendard,sans-serif;color:#111;}',
@@ -176,6 +183,11 @@
   function ctaBlock(id, text) { return '<div class="spq-ctaw"><span class="spq-tip">보통 10분 이내 응답</span><button type="button" class="spq-cta" id="' + id + '">' + text + '</button></div>'; }
   function agree(id) { return '<label class="spq-agree"><input type="checkbox" id="' + id + '" checked><span class="spq-cb" aria-hidden="true"></span>개인정보 수집 및 이용 동의 (필수)</label>'; }
 
+  var SARR = '<svg class="spq-sarr" width="30" height="8" viewBox="0 0 30 8" fill="none" aria-hidden="true"><path d="M0 7.2H30L22.5 0.8" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>';
+  var CHK = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.8l2.8 2.8 5.2-6" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var STEPS3 = '<div class="spq-st on" role="listitem" aria-current="step"><i>' + CHK + '</i><b>신청 접수<small>지금 완료</small></b></div>' + SARR +
+    '<div class="spq-st" role="listitem"><i>2</i><b>담당자 연락<small>일정·내용 확인</small></b></div>' + SARR +
+    '<div class="spq-st" role="listitem"><i>3</i><b>커리큘럼·<span style="white-space:nowrap">견적 확정</span><small>상담 후 확정</small></b></div>';
   function build() {
     if (built) return; built = true;
     var st = document.createElement('style'); st.id = 'spq-style'; st.textContent = CSS; document.head.appendChild(st);
@@ -189,7 +201,7 @@
     var courses = Object.keys(COURSES).map(function (k) { return chip('radio', 'splCourse', k, COURSES[k][0], COURSES[k][1], false); }).join('');
     var jobs = ['취업·이직 준비', '주니어 기획자·디자이너', '기업 실무자', 'SI 개발자', '스타트업 대표·예비창업자', '교육 담당자(HRD)', '기타'].map(function (t) { return chip('radio', 'splJob', t, t, '', t === '기업 실무자'); }).join('');
     var topics = TOPICS.map(function (t) { return chip('checkbox', 'splTopic', t, t, '', t === '맞춤설계 상담 후 결정'); }).join('');
-    var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '오프라인'); }).join('');
+    var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '상담 후 결정'); }).join('');
     var lec = '<div class="spq-ov" id="spqLec"><div class="spq-box wide" role="dialog" aria-modal="true" aria-labelledby="spqLecH">' + tbar('강의 신청') +
       '<div class="spq-bd"><div class="spq-head"><span class="spq-ico">' + IC_BOOK + '</span><div><h3 class="spq-h" id="spqLecH" tabindex="-1">맞춤형 UX강의 신청하기</h3><p class="spq-sub">일정과 견적은 상담 후 확정됩니다.<br> 선택하신 내용으로 맞춤 커리큘럼을 안내해 드립니다.</p></div></div>' +
       '<div class="spq-prog"><p class="spq-prog-t"><span id="splStepT" aria-live="polite"></span><small id="splStepN"></small></p><div class="spq-bar" aria-hidden="true"><i id="splBar"></i></div></div>' +
@@ -229,6 +241,7 @@
       ov.addEventListener('click', function (e) { if (e.target === ov || (e.target.closest && e.target.closest('[data-close]'))) close(id); });
     });
     calInit();
+    $('splPlaceW').style.display = val('splMethod') === '오프라인' ? '' : 'none';   // 200: 기본 '상담 후 결정' → 장소 칸 숨김
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && calOpen()) { calClose(true); return; } if (e.key === 'Escape') { ['spqDone', 'spqLec', 'spqInq'].some(function (id) { if ($(id).classList.contains('open')) { close(id); return true; } }); } });
     document.querySelectorAll('#spqLec .spq-chip input').forEach(function (inp) {
       inp.addEventListener('change', function () {
@@ -434,7 +447,7 @@
     $('spqD1H').textContent = L ? '강의 신청이 접수되었습니다' : '문의가 정상 접수되었습니다';
     $('spqD1M').innerHTML = L ? N + '님, 신청해 주셔서 감사합니다.<br>담당자가 일정과 커리큘럼을 확인한 뒤<br>빠르게 연락드리겠습니다. (보통 10분 이내 회신)'
       : N + '님, 문의해 주셔서 감사합니다.<br>담당 실무진이 내용을 확인한 뒤 빠르게 연락드리겠습니다.<br>(보통 10분 이내 회신)';
-    $('spqSum').innerHTML = L && sum ? '<div class="spq-sum"><p>신청 내용 확인</p><table>' + sum.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + esc(r[1]) + '</td></tr>'; }).join('') + '</table><div class="spq-steps"><span class="on">① 신청 접수</span><span>② 담당자 연락</span><span>③ 커리큘럼·견적 확정</span></div></div>' : '';
+    $('spqSum').innerHTML = L && sum ? '<div class="spq-sum"><p>신청 내용 확인</p><table>' + sum.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + esc(r[1]) + '</td></tr>'; }).join('') + '</table><div class="spq-steps" role="list" aria-label="진행 순서">' + STEPS3 + '</div></div>' : '';
     $('spqQt').innerHTML = (L ? '슈퍼플래닝 강의를 어떻게 알게 되셨나요?' : '슈퍼플래닝을 어떻게 알게 되셨나요?') + ' (선택)';
     $('spqQs').textContent = (L ? '더 나은 강의 안내에 참고하겠습니다.' : '더 정확한 상담 준비에 참고하겠습니다.') + ' 여러 개 선택할 수 있습니다.';
     $('spqDn').textContent = L ? '답변하지 않으셔도 강의 신청은 정상 접수되었습니다.' : '답변하지 않으셔도 문의는 정상 접수되었습니다.';
