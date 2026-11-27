@@ -6,12 +6,23 @@
     <atom:link href="https://www.superplanning.co.kr/ux-blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>UX디자인 에이전시 슈퍼플래닝이 UX리서치·UX컨설팅·UX기획·UX라이팅·UI디자인·웹/앱 개발 실무 기준과 프로젝트 사례를 정리하는 블로그입니다.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
     <image>
       <url>https://www.superplanning.co.kr/og-thumbnail.png</url>
       <title>슈퍼플래닝 UX블로그</title>
       <link>https://www.superplanning.co.kr/ux-blog/</link>
     </image>
+    <item>
+      <title>FGI 대행 업체 고르는 법: 견적에 섭외비·사례비·Lab실·모더레이터가 들어가는지 확인하세요</title>
+      <link>https://www.superplanning.co.kr/ux-blog/fgi-agency-selection-quote-checklist/</link>
+      <guid isPermaLink="true">https://www.superplanning.co.kr/ux-blog/fgi-agency-selection-quote-checklist/</guid>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 +0900</pubDate>
+      <category>UX리서치</category>
+      <dc:creator>슈퍼플래닝 사용자경험 연구소</dc:creator>
+      <description><![CDATA[<p><img src="https://www.superplanning.co.kr/og-thumbnail.png" alt="FGI 대행 업체 고르는 법: 견적에 섭외비·사례비·Lab실·모더레이터가 들어가는지 확인하세요"></p><p>FGI 대행 업체를 고를 때는 견적서에 인터뷰 대상자 섭외비·사례비·Lab실 대여비·모더레이터 진행비가 모두 들어 있는지부터 확인하세요. 견적이 달라지는 조건, 업체 비교 체크리스트 7가지, 진행 순서를 정리했습니다.</p><h2>FGI 대행 업체, 무엇부터 확인해야 하나요?</h2>
+      <p><strong>FGI 대행 업체를 고를 때는 견적서 한 장에 인터뷰 대상자 섭외비·사례비·Lab실 대여비·모더레이터(진행자) 진행비가 모두 들어 있는지부터 확인하세요.</strong><br>네 가지 중 하나라도 빠져 있으면, 계약 뒤에 별도 비용이 붙거나 의뢰 기업이 직접 챙겨야 할 일이 늘어납니다.</p>
+      <p>슈퍼플래닝 사용자경험 연구소는 네 항목을 모두 포함한 견적으로 FGI(표적집단면접)를 진행합니다.<br>조사 설계부터 인터뷰 대상자 섭외, 진행, 결과보고서와 UI/UX 개선안까지 한 팀이 맡습니다.</p><p><a href="https://www.superplanning.co.kr/ux-blog/fgi-agency-selection-quote-checklist/">전체 글 읽기</a></p>]]></description>
+    </item>
     <item>
       <title>해외 자사몰 사용성 테스트(UT) 대행: 쇼피파이 해외몰 현지 사용자 섭외부터 영문 보고서까지</title>
       <link>https://www.superplanning.co.kr/ux-blog/overseas-shopify-store-usability-test-agency/</link>
