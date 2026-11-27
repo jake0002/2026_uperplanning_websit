@@ -1,4 +1,4 @@
-/* 198: 강의 신청 5단계·제목 '맞춤형 UX강의 신청하기'·버튼 'UX강의 신청 접수하기'·희망 일정 자동 선택 제거. B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
+/* 199: 필수값 토스트·기본값(B코스·기업 실무자)·접수 완료 체크 원 그림자 대칭·오프라인 장소 필수. 198: 강의 신청 5단계·제목 '맞춤형 UX강의 신청하기'·버튼 'UX강의 신청 접수하기'·희망 일정 자동 선택 제거. B안 167(달력)·165(피그마 91:1461·91:1507·102:1817) — 라이브 sp-inquiry.js 기반, 전송·추적 로직 동일. 64: 슈퍼플래닝 서브페이지 문의 모달 + 강의 신청 모달 (보던 페이지 위에서 바로 문의) — 공통 스크립트 */
 (function () {
   'use strict';
   if (window.spOpenInquiry) return;
@@ -73,7 +73,7 @@
     '.spq-err{position:relative;display:flex;align-items:flex-start;gap:6px;margin:6px 0 0;background:#383838;color:#fff;font:600 11.5px/1.45 Pretendard,sans-serif;padding:6px 10px;border-radius:6px;word-break:keep-all;}',
     '.spq-err:before{content:"";position:absolute;top:-5px;left:16px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid #383838;}',
     '.spq-done{display:flex;flex-direction:column;gap:14px;padding:28px 32px 32px;background:#fff;border-radius:0 0 24px 24px;text-align:center;}',
-    '.spq-ok{align-self:center;margin:8px 0 6px;width:92px;height:92px;border-radius:50%;background:#EEF1F4;box-shadow:-10px -10px 20px rgba(255,255,255,.95),10px 10px 20px rgba(26,31,36,.14);display:flex;align-items:center;justify-content:center;}',
+    '.spq-ok{align-self:center;margin:8px 0 6px;width:92px;height:92px;border-radius:50%;background:#EEF1F4;box-shadow:0 8px 20px rgba(26,31,36,.10),0 2px 5px rgba(26,31,36,.06),inset 0 1px 0 rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;}',
     '.spq-ok i{width:70px;height:70px;border-radius:50%;background:#E4E7EB;box-shadow:inset 4px 4px 8px rgba(26,31,36,.14),inset -4px -4px 8px rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;}',
     '.spq-ok b{width:48px;height:48px;border-radius:50%;background:#EEF1F4;box-shadow:-5px -5px 10px rgba(255,255,255,.95),5px 5px 10px rgba(26,31,36,.14);display:flex;align-items:center;justify-content:center;}',
     '.spq-done h3{margin:0;font:700 20px/1.35 Pretendard,sans-serif;color:#111;border:0;padding:0;}',
@@ -138,6 +138,13 @@
     '.spq-nav .spq-cta{flex:1;width:auto;}',
     '#spqLec .spq-in::selection{background:#C9CFD6;color:#111;}',
     '#spqLecH:focus{outline:none;}',
+    /* 199: 필수값 안내 토스트 — 볼록 알약, 글자만(아이콘·×·버튼 없음), 위에서 내려와 2.8초 뒤 사라짐 */
+    '.spq-toast{position:fixed;left:50%;top:28px;z-index:10000000;transform:translate(-50%,-14px);opacity:0;pointer-events:none;width:max-content;max-width:min(420px,calc(100vw - 32px));box-sizing:border-box;padding:14px 24px;border-radius:20px;background:#EEF1F4;box-shadow:-6px -6px 14px rgba(255,255,255,.95),8px 10px 24px rgba(26,31,36,.22);font:600 14px/1.45 Pretendard,"Pretendard Variable",-apple-system,sans-serif;color:#111;text-align:center;word-break:keep-all;text-wrap:balance;transition:opacity .25s ease,transform .25s ease;}',
+    '.spq-toast.on{opacity:1;transform:translate(-50%,0);}',
+    '.spq-toast b{font-weight:700;}',
+    '.spq-need{animation:spqNeed .9s ease 1;border-radius:12px;}',
+    '@keyframes spqNeed{0%,100%{box-shadow:none;}30%{box-shadow:0 0 0 2px #A3AAB3;}}',
+    '@media (prefers-reduced-motion:reduce){.spq-toast{transition:none;}.spq-need{animation:none;}}',
     '#spqLec .spq-box{margin:0 0 auto;}',   /* 단계가 바뀌어도 창 위치 고정(위쪽 기준) */
     '@media (min-width:769px){.spq-box{zoom:var(--k,1);}}',
     '@media (max-width:600px){.spq-cal{left:0;right:auto;width:100%;max-width:308px;}.spq-ov{padding:16px 10px;}.spq-bd,.spq-done{padding:22px 18px 24px;}.spq-row,.spq-grid,.spq-chips,.spq-chips.c3{grid-template-columns:1fr;}.spq-btns .spq-b2{flex-basis:110px;}.spq-nav .spq-b2{flex-basis:104px;}}',
@@ -180,7 +187,7 @@
       '<div class="spq-or">또는</div><a class="spq-kakao" href="https://open.kakao.com/o/sovRKoMi" target="_blank" rel="noopener noreferrer">' + IC_KAKAO + '카카오톡 실시간 상담하기</a></div></div></div>';
     var types = ['1:1 개인 강의', '기업·기관 출강', '대학·공공기관 특강', '기타'].map(function (t) { return chip('radio', 'splType', t, t, '', t === '기업·기관 출강'); }).join('');
     var courses = Object.keys(COURSES).map(function (k) { return chip('radio', 'splCourse', k, COURSES[k][0], COURSES[k][1], false); }).join('');
-    var jobs = ['취업·이직 준비', '주니어 기획자·디자이너', '기업 실무자', 'SI 개발자', '스타트업 대표·예비창업자', '교육 담당자(HRD)', '기타'].map(function (t) { return chip('radio', 'splJob', t, t, '', t === '교육 담당자(HRD)'); }).join('');
+    var jobs = ['취업·이직 준비', '주니어 기획자·디자이너', '기업 실무자', 'SI 개발자', '스타트업 대표·예비창업자', '교육 담당자(HRD)', '기타'].map(function (t) { return chip('radio', 'splJob', t, t, '', t === '기업 실무자'); }).join('');
     var topics = TOPICS.map(function (t) { return chip('checkbox', 'splTopic', t, t, '', t === '맞춤설계 상담 후 결정'); }).join('');
     var methods = ['오프라인', '온라인(실시간)', '상담 후 결정'].map(function (t) { return chip('radio', 'splMethod', t, t, '', t === '오프라인'); }).join('');
     var lec = '<div class="spq-ov" id="spqLec"><div class="spq-box wide" role="dialog" aria-modal="true" aria-labelledby="spqLecH">' + tbar('강의 신청') +
@@ -198,7 +205,7 @@
       '<div class="spq-sec"><label class="spq-lb" for="splDate">6. 희망 일정 <b>*</b></label><div class="spq-dwrap">' + field('splDate', '예: 11월 중 평일 오후, 11/20(목)', 'text', ' value="상담 후 결정"') +
       '<button type="button" class="spq-calbtn" id="splCalBtn" aria-label="달력에서 희망 날짜 선택" aria-haspopup="dialog" aria-expanded="false" aria-controls="splCal">' + IC_CAL + '</button>' +
       '<div class="spq-cal" id="splCal" role="dialog" aria-label="희망 일정 달력" hidden></div></div></div></div>' +
-      '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 <b>*</b></p><div class="spq-chips c3">' + methods + '</div><div id="splPlaceW">' + field('splPlace', '오프라인 장소를 적어 주세요. 예: 서울 강남구 OO빌딩 교육장') + '</div></div></div>' +
+      '<div class="spq-sec"><p class="spq-lb">7. 진행 방식 <b>*</b></p><div class="spq-chips c3">' + methods + '</div><div id="splPlaceW" class="spq-f"><label class="spq-l" for="splPlace">오프라인 강의 장소 <b>*</b></label>' + field('splPlace', '예: 서울 강남구 OO빌딩 교육장 (또는 미정)') + '</div></div></div>' +
       '<div class="spq-step" data-step="5" hidden>' +
       '<div class="spq-sec"><p class="spq-lb">8. 신청자 정보</p><div class="spq-row">' + lf('splName', '이름', true, '홍길동') + lf('splCompany', '회사·학교명 (선택)', false, '회사·기관·학교명') +
       lf('splEmail', '이메일', true, 'name@company.com', 'email') + lf('splPhone', '연락처 (일정 조율용, 선택)', false, '010-0000-0000', 'tel') + '</div>' +
@@ -227,7 +234,7 @@
       inp.addEventListener('change', function () {
         var grp = document.querySelectorAll('#spqLec input[name="' + inp.name + '"]');
         grp.forEach(function (g) { g.closest('.spq-chip').classList.toggle('on', g.checked); });
-        if (inp.name === 'splMethod') $('splPlaceW').style.display = (inp.value === '오프라인' && inp.checked) ? 'block' : 'none';
+        if (inp.name === 'splMethod') $('splPlaceW').style.display = (inp.value === '오프라인' && inp.checked) ? '' : 'none';
       });
     });
     ['spqEmail', 'splEmail'].forEach(function (id) {
@@ -309,18 +316,41 @@
     var ov = $('spqLec'); if (ov) ov.scrollTop = 0;
     try { $('spqLecH').focus({ preventScroll: true }); } catch (e) {}
   }
-  function stepOk(n) {
-    var miss = [], first = null;
-    if (n === 1 && !val('splCourse')) miss.push('· 코스');
-    if (n === 4) {
-      if (!$('splDate').value.trim()) { miss.push('· 희망 일정'); first = 'splDate'; }
-      if (!val('splMethod')) miss.push('· 진행 방식');
+  var toastT = null;
+  function toast(html, el) {
+    var tt = $('spqToast');
+    if (!tt) { tt = document.createElement('div'); tt.id = 'spqToast'; tt.className = 'spq-toast'; tt.setAttribute('role', 'status'); tt.setAttribute('aria-live', 'polite'); document.body.appendChild(tt); }
+    tt.innerHTML = html; tt.classList.remove('on'); void tt.offsetWidth; tt.classList.add('on');
+    clearTimeout(toastT); toastT = setTimeout(function () { tt.classList.remove('on'); }, 2800);
+    if (el) {
+      var box = el.closest ? (el.closest('.spq-f') || el.closest('.spq-sec') || el) : el;
+      if (el.id === 'splAgree') box = el.parentNode;
+      box.classList.remove('spq-need'); void box.offsetWidth; box.classList.add('spq-need');
+      try { box.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) {}
+      if (el.tagName === 'INPUT' && el.type !== 'radio' && el.type !== 'checkbox') try { el.focus({ preventScroll: true }); } catch (e) {}
     }
-    if (miss.length) { alert('아래 필수 항목을 선택해 주세요.\n\n' + miss.join('\n')); if (first) { try { $(first).focus(); } catch (e) {} } return false; }
+  }
+  function grp(name) { return document.querySelector('#spqLec input[name="' + name + '"]'); }
+  /* 199: 단계별 필수값 — 하나라도 비면 토스트 + 해당 칸 표시, 다음 단계로 넘어가지 않음 */
+  function stepOk(n) {
+    if (n === 1 && !val('splCourse')) { toast('<b>코스</b>를 선택해 주세요.', grp('splCourse')); return false; }
+    if (n === 4) {
+      if (!$('splPeople').value) { toast('<b>예상 인원</b>을 선택해 주세요.', $('splPeople')); return false; }
+      if (!$('splDate').value.trim()) { toast('<b>희망 일정</b>을 입력하거나 달력에서 선택해 주세요.', $('splDate')); return false; }
+      if (!val('splMethod')) { toast('<b>진행 방식</b>을 선택해 주세요.', grp('splMethod')); return false; }
+      if (val('splMethod') === '오프라인' && !$('splPlace').value.trim()) { toast('<b>오프라인 강의 장소</b>를 적어 주세요.<br>아직 정해지지 않았다면 \u2018미정\u2019으로 적어 주세요.', $('splPlace')); return false; }
+    }
+    if (n === 5) {
+      if (!$('splName').value.trim()) { toast('<b>이름</b>을 입력해 주세요.', $('splName')); return false; }
+      if (!$('splEmail').value.trim()) { toast('<b>이메일</b>을 입력해 주세요.', $('splEmail')); return false; }
+      if (!isEmail($('splEmail').value.trim())) { emailErr($('splEmail'), true); toast('<b>이메일</b> 주소를 다시 확인해 주세요.', $('splEmail')); return false; }
+      if (!$('splAgree').checked) { toast('<b>개인정보 수집 및 이용 동의</b>에 체크해 주세요.', $('splAgree')); return false; }
+    }
     return true;
   }
   function open(id) { $(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
   function close(id) {
+    var tq = $('spqToast'); if (tq) tq.classList.remove('on');   // 199
     if (id === 'spqLec') calClose();
     $(id).classList.remove('open');
     if (!document.querySelector('.spq-ov.open')) document.body.style.overflow = '';
@@ -347,7 +377,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hookTabs); else hookTabs();
   window.spOpenLecture = function (courseKey) {
     build();
-    var k = COURSES[courseKey] ? courseKey : 'A';
+    var k = (COURSES[courseKey] && window.spqTabTouched) ? courseKey : 'B';   // 199: 기본 B코스(퀵배너 코스 탭을 직접 고른 경우만 그 코스)
     var r = document.querySelector('#spqLec input[name="splCourse"][value="' + k + '"]');
     if (r) { r.checked = true; r.dispatchEvent(new Event('change')); }
     open('spqLec');
@@ -376,7 +406,8 @@
     var topics = Array.prototype.map.call(document.querySelectorAll('#spqLec input[name="splTopic"]:checked'), function (c) { return c.value; });
     var people = $('splPeople').value, date = $('splDate').value.trim(), place = $('splPlace').value.trim();
     var name = $('splName').value.trim(), company = $('splCompany').value.trim(), email = $('splEmail').value.trim(), phone = $('splPhone').value.trim(), req = $('splReq').value.trim();
-    if (!$('splAgree').checked) { alert('개인정보 수집 및 이용 동의(필수)에 체크해 주세요.'); return; }
+    var bad = [1, 4, 5].filter(function (n) { return !stepOk(n); })[0];   // 199: 전송 직전 전체 재확인(토스트)
+    if (bad) { if (bad !== step) { goStep(bad); stepOk(bad); } return; }
     var miss = [], first = null;
     [[!courseK, '코스'], [!date, '희망 일정', 'splDate'], [!method, '진행 방식'], [!name, '이름', 'splName'], [!email, '이메일', 'splEmail']].forEach(function (m) { if (m[0]) { miss.push('· ' + m[1]); if (!first && m[2]) first = m[2]; } });
     if (miss.length) { alert('아래 필수 항목을 입력해 주세요.\n\n' + miss.join('\n')); if (!courseK) goStep(1); else if (!date || !method) goStep(4); if (first) { try { $(first).focus(); } catch (e) {} } return; }
