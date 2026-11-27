@@ -40,3 +40,20 @@ RedirectMatch gone "^/ux-blog/post-([6-9]|1[0-9])/?(index\.html)?$"
     </FilesMatch>
 </IfModule>
 # ---- 196 cache rules (end) ----
+
+# ---- 202 legacy cleanup (start): old page URLs -> 301 new pages / backup & work files -> 403 ----
+RedirectMatch 301 ^/ux_academy\.html$ /ux-academy/
+RedirectMatch 301 ^/ux_design\.html$ /ux-design/
+RedirectMatch 301 ^/ux_design_cleanroom\.html$ /ux-design/
+RedirectMatch 301 ^/ux_research\.html$ /ux-research/
+RedirectMatch 301 ^/ux_writing\.html$ /ux-writing/
+RedirectMatch 301 ^/ux_company\.html$ /ux-company/
+RedirectMatch 301 ^/ux_blog\.html$ /ux-blog/
+RedirectMatch 301 ^/research(/|/index\.html)?$ /ux-research/
+RedirectMatch 301 ^/company(/|/index\.html)?$ /ux-company/
+RedirectMatch 301 ^/app_dev(/|/index\.html)?$ /web-app-development/
+RedirectMatch 301 ^/ux-research/llms\.txt$ /llms.txt
+<FilesMatch "(\.bak|\.bak[_-].*|_b64\.txt|^README\.md|\x20.*\.txt)$">
+    Require all denied
+</FilesMatch>
+# ---- 202 legacy cleanup (end) ----
