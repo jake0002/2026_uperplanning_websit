@@ -6,12 +6,24 @@
     <atom:link href="https://www.superplanning.co.kr/ux-blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>UX디자인 에이전시 슈퍼플래닝이 UX리서치·UX컨설팅·UX기획·UX라이팅·UI디자인·웹/앱 개발 실무 기준과 프로젝트 사례를 정리하는 블로그입니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 12:00:00 +0900</lastBuildDate>
     <image>
       <url>https://www.superplanning.co.kr/og-thumbnail.png</url>
       <title>슈퍼플래닝 UX블로그</title>
       <link>https://www.superplanning.co.kr/ux-blog/</link>
     </image>
+    <item>
+      <title>스타트업 서비스 기획·UX/UI 디자인 전문 업체 고르는 법: AI로 만든 MVP, UX디자인 개선부터 맡겨야 하는 이유</title>
+      <link>https://www.superplanning.co.kr/ux-blog/startup-service-planning-ux-ui-design-agency-ai-mvp/</link>
+      <guid isPermaLink="true">https://www.superplanning.co.kr/ux-blog/startup-service-planning-ux-ui-design-agency-ai-mvp/</guid>
+      <pubDate>Sat, 28 Nov 2026 12:00:00 +0900</pubDate>
+      <category>UX컨설팅</category>
+      <dc:creator>슈퍼플래닝 UX기획팀</dc:creator>
+      <description><![CDATA[<p><img src="https://www.superplanning.co.kr/images/ux-blog/startup-ai-mvp/startup-ai-mvp-ux-og.png" alt="스타트업 서비스 기획·UX/UI 디자인 전문 업체 고르는 법: AI로 만든 MVP, UX디자인 개선부터 맡겨야 하는 이유"></p><p>AI로 빠르게 만든 MVP에서 사용자가 떠나는 이유는 화면이 아니라 흐름입니다. 스타트업 서비스 기획·UX/UI 디자인 전문 업체를 고를 때 확인할 7가지 기준과, 기존 결과물을 살려 UX를 개선하는 방법을 정리했습니다.</p><h2>AI로 만든 MVP, 왜 사용자는 떠날까요?</h2>
+      <p><strong>AI로 빠르게 만든 MVP에서 사용자가 떠나는 이유는 대부분 화면의 겉모습이 아니라, 서비스 흐름과 우선순위가 설계되지 않았기 때문입니다.</strong><br>그래서 디자인만 바꾸는 업체보다, 서비스 기획과 UX/UI 디자인을 함께 다루는 전문 업체에 맡기는 것이 효과적입니다.</p>
+      <p>요즘은 AI 코딩 도구로 며칠 만에 서비스 화면을 만들 수 있습니다.<br>하지만 "돌아가는 화면"과 "사용자가 끝까지 쓰는 서비스"는 다릅니다.</p>
+      <p>슈퍼플래닝에도 최근 이런 의뢰가 꾸준히 들어옵니다.<br>"AI로 MVP는 금방 만들었는데, 디자인이 도저히 답이 나오지 않습니다."</p><p><a href="https://www.superplanning.co.kr/ux-blog/startup-service-planning-ux-ui-design-agency-ai-mvp/">전체 글 읽기</a></p>]]></description>
+    </item>
     <item>
       <title>FGI 대행 업체 고르는 법: 견적에 섭외비·사례비·Lab실·모더레이터가 들어가는지 확인하세요</title>
       <link>https://www.superplanning.co.kr/ux-blog/fgi-agency-selection-quote-checklist/</link>
